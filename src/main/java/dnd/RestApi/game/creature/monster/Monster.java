@@ -1,11 +1,13 @@
 package dnd.RestApi.game.creature.monster;
 
 import dnd.RestApi.game.creature.Creature;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import dnd.RestApi.game.creature.type.MonsterType;
+import dnd.RestApi.game.dice.DiceRoll;
+import dnd.RestApi.game.dice.DiceRolls;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.Set;
 
 @AllArgsConstructor
 @Entity
@@ -19,14 +21,27 @@ public class Monster extends Creature {
     @Id
     @GeneratedValue
     private Long id;
-    private String type;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            schema = "dnd",
+            name = "monster_type_relation",
+            joinColumns = @JoinColumn(name = "monster_id"),
+            inverseJoinColumns = @JoinColumn(name = "type_id"))
+    private Set<MonsterType> types;
+
     private Double cr;
     private String monsterName;
+    private int averageHitPoints;
+    @OneToOne(fetch = FetchType.EAGER, optional = false, cascade = CascadeType.ALL)
+    private DiceRoll hitDice;
+    //@TODO size
 
     @Builder
-    public Monster(String type, Double cr, String monsterName, String size, String description, String alignment) {
+    public Monster(Set<MonsterType> type, Double cr, String monsterName, String size, String description,
+                   String alignment) {
         super(size, description, alignment);
-        this.type = type;
+        this.types = type;
         this.cr = cr;
         this.monsterName = monsterName;
     }

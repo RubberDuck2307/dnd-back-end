@@ -3,10 +3,16 @@ package dnd.RestApi.file;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import dnd.RestApi.game.creature.monster.Monster;
+import lombok.Data;
 
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This class is used to read the json file containing the monsters.
+ */
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MonsterJson {
     @JsonProperty("name")
@@ -51,6 +57,5 @@ public class MonsterJson {
     private String reactions;
     @JsonProperty ("img_url")
     private String imgUrl;
-
 
 }
