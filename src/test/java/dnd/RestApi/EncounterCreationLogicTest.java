@@ -28,24 +28,6 @@ public class EncounterCreationLogicTest {
     @Autowired
     MonsterNativeQueries monsterNativeQueries;
 
-
-    @Test
-    @Order(1)
-    public void fillInDatabase() {
-        monsterRepository.save(
-                Monster.builder()
-                        .cr(1.0)
-                        .monsterName("Goblin")
-                        .build());
-        monsterRepository.save(
-                Monster.builder()
-                        .cr(1.0)
-                        .monsterName("Orc").build());
-        monsterRepository.save(
-                Monster.builder().cr(2.0).monsterName("Ogre").build());
-    }
-
-
     @Test
     public void getRandomEncounterOneEncounterOneMonsterTest() {
         ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(500,

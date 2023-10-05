@@ -9,8 +9,10 @@ import lombok.Setter;
 
 import java.util.List;
 
+import static dnd.RestApi.config.SQLConfig.schema;
+
 @Entity(name = "dice_roll")
-@Table(schema = "dnd")
+@Table(schema = schema)
 @Setter
 @Getter
 public class DiceRoll {
@@ -43,6 +45,10 @@ public class DiceRoll {
 
     public DiceRoll() {
 
+    }
+
+    public int getAverage(){
+        return (dice + 1) * amount / 2 + constant;
     }
 
     public int roll(){

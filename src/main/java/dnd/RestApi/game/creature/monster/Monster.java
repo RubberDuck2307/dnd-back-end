@@ -1,6 +1,7 @@
 package dnd.RestApi.game.creature.monster;
 
 import dnd.RestApi.game.creature.Creature;
+import dnd.RestApi.game.creature.creature_size.CreatureSize;
 import dnd.RestApi.game.creature.type.MonsterType;
 import dnd.RestApi.game.dice.DiceRoll;
 import dnd.RestApi.game.dice.DiceRolls;
@@ -9,9 +10,11 @@ import lombok.*;
 
 import java.util.Set;
 
+import static dnd.RestApi.config.SQLConfig.schema;
+
 @AllArgsConstructor
 @Entity
-@Table(schema = "dnd")
+@Table(schema = schema)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -24,7 +27,7 @@ public class Monster extends Creature {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            schema = "dnd",
+            schema = schema,
             name = "monster_type_relation",
             joinColumns = @JoinColumn(name = "monster_id"),
             inverseJoinColumns = @JoinColumn(name = "type_id"))
@@ -35,14 +38,8 @@ public class Monster extends Creature {
     private int averageHitPoints;
     @OneToOne(fetch = FetchType.EAGER, optional = false, cascade = CascadeType.ALL)
     private DiceRoll hitDice;
-    //@TODO size
-
-    @Builder
-    public Monster(Set<MonsterType> type, Double cr, String monsterName, String size, String description,
-                   String alignment) {
-        super(size, description, alignment);
-        this.types = type;
-        this.cr = cr;
-        this.monsterName = monsterName;
+    public void setHitDice(DiceRoll hitDice) {
+        this.hitDice = hitDice;
+        this.averageHitPoints = hitDice.getAverage();
     }
 }

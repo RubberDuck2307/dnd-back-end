@@ -1,5 +1,6 @@
 package dnd.RestApi.game.creature.type;
 
+import dnd.RestApi.config.SQLConfig;
 import dnd.RestApi.game.creature.monster.Monster;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -8,8 +9,10 @@ import lombok.Setter;
 
 import java.util.Set;
 
+import static dnd.RestApi.config.SQLConfig.schema;
+
 @Entity
-@Table(schema = "dnd")
+@Table(schema = schema, name = SQLConfig.monster_type_table)
 @Setter
 @Getter
 public class MonsterType {

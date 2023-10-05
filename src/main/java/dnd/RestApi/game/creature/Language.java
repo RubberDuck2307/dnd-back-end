@@ -1,24 +1,20 @@
 package dnd.RestApi.game.creature;
 
+import dnd.RestApi.config.SQLConfig;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import static dnd.RestApi.config.SQLConfig.schema;
-
-@Data
 @Entity
-@Table(schema = schema)
-public class Character extends Creature{
-
+@Setter
+@Getter
+@Table(name = SQLConfig.language_table, schema = SQLConfig.schema)
+public class Language {
     @Id
     @GeneratedValue
     private Long id;
     private String name;
-    private String classType;
-    private String level;
-
-
 }

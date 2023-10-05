@@ -128,17 +128,17 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
         int[] xpList = availableCrList.stream().mapToInt(encounterDifficultyMap::getXp).toArray();
 
         int upperIndex = Arrays.binarySearch(xpList, ListUtils.BinarySearchHighestValueSmallerThanX(xpList, maxXp));
-        //@TODO: FIX LOWER INDEX to ignore crs that are too small to prevent too many irrelevant possible combinations
-        //int lowerIndex = Arrays.binarySearch(xpList, ListUtils.BinarySearchHighestValueSmallerThanX(xpList, minXp / 10)) + 1;
-
+        int lowerIndex = 0;
+        if (minXp/10 > xpList[0])
+            lowerIndex = Arrays.binarySearch(xpList, ListUtils.BinarySearchHighestValueSmallerThanX(xpList, minXp / 10)) + 1;
         ArrayList<ArrayList<Double>> crsLists = new ArrayList<>();
 
 
-        while (upperIndex >= 0) {
+        while (upperIndex >= lowerIndex) {
             ArrayList<ArrayList<Double>> listsOfCrs = new ArrayList<>();
             ArrayList<Double> crs = new ArrayList<>();
             listsOfCrs.add(crs);
-            getCrsRecursive(maxXp, minXp, 0, 0, listsOfCrs, Arrays.copyOfRange(xpList, 0,
+            getCrsRecursive(maxXp, minXp, 0, 0, listsOfCrs, Arrays.copyOfRange(xpList, lowerIndex,
                     upperIndex + 1), maxAmountOfMonsters);
             upperIndex--;
             listsOfCrs.forEach(list -> {

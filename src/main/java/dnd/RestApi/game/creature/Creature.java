@@ -1,9 +1,8 @@
 package dnd.RestApi.game.creature;
 
-import jakarta.persistence.MappedSuperclass;
+import dnd.RestApi.game.creature.creature_size.CreatureSize;
+import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.HashMap;
 
 @MappedSuperclass
 @AllArgsConstructor
@@ -11,8 +10,8 @@ import java.util.HashMap;
 @Setter
 @NoArgsConstructor
 public class Creature {
-
-    private String size;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    private CreatureSize size;
     private String description;
     private String alignment;
 
