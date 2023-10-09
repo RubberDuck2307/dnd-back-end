@@ -1,18 +1,18 @@
 package dnd.RestApi.game.creature;
 
 import dnd.RestApi.config.SQLConfig;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Data;
+import dnd.RestApi.game.creature.monster.Monster;
+import dnd.RestApi.game.creature.monster.sense.MonsterSense;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Set;
 
 @Setter
 @Getter
 @Entity
-@Table(name = SQLConfig.sense_table, schema = SQLConfig.schema )
+@Table(name = SQLConfig.SENSE_TABLE, schema = SQLConfig.SCHEMA)
 public class Sense {
 
     @Id
@@ -20,4 +20,7 @@ public class Sense {
     private long id;
 
     private String name;
+
+    @OneToMany(mappedBy = "sense" , fetch = FetchType.LAZY)
+    private Set<MonsterSense> monsters;
 }

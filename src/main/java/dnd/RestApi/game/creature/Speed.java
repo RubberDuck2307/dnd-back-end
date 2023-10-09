@@ -9,12 +9,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = SQLConfig.SKILL_TABLE, schema = SQLConfig.SCHEMA)
+@Table(schema = SQLConfig.SCHEMA, name = SQLConfig.SPEED_TABLE)
 @Getter
 @Setter
-public class Skill{
-    private String name;
-    @GeneratedValue
+public class Speed {
     @Id
+    @GeneratedValue
     private Long id;
+    private String name;
+
 }

@@ -6,11 +6,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-import static dnd.RestApi.config.SQLConfig.schema;
+import static dnd.RestApi.config.SQLConfig.SCHEMA;
 
 @Data
 @Entity
-@Table(schema = schema)
+@Table(schema = SCHEMA)
 public class Character extends Creature{
 
     @Id

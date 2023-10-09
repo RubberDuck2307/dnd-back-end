@@ -1,31 +1,15 @@
 package dnd.RestApi.file.monster_json_to_sql;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.MapperFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.json.JsonMapper;
-import dnd.RestApi.file.JsonFileReader;
 import dnd.RestApi.file.MonsterJson;
-import dnd.RestApi.game.creature.monster.Monster;
+import dnd.RestApi.file.SQLMonster;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.*;
 
 public class MonsterJsonToSqlConverter {
 
-    private final JsonFileReader fileReader;
-    private static final String MONSTERS_FILE_PATH = "src/main/resources/monsters.json";
-
     public MonsterJsonToSqlConverter() {
-        ObjectMapper objectMapper = JsonMapper.builder().enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS).build();
-        this.fileReader = new JsonFileReader(null, objectMapper, new File(MONSTERS_FILE_PATH));
     }
 
-    public List<MonsterJson> loadMonsters() throws FileNotFoundException, JsonProcessingException {
-        List<MonsterJson> monsterJsons = fileReader.readMonstersJson();
-        return monsterJsons;
-    }
 
     public Set<String> loadMonsterSize(List<MonsterJson> monsterJsons) {
         Set<String> sizes = new HashSet<>();
@@ -49,7 +33,11 @@ public class MonsterJsonToSqlConverter {
                 sensesString = sensesString.replaceAll("([0-9]+)", "");
                 String[] sensesArray = sensesString.split(",");
                 Arrays.stream(sensesArray).forEach(sense ->
-                        senses.add(sense.trim().substring(0, 1).toUpperCase() + sense.trim().substring(1)));
+                {
+                    String trimmed = sense.trim();
+                    if (!Objects.equals(trimmed, "Passive Perception"))
+                        senses.add(trimmed.substring(0, 1).toUpperCase() + trimmed.substring(1));
+                });
             }
         });
         return senses;
@@ -81,12 +69,59 @@ public class MonsterJsonToSqlConverter {
                 monsterJson -> {
                     String meta = monsterJson.getMeta();
                     meta = meta.trim();
-                    String typesString = meta.substring(meta.indexOf(" ") + 1);
+                    String typesString = meta.substring(meta.indexOf(" ") + 1); // skip the size
                     String[] typesArray = typesString.split(",");
                     Arrays.stream(typesArray).forEach(type ->
                             types.add(type.trim().substring(0, 1).toUpperCase() + type.trim().substring(1)));
                 });
         return types;
     }
+
+    public Set<String> loadSpeeds(List<MonsterJson> monsterJsons) {
+        Set<String> speeds = new HashSet<>();
+        monsterJsons.forEach(monsterJson -> {
+            String speedString = monsterJson.getSpeed();
+            if (speedString != null) {
+                speedString = speedString.trim();
+                speedString = speedString.replace(" ft.", "");
+                speedString = speedString.replaceAll("([0-9]+)", "");
+                String[] speedArray = speedString.split(",");
+                Arrays.stream(speedArray).forEach(speed -> {
+                    String trimmed = speed.trim();
+                    if (trimmed.length() > 0) {
+                        speeds.add(trimmed.substring(0, 1).toUpperCase() + trimmed.substring(1));
+                    }
+                });
+            }
+        });
+        speeds.add("Walk");
+        return speeds;
+    }
+
+    public short loadArmorClass(MonsterJson monsterJson) {
+        return Short.parseShort(monsterJson.getArmorClass().substring(0, monsterJson.getArmorClass().indexOf(" ")));
+    }
+
+    public String loadArmorClassDescription(MonsterJson monsterJson) {
+        String armorClass = monsterJson.getArmorClass();
+        armorClass = armorClass.replace("(", "");
+        armorClass = armorClass.replace(")", "");
+        armorClass = armorClass.substring(armorClass.indexOf(" ") + 1);
+        return armorClass;
+    }
+
+    public SQLMonster convertToMonsterSQL(MonsterJson monsterJson, long id) {
+        SQLMonster sqlMonster = new SQLMonster();
+        sqlMonster.setId(id);
+        sqlMonster.setName(monsterJson.getName().replace("'", "''").trim());
+        sqlMonster.setTypes(loadMonsterType(List.of(monsterJson)));
+        sqlMonster.setSize(loadMonsterSize(List.of(monsterJson)).iterator().next());
+        sqlMonster.setArmorClass(loadArmorClass(monsterJson));
+        sqlMonster.setArmorClassDescription(loadArmorClassDescription(monsterJson));
+        sqlMonster.setHitPoints(Short.parseShort(monsterJson.getHitPoints().
+                substring(0, monsterJson.getHitPoints().indexOf(" "))));
+        return sqlMonster;
+    }
+
 
 }

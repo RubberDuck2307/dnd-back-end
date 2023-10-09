@@ -1,4 +1,4 @@
-package dnd.RestApi.game.creature;
+package dnd.RestApi.game.damage;
 
 import dnd.RestApi.config.SQLConfig;
 import jakarta.persistence.Entity;
@@ -9,12 +9,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = SQLConfig.SKILL_TABLE, schema = SQLConfig.SCHEMA)
 @Getter
 @Setter
-public class Skill{
-    private String name;
+@Table(name = SQLConfig.DAMAGE_TYPE_TABLE, schema = SQLConfig.SCHEMA)
+public class DamageType {
     @GeneratedValue
     @Id
     private Long id;
+    private String name;
+
 }

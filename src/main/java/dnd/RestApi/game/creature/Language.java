@@ -11,7 +11,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-@Table(name = SQLConfig.language_table, schema = SQLConfig.schema)
+@Table(name = SQLConfig.LANGUAGE_TABLE, schema = SQLConfig.SCHEMA)
 public class Language {
     @Id
     @GeneratedValue

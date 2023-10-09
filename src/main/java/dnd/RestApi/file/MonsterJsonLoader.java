@@ -16,7 +16,7 @@ import java.util.*;
 /**
  * This class is responsible for loading monsters from the json file to database.
  */
-
+@Deprecated
 @Component
 @RequiredArgsConstructor
 public class MonsterJsonLoader {
@@ -35,13 +35,13 @@ public class MonsterJsonLoader {
         Monster monsterToSave = new Monster();
 
         monsterToSave.setMonsterName(monster.getName());
-        SetType(monster, monsterToSave);
+        setType(monster, monsterToSave);
         setHitDice(monster, monsterToSave);
 
         return monsterToSave;
     }
 
-    private void SetType(MonsterJson monsterJson, Monster monsterToSave) {
+    private void setType(MonsterJson monsterJson, Monster monsterToSave) {
         Set<MonsterType> types = new HashSet<>();
         Arrays.stream(monsterJson.getMeta().split(",")).toList().forEach(type -> {
             type = type.substring(0, 1).toUpperCase() + type.substring(1);

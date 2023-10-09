@@ -1,16 +1,16 @@
-package dnd.RestApi.game.creature.creature_size;
+package dnd.RestApi.game.creature;
 
 import dnd.RestApi.config.SQLConfig;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import static dnd.RestApi.config.SQLConfig.schema;
+import static dnd.RestApi.config.SQLConfig.SCHEMA;
 
 @Entity
 @Setter
 @Getter
-@Table(schema = schema, name = SQLConfig.creature_size_table)
+@Table(schema = SCHEMA, name = SQLConfig.CREATURE_SIZE_TABLE)
 public class CreatureSize {
     @Id
     @GeneratedValue
