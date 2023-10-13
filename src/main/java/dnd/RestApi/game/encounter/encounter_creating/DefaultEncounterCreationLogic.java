@@ -52,9 +52,7 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
         }
 
         if (differentKindOfMonsters) {
-            List<Double> avCrs = new ArrayList<>();
-            avCrs.add(1.0);
-            avCrs.add(2.0);
+            List<Double> avCrs = encounterDifficultyMap.getCRs();
 
             ArrayList<ArrayList<Double>> allPossibleCrs = getCrsForEncounter(xp, maxAmountOfMonsters,
                     avCrs, xpTolerance);
@@ -94,6 +92,8 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
             return encounters;
 
         } else {
+
+
 
         }
 

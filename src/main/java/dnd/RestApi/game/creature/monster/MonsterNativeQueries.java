@@ -20,6 +20,11 @@ public class MonsterNativeQueries {
         this.entityManager = entityManager;
     }
 
+    /**
+     *
+     * @param crs Map where the keys represent the cr and the values the amount of monsters with that cr that should be returned
+     * @return HashMap containing monsters with the corresponding crs as keys
+     */
     public HashMap<Double, List<Monster>> getMonstersByCrAndAmount(HashMap<Double, Integer> crs) {
         Session session = entityManager.unwrap(Session.class);
 
@@ -42,7 +47,7 @@ public class MonsterNativeQueries {
         for (int i = 0; i < crs.size(); i++) {
             countQuery.setParameter("cr" + (i + 1), crsKeyArray[i]);
         }
-
+        //get amount of monster in database by cr
         HashMap<Double, Integer> amountOfMonstersByCr = convertCountQueryResultToHashMap(crs, countQuery.getResultList());
 
         StringBuilder queryString = new StringBuilder("(SELECT *\n" +
@@ -65,6 +70,7 @@ public class MonsterNativeQueries {
             int amt = Math.max(amountOfMonstersByCr.get(crsKeyArray[i]) - crs.get(crsKeyArray[i]), 0);
             query.setParameter("cr" + (i + 1), crsKeyArray[i]);
             query.setParameter("lmt" + (i + 1), crs.get(crsKeyArray[i]));
+            //set maximum possible offset. If there are fewer monsters in database than requested, set offset to 0
             query.setParameter("amt" + (i + 1), amt);
         }
 
@@ -75,15 +81,25 @@ public class MonsterNativeQueries {
         return monsters;
     }
 
+    /**
+     * Converts the result of the query to a hashmap with cr as key and list of monsters as value
+     * @param crs amounts of requested monsters by cr
+     * @param amountOfMonstersByCr amount of monsters in database by cr
+     * @param monsters monsters from database
+     * @return hashmap with cr as key and list of monsters as value
+     */
 
     private HashMap<Double, List<Monster>> convertMonsterQueryResultToHashMap(HashMap<Double, Integer> crs,
                                                                               HashMap<Double, Integer> amountOfMonstersByCr,
                                                                               List<Monster> monsters) {
+        //sort monsters by cr and their amounts by cr
+        // the array is then sliced to get the correct amount of monsters and put into the result hashmap
         monsters.sort(Comparator.comparing(Monster::getCr));
         HashMap<Double, List<Monster>> result = new HashMap<>();
-        Double[] keys = crs.keySet().toArray(new Double[0]);
+        Double[] keys =  crs.keySet().stream().sorted().toArray(Double[]::new);
         int index = 0;
         for (int i = 0; i < crs.size(); i++) {
+            //if there are fewer monsters in database than requested, set amount to amount in database
             int amount = Math.min(crs.get(keys[i]), amountOfMonstersByCr.get(keys[i]));
             result.put(keys[i], monsters.subList(index, index + amount));
                 index += amount;
@@ -92,6 +108,12 @@ public class MonsterNativeQueries {
         return result;
     }
 
+    /**
+     *
+     * @param crs amounts of requested monsters by cr
+     * @param amounts amounts of monsters with the corresponding crs in the database in the same order as the crs
+     * @return hashmap containing the amounts of monsters with the corresponding crs in the database
+     */
     private HashMap<Double, Integer> convertCountQueryResultToHashMap(HashMap<Double, Integer> crs,
                                                                       List<Integer> amounts) {
         HashMap<Double, Integer> result = new HashMap<>();

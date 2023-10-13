@@ -3,13 +3,16 @@ package dnd.RestApi.game.encounter.encounter_difficulty;
 import dnd.RestApi.game.creature.AbilityScore;
 import dnd.RestApi.utils.ListUtils;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 
-@Data
+@Setter
+@Getter
 public class DefaultEncounterDifficultyMap implements EncounterDifficultyMap {
 
     private ArrayList<EncounterDifficultySetting> thresholds;
