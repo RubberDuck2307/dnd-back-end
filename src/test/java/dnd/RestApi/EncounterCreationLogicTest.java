@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class EncounterCreationLogicTest {
@@ -58,8 +60,13 @@ public class EncounterCreationLogicTest {
 
     @Test public void getRandomEncounterMultipleEncountersDifferentMonstersTest(){
         ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(300,
-                2, 1,true,  3);
-        System.out.println(encounters);
+                80, 1,true,  3);
+        assertEquals(80, encounters.size());
+        for (Encounter encounter : encounters) {
+            System.out.println(encounter);
+            assertTrue(encounter.getDifficulty_xp() >= 0 && encounter.getDifficulty_xp() <= 600);
+            assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 3);
+        }
 
     }
 

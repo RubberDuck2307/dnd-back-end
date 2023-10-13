@@ -190,6 +190,10 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
         }
 
         int addedXp = 0;
+
+        if (currentXp == 450)
+            System.out.println("test");
+
         try {
             addedXp = ListUtils.BinarySearchHighestValueSmallerThanX(
                     xpList, (int) (maxXp / multiplier - currentXp));

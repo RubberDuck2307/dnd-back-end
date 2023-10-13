@@ -1,23 +1,28 @@
 package dnd.RestApi.game.creature.monster;
 
+
 import dnd.RestApi.config.SQLConfig;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-@Entity
-@Table(schema = SQLConfig.SCHEMA, name = SQLConfig.TRAITS_TABLE)
 @Setter
 @Getter
-public class Trait {
+@ToString
+@Entity
+@Table(name = SQLConfig.MONSTER_ACTIONS_TABLE, schema = SQLConfig.SCHEMA)
+public class MonsterAction {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @GeneratedValue
     private long id;
-    private String title;
+    private String name;
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @ManyToOne
     @JoinColumn(name = "monster_id")
     private Monster monster;
+
 
 }

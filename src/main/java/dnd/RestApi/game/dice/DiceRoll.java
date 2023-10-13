@@ -9,10 +9,11 @@ import lombok.Setter;
 
 import java.util.List;
 
+import static dnd.RestApi.config.SQLConfig.DICE_TABLE;
 import static dnd.RestApi.config.SQLConfig.SCHEMA;
 
 @Entity(name = "dice_roll")
-@Table(schema = SCHEMA)
+@Table(schema = SCHEMA, name = DICE_TABLE)
 @Setter
 @Getter
 public class DiceRoll {

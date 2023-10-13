@@ -1,23 +1,18 @@
-package dnd.RestApi.game.creature.monster.skills_of_monsters;
+package dnd.RestApi.game.creature.monster.damage;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
 
-@Embeddable
 @Getter
 @Setter
-public class SkillsOfMonstersKey implements Serializable {
-
+@Embeddable
+public class MonsterDamageKey implements Serializable {
     @Column(name = "monster_id")
     private long monsterId;
-
-    @Column(name = "skill_id")
-    private long skillId;
-
-
+    @Column(name = "damage_id")
+    private long damageTypeId;
 }

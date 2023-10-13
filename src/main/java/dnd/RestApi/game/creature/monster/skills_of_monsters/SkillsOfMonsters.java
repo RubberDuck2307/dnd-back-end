@@ -11,6 +11,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Table(name = SQLConfig.MONSTERS_SKILLS_TABLE, schema = SQLConfig.SCHEMA)
+
 public class SkillsOfMonsters {
 
     @EmbeddedId
@@ -19,7 +20,7 @@ public class SkillsOfMonsters {
     @ManyToOne
     @MapsId("skillId")
     @JoinColumn(name = "skill_id")
-    private Skill speed;
+    private Skill skill;
 
     @ManyToOne
     @MapsId("monsterId")

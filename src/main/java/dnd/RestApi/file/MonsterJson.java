@@ -57,5 +57,12 @@ public class MonsterJson {
     private String reactions;
     @JsonProperty ("img_url")
     private String imgUrl;
-
+    @JsonProperty("Damage Immunities")
+    private String damageImmunities;
+    @JsonProperty("Damage Resistances")
+    private String damageResistances;
+    @JsonProperty("Condition Immunities")
+    private String conditionImmunities;
+    @JsonProperty("Damage Vulnerabilities")
+    private String damageVulnerabilities;
 }

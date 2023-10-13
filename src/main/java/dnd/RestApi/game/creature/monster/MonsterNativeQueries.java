@@ -6,13 +6,11 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 
 @Component
-
+// TODO change to repository
 public class MonsterNativeQueries {
 
     private final EntityManager entityManager;
@@ -81,6 +79,7 @@ public class MonsterNativeQueries {
     private HashMap<Double, List<Monster>> convertMonsterQueryResultToHashMap(HashMap<Double, Integer> crs,
                                                                               HashMap<Double, Integer> amountOfMonstersByCr,
                                                                               List<Monster> monsters) {
+        monsters.sort(Comparator.comparing(Monster::getCr));
         HashMap<Double, List<Monster>> result = new HashMap<>();
         Double[] keys = crs.keySet().toArray(new Double[0]);
         int index = 0;

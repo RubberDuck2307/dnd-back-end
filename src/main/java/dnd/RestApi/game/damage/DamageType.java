@@ -1,12 +1,12 @@
 package dnd.RestApi.game.damage;
 
 import dnd.RestApi.config.SQLConfig;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import dnd.RestApi.game.creature.monster.damage.MonsterDamage;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Set;
 
 @Entity
 @Getter
@@ -17,5 +17,8 @@ public class DamageType {
     @Id
     private Long id;
     private String name;
+
+    @OneToMany(mappedBy = "damage", fetch = FetchType.LAZY)
+    private Set<MonsterDamage> damageTakenModifiers;
 
 }

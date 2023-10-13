@@ -6,12 +6,14 @@ import dnd.RestApi.game.creature.monster.sense.MonsterSense;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Set;
 
 @Setter
 @Getter
 @Entity
+
 @Table(name = SQLConfig.SENSE_TABLE, schema = SQLConfig.SCHEMA)
 public class Sense {
 

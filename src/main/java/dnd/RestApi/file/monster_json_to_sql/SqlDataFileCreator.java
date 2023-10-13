@@ -3,6 +3,7 @@ package dnd.RestApi.file.monster_json_to_sql;
 import dnd.RestApi.config.SQLConfig;
 import dnd.RestApi.file.MonsterJson;
 import dnd.RestApi.file.SQLMonster;
+import dnd.RestApi.utils.BooleanUtils;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -50,8 +51,21 @@ public class SqlDataFileCreator {
         AtomicInteger index = new AtomicInteger(1);
         monsterJsons.forEach(monsterJson -> {
             SQLMonster monster = converter.convertToMonsterSQL(monsterJson, index.getAndIncrement());
+            writeHitDice(monster);
             writeMonster(monster);
             writeIndividualMonsterTypes(monster);
+            writeIndividualMonsterSpeed(monster);
+            writeIndividualMonsterSkills(monster);
+            writeIndividualMonsterSenses(monster);
+            writeIndividualMonsterConditionImmunities(monster);
+            writeIndividualMonsterDamageImmunities(monster);
+            writeIndividualMonsterDamageResistances(monster);
+            writeIndividualMonsterDamageVulnerabilities(monster);
+            writeIndividualMonsterActions(monster);
+            writeIndividualMonsterTraits(monster);
+            writeIndividualMonsterReactions(monster);
+            writeIndividualMonsterLegendaryActions(monster);
+            writeIndividualMonsterLanguages(monster);
 
         });
         printWriter.close();
@@ -66,8 +80,43 @@ public class SqlDataFileCreator {
                 .append(SQLConfig.SCHEMA)
                 .append(".")
                 .append(SQLConfig.MONSTER_TABLE)
-                .append(" (id, hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (")
+                .append(" (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus," +
+                        "int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity," +
+                        " constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class," +
+                        " armor_class_description, monster_name) VALUES (")
                 .append(monster.getId())
+                .append(", ")
+                .append(monster.getId())
+                .append(", '")
+                .append(monster.getLegendaryActionsDescription())
+                .append("', ")
+                .append(monster.getCr())
+                .append(", ")
+                .append(monster.getPassivePerception())
+                .append(", ")
+                .append(monster.getStrengthSaveBonus())
+                .append(", ")
+                .append(monster.getDexteritySaveBonus())
+                .append(", ")
+                .append(monster.getConstitutionSaveBonus())
+                .append(", ")
+                .append(monster.getIntelligenceSaveBonus())
+                .append(", ")
+                .append(monster.getWisdomSaveBonus())
+                .append(", ")
+                .append(monster.getCharismaSaveBonus())
+                .append(", ")
+                .append(monster.getStrength())
+                .append(", ")
+                .append(monster.getDexterity())
+                .append(", ")
+                .append(monster.getConstitution())
+                .append(", ")
+                .append(monster.getIntelligence())
+                .append(", ")
+                .append(monster.getWisdom())
+                .append(", ")
+                .append(monster.getCharisma())
                 .append(", ")
                 .append(monster.getHitPoints())
                 .append(", ")
@@ -78,9 +127,242 @@ public class SqlDataFileCreator {
                 .append(monster.getArmorClassDescription())
                 .append("', '")
                 .append(monster.getName())
-                .append("');\n");
+                .append("');\n")
+                .append("\n");
+
         writeIntoFile(stringBuilder);
     }
+
+    public void writeIndividualMonsterReactions(SQLMonster sqlMonster) {
+        sqlMonster.getReactions().forEach(reaction -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.MONSTER_REACTIONS_TABLE)
+                    .append(" (monster_id, description, name) VALUES (")
+                    .append(sqlMonster.getId())
+                    .append(", '")
+                    .append(reaction.getDescription())
+                    .append("', '")
+                    .append(reaction.getName())
+                    .append("');\n");
+            writeIntoFile(stringBuilder);
+        });
+    }
+
+    public void writeIndividualMonsterLanguages(SQLMonster sqlMonster) {
+        sqlMonster.getLanguages().forEach(language -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.MONSTER_LANGUAGE_TABLE)
+                    .append(" (monster_id, language_id) VALUES (")
+                    .append(sqlMonster.getId())
+                    .append(", ")
+                    .append(languagesIdMap.get(language))
+                    .append(");\n");
+            writeIntoFile(stringBuilder);
+        });
+    }
+
+    public void writeIndividualMonsterLegendaryActions(SQLMonster sqlMonster) {
+        sqlMonster.getLegendaryActions().forEach(legendaryAction -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.LEGENDARY_ACTIONS_TABLE)
+                    .append(" (monster_id, description, name) VALUES (")
+                    .append(sqlMonster.getId())
+                    .append(", '")
+                    .append(legendaryAction.getDescription())
+                    .append("', '")
+                    .append(legendaryAction.getName())
+                    .append("');\n");
+            writeIntoFile(stringBuilder);
+        });
+    }
+
+    public void writeIndividualMonsterSenses(SQLMonster monster) {
+        monster.getSenses().forEach((sense, value) -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.MONSTER_SENSES_TABLE)
+                    .append(" (range, monster_id, sense_id) VALUES (")
+                    .append(value)
+                    .append(", ")
+                    .append(monster.getId())
+                    .append(", '")
+                    .append(sensesIdMap.get(sense))
+                    .append("');\n");
+            writeIntoFile(stringBuilder);
+        });
+    }
+
+    public void writeIndividualMonsterSkills(SQLMonster monster) {
+        monster.getSkills().forEach((skill, value) -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.MONSTERS_SKILLS_TABLE)
+                    .append(" (bonus, monster_id, skill_id) VALUES (")
+                    .append(value)
+                    .append(", ")
+                    .append(monster.getId())
+                    .append(", '")
+                    .append(skillsIdMap.get(skill))
+                    .append("');\n");
+            writeIntoFile(stringBuilder);
+        });
+    }
+
+    public void writeIndividualMonsterActions(SQLMonster sqlMonster) {
+        sqlMonster.getActions().forEach(action -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.MONSTER_ACTIONS_TABLE)
+                    .append(" (name, description, monster_id) VALUES ('")
+                    .append(action.getName())
+                    .append("', '")
+                    .append(action.getDescription())
+                    .append("', ")
+                    .append(sqlMonster.getId())
+                    .append(");\n");
+            writeIntoFile(stringBuilder);
+        });
+    }
+
+    public void writeIndividualMonsterTraits(SQLMonster sqlMonster) {
+        sqlMonster.getTraits().forEach(trait -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.MONSTER_TRAITS_TABLE)
+                    .append(" (title, description, monster_id) VALUES ('")
+                    .append(trait.getTitle())
+                    .append("', '")
+                    .append(trait.getDescription())
+                    .append("', ")
+                    .append(sqlMonster.getId())
+                    .append(");\n");
+            writeIntoFile(stringBuilder);
+        });
+    }
+
+    public void writeIndividualMonsterSpeed(SQLMonster monster) {
+        monster.getSpeeds().forEach((speed, value) -> {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.SPEED_OF_MONSTERS_TABLE)
+                    .append(" (value, monster_id, speed_id) VALUES (")
+                    .append(value)
+                    .append(", ")
+                    .append(monster.getId())
+                    .append(", '")
+                    .append(speedsIdMap.get(speed))
+                    .append("');\n");
+            writeIntoFile(stringBuilder);
+        });
+    }
+
+    public void writeHitDice(SQLMonster monster) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder
+                .append("INSERT INTO ")
+                .append(SQLConfig.SCHEMA)
+                .append(".")
+                .append(SQLConfig.DICE_TABLE)
+                .append(" (id, dice, amount, constant) VALUES (")
+                .append(monster.getId())
+                .append(", ")
+                .append(monster.getHitDice().getDice())
+                .append(", ")
+                .append(monster.getHitDice().getAmount())
+                .append(", ")
+                .append(monster.getHitDice().getConstant())
+                .append(");\n");
+        writeIntoFile(stringBuilder);
+    }
+
+    public void writeIndividualMonsterDamageVulnerabilities(SQLMonster monster) {
+
+        monster.getDamageVulnerabilities().forEach(damageVulnerability -> writeIndividualMonsterDamage(damageVulnerability, false,
+                false, true, monster));
+
+    }
+
+    public void writeIndividualMonsterDamageResistances(SQLMonster monster) {
+
+        monster.getDamageResistances().forEach(damageResistance -> writeIndividualMonsterDamage(damageResistance, true,
+                false, false, monster));
+
+    }
+
+    private void writeIndividualMonsterDamage(String damage, boolean isResistance, boolean isImmunity,
+                                              boolean isVulnerability, SQLMonster sqlMonster) {
+
+        if (BooleanUtils.isMoreThanXTrue(1, isResistance, isImmunity, isVulnerability)) {
+            throw new IllegalArgumentException("More than one of the following is true: isResistance, isImmunity," +
+                    " isVulnerability");
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                .append(".")
+                .append(SQLConfig.MONSTER_DAMAGE_TABLE)
+                .append(" (monster_id, damage_id, is_immune, is_resistant, is_vulnerable," +
+                        " adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (")
+                .append(sqlMonster.getId())
+                .append(", '")
+                .append(damageTypesIdMap.get(damage))
+                .append("', ")
+                .append(isImmunity)
+                .append(", ")
+                .append(isResistance)
+                .append(", ")
+                .append(isVulnerability)
+                .append(", ");
+        if (isResistance) {
+            stringBuilder.append(sqlMonster.isNotResistancesFromAdamantineAttackFlag())
+                    .append(", ")
+                    .append(sqlMonster.isNotResistancesFromNonMagicalAttackFlag())
+                    .append(", ")
+                    .append(sqlMonster.isNotResistancesFromSilverAttackFlag())
+                    .append(");\n");
+        } else if (isImmunity) {
+            stringBuilder.append(sqlMonster.isNotImmunitiesFromAdamantineAttackFlag())
+                    .append(", ")
+                    .append(sqlMonster.isNotImmunitiesFromNonMagicalAttackFlag())
+                    .append(", ")
+                    .append(sqlMonster.isNotImmunitiesFromSilverAttackFlag())
+                    .append(");\n");
+        } else {
+            stringBuilder.append("false, false, false);\n");
+        }
+        writeIntoFile(stringBuilder);
+    }
+
+    public void writeIndividualMonsterDamageImmunities(SQLMonster monster) {
+        monster.getDamageImmunities().forEach(damageImmunity -> writeIndividualMonsterDamage(damageImmunity, false,
+                true, false, monster));
+    }
+
+    public void writeIndividualMonsterConditionImmunities(SQLMonster monster) {
+        StringBuilder stringBuilder = new StringBuilder();
+        monster.getConditionImmunities().forEach(conditionImmunity -> {
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.MONSTER_CONDITION_IMMUNITY_TABLE)
+                    .append(" (monster_id, condition_id) VALUES (")
+                    .append(monster.getId())
+                    .append(", '")
+                    .append(conditionsIdMap.get(conditionImmunity))
+                    .append("');\n");
+        });
+        writeIntoFile(stringBuilder);
+    }
+
 
     public void writeIndividualMonsterTypes(SQLMonster monster) {
         StringBuilder stringBuilder = new StringBuilder();
