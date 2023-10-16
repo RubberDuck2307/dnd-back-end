@@ -2,13 +2,10 @@ package dnd.RestApi.game.encounter.encounter_creating;
 
 import dnd.RestApi.exception.custom_exception.NoSuchEncounterException;
 import dnd.RestApi.game.creature.monster.Monster;
-import dnd.RestApi.game.creature.monster.MonsterNativeQueries;
-import dnd.RestApi.game.creature.monster.MonsterRepository;
+import dnd.RestApi.api.repositories.monster.MonsterRepository;
 import dnd.RestApi.game.encounter.Encounter;
 import dnd.RestApi.game.encounter.encounter_difficulty.EncounterDifficultyMap;
 import dnd.RestApi.utils.ListUtils;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -25,7 +22,6 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
     private int maxAmountOfMonstersInEncounter;
     @Value("${game.monster.creation.diversity}")
     private int variabilityModifier;
-    private final MonsterNativeQueries monsterNativeQueries;
 
 
     @Override
@@ -36,19 +32,28 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
 
     @Override
     public int calculateEncounterGainedXp(Encounter encounter) {
-        return encounter.getMonsters().stream().mapToInt(monster -> encounterDifficultyMap.getXp(monster.getCr())).sum();
+        return encounter.getMonsters().stream().mapToInt(monster -> encounterDifficultyMap.getXp(monster
+                .getCr())).sum();
+    }
+
+    @Override
+    public ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
+                                                      boolean differentKindOfMonsters, int maxAmountOfMonster) {
+        return createRandomEncounter(xp, amountOfEncounters, xpTolerance, differentKindOfMonsters, maxAmountOfMonster,
+                true);
     }
 
 
     @Override
-    public ArrayList<Encounter> createRandomEncounter(Integer xp, Integer amountOfEncounters, float xpTolerance,
-                                                      boolean differentKindOfMonsters, int maxAmountOfMonsters) {
+    public ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
+                                                      boolean differentKindOfMonsters, int maxAmountOfMonsters,
+                                                      boolean onlyOneKindOfMonsterPerCr) {
+
+        if (!validateInputForEncounterGeneration(xp, amountOfEncounters, xpTolerance, maxAmountOfMonsters))
+            return new ArrayList<>();
+
         if (maxAmountOfMonsters == 1) {
-            return getRandomMonstersByCR(encounterDifficultyMap.getCr(xp), amountOfEncounters).stream().map(monster -> {
-                ArrayList<Monster> monsters = new ArrayList<>();
-                monsters.add(monster);
-                return new Encounter(this, monsters);
-            }).collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+            return generateOneMonsterEncounters(xp, amountOfEncounters);
         }
 
         if (differentKindOfMonsters) {
@@ -57,30 +62,61 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
             ArrayList<ArrayList<Double>> allPossibleCrs = getCrsForEncounter(xp, maxAmountOfMonsters,
                     avCrs, xpTolerance);
 
-            if (allPossibleCrs.size() == 0) {
-                throw new NoSuchEncounterException("No encounter with given parameters exists");
-            }
-            //Randomly choose crs for each encounter
-            ArrayList<ArrayList<Double>> chosenCrs = new ArrayList<>();
-            for (int i = 0; i < amountOfEncounters; i++) {
-                chosenCrs.add(ListUtils.getRandomElement(allPossibleCrs));
+            if (onlyOneKindOfMonsterPerCr)
+                return generateEncountersFromDatabase(amountOfEncounters, false, allPossibleCrs);
+            else return generateEncountersFromDatabase(amountOfEncounters, true, allPossibleCrs);
+
+        } else {
+
+            ArrayList<ArrayList<Double>> allPossibleCrs = new ArrayList<>();
+            for (Double cr : encounterDifficultyMap.getCRs()) {
+                allPossibleCrs.addAll(getCrsForEncounter(xp, maxAmountOfMonsters,
+                        Collections.singletonList(cr), xpTolerance));
             }
 
-            HashMap<Double, Integer> amountOfCrs = new HashMap<>();
-            for (ArrayList<Double> crs : chosenCrs) {
-                Set<Double> foundCrs = new HashSet<>();
-                for (Double cr : crs) {
-                    if (!foundCrs.contains(cr)) {
-                        foundCrs.add(cr);
-                        amountOfCrs.put(cr, amountOfCrs.getOrDefault(cr, 0) + 1 * variabilityModifier);
-                    }
+            return generateEncountersFromDatabase(amountOfEncounters, false, allPossibleCrs);
+
+        }
+    }
+
+
+    private boolean validateInputForEncounterGeneration(int xp, int amountOfEncounters, float xpTolerance, int maxAmountOfMonster) {
+        if (xp < 0 || amountOfEncounters < 0 || xpTolerance < 0 || maxAmountOfMonster < 0) {
+            throw new IllegalArgumentException("Parameters cannot be negative");
+        }
+
+        return amountOfEncounters != 0 && maxAmountOfMonster != 0;
+    }
+
+
+    private ArrayList<Encounter> generateEncountersFromDatabase(Integer amountOfEncounters, boolean differentKindOfMonsters,
+                                                                ArrayList<ArrayList<Double>> allPossibleCrs) {
+        if (allPossibleCrs.size() == 0) {
+            throw new NoSuchEncounterException("No encounter with given parameters exists");
+        }
+
+        //Randomly choose crs for each encounter
+        ArrayList<ArrayList<Double>> chosenCrs = new ArrayList<>();
+        for (int i = 0; i < amountOfEncounters; i++) {
+            chosenCrs.add(ListUtils.getRandomElement(allPossibleCrs));
+        }
+
+        //Calculate amount of monsters for each cr adjusted by variabilityModifier to increase diversity
+        HashMap<Double, Integer> amountOfCrs = new HashMap<>();
+        for (ArrayList<Double> crs : chosenCrs) {
+            Set<Double> foundCrs = new HashSet<>();
+            for (Double cr : crs) {
+                if (!foundCrs.contains(cr)) {
+                    foundCrs.add(cr);
+                    amountOfCrs.put(cr, amountOfCrs.getOrDefault(cr, 0) + 1 * variabilityModifier);
                 }
             }
+        }
 
-            HashMap<Double, List<Monster>> monstersByCr = monsterNativeQueries.getMonstersByCrAndAmount(amountOfCrs);
+        HashMap<Double, List<Monster>> monstersByCr = monsterRepository.getMonstersByCrAndAmount(amountOfCrs);
 
-            ArrayList<Encounter> encounters = new ArrayList<>();
-
+        ArrayList<Encounter> encounters = new ArrayList<>();
+        if (differentKindOfMonsters) {
             for (ArrayList<Double> crs : chosenCrs) {
                 ArrayList<Monster> monsters = new ArrayList<>();
                 for (Double cr : crs) {
@@ -88,16 +124,27 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
                 }
                 encounters.add(new Encounter(this, monsters));
             }
-
-            return encounters;
-
-        } else {
-
-
-
         }
-
-        return null;
+        // If there should be only one kind of monster per cr, random monster is get for each cr and then added to encounter
+        // as many times as it is frequent in chosen crs list
+        else {
+            for (ArrayList<Double> crs : chosenCrs) {
+                ArrayList<Monster> monsters = new ArrayList<>();
+                Set<Double> foundCrs = new HashSet<>();
+                for (Double cr : crs) {
+                    if (foundCrs.contains(cr)) {
+                        continue;
+                    }
+                    foundCrs.add(cr);
+                    Monster monster = ListUtils.getRandomElement(monstersByCr.get(cr));
+                    for (int i = 0; i < Collections.frequency(crs, cr); i++) {
+                        monsters.add(monster);
+                    }
+                }
+                encounters.add(new Encounter(this, monsters));
+            }
+        }
+        return encounters;
     }
 
     private ArrayList<Monster> getRandomMonstersByCR(double cr, int amountOfMonsters) {
@@ -126,10 +173,14 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
             maxAmountOfMonsters = maxAmountOfMonstersInEncounter;
 
         int[] xpList = availableCrList.stream().mapToInt(encounterDifficultyMap::getXp).toArray();
-
-        int upperIndex = Arrays.binarySearch(xpList, ListUtils.BinarySearchHighestValueSmallerThanX(xpList, maxXp));
+        int upperIndex;
+        try {
+            upperIndex = Arrays.binarySearch(xpList, ListUtils.BinarySearchHighestValueSmallerThanX(xpList, maxXp));
+        } catch (IllegalArgumentException e) {
+            return new ArrayList<>();
+        }
         int lowerIndex = 0;
-        if (minXp/10 > xpList[0])
+        if (minXp / 10 > xpList[0])
             lowerIndex = Arrays.binarySearch(xpList, ListUtils.BinarySearchHighestValueSmallerThanX(xpList, minXp / 10)) + 1;
         ArrayList<ArrayList<Double>> crsLists = new ArrayList<>();
 
@@ -151,6 +202,7 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
         return crsLists;
     }
 
+
     private void validateInput(int xp, int maxAmountOfMonsters, List<Double> availableCrList, float xpTolerance) {
         if (availableCrList.size() == 0) {
             throw new IllegalArgumentException("availableCrList must not be empty");
@@ -168,13 +220,14 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
 
     /**
      * Recursive method to get all possible combinations of crs for an encounter
-     * @param maxXp the maximum xp value of the encounter
-     * @param minXp the minimum xp value of the encounter
-     * @param currentXp the current xp value of the encounter in each recursion
-     * @param index the index of a crsList that is currently being appended. Should be set to 0 at the first call.
-     * @param crs list of lists of crs each list represents a possible combination of crs. Should be set to an empty at
-     *            the first call.
-     * @param xpList the list of xp values representing available crs. The list has to be sorted in ascending order
+     *
+     * @param maxXp               the maximum xp value of the encounter
+     * @param minXp               the minimum xp value of the encounter
+     * @param currentXp           the current xp value of the encounter in each recursion
+     * @param index               the index of a crsList that is currently being appended. Should be set to 0 at the first call.
+     * @param crs                 list of lists of crs each list represents a possible combination of crs. Should be set to an empty at
+     *                            the first call.
+     * @param xpList              the list of xp values representing available crs. The list has to be sorted in ascending order
      * @param maxAmountOfMonsters the maximum amount of monsters in the encounter
      */
     private void getCrsRecursive(int maxXp, int minXp, int currentXp, int index,
@@ -191,8 +244,6 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
 
         int addedXp = 0;
 
-        if (currentXp == 450)
-            System.out.println("test");
 
         try {
             addedXp = ListUtils.BinarySearchHighestValueSmallerThanX(
@@ -237,4 +288,13 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
         } else
             getCrsRecursive(maxXp, minXp, currentXp, index, crs, xpList, maxAmountOfMonsters - 1);
     }
+
+    private ArrayList<Encounter> generateOneMonsterEncounters(Integer xp, Integer amountOfEncounters) {
+        return getRandomMonstersByCR(encounterDifficultyMap.getCr(xp), amountOfEncounters).stream().map(monster -> {
+            ArrayList<Monster> monsters = new ArrayList<>();
+            monsters.add(monster);
+            return new Encounter(this, monsters);
+        }).collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+    }
+
 }

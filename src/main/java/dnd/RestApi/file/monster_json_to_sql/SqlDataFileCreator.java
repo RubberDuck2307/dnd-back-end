@@ -458,16 +458,20 @@ public class SqlDataFileCreator {
         String[] skills = {"Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight",
                 "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion",
                 "Religion", "Sleight of Hand", "Stealth", "Survival"};
+        String[] abilities = {"DEX", "WIS", "INT", "STR", "CHA", "INT", "WIS", "CHA", "INT", "WIS", "INT", "WIS", "CHA",
+                "CHA", "INT", "DEX", "DEX", "WIS"};
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < skills.length; i++) {
             skillsIdMap.put(skills[i], i + 1);
             stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
                     .append(".")
                     .append(SQLConfig.SKILL_TABLE)
-                    .append(" (id, name) VALUES (")
+                    .append(" (id, name, ability) VALUES (")
                     .append(i + 1)
                     .append(", '")
                     .append(skills[i])
+                    .append("', '")
+                    .append(abilities[i])
                     .append("');\n");
 
         }

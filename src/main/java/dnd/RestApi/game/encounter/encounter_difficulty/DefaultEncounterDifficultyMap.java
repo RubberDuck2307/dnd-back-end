@@ -1,6 +1,5 @@
 package dnd.RestApi.game.encounter.encounter_difficulty;
 
-import dnd.RestApi.game.creature.AbilityScore;
 import dnd.RestApi.utils.ListUtils;
 import lombok.Data;
 import lombok.Getter;

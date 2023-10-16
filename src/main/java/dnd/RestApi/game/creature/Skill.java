@@ -19,4 +19,6 @@ public class Skill{
     @GeneratedValue
     @Id
     private Long id;
+
+    private String ability;
 }

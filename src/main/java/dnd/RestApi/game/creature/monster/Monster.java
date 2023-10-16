@@ -125,7 +125,7 @@ public class Monster extends Creature {
     }
 
     public String toString(){
-        return "" +cr;
+        return monsterName + " " + cr;
     }
 
 

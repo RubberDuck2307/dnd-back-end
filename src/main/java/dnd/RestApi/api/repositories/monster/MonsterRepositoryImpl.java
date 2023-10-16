@@ -1,5 +1,6 @@
-package dnd.RestApi.game.creature.monster;
+package dnd.RestApi.api.repositories.monster;
 
+import dnd.RestApi.game.creature.monster.Monster;
 import jakarta.persistence.EntityManager;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -11,12 +12,12 @@ import java.util.*;
 
 @Component
 // TODO change to repository
-public class MonsterNativeQueries {
+public class MonsterRepositoryImpl {
 
     private final EntityManager entityManager;
 
     @Autowired
-    public MonsterNativeQueries(EntityManager entityManager) {
+    public MonsterRepositoryImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
