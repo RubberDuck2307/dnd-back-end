@@ -3,11 +3,13 @@ package dnd.RestApi.file.monster_json_to_sql;
 import dnd.RestApi.config.SQLConfig;
 import dnd.RestApi.file.MonsterJson;
 import dnd.RestApi.file.SQLMonster;
+import dnd.RestApi.game.creature.Ability;
 import dnd.RestApi.utils.BooleanUtils;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -23,7 +25,9 @@ public class SqlDataFileCreator {
     private final Map<String, Integer> damageTypesIdMap;
     private final Map<String, Integer> conditionsIdMap;
     private final MonsterJsonToSqlConverter converter;
+    private final Map<String, Long> abilityIdMap;
     private final PrintWriter printWriter;
+
 
     public SqlDataFileCreator(MonsterJsonToSqlConverter converter) throws IOException {
         this.fileWriter = new FileWriter(MONSTERS_FILE_PATH, true);
@@ -36,10 +40,12 @@ public class SqlDataFileCreator {
         speedsIdMap = new HashMap<>();
         damageTypesIdMap = new HashMap<>();
         conditionsIdMap = new HashMap<>();
+        abilityIdMap = new HashMap<>();
         this.converter = converter;
     }
 
     public void writeAll(List<MonsterJson> monsterJsons, Map<String, String> conditions) {
+        writeAbilities();
         writeSkills();
         writeDamageTypes();
         writeCondition(conditions);
@@ -53,6 +59,8 @@ public class SqlDataFileCreator {
             SQLMonster monster = converter.convertToMonsterSQL(monsterJson, index.getAndIncrement());
             writeHitDice(monster);
             writeMonster(monster);
+            writeIndividualMonsterAbilityScore(monster);
+            writeIndividualMonsterSavingThrow(monster);
             writeIndividualMonsterTypes(monster);
             writeIndividualMonsterSpeed(monster);
             writeIndividualMonsterSkills(monster);
@@ -80,10 +88,8 @@ public class SqlDataFileCreator {
                 .append(SQLConfig.SCHEMA)
                 .append(".")
                 .append(SQLConfig.MONSTER_TABLE)
-                .append(" (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus," +
-                        "int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity," +
-                        " constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class," +
-                        " armor_class_description, monster_name) VALUES (")
+                .append(" (id, hit_dice_id, legendary_action_description, cr, passive_perception," +
+                        "hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (")
                 .append(monster.getId())
                 .append(", ")
                 .append(monster.getId())
@@ -93,30 +99,6 @@ public class SqlDataFileCreator {
                 .append(monster.getCr())
                 .append(", ")
                 .append(monster.getPassivePerception())
-                .append(", ")
-                .append(monster.getStrengthSaveBonus())
-                .append(", ")
-                .append(monster.getDexteritySaveBonus())
-                .append(", ")
-                .append(monster.getConstitutionSaveBonus())
-                .append(", ")
-                .append(monster.getIntelligenceSaveBonus())
-                .append(", ")
-                .append(monster.getWisdomSaveBonus())
-                .append(", ")
-                .append(monster.getCharismaSaveBonus())
-                .append(", ")
-                .append(monster.getStrength())
-                .append(", ")
-                .append(monster.getDexterity())
-                .append(", ")
-                .append(monster.getConstitution())
-                .append(", ")
-                .append(monster.getIntelligence())
-                .append(", ")
-                .append(monster.getWisdom())
-                .append(", ")
-                .append(monster.getCharisma())
                 .append(", ")
                 .append(monster.getHitPoints())
                 .append(", ")
@@ -148,6 +130,64 @@ public class SqlDataFileCreator {
                     .append("');\n");
             writeIntoFile(stringBuilder);
         });
+    }
+
+    public void writeIndividualMonsterSavingThrow(SQLMonster sqlMonster) {
+        if (sqlMonster.getStrengthSaveBonus() != null)
+            writeSavingThrow("Strength", sqlMonster.getStrengthSaveBonus(), sqlMonster.getId());
+        if (sqlMonster.getDexteritySaveBonus() != null)
+            writeSavingThrow("Dexterity", sqlMonster.getDexteritySaveBonus(), sqlMonster.getId());
+        if (sqlMonster.getConstitutionSaveBonus() != null)
+            writeSavingThrow("Constitution", sqlMonster.getConstitutionSaveBonus(), sqlMonster.getId());
+        if (sqlMonster.getIntelligenceSaveBonus() != null)
+            writeSavingThrow("Intelligence", sqlMonster.getIntelligenceSaveBonus(), sqlMonster.getId());
+        if (sqlMonster.getWisdomSaveBonus() != null)
+            writeSavingThrow("Wisdom", sqlMonster.getWisdomSaveBonus(), sqlMonster.getId());
+        if (sqlMonster.getCharismaSaveBonus() != null)
+            writeSavingThrow("Charisma", sqlMonster.getCharismaSaveBonus(), sqlMonster.getId());
+        writeIntoFile(new StringBuilder("\n"));
+    }
+
+    private void writeSavingThrow(String abilityName, int value, long monsterId) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("INSERT INTO ")
+                .append(SQLConfig.SCHEMA)
+                .append(".")
+                .append(SQLConfig.MONSTER_SAVING_THROWS_TABLE)
+                .append(" (monster_id, ability_id, value) VALUES (")
+                .append(monsterId)
+                .append(", ")
+                .append(abilityIdMap.get(abilityName))
+                .append(", ")
+                .append(value)
+                .append(");\n");
+        writeIntoFile(stringBuilder);
+    }
+
+    public void writeIndividualMonsterAbilityScore(SQLMonster sqlMonster) {
+        writeAbilityScore("Strength", sqlMonster.getStrength(), sqlMonster.getId());
+        writeAbilityScore("Dexterity", sqlMonster.getDexterity(), sqlMonster.getId());
+        writeAbilityScore("Constitution", sqlMonster.getConstitution(), sqlMonster.getId());
+        writeAbilityScore("Intelligence", sqlMonster.getIntelligence(), sqlMonster.getId());
+        writeAbilityScore("Wisdom", sqlMonster.getWisdom(), sqlMonster.getId());
+        writeAbilityScore("Charisma", sqlMonster.getCharisma(), sqlMonster.getId());
+        writeIntoFile(new StringBuilder("\n"));
+    }
+
+    private void writeAbilityScore(String abilityName, int score, long monsterId) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("INSERT INTO ")
+                .append(SQLConfig.SCHEMA)
+                .append(".")
+                .append(SQLConfig.ABILITY_SCORE_MONSTER_TABLE)
+                .append(" (monster_id, ability_id, value) VALUES (")
+                .append(monsterId)
+                .append(", ")
+                .append(abilityIdMap.get(abilityName))
+                .append(", ")
+                .append(score)
+                .append(");\n");
+        writeIntoFile(stringBuilder);
     }
 
     public void writeIndividualMonsterLanguages(SQLMonster sqlMonster) {
@@ -458,26 +498,57 @@ public class SqlDataFileCreator {
         String[] skills = {"Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight",
                 "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion",
                 "Religion", "Sleight of Hand", "Stealth", "Survival"};
-        String[] abilities = {"DEX", "WIS", "INT", "STR", "CHA", "INT", "WIS", "CHA", "INT", "WIS", "INT", "WIS", "CHA",
-                "CHA", "INT", "DEX", "DEX", "WIS"};
+        String[] abilities = {"Dexterity", "Wisdom", "Intelligence", "Strength", "Charisma", "Intelligence", "Wisdom",
+                "Charisma", "Intelligence", "Wisdom", "Intelligence", "Wisdom", "Charisma", "Charisma", "Intelligence",
+                "Dexterity", "Dexterity", "Wisdom"};
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < skills.length; i++) {
             skillsIdMap.put(skills[i], i + 1);
             stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
                     .append(".")
                     .append(SQLConfig.SKILL_TABLE)
-                    .append(" (id, name, ability) VALUES (")
+                    .append(" (id, name, ability_id) VALUES (")
                     .append(i + 1)
                     .append(", '")
                     .append(skills[i])
                     .append("', '")
-                    .append(abilities[i])
+                    .append(abilityIdMap.get(abilities[i]))
                     .append("');\n");
 
         }
         stringBuilder.append("\n");
         writeIntoFile(stringBuilder);
     }
+
+    //TODO unharcoding
+    public void writeAbilities() {
+        Ability[] abilities = {new Ability(1L, "Strength", "STR", "Strength measures bodily power, athletic training, and the extent to which you can exert raw physical force."),
+                new Ability(2L, "Dexterity", "DEX", "Dexterity measures agility, reflexes, and balance."),
+                new Ability(3L, "Constitution", "CON", "Constitution measures health, stamina, and vital force."),
+                new Ability(4L, "Intelligence", "INT", "Intelligence measures mental acuity, accuracy of recall, and the ability to reason."),
+                new Ability(5L, "Wisdom", "WIS", "Wisdom reflects how attuned you are to the world around you and represents perceptiveness and intuition."),
+                new Ability(6L, "Charisma", "CHA", "Charisma measures your ability to interact effectively with others. It includes such factors as confidence and eloquence, and it can represent a charming or commanding personality.")};
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Ability ability : abilities) {
+            abilityIdMap.put(ability.getTitle(), ability.getId());
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.ABILITY_TABLE)
+                    .append(" (id, title, abbreviation, description) VALUES (")
+                    .append(ability.getId())
+                    .append(", '")
+                    .append(ability.getTitle())
+                    .append("', '")
+                    .append(ability.getAbbreviation())
+                    .append("', '")
+                    .append(ability.getDescription())
+                    .append("');\n");
+        }
+        stringBuilder.append("\n");
+        writeIntoFile(stringBuilder);
+    }
+
 
     public void writeSpeeds(Set<String> speeds) {
         StringBuilder stringBuilder = new StringBuilder();

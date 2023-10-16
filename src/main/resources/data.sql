@@ -1,21 +1,28 @@
-INSERT INTO dnd.skill (id, name, ability) VALUES (1, 'Acrobatics', 'DEX');
-INSERT INTO dnd.skill (id, name, ability) VALUES (2, 'Animal Handling', 'WIS');
-INSERT INTO dnd.skill (id, name, ability) VALUES (3, 'Arcana', 'INT');
-INSERT INTO dnd.skill (id, name, ability) VALUES (4, 'Athletics', 'STR');
-INSERT INTO dnd.skill (id, name, ability) VALUES (5, 'Deception', 'CHA');
-INSERT INTO dnd.skill (id, name, ability) VALUES (6, 'History', 'INT');
-INSERT INTO dnd.skill (id, name, ability) VALUES (7, 'Insight', 'WIS');
-INSERT INTO dnd.skill (id, name, ability) VALUES (8, 'Intimidation', 'CHA');
-INSERT INTO dnd.skill (id, name, ability) VALUES (9, 'Investigation', 'INT');
-INSERT INTO dnd.skill (id, name, ability) VALUES (10, 'Medicine', 'WIS');
-INSERT INTO dnd.skill (id, name, ability) VALUES (11, 'Nature', 'INT');
-INSERT INTO dnd.skill (id, name, ability) VALUES (12, 'Perception', 'WIS');
-INSERT INTO dnd.skill (id, name, ability) VALUES (13, 'Performance', 'CHA');
-INSERT INTO dnd.skill (id, name, ability) VALUES (14, 'Persuasion', 'CHA');
-INSERT INTO dnd.skill (id, name, ability) VALUES (15, 'Religion', 'INT');
-INSERT INTO dnd.skill (id, name, ability) VALUES (16, 'Sleight of Hand', 'DEX');
-INSERT INTO dnd.skill (id, name, ability) VALUES (17, 'Stealth', 'DEX');
-INSERT INTO dnd.skill (id, name, ability) VALUES (18, 'Survival', 'WIS');
+INSERT INTO dnd.ability (id, title, abbreviation, description) VALUES (1, 'Strength', 'STR', 'Strength measures bodily power, athletic training, and the extent to which you can exert raw physical force.');
+INSERT INTO dnd.ability (id, title, abbreviation, description) VALUES (2, 'Dexterity', 'DEX', 'Dexterity measures agility, reflexes, and balance.');
+INSERT INTO dnd.ability (id, title, abbreviation, description) VALUES (3, 'Constitution', 'CON', 'Constitution measures health, stamina, and vital force.');
+INSERT INTO dnd.ability (id, title, abbreviation, description) VALUES (4, 'Intelligence', 'INT', 'Intelligence measures mental acuity, accuracy of recall, and the ability to reason.');
+INSERT INTO dnd.ability (id, title, abbreviation, description) VALUES (5, 'Wisdom', 'WIS', 'Wisdom reflects how attuned you are to the world around you and represents perceptiveness and intuition.');
+INSERT INTO dnd.ability (id, title, abbreviation, description) VALUES (6, 'Charisma', 'CHA', 'Charisma measures your ability to interact effectively with others. It includes such factors as confidence and eloquence, and it can represent a charming or commanding personality.');
+
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (1, 'Acrobatics', '2');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (2, 'Animal Handling', '5');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (3, 'Arcana', '4');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (4, 'Athletics', '1');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (5, 'Deception', '6');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (6, 'History', '4');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (7, 'Insight', '5');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (8, 'Intimidation', '6');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (9, 'Investigation', '4');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (10, 'Medicine', '5');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (11, 'Nature', '4');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (12, 'Perception', '5');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (13, 'Performance', '6');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (14, 'Persuasion', '6');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (15, 'Religion', '4');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (16, 'Sleight of Hand', '2');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (17, 'Stealth', '2');
+INSERT INTO dnd.skill (id, name, ability_id) VALUES (18, 'Survival', '5');
 
 INSERT INTO dnd.damage_type (id, name) VALUES (1, 'Acid');
 INSERT INTO dnd.damage_type (id, name) VALUES (2, 'Bludgeoning');
@@ -206,7 +213,18 @@ INSERT INTO dnd.sense (id, name) VALUES (4, 'Truesight');
 INSERT INTO dnd.sense (id, name) VALUES (5, 'Blindsight  (blind beyond this radius)');
 
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (1, 10, 18, 36);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (1, 1, 'The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The aboleth regains spent legendary actions at the start of its turn.', 10, 20, null, null, 6, null, null, null, 21, 9, 15, 18, 15, 18, 135, 4, 17, 'Natural Armor', 'Aboleth');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (1, 1, 'The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The aboleth regains spent legendary actions at the start of its turn.', 10, 20, 135, 4, 17, 'Natural Armor', 'Aboleth');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 6, 18);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (1, 3, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (1, 4, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (1, 5, 6);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (1, '22');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (1, '16');
@@ -228,7 +246,15 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (1, 'Th
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (1, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (1, 58);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (2, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (2, 2, 'null', 0.25, 12, null, null, null, null, null, null, 10, 10, 10, 10, 14, 11, 9, 3, 10, '', 'Acolyte');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (2, 2, 'null', 0.25, 12, 9, 3, 10, '', 'Acolyte');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (2, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (2, '5');
@@ -239,7 +265,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Club', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared: Cantrips (at will): light, sacred flame, thaumaturgy 1st level (3 slots): bless, cure wounds, sanctuary', 2);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (2, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (3, 12, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (3, 3, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 21, null, 7, null, null, null, null, 23, 14, 21, 14, 13, 17, 195, 6, 19, 'Natural Armor', 'Adult Black Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (3, 3, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 21, 195, 6, 19, 'Natural Armor', 'Adult Black Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 6, 17);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (3, 2, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (3, 3, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (3, 5, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (3, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (3, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (3, '6');
@@ -265,7 +303,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (3, 'Th
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (3, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (3, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (4, 12, 18, 108);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (4, 4, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 22, null, 5, null, null, null, null, 25, 10, 23, 16, 15, 19, 225, 6, 19, 'Natural Armor', 'Adult Blue Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (4, 4, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 22, 225, 6, 19, 'Natural Armor', 'Adult Blue Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 1, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 3, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 6, 19);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (4, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (4, 3, 11);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (4, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (4, 6, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (4, '6');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (4, '16');
@@ -290,7 +340,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (4, 'Th
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (4, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (4, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (5, 12, 15, 75);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (5, 5, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, null, 5, null, null, null, null, 23, 10, 21, 14, 13, 17, 172, 6, 18, 'Natural Armor', 'Adult Brass Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (5, 5, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 172, 6, 18, 'Natural Armor', 'Adult Brass Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 6, 17);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (5, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (5, 3, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (5, 5, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (5, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (5, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (5, '6');
@@ -319,7 +381,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (5, 'Th
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (5, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (5, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (6, 12, 17, 102);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (6, 6, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, null, 5, null, null, null, null, 25, 10, 23, 16, 15, 19, 212, 6, 19, 'Natural Armor', 'Adult Bronze Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (6, 6, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 212, 6, 19, 'Natural Armor', 'Adult Bronze Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 1, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 3, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 6, 19);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (6, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (6, 3, 11);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (6, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (6, 6, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (6, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (6, '6');
@@ -349,7 +423,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (6, 'Th
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (6, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (6, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (7, 12, 16, 80);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (7, 7, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 22, null, 6, null, null, null, null, 23, 12, 21, 18, 15, 17, 184, 6, 18, 'Natural Armor', 'Adult Copper Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (7, 7, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 22, 184, 6, 18, 'Natural Armor', 'Adult Copper Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 6, 17);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (7, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (7, 3, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (7, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (7, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (7, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (7, '6');
@@ -377,7 +463,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (7, 'Th
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (7, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (7, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (8, 12, 19, 133);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (8, 8, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 24, null, 8, null, null, null, null, 27, 14, 25, 16, 15, 24, 256, 6, 19, 'Natural Armor', 'Adult Gold Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (8, 8, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 24, 256, 6, 19, 'Natural Armor', 'Adult Gold Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 1, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 3, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 6, 24);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (8, 2, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (8, 3, 13);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (8, 5, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (8, 6, 13);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (8, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (8, '6');
@@ -408,7 +506,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (8, 'Th
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (8, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (8, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (9, 12, 18, 90);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (9, 9, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, null, 6, null, null, null, null, 23, 12, 21, 18, 15, 17, 207, 6, 19, 'Natural Armor', 'Adult Green Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (9, 9, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 207, 6, 19, 'Natural Armor', 'Adult Green Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 6, 17);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (9, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (9, 3, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (9, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (9, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (9, '6');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (9, '16');
@@ -438,7 +548,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (9, 'Th
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (9, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (9, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (10, 12, 19, 133);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (10, 10, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 23, null, 6, null, null, null, null, 27, 10, 25, 16, 13, 21, 256, 6, 19, 'Natural Armor', 'Adult Red Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (10, 10, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 23, 256, 6, 19, 'Natural Armor', 'Adult Red Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 1, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 3, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 6, 21);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (10, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (10, 3, 13);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (10, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (10, 6, 11);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (10, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (10, '6');
@@ -463,7 +585,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (10, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (10, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (10, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (11, 12, 18, 126);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (11, 11, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 21, null, 5, null, null, null, null, 27, 10, 25, 16, 13, 21, 243, 6, 19, 'Natural Armor', 'Adult Silver Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (11, 11, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 21, 243, 6, 19, 'Natural Armor', 'Adult Silver Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 1, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 3, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 6, 21);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (11, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (11, 3, 12);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (11, 5, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (11, 6, 10);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (11, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (11, '6');
@@ -492,7 +626,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (11, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (11, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (11, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (12, 12, 16, 96);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (12, 12, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, null, 5, null, null, null, null, 22, 10, 22, 8, 12, 12, 200, 6, 18, 'Natural Armor', 'Adult White Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (12, 12, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 200, 6, 18, 'Natural Armor', 'Adult White Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 1, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 3, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 6, 12);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (12, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (12, 3, 11);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (12, 5, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (12, 6, 6);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (12, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (12, '6');
@@ -519,7 +665,15 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (12, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (12, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (12, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (13, 10, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (13, 13, 'null', 5, 10, null, null, null, null, null, null, 14, 20, 14, 6, 10, 6, 90, 4, 15, '', 'Air Elemental');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (13, 13, 'null', 5, 10, 90, 4, 15, '', 'Air Elemental');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 2, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (13, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (13, '7');
@@ -546,7 +700,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Air Form', 'The elemental can enter a hostile creature''s space and stop there. It can move through a space as narrow as 1 inch wide without squeezing.', 13);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (13, 2);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (14, 10, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (14, 14, 'null', 2, 15, null, null, null, null, null, null, 19, 13, 17, 2, 12, 5, 51, 4, 13, 'Natural Armor', 'Allosaurus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (14, 14, 'null', 2, 15, 51, 4, 13, 'Natural Armor', 'Allosaurus');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (14, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (14, '17');
@@ -557,7 +719,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce', 'If the allosaurus moves at least 30 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the allosaurus can make one bite attack against it as a bonus action.', 14);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (14, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (15, 20, 21, 147);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (15, 15, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 26, null, 9, null, null, null, null, 27, 14, 25, 16, 15, 19, 367, 2, 22, 'Natural Armor', 'Ancient Black Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (15, 15, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 26, 367, 2, 22, 'Natural Armor', 'Ancient Black Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 1, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 3, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 6, 19);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (15, 2, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (15, 3, 14);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (15, 5, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (15, 6, 11);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (15, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (15, '6');
@@ -583,7 +757,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (15, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (15, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (15, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (16, 20, 26, 208);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (16, 16, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 27, null, 7, null, null, null, null, 29, 10, 27, 18, 17, 21, 481, 2, 22, 'Natural Armor', 'Ancient Blue Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (16, 16, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 27, 481, 2, 22, 'Natural Armor', 'Ancient Blue Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 1, 29);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 3, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 5, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 6, 21);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (16, 2, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (16, 3, 15);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (16, 5, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (16, 6, 12);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (16, '6');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (16, '16');
@@ -608,7 +794,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (16, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (16, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (16, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (17, 20, 17, 119);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (17, 17, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 24, null, 6, null, null, null, null, 27, 10, 25, 16, 15, 19, 297, 2, 20, 'Natural Armor', 'Ancient Brass Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (17, 17, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 24, 297, 2, 20, 'Natural Armor', 'Ancient Brass Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 1, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 3, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 6, 19);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (17, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (17, 3, 13);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (17, 5, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (17, 6, 10);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (17, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (17, '6');
@@ -638,7 +836,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (17, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (17, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (17, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (18, 20, 24, 192);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (18, 18, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, null, 7, null, null, null, null, 29, 10, 27, 18, 17, 21, 444, 2, 22, 'Natural Armor', 'Ancient Bronze Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (18, 18, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 444, 2, 22, 'Natural Armor', 'Ancient Bronze Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 1, 29);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 3, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 5, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 6, 21);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (18, 2, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (18, 3, 15);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (18, 5, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (18, 6, 12);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (18, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (18, '6');
@@ -668,7 +878,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (18, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (18, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (18, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (19, 20, 20, 140);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (19, 19, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 27, null, 8, null, null, null, null, 27, 12, 25, 20, 17, 19, 350, 2, 21, 'Natural Armor', 'Ancient Copper Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (19, 19, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 27, 350, 2, 21, 'Natural Armor', 'Ancient Copper Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 1, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 3, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 4, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 5, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 6, 19);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (19, 2, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (19, 3, 14);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (19, 5, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (19, 6, 11);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (19, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (19, '6');
@@ -697,7 +919,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (19, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (19, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (19, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (20, 20, 28, 252);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (20, 20, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 27, null, 9, null, null, null, null, 30, 14, 29, 18, 17, 28, 546, 2, 22, 'Natural Armor', 'Ancient Gold Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (20, 20, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 27, 546, 2, 22, 'Natural Armor', 'Ancient Gold Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 1, 30);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 3, 29);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 5, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 6, 28);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (20, 2, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (20, 3, 16);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (20, 5, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (20, 6, 16);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (20, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (20, '6');
@@ -728,7 +962,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (20, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (20, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (20, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (21, 20, 22, 154);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (21, 21, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, null, 8, null, null, null, null, 27, 12, 25, 20, 17, 19, 385, 2, 21, 'Natural Armor', 'Ancient Green Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (21, 21, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 385, 2, 21, 'Natural Armor', 'Ancient Green Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 1, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 3, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 4, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 5, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 6, 19);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (21, 2, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (21, 3, 14);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (21, 5, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (21, 6, 11);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (21, '6');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (21, '16');
@@ -758,7 +1004,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (21, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (21, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (21, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (22, 20, 28, 252);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (22, 22, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 26, null, 7, null, null, null, null, 30, 10, 29, 18, 15, 23, 546, 2, 22, 'Natural Armor', 'Ancient Red Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (22, 22, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 26, 546, 2, 22, 'Natural Armor', 'Ancient Red Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 1, 30);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 3, 29);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 6, 23);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (22, 2, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (22, 3, 16);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (22, 5, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (22, 6, 13);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (22, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (22, '6');
@@ -783,7 +1041,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (22, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (22, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (22, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (23, 20, 25, 225);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (23, 23, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 26, null, 7, null, null, null, null, 30, 10, 29, 18, 15, 23, 487, 2, 22, 'Natural Armor', 'Ancient Silver Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (23, 23, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 26, 487, 2, 22, 'Natural Armor', 'Ancient Silver Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 1, 30);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 3, 29);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 6, 23);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (23, 2, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (23, 3, 16);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (23, 5, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (23, 6, 13);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (23, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (23, '6');
@@ -812,7 +1082,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (23, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (23, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (23, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (24, 20, 18, 144);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (24, 24, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 23, null, 6, null, null, null, null, 26, 10, 26, 10, 13, 14, 333, 2, 20, 'Natural Armor', 'Ancient White Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (24, 24, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 23, 333, 2, 20, 'Natural Armor', 'Ancient White Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 1, 26);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 3, 26);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 6, 14);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (24, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (24, 3, 14);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (24, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (24, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (24, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (24, '6');
@@ -839,7 +1121,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (24, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (24, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (24, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (25, 10, 19, 95);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (25, 25, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 17, 20, null, 6, null, null, null, null, 22, 10, 20, 16, 18, 23, 199, 4, 17, 'Natural Armor', 'Androsphinx');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (25, 25, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 17, 20, 199, 4, 17, 'Natural Armor', 'Androsphinx');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 1, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 5, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 6, 23);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (25, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (25, 3, 11);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (25, 4, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (25, 5, 10);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (25, '9');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (25, '23');
@@ -870,7 +1164,15 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (25, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (25, 66);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (25, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (26, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (26, 26, 'null', 1, 6, null, null, null, null, null, null, 14, 11, 13, 1, 3, 1, 33, 3, 18, 'Natural Armor', 'Animated Armor');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (26, 26, 'null', 1, 6, 33, 3, 18, 'Natural Armor', 'Animated Armor');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 5, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (26, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (26, '19');
@@ -892,7 +1194,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Antimag
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the armor remains motionless, it is indistinguishable from a normal suit of armor.', 26);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (26, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (27, 10, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (27, 27, 'null', 2, 11, null, null, null, null, null, null, 17, 11, 13, 1, 13, 6, 39, 4, 14, 'Natural Armor, 11 While Prone', 'Ankheg');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (27, 27, 'null', 2, 11, 39, 4, 14, 'Natural Armor, 11 While Prone', 'Ankheg');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (27, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (27, '23');
@@ -904,7 +1214,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Spray (Recharge 6)', 'The ankheg spits acid in a line that is 30 feet long and 5 feet wide, provided that it has no creature grappled. Each creature in that line must make a DC 13 Dexterity saving throw, taking 10 (3d6) acid damage on a failed save, or half as much damage on a successful one.', 27);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (27, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (28, 12, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (28, 28, 'null', 3, 11, null, null, null, null, null, null, 19, 11, 15, 2, 12, 5, 68, 6, 15, 'Natural', 'Ankylosaurus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (28, 28, 'null', 3, 11, 68, 6, 15, 'Natural', 'Ankylosaurus');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (28, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (28, '17');
@@ -912,7 +1230,15 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 28, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 18 (4d6 + 4) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.', 28);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (28, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (29, 8, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (29, 29, 'null', 0.5, 13, null, null, null, null, null, null, 16, 14, 14, 6, 12, 7, 19, 3, 12, '', 'Ape');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (29, 29, 'null', 0.5, 13, 19, 3, 12, '', 'Ape');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (29, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (29, '17');
@@ -925,7 +1251,17 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fist', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The ape makes two fist attacks.', 29);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (29, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (30, 8, 18, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (30, 30, 'null', 12, 12, null, null, null, 9, null, null, 10, 14, 12, 20, 15, 16, 99, 3, 12, '15 With Mage Armor', 'Archmage');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (30, 30, 'null', 12, 12, 99, 3, 12, '15 With Mage Armor', 'Archmage');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 4, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 6, 16);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (30, 4, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (30, 5, 6);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (30, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (30, '5');
@@ -937,7 +1273,17 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp1st level (4 slots): detect magic, identify, mage armor, magic missile2nd level (3 slots): detect thoughts, mirror image, misty step3rd level (3 slots): counterspell, fly, lightning bolt4th level (3 slots): banishment, fire shield, stoneskin5th level (3 slots): cone of cold, scrying, wall of force6th level (1 slot): globe of invulnerability7th level (1 slot): teleport8th level (1 slot): mind blank9th level (1 slot): time stop*The archmage casts mind blank, stoneskin and mage armor spells on itself before combat.', 30);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (30, 49);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (31, 8, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (31, 31, 'null', 8, 13, null, 6, null, null, null, null, 11, 16, 14, 13, 11, 10, 78, 3, 15, 'Studded Leather', 'Assassin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (31, 31, 'null', 8, 13, 78, 3, 15, 'Studded Leather', 'Assassin');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 6, 10);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (31, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (31, 4, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (31, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (31, '5');
@@ -955,7 +1301,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Assassi
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sneak Attack', 'Once per turn, the assassin deals an extra 14 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the assassin that isn''t incapacitated and the assassin doesn''t have disadvantage on the attack roll.', 31);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (31, 9);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (32, 6, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (32, 32, 'null', 0, 10, null, null, null, null, null, null, 3, 8, 11, 10, 10, 6, 10, 1, 9, '', 'Awakened Shrub');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (32, 32, 'null', 0, 10, 10, 1, 9, '', 'Awakened Shrub');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 1, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (32, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (32, '10');
@@ -966,7 +1320,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rake', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the shrub remains motionless, it is indistinguishable from a normal shrub.', 32);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (32, 29);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (33, 12, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (33, 33, 'null', 2, 10, null, null, null, null, null, null, 19, 6, 15, 10, 10, 7, 59, 6, 13, 'Natural Armor', 'Awakened Tree');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (33, 33, 'null', 2, 10, 59, 6, 13, 'Natural Armor', 'Awakened Tree');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 2, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (33, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (33, '10');
@@ -978,7 +1340,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the tree remains motionless, it is indistinguishable from a normal tree.', 33);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (33, 29);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (34, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (34, 34, 'null', 0.25, 10, null, null, null, null, null, null, 14, 12, 12, 2, 10, 5, 19, 4, 11, '', 'Axe Beak');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (34, 34, 'null', 0.25, 10, 19, 4, 11, '', 'Axe Beak');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (34, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (34, '17');
@@ -986,7 +1356,16 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 34, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beak', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage.', 34);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (34, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (35, 8, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (35, 35, 'null', 2, 11, null, null, 4, null, null, null, 17, 12, 15, 12, 13, 10, 39, 3, 17, 'Natural Armor, Shield', 'Azer');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (35, 35, 'null', 2, 11, 39, 3, 17, 'Natural Armor, Shield', 'Azer');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 6, 10);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (35, 3, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (35, '9');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (35, '7');
@@ -1000,7 +1379,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumin
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated Body', 'A creature that touches the azer or hits it with a melee attack while within 5 feet of it takes 5 (1d10) fire damage.', 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (35, 24);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (36, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (36, 36, 'null', 0, 11, null, null, null, null, null, null, 8, 14, 11, 4, 12, 6, 3, 1, 12, '', 'Baboon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (36, 36, 'null', 0, 11, 3, 1, 12, '', 'Baboon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 1, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 4, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (36, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (36, '17');
@@ -1010,7 +1397,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The baboon has advantage on an attack roll against a creature if at least one of the baboon''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 36);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (36, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (37, 4, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (37, 37, 'null', 0, 11, null, null, null, null, null, null, 4, 11, 12, 2, 12, 5, 3, 5, 10, '', 'Badger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (37, 37, 'null', 0, 11, 3, 5, 10, '', 'Badger');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 1, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (37, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (37, '17');
@@ -1021,7 +1416,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The badger has advantage on Wisdom (Perception) checks that rely on smell.', 37);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (37, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (38, 12, 21, 126);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (38, 38, 'null', 19, 13, 14, null, null, null, null, null, 26, 15, 22, 20, 16, 22, 262, 6, 19, 'Natural Armor', 'Balor');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (38, 38, 'null', 19, 13, 262, 6, 19, 'Natural Armor', 'Balor');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 1, 26);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 3, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 4, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 6, 22);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (38, 1, 14);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (38, 3, 12);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (38, 5, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (38, 6, 12);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (38, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (38, '15');
@@ -1047,7 +1454,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic W
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (38, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (38, 61);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (39, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (39, 39, 'null', 0.125, 10, null, null, null, null, null, null, 11, 12, 12, 10, 10, 10, 11, 3, 12, 'Leather Armor', 'Bandit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (39, 39, 'null', 0.125, 10, 11, 3, 12, 'Leather Armor', 'Bandit');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (39, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (39, '5');
@@ -1056,7 +1471,18 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Light C
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Scimitar', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.', 39);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (39, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (40, 8, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (40, 40, 'null', 2, 10, 4, null, null, null, null, null, 15, 16, 14, 14, 11, 14, 65, 3, 15, 'Studded Leather', 'Bandit Captain');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (40, 40, 'null', 2, 10, 65, 3, 15, 'Studded Leather', 'Bandit Captain');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 6, 14);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (40, 1, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (40, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (40, 5, 2);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (40, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (40, '5');
@@ -1069,7 +1495,17 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (40, 'The captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (40, 65);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (41, 8, 13, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (41, 41, 'null', 4, 10, null, null, null, null, 2, null, 1, 14, 10, 12, 11, 17, 58, 3, 12, '', 'Banshee');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (41, 41, 'null', 4, 10, 58, 3, 12, '', 'Banshee');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 1, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 6, 17);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (41, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (41, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (41, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (41, '15');
@@ -1102,7 +1538,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Detect 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (41, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (41, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (42, 8, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (42, 42, 'null', 5, 18, 6, null, null, null, null, null, 16, 17, 18, 12, 14, 14, 110, 3, 15, 'Natural Armor', 'Barbed Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (42, 42, 'null', 5, 18, 110, 3, 15, 'Natural Armor', 'Barbed Devil');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 6, 14);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (42, 1, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (42, 3, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (42, 5, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (42, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (42, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (42, '16');
@@ -1128,7 +1576,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (42, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (42, 48);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (43, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (43, 43, 'null', 3, 9, null, null, null, null, null, null, 16, 8, 15, 2, 8, 7, 52, 3, 15, 'Natural Armor', 'Basilisk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (43, 43, 'null', 3, 9, 52, 3, 15, 'Natural Armor', 'Basilisk');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (43, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (43, '23');
@@ -1138,7 +1594,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Petrifying Gaze', 'If a creature starts its turn within 30 feet of the basilisk and the two of them can see each other, the basilisk can force the creature to make a DC 12 Constitution saving throw if the basilisk isn''t incapacitated. On a failed save, the creature magically begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified until freed by the greater restoration spell or other magic.A creature that isn''t surprised can avert its eyes to avoid the saving throw at the start of its turn. If it does so, it can''t see the basilisk until the start of its next turn, when it can avert its eyes again.If it looks at the basilisk in the meantime, it must immediately make the save. If the basilisk sees its reflection within 30 feet of it in bright light, it mistakes itself for a rival and targets itself with its gaze.', 43);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (43, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (44, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (44, 44, 'null', 0, 11, null, null, null, null, null, null, 2, 15, 8, 2, 12, 4, 1, 5, 12, '', 'Bat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (44, 44, 'null', 0, 11, 1, 5, 12, '', 'Bat');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 1, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (44, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (44, '17');
@@ -1150,7 +1614,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The bat can''t use its blindsight while deafened.', 44);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (44, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (45, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (45, 45, 'null', 3, 10, 5, null, null, null, null, null, 16, 15, 15, 9, 11, 11, 52, 3, 13, 'Natural Armor', 'Bearded Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (45, 45, 'null', 3, 10, 52, 3, 13, 'Natural Armor', 'Bearded Devil');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 4, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 6, 11);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (45, 1, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (45, 3, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (45, 5, 2);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (45, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (45, '16');
@@ -1172,7 +1647,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Steadfa
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (45, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (45, 48);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (46, 12, 16, 64);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (46, 46, 'null', 11, 16, null, null, null, null, null, null, 23, 16, 18, 7, 14, 12, 168, 6, 17, 'Natural Armor', 'Behir');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (46, 46, 'null', 11, 16, 168, 6, 17, 'Natural Armor', 'Behir');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 6, 12);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (46, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (46, '23');
@@ -1189,7 +1672,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Swallow
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The behir makes two attacks: one with its bite and one to constrict.', 46);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (46, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (47, 8, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (47, 47, 'null', 2, 10, null, null, null, null, null, null, 16, 12, 17, 9, 11, 9, 67, 3, 13, 'Hide Armor', 'Berserker');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (47, 47, 'null', 2, 10, 67, 3, 13, 'Hide Armor', 'Berserker');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 4, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 6, 9);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (47, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (47, '5');
@@ -1198,7 +1689,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatax
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Reckless', 'At the start of its turn, the berserker can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn.', 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (47, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (48, 8, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (48, 48, 'null', 0.5, 13, null, null, null, null, null, null, 15, 10, 14, 2, 12, 7, 19, 3, 11, 'Natural Armor', 'Black Bear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (48, 48, 'null', 0.5, 13, 19, 3, 11, 'Natural Armor', 'Black Bear');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (48, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (48, '17');
@@ -1211,7 +1710,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The bear has advantage on Wisdom (Perception) checks that rely on smell.', 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (48, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (49, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (49, 49, 'null', 2, 14, null, 4, null, null, null, null, 15, 14, 13, 10, 11, 13, 33, 3, 17, 'Natural Armor', 'Black Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (49, 49, 'null', 2, 14, 33, 3, 17, 'Natural Armor', 'Black Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 6, 13);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (49, 2, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (49, 3, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (49, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (49, 6, 3);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (49, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (49, '6');
@@ -1228,7 +1739,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 49);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (49, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (50, 10, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (50, 50, 'null', 4, 8, null, null, null, null, null, null, 16, 5, 16, 1, 6, 1, 85, 4, 7, '', 'Black Pudding');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (50, 50, 'null', 4, 8, 85, 4, 7, '', 'Black Pudding');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 2, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 5, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (50, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (50, '8');
@@ -1252,7 +1771,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider 
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (50, 'When a pudding that is Medium or larger is subjected to lightning or slashing damage, it splits into two new puddings if it has at least 10 hit points. Each new pudding has hit points equal to half the original pudding''s, rounded down. New puddings are one size smaller than the original pudding.', 'Split');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (50, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (51, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (51, 51, 'null', 0.25, 13, null, null, null, null, null, null, 12, 17, 12, 10, 13, 11, 22, 3, 13, '', 'Blink Dog');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (51, 51, 'null', 0.25, 13, 22, 3, 13, '', 'Blink Dog');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (51, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (51, '24');
@@ -1264,7 +1791,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Telepor
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The dog has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 51);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (51, 63);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (52, 6, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (52, 52, 'null', 0.125, 14, null, null, null, null, null, null, 6, 14, 10, 3, 14, 5, 7, 1, 12, '', 'Blood Hawk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (52, 52, 'null', 0.125, 14, 7, 1, 12, '', 'Blood Hawk');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 1, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (52, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (52, '17');
@@ -1276,7 +1811,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The hawk has advantage on an attack roll against a creature if at least one of the hawk''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 52);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (52, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (53, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (53, 53, 'null', 3, 14, null, 2, null, null, null, null, 17, 10, 15, 12, 11, 15, 52, 3, 17, 'Natural Armor', 'Blue Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (53, 53, 'null', 3, 14, 52, 3, 17, 'Natural Armor', 'Blue Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (53, 2, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (53, 3, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (53, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (53, 6, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (53, '6');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (53, '16');
@@ -1292,7 +1839,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightni
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage plus 3 (1d6) lightning damage.', 53);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (53, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (54, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (54, 54, 'null', 0.25, 9, null, null, null, null, null, null, 13, 11, 12, 2, 9, 5, 11, 3, 11, 'Natural Armor', 'Boar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (54, 54, 'null', 0.25, 9, 11, 3, 11, 'Natural Armor', 'Boar');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 5, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (54, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (54, '17');
@@ -1302,7 +1857,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Relentl
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 3 (1d6) slashing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.', 54);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (54, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (55, 10, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (55, 55, 'null', 9, 12, null, null, null, 5, null, null, 18, 16, 18, 13, 14, 16, 142, 4, 19, 'Natural Armor', 'Bone Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (55, 55, 'null', 9, 12, 142, 4, 19, 'Natural Armor', 'Bone Devil');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 6, 16);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (55, 4, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (55, 5, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (55, 6, 7);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (55, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (55, '16');
@@ -1326,7 +1892,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (55, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (55, 48);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (56, 8, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (56, 56, 'null', 1, 14, null, 2, null, null, null, null, 15, 10, 13, 10, 11, 13, 16, 3, 16, 'Natural Armor', 'Brass Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (56, 56, 'null', 1, 14, 16, 3, 16, 'Natural Armor', 'Brass Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 6, 13);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (56, 2, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (56, 3, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (56, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (56, 6, 3);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (56, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (56, '6');
@@ -1344,7 +1922,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath', 'The dragon exhales fire in an 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 14 (4d6) fire damage on a failed save, or half as much damage on a successful one.', 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (56, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (57, 8, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (57, 57, 'null', 2, 14, null, 2, null, null, null, null, 17, 10, 15, 12, 11, 15, 32, 3, 17, 'Natural Armor', 'Bronze Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (57, 57, 'null', 2, 14, 32, 3, 17, 'Natural Armor', 'Bronze Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (57, 2, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (57, 3, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (57, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (57, 6, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (57, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (57, '6');
@@ -1363,7 +1953,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 57);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (57, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (58, 10, 4, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (58, 58, 'null', 1, 13, null, null, null, null, null, null, 19, 10, 16, 2, 13, 7, 34, 4, 11, 'Natural Armor', 'Brown Bear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (58, 58, 'null', 1, 13, 34, 4, 11, 'Natural Armor', 'Brown Bear');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (58, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (58, '17');
@@ -1376,7 +1974,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The bear has advantage on Wisdom (Perception) checks that rely on smell.', 58);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (58, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (59, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (59, 59, 'null', 1, 10, null, null, null, null, null, null, 15, 14, 13, 8, 11, 9, 27, 3, 16, 'Hide Armor, Shield', 'Bugbear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (59, 59, 'null', 1, 10, 27, 3, 16, 'Hide Armor, Shield', 'Bugbear');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 6, 9);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (59, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (59, '15');
@@ -1391,7 +1997,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Surpris
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (59, 7);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (59, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (60, 10, 9, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (60, 60, 'null', 5, 16, null, null, null, null, null, null, 19, 11, 21, 2, 10, 5, 94, 4, 17, 'Natural Armor', 'Bulette');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (60, 60, 'null', 5, 16, 94, 4, 17, 'Natural Armor', 'Bulette');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (60, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (60, '23');
@@ -1405,7 +2019,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Deadly 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Standing Leap', 'The bulette''s long jump is up to 30 feet and its high jump is up to 15 feet, with or without a running start.', 60);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (60, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (61, 10, 2, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (61, 61, 'null', 0.125, 9, null, null, null, null, null, null, 16, 8, 14, 2, 8, 5, 15, 4, 9, '', 'Camel');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (61, 61, 'null', 0.125, 9, 15, 4, 9, '', 'Camel');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (61, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (61, '17');
@@ -1413,7 +2035,15 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 61, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.', 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (61, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (62, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (62, 62, 'null', 0, 13, null, null, null, null, null, null, 3, 15, 10, 3, 12, 7, 2, 5, 12, '', 'Cat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (62, 62, 'null', 0, 13, 2, 5, 12, '', 'Cat');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 1, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (62, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (62, '17');
@@ -1425,7 +2055,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws',
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The cat has advantage on Wisdom (Perception) checks that rely on smell.', 62);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (62, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (63, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (63, 63, 'null', 2, 13, null, null, null, null, null, null, 18, 14, 14, 9, 13, 11, 45, 4, 12, '', 'Centaur');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (63, 63, 'null', 2, 13, 45, 4, 12, '', 'Centaur');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 4, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (63, '20');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (63, '23');
@@ -1441,7 +2079,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (63, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (63, 56);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (64, 8, 10, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (64, 64, 'null', 8, 11, null, null, 7, null, null, null, 18, 15, 18, 11, 12, 14, 85, 3, 16, 'Natural Armor', 'Chain Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (64, 64, 'null', 8, 11, 85, 3, 16, 'Natural Armor', 'Chain Devil');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 6, 14);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (64, 3, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (64, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (64, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (64, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (64, '16');
@@ -1463,7 +2112,15 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (64, 'W
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (64, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (64, 48);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (65, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (65, 65, 'null', 6, 18, null, null, null, null, null, null, 19, 11, 19, 3, 14, 10, 114, 4, 14, 'Natural Armor', 'Chimera');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (65, 65, 'null', 6, 18, 114, 4, 14, 'Natural Armor', 'Chimera');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 3, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (65, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (65, '23');
@@ -1478,7 +2135,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Horns',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The chimera makes three attacks: one with its bite, one with its horns, and one with its claws. When its fire breath is available, it can use the breath in place of its bite or horns.', 65);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (65, 17);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (66, 10, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (66, 66, 'null', 4, 14, null, null, null, null, null, null, 19, 10, 16, 5, 11, 5, 93, 4, 16, 'Natural Armor', 'Chuul');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (66, 66, 'null', 4, 14, 93, 4, 16, 'Natural Armor', 'Chuul');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (66, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (66, '22');
@@ -1495,7 +2160,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sense M
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The chuul can breathe air and water.', 66);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (66, 23);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (67, 10, 14, 56);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (67, 67, 'null', 9, 9, null, null, null, null, null, null, 20, 9, 18, 3, 8, 1, 133, 4, 14, 'Natural Armor', 'Clay Golem');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (67, 67, 'null', 9, 9, 133, 4, 14, 'Natural Armor', 'Clay Golem');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 1, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (67, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (67, '19');
@@ -1523,7 +2196,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Acid Ab
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The golem''s weapon attacks are magical.', 67);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (67, 21);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (68, 10, 12, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (68, 68, 'null', 8, 11, null, null, null, null, null, null, 17, 15, 12, 13, 12, 14, 78, 4, 14, 'Natural Armor', 'Cloaker');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (68, 68, 'null', 8, 11, 78, 4, 14, 'Natural Armor', 'Cloaker');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 6, 14);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (68, '22');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (68, '14');
@@ -1542,7 +2223,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (68, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (68, 58);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (69, 12, 16, 96);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (69, 69, 'null', 9, 17, null, null, 10, null, null, null, 27, 10, 22, 12, 16, 16, 200, 6, 14, 'Natural Armor', 'Cloud Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (69, 69, 'null', 9, 17, 200, 6, 14, 'Natural Armor', 'Cloud Giant');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 1, 27);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 3, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 6, 16);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (69, 3, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (69, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (69, 6, 7);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (69, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (69, '25');
@@ -1557,7 +2249,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (69, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (69, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (70, 6, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (70, 70, 'null', 0.5, 11, null, null, null, null, null, null, 6, 12, 12, 2, 13, 5, 27, 1, 11, '', 'Cockatrice');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (70, 70, 'null', 0.5, 11, 27, 1, 11, '', 'Cockatrice');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 1, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (70, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (70, '23');
@@ -1567,7 +2267,15 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 70, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4 + 1) piercing damage, and the target must succeed on a DC 11 Constitution saving throw against being magically petrified. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified for 24 hours.', 70);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (70, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (71, 8, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (71, 71, 'null', 0, 10, null, null, null, null, null, null, 10, 10, 10, 10, 10, 10, 4, 3, 10, '', 'Commoner');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (71, 71, 'null', 0, 10, 4, 3, 10, '', 'Commoner');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (71, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (71, '5');
@@ -1575,7 +2283,15 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 71, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Club', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.', 71);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (71, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (72, 10, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (72, 72, 'null', 0.25, 10, null, null, null, null, null, null, 15, 14, 12, 1, 10, 3, 13, 4, 12, '', 'Constrictor Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (72, 72, 'null', 0.25, 10, 13, 4, 12, '', 'Constrictor Snake');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (72, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (72, '17');
@@ -1586,7 +2302,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Constri
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage.', 72);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (72, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (73, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (73, 73, 'null', 1, 14, null, 3, null, null, null, null, 15, 12, 13, 14, 11, 13, 22, 3, 16, 'Natural Armor', 'Copper Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (73, 73, 'null', 1, 14, 22, 3, 16, 'Natural Armor', 'Copper Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 6, 13);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (73, 2, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (73, 3, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (73, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (73, 6, 3);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (73, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (73, '6');
@@ -1604,7 +2332,18 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Breath', 'The dragon exhales acid in an 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 18 (4d8) acid damage on a failed save, or half as much damage on a successful one.', 73);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (73, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (74, 8, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (74, 74, 'null', 4, 15, null, null, 5, null, null, null, 16, 20, 17, 18, 20, 18, 97, 3, 19, 'Natural Armor', 'Couatl');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (74, 74, 'null', 4, 15, 97, 3, 19, 'Natural Armor', 'Couatl');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 2, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 5, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 6, 18);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (74, 3, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (74, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (74, 6, 6);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (74, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (74, '26');
@@ -1625,7 +2364,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic W
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (74, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (74, 64);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (75, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (75, 75, 'null', 0, 9, null, null, null, null, null, null, 2, 11, 10, 1, 8, 2, 2, 5, 11, 'Natural Armor', 'Crab');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (75, 75, 'null', 0, 9, 2, 5, 11, 'Natural Armor', 'Crab');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 1, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 6, 2);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (75, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (75, '17');
@@ -1637,7 +2384,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The crab can breathe air and water.', 75);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (75, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (76, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (76, 76, 'null', 0.5, 10, null, null, null, null, null, null, 15, 10, 13, 2, 10, 5, 19, 4, 12, 'Natural Armor', 'Crocodile');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (76, 76, 'null', 0.5, 10, 19, 4, 12, 'Natural Armor', 'Crocodile');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (76, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (76, '17');
@@ -1648,7 +2403,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'The crocodile can hold its breath for 15 minutes.', 76);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (76, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (77, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (77, 77, 'null', 2, 11, null, null, null, null, null, null, 11, 14, 12, 10, 13, 14, 33, 3, 13, 'Leather Armor', 'Cult Fanatic');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (77, 77, 'null', 2, 11, 33, 3, 13, 'Leather Armor', 'Cult Fanatic');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 6, 14);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (77, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (77, '5');
@@ -1662,7 +2425,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Dark De
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The fanatic is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared: Cantrips (at will): light, sacred flame, thaumaturgy 1st level (4 slots): command, inflict wounds, shield of faith 2nd level (3 slots): hold person, spiritual weapon', 77);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (77, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (78, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (78, 78, 'null', 0.125, 10, null, null, null, null, null, null, 11, 12, 10, 10, 11, 10, 9, 3, 12, 'Leather Armor', 'Cultist');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (78, 78, 'null', 0.125, 10, 9, 3, 12, 'Leather Armor', 'Cultist');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (78, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (78, '5');
@@ -1673,7 +2444,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Scimita
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Dark Devotion', 'The cultist has advantage on saving throws against being charmed or frightened.', 78);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (78, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (79, 12, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (79, 79, 'null', 6, 8, null, null, null, null, null, null, 22, 11, 20, 8, 6, 10, 138, 6, 14, 'Natural Armor', 'Cyclops');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (79, 79, 'null', 6, 8, 138, 6, 14, 'Natural Armor', 'Cyclops');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 1, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 5, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (79, '25');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (79, '14');
@@ -1684,7 +2463,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Poor Depth Perception', 'The cyclops has disadvantage on any attack roll against a target more than 30 feet away.', 79);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (79, 35);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (80, 6, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (80, 80, 'null', 0.5, 10, null, null, null, null, null, null, 16, 12, 13, 2, 10, 5, 22, 1, 11, '', 'Darkmantle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (80, 80, 'null', 0.5, 10, 22, 1, 11, '', 'Darkmantle');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (80, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (80, '23');
@@ -1698,7 +2485,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The darkmantle can''t use its blindsight while deafened.', 80);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (80, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (81, 8, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (81, 81, 'null', 1, 15, null, null, null, null, null, null, 15, 14, 14, 3, 13, 6, 39, 3, 12, '', 'Death Dog');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (81, 81, 'null', 1, 15, 39, 3, 12, '', 'Death Dog');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (81, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (81, '23');
@@ -1711,7 +2506,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Two-Headed', 'The dog has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious.', 81);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (81, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (82, 6, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (82, 82, 'null', 0.5, 12, null, null, null, null, null, null, 15, 14, 14, 12, 10, 9, 16, 1, 15, 'Chain Shirt', 'Deep Gnome (Svirfneblin)');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (82, 82, 'null', 0.5, 12, 16, 1, 15, 'Chain Shirt', 'Deep Gnome (Svirfneblin)');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 6, 9);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (82, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (82, '20');
@@ -1729,7 +2532,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (82, 53);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (82, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (82, 55);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (83, 8, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (83, 83, 'null', 0, 12, null, null, null, null, null, null, 11, 16, 11, 2, 14, 5, 4, 3, 13, '', 'Deer');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (83, 83, 'null', 0, 12, 4, 3, 13, '', 'Deer');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (83, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (83, '17');
@@ -1737,7 +2548,17 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 83, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.', 83);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (83, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (84, 8, 16, 64);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (84, 84, 'null', 10, 19, null, null, null, null, 9, null, 18, 18, 18, 17, 20, 20, 136, 3, 17, 'Natural Armor', 'Deva');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (84, 84, 'null', 10, 19, 136, 3, 17, 'Natural Armor', 'Deva');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 2, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 4, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 5, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 6, 20);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (84, 5, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (84, 6, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (84, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (84, '26');
@@ -1763,7 +2584,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (84, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (84, 64);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (85, 10, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (85, 85, 'null', 1, 13, null, null, null, null, null, null, 17, 15, 15, 3, 12, 7, 37, 4, 14, 'Natural Armor', 'Dire Wolf');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (85, 85, 'null', 1, 13, 37, 4, 14, 'Natural Armor', 'Dire Wolf');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (85, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (85, '17');
@@ -1775,7 +2604,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The wolf has advantage on an attack roll against a creature if at least one of the wolf''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 85);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (85, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (86, 10, 14, 84);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (86, 86, 'null', 11, 13, null, 6, null, null, null, null, 21, 15, 22, 15, 16, 20, 161, 4, 17, 'Natural Armor', 'Djinni');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (86, 86, 'null', 11, 13, 161, 4, 17, 'Natural Armor', 'Djinni');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 3, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 4, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 6, 20);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (86, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (86, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (86, 6, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (86, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (86, '7');
@@ -1791,7 +2631,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Element
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The djinni''s innate spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no material components: At will: detect evil and good, detect magic, thunderwave 3/day each: create food and water (can create wine instead of water) , tongues, wind walk 1/day each: conjure elemental (air elemental only), creation, gaseous form, invisibility, major image, plane shift', 86);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (86, 2);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (87, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (87, 87, 'null', 3, 11, null, null, null, null, null, null, 11, 18, 14, 11, 12, 14, 52, 3, 14, '', 'Doppelganger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (87, 87, 'null', 3, 11, 52, 3, 14, '', 'Doppelganger');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 2, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 6, 14);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (87, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (87, '23');
@@ -1808,7 +2656,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapech
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Surprise Attack', 'If the doppelganger surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 10 (3d6) damage from the attack.', 87);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (87, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (88, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (88, 88, 'null', 0.25, 10, null, null, null, null, null, null, 18, 10, 12, 2, 11, 7, 19, 4, 10, '', 'Draft Horse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (88, 88, 'null', 0.25, 10, 19, 4, 10, '', 'Draft Horse');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (88, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (88, '17');
@@ -1816,7 +2672,18 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 88, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) bludgeoning damage.', 88);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (88, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (89, 20, 22, 110);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (89, 89, 'null', 17, 11, null, 6, null, null, null, null, 25, 10, 20, 10, 12, 12, 341, 2, 20, 'Natural Armor', 'Dragon Turtle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (89, 89, 'null', 17, 11, 341, 2, 20, 'Natural Armor', 'Dragon Turtle');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 1, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 6, 12);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (89, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (89, 3, 11);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (89, 5, 7);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (89, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (89, '6');
@@ -1833,7 +2700,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (89, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (89, 47);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (90, 6, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (90, 90, 'null', 0.25, 9, null, null, null, null, null, null, 11, 11, 12, 5, 8, 3, 18, 1, 11, 'Natural Armor', 'Dretch');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (90, 90, 'null', 0.25, 9, 18, 1, 11, 'Natural Armor', 'Dretch');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (90, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (90, '15');
@@ -1851,7 +2726,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (90, 4);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (90, 61);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (91, 10, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (91, 91, 'null', 6, 15, null, null, null, null, null, null, 16, 16, 18, 13, 14, 12, 123, 4, 19, 'Natural Armor', 'Drider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (91, 91, 'null', 6, 15, 123, 4, 19, 'Natural Armor', 'Drider');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 6, 12);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (91, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (91, '23');
@@ -1872,7 +2755,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (91, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (91, 56);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (92, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (92, 92, 'null', 0.25, 12, null, null, null, null, null, null, 10, 14, 10, 11, 11, 12, 13, 3, 15, 'Chain Shirt', 'Drow');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (92, 92, 'null', 0.25, 12, 13, 3, 15, 'Chain Shirt', 'Drow');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 6, 12);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (92, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (92, '4');
@@ -1888,7 +2779,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (92, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (92, 56);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (93, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (93, 93, 'null', 2, 14, null, null, null, null, null, null, 10, 12, 13, 12, 15, 11, 27, 3, 11, '16 With Barkskin', 'Druid');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (93, 93, 'null', 2, 14, 27, 3, 11, '16 With Barkskin', 'Druid');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (93, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (93, '5');
@@ -1900,7 +2799,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Quarter
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The druid is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). It has the following druid spells prepared: Cantrips (at will): druidcraft, produce flame, shillelagh 1st level (4 slots): entangle, longstrider, speak with animals, thunderwave 2nd level (3 slots): animal messenger, barkskin', 93);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (93, 67);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (94, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (94, 94, 'null', 1, 14, null, null, null, null, null, null, 10, 12, 11, 14, 15, 18, 22, 3, 11, '16 With Barkskin', 'Dryad');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (94, 94, 'null', 1, 14, 22, 3, 11, '16 With Barkskin', 'Dryad');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 6, 18);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (94, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (94, '24');
@@ -1917,7 +2824,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (94, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (94, 56);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (95, 8, 4, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (95, 95, 'null', 1, 10, null, null, null, null, null, null, 14, 11, 14, 11, 10, 9, 26, 3, 16, 'Scale Mail, Shield', 'Duergar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (95, 95, 'null', 1, 10, 26, 3, 16, 'Scale Mail, Shield', 'Duergar');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 6, 9);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (95, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (95, '16');
@@ -1933,7 +2848,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunligh
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (95, 33);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (95, 68);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (96, 6, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (96, 96, 'null', 0.5, 12, null, null, null, null, null, null, 5, 14, 10, 9, 11, 10, 17, 1, 12, '', 'Dust Mephit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (96, 96, 'null', 0.5, 12, 17, 1, 12, '', 'Dust Mephit');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 1, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 4, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (96, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (96, '7');
@@ -1952,7 +2875,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (96, 2);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (96, 53);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (97, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (97, 97, 'null', 0, 14, null, null, null, null, null, null, 6, 15, 10, 2, 14, 7, 3, 1, 12, '', 'Eagle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (97, 97, 'null', 0, 14, 3, 1, 12, '', 'Eagle');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 1, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (97, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (97, '17');
@@ -1963,7 +2894,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Talons'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The eagle has advantage on Wisdom (Perception) checks that rely on sight.', 97);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (97, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (98, 10, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (98, 98, 'null', 5, 10, null, null, null, null, null, null, 20, 8, 20, 5, 10, 5, 126, 4, 17, 'Natural Armor', 'Earth Elemental');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (98, 98, 'null', 5, 10, 126, 4, 17, 'Natural Armor', 'Earth Elemental');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 1, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (98, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (98, '7');
@@ -1987,7 +2926,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Siege M
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Earth Glide', 'The elemental can burrow through nonmagical, unworked earth and stone. While doing so, the elemental doesn''t disturb the material it moves through.', 98);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (98, 53);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (99, 10, 16, 112);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (99, 99, 'null', 11, 12, null, null, null, 7, null, null, 22, 12, 24, 16, 15, 16, 200, 4, 17, 'Natural Armor', 'Efreeti');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (99, 99, 'null', 11, 12, 200, 4, 17, 'Natural Armor', 'Efreeti');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 1, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 3, 24);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 6, 16);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (99, 4, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (99, 5, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (99, 6, 7);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (99, '7');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (99, '16');
@@ -2002,7 +2952,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Element
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The efreeti''s innate spellcasting ability is Charisma (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no material components: At will: detect magic 3/day: enlarge/reduce, tongues 1/day each: conjure elemental (fire elemental only), gaseous form, invisibility, major image, plane shift, wall of fire', 99);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (99, 24);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (100, 12, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (100, 100, 'null', 4, 10, null, null, null, null, null, null, 22, 9, 17, 3, 11, 6, 76, 6, 12, 'Natural Armor', 'Elephant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (100, 100, 'null', 4, 10, 76, 6, 12, 'Natural Armor', 'Elephant');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 1, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (100, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (100, '17');
@@ -2012,7 +2970,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the elephant moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the elephant can make one stomp attack against it as a bonus action.', 100);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (100, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (101, 10, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (101, 101, 'null', 0.25, 10, null, null, null, null, null, null, 16, 10, 12, 2, 10, 6, 13, 4, 10, '', 'Elk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (101, 101, 'null', 0.25, 10, 13, 4, 10, '', 'Elk');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (101, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (101, '17');
@@ -2022,7 +2988,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Ram', '
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the elk moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.', 101);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (101, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (102, 8, 18, 72);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (102, 102, 'null', 12, 12, null, 7, null, null, null, null, 18, 16, 18, 14, 14, 18, 153, 3, 18, 'Plate', 'Erinyes');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (102, 102, 'null', 12, 12, 153, 3, 18, 'Plate', 'Erinyes');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 6, 18);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (102, 2, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (102, 3, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (102, 5, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (102, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (102, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (102, '16');
@@ -2045,7 +3023,15 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (102, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (102, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (102, 48);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (103, 8, 8, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (103, 103, 'null', 2, 13, null, null, null, null, null, null, 14, 15, 13, 7, 12, 8, 44, 3, 13, 'Natural Armor', 'Ettercap');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (103, 103, 'null', 2, 13, 44, 3, 13, 'Natural Armor', 'Ettercap');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (103, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (103, '23');
@@ -2064,7 +3050,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The ettercap ignores movement restrictions caused by webbing.', 103);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (103, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (104, 10, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (104, 104, 'null', 4, 14, null, null, null, null, null, null, 21, 8, 17, 6, 10, 8, 85, 4, 12, 'Natural Armor', 'Ettin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (104, 104, 'null', 4, 14, 85, 4, 12, 'Natural Armor', 'Ettin');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (104, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (104, '25');
@@ -2079,7 +3073,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Wakeful
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (104, 39);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (104, 35);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (105, 10, 12, 36);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (105, 105, 'null', 5, 10, null, null, null, null, null, null, 10, 17, 16, 6, 10, 7, 102, 4, 13, '', 'Fire Elemental');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (105, 105, 'null', 5, 10, 102, 4, 13, '', 'Fire Elemental');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (105, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (105, '7');
@@ -2105,7 +3107,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumin
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Susceptibility', 'For every 5 feet the elemental moves in water, or for every gallon of water splashed on it, it takes 1 cold damage.', 105);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (105, 24);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (106, 12, 13, 78);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (106, 106, 'null', 9, 16, null, 3, null, null, null, null, 25, 9, 23, 10, 14, 13, 162, 6, 18, 'Plate', 'Fire Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (106, 106, 'null', 9, 16, 162, 6, 18, 'Plate', 'Fire Giant');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 1, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 3, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 6, 13);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (106, 2, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (106, 3, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (106, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (106, '25');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (106, '16');
@@ -2118,7 +3131,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatsw
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The giant makes two greatsword attacks.', 106);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (106, 35);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (107, 4, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (107, 107, 'null', 4, 12, null, null, null, null, null, null, 1, 17, 14, 16, 10, 11, 40, 5, 13, '', 'Flameskull');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (107, 107, 'null', 4, 12, 40, 5, 13, '', 'Flameskull');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 1, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (107, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (107, '12');
@@ -2151,7 +3172,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rejuven
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumination', 'The flameskull sheds either dim light in a 15-foot radius, or bright light in a 15-foot radius and dim light for an additional 15 feet. It can switch between the options as an action.', 107);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (107, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (108, 8, 11, 44);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (108, 108, 'null', 5, 10, null, null, null, null, null, null, 19, 9, 18, 6, 10, 5, 93, 3, 9, '', 'Flesh Golem');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (108, 108, 'null', 5, 10, 93, 3, 9, '', 'Flesh Golem');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (108, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (108, '19');
@@ -2178,7 +3207,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Berserk
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The golem''s weapon attacks are magical.', 108);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (108, 21);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (109, 4, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (109, 109, 'null', 0.125, 11, null, null, null, null, null, null, 4, 18, 11, 2, 12, 5, 5, 5, 14, '', 'Flying Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (109, 109, 'null', 0.125, 11, 5, 5, 14, '', 'Flying Snake');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 1, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 2, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (109, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (109, '17');
@@ -2190,7 +3227,16 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby', 'The snake doesn''t provoke opportunity attacks when it flies out of an enemy''s reach.', 109);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (109, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (110, 6, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (110, 110, 'null', 0.25, 7, null, 4, null, null, null, null, 12, 15, 11, 1, 5, 1, 17, 1, 17, 'Natural Armor', 'Flying Sword');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (110, 110, 'null', 0.25, 7, 17, 1, 17, 'Natural Armor', 'Flying Sword');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 5, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 6, 1);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (110, 2, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (110, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (110, '19');
@@ -2211,7 +3257,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Antimag
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the sword remains motionless and isn''t flying, it is indistinguishable from a normal sword.', 110);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (110, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (111, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (111, 111, 'null', 0, 11, null, null, null, null, null, null, 1, 13, 8, 1, 8, 3, 1, 5, 11, '', 'Frog');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (111, 111, 'null', 0, 11, 1, 5, 11, '', 'Frog');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 1, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (111, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (111, '17');
@@ -2224,7 +3278,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Standin
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The frog can breathe air and water.', 111);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (111, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (112, 12, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (112, 112, 'null', 8, 13, null, null, 8, null, null, null, 23, 9, 21, 9, 10, 12, 138, 6, 15, 'Patchwork Armor', 'Frost Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (112, 112, 'null', 8, 13, 138, 6, 15, 'Patchwork Armor', 'Frost Giant');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 4, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 6, 12);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (112, 3, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (112, 5, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (112, 6, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (112, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (112, '25');
@@ -2237,7 +3302,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rock', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The giant makes two greataxe attacks.', 112);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (112, 35);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (113, 8, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (113, 113, 'null', 2, 10, null, null, null, null, null, null, 15, 11, 16, 6, 11, 7, 52, 3, 15, 'Natural Armor', 'Gargoyle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (113, 113, 'null', 2, 10, 52, 3, 15, 'Natural Armor', 'Gargoyle');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (113, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (113, '7');
@@ -2257,7 +3330,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the gargoyle remains motionless, it is indistinguishable from an inanimate statue.', 113);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (113, 53);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (114, 10, 8, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (114, 114, 'null', 2, 8, null, null, null, null, null, null, 14, 3, 20, 1, 6, 1, 84, 4, 6, '', 'Gelatinous Cube');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (114, 114, 'null', 2, 8, 84, 4, 6, '', 'Gelatinous Cube');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 2, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 5, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (114, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (114, '8');
@@ -2275,7 +3356,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Transpa
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ooze Cube', 'The cube takes up its entire space. Other creatures can enter the space, but a creature that does so is subjected to the cube''s Engulf and has disadvantage on the saving throw. Creatures inside the cube can be seen but have total cover.A creature within 5 feet of the cube can take an action to pull a creature or object out of the cube. Doing so requires a successful DC 12 Strength check, and the creature making the attempt takes 10 (3d6) acid damage.The cube can hold only one Large creature or up to four Medium or smaller creatures inside it at a time.', 114);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (114, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (115, 8, 8, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (115, 115, 'null', 2, 10, null, null, null, null, null, null, 16, 17, 10, 11, 10, 8, 36, 3, 13, '', 'Ghast');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (115, 115, 'null', 2, 10, 36, 3, 13, '', 'Ghast');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (115, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (115, '15');
@@ -2292,7 +3381,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Turning
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stench', 'Any creature that starts its turn within 5 feet of the ghast must succeed on a DC 10 Constitution saving throw or be poisoned until the start of its next turn. On a successful saving throw, the creature is immune to the ghast''s Stench for 24 hours.', 115);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (115, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (116, 8, 10, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (116, 116, 'null', 4, 11, null, null, null, null, null, null, 7, 13, 10, 10, 12, 17, 45, 3, 11, '', 'Ghost');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (116, 116, 'null', 4, 11, 45, 3, 11, '', 'Ghost');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 1, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 6, 17);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (116, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (116, '5');
@@ -2326,7 +3423,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Etherea
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorporeal Movement', 'The ghost can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.', 116);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (116, 38);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (117, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (117, 117, 'null', 1, 10, null, null, null, null, null, null, 13, 15, 10, 7, 10, 6, 22, 3, 12, '', 'Ghoul');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (117, 117, 'null', 1, 10, 22, 3, 12, '', 'Ghoul');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (117, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (117, '15');
@@ -2340,7 +3445,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 9 (2d6 + 2) piercing damage.', 117);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (117, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (118, 12, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (118, 118, 'null', 7, 14, null, null, null, null, null, null, 23, 14, 18, 7, 12, 7, 157, 6, 12, '', 'Giant Ape');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (118, 118, 'null', 7, 14, 157, 6, 12, '', 'Giant Ape');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (118, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (118, '17');
@@ -2353,7 +3466,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fist', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The ape makes two fist attacks.', 118);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (118, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (119, 8, 2, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (119, 119, 'null', 0.25, 11, null, null, null, null, null, null, 13, 10, 15, 2, 12, 5, 13, 3, 10, '', 'Giant Badger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (119, 119, 'null', 0.25, 11, 13, 3, 10, '', 'Giant Badger');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (119, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (119, '17');
@@ -2366,7 +3487,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The badger has advantage on Wisdom (Perception) checks that rely on smell.', 119);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (119, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (120, 10, 4, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (120, 120, 'null', 0.25, 11, null, null, null, null, null, null, 15, 16, 11, 2, 12, 6, 22, 4, 13, '', 'Giant Bat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (120, 120, 'null', 0.25, 11, 22, 4, 13, '', 'Giant Bat');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (120, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (120, '17');
@@ -2378,7 +3507,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The bat can''t use its blindsight while deafened.', 120);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (120, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (121, 10, 5, 15);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (121, 121, 'null', 2, 8, null, null, null, null, null, null, 17, 10, 16, 2, 7, 5, 42, 4, 12, 'Natural Armor', 'Giant Boar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (121, 121, 'null', 2, 8, 42, 4, 12, 'Natural Armor', 'Giant Boar');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 5, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (121, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (121, '17');
@@ -2388,7 +3525,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Relentl
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.', 121);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (121, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (122, 6, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (122, 122, 'null', 0.25, 8, null, null, null, null, null, null, 5, 14, 12, 1, 7, 3, 4, 1, 13, 'Natural Armor', 'Giant Centipede');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (122, 122, 'null', 0.25, 8, 4, 1, 13, 'Natural Armor', 'Giant Centipede');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 1, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 5, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (122, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (122, '17');
@@ -2398,7 +3543,15 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 122, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.', 122);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (122, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (123, 12, 8, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (123, 123, 'null', 2, 12, null, null, null, null, null, null, 19, 14, 12, 1, 10, 3, 60, 6, 12, '', 'Giant Constrictor Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (123, 123, 'null', 2, 12, 60, 6, 12, '', 'Giant Constrictor Snake');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (123, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (123, '17');
@@ -2410,7 +3563,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Constri
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage.', 123);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (123, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (124, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (124, 124, 'null', 0.125, 9, null, null, null, null, null, null, 13, 15, 11, 1, 9, 3, 13, 3, 15, 'Natural Armor', 'Giant Crab');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (124, 124, 'null', 0.125, 9, 13, 3, 15, 'Natural Armor', 'Giant Crab');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 5, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (124, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (124, '17');
@@ -2422,7 +3583,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The crab can breathe air and water.', 124);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (124, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (125, 12, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (125, 125, 'null', 5, 10, null, null, null, null, null, null, 21, 9, 17, 2, 10, 7, 85, 6, 14, 'Natural Armor', 'Giant Crocodile');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (125, 125, 'null', 5, 10, 85, 6, 14, 'Natural Armor', 'Giant Crocodile');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (125, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (125, '17');
@@ -2435,7 +3604,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'The crocodile can hold its breath for 30 minutes.', 125);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (125, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (126, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (126, 126, 'null', 1, 14, null, null, null, null, null, null, 16, 17, 13, 8, 14, 10, 26, 4, 13, '', 'Giant Eagle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (126, 126, 'null', 1, 14, 26, 4, 13, '', 'Giant Eagle');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (126, '20');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (126, '17');
@@ -2449,7 +3626,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (126, 30);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (126, 62);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (127, 12, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (127, 127, 'null', 2, 14, null, null, null, null, null, null, 19, 16, 14, 7, 14, 10, 42, 6, 14, 'Natural Armor', 'Giant Elk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (127, 127, 'null', 2, 14, 42, 6, 14, 'Natural Armor', 'Giant Elk');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (127, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (127, '17');
@@ -2462,7 +3647,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (127, 31);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (127, 41);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (127, 56);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (128, 6, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (128, 128, 'null', 0, 8, null, null, null, null, null, null, 8, 10, 12, 1, 7, 3, 4, 1, 13, 'Natural Armor', 'Giant Fire Beetle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (128, 128, 'null', 0, 8, 4, 1, 13, 'Natural Armor', 'Giant Fire Beetle');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 1, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 5, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (128, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (128, '17');
@@ -2472,7 +3665,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumination', 'The beetle sheds bright light in a 10-foot radius and dim light for an additional 10 feet.', 128);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (128, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (129, 8, 4, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (129, 129, 'null', 0.25, 12, null, null, null, null, null, null, 12, 13, 11, 2, 10, 3, 18, 3, 11, '', 'Giant Frog');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (129, 129, 'null', 0.25, 12, 18, 3, 11, '', 'Giant Frog');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (129, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (129, '17');
@@ -2487,7 +3688,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Standin
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The frog can breathe air and water.', 129);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (129, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (130, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (130, 130, 'null', 0.5, 11, null, null, null, null, null, null, 17, 11, 12, 3, 12, 6, 19, 4, 11, 'Natural Armor', 'Giant Goat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (130, 130, 'null', 0.5, 11, 19, 4, 11, 'Natural Armor', 'Giant Goat');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (130, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (130, '17');
@@ -2497,7 +3706,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sure-Fo
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 5 (2d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.', 130);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (130, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (131, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (131, 131, 'null', 1, 13, null, null, null, null, null, null, 16, 14, 14, 2, 12, 7, 45, 4, 12, '', 'Giant Hyena');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (131, 131, 'null', 1, 13, 45, 4, 12, '', 'Giant Hyena');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (131, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (131, '17');
@@ -2507,7 +3724,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rampage', 'When the hyena reduces a creature to 0 hit points with a melee attack on its turn, the hyena can take a bonus action to move up to half its speed and make a bite attack.', 131);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (131, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (132, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (132, 132, 'null', 0.25, 10, null, null, null, null, null, null, 15, 12, 13, 2, 10, 5, 19, 4, 12, 'Natural Armor', 'Giant Lizard');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (132, 132, 'null', 0.25, 10, 19, 4, 12, 'Natural Armor', 'Giant Lizard');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (132, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (132, '17');
@@ -2517,7 +3742,15 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 132, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage.', 132);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (132, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (133, 10, 8, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (133, 133, 'null', 1, 14, null, null, null, null, null, null, 17, 13, 13, 4, 10, 4, 52, 4, 11, '', 'Giant Octopus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (133, 133, 'null', 1, 14, 52, 4, 11, '', 'Giant Octopus');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 4, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (133, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (133, '17');
@@ -2533,7 +3766,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Br
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Underwater Camouflage', 'The octopus has advantage on Dexterity (Stealth) checks made while underwater.', 133);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (133, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (134, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (134, 134, 'null', 0.25, 15, null, null, null, null, null, null, 13, 15, 12, 8, 13, 10, 19, 4, 12, '', 'Giant Owl');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (134, 134, 'null', 0.25, 15, 19, 4, 12, '', 'Giant Owl');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (134, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (134, '17');
@@ -2549,7 +3790,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (134, 44);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (134, 41);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (134, 56);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (135, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (135, 135, 'null', 0.25, 12, null, null, null, null, null, null, 10, 18, 13, 2, 10, 3, 11, 3, 14, '', 'Giant Poisonous Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (135, 135, 'null', 0.25, 12, 11, 3, 14, '', 'Giant Poisonous Snake');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 2, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (135, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (135, '17');
@@ -2560,7 +3809,15 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 135, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 6 (1d4 + 4) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.', 135);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (135, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (136, 6, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (136, 136, 'null', 0.125, 10, null, null, null, null, null, null, 7, 15, 11, 2, 10, 4, 7, 1, 12, '', 'Giant Rat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (136, 136, 'null', 0.125, 10, 7, 1, 12, '', 'Giant Rat');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 1, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (136, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (136, '17');
@@ -2571,7 +3828,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The rat has advantage on an attack roll against a creature if at least one of the rat''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 136);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (136, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (137, 10, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (137, 137, 'null', 3, 9, null, null, null, null, null, null, 15, 13, 15, 1, 9, 3, 52, 4, 15, 'Natural Armor', 'Giant Scorpion');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (137, 137, 'null', 3, 9, 52, 4, 15, 'Natural Armor', 'Giant Scorpion');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 5, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (137, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (137, '17');
@@ -2582,7 +3847,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) bludgeoning damage, and the target is grappled (escape DC 12). The scorpion has two claws, each of which can grapple only one target.', 137);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (137, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (138, 10, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (138, 138, 'null', 0.5, 11, null, null, null, null, null, null, 12, 15, 11, 2, 12, 5, 16, 4, 13, 'Natural Armor', 'Giant Sea Horse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (138, 138, 'null', 0.5, 11, 16, 4, 13, 'Natural Armor', 'Giant Sea Horse');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (138, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (138, '17');
@@ -2593,7 +3866,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the sea horse moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) bludgeoning damage. It the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.', 138);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (138, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (139, 12, 11, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (139, 139, 'null', 5, 13, null, null, null, null, null, null, 23, 11, 21, 1, 10, 5, 126, 6, 13, 'Natural Armor', 'Giant Shark');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (139, 139, 'null', 5, 13, 126, 6, 13, 'Natural Armor', 'Giant Shark');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (139, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (139, '17');
@@ -2606,7 +3887,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood Frenzy', 'The shark has advantage on melee attack rolls against any creature that doesn''t have all its hit points.', 139);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (139, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (140, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (140, 140, 'null', 1, 10, null, null, null, null, null, null, 14, 16, 12, 2, 11, 4, 26, 4, 14, 'Natural Armor', 'Giant Spider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (140, 140, 'null', 1, 10, 26, 4, 14, 'Natural Armor', 'Giant Spider');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (140, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (140, '17');
@@ -2622,7 +3911,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The spider ignores movement restrictions caused by webbing.', 140);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (140, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (141, 10, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (141, 141, 'null', 1, 10, null, null, null, null, null, null, 15, 13, 13, 2, 10, 3, 39, 4, 11, '', 'Giant Toad');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (141, 141, 'null', 1, 10, 39, 4, 11, '', 'Giant Toad');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (141, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (141, '17');
@@ -2635,7 +3932,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Standin
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The toad can breathe air and water.', 141);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (141, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (142, 10, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (142, 142, 'null', 1, 13, null, null, null, null, null, null, 15, 10, 15, 6, 12, 7, 22, 4, 10, '', 'Giant Vulture');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (142, 142, 'null', 1, 13, 22, 4, 10, '', 'Giant Vulture');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (142, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (142, '17');
@@ -2649,7 +3954,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The vulture has advantage on an attack roll against a creature if at least one of the vulture''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 142);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (142, 8);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (143, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (143, 143, 'null', 0.5, 10, null, null, null, null, null, null, 10, 14, 10, 1, 10, 3, 13, 3, 12, '', 'Giant Wasp');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (143, 143, 'null', 0.5, 10, 13, 3, 12, '', 'Giant Wasp');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (143, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (143, '17');
@@ -2658,7 +3971,15 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 143,
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sting', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.', 143);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (143, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (144, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (144, 144, 'null', 0.125, 13, null, null, null, null, null, null, 11, 16, 10, 4, 12, 5, 9, 3, 13, '', 'Giant Weasel');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (144, 144, 'null', 0.125, 13, 9, 3, 13, '', 'Giant Weasel');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 4, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (144, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (144, '17');
@@ -2670,7 +3991,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 144);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (144, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (145, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (145, 145, 'null', 0.25, 13, null, null, null, null, null, null, 12, 16, 13, 3, 12, 4, 11, 3, 13, '', 'Giant Wolf Spider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (145, 145, 'null', 0.25, 13, 11, 3, 13, '', 'Giant Wolf Spider');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (145, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (145, '17');
@@ -2686,7 +4015,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The spider ignores movement restrictions caused by webbing.', 145);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (145, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (146, 8, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (146, 146, 'null', 2, 10, null, null, null, null, null, null, 10, 8, 16, 3, 10, 6, 67, 3, 9, '', 'Gibbering Mouther');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (146, 146, 'null', 2, 10, 67, 3, 9, '', 'Gibbering Mouther');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (146, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (146, '22');
@@ -2701,7 +4038,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Aberran
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Gibbering', 'The mouther babbles incoherently while it can see any creature and isn''t incapacitated. Each creature that starts its turn within 20 feet of the mouther and can hear the gibbering must succeed on a DC 10 Wisdom saving throw. On a failure, the creature can''t take reactions until the start of its next turn and rolls a d8 to determine what it does during its turn. On a 1 to 4, the creature does nothing. On a 5 or 6, the creature takes no action or bonus action and uses all its movement to move in a randomly determined direction. On a 7 or 8, the creature makes a melee attack against a randomly determined creature within its reach or does nothing if it can''t make such an attack.', 146);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (146, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (147, 10, 15, 75);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (147, 147, 'null', 9, 13, 9, null, null, null, null, null, 20, 15, 21, 19, 17, 16, 157, 4, 17, 'Natural Armor', 'Glabrezu');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (147, 147, 'null', 9, 13, 157, 4, 17, 'Natural Armor', 'Glabrezu');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 1, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 4, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 5, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 6, 16);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (147, 1, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (147, 3, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (147, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (147, 6, 7);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (147, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (147, '15');
@@ -2723,7 +4072,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (147, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (147, 61);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (148, 8, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (148, 148, 'null', 5, 11, 7, null, null, null, null, null, 18, 15, 16, 10, 12, 15, 112, 3, 16, 'Studded Leather, Shield', 'Gladiator');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (148, 148, 'null', 5, 11, 112, 3, 16, 'Studded Leather, Shield', 'Gladiator');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (148, 1, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (148, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (148, 3, 6);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (148, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (148, '5');
@@ -2738,7 +4098,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Brave',
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (148, 'The gladiator adds 3 to its AC against one melee attack that would hit it. To do so, the gladiator must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (148, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (149, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (149, 149, 'null', 0.5, 10, null, null, null, null, null, null, 14, 12, 11, 6, 10, 7, 22, 3, 15, 'Hide Armor, Shield', 'Gnoll');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (149, 149, 'null', 0.5, 10, 22, 3, 15, 'Hide Armor, Shield', 'Gnoll');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (149, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (149, '15');
@@ -2750,7 +4118,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rampage', 'When the gnoll reduces a creature to 0 hit points with a melee attack on its turn, the gnoll can take a bonus action to move up to half its speed and make a bite attack.', 149);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (149, 45);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (150, 8, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (150, 150, 'null', 0, 10, null, null, null, null, null, null, 12, 10, 11, 2, 10, 5, 4, 3, 10, '', 'Goat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (150, 150, 'null', 0, 10, 4, 3, 10, '', 'Goat');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (150, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (150, '17');
@@ -2760,7 +4136,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sure-Fo
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 2 (1d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.', 150);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (150, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (151, 6, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (151, 151, 'null', 0.25, 9, null, null, null, null, null, null, 8, 14, 10, 10, 8, 8, 7, 1, 15, 'Leather Armor, Shield', 'Goblin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (151, 151, 'null', 0.25, 9, 7, 1, 15, 'Leather Armor, Shield', 'Goblin');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 1, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (151, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (151, '4');
@@ -2773,7 +4157,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Nimble 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (151, 7);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (151, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (152, 8, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (152, 152, 'null', 3, 14, null, 4, null, null, null, null, 19, 14, 17, 14, 11, 16, 60, 3, 17, 'Natural Armor', 'Gold Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (152, 152, 'null', 3, 14, 60, 3, 17, 'Natural Armor', 'Gold Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 6, 16);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (152, 2, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (152, 3, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (152, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (152, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (152, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (152, '6');
@@ -2792,7 +4188,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Br
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', ': The dragon can breathe air and water.', 152);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (152, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (153, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (153, 153, 'null', 5, 14, null, null, null, null, null, null, 20, 11, 18, 2, 12, 7, 114, 4, 19, 'Natural Armor', 'Gorgon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (153, 153, 'null', 5, 14, 114, 4, 19, 'Natural Armor', 'Gorgon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 1, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (153, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (153, '23');
@@ -2806,7 +4210,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the gorgon moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the gorgon can make one attack with its hooves against it as a bonus action.', 153);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (153, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (154, 8, 3, 9);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (154, 154, 'null', 0.5, 8, null, null, null, null, null, null, 12, 6, 16, 1, 6, 2, 22, 3, 8, '', 'Gray Ooze');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (154, 154, 'null', 0.5, 8, 22, 3, 8, '', 'Gray Ooze');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 2, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 5, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 6, 2);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (154, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (154, '8');
@@ -2829,7 +4241,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Corrode
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the ooze remains motionless, it is indistinguishable from an oily pool or wet rock.', 154);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (154, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (155, 8, 7, 7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (155, 155, 'null', 2, 14, null, 3, null, null, null, null, 15, 12, 13, 14, 11, 13, 38, 3, 17, 'Natural Armor', 'Green Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (155, 155, 'null', 2, 14, 38, 3, 17, 'Natural Armor', 'Green Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 6, 13);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (155, 2, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (155, 3, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (155, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (155, 6, 3);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (155, '6');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (155, '16');
@@ -2847,7 +4271,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 155);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (155, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (156, 8, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (156, 156, 'null', 3, 14, null, null, null, null, null, null, 18, 12, 16, 13, 14, 14, 82, 3, 17, 'Natural Armor', 'Green Hag');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (156, 156, 'null', 3, 14, 82, 3, 17, 'Natural Armor', 'Green Hag');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 6, 14);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (156, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (156, '24');
@@ -2867,7 +4299,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (156, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (156, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (156, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (157, 8, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (157, 157, 'null', 2, 12, null, null, null, null, null, null, 14, 14, 11, 3, 14, 5, 27, 3, 14, 'Natural Armor', 'Grick');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (157, 157, 'null', 2, 12, 27, 3, 14, 'Natural Armor', 'Grick');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (157, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (157, '23');
@@ -2883,7 +4323,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stone Camouflage', 'The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.', 157);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (157, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (158, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (158, 158, 'null', 2, 15, null, null, null, null, null, null, 18, 15, 16, 2, 13, 8, 59, 4, 12, '', 'Griffon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (158, 158, 'null', 2, 15, 59, 4, 12, '', 'Griffon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (158, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (158, '23');
@@ -2897,7 +4345,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The griffon has advantage on Wisdom (Perception) checks that rely on sight.', 158);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (158, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (159, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (159, 159, 'null', 0.25, 13, null, null, null, null, null, null, 16, 12, 12, 9, 8, 6, 11, 3, 11, '', 'Grimlock');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (159, 159, 'null', 0.25, 13, 11, 3, 11, '', 'Grimlock');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 4, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (159, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (159, '4');
@@ -2913,7 +4369,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stone C
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The grimlock has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 159);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (159, 68);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (160, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (160, 160, 'null', 0.125, 12, null, null, null, null, null, null, 13, 12, 12, 10, 11, 10, 11, 3, 16, 'Chain Shirt, Shield', 'Guard');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (160, 160, 'null', 0.125, 12, 11, 3, 16, 'Chain Shirt, Shield', 'Guard');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (160, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (160, '5');
@@ -2922,7 +4386,20 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 160, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spear', 'Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.', 160);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (160, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (161, 10, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (161, 161, 'null', 10, 14, null, 8, null, null, null, null, 19, 18, 16, 16, 19, 18, 127, 4, 18, 'Natural Armor', 'Guardian Naga');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (161, 161, 'null', 10, 14, 127, 4, 18, 'Natural Armor', 'Guardian Naga');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 2, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 5, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 6, 18);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (161, 2, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (161, 3, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (161, 4, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (161, 5, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (161, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (161, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (161, '23');
@@ -2938,7 +4415,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rejuven
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (161, 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (161, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (162, 10, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (162, 162, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 11, 18, null, null, null, null, null, null, 18, 15, 16, 18, 18, 18, 136, 4, 17, 'Natural Armor', 'Gynosphinx');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (162, 162, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 11, 18, 136, 4, 17, 'Natural Armor', 'Gynosphinx');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 5, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 6, 18);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (162, '9');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (162, '23');
@@ -2966,7 +4451,15 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (162, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (162, 66);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (162, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (163, 8, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (163, 163, 'null', 5, 12, null, null, null, null, null, null, 16, 13, 14, 10, 11, 10, 65, 3, 18, 'Plate', 'Half-Red Dragon Veteran');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (163, 163, 'null', 5, 12, 65, 3, 18, 'Plate', 'Half-Red Dragon Veteran');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (163, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (163, '5');
@@ -2984,7 +4477,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (163, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (163, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (164, 8, 7, 7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (164, 164, 'null', 1, 10, null, null, null, null, null, null, 12, 13, 12, 7, 10, 13, 38, 3, 11, '', 'Harpy');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (164, 164, 'null', 1, 10, 38, 3, 11, '', 'Harpy');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 6, 13);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (164, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (164, '23');
@@ -2996,7 +4497,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Luring 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The harpy makes two attacks: one with its claws and one with its club.', 164);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (164, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (165, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (165, 165, 'null', 0, 14, null, null, null, null, null, null, 5, 16, 8, 2, 14, 6, 1, 5, 13, '', 'Hawk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (165, 165, 'null', 0, 14, 1, 5, 13, '', 'Hawk');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 1, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (165, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (165, '17');
@@ -3007,7 +4516,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Talons'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The hawk has advantage on Wisdom (Perception) checks that rely on sight.', 165);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (165, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (166, 8, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (166, 166, 'null', 3, 15, null, null, null, null, null, null, 17, 12, 14, 6, 13, 6, 45, 3, 15, 'Natural Armor', 'Hell Hound');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (166, 166, 'null', 3, 15, 45, 3, 15, 'Natural Armor', 'Hell Hound');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (166, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (166, '16');
@@ -3021,7 +4538,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The hound has advantage on an attack roll against a creature if at least one of the hound''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 166);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (166, 25);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (167, 10, 13, 65);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (167, 167, 'null', 8, 11, 7, null, null, null, null, null, 19, 17, 20, 5, 12, 13, 136, 4, 16, 'Natural Armor', 'Hezrou');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (167, 167, 'null', 8, 11, 136, 4, 16, 'Natural Armor', 'Hezrou');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 6, 13);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (167, 1, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (167, 3, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (167, 5, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (167, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (167, '15');
@@ -3043,7 +4571,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stench'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (167, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (167, 61);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (168, 12, 10, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (168, 168, 'null', 5, 12, null, null, null, null, null, null, 21, 8, 19, 5, 9, 6, 105, 6, 13, 'Natural Armor', 'Hill Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (168, 168, 'null', 5, 12, 105, 6, 13, 'Natural Armor', 'Hill Giant');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 3, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 5, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (168, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (168, '25');
@@ -3054,7 +4590,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatcl
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The giant makes two greatclub attacks.', 168);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (168, 35);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (169, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (169, 169, 'null', 1, 15, null, null, null, null, null, null, 17, 13, 13, 2, 12, 8, 19, 4, 11, '', 'Hippogriff');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (169, 169, 'null', 1, 15, 19, 4, 11, '', 'Hippogriff');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (169, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (169, '23');
@@ -3067,7 +4611,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The hippogriff has advantage on Wisdom (Perception) checks that rely on sight.', 169);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (169, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (170, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (170, 170, 'null', 0.5, 10, null, null, null, null, null, null, 13, 12, 12, 10, 10, 9, 11, 3, 18, 'Chain Mail, Shield', 'Hobgoblin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (170, 170, 'null', 0.5, 10, 11, 3, 18, 'Chain Mail, Shield', 'Hobgoblin');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 6, 9);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (170, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (170, '16');
@@ -3079,7 +4631,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Martial
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (170, 7);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (170, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (171, 4, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (171, 171, 'null', 0, 10, null, null, null, null, null, null, 4, 15, 11, 10, 10, 7, 5, 5, 13, 'Natural Armor', 'Homunculus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (171, 171, 'null', 0, 10, 5, 5, 13, 'Natural Armor', 'Homunculus');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 1, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (171, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (171, '19');
@@ -3093,7 +4653,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Telepathic Bond', 'While the homunculus is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically.', 171);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (171, 21);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (172, 10, 17, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (172, 172, 'null', 11, 13, 10, null, null, null, null, null, 22, 17, 21, 12, 16, 17, 148, 4, 18, 'Natural Armor', 'Horned Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (172, 172, 'null', 11, 13, 148, 4, 18, 'Natural Armor', 'Horned Devil');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 1, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 6, 17);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (172, 1, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (172, 2, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (172, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (172, 6, 7);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (172, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (172, '16');
@@ -3116,7 +4688,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (172, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (172, 48);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (173, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (173, 173, 'null', 2, 12, null, null, null, null, null, null, 18, 13, 15, 1, 10, 4, 45, 4, 12, 'Natural Armor', 'Hunter Shark');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (173, 173, 'null', 2, 12, 45, 4, 12, 'Natural Armor', 'Hunter Shark');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (173, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (173, '17');
@@ -3129,7 +4709,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood Frenzy', 'The shark has advantage on melee attack rolls against any creature that doesn''t have all its hit points.', 173);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (173, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (174, 12, 15, 75);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (174, 174, 'null', 8, 16, null, null, null, null, null, null, 20, 12, 20, 2, 10, 7, 172, 6, 15, 'Natural Armor', 'Hydra');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (174, 174, 'null', 8, 16, 172, 6, 15, 'Natural Armor', 'Hydra');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 1, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (174, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (174, '23');
@@ -3145,7 +4733,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Multipl
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Wakeful', 'While the hydra sleeps, at least one of its heads is awake.', 174);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (174, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (175, 8, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (175, 175, 'null', 0, 13, null, null, null, null, null, null, 11, 13, 12, 2, 12, 5, 5, 3, 11, '', 'Hyena');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (175, 175, 'null', 0, 13, 5, 3, 11, '', 'Hyena');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (175, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (175, '17');
@@ -3155,7 +4751,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The hyena has advantage on an attack roll against a creature if at least one of the hyena''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 175);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (175, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (176, 10, 19, 76);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (176, 176, 'null', 14, 12, null, 7, null, null, null, null, 21, 14, 18, 18, 15, 18, 180, 4, 18, 'Natural Armor', 'Ice Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (176, 176, 'null', 14, 12, 180, 4, 18, 'Natural Armor', 'Ice Devil');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 6, 18);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (176, 2, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (176, 3, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (176, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (176, 6, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (176, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (176, '16');
@@ -3179,7 +4787,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (176, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (176, 48);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (177, 6, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (177, 177, 'null', 0.5, 12, null, null, null, null, null, null, 7, 13, 10, 9, 11, 12, 21, 1, 11, '', 'Ice Mephit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (177, 177, 'null', 0.5, 12, 21, 1, 11, '', 'Ice Mephit');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 1, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 4, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 6, 12);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (177, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (177, '7');
@@ -3201,7 +4817,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (177, 2);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (177, 47);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (178, 4, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (178, 178, 'null', 1, 11, null, null, null, null, null, null, 6, 17, 13, 11, 12, 14, 10, 5, 13, '', 'Imp');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (178, 178, 'null', 1, 11, 10, 5, 13, '', 'Imp');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 1, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 6, 14);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (178, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (178, '16');
@@ -3227,7 +4851,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapech
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (178, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (178, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (179, 8, 16, 32);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (179, 179, 'null', 6, 18, null, null, null, null, null, null, 16, 19, 14, 10, 15, 11, 104, 3, 14, '', 'Invisible Stalker');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (179, 179, 'null', 6, 18, 104, 3, 14, '', 'Invisible Stalker');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 2, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (179, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (179, '7');
@@ -3254,7 +4886,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Invisib
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Faultless Tracker', 'The stalker is given a quarry by its summoner. The stalker knows the direction and distance to its quarry as long as the two of them are on the same plane of existence. The stalker also knows the location of its summoner.', 179);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (179, 46);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (180, 10, 20, 100);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (180, 180, 'null', 16, 10, null, null, null, null, null, null, 24, 9, 20, 3, 11, 1, 210, 4, 20, 'Natural Armor', 'Iron Golem');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (180, 180, 'null', 16, 10, 210, 4, 20, 'Natural Armor', 'Iron Golem');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 1, 24);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (180, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (180, '19');
@@ -3282,7 +4922,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Immutab
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The golem''s weapon attacks are magical.', 180);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (180, 21);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (181, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (181, 181, 'null', 0, 13, null, null, null, null, null, null, 8, 15, 11, 3, 12, 6, 3, 1, 12, '', 'Jackal');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (181, 181, 'null', 0, 13, 3, 1, 12, '', 'Jackal');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 1, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (181, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (181, '17');
@@ -3293,7 +4941,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The jackal has advantage on an attack roll against a creature if at least one of the jackal''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 181);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (181, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (182, 12, 12, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (182, 182, 'null', 3, 13, null, null, null, null, null, null, 19, 10, 13, 3, 12, 7, 90, 6, 12, 'Natural Armor', 'Killer Whale');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (182, 182, 'null', 3, 13, 90, 6, 12, 'Natural Armor', 'Killer Whale');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (182, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (182, '17');
@@ -3307,7 +4963,17 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Br
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The whale can''t use its blindsight while deafened.', 182);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (182, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (183, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (183, 183, 'null', 3, 10, null, null, 4, null, null, null, 16, 11, 14, 11, 11, 15, 52, 3, 18, 'Plate', 'Knight');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (183, 183, 'null', 3, 10, 52, 3, 18, 'Plate', 'Knight');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (183, 3, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (183, 5, 2);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (183, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (183, '5');
@@ -3320,7 +4986,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Brave',
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (183, 'The knight adds 2 to its AC against one melee attack that would hit it. To do so, the knight must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (183, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (184, 6, 2, -2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (184, 184, 'null', 0.125, 8, null, null, null, null, null, null, 7, 15, 9, 8, 7, 8, 5, 1, 12, '', 'Kobold');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (184, 184, 'null', 0.125, 8, 5, 1, 12, '', 'Kobold');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 1, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 3, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 5, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (184, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (184, '16');
@@ -3333,7 +5007,20 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunligh
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (184, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (184, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (185, 20, 27, 189);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (185, 185, 'The kraken can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The kraken regains spent legendary actions at the start of its turn.', 23, 14, 17, null, null, null, null, null, 30, 11, 25, 22, 18, 20, 472, 2, 18, 'Natural Armor', 'Kraken');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (185, 185, 'The kraken can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The kraken regains spent legendary actions at the start of its turn.', 23, 14, 472, 2, 18, 'Natural Armor', 'Kraken');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 1, 30);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 3, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 4, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 5, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 6, 20);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (185, 1, 17);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (185, 2, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (185, 3, 14);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (185, 4, 13);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (185, 5, 11);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (185, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (185, '23');
@@ -3363,7 +5050,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (185, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (185, 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (185, 48);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (186, 10, 13, 26);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (186, 186, 'null', 4, 12, null, null, null, null, null, null, 16, 13, 15, 14, 15, 16, 97, 4, 13, 'Natural Armor', 'Lamia');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (186, 186, 'null', 4, 12, 97, 4, 13, 'Natural Armor', 'Lamia');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 6, 16);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (186, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (186, '23');
@@ -3379,7 +5074,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (186, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (186, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (187, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (187, 187, 'null', 0, 10, null, null, null, null, null, null, 10, 5, 11, 1, 11, 3, 13, 3, 7, '', 'Lemure');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (187, 187, 'null', 0, 10, 13, 3, 7, '', 'Lemure');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 2, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (187, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (187, '16');
@@ -3396,7 +5099,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Devil''
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hellish Rejuvenation', 'A lemure that dies in the Nine Hells comes back to life with all its hit points in 1d10 days unless it is killed by a good-aligned creature with a bless spell cast on that creature or its remains are sprinkled with holy water.', 187);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (187, 25);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (188, 8, 18, 54);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (188, 188, 'The lich can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The lich regains spent legendary actions at the start of its turn.', 21, 19, null, null, 10, null, null, null, 11, 16, 16, 20, 14, 16, 135, 3, 17, 'Natural Armor', 'Lich');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (188, 188, 'The lich can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The lich regains spent legendary actions at the start of its turn.', 21, 19, 135, 3, 17, 'Natural Armor', 'Lich');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 4, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 6, 16);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (188, 3, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (188, 4, 12);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (188, 5, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (188, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (188, '13');
@@ -3429,7 +5143,15 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (188, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (188, 'The lich casts a cantrip.', 'Cantrip');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (188, 26);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (189, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (189, 189, 'null', 1, 13, null, null, null, null, null, null, 17, 15, 13, 3, 12, 8, 26, 4, 12, '', 'Lion');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (189, 189, 'null', 1, 13, 26, 4, 12, '', 'Lion');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (189, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (189, '17');
@@ -3444,7 +5166,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Running Leap', 'With a 10-foot running start, the lion can long jump up to 25 feet.', 189);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (189, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (190, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (190, 190, 'null', 0, 9, null, null, null, null, null, null, 2, 11, 10, 1, 8, 3, 2, 5, 10, '', 'Lizard');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (190, 190, 'null', 0, 9, 2, 5, 10, '', 'Lizard');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 1, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (190, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (190, '17');
@@ -3454,7 +5184,15 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 190, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 piercing damage.', 190);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (190, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (191, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (191, 191, 'null', 0.5, 13, null, null, null, null, null, null, 15, 10, 13, 7, 12, 7, 22, 3, 15, 'Natural Armor, Shield', 'Lizardfolk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (191, 191, 'null', 0.5, 13, 22, 3, 15, 'Natural Armor, Shield', 'Lizardfolk');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (191, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (191, '4');
@@ -3471,7 +5209,17 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'The lizardfolk can hold its breath for 15 minutes.', 191);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (191, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (192, 8, 9, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (192, 192, 'null', 6, 11, null, null, null, 6, null, null, 9, 14, 11, 17, 12, 11, 40, 3, 12, '15 With Mage Armor', 'Mage');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (192, 192, 'null', 6, 11, 40, 3, 12, '15 With Mage Armor', 'Mage');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 1, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 4, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 6, 11);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (192, 4, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (192, 5, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (192, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (192, '5');
@@ -3482,7 +5230,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Dagger'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared: Cantrips (at will): fire bolt, light, mage hand, prestidigitation 1st level (4 slots): detect magic, mage armor, magic missile, shield 2nd level (3 slots): misty step, suggestion 3rd level (3 slots): counterspell, fireball, fly 4th level (3 slots): greater invisibility, ice storm 5th level (1 slot): cone of cold', 192);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (192, 37);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (193, 6, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (193, 193, 'null', 0.5, 10, null, null, null, null, null, null, 8, 12, 12, 7, 10, 10, 22, 1, 11, '', 'Magma Mephit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (193, 193, 'null', 0.5, 10, 22, 1, 11, '', 'Magma Mephit');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 1, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (193, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (193, '7');
@@ -3502,7 +5258,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (193, 53);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (193, 24);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (194, 6, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (194, 194, 'null', 0.5, 10, null, null, null, null, null, null, 7, 15, 12, 8, 11, 10, 9, 1, 14, 'Natural Armor', 'Magmin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (194, 194, 'null', 0.5, 10, 9, 1, 14, 'Natural Armor', 'Magmin');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 1, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (194, '7');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (194, '14');
@@ -3517,7 +5281,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ignited
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Death Burst', 'When the magmin dies, it explodes in a burst of fire and magma. Each creature within 10 feet of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one. Flammable objects that aren''t being worn or carried in that area are ignited.', 194);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (194, 24);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (195, 12, 11, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (195, 195, 'null', 6, 10, null, null, null, null, null, null, 24, 9, 21, 3, 11, 6, 126, 6, 13, 'Natural Armor', 'Mammoth');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (195, 195, 'null', 6, 10, 126, 6, 13, 'Natural Armor', 'Mammoth');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 1, 24);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (195, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (195, '17');
@@ -3527,7 +5299,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the mammoth moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 18 Strength saving throw or be knocked prone. If the target is prone, the mammoth can make one stomp attack against it as a bonus action.', 195);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (195, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (196, 10, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (196, 196, 'null', 3, 11, null, null, null, null, null, null, 17, 16, 17, 7, 12, 8, 68, 4, 14, 'Natural Armor', 'Manticore');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (196, 196, 'null', 3, 11, 68, 4, 14, 'Natural Armor', 'Manticore');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (196, '23');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (196, '16');
@@ -3541,7 +5321,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Tail Spike Regrowth', 'The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest.', 196);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (196, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (197, 10, 18, 90);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (197, 197, 'null', 16, 13, 9, null, null, null, null, null, 18, 20, 20, 18, 16, 20, 189, 4, 18, 'Natural Armor', 'Marilith');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (197, 197, 'null', 16, 13, 189, 4, 18, 'Natural Armor', 'Marilith');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 2, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 4, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 6, 20);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (197, 1, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (197, 3, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (197, 5, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (197, 6, 10);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (197, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (197, '15');
@@ -3566,7 +5358,15 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (197, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (197, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (197, 61);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (198, 8, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (198, 198, 'null', 0.125, 13, null, null, null, null, null, null, 13, 14, 12, 3, 12, 7, 5, 3, 12, '', 'Mastiff');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (198, 198, 'null', 0.125, 13, 5, 3, 12, '', 'Mastiff');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (198, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (198, '17');
@@ -3576,7 +5376,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 198);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (198, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (199, 8, 17, 51);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (199, 199, 'null', 6, 14, null, null, null, null, null, null, 10, 15, 16, 12, 13, 15, 127, 3, 15, 'Natural Armor', 'Medusa');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (199, 199, 'null', 6, 14, 127, 3, 15, 'Natural Armor', 'Medusa');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 6, 15);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (199, '23');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (199, '16');
@@ -3593,7 +5401,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Petrifying Gaze', 'When a creature that can see the medusa''s eyes starts its turn within 30 feet of the medusa, the medusa can force it to make a DC 14 Constitution saving throw if the medusa isn''t incapacitated and can see the creature. If the saving throw fails by 5 or more, the creature is instantly petrified. Otherwise, a creature that fails the save begins to turn to stone and is restrained. The restrained creature must repeat the saving throw at the end of its next turn, becoming petrified on a failure or ending the effect on a success. The petrification lasts until the creature is freed by the greater restoration spell or other magic.Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can''t see the medusa until the start of its next turn, when it can avert its eyes again. If the creature looks at the medusa in the meantime, it must immediately make the save.If the medusa sees itself reflected on a polished surface within 30 feet of it and in an area of bright light, the medusa is, due to its curse, affected by its own gaze.', 199);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (199, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (200, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (200, 200, 'null', 0.125, 12, null, null, null, null, null, null, 10, 13, 12, 11, 11, 12, 11, 3, 11, '', 'Merfolk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (200, 200, 'null', 0.125, 12, 11, 3, 11, '', 'Merfolk');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 6, 12);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (200, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (200, '4');
@@ -3605,7 +5421,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (200, 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (200, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (201, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (201, 201, 'null', 2, 10, null, null, null, null, null, null, 18, 10, 15, 8, 10, 9, 45, 4, 13, 'Natural Armor', 'Merrow');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (201, 201, 'null', 2, 10, 45, 4, 13, 'Natural Armor', 'Merrow');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 6, 9);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (201, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (201, '23');
@@ -3620,7 +5444,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (201, 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (201, 61);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (202, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (202, 202, 'null', 2, 11, null, null, null, null, null, null, 17, 12, 15, 5, 13, 8, 58, 3, 12, 'Natural Armor', 'Mimic');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (202, 202, 'null', 2, 11, 58, 3, 12, 'Natural Armor', 'Mimic');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (202, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (202, '23');
@@ -3637,7 +5469,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Grapple
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance (Object Form Only)', 'While the mimic remains motionless, it is indistinguishable from an ordinary object.', 202);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (202, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (203, 10, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (203, 203, 'null', 3, 17, null, null, null, null, null, null, 18, 11, 16, 6, 16, 9, 76, 4, 14, 'Natural Armor', 'Minotaur');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (203, 203, 'null', 3, 17, 76, 4, 14, 'Natural Armor', 'Minotaur');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 6, 9);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (203, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (203, '23');
@@ -3651,7 +5491,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Reckless', 'At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.', 203);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (203, 61);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (204, 10, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (204, 204, 'null', 2, 9, null, null, null, null, null, null, 18, 11, 15, 6, 8, 5, 67, 4, 12, 'Natural Armor', 'Minotaur Skeleton');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (204, 204, 'null', 2, 9, 67, 4, 12, 'Natural Armor', 'Minotaur Skeleton');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (204, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (204, '16');
@@ -3666,7 +5514,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the skeleton moves at least 10 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 feet away and knocked prone.', 204);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (204, 3);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (205, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (205, 205, 'null', 0.125, 10, null, null, null, null, null, null, 14, 10, 13, 2, 10, 5, 11, 3, 10, '', 'Mule');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (205, 205, 'null', 0.125, 10, 11, 3, 10, '', 'Mule');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (205, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (205, '17');
@@ -3676,7 +5532,16 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Beast o
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sure-Footed', 'The mule has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.', 205);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (205, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (206, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (206, 206, 'null', 3, 10, null, null, null, null, 2, null, 16, 8, 15, 6, 10, 12, 58, 3, 11, 'Natural Armor', 'Mummy');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (206, 206, 'null', 3, 10, 58, 3, 11, 'Natural Armor', 'Mummy');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 6, 12);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (206, 5, 2);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (206, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (206, '16');
@@ -3698,7 +5563,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Dreadfu
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The mummy can use its Dreadful Glare and makes one attack with its rotting fist.', 206);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (206, 22);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (207, 8, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (207, 207, 'The mummy lord can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The mummy lord regains spent legendary actions at the start of its turn.', 15, 14, null, null, 8, null, null, null, 18, 10, 17, 11, 18, 16, 97, 3, 17, 'Natural Armor', 'Mummy Lord');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (207, 207, 'The mummy lord can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The mummy lord regains spent legendary actions at the start of its turn.', 15, 14, 97, 3, 17, 'Natural Armor', 'Mummy Lord');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 5, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 6, 16);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (207, 3, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (207, 4, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (207, 5, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (207, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (207, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (207, '16');
@@ -3730,7 +5607,19 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (207, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (207, 'The mummy lord magically unleashes negative energy. Creatures within 60 feet of the mummy lord, including ones behind barriers and around corners, can''t regain hit points until the end of the mummy lord''s next turn.', 'Channel Negative Energy (Costs 2 Actions)');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (207, 22);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (208, 10, 16, 96);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (208, 208, 'null', 13, 11, null, null, 11, null, null, null, 21, 10, 22, 19, 12, 15, 184, 4, 18, 'Natural Armor', 'Nalfeshnee');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (208, 208, 'null', 13, 11, 184, 4, 18, 'Natural Armor', 'Nalfeshnee');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 3, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 4, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (208, 3, 11);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (208, 4, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (208, 5, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (208, 6, 7);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (208, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (208, '15');
@@ -3754,7 +5643,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (208, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (208, 61);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (209, 8, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (209, 209, 'null', 5, 16, null, null, null, null, null, null, 18, 15, 16, 16, 14, 16, 112, 3, 17, 'Natural Armor', 'Night Hag');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (209, 209, 'null', 5, 16, 112, 3, 17, 'Natural Armor', 'Night Hag');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 6, 16);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (209, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (209, '3');
@@ -3781,7 +5678,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (209, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (209, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (209, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (210, 10, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (210, 210, 'null', 3, 11, null, null, null, null, null, null, 18, 15, 16, 10, 13, 15, 68, 4, 13, 'Natural Armor', 'Nightmare');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (210, 210, 'null', 3, 11, 68, 4, 13, 'Natural Armor', 'Nightmare');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 6, 15);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (210, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (210, '3');
@@ -3795,7 +5700,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumin
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (210, 5);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (210, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (211, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (211, 211, 'null', 0.125, 12, null, null, null, null, null, null, 11, 12, 11, 12, 14, 16, 9, 3, 15, 'Breastplate', 'Noble');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (211, 211, 'null', 0.125, 12, 9, 3, 15, 'Breastplate', 'Noble');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 6, 16);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (211, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (211, '5');
@@ -3807,7 +5720,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rapier'
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (211, 'The noble adds 2 to its AC against one melee attack that would hit it. To do so, the noble must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (211, 65);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (212, 8, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (212, 212, 'null', 2, 12, null, null, null, null, null, null, 14, 16, 16, 13, 10, 8, 45, 3, 15, 'Natural', 'Nothic');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (212, 212, 'null', 2, 12, 45, 3, 15, 'Natural', 'Nothic');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (212, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (212, '22');
@@ -3824,7 +5745,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The nothic has advantage on Wisdom (Perception) checks that rely on sight.', 212);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (212, 68);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (213, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (213, 213, 'null', 2, 8, null, null, null, null, null, null, 15, 6, 14, 2, 6, 1, 45, 4, 8, '', 'Ochre Jelly');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (213, 213, 'null', 2, 8, 45, 4, 8, '', 'Ochre Jelly');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 2, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 5, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (213, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (213, '8');
@@ -3846,7 +5775,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider 
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (213, 'When a jelly that is Medium or larger is subjected to lightning or slashing damage, it splits into two new jellies if it has at least 10 hit points. Each new jelly has hit points equal to half the original jelly''s, rounded down. New jellies are one size smaller than the original jelly.', 'Split');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (213, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (214, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (214, 214, 'null', 0, 12, null, null, null, null, null, null, 4, 15, 11, 3, 10, 4, 3, 1, 12, '', 'Octopus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (214, 214, 'null', 0, 12, 3, 1, 12, '', 'Octopus');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 1, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (214, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (214, '17');
@@ -3862,7 +5799,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Br
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Underwater Camouflage', 'The octopus has advantage on Dexterity (Stealth) checks made while underwater.', 214);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (214, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (215, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (215, 215, 'null', 2, 8, null, null, null, null, null, null, 19, 8, 16, 5, 7, 7, 59, 4, 11, 'Hide Armor', 'Ogre');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (215, 215, 'null', 2, 8, 59, 4, 11, 'Hide Armor', 'Ogre');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 5, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (215, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (215, '25');
@@ -3873,7 +5818,16 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatcl
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (215, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (215, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (216, 10, 9, 36);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (216, 216, 'null', 2, 8, null, null, null, null, 0, null, 19, 6, 18, 3, 6, 5, 85, 4, 8, '', 'Ogre Zombie');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (216, 216, 'null', 2, 8, 85, 4, 8, '', 'Ogre Zombie');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 2, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 5, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 6, 5);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (216, 5, 0);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (216, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (216, '12');
@@ -3886,7 +5840,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Undead 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (216, 60);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (216, 50);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (217, 10, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (217, 217, 'null', 7, 14, null, 3, null, null, null, null, 19, 11, 16, 14, 12, 15, 110, 4, 16, 'Chain Mail', 'Oni');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (217, 217, 'null', 7, 14, 110, 4, 16, 'Chain Mail', 'Oni');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (217, 2, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (217, 3, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (217, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (217, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (217, '25');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (217, '16');
@@ -3906,7 +5872,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic W
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (217, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (217, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (218, 8, 2, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (218, 218, 'null', 0.5, 10, null, null, null, null, null, null, 16, 12, 16, 7, 11, 10, 15, 3, 13, 'Hide Armor', 'Orc');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (218, 218, 'null', 0.5, 10, 15, 3, 13, 'Hide Armor', 'Orc');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (218, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (218, '15');
@@ -3919,7 +5893,16 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Aggress
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (218, 39);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (218, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (219, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (219, 219, 'null', 5, 11, null, null, 7, null, null, null, 16, 11, 19, 6, 13, 6, 114, 4, 14, 'Natural Armor', 'Otyugh');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (219, 219, 'null', 5, 11, 114, 4, 14, 'Natural Armor', 'Otyugh');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 3, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 6, 6);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (219, 3, 7);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (219, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (219, '22');
@@ -3932,7 +5915,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tentacl
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Limited Telepathy', 'The otyugh can magically transmit simple messages and images to any creature within 120 feet of it that can understand a language. This form of telepathy doesn''t allow the receiving creature to telepathically respond.', 219);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (219, 57);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (220, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (220, 220, 'null', 0, 13, null, null, null, null, null, null, 3, 13, 8, 2, 12, 7, 1, 5, 11, '', 'Owl');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (220, 220, 'null', 0, 13, 1, 5, 11, '', 'Owl');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 1, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (220, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (220, '17');
@@ -3946,7 +5937,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby', 'The owl doesn''t provoke opportunity attacks when it flies out of an enemy''s reach.', 220);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (220, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (221, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (221, 221, 'null', 3, 13, null, null, null, null, null, null, 20, 12, 17, 3, 12, 7, 59, 4, 13, 'Natural Armor', 'Owlbear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (221, 221, 'null', 3, 13, 59, 4, 13, 'Natural Armor', 'Owlbear');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 1, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (221, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (221, '23');
@@ -3959,7 +5958,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight and Smell', 'The owlbear has advantage on Wisdom (Perception) checks that rely on sight or smell.', 221);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (221, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (222, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (222, 222, 'null', 0.25, 14, null, null, null, null, null, null, 14, 15, 10, 3, 14, 7, 13, 3, 12, '', 'Panther');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (222, 222, 'null', 0.25, 14, 13, 3, 12, '', 'Panther');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (222, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (222, '17');
@@ -3973,7 +5980,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce', 'If the panther moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the panther can make one bite attack against it as a bonus action.', 222);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (222, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (223, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (223, 223, 'null', 2, 16, null, 4, null, null, null, null, 18, 15, 16, 10, 15, 13, 59, 4, 12, '', 'Pegasus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (223, 223, 'null', 2, 16, 59, 4, 12, '', 'Pegasus');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 6, 13);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (223, 2, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (223, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (223, 6, 3);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (223, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (223, '26');
@@ -3986,7 +6004,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (223, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (223, 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (223, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (224, 10, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (224, 224, 'null', 3, 10, null, null, null, null, null, null, 15, 15, 12, 6, 10, 6, 32, 4, 13, 'Natural Armor', 'Phase Spider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (224, 224, 'null', 3, 10, 32, 4, 13, 'Natural Armor', 'Phase Spider');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (224, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (224, '23');
@@ -4000,7 +6026,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The spider ignores movement restrictions caused by webbing.', 224);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (224, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (225, 10, 24, 168);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (225, 225, 'null', 20, 14, null, 8, null, null, null, null, 26, 14, 24, 22, 18, 24, 300, 4, 19, 'Natural Armor', 'Pit Fiend');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (225, 225, 'null', 20, 14, 300, 4, 19, 'Natural Armor', 'Pit Fiend');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 1, 26);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 3, 24);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 4, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 5, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 6, 24);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (225, 2, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (225, 3, 13);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (225, 5, 10);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (225, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (225, '16');
@@ -4026,7 +6063,18 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (225, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (225, 48);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (226, 10, 16, 112);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (226, 226, 'null', 16, 21, null, null, 12, null, null, null, 24, 20, 24, 19, 22, 25, 200, 4, 19, 'Natural Armor', 'Planetar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (226, 226, 'null', 16, 21, 200, 4, 19, 'Natural Armor', 'Planetar');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 1, 24);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 2, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 3, 24);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 4, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 5, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 6, 25);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (226, 3, 12);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (226, 5, 11);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (226, 6, 12);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (226, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (226, '26');
@@ -4051,7 +6099,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (226, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (226, 64);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (227, 10, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (227, 227, 'null', 2, 13, null, null, null, null, null, null, 18, 15, 16, 2, 12, 5, 68, 4, 13, 'Natural Armor', 'Plesiosaurus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (227, 227, 'null', 2, 13, 68, 4, 13, 'Natural Armor', 'Plesiosaurus');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (227, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (227, '17');
@@ -4063,7 +6119,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'The plesiosaurus can hold its breath for 1 hour.', 227);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (227, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (228, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (228, 228, 'null', 0.125, 10, null, null, null, null, null, null, 2, 16, 11, 1, 10, 3, 2, 5, 13, '', 'Poisonous Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (228, 228, 'null', 0.125, 10, 2, 5, 13, '', 'Poisonous Snake');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 1, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (228, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (228, '17');
@@ -4073,7 +6137,15 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 228, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 piercing damage, and the target must make a DC 10 Constitution saving throw, taking 5 (2d4) poison damage on a failed save, or half as much damage on a successful one.', 228);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (228, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (229, 10, 5, 15);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (229, 229, 'null', 2, 13, null, null, null, null, null, null, 20, 10, 16, 2, 13, 7, 42, 4, 12, 'Natural Armor', 'Polar Bear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (229, 229, 'null', 2, 13, 42, 4, 12, 'Natural Armor', 'Polar Bear');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 1, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (229, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (229, '17');
@@ -4086,7 +6158,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The bear has advantage on Wisdom (Perception) checks that rely on smell.', 229);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (229, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (230, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (230, 230, 'null', 0.125, 10, null, null, null, null, null, null, 15, 10, 13, 2, 11, 7, 11, 3, 10, '', 'Pony');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (230, 230, 'null', 0.125, 10, 11, 3, 10, '', 'Pony');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (230, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (230, '17');
@@ -4094,7 +6174,15 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 230,
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage.', 230);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (230, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (231, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (231, 231, 'null', 2, 13, null, null, null, null, null, null, 10, 10, 12, 13, 16, 13, 27, 3, 13, 'Chain Shirt', 'Priest');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (231, 231, 'null', 2, 13, 27, 3, 13, 'Chain Shirt', 'Priest');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 6, 13);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (231, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (231, '5');
@@ -4107,7 +6195,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellca
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Divine Eminence', 'As a bonus action, the priest can expend a spell slot to cause its melee weapon attacks to magically deal an extra 10 (3d6) radiant damage to a target on a hit. This benefit lasts until the end of the turn. If the priest expends a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each level above 1st.', 231);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (231, 65);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (232, 4, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (232, 232, 'null', 0.25, 13, null, null, null, null, null, null, 6, 15, 13, 10, 12, 10, 7, 5, 13, 'Natural Armor', 'Pseudodragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (232, 232, 'null', 0.25, 13, 7, 5, 13, 'Natural Armor', 'Pseudodragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 1, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (232, '20');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (232, '6');
@@ -4124,7 +6220,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Limited
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (232, 60);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (232, 43);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (233, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (233, 233, 'null', 0.25, 11, null, null, null, null, null, null, 12, 15, 10, 2, 9, 5, 13, 3, 13, 'Natural Armor', 'Pteranodon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (233, 233, 'null', 0.25, 11, 13, 3, 13, 'Natural Armor', 'Pteranodon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 5, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (233, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (233, '17');
@@ -4134,7 +6238,17 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby', 'The pteranodon doesn’t provoke an opportunity attack when it flies out of an enemy’s reach.</div>', 233);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (233, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (234, 20, 15, 90);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (234, 234, 'null', 15, 9, null, null, 11, null, null, null, 28, 7, 22, 1, 8, 4, 247, 2, 18, 'Natural Armor', 'Purple Worm');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (234, 234, 'null', 15, 9, 247, 2, 18, 'Natural Armor', 'Purple Worm');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 1, 28);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 2, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 3, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 6, 4);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (234, 3, 11);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (234, 5, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (234, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (234, '23');
@@ -4148,7 +6262,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Tunneler', 'The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.', 234);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (234, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (235, 4, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (235, 235, 'null', 1, 10, null, null, null, null, null, null, 5, 17, 10, 7, 10, 10, 7, 5, 13, '', 'Quasit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (235, 235, 'null', 1, 10, 7, 5, 13, '', 'Quasit');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 1, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (235, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (235, '15');
@@ -4171,7 +6293,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapech
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (235, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (235, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (236, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (236, 236, 'null', 0, 8, null, null, null, null, null, null, 2, 16, 9, 1, 7, 2, 1, 5, 13, '', 'Quipper');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (236, 236, 'null', 0, 8, 1, 5, 13, '', 'Quipper');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 1, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 3, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 5, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 6, 2);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (236, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (236, '17');
@@ -4183,7 +6313,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood Frenzy', 'The quipper has advantage on melee attack rolls against any creature that doesn''t have all its hit points.', 236);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (236, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (237, 8, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (237, 237, 'null', 13, 13, null, null, null, null, null, null, 14, 17, 18, 13, 16, 20, 110, 3, 16, 'Natural Armor', 'Rakshasa');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (237, 237, 'null', 13, 13, 110, 3, 16, 'Natural Armor', 'Rakshasa');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 6, 20);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (237, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (237, '16');
@@ -4201,7 +6339,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (237, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (237, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (238, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (238, 238, 'null', 0, 10, null, null, null, null, null, null, 2, 11, 9, 2, 10, 4, 1, 5, 10, '', 'Rat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (238, 238, 'null', 0, 10, 1, 5, 10, '', 'Rat');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 1, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 3, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (238, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (238, '17');
@@ -4211,7 +6357,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The rat has advantage on Wisdom (Perception) checks that rely on smell.', 238);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (238, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (239, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (239, 239, 'null', 0, 13, null, null, null, null, null, null, 2, 14, 8, 2, 12, 6, 1, 5, 12, '', 'Raven');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (239, 239, 'null', 0, 13, 1, 5, 12, '', 'Raven');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 1, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (239, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (239, '17');
@@ -4222,7 +6376,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beak', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Mimicry', 'The raven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.', 239);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (239, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (240, 8, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (240, 240, 'null', 4, 14, null, 2, null, null, null, null, 19, 10, 17, 12, 11, 15, 75, 3, 17, 'Natural Armor', 'Red Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (240, 240, 'null', 4, 14, 75, 3, 17, 'Natural Armor', 'Red Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (240, 2, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (240, 3, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (240, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (240, 6, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (240, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (240, '6');
@@ -4238,7 +6404,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Br
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage plus 3 (1d6) fire damage.', 240);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (240, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (241, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (241, 241, 'null', 0.5, 12, null, null, null, null, null, null, 14, 13, 13, 1, 10, 4, 22, 3, 12, 'Natural Armor', 'Reef Shark');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (241, 241, 'null', 0.5, 12, 22, 3, 12, 'Natural Armor', 'Reef Shark');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (241, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (241, '17');
@@ -4251,7 +6425,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The shark has advantage on an attack roll against a creature if at least one of the shark''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 241);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (241, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (242, 12, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (242, 242, 'null', 11, 10, null, null, null, null, null, null, 24, 13, 21, 4, 10, 5, 195, 6, 17, 'Natural Armor', 'Remorhaz');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (242, 242, 'null', 11, 10, 195, 6, 17, 'Natural Armor', 'Remorhaz');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 1, 24);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 4, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (242, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (242, '23');
@@ -4266,7 +6448,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Swallow
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated Body', 'A creature that touches the remorhaz or hits it with a melee attack while within 5 feet of it takes 10 (3d6) fire damage.', 242);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (242, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (243, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (243, 243, 'null', 2, 11, null, null, null, null, null, null, 21, 8, 15, 2, 12, 6, 45, 4, 11, 'Natural Armor', 'Rhinoceros');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (243, 243, 'null', 2, 11, 45, 4, 11, 'Natural Armor', 'Rhinoceros');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (243, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (243, '17');
@@ -4275,7 +6465,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the rhinoceros moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) bludgeoning damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.', 243);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (243, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (244, 10, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (244, 244, 'null', 0.25, 10, null, null, null, null, null, null, 16, 10, 12, 2, 11, 7, 13, 4, 10, '', 'Riding Horse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (244, 244, 'null', 0.25, 10, 13, 4, 10, '', 'Riding Horse');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (244, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (244, '17');
@@ -4283,7 +6481,19 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 244,
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.', 244);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (244, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (245, 20, 16, 80);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (245, 245, 'null', 11, 14, null, 4, null, null, null, null, 28, 10, 20, 3, 10, 9, 248, 2, 15, 'Natural Armor', 'Roc');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (245, 245, 'null', 11, 14, 248, 2, 15, 'Natural Armor', 'Roc');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 1, 28);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 6, 9);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (245, 2, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (245, 3, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (245, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (245, 6, 3);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (245, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (245, '23');
@@ -4296,7 +6506,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The roc has advantage on Wisdom (Perception) checks that rely on sight.', 245);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (245, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (246, 10, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (246, 246, 'null', 5, 16, null, null, null, null, null, null, 18, 8, 17, 7, 16, 6, 93, 4, 20, 'Natural Armor', 'Roper');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (246, 246, 'null', 5, 16, 93, 4, 20, 'Natural Armor', 'Roper');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (246, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (246, '23');
@@ -4314,7 +6532,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Grasping Tendrils', 'The roper can have up to six tendrils at a time. Each tendril can be attacked (AC 20; 10 hit points; immunity to poison and psychic damage). Destroying a tendril deals no damage to the roper, which can extrude a replacement tendril on its next turn. A tendril can also be broken if a creature takes an action and succeeds on a DC 15 Strength check against it.', 246);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (246, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (247, 10, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (247, 247, 'null', 2, 6, null, null, null, null, null, null, 17, 14, 10, 1, 3, 1, 33, 4, 12, '', 'Rug of Smothering');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (247, 247, 'null', 2, 6, 33, 4, 12, '', 'Rug of Smothering');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 5, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (247, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (247, '19');
@@ -4335,7 +6561,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Damage 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the rug remains motionless, it is indistinguishable from a normal rug.', 247);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (247, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (248, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (248, 248, 'null', 0.5, 11, null, null, null, null, null, null, 13, 12, 13, 2, 13, 6, 27, 3, 14, 'Natural Armor', 'Rust Monster');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (248, 248, 'null', 0.5, 11, 27, 3, 14, 'Natural Armor', 'Rust Monster');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (248, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (248, '23');
@@ -4347,7 +6581,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rust Me
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Iron Scent', 'The rust monster can pinpoint, by scent, the location of ferrous metal within 30 feet of it.', 248);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (248, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (249, 10, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (249, 249, 'null', 2, 13, null, null, null, null, null, null, 18, 14, 15, 3, 12, 8, 52, 4, 12, '', 'Saber-Toothed Tiger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (249, 249, 'null', 2, 13, 52, 4, 12, '', 'Saber-Toothed Tiger');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (249, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (249, '17');
@@ -4360,7 +6602,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce', 'If the tiger moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.', 249);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (249, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (250, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (250, 250, 'null', 0.5, 15, null, null, null, null, null, null, 13, 11, 12, 12, 13, 9, 22, 3, 12, 'Natural Armor', 'Sahuagin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (250, 250, 'null', 0.5, 15, 22, 3, 12, 'Natural Armor', 'Sahuagin');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 6, 9);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (250, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (250, '16');
@@ -4377,7 +6627,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood F
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shark Telepathy', 'The sahuagin can magically command any shark within 120 feet of it, using a limited telepathy.', 250);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (250, 15);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (251, 10, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (251, 251, 'null', 5, 10, null, null, null, null, null, null, 18, 14, 15, 11, 10, 12, 90, 4, 15, 'Natural Armor', 'Salamander');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (251, 251, 'null', 5, 10, 90, 4, 15, 'Natural Armor', 'Salamander');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 6, 12);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (251, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (251, '7');
@@ -4395,7 +6653,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated Body', 'A creature that touches the salamander or hits it with a melee attack while within 5 feet of it takes 7 (2d6) fire damage.', 251);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (251, 24);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (252, 8, 7, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (252, 252, 'null', 0.5, 12, null, null, null, null, null, null, 12, 16, 11, 12, 10, 14, 31, 3, 14, 'Leather Armor', 'Satyr');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (252, 252, 'null', 0.5, 12, 31, 3, 14, 'Leather Armor', 'Satyr');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 6, 14);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (252, '24');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (252, '14');
@@ -4411,7 +6677,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (252, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (252, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (252, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (253, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (253, 253, 'null', 0, 9, null, null, null, null, null, null, 2, 11, 8, 1, 8, 2, 1, 5, 11, 'Natural Armor', 'Scorpion');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (253, 253, 'null', 0, 9, 1, 5, 11, 'Natural Armor', 'Scorpion');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 1, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 6, 2);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (253, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (253, '17');
@@ -4420,7 +6694,15 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 253, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sting', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must make a DC 9 Constitution saving throw, taking 4 (1d8) poison damage on a failed save, or half as much damage on a successful one.', 253);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (253, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (254, 8, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (254, 254, 'null', 0.5, 15, null, null, null, null, null, null, 11, 14, 12, 11, 13, 11, 16, 3, 13, 'Leather Armor', 'Scout');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (254, 254, 'null', 0.5, 15, 16, 3, 13, 'Leather Armor', 'Scout');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 1, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (254, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (254, '5');
@@ -4435,7 +6717,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Sight', 'The scout has advantage on Wisdom (Perception) checks that rely on hearing or sight.', 254);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (254, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (255, 8, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (255, 255, 'null', 2, 11, null, null, null, null, null, null, 16, 13, 16, 12, 12, 13, 52, 3, 14, 'Natural Armor', 'Sea Hag');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (255, 255, 'null', 2, 11, 52, 3, 14, 'Natural Armor', 'Sea Hag');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 6, 13);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (255, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (255, '24');
@@ -4451,7 +6741,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (255, 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (255, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (255, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (256, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (256, 256, 'null', 0, 10, null, null, null, null, null, null, 1, 12, 8, 1, 10, 2, 1, 5, 11, '', 'Sea Horse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (256, 256, 'null', 0, 10, 1, 5, 11, '', 'Sea Horse');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 1, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 6, 2);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (256, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (256, '17');
@@ -4460,7 +6758,15 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 256,
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Breathing', 'The sea horse can breathe only underwater.', 256);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (256, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (257, 8, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (257, 257, 'null', 0.5, 10, null, null, null, null, null, null, 6, 14, 13, 6, 10, 8, 16, 3, 12, '', 'Shadow');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (257, 257, 'null', 0.5, 10, 16, 3, 12, '', 'Shadow');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 1, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (257, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (257, '15');
@@ -4492,7 +6798,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunligh
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shadow Stealth', 'While in dim light or darkness, the shadow can take the Hide action as a bonus action.', 257);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (257, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (258, 10, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (258, 258, 'null', 5, 10, null, null, null, null, null, null, 18, 8, 16, 5, 10, 5, 136, 4, 15, 'Natural Armor', 'Shambling Mound');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (258, 258, 'null', 5, 10, 136, 4, 15, 'Natural Armor', 'Shambling Mound');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (258, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (258, '10');
@@ -4512,7 +6826,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Lightning Absorption', 'Whenever the shambling mound is subjected to lightning damage, it takes no damage and regains a number of hit points equal to the lightning damage dealt.', 258);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (258, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (259, 10, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (259, 259, 'null', 7, 10, null, null, null, null, null, null, 18, 8, 18, 7, 10, 3, 142, 4, 17, 'Natural Armor', 'Shield Guardian');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (259, 259, 'null', 7, 10, 142, 4, 17, 'Natural Armor', 'Shield Guardian');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (259, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (259, '19');
@@ -4533,7 +6855,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Bound',
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (259, 'When a creature makes an attack against the wearer of the guardian''s amulet, the guardian grants a +2 bonus to the wearer''s AC if the guardian is within 5 feet of the wearer.', 'Shield');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (259, 32);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (260, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (260, 260, 'null', 0, 6, null, null, null, null, null, null, 1, 1, 10, 1, 3, 1, 13, 3, 5, '', 'Shrieker');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (260, 260, 'null', 0, 6, 13, 3, 5, '', 'Shrieker');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 1, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 2, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 5, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (260, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (260, '10');
@@ -4546,7 +6876,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (260, 'When bright light or a creature is within 30 feet of the shrieker, it emits a shriek audible within 300 feet of it. The shrieker continues to shriek until the disturbance moves out of range and for 1d4 of the shrieker''s turns afterward.', 'Shriek');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (260, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (261, 8, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (261, 261, 'null', 2, 14, null, 2, null, null, null, null, 19, 10, 17, 12, 11, 15, 45, 3, 17, 'Natural Armor', 'Silver Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (261, 261, 'null', 2, 14, 45, 3, 17, 'Natural Armor', 'Silver Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (261, 2, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (261, 3, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (261, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (261, 6, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (261, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (261, '6');
@@ -4563,7 +6905,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Paralyz
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath Weapons (Recharge 5–6)', 'The dragon uses one of the following breath weapons.', 261);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (261, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (262, 8, 2, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (262, 262, 'null', 0.25, 9, null, null, null, null, null, null, 10, 14, 15, 6, 8, 5, 13, 3, 13, 'Armor Scraps', 'Skeleton');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (262, 262, 'null', 0.25, 9, 13, 3, 13, 'Armor Scraps', 'Skeleton');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (262, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (262, '16');
@@ -4577,7 +6927,18 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortsw
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortbow', 'Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.', 262);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (262, 54);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (263, 10, 18, 144);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (263, 263, 'The solar can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The solar regains spent legendary actions at the start of its turn.', 21, 24, null, null, null, 14, null, null, 26, 22, 26, 25, 25, 30, 243, 4, 21, 'Natural Armor', 'Solar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (263, 263, 'The solar can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The solar regains spent legendary actions at the start of its turn.', 21, 24, 243, 4, 21, 'Natural Armor', 'Solar');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 1, 26);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 2, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 3, 26);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 4, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 5, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 6, 30);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (263, 4, 14);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (263, 5, 14);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (263, 6, 17);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (263, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (263, '26');
@@ -4610,7 +6971,15 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (263, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (263, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (263, 64);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (264, 8, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (264, 264, 'null', 3, 16, null, null, null, null, null, null, 8, 14, 14, 13, 14, 11, 39, 3, 14, 'Natural', 'Spectator');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (264, 264, 'null', 3, 16, 39, 3, 14, 'Natural', 'Spectator');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 1, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (264, '9');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (264, '22');
@@ -4631,7 +7000,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (264, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (264, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (264, 58);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (265, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (265, 265, 'null', 1, 10, null, null, null, null, null, null, 1, 14, 11, 10, 10, 11, 22, 3, 12, '', 'Specter');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (265, 265, 'null', 1, 10, 22, 3, 12, '', 'Specter');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 1, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (265, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (265, '15');
@@ -4662,7 +7039,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorpo
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunlight Sensitivity', 'While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.', 265);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (265, 54);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (266, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (266, 266, 'null', 0, 10, null, null, null, null, null, null, 2, 14, 8, 1, 10, 2, 1, 5, 12, '', 'Spider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (266, 266, 'null', 0, 10, 1, 5, 12, '', 'Spider');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 1, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 6, 2);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (266, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (266, '17');
@@ -4676,7 +7061,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The spider ignores movement restrictions caused by webbing.', 266);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (266, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (267, 10, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (267, 267, 'null', 8, 12, null, 6, null, null, null, null, 18, 17, 14, 16, 15, 16, 75, 4, 15, 'Natural Armor', 'Spirit Naga');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (267, 267, 'null', 8, 12, 75, 4, 15, 'Natural Armor', 'Spirit Naga');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 6, 16);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (267, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (267, 3, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (267, 5, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (267, 6, 6);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (267, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (267, '23');
@@ -4691,7 +7088,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rejuven
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (267, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (267, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (268, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (268, 268, 'null', 0.25, 13, null, null, null, null, null, null, 3, 18, 10, 14, 13, 11, 2, 5, 15, 'Leather Armor', 'Sprite');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (268, 268, 'null', 0.25, 13, 2, 5, 15, 'Leather Armor', 'Sprite');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 1, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 2, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (268, '20');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (268, '24');
@@ -4707,7 +7112,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (268, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (268, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (268, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (269, 8, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (269, 269, 'null', 1, 16, null, null, null, null, null, null, 10, 15, 10, 12, 14, 16, 27, 3, 12, '', 'Spy');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (269, 269, 'null', 1, 16, 27, 3, 12, '', 'Spy');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 6, 16);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (269, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (269, '5');
@@ -4726,7 +7139,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Cunning
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sneak Attack (1/Turn)', 'The spy deals an extra 7 (2d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the spy that isn''t incapacitated and the spy doesn''t have disadvantage on the attack roll.', 269);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (269, 65);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (270, 6, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (270, 270, 'null', 0.25, 10, null, null, null, null, null, null, 5, 11, 10, 11, 10, 12, 21, 1, 10, '', 'Steam Mephit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (270, 270, 'null', 0.25, 10, 21, 1, 10, '', 'Steam Mephit');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 1, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 6, 12);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (270, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (270, '7');
@@ -4743,7 +7164,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (270, 24);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (270, 47);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (271, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (271, 271, 'null', 0.125, 9, null, null, null, null, null, null, 4, 16, 11, 2, 8, 6, 2, 5, 14, 'Natural Armor', 'Stirge');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (271, 271, 'null', 0.125, 9, 2, 5, 14, 'Natural Armor', 'Stirge');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 1, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (271, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (271, '17');
@@ -4753,7 +7182,18 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 271, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Blood Drain', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage, and the stirge attaches to the target. While attached, the stirge doesn''t attack. Instead, at the start of each of the stirge''s turns, the target loses 5 (1d4 + 3) hit points due to blood loss.The stirge can detach itself by spending 5 feet of its movement. It does so after it drains 10 hit points of blood from the target or the target dies. A creature, including the target, can use its action to detach the stirge.', 271);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (271, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (272, 12, 11, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (272, 272, 'null', 7, 14, null, 5, null, null, null, null, 23, 15, 20, 10, 12, 9, 126, 6, 17, 'Natural Armor', 'Stone Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (272, 272, 'null', 7, 14, 126, 6, 17, 'Natural Armor', 'Stone Giant');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 6, 9);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (272, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (272, 3, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (272, 5, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (272, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (272, '25');
@@ -4767,7 +7207,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stone C
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (272, 'If a rock or similar object is hurled at the giant, the giant can, with a successful DC 10 Dexterity saving throw, catch the missile and take no bludgeoning damage from it.', 'Rock Catching');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (272, 35);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (273, 10, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (273, 273, 'null', 10, 10, null, null, null, null, null, null, 22, 9, 20, 3, 11, 1, 178, 4, 17, 'Natural Armor', 'Stone Golem');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (273, 273, 'null', 10, 10, 178, 4, 17, 'Natural Armor', 'Stone Golem');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 1, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (273, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (273, '19');
@@ -4792,7 +7240,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Immutab
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The golem''s weapon attacks are magical.', 273);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (273, 21);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (274, 12, 20, 100);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (274, 274, 'null', 13, 19, 14, null, null, null, null, null, 29, 14, 20, 16, 18, 18, 230, 6, 16, 'Scale Mail', 'Storm Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (274, 274, 'null', 13, 19, 230, 6, 16, 'Scale Mail', 'Storm Giant');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 1, 29);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 5, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 6, 18);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (274, 1, 14);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (274, 3, 10);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (274, 5, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (274, 6, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (274, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (274, '25');
@@ -4814,7 +7274,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (274, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (274, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (275, 8, 12, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (275, 275, 'null', 4, 15, null, null, null, null, null, null, 8, 17, 13, 15, 12, 20, 66, 3, 15, 'Natural Armor', 'Succubus/Incubus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (275, 275, 'null', 4, 15, 66, 3, 15, 'Natural Armor', 'Succubus/Incubus');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 1, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 2, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 4, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 6, 20);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (275, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (275, '3');
@@ -4844,7 +7312,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (275, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (275, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (275, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (276, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (276, 276, 'null', 0.25, 11, null, null, null, null, null, null, 5, 15, 10, 2, 12, 4, 22, 3, 12, '', 'Swarm of Bats');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (276, 276, 'null', 0.25, 11, 22, 3, 12, '', 'Swarm of Bats');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 1, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (276, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (276, '17');
@@ -4868,7 +7344,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The swarm can’t use its blindsight while deafened.', 276);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (276, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (277, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (277, 277, 'null', 0.5, 8, null, null, null, null, null, null, 3, 13, 10, 1, 7, 1, 22, 3, 12, 'Natural Armor', 'Swarm of Insects');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (277, 277, 'null', 0.5, 8, 22, 3, 12, 'Natural Armor', 'Swarm of Insects');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 1, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 5, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (277, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (277, '17');
@@ -4890,7 +7374,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm', 'The swarm can occupy another creature''s space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can''t regain hit points or gain temporary hit points.', 277);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (277, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (278, 8, 8, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (278, 278, 'null', 2, 10, null, null, null, null, null, null, 8, 18, 11, 1, 10, 3, 36, 3, 14, '', 'Swarm of Poisonous Snakes');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (278, 278, 'null', 2, 10, 36, 3, 14, '', 'Swarm of Poisonous Snakes');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 1, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 2, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 3, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (278, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (278, '17');
@@ -4912,7 +7404,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm', 'The swarm can occupy another creature''s space and vice versa, and the swarm can move through any opening large enough for a Tiny snake. The swarm can''t regain hit points or gain temporary hit points.', 278);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (278, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (279, 8, 8, -8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (279, 279, 'null', 1, 8, null, null, null, null, null, null, 13, 16, 9, 1, 7, 2, 28, 3, 13, '', 'Swarm of Quippers');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (279, 279, 'null', 1, 8, 28, 3, 13, '', 'Swarm of Quippers');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 3, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 5, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 6, 2);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (279, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (279, '17');
@@ -4936,7 +7436,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood Frenzy', 'The swarm has advantage on melee attack rolls against any creature that doesn''t have all its hit points.', 279);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (279, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (280, 8, 7, -7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (280, 280, 'null', 0.25, 10, null, null, null, null, null, null, 9, 11, 9, 2, 10, 3, 24, 3, 10, '', 'Swarm of Rats');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (280, 280, 'null', 0.25, 10, 24, 3, 10, '', 'Swarm of Rats');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 1, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 3, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (280, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (280, '17');
@@ -4958,7 +7466,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm',
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The swarm has advantage on Wisdom (Perception) checks that rely on smell.', 280);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (280, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (281, 8, 7, -7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (281, 281, 'null', 0.25, 15, null, null, null, null, null, null, 6, 14, 8, 3, 12, 6, 24, 3, 12, '', 'Swarm of Ravens');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (281, 281, 'null', 0.25, 15, 24, 3, 12, '', 'Swarm of Ravens');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 1, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (281, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (281, '17');
@@ -4980,7 +7496,18 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beaks',
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm', 'The swarm can occupy another creature''s space and vice versa, and the swarm can move through any opening large enough for a Tiny raven. The swarm can''t regain hit points or gain temporary hit points.', 281);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (281, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (282, 20, 33, 330);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (282, 282, 'The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The tarrasque regains spent legendary actions at the start of its turn.', 30, 10, null, null, null, 5, null, null, 30, 11, 30, 3, 11, 11, 676, 2, 25, 'Natural Armor', 'Tarrasque');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (282, 282, 'The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The tarrasque regains spent legendary actions at the start of its turn.', 30, 10, 676, 2, 25, 'Natural Armor', 'Tarrasque');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 1, 30);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 3, 30);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 6, 11);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (282, 4, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (282, 5, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (282, 6, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (282, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (282, '23');
@@ -5011,7 +7538,15 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (282, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (282, 'The tarrasque makes one claw attack or tail attack.', 'Attack');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (282, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (283, 8, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (283, 283, 'null', 0.5, 10, null, null, null, null, null, null, 15, 11, 14, 10, 10, 11, 32, 3, 11, 'Leather Armor', 'Thug');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (283, 283, 'null', 0.5, 10, 32, 3, 11, 'Leather Armor', 'Thug');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (283, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (283, '5');
@@ -5023,7 +7558,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The thug has advantage on an attack roll against a creature if at least one of the thug''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 283);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (283, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (284, 10, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (284, 284, 'null', 1, 13, null, null, null, null, null, null, 17, 15, 14, 3, 12, 8, 37, 4, 12, '', 'Tiger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (284, 284, 'null', 1, 13, 37, 4, 12, '', 'Tiger');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (284, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (284, '17');
@@ -5037,7 +7580,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce', 'If the tiger moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.', 284);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (284, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (285, 12, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (285, 285, 'null', 9, 13, null, null, null, null, null, null, 23, 8, 21, 12, 16, 12, 138, 6, 16, 'Natural Armor', 'Treant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (285, 285, 'null', 9, 13, 138, 6, 16, 'Natural Armor', 'Treant');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 2, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 5, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 6, 12);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (285, '10');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (285, '2');
@@ -5056,7 +7607,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (285, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (285, 27);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (285, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (286, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (286, 286, 'null', 0.125, 10, null, null, null, null, null, null, 13, 11, 12, 8, 11, 8, 11, 3, 12, 'Hide Armor', 'Tribal Warrior');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (286, 286, 'null', 0.125, 10, 11, 3, 12, 'Hide Armor', 'Tribal Warrior');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 2, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (286, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (286, '5');
@@ -5065,7 +7624,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spear',
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The warrior has advantage on an attack roll against a creature if at least one of the warrior''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 286);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (286, 12);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (287, 12, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (287, 287, 'null', 5, 10, null, null, null, null, null, null, 22, 9, 17, 2, 11, 5, 95, 6, 13, 'Natural Armor', 'Triceratops');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (287, 287, 'null', 5, 10, 95, 6, 13, 'Natural Armor', 'Triceratops');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 1, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 2, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (287, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (287, '17');
@@ -5075,7 +7642,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the triceratops moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the triceratops can make one stomp attack against it as a bonus action.', 287);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (287, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (288, 10, 8, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (288, 288, 'null', 5, 12, null, null, null, null, null, null, 18, 13, 20, 7, 9, 7, 84, 4, 15, 'Natural Armor', 'Troll');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (288, 288, 'null', 5, 12, 84, 4, 15, 'Natural Armor', 'Troll');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 3, 20);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 5, 9);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (288, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (288, '25');
@@ -5089,7 +7664,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Regener
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The troll has advantage on Wisdom (Perception) checks that rely on smell.', 288);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (288, 35);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (289, 6, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (289, 289, 'null', 0.125, 9, null, null, null, null, null, null, 6, 13, 12, 4, 8, 3, 4, 1, 13, 'Natural Armor', 'Twig Blight');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (289, 289, 'null', 0.125, 9, 4, 1, 13, 'Natural Armor', 'Twig Blight');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 1, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 4, 4);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (289, '10');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (289, '3');
@@ -5103,7 +7686,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws',
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the blight remains motionless, it is indistinguishable from a dead shrub.', 289);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (289, 16);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (290, 12, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (290, 290, 'null', 8, 14, null, null, null, null, null, null, 25, 10, 19, 2, 12, 9, 136, 6, 13, 'Natural Armor', 'Tyrannosaurus Rex');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (290, 290, 'null', 8, 14, 136, 6, 13, 'Natural Armor', 'Tyrannosaurus Rex');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 1, 25);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 3, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 6, 9);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (290, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (290, '17');
@@ -5114,7 +7705,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The tyrannosaurus makes two attacks: one with its bite and one with its tail. It can''t make both attacks against the same target.', 290);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (290, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (291, 10, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (291, 291, 'The unicorn can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The unicorn regains spent legendary actions at the start of its turn.', 5, 13, null, null, null, null, null, null, 18, 14, 15, 11, 17, 16, 67, 4, 12, '', 'Unicorn');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (291, 291, 'The unicorn can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The unicorn regains spent legendary actions at the start of its turn.', 5, 13, 67, 4, 12, '', 'Unicorn');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 5, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 6, 16);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (291, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (291, '26');
@@ -5141,7 +7740,18 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (291, 4);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (291, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (291, 69);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (292, 8, 17, 68);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (292, 292, 'The vampire can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The vampire regains spent legendary actions at the start of its turn.', 13, 17, null, 9, null, null, null, null, 18, 18, 18, 17, 15, 18, 144, 3, 16, 'Natural Armor', 'Vampire');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (292, 292, 'The vampire can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The vampire regains spent legendary actions at the start of its turn.', 13, 17, 144, 3, 16, 'Natural Armor', 'Vampire');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 2, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 4, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 5, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 6, 18);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (292, 2, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (292, 5, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (292, 6, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (292, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (292, '16');
@@ -5169,7 +7779,17 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (292, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (292, '(Costs 2 Actions). The vampire makes one bite attack.', 'Bite');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (292, 22);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (293, 8, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (293, 293, 'null', 5, 13, null, 6, null, null, null, null, 16, 16, 16, 11, 10, 12, 82, 3, 15, 'Natural Armor', 'Vampire Spawn');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (293, 293, 'null', 5, 13, 82, 3, 15, 'Natural Armor', 'Vampire Spawn');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 6, 12);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (293, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (293, 5, 3);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (293, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (293, '12');
@@ -5189,7 +7809,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Vampire Weaknesses', 'The vampire has the following flaws: Forbiddance. The vampire can''t enter a residence without an invitation from one of the occupants. Harmed by Running Water. The vampire takes 20 acid damage when it ends its turn in running water. Stake to the Heart. The vampire is destroyed if a piercing weapon made of wood is driven into its heart while it is incapacitated in its resting place. Sunlight Hypersensitivity. The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks.', 293);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (293, 22);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (294, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (294, 294, 'null', 3, 12, null, null, null, null, null, null, 16, 13, 14, 10, 11, 10, 58, 3, 17, 'Splint', 'Veteran');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (294, 294, 'null', 3, 12, 58, 3, 17, 'Splint', 'Veteran');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (294, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (294, '5');
@@ -5202,7 +7830,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Heavy C
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.', 294);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (294, 52);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (295, 8, 4, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (295, 295, 'null', 0.25, 6, null, null, null, null, null, null, 3, 1, 10, 1, 3, 1, 18, 3, 5, '', 'Violet Fungus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (295, 295, 'null', 0.25, 6, 18, 3, 5, '', 'Violet Fungus');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 1, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 2, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 4, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 5, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 6, 1);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (295, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (295, '10');
@@ -5216,7 +7852,18 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the violet fungus remains motionless, it is indistinguishable from an ordinary fungus.', 295);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (295, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (296, 10, 11, 44);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (296, 296, 'null', 6, 11, null, 5, null, null, null, null, 17, 15, 18, 8, 13, 8, 104, 4, 15, 'Natural Armor', 'Vrock');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (296, 296, 'null', 6, 11, 104, 4, 15, 'Natural Armor', 'Vrock');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 6, 8);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (296, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (296, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (296, 6, 2);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (296, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (296, '15');
@@ -5240,7 +7887,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (296, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (296, 61);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (297, 8, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (297, 297, 'null', 0, 13, null, null, null, null, null, null, 7, 10, 13, 2, 12, 4, 5, 3, 10, '', 'Vulture');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (297, 297, 'null', 0, 13, 5, 3, 10, '', 'Vulture');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 1, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 6, 4);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (297, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (297, '17');
@@ -5252,7 +7907,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The vulture has advantage on an attack roll against a creature if at least one of the vulture''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 297);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (297, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (298, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (298, 298, 'null', 0.5, 11, null, null, null, null, null, null, 18, 12, 13, 2, 12, 7, 19, 4, 11, '', 'Warhorse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (298, 298, 'null', 0.5, 11, 19, 4, 11, '', 'Warhorse');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (298, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (298, '17');
@@ -5261,7 +7924,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the horse moves at least 20 feet straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action.', 298);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (298, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (299, 10, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (299, 299, 'null', 0.5, 9, null, null, null, null, null, null, 18, 12, 15, 2, 8, 5, 22, 4, 13, 'Barding Scraps', 'Warhorse Skeleton');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (299, 299, 'null', 0.5, 9, 22, 4, 13, 'Barding Scraps', 'Warhorse Skeleton');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 5, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 6, 5);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (299, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (299, '16');
@@ -5274,7 +7945,15 @@ INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.', 299);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (299, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (300, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (300, 300, 'null', 5, 10, null, null, null, null, null, null, 18, 14, 18, 5, 10, 8, 114, 4, 14, 'Natural Armor', 'Water Elemental');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (300, 300, 'null', 5, 10, 114, 4, 14, 'Natural Armor', 'Water Elemental');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (300, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (300, '7');
@@ -5301,7 +7980,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water F
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Freeze', 'If the elemental takes cold damage, it partially freezes; its speed is reduced by 20 feet until the end of its next turn.', 300);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (300, 47);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (301, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (301, 301, 'null', 0, 13, null, null, null, null, null, null, 3, 16, 8, 2, 12, 3, 1, 5, 13, '', 'Weasel');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (301, 301, 'null', 0, 13, 1, 5, 13, '', 'Weasel');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 1, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 3, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 4, 2);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 6, 3);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (301, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (301, '17');
@@ -5312,7 +7999,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 301);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (301, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (302, 8, 18, 54);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (302, 302, 'null', 5, 17, null, null, null, null, null, null, 19, 10, 17, 11, 12, 12, 135, 3, 10, 'In Humanoid Form, 11 In Bear And Hybrid Form', 'Werebear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (302, 302, 'null', 5, 17, 135, 3, 10, 'In Humanoid Form, 11 In Bear And Hybrid Form', 'Werebear');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 6, 12);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (302, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (302, '20');
@@ -5330,7 +8025,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapech
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The werebear has advantage on Wisdom (Perception) checks that rely on smell.', 302);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (302, 19);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (303, 8, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (303, 303, 'null', 4, 12, null, null, null, null, null, null, 17, 10, 15, 10, 11, 8, 78, 3, 10, 'In Humanoid Form, 11 In Boar Or Hybrid Form', 'Wereboar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (303, 303, 'null', 4, 12, 78, 3, 10, 'In Humanoid Form, 11 In Boar Or Hybrid Form', 'Wereboar');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 3, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (303, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (303, '4');
@@ -5348,7 +8051,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapech
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge (Boar or Hybrid Form Only)', 'If the wereboar moves at least 15 feet straight toward a target and then hits it with its tusks on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.', 303);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (303, 14);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (304, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (304, 304, 'null', 2, 12, null, null, null, null, null, null, 10, 15, 12, 11, 10, 8, 33, 3, 12, '', 'Wererat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (304, 304, 'null', 2, 12, 33, 3, 12, '', 'Wererat');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 1, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (304, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (304, '16');
@@ -5367,7 +8078,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapech
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The wererat has advantage on Wisdom (Perception) checks that rely on smell.', 304);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (304, 13);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (305, 8, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (305, 305, 'null', 4, 15, null, null, null, null, null, null, 17, 15, 16, 10, 13, 11, 120, 3, 12, '', 'Weretiger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (305, 305, 'null', 4, 15, 120, 3, 12, '', 'Weretiger');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (305, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (305, '4');
@@ -5389,7 +8108,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce (Tiger or Hybrid Form Only)', 'If the weretiger moves at least 15 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the weretiger can make one bite attack against it as a bonus action.', 305);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (305, 36);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (306, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (306, 306, 'null', 3, 14, null, null, null, null, null, null, 15, 13, 14, 10, 11, 10, 58, 3, 11, 'In Humanoid Form, 12 In Wolf Or Hybrid Form', 'Werewolf');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (306, 306, 'null', 3, 14, 58, 3, 11, 'In Humanoid Form, 12 In Wolf Or Hybrid Form', 'Werewolf');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 6, 10);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (306, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (306, '15');
@@ -5408,7 +8135,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapech
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 306);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (306, 59);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (307, 8, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (307, 307, 'null', 2, 14, null, 2, null, null, null, null, 14, 10, 14, 5, 10, 11, 32, 3, 16, 'Natural Armor', 'White Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (307, 307, 'null', 2, 14, 32, 3, 16, 'Natural Armor', 'White Dragon Wyrmling');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 1, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 6, 11);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (307, 2, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (307, 3, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (307, 5, 2);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (307, 6, 2);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (307, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (307, '6');
@@ -5425,7 +8164,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Cold Breath (Recharge 5–6)', 'The dragon exhales an icy blast of hail in a 15-foot cone. Each creature in that area must make a DC 12 Constitution saving throw, taking 22 (5d8) cold damage on a failed save, or half as much damage on a successful one.', 307);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (307, 11);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (308, 8, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (308, 308, 'null', 3, 13, null, null, null, null, null, null, 15, 14, 16, 10, 13, 15, 45, 3, 14, 'Studded Leather', 'Wight');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (308, 308, 'null', 3, 13, 45, 3, 14, 'Studded Leather', 'Wight');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 1, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 4, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 6, 15);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (308, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (308, '12');
@@ -5447,7 +8194,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunlight Sensitivity', 'While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.', 308);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (308, 22);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (309, 4, 9, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (309, 309, 'null', 2, 12, null, null, null, null, null, null, 1, 28, 10, 13, 14, 11, 22, 5, 19, '', 'Will-o''-Wisp');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (309, 309, 'null', 2, 12, 22, 5, 19, '', 'Will-o''-Wisp');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 1, 1);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 2, 28);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 3, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 4, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (309, '12');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (309, '15');
@@ -5479,7 +8234,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorpo
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ephemeral', 'The will-o''-wisp can''t wear or carry anything.', 309);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (309, 22);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (310, 10, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (310, 310, 'null', 3, 15, null, null, null, null, null, null, 18, 13, 14, 7, 12, 8, 75, 4, 13, 'Natural Armor', 'Winter Wolf');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (310, 310, 'null', 3, 15, 75, 4, 13, 'Natural Armor', 'Winter Wolf');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 3, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (310, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (310, '23');
@@ -5496,7 +8259,15 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (310, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (310, 28);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (310, 51);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (311, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (311, 311, 'null', 0.25, 13, null, null, null, null, null, null, 12, 15, 12, 3, 12, 6, 11, 3, 13, 'Natural Armor', 'Wolf');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (311, 311, 'null', 0.25, 13, 11, 3, 13, 'Natural Armor', 'Wolf');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 1, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 2, 15);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 3, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (311, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (311, '17');
@@ -5508,7 +8279,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The wolf has advantage on attack rolls against a creature if at least one of the wolf''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 311);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (311, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (312, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (312, 312, 'null', 0.5, 14, null, null, null, null, null, null, 16, 13, 13, 7, 11, 8, 26, 4, 13, 'Natural Armor', 'Worg');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (312, 312, 'null', 0.5, 14, 26, 4, 13, 'Natural Armor', 'Worg');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 1, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 3, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 4, 7);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 6, 8);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (312, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (312, '23');
@@ -5520,7 +8299,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (312, 6);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (312, 7);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (313, 8, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (313, 313, 'null', 5, 12, null, null, null, null, null, null, 6, 16, 16, 12, 14, 15, 67, 3, 13, '', 'Wraith');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (313, 313, 'null', 5, 12, 67, 3, 13, '', 'Wraith');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 1, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 2, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 5, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 6, 15);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (313, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (313, '12');
@@ -5551,7 +8338,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorpo
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunlight Sensitivity', 'While in sunlight, the wraith has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.', 313);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (313, 22);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (314, 10, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (314, 314, 'null', 6, 14, null, null, null, null, null, null, 19, 10, 16, 5, 12, 6, 110, 4, 13, 'Natural Armor', 'Wyvern');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (314, 314, 'null', 6, 14, 110, 4, 13, 'Natural Armor', 'Wyvern');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 4, 5);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 6, 6);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (314, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (314, '6');
@@ -5565,7 +8360,15 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Stinger
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The wyvern makes two attacks: one with its bite and one with its stinger. While flying, it can use its claws in place of one other attack.', 314);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (314, 18);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (315, 8, 7, 42);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (315, 315, 'null', 5, 16, null, null, null, null, null, null, 17, 10, 22, 11, 10, 11, 73, 3, 19, 'Natural Armor', 'Xorn');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (315, 315, 'null', 5, 16, 73, 3, 19, 'Natural Armor', 'Xorn');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 1, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 3, 22);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 4, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 5, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 6, 11);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (315, '1');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (315, '7');
@@ -5585,7 +8388,15 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Treasur
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Earth Glide', 'The xorn can burrow through nonmagical, unworked earth and stone. While doing so, the xorn doesn''t disturb the material it moves through.', 315);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (315, 53);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (316, 10, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (316, 316, 'null', 3, 13, null, null, null, null, null, null, 18, 13, 16, 8, 12, 7, 51, 4, 12, 'Natural Armor', 'Yeti');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (316, 316, 'null', 3, 13, 51, 4, 12, 'Natural Armor', 'Yeti');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 2, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 4, 8);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 5, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 6, 7);
+
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (316, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (316, '23');
@@ -5604,7 +8415,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Snow Ca
 </div>', 316);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (316, 10);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (317, 10, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (317, 317, 'null', 7, 16, null, 5, null, null, null, null, 19, 14, 17, 12, 11, 15, 127, 4, 18, 'Natural Armor', 'Young Black Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (317, 317, 'null', 7, 16, 127, 4, 18, 'Natural Armor', 'Young Black Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (317, 2, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (317, 3, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (317, 5, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (317, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (317, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (317, '6');
@@ -5624,7 +8447,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (317, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (317, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (318, 10, 16, 64);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (318, 318, 'null', 9, 19, null, 4, null, null, null, null, 21, 10, 19, 14, 13, 17, 152, 4, 18, 'Natural Armor', 'Young Blue Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (318, 318, 'null', 9, 19, 152, 4, 18, 'Natural Armor', 'Young Blue Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 3, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 6, 17);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (318, 2, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (318, 3, 8);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (318, 5, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (318, 6, 7);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (318, '6');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (318, '16');
@@ -5643,7 +8478,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (318, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (318, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (319, 10, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (319, 319, 'null', 6, 16, null, 3, null, null, null, null, 19, 10, 17, 12, 11, 15, 110, 4, 17, 'Natural Armor', 'Young Brass Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (319, 319, 'null', 6, 16, 110, 4, 17, 'Natural Armor', 'Young Brass Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 4, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (319, 2, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (319, 3, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (319, 5, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (319, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (319, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (319, '6');
@@ -5665,7 +8512,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Br
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (319, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (319, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (320, 10, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (320, 320, 'null', 8, 17, null, 3, null, null, null, null, 21, 10, 19, 14, 13, 17, 142, 4, 18, 'Natural Armor', 'Young Bronze Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (320, 320, 'null', 8, 17, 142, 4, 18, 'Natural Armor', 'Young Bronze Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 1, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 3, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 6, 17);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (320, 2, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (320, 3, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (320, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (320, 6, 6);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (320, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (320, '6');
@@ -5688,7 +8547,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (320, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (320, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (321, 10, 14, 42);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (321, 321, 'null', 7, 17, null, 4, null, null, null, null, 19, 12, 17, 16, 13, 15, 119, 4, 17, 'Natural Armor', 'Young Copper Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (321, 321, 'null', 7, 17, 119, 4, 17, 'Natural Armor', 'Young Copper Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (321, 2, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (321, 3, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (321, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (321, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (321, '2');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (321, '6');
@@ -5710,7 +8581,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Br
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (321, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (321, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (322, 10, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (322, 322, 'null', 10, 19, null, 6, null, null, null, null, 23, 14, 21, 16, 13, 20, 178, 4, 18, 'Natural Armor', 'Young Gold Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (322, 322, 'null', 10, 19, 178, 4, 18, 'Natural Armor', 'Young Gold Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 2, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 6, 20);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (322, 2, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (322, 3, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (322, 5, 5);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (322, 6, 9);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (322, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (322, '6');
@@ -5734,7 +8617,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (322, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (322, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (323, 10, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (323, 323, 'null', 8, 17, null, 4, null, null, null, null, 19, 12, 17, 16, 13, 15, 136, 4, 18, 'Natural Armor', 'Young Green Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (323, 323, 'null', 8, 17, 136, 4, 18, 'Natural Armor', 'Young Green Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 1, 19);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 2, 12);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 3, 17);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 4, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 5, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 6, 15);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (323, 2, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (323, 3, 6);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (323, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (323, 6, 5);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (323, '6');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (323, '16');
@@ -5756,7 +8651,19 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (323, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (323, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (324, 10, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (324, 324, 'null', 10, 18, null, 4, null, null, null, null, 23, 10, 21, 14, 11, 19, 178, 4, 18, 'Natural Armor', 'Young Red Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (324, 324, 'null', 10, 18, 178, 4, 18, 'Natural Armor', 'Young Red Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 6, 19);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (324, 2, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (324, 3, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (324, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (324, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (324, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (324, '6');
@@ -5775,7 +8682,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (324, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (324, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (325, 10, 16, 80);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (325, 325, 'null', 9, 18, null, 4, null, null, null, null, 23, 10, 21, 14, 11, 19, 168, 4, 18, 'Natural Armor', 'Young Silver Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (325, 325, 'null', 9, 18, 168, 4, 18, 'Natural Armor', 'Young Silver Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 1, 23);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 3, 21);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 4, 14);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 6, 19);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (325, 2, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (325, 3, 9);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (325, 5, 4);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (325, 6, 8);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (325, '21');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (325, '6');
@@ -5797,7 +8716,19 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (325, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (325, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (326, 10, 14, 56);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (326, 326, 'null', 6, 16, null, 3, null, null, null, null, 18, 10, 18, 6, 11, 12, 133, 4, 17, 'Natural Armor', 'Young White Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (326, 326, 'null', 6, 16, 133, 4, 17, 'Natural Armor', 'Young White Dragon');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 1, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 2, 10);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 3, 18);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 4, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 5, 11);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 6, 12);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (326, 2, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (326, 3, 7);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (326, 5, 3);
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (326, 6, 4);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (326, '15');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (326, '6');
@@ -5818,7 +8749,16 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ice Wal
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (326, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (326, 28);
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (327, 8, 3, 9);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception, str_saving_throw_bonus, dex_saving_throw_bonus, con_saving_throw_bonus,int_saving_throw_bonus, wis_saving_throw_bonus, cha_saving_throw_bonus, strength, dexterity, constitution, intelligence, wisdom, charisma , hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (327, 327, 'null', 0.25, 8, null, null, null, null, 0, null, 13, 6, 16, 3, 6, 5, 22, 3, 8, '', 'Zombie');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (327, 327, 'null', 0.25, 8, 22, 3, 8, '', 'Zombie');
+
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 1, 13);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 2, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 3, 16);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 4, 3);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 5, 6);
+INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 6, 5);
+
+INSERT INTO dnd.monster_saving_throws (monster_id, ability_id, value) VALUES (327, 5, 0);
 
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (327, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (327, '12');

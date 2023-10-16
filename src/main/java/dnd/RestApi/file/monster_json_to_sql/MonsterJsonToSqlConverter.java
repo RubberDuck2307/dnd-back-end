@@ -86,20 +86,15 @@ public class MonsterJsonToSqlConverter {
         if (monsterJson.getSavingThrows() == null) return;
         String[] savingThrowsArray = monsterJson.getSavingThrows().split(",");
         Arrays.stream(savingThrowsArray).forEach(savingThrow -> {
-            String[] savingThrowArray = savingThrow.split(" ");
+            String[] savingThrowArray = savingThrow.trim().split(" ");
             String savingThrowString = savingThrowArray[0].trim();
-            if (savingThrowString.equals("WIS")) {
-                sqlMonster.setWisdomSaveBonus(Short.parseShort(savingThrowArray[1]));
-            } else if (savingThrowString.equals("STR")) {
-                sqlMonster.setStrengthSaveBonus(Short.parseShort(savingThrowArray[1]));
-            } else if (savingThrowString.equals("DEX")) {
-                sqlMonster.setDexteritySaveBonus(Short.parseShort(savingThrowArray[1]));
-            } else if (savingThrowString.equals("CON")) {
-                sqlMonster.setConstitutionSaveBonus(Short.parseShort(savingThrowArray[1]));
-            } else if (savingThrowString.equals("INT")) {
-                sqlMonster.setIntelligenceSaveBonus(Short.parseShort(savingThrowArray[1]));
-            } else if (savingThrowString.equals("CHA")) {
-                sqlMonster.setCharismaSaveBonus(Short.parseShort(savingThrowArray[1]));
+            switch (savingThrowString) {
+                case "WIS" -> sqlMonster.setWisdomSaveBonus(Short.parseShort(savingThrowArray[1]));
+                case "STR" -> sqlMonster.setStrengthSaveBonus(Short.parseShort(savingThrowArray[1]));
+                case "DEX" -> sqlMonster.setDexteritySaveBonus(Short.parseShort(savingThrowArray[1]));
+                case "CON" -> sqlMonster.setConstitutionSaveBonus(Short.parseShort(savingThrowArray[1]));
+                case "INT" -> sqlMonster.setIntelligenceSaveBonus(Short.parseShort(savingThrowArray[1]));
+                case "CHA" -> sqlMonster.setCharismaSaveBonus(Short.parseShort(savingThrowArray[1]));
             }
         });
     }

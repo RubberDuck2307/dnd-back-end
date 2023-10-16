@@ -11,6 +11,7 @@ import java.io.Serializable;
 @Setter
 @Embeddable
 public class MonsterDamageKey implements Serializable {
+
     @Column(name = "monster_id")
     private long monsterId;
     @Column(name = "damage_id")

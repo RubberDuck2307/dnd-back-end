@@ -18,6 +18,6 @@ public class SkillGetDTO {
     public SkillGetDTO(SkillsOfMonsters skillOfMonster){
         this.skill = skillOfMonster.getSkill().getName();
         this.bonus = skillOfMonster.getBonus();
-        this.ability = skillOfMonster.getSkill().getAbility();
+        this.ability = skillOfMonster.getSkill().getAbility().getTitle();
     }
 }

@@ -19,11 +19,4 @@ public class Creature {
     private Short hitPoints;
     private Short ArmorClass;
     private String ArmorClassDescription;
-    private Short strength;
-    private Short dexterity;
-    private Short constitution;
-    private Short intelligence;
-    private Short wisdom;
-    private Short charisma;
-
 }

@@ -2,6 +2,8 @@ package dnd.RestApi.config;
 
 public class SQLConfig {
     public static final String SCHEMA = "dnd";
+
+    public static final String ABILITY_SCORE_MONSTER_TABLE = "ability_score_monster";
     public static final String CREATURE_SIZE_TABLE = "creature_size";
     public static final String MONSTER_TYPE_TABLE = "monster_type";
     public static final String SENSE_TABLE = "sense";
@@ -23,6 +25,8 @@ public class SQLConfig {
     public static final String DICE_TABLE = "dice";
     public static final String MONSTER_LANGUAGE_TABLE = "monster_languages";
     public static final String MONSTER_DAMAGE_TABLE = "monster_damage";
+    public static final String ABILITY_TABLE = "ability";
+    public static final String MONSTER_SAVING_THROWS_TABLE = "monster_saving_throws";
 
 
 

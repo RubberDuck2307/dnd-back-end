@@ -1,10 +1,7 @@
 package dnd.RestApi.game.creature;
 
 import dnd.RestApi.config.SQLConfig;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -20,5 +17,7 @@ public class Skill{
     @Id
     private Long id;
 
-    private String ability;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ability_id")
+    private Ability ability;
 }

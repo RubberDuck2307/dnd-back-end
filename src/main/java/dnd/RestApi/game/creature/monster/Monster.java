@@ -4,6 +4,8 @@ import dnd.RestApi.config.SQLConfig;
 import dnd.RestApi.game.creature.Condition;
 import dnd.RestApi.game.creature.Creature;
 import dnd.RestApi.game.creature.Language;
+import dnd.RestApi.game.creature.monster.ability_score.MonsterAbilityScore;
+import dnd.RestApi.game.creature.monster.ability_score.MonsterSavingThrow;
 import dnd.RestApi.game.creature.monster.damage.MonsterDamage;
 import dnd.RestApi.game.creature.monster.sense.MonsterSense;
 import dnd.RestApi.game.creature.monster.skills_of_monsters.SkillsOfMonsters;
@@ -31,12 +33,6 @@ public class Monster extends Creature {
     private long id;
     private Double cr;
     private String monsterName;
-    private Short strSavingThrowBonus;
-    private Short dexSavingThrowBonus;
-    private Short conSavingThrowBonus;
-    private Short intSavingThrowBonus;
-    private Short wisSavingThrowBonus;
-    private Short chaSavingThrowBonus;
     private Short passivePerception;
     private String imageUrl;
     @Column(columnDefinition = "TEXT")
@@ -49,6 +45,12 @@ public class Monster extends Creature {
             joinColumns = @JoinColumn(name = "monster_id"),
             inverseJoinColumns = @JoinColumn(name = "type_id"))
     private Set<MonsterType> types;
+
+    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<MonsterAbilityScore> monsterAbilityScores;
+
+    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<MonsterSavingThrow> savingThrows;
 
     @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<SpeedsOfMonsters> speeds;
@@ -100,28 +102,6 @@ public class Monster extends Creature {
     public void setHitDice(DiceRoll hitDice) {
         this.hitDice = hitDice;
         super.setHitPoints((short) hitDice.getAverage());
-    }
-
-    @PostLoad
-    private void setSavingThrows(){
-        if (strSavingThrowBonus == null) {
-            strSavingThrowBonus = (short) ((super.getStrength() - 10) /2);
-        }
-        if (dexSavingThrowBonus == null) {
-            dexSavingThrowBonus = (short) ((super.getDexterity() - 10) /2);
-        }
-        if (conSavingThrowBonus == null) {
-            conSavingThrowBonus = (short) ((super.getConstitution() - 10) /2);
-        }
-        if (intSavingThrowBonus == null) {
-            intSavingThrowBonus = (short) ((super.getIntelligence() - 10) /2);
-        }
-        if (wisSavingThrowBonus == null) {
-            wisSavingThrowBonus = (short) ((super.getWisdom() - 10) /2);
-        }
-        if (chaSavingThrowBonus == null) {
-            chaSavingThrowBonus = (short) ((super.getCharisma() - 10) /2);
-        }
     }
 
     public String toString(){
