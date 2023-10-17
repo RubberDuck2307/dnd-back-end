@@ -9,8 +9,9 @@ import lombok.Setter;
 @Getter
 public class NameDescriptionEntityGetDTO {
 
-    private String description;
     private String name;
+    private String description;
+
 
     public NameDescriptionEntityGetDTO(String description, String name) {
         this.description = description;

@@ -203,14 +203,14 @@ public class MonsterJsonToSqlConverter {
             isConstant = false;
         }
 
-        int hitDiceNumber = Integer.parseInt(hitDice.substring(indexOfOpenBracket + 1, indexOfD));
-        int hitDiceType = Integer.parseInt(hitDice.substring(indexOfD + 1, indexOfSign));
+        short hitDiceNumber = Short.parseShort((hitDice.substring(indexOfOpenBracket + 1, indexOfD)));
+        short hitDiceType = Short.parseShort((hitDice.substring(indexOfD + 1, indexOfSign)));
 
-        int constant = 0;
+        short constant = 0;
         if (isConstant) {
-            constant = Integer.parseInt(hitDice.substring(indexOfSign + 1, indexOfCloseBracket));
+            constant = Short.parseShort((hitDice.substring(indexOfSign + 1, indexOfCloseBracket)));
             if (isConstantMinus) {
-                constant = -constant;
+                constant = (short) - constant;
             }
         }
 

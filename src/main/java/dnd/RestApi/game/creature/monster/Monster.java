@@ -7,6 +7,7 @@ import dnd.RestApi.game.creature.Language;
 import dnd.RestApi.game.creature.monster.ability_score.MonsterAbilityScore;
 import dnd.RestApi.game.creature.monster.ability_score.MonsterSavingThrow;
 import dnd.RestApi.game.creature.monster.damage.MonsterDamage;
+import dnd.RestApi.game.creature.monster.damage.MonsterVulnerability;
 import dnd.RestApi.game.creature.monster.sense.MonsterSense;
 import dnd.RestApi.game.creature.monster.skills_of_monsters.SkillsOfMonsters;
 import dnd.RestApi.game.creature.monster.speeds_of_monsters.SpeedsOfMonsters;
@@ -77,7 +78,7 @@ public class Monster extends Creature {
     private Set<MonsterDamage> damageResistancesAndImmunities;
 
     @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<MonsterDamage> damageVulnerabilities;
+    private Set<MonsterVulnerability> damageVulnerabilities;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

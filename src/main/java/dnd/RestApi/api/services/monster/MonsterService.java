@@ -15,4 +15,8 @@ public class MonsterService {
         return monsterRepository.findById(id).orElse(null);
     }
 
+    public Monster getMonsterByName(String name){
+        return monsterRepository.findByMonsterNameIgnoreCase(name).orElse(null);
+    }
+
 }

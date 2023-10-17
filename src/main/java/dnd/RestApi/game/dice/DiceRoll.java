@@ -18,24 +18,24 @@ import static dnd.RestApi.config.SQLConfig.SCHEMA;
 @Getter
 public class DiceRoll {
 
-    public static final int D4 = 4;
-    public static final int D6 = 6;
-    public static final int D8 = 8;
-    public static final int D10 = 10;
-    public static final int D12 = 12;
-    public static final int D20 = 20;
-    public static final int D100 = 100;
+    public static final short D4 = 4;
+    public static final short D6 = 6;
+    public static final short D8 = 8;
+    public static final short D10 = 10;
+    public static final short D12 = 12;
+    public static final short D20 = 20;
+    public static final short D100 = 100;
 
-    private final static List<Integer> availableDice = List.of(D4, D6, D8, D10, D12, D20, D100);
+    private final static List<Short> availableDice = List.of(D4, D6, D8, D10, D12, D20, D100);
 
     @Id
     @GeneratedValue
     private long id;
-    private int dice;
-    private int amount;
-    private int constant;
+    private short dice;
+    private short amount;
+    private short constant;
 
-    public DiceRoll(int dice, int amount, int constant) {
+    public DiceRoll(short dice, short amount, short constant) {
         if (!availableDice.contains(dice)) {
             throw new IllegalArgumentException("Dice must be one of the following: " + availableDice);
         }

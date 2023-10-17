@@ -11,11 +11,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface MonsterRepository extends JpaRepository<Monster, Long> {
 
     Long countAllByCrIs(Double cr);
+
+    Optional<Monster> findByMonsterNameIgnoreCase(String name);
     Page<Monster> getAllByCrIs(Double cr, Pageable pageable);
     HashMap<Double, List<Monster>> getMonstersByCrAndAmount(HashMap<Double, Integer> crs);
 

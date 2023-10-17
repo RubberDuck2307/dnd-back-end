@@ -26,7 +26,7 @@ public class MonsterAbilityScore {
     @MapsId("abilityScoreId")
     private Ability abilityScore;
 
-    private int value;
+    private Short value;
 
 
 }

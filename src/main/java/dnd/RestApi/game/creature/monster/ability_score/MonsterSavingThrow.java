@@ -15,7 +15,7 @@ public class MonsterSavingThrow {
     @EmbeddedId
     private MonsterAbilityKey id;
 
-    private int value;
+    private Short value;
 
     @ManyToOne
     @JoinColumn(name = "monster_id")
