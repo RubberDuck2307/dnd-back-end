@@ -74,7 +74,10 @@ public class Monster extends Creature {
     private Set<LegendaryAction> legendaryActions;
 
     @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<MonsterDamage> damageTakenModifiers;
+    private Set<MonsterDamage> damageResistancesAndImmunities;
+
+    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<MonsterDamage> damageVulnerabilities;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

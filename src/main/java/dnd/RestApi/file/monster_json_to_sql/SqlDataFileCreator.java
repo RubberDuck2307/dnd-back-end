@@ -26,6 +26,7 @@ public class SqlDataFileCreator {
     private final Map<String, Integer> conditionsIdMap;
     private final MonsterJsonToSqlConverter converter;
     private final Map<String, Long> abilityIdMap;
+    private final Map<String, Integer> attackTypesIdMap;
     private final PrintWriter printWriter;
 
 
@@ -41,6 +42,7 @@ public class SqlDataFileCreator {
         damageTypesIdMap = new HashMap<>();
         conditionsIdMap = new HashMap<>();
         abilityIdMap = new HashMap<>();
+        attackTypesIdMap = new HashMap<>();
         this.converter = converter;
     }
 
@@ -49,6 +51,7 @@ public class SqlDataFileCreator {
         writeSkills();
         writeDamageTypes();
         writeCondition(conditions);
+        writeAttackTypes();
         writeSpeeds(converter.loadSpeeds(monsterJsons));
         writeMonsterTypes(converter.loadMonsterType(monsterJsons));
         writeCreatureSizes(converter.loadMonsterSize(monsterJsons));
@@ -66,7 +69,6 @@ public class SqlDataFileCreator {
             writeIndividualMonsterSkills(monster);
             writeIndividualMonsterSenses(monster);
             writeIndividualMonsterConditionImmunities(monster);
-            writeIndividualMonsterDamageImmunities(monster);
             writeIndividualMonsterDamageResistances(monster);
             writeIndividualMonsterDamageVulnerabilities(monster);
             writeIndividualMonsterActions(monster);
@@ -74,7 +76,7 @@ public class SqlDataFileCreator {
             writeIndividualMonsterReactions(monster);
             writeIndividualMonsterLegendaryActions(monster);
             writeIndividualMonsterLanguages(monster);
-
+            writeIntoFile(new StringBuilder("\n\n"));
         });
         printWriter.close();
 
@@ -89,7 +91,7 @@ public class SqlDataFileCreator {
                 .append(".")
                 .append(SQLConfig.MONSTER_TABLE)
                 .append(" (id, hit_dice_id, legendary_action_description, cr, passive_perception," +
-                        "hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (")
+                        "hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (")
                 .append(monster.getId())
                 .append(", ")
                 .append(monster.getId())
@@ -109,6 +111,8 @@ public class SqlDataFileCreator {
                 .append(monster.getArmorClassDescription())
                 .append("', '")
                 .append(monster.getName())
+                .append("', '")
+                .append(monster.getImgUrl())
                 .append("');\n")
                 .append("\n");
 
@@ -327,66 +331,99 @@ public class SqlDataFileCreator {
     }
 
     public void writeIndividualMonsterDamageVulnerabilities(SQLMonster monster) {
-
-        monster.getDamageVulnerabilities().forEach(damageVulnerability -> writeIndividualMonsterDamage(damageVulnerability, false,
-                false, true, monster));
+        StringBuilder stringBuilder = new StringBuilder();
+        monster.getDamageVulnerabilities().forEach(damageVulnerability -> {
+            stringBuilder.append("INSERT INTO ")
+                    .append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.MONSTER_VULNERABILITIES_TABLE)
+                    .append(" (monster_id, damage_type_id) VALUES (")
+                    .append(monster.getId())
+                    .append(", '")
+                    .append(damageTypesIdMap.get(damageVulnerability))
+                    .append("');\n");
+        });
+        writeIntoFile(stringBuilder);
 
     }
 
     public void writeIndividualMonsterDamageResistances(SQLMonster monster) {
 
-        monster.getDamageResistances().forEach(damageResistance -> writeIndividualMonsterDamage(damageResistance, true,
-                false, false, monster));
+        monster.getDamageResistances().forEach(damageResistance -> {
+            if (monster.isNotResistancesFromNonMagicalAttackFlag())
+                writeIndividualMonsterDamage(damageResistance,
+                        false, monster, "Magical");
+            if (monster.isNotImmunitiesFromSilverAttackFlag())
+                writeIndividualMonsterDamage(damageResistance,
+                        false, monster, "Silvered");
+            if (monster.isNotResistancesFromAdamantineAttackFlag())
+                writeIndividualMonsterDamage(damageResistance,
+                        false, monster, "Adamantine");
+            else {
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("INSERT INTO ")
+                        .append(SQLConfig.SCHEMA)
+                        .append(".")
+                        .append(SQLConfig.MONSTER_DAMAGE_TABLE)
+                        .append(" (monster_id, damage_id, is_immune) VALUES (")
+                        .append(monster.getId())
+                        .append(", '")
+                        .append(damageTypesIdMap.get(damageResistance))
+                        .append("', ")
+                        .append("false")
+                        .append(");\n");
+                writeIntoFile(stringBuilder);
+            }
+        });
+
+        monster.getDamageImmunities().forEach(damageImmunity -> {
+            if (monster.isNotResistancesFromNonMagicalAttackFlag())
+                writeIndividualMonsterDamage(damageImmunity,
+                        true, monster, "Magical");
+            if (monster.isNotImmunitiesFromSilverAttackFlag())
+                writeIndividualMonsterDamage(damageImmunity,
+                        true, monster, "Silvered");
+            if (monster.isNotResistancesFromAdamantineAttackFlag())
+                writeIndividualMonsterDamage(damageImmunity,
+                        true, monster, "Adamantine");
+            else {
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("INSERT INTO ")
+                        .append(SQLConfig.SCHEMA)
+                        .append(".")
+                        .append(SQLConfig.MONSTER_DAMAGE_TABLE)
+                        .append(" (monster_id, damage_id, is_immune) VALUES (")
+                        .append(monster.getId())
+                        .append(", '")
+                        .append(damageTypesIdMap.get(damageImmunity))
+                        .append("', ")
+                        .append(true)
+                        .append(");\n");
+                writeIntoFile(stringBuilder);
+            }
+        });
 
     }
 
-    private void writeIndividualMonsterDamage(String damage, boolean isResistance, boolean isImmunity,
-                                              boolean isVulnerability, SQLMonster sqlMonster) {
+    private void writeIndividualMonsterDamage(String damage, boolean isImmunity,
+                                              SQLMonster sqlMonster, String attackTypeException) {
 
-        if (BooleanUtils.isMoreThanXTrue(1, isResistance, isImmunity, isVulnerability)) {
-            throw new IllegalArgumentException("More than one of the following is true: isResistance, isImmunity," +
-                    " isVulnerability");
-        }
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
                 .append(".")
                 .append(SQLConfig.MONSTER_DAMAGE_TABLE)
-                .append(" (monster_id, damage_id, is_immune, is_resistant, is_vulnerable," +
-                        " adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (")
+                .append(" (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (")
                 .append(sqlMonster.getId())
                 .append(", '")
                 .append(damageTypesIdMap.get(damage))
                 .append("', ")
                 .append(isImmunity)
-                .append(", ")
-                .append(isResistance)
-                .append(", ")
-                .append(isVulnerability)
-                .append(", ");
-        if (isResistance) {
-            stringBuilder.append(sqlMonster.isNotResistancesFromAdamantineAttackFlag())
-                    .append(", ")
-                    .append(sqlMonster.isNotResistancesFromNonMagicalAttackFlag())
-                    .append(", ")
-                    .append(sqlMonster.isNotResistancesFromSilverAttackFlag())
-                    .append(");\n");
-        } else if (isImmunity) {
-            stringBuilder.append(sqlMonster.isNotImmunitiesFromAdamantineAttackFlag())
-                    .append(", ")
-                    .append(sqlMonster.isNotImmunitiesFromNonMagicalAttackFlag())
-                    .append(", ")
-                    .append(sqlMonster.isNotImmunitiesFromSilverAttackFlag())
-                    .append(");\n");
-        } else {
-            stringBuilder.append("false, false, false);\n");
-        }
+                .append(", ").
+                append(attackTypeException == null ? "NULL" : "'" + attackTypesIdMap.get(attackTypeException) + "'");
+        stringBuilder.append(");\n");
         writeIntoFile(stringBuilder);
     }
 
-    public void writeIndividualMonsterDamageImmunities(SQLMonster monster) {
-        monster.getDamageImmunities().forEach(damageImmunity -> writeIndividualMonsterDamage(damageImmunity, false,
-                true, false, monster));
-    }
 
     public void writeIndividualMonsterConditionImmunities(SQLMonster monster) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -582,6 +619,24 @@ public class SqlDataFileCreator {
                     .append(i + 1)
                     .append(", '")
                     .append(damageTypes[i])
+                    .append("');\n");
+        }
+        stringBuilder.append("\n");
+        writeIntoFile(stringBuilder);
+    }
+
+    public void writeAttackTypes() {
+        String[] attackTypes = {"Adamantine", "Silvered", "Magical"};
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < attackTypes.length; i++) {
+            attackTypesIdMap.put(attackTypes[i], i + 1);
+            stringBuilder.append("INSERT INTO ").append(SQLConfig.SCHEMA)
+                    .append(".")
+                    .append(SQLConfig.ATTACK_TYPE_TABLE)
+                    .append(" (id, name) VALUES (")
+                    .append(i + 1)
+                    .append(", '")
+                    .append(attackTypes[i])
                     .append("');\n");
         }
         stringBuilder.append("\n");

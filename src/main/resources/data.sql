@@ -91,6 +91,10 @@ The creature automatically fails Strength and Dexterity saving throws.
 Attack rolls against the creature have advantage.
 Any attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.');
 
+INSERT INTO dnd.attack_type (id, name) VALUES (1, 'Adamantine');
+INSERT INTO dnd.attack_type (id, name) VALUES (2, 'Silvered');
+INSERT INTO dnd.attack_type (id, name) VALUES (3, 'Magical');
+
 INSERT INTO dnd.speed (id, name) VALUES (1, 'Walk');
 INSERT INTO dnd.speed (id, name) VALUES (2, 'Fly');
 INSERT INTO dnd.speed (id, name) VALUES (3, 'Climb');
@@ -213,7 +217,7 @@ INSERT INTO dnd.sense (id, name) VALUES (4, 'Truesight');
 INSERT INTO dnd.sense (id, name) VALUES (5, 'Blindsight  (blind beyond this radius)');
 
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (1, 10, 18, 36);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (1, 1, 'The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The aboleth regains spent legendary actions at the start of its turn.', 10, 20, 135, 4, 17, 'Natural Armor', 'Aboleth');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (1, 1, 'The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The aboleth regains spent legendary actions at the start of its turn.', 10, 20, 135, 4, 17, 'Natural Armor', 'Aboleth', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/11/1000/1000/636238825975375671.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 2, 9);
@@ -245,8 +249,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (1, 'Th
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (1, 'The aboleth makes one tail attack.', 'Tail Swipe');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (1, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (1, 58);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (2, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (2, 2, 'null', 0.25, 12, 9, 3, 10, '', 'Acolyte');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (2, 2, 'null', 0.25, 12, 9, 3, 10, '', 'Acolyte', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 2, 10);
@@ -264,8 +270,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 2, '15'
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Club', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.', 2);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared: Cantrips (at will): light, sacred flame, thaumaturgy 1st level (3 slots): bless, cure wounds, sanctuary', 2);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (2, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (3, 12, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (3, 3, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 21, 195, 6, 19, 'Natural Armor', 'Adult Black Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (3, 3, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 21, 195, 6, 19, 'Natural Armor', 'Adult Black Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/13/1000/1000/636238871029832086.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 2, 14);
@@ -288,7 +296,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 3, '17'
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (11, 3, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 3, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 3, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (3, '1', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (3, '1', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Breath (Recharge 5–6)', 'The dragon exhales acid in a 60-­foot line that is 5 feet wide. Each creature in that line must make a DC 18 Dexterity saving throw, taking 54 (12d8) acid damage on a failed save, or half as much damage on a successful one.', 3);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 3);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 4 (1d8) acid damage.', 3);
@@ -302,8 +310,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (3, 'Th
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (3, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (3, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (3, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (4, 12, 18, 108);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (4, 4, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 22, 225, 6, 19, 'Natural Armor', 'Adult Blue Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (4, 4, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 22, 225, 6, 19, 'Natural Armor', 'Adult Blue Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/16/1000/1000/636238882493439723.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 2, 10);
@@ -326,7 +336,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 4, '17'
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (12, 4, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 4, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 4, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (4, '6', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (4, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 4);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Breath (Recharge 5–6)', 'The dragon exhales lightning in a 90-­foot line that is 5 feet wide. Each creature in that line must make a DC 19 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.', 4);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 18 (2d10 + 7) piercing damage plus 5 (1d10) lightning damage.', 4);
@@ -339,8 +349,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (4, 'Th
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (4, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (4, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (4, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (5, 12, 15, 75);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (5, 5, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 172, 6, 18, 'Natural Armor', 'Adult Brass Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (5, 5, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 172, 6, 18, 'Natural Armor', 'Adult Brass Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/18/1000/1000/636238885681129014.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 2, 10);
@@ -365,7 +377,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 5, '6')
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 5, '14');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 5, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 5, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (5, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (5, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 5);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.', 5);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage.', 5);
@@ -380,8 +392,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (5, 'Th
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (5, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (5, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (5, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (6, 12, 17, 102);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (6, 6, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 212, 6, 19, 'Natural Armor', 'Adult Bronze Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (6, 6, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 212, 6, 19, 'Natural Armor', 'Adult Bronze Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/20/1000/1000/636238888310108665.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 2, 10);
@@ -405,7 +419,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 6, '7')
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (12, 6, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 6, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 6, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (6, '6', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (6, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 6);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Breath', 'The dragon exhales lightning in a 90- foot line that is 5 feet wide. Each creature in that line must make a DC 19 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.', 6);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +12 to hit, reach 10 ft., one target. Hit: 18 (2d10 + 7) piercing damage.', 6);
@@ -422,8 +436,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (6, 'Th
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (6, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (6, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (6, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (7, 12, 16, 80);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (7, 7, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 22, 184, 6, 18, 'Natural Armor', 'Adult Copper Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (7, 7, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 22, 184, 6, 18, 'Natural Armor', 'Adult Copper Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/22/1000/1000/636238956325913912.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 2, 12);
@@ -447,7 +463,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 7, '17'
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (12, 7, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 7, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 7, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (7, '1', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (7, '1', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 7);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.', 7);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage.', 7);
@@ -462,8 +478,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (7, 'Th
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (7, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (7, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (7, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (8, 12, 19, 133);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (8, 8, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 24, 256, 6, 19, 'Natural Armor', 'Adult Gold Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (8, 8, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 24, 256, 6, 19, 'Natural Armor', 'Adult Gold Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/24/1000/1000/636238958915127190.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 2, 14);
@@ -488,7 +506,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (14, 8, '12
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (13, 8, '14');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 8, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 8, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (8, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (8, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 8);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage.', 8);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.', 8);
@@ -505,8 +523,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (8, 'Th
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (8, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (8, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (8, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (9, 12, 18, 90);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (9, 9, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 207, 6, 19, 'Natural Armor', 'Adult Green Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (9, 9, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 207, 6, 19, 'Natural Armor', 'Adult Green Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/26/1000/1000/636238962276510242.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 2, 12);
@@ -533,7 +553,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 9, '14'
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 9, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 9, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (9, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (9, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (9, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Poison Breath (Recharge 5–6)', 'The dragon exhales poisonous gas in a 60-foot cone. Each creature in that area must make a DC 18 Constitution saving throw, taking 56 (16d6) poison damage on a failed save, or half as much damage on a successful one.', 9);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 9);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 7 (2d6) poison damage.', 9);
@@ -547,8 +567,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (9, 'Th
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (9, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (9, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (9, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (10, 12, 19, 133);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (10, 10, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 23, 256, 6, 19, 'Natural Armor', 'Adult Red Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (10, 10, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 23, 256, 6, 19, 'Natural Armor', 'Adult Red Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/28/1000/1000/636238971817119794.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 2, 10);
@@ -571,7 +593,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 10, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (13, 10, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 10, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 10, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (10, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (10, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 19 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 10);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath (Recharge 5–6)', 'The dragon exhales fire in a 60-foot cone. Each creature in that area must make a DC 21 Dexterity saving throw, taking 63 (18d6) fire damage on a failed save, or half as much damage on a successful one.', 10);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage plus 7 (2d6) fire damage.', 10);
@@ -584,8 +606,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (10, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (10, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (10, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (10, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (11, 12, 18, 126);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (11, 11, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 21, 243, 6, 19, 'Natural Armor', 'Adult Silver Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (11, 11, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 21, 243, 6, 19, 'Natural Armor', 'Adult Silver Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/123/1000/1000/636252753945133025.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 2, 10);
@@ -609,7 +633,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 11, '6'
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 11, '3');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 11, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 11, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (11, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (11, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 18 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 11);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 19 (2d10 + 8) piercing damage.', 11);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.', 11);
@@ -625,8 +649,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (11, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (11, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (11, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (11, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (12, 12, 16, 96);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (12, 12, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 200, 6, 18, 'Natural Armor', 'Adult White Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (12, 12, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 200, 6, 18, 'Natural Armor', 'Adult White Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/125/1000/1000/636252755468117001.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 2, 10);
@@ -650,7 +676,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 12, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (11, 12, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 12, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 12, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (12, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (12, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 14 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 12);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 4 (1d8) cold damage.', 12);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +11 to hit, reach 15 ft., one target. Hit: 15 (2d8 + 6) bludgeoning damage.', 12);
@@ -664,8 +690,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (12, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (12, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (12, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (12, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (13, 10, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (13, 13, 'null', 5, 10, 90, 4, 15, '', 'Air Elemental');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (13, 13, 'null', 5, 10, 90, 4, 15, '', 'Air Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/127/1000/1000/636252755648556800.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 2, 20);
@@ -688,19 +716,27 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (13
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (13, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (13, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (13, '15');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (13, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (13, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (13, '13', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (13, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (13, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (13, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (13, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (13, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (13, '13', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (13, '13', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (13, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (13, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (13, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (13, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (13, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (13, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (13, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (13, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Whirlwind (Recharge 4–6)', 'Each creature in the elemental''s space must make a DC 13 Strength saving throw. On a failure, a target takes 15 (3d8 + 2) bludgeoning damage and is flung up 20 feet away from the elemental in a random direction and knocked prone. If a thrown target strikes an object, such as a wall or floor, the target takes 3 (1d6) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC 13 Dexterity saving throw or take the same damage and be knocked prone. If the saving throw is successful, the target takes half the bludgeoning damage and isn''t flung away or knocked prone.', 13);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage.', 13);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The elemental makes two slam attacks.', 13);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Air Form', 'The elemental can enter a hostile creature''s space and stop there. It can move through a space as narrow as 1 inch wide without squeezing.', 13);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (13, 2);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (14, 10, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (14, 14, 'null', 2, 15, 51, 4, 13, 'Natural Armor', 'Allosaurus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (14, 14, 'null', 2, 15, 51, 4, 13, 'Natural Armor', 'Allosaurus', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 2, 13);
@@ -718,8 +754,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage.', 14);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce', 'If the allosaurus moves at least 30 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the allosaurus can make one bite attack against it as a bonus action.', 14);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (14, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (15, 20, 21, 147);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (15, 15, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 26, 367, 2, 22, 'Natural Armor', 'Ancient Black Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (15, 15, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 26, 367, 2, 22, 'Natural Armor', 'Ancient Black Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/129/315/315/636252755854649337.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 2, 14);
@@ -742,7 +780,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 15, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (16, 15, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 15, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 15, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (15, '1', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (15, '1', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Breath (Recharge 5–6)', 'The dragon exhales acid in a 90-foot line that is 10 feet wide. Each creature in that line must make a DC 22 Dexterity saving throw, taking 67 (15d8) acid damage on a failed save, or half as much damage on a successful one.', 15);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 19 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 15);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +15 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage plus 9 (2d8) acid damage.', 15);
@@ -756,8 +794,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (15, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (15, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (15, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (15, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (16, 20, 26, 208);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (16, 16, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 27, 481, 2, 22, 'Natural Armor', 'Ancient Blue Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (16, 16, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 27, 481, 2, 22, 'Natural Armor', 'Ancient Blue Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/131/1000/1000/636252756020185006.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 1, 29);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 2, 10);
@@ -780,7 +820,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 16, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (17, 16, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 16, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 16, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (16, '6', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (16, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 20 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 16);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Breath (Recharge 5–6)', 'The dragon exhales lightning in a 120-­-foot line that is 10 feet wide. Each creature in that line must make a DC 23 Dexterity saving throw, taking 88 (16d10) lightning damage on a failed save, or half as much damage on a successful one.', 16);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +16 to hit, reach 15 ft., one target. Hit: 20 (2d10 + 9) piercing damage plus 11 (2d10) lightning damage.', 16);
@@ -793,8 +833,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (16, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (16, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (16, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (16, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (17, 20, 17, 119);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (17, 17, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 24, 297, 2, 20, 'Natural Armor', 'Ancient Brass Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (17, 17, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 24, 297, 2, 20, 'Natural Armor', 'Ancient Brass Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/133/1000/1000/636252756157427258.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 2, 10);
@@ -819,7 +861,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 17, '6'
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (10, 17, '14');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 17, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 17, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (17, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (17, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 18 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 17);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage.', 17);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +14 to hit, reach 20 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.', 17);
@@ -835,8 +877,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (17, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (17, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (17, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (17, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (18, 20, 24, 192);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (18, 18, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 444, 2, 22, 'Natural Armor', 'Ancient Bronze Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (18, 18, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 444, 2, 22, 'Natural Armor', 'Ancient Bronze Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/135/315/315/636252756372367681.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 1, 29);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 2, 10);
@@ -860,7 +904,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (10, 18, '7
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (17, 18, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 18, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 18, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (18, '6', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (18, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 20 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 18);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Breath', 'The dragon exhales lightning in a 120-foot line that is 10 feet wide. Each creature in that line must make a DC 23 Dexterity saving throw, taking 88 (16d10) lightning damage on a failed save, or half as much damage on a successful one.', 18);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +16 to hit, reach 15 ft., one target. Hit: 20 (2d10 + 9) piercing damage.', 18);
@@ -877,8 +921,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (18, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (18, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (18, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (18, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (19, 20, 20, 140);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (19, 19, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 27, 350, 2, 21, 'Natural Armor', 'Ancient Copper Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (19, 19, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 27, 350, 2, 21, 'Natural Armor', 'Ancient Copper Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/137/1000/1000/636252756714896878.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 2, 12);
@@ -902,7 +948,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 19, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (17, 19, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 19, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 19, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (19, '1', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (19, '1', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 19 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 19);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +15 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage.', 19);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +15 to hit, reach 20 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.', 19);
@@ -918,8 +964,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (19, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (19, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (19, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (19, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (20, 20, 28, 252);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (20, 20, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 27, 546, 2, 22, 'Natural Armor', 'Ancient Gold Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (20, 20, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 27, 546, 2, 22, 'Natural Armor', 'Ancient Gold Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/139/315/315/636252756930565101.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 2, 14);
@@ -944,7 +992,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (17, 20, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (16, 20, '14');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 20, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 20, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (20, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (20, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 24 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 20);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage.', 20);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) bludgeoning damage.', 20);
@@ -961,8 +1009,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (20, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (20, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (20, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (20, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (21, 20, 22, 154);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (21, 21, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 385, 2, 21, 'Natural Armor', 'Ancient Green Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (21, 21, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 385, 2, 21, 'Natural Armor', 'Ancient Green Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/141/1000/1000/636252757319464533.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 2, 12);
@@ -989,7 +1039,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (11, 21, '1
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 21, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 21, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (21, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (21, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (21, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Poison Breath (Recharge 5–6)', 'The dragon exhales poisonous gas in a 90-­-foot cone. Each creature in that area must make a DC 22 Constitution saving throw, taking 77 (22d6) poison damage on a failed save, or half as much damage on a successful one.', 21);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 19 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 21);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +15 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage plus 10 (3d6) poison damage.', 21);
@@ -1003,8 +1053,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (21, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (21, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (21, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (21, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (22, 20, 28, 252);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (22, 22, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 26, 546, 2, 22, 'Natural Armor', 'Ancient Red Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (22, 22, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 26, 546, 2, 22, 'Natural Armor', 'Ancient Red Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/147/1000/1000/636252758629652181.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 2, 10);
@@ -1027,7 +1079,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 22, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (16, 22, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 22, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 22, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (22, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (22, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 22);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath (Recharge 5–6)', 'The dragon exhales fire in a 90-foot cone. Each creature in that area must make a DC 24 Dexterity saving throw, taking 91 (26d6) fire damage on a failed save, or half as much damage on a successful one.', 22);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage plus 14 (4d6) fire damage.', 22);
@@ -1040,8 +1092,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (22, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (22, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (22, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (22, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (23, 20, 25, 225);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (23, 23, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 26, 487, 2, 22, 'Natural Armor', 'Ancient Silver Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (23, 23, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 26, 487, 2, 22, 'Natural Armor', 'Ancient Silver Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/151/1000/1000/636252758799225927.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 2, 10);
@@ -1065,7 +1119,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (11, 23, '6
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (11, 23, '3');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 23, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 23, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (23, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (23, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 21 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 23);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +17 to hit, reach 15 ft., one target. Hit: 21 (2d10 + 10) piercing damage.', 23);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +17 to hit, reach 20 ft., one target. Hit: 19 (2d8 + 10) bludgeoning damage.', 23);
@@ -1081,8 +1135,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (23, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (23, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (23, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (23, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (24, 20, 18, 144);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (24, 24, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 23, 333, 2, 20, 'Natural Armor', 'Ancient White Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (24, 24, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 23, 333, 2, 20, 'Natural Armor', 'Ancient White Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/153/1000/1000/636252758955886210.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 1, 26);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 2, 10);
@@ -1106,7 +1162,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 24, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (13, 24, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 24, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 24, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (24, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (24, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the dragon''s choice that is within 120 feet of the dragon and aware of it must succeed on a DC 16 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the dragon''s Frightful Presence for the next 24 hours.', 24);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +14 to hit, reach 15 ft., one target. Hit: 19 (2d10 + 8) piercing damage plus 9 (2d8) cold damage.', 24);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +14 to hit, reach 20 ft., one target. Hit: 17 (2d8 + 8) bludgeoning damage.', 24);
@@ -1120,8 +1176,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (24, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (24, 'The dragon makes a Wisdom (Perception) check.', 'Detect');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (24, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (24, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (25, 10, 19, 95);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (25, 25, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 17, 20, 199, 4, 17, 'Natural Armor', 'Androsphinx');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (25, 25, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 17, 20, 199, 4, 17, 'Natural Armor', 'Androsphinx', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/157/1000/1000/636252759145617281.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 2, 10);
@@ -1145,10 +1203,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 25, '3'
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 25, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (25, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (25, '4');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (25, '10', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (25, '2', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (25, '8', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (25, '12', true, false, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (25, '10', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (25, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (25, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (25, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Third Roar', 'Each creature makes a DC 18 Constitution saving throw. On a failed save, a creature takes 44 (8d10) thunder damage and is knocked prone. On a successful save, the creature takes half as much damage and isn''t knocked prone.', 25);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Roar (3/Day)', 'The sphinx emits a magical roar. Each time it roars before finishing a long rest, the roar is louder and the effect is different, as detailed below. Each creature within 500 feet of the sphinx and able to hear the roar must make a saving throw.', 25);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('First Roar', 'Each creature that fails a DC 18 Wisdom saving throw is frightened for 1 minute. A frightened creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 25);
@@ -1163,8 +1221,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (25, 'T
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (25, 'The sphinx casts a spell from its list of prepared spells, using a spell slot as normal.', 'Cast a Spell (Costs 3 Actions)');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (25, 66);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (25, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (26, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (26, 26, 'null', 1, 6, 33, 3, 18, 'Natural Armor', 'Animated Armor');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (26, 26, 'null', 1, 6, 33, 3, 18, 'Natural Armor', 'Animated Armor', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/8/429/1000/1000/636306156895834255.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 2, 11);
@@ -1186,15 +1246,17 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (26
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (26, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (26, '8');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (26, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (26, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (26, '10', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (26, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (26, '10', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) bludgeoning damage.', 26);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The armor makes two melee attacks.', 26);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Antimagic Susceptibility', 'The armor is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the armor must succeed on a Constitution saving throw against the caster''s spell save DC or fall unconscious for 1 minute.', 26);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the armor remains motionless, it is indistinguishable from a normal suit of armor.', 26);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (26, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (27, 10, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (27, 27, 'null', 2, 11, 39, 4, 14, 'Natural Armor, 11 While Prone', 'Ankheg');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (27, 27, 'null', 2, 11, 39, 4, 14, 'Natural Armor, 11 While Prone', 'Ankheg', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/161/315/315/636252759871983921.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 2, 11);
@@ -1213,8 +1275,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 27, '3
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage plus 3 (1d6) acid damage. If the target is a Large or smaller creature, it is grappled (escape DC 13). Until this grapple ends, the ankheg can bite only the grappled creature and has advantage on attack rolls to do so.', 27);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Spray (Recharge 6)', 'The ankheg spits acid in a line that is 30 feet long and 5 feet wide, provided that it has no creature grappled. Each creature in that line must make a DC 13 Dexterity saving throw, taking 10 (3d6) acid damage on a failed save, or half as much damage on a successful one.', 27);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (27, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (28, 12, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (28, 28, 'null', 3, 11, 68, 6, 15, 'Natural', 'Ankylosaurus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (28, 28, 'null', 3, 11, 68, 6, 15, 'Natural', 'Ankylosaurus', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 2, 11);
@@ -1229,8 +1293,10 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (28, '17');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 28, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 18 (4d6 + 4) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.', 28);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (28, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (29, 8, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (29, 29, 'null', 0.5, 13, 19, 3, 12, '', 'Ape');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (29, 29, 'null', 0.5, 13, 19, 3, 12, '', 'Ape', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 2, 14);
@@ -1250,8 +1316,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rock', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fist', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.', 29);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The ape makes two fist attacks.', 29);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (29, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (30, 8, 18, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (30, 30, 'null', 12, 12, 99, 3, 12, '15 With Mage Armor', 'Archmage');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (30, 30, 'null', 12, 12, 99, 3, 12, '15 With Mage Armor', 'Archmage', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/167/1000/1000/636252760213195530.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 2, 14);
@@ -1272,8 +1340,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Dagger'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Resistance', 'The archmage has advantage on saving throws against spells and other magical effects.', 30);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp1st level (4 slots): detect magic, identify, mage armor, magic missile2nd level (3 slots): detect thoughts, mirror image, misty step3rd level (3 slots): counterspell, fly, lightning bolt4th level (3 slots): banishment, fire shield, stoneskin5th level (3 slots): cone of cold, scrying, wall of force6th level (1 slot): globe of invulnerability7th level (1 slot): teleport8th level (1 slot): mind blank9th level (1 slot): time stop*The archmage casts mind blank, stoneskin and mage armor spells on itself before combat.', 30);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (30, 49);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (31, 8, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (31, 31, 'null', 8, 13, 78, 3, 15, 'Studded Leather', 'Assassin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (31, 31, 'null', 8, 13, 78, 3, 15, 'Studded Leather', 'Assassin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/910/315/315/636334293020978804.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 2, 16);
@@ -1292,7 +1362,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 31, '5'
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 31, '17');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 31, '12');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 31, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (31, '9', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (31, '9', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Light Crossbow', 'Ranged Weapon Attack: +6 to hit, range 80/320 ft., one target. Hit: 7 (1d8 + 3) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.', 31);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortsword', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.', 31);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The assassin makes two shortsword attacks.', 31);
@@ -1300,8 +1370,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Evasion
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Assassinate', 'During its first turn, the assassin has advantage on attack rolls against any creature that hasn''t taken a turn. Any hit the assassin scores against a surprised creature is a critical hit.', 31);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sneak Attack', 'Once per turn, the assassin deals an extra 14 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the assassin that isn''t incapacitated and the assassin doesn''t have disadvantage on the attack roll.', 31);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (31, 9);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (32, 6, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (32, 32, 'null', 0, 10, 10, 1, 9, '', 'Awakened Shrub');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (32, 32, 'null', 0, 10, 10, 1, 9, '', 'Awakened Shrub', 'https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 2, 8);
@@ -1314,13 +1386,15 @@ INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (32, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (32, '10');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 32, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (32, '8', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (32, '4', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (32, '8', false);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (32, '4');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rake', 'Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 − 1) slashing damage.', 32);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the shrub remains motionless, it is indistinguishable from a normal shrub.', 32);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (32, 29);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (33, 12, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (33, 33, 'null', 2, 10, 59, 6, 13, 'Natural Armor', 'Awakened Tree');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (33, 33, 'null', 2, 10, 59, 6, 13, 'Natural Armor', 'Awakened Tree', 'https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 2, 6);
@@ -1333,14 +1407,16 @@ INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (33, '18');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (33, '10');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 33, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (33, '2', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (33, '8', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (33, '4', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (33, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (33, '8', false);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (33, '4');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6 + 4) bludgeoning damage.', 33);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the tree remains motionless, it is indistinguishable from a normal tree.', 33);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (33, 29);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (34, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (34, 34, 'null', 0.25, 10, 19, 4, 11, '', 'Axe Beak');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (34, 34, 'null', 0.25, 10, 19, 4, 11, '', 'Axe Beak', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 2, 12);
@@ -1355,8 +1431,10 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (34, '17');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 34, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beak', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage.', 34);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (34, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (35, 8, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (35, 35, 'null', 2, 11, 39, 3, 17, 'Natural Armor, Shield', 'Azer');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (35, 35, 'null', 2, 11, 39, 3, 17, 'Natural Armor, Shield', 'Azer', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/171/1000/1000/636252761112348397.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 2, 12);
@@ -1371,15 +1449,17 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (35, '9');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (35, '7');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 35, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (35, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (35, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (35, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (35, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (35, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Warhammer', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage, or 8 (1d10 + 3) bludgeoning damage if used with two hands to make a melee attack, plus 3 (1d6) fire damage.', 35);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated Weapons', 'When the azer hits with a metal melee weapon, it deals an extra 3 (1d6) fire damage (included in the attack).', 35);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumination', 'The azer sheds bright light in a 10-­foot radius and dim light for an additional 10 feet.', 35);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated Body', 'A creature that touches the azer or hits it with a melee attack while within 5 feet of it takes 5 (1d10) fire damage.', 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (35, 24);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (36, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (36, 36, 'null', 0, 11, 3, 1, 12, '', 'Baboon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (36, 36, 'null', 0, 11, 3, 1, 12, '', 'Baboon', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 2, 14);
@@ -1396,8 +1476,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 36, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 − 1) piercing damage.', 36);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The baboon has advantage on an attack roll against a creature if at least one of the baboon''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 36);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (36, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (37, 4, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (37, 37, 'null', 0, 11, 3, 5, 10, '', 'Badger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (37, 37, 'null', 0, 11, 3, 5, 10, '', 'Badger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/528/1000/1000/636376327632236333.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 2, 11);
@@ -1415,8 +1497,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 37, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 piercing damage.', 37);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The badger has advantage on Wisdom (Perception) checks that rely on smell.', 37);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (37, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (38, 12, 21, 126);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (38, 38, 'null', 19, 13, 262, 6, 19, 'Natural Armor', 'Balor');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (38, 38, 'null', 19, 13, 262, 6, 19, 'Natural Armor', 'Balor', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/175/1000/1000/636252761612038117.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 1, 26);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 2, 15);
@@ -1436,13 +1520,20 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 38, 
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (80, 38, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 38, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (38, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (38, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (38, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (38, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (38, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (38, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (38, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (38, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (38, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (38, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (38, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (38, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (38, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (38, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (38, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (38, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (38, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (38, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (38, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (38, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (38, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (38, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longsword', 'Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 21 (3d8 + 8) slashing damage plus 13 (3d8) lightning damage. If the balor scores a critical hit, it rolls damage dice three times, instead of twice.', 38);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Whip', 'Melee Weapon Attack: +14 to hit, reach 30 ft., one target. Hit: 15 (2d6 + 8) slashing damage plus 10 (3d6) fire damage, and the target must succeed on a DC 20 Strength saving throw or be pulled up to 25 feet toward the balor.', 38);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Teleport', 'The balor magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.', 38);
@@ -1453,8 +1544,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Fire Au
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The balor''s weapon attacks are magical.', 38);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (38, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (38, 61);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (39, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (39, 39, 'null', 0.125, 10, 11, 3, 12, 'Leather Armor', 'Bandit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (39, 39, 'null', 0.125, 10, 11, 3, 12, 'Leather Armor', 'Bandit', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 2, 12);
@@ -1470,8 +1563,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 39, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Light Crossbow', 'Ranged Weapon Attack: +3 to hit, range 80 ft./320 ft., one target. Hit: 5 (1d8 + 1) piercing damage.', 39);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Scimitar', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.', 39);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (39, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (40, 8, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (40, 40, 'null', 2, 10, 65, 3, 15, 'Studded Leather', 'Bandit Captain');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (40, 40, 'null', 2, 10, 65, 3, 15, 'Studded Leather', 'Bandit Captain', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/181/1000/1000/636252761965117015.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 2, 16);
@@ -1494,8 +1589,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Dagger'
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The captain makes three melee attacks: two with its scimitar and one with its dagger. Or the captain makes two ranged attacks with its daggers.', 40);
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (40, 'The captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (40, 65);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (41, 8, 13, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (41, 41, 'null', 4, 10, 58, 3, 12, '', 'Banshee');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (41, 41, 'null', 4, 10, 58, 3, 12, '', 'Banshee', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/8/446/315/315/636306384206418474.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 2, 14);
@@ -1520,16 +1617,26 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (41
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (41, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (41, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (41, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '3', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '7', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '1', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '13', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (41, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '1', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '1', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '13', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '13', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '3', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '3', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '7', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '7', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (41, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (41, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Horrifying Visage', 'Each non-undead creature within 60 feet of the banshee that can see her must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. A frightened target can repeat the saving throw at the end of each of its turns, with disadvantage if the banshee is within line of sight, ending the effect on itself on a success. If a target’s saving throw is successful or the effect ends for it, the target is immune to the banshee’s Horrifying Visage for the next 24 hours.', 41);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Corrupting Touch', 'Melee Spell Attack: +4 to hit, reach 5 ft., one target. Hit: 12 (3d6 + 2) necrotic damage.', 41);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Wail (1/Day)', 'The banshee releases a mournful wail, provided that she isn’t in sunlight. This wail has no effect on constructs and undead. All other creatures within 30 feet of her that can hear her must make a DC 13 Constitution saving throw. On a failure, a creature drops to 0 hit points. On a success, a creature takes 10 (3d6) psychic damage.', 41);
@@ -1537,8 +1644,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorpo
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Detect Life', 'The banshee can magically sense the presence of creatures up to 5 miles away that aren’t undead or constructs. She knows the general direction they’re in but not their exact locations.', 41);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (41, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (41, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (42, 8, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (42, 42, 'null', 5, 18, 110, 3, 15, 'Natural Armor', 'Barbed Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (42, 42, 'null', 5, 18, 110, 3, 15, 'Natural Armor', 'Barbed Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/486/315/315/636376302569423870.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 2, 17);
@@ -1560,12 +1669,18 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 42, '7'
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 42, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 42, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (42, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (42, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (42, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (42, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (42, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (42, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (42, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (42, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (42, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (42, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (42, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (42, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (42, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (42, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (42, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (42, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (42, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (42, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (42, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.', 42);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hurl Flame', 'Ranged Spell Attack: +5 to hit, range 150 ft., one target. Hit: 10 (3d6) fire damage. If the target is a flammable object that isn''t being worn or carried, it also catches fire.', 42);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The devil makes three melee attacks: one with its tail and two with its claws. Alternatively, it can use Hurl Flame twice.', 42);
@@ -1575,8 +1690,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Devil''
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Resistance', 'The devil has advantage on saving throws against spells and other magical effects.', 42);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (42, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (42, 48);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (43, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (43, 43, 'null', 3, 9, 52, 3, 15, 'Natural Armor', 'Basilisk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (43, 43, 'null', 3, 9, 52, 3, 15, 'Natural Armor', 'Basilisk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/185/1000/1000/636252762168821795.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 2, 8);
@@ -1593,8 +1710,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 43, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage plus 7 (2d6) poison damage.', 43);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Petrifying Gaze', 'If a creature starts its turn within 30 feet of the basilisk and the two of them can see each other, the basilisk can force the creature to make a DC 12 Constitution saving throw if the basilisk isn''t incapacitated. On a failed save, the creature magically begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified until freed by the greater restoration spell or other magic.A creature that isn''t surprised can avert its eyes to avoid the saving throw at the start of its turn. If it does so, it can''t see the basilisk until the start of its next turn, when it can avert its eyes again.If it looks at the basilisk in the meantime, it must immediately make the save. If the basilisk sees its reflection within 30 feet of it in bright light, it mistakes itself for a rival and targets itself with its gaze.', 43);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (43, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (44, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (44, 44, 'null', 0, 11, 1, 5, 12, '', 'Bat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (44, 44, 'null', 0, 11, 1, 5, 12, '', 'Bat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/305/1000/1000/636379812593010967.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 2, 15);
@@ -1613,8 +1732,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing', 'The bat has advantage on Wisdom (Perception) checks that rely on hearing.', 44);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The bat can''t use its blindsight while deafened.', 44);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (44, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (45, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (45, 45, 'null', 3, 10, 52, 3, 13, 'Natural Armor', 'Bearded Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (45, 45, 'null', 3, 10, 52, 3, 13, 'Natural Armor', 'Bearded Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/193/1000/1000/636252763397604505.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 2, 15);
@@ -1632,12 +1753,18 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (45, '16');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 45, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 45, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (45, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (45, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (45, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (45, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (45, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (45, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (45, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (45, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (45, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (45, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (45, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (45, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (45, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (45, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (45, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (45, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (45, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (45, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (45, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beard', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 6 (1d8 + 2) piercing damage, and the target must succeed on a DC 12 Constitution saving throw or be poisoned for 1 minute. While poisoned in this way, the target can''t regain hit points. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 45);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Glaive', 'Melee Weapon Attack: +5 to hit, reach 10 ft., one target. Hit: 8 (1d10 + 3) slashing damage. If the target is a creature other than an undead or a construct, it must succeed on a DC 12 Constitution saving throw or lose 5 (1d10) hit points at the start of each of its turns due to an infernal wound. Each time the devil hits the wounded target with this attack, the damage dealt by the wound increases by 5 (1d10). Any creature can take an action to stanch the wound with a successful DC 12 Wisdom (Medicine) check. The wound also closes if the target receives magical healing.', 45);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The devil makes two attacks: one with its beard and one with its glaive.', 45);
@@ -1646,8 +1773,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Steadfast', 'The devil can''t be frightened while it can see an allied creature within 30 feet of it.', 45);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (45, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (45, 48);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (46, 12, 16, 64);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (46, 46, 'null', 11, 16, 168, 6, 17, 'Natural Armor', 'Behir');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (46, 46, 'null', 11, 16, 168, 6, 17, 'Natural Armor', 'Behir', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/195/1000/1000/636252763748680024.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 2, 16);
@@ -1664,15 +1793,17 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 46, 
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 46, '17');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 46, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (90, 46, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (46, '6', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (46, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Constrict', 'Melee Weapon Attack: +10 to hit, reach 5 ft., one Large or smaller creature. Hit: 17 (2d10 + 6) bludgeoning damage plus 17 (2d10 + 6) slashing damage. The target is grappled (escape DC 16) if the behir isn''t already constricting a creature, and the target is restrained until this grapple ends.', 46);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Breath (Recharge 5–6)', 'The behir exhales a line of lightning that is 20 feet long and 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 66 (12d10) lightning damage on a failed save, or half as much damage on a successful one.', 46);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 22 (3d10 + 6) piercing damage.', 46);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Swallow', 'The behir makes one bite attack against a Medium or smaller target it is grappling. If the attack hits, the target is also swallowed, and the grapple ends. While swallowed, the target is blinded and restrained, it has total cover against attacks and other effects outside the behir, and it takes 21 (6d6) acid damage at the start of each of the behir''s turns. A behir can have only one creature swallowed at a time. If the behir takes 30 damage or more on a single turn from the swallowed creature, the behir must succeed on a DC 14 Constitution saving throw at the end of that turn or regurgitate the creature, which falls prone in a space within 10 feet of the behir. If the behir dies, a swallowed creature is no longer restrained by it and can escape from the corpse by using 15 feet of movement, exiting prone.', 46);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The behir makes two attacks: one with its bite and one to constrict.', 46);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (46, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (47, 8, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (47, 47, 'null', 2, 10, 67, 3, 13, 'Hide Armor', 'Berserker');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (47, 47, 'null', 2, 10, 67, 3, 13, 'Hide Armor', 'Berserker', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 2, 12);
@@ -1688,8 +1819,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 47, 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greataxe', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12 + 3) slashing damage.', 47);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Reckless', 'At the start of its turn, the berserker can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn.', 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (47, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (48, 8, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (48, 48, 'null', 0.5, 13, 19, 3, 11, 'Natural Armor', 'Black Bear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (48, 48, 'null', 0.5, 13, 19, 3, 11, 'Natural Armor', 'Black Bear', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 2, 10);
@@ -1709,8 +1842,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The bear makes two attacks: one with its bite and one with its claws.', 48);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The bear has advantage on Wisdom (Perception) checks that rely on smell.', 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (48, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (49, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (49, 49, 'null', 2, 14, 33, 3, 17, 'Natural Armor', 'Black Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (49, 49, 'null', 2, 14, 33, 3, 17, 'Natural Armor', 'Black Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/496/1000/1000/636376308217017511.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 2, 14);
@@ -1733,13 +1868,15 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 49, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 49, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 49, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 49, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (49, '1', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (49, '1', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Breath (Recharge 5–6)', 'The dragon exhales acid in a 15-­foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 22 (5d8) acid damage on a failed save, or half as much damage on a successful one.', 49);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 2 (1d4) acid damage.', 49);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 49);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (49, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (50, 10, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (50, 50, 'null', 4, 8, 85, 4, 7, '', 'Black Pudding');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (50, 50, 'null', 4, 8, 85, 4, 7, '', 'Black Pudding', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/201/315/315/636252764027417823.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 2, 5);
@@ -1760,18 +1897,20 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (50
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (50, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (50, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (50, '13');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (50, '1', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (50, '3', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (50, '6', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (50, '12', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (50, '1', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (50, '3', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (50, '6', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (50, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Pseudopod', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage plus 18 (4d8) acid damage. In addition, nonmagical armor worn by the target is partly dissolved and takes a permanent and cumulative −1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10.', 50);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amorphous', 'The pudding can move through a space as narrow as 1 inch wide without squeezing.', 50);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Corrosive Form', 'A creature that touches the pudding or hits it with a melee attack while within 5 feet of it takes 4 (1d8) acid damage. Any nonmagical weapon made of metal or wood that hits the pudding corrodes. After dealing damage, the weapon takes a permanent and cumulative −1 penalty to damage rolls. If its penalty drops to −5, the weapon is destroyed.Nonmagical ammunition made of metal or wood that hits the pudding is destroyed after dealing damage.The pudding can eat through 2-inch-thick, nonmagical wood or metal in 1 round.', 50);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider Climb', 'The pudding can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.', 50);
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (50, 'When a pudding that is Medium or larger is subjected to lightning or slashing damage, it splits into two new puddings if it has at least 10 hit points. Each new pudding has hit points equal to half the original pudding''s, rounded down. New puddings are one size smaller than the original pudding.', 'Split');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (50, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (51, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (51, 51, 'null', 0.25, 13, 22, 3, 13, '', 'Blink Dog');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (51, 51, 'null', 0.25, 13, 22, 3, 13, '', 'Blink Dog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/205/315/315/636252764168652859.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 2, 17);
@@ -1790,8 +1929,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Teleport (Recharge 4–6)', 'The dog magically teleports, along with any equipment it is wearing or carrying, up to 40 feet to an unoccupied space it can see. Before or after teleporting, the dog can make one bite attack.', 51);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The dog has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 51);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (51, 63);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (52, 6, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (52, 52, 'null', 0.125, 14, 7, 1, 12, '', 'Blood Hawk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (52, 52, 'null', 0.125, 14, 7, 1, 12, '', 'Blood Hawk', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 2, 14);
@@ -1810,8 +1951,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beak', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The hawk has advantage on Wisdom (Perception) checks that rely on sight.', 52);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The hawk has advantage on an attack roll against a creature if at least one of the hawk''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 52);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (52, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (53, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (53, 53, 'null', 3, 14, 52, 3, 17, 'Natural Armor', 'Blue Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (53, 53, 'null', 3, 14, 52, 3, 17, 'Natural Armor', 'Blue Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/209/1000/1000/636252764637244026.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 2, 10);
@@ -1834,12 +1977,14 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 53, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 53, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 53, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 53, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (53, '6', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (53, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Breath (Recharge 5–6)', 'The dragon exhales lightning in a 30-­foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 22 (4d10) lightning damage on a failed save, or half as much damage on a successful one.', 53);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage plus 3 (1d6) lightning damage.', 53);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (53, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (54, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (54, 54, 'null', 0.25, 9, 11, 3, 11, 'Natural Armor', 'Boar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (54, 54, 'null', 0.25, 9, 11, 3, 11, 'Natural Armor', 'Boar', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 2, 11);
@@ -1856,8 +2001,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tusk', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Relentless (Recharges after a Short or Long Rest)', 'If the boar takes 7 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.', 54);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 3 (1d6) slashing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.', 54);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (54, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (55, 10, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (55, 55, 'null', 9, 12, 142, 4, 19, 'Natural Armor', 'Bone Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (55, 55, 'null', 9, 12, 142, 4, 19, 'Natural Armor', 'Bone Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/481/1000/1000/636328225187253200.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 2, 16);
@@ -1878,12 +2025,18 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 55, '5'
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 55, '7');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 55, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (55, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (55, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (55, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (55, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (55, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (55, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (55, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (55, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (55, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (55, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (55, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (55, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (55, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (55, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (55, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (55, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (55, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (55, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (55, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sting', 'Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 13 (2d8 + 4) piercing damage plus 17 (5d6) poison damage, and the target must succeed on a DC 14 Constitution saving throw or become poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 55);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The devil makes three attacks: two with its claws and one with its sting.', 55);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 8 (1d8 + 4) slashing damage.', 55);
@@ -1891,8 +2044,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Devil''
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Resistance', 'The devil has advantage on saving throws against spells and other magical effects.', 55);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (55, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (55, 48);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (56, 8, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (56, 56, 'null', 1, 14, 16, 3, 16, 'Natural Armor', 'Brass Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (56, 56, 'null', 1, 14, 16, 3, 16, 'Natural Armor', 'Brass Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/215/315/315/636252764963208954.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 2, 10);
@@ -1915,14 +2070,16 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 56, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 56, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 56, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 56, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (56, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (56, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage.', 56);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sleep Breath', 'The dragon exhales sleep gas in a 15-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw or fall unconscious for 1 minute. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.', 56);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath Weapons (Recharge 5–6)', 'The dragon uses one of the following breath weapons.', 56);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath', 'The dragon exhales fire in an 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 14 (4d6) fire damage on a failed save, or half as much damage on a successful one.', 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (56, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (57, 8, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (57, 57, 'null', 2, 14, 32, 3, 17, 'Natural Armor', 'Bronze Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (57, 57, 'null', 2, 14, 32, 3, 17, 'Natural Armor', 'Bronze Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/492/315/315/636376306909593829.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 2, 10);
@@ -1945,15 +2102,17 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 57, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 57, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 57, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 57, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (57, '6', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (57, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Breath', 'The dragon exhales lightning in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 16 (3d10) lightning damage on a failed save, or half as much damage on a successful one.', 57);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage.', 57);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Repulsion Breath', 'The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 12 Strength saving throw. On a failed save, the creature is pushed 30 feet away from the dragon.', 57);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath Weapons (Recharge 5–6)', 'The dragon uses one of the following breath weapons.', 57);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 57);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (57, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (58, 10, 4, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (58, 58, 'null', 1, 13, 34, 4, 11, 'Natural Armor', 'Brown Bear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (58, 58, 'null', 1, 13, 34, 4, 11, 'Natural Armor', 'Brown Bear', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 2, 10);
@@ -1973,8 +2132,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The bear makes two attacks: one with its bite and one with its claws.', 58);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The bear has advantage on Wisdom (Perception) checks that rely on smell.', 58);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (58, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (59, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (59, 59, 'null', 1, 10, 27, 3, 16, 'Hide Armor, Shield', 'Bugbear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (59, 59, 'null', 1, 10, 27, 3, 16, 'Hide Armor, Shield', 'Bugbear', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/221/1000/1000/636252765234633232.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 2, 14);
@@ -1996,8 +2157,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Brute',
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Surprise Attack', 'If the bugbear surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack.', 59);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (59, 7);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (59, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (60, 10, 9, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (60, 60, 'null', 5, 16, 94, 4, 17, 'Natural Armor', 'Bulette');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (60, 60, 'null', 5, 16, 94, 4, 17, 'Natural Armor', 'Bulette', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/223/315/315/636252765369632881.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 2, 11);
@@ -2018,8 +2181,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Deadly Leap', 'If the bulette jumps at least 15 feet as part of its movement, it can then use this action to land on its feet in a space that contains one or more other creatures. Each of those creatures must succeed on a DC 16 Strength or Dexterity saving throw (target''s choice) or be knocked prone and take 14 (3d6 + 4) bludgeoning damage plus 14 (3d6 + 4) slashing damage. On a successful save, the creature takes only half the damage, isn''t knocked prone, and is pushed 5 feet out of the bulette''s space into an unoccupied space of the creature''s choice. If no unoccupied space is within range, the creature instead falls prone in the bulette''s space.', 60);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Standing Leap', 'The bulette''s long jump is up to 30 feet and its high jump is up to 15 feet, with or without a running start.', 60);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (60, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (61, 10, 2, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (61, 61, 'null', 0.125, 9, 15, 4, 9, '', 'Camel');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (61, 61, 'null', 0.125, 9, 15, 4, 9, '', 'Camel', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 2, 8);
@@ -2034,8 +2199,10 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (61, '17');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 61, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.', 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (61, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (62, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (62, 62, 'null', 0, 13, 2, 5, 12, '', 'Cat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (62, 62, 'null', 0, 13, 2, 5, 12, '', 'Cat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 2, 15);
@@ -2054,8 +2221,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 62, '12
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 slashing damage.', 62);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The cat has advantage on Wisdom (Perception) checks that rely on smell.', 62);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (62, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (63, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (63, 63, 'null', 2, 13, 45, 4, 12, '', 'Centaur');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (63, 63, 'null', 2, 13, 45, 4, 12, '', 'Centaur', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/227/1000/1000/636252765573266420.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 2, 14);
@@ -2078,8 +2247,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the centaur moves at least 30 feet straight toward a target and then hits it with a pike attack on the same turn, the target takes an extra 10 (3d6) piercing damage.', 63);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (63, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (63, 56);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (64, 8, 10, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (64, 64, 'null', 8, 11, 85, 3, 16, 'Natural Armor', 'Chain Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (64, 64, 'null', 8, 11, 85, 3, 16, 'Natural Armor', 'Chain Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/235/1000/1000/636252766618069332.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 2, 15);
@@ -2097,12 +2268,18 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (64, '16');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 64, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 64, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (64, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (64, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (64, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (64, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (64, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (64, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (64, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (64, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (64, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (64, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (64, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (64, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (64, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (64, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (64, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (64, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (64, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (64, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (64, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Chain', 'Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 11 (2d6 + 4) slashing damage. The target is grappled (escape DC 14) if the devil isn''t already grappling a creature. Until this grapple ends, the target is restrained and takes 7 (2d6) piercing damage at the start of each of its turns.', 64);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Animate Chains (Recharges after a Short or Long Rest)', 'Up to four chains the devil can see within 60 feet of it magically sprout razor-­edged barbs and animate under the devil''s control, provided that the chains aren''t being worn or carried. Each animated chain is an object with AC 20, 20 hit points, resistance to piercing damage, and immunity to psychic and thunder damage. When the devil uses multiattack on its turn, it can use each animated chain to make one additional chain attack. An animated chain can grapple one creature of its own but can''t make attacks while grappling. An animated chain reverts to its inanimate state if reduced to 0 hit points or if the devil is incapacitated or dies.', 64);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The devil makes two attacks with its chains.', 64);
@@ -2111,8 +2288,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (64, 'When a creature the devil can see starts its turn within 30 feet of the devil, the devil can create the illusion that it looks like one of the creature''s departed loved ones or bitter enemies. If the creature can see the devil, it must succeed on a DC 14 Wisdom saving throw or be frightened until the end of its turn.', 'Unnerving Mask');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (64, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (64, 48);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (65, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (65, 65, 'null', 6, 18, 114, 4, 14, 'Natural Armor', 'Chimera');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (65, 65, 'null', 6, 18, 114, 4, 14, 'Natural Armor', 'Chimera', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/237/1000/1000/636252766770156389.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 2, 11);
@@ -2134,8 +2313,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Horns', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) bludgeoning damage.', 65);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The chimera makes three attacks: one with its bite, one with its horns, and one with its claws. When its fire breath is available, it can use the breath in place of its bite or horns.', 65);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (65, 17);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (66, 10, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (66, 66, 'null', 4, 14, 93, 4, 16, 'Natural Armor', 'Chuul');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (66, 66, 'null', 4, 14, 93, 4, 16, 'Natural Armor', 'Chuul', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/241/1000/1000/636252767122656355.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 2, 10);
@@ -2152,15 +2333,17 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 66, 
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 66, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 66, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (66, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (66, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (66, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tentacles', 'One creature grappled by the chuul must succeed on a DC 13 Constitution saving throw or be poisoned for 1 minute. Until this poison ends, the target is paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 66);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Pincer', 'Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage. The target is grappled (escape DC 14) if it is a Large or smaller creature and the chuul doesn''t have two other creatures grappled.', 66);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The chuul makes two pincer attacks. If the chuul is grappling a creature, the chuul can also use its tentacles once.', 66);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sense Magic', 'The chuul senses magic within 120 feet of it at will. This trait otherwise works like the detect magic spell but isn''t itself magical.', 66);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The chuul can breathe air and water.', 66);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (66, 23);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (67, 10, 14, 56);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (67, 67, 'null', 9, 9, 133, 4, 14, 'Natural Armor', 'Clay Golem');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (67, 67, 'null', 9, 9, 133, 4, 14, 'Natural Armor', 'Clay Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/243/315/315/636252767318152303.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 2, 9);
@@ -2180,12 +2363,12 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (67
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (67, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (67, '8');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (67, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (67, '1', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (67, '9', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (67, '10', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (67, '2', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (67, '8', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (67, '12', true, false, false, true, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (67, '1', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (67, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (67, '10', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (67, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (67, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (67, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 16 (2d10 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 15 Constitution saving throw or have its hit point maximum reduced by an amount equal to the damage taken. The target dies if this attack reduces its hit point maximum to 0. The reduction lasts until removed by the greater restoration spell or other magic.', 67);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Haste (Recharge 5–6)', 'Until the end of its next turn, the golem magically gains a +2 bonus to its AC, has advantage on Dexterity saving throws, and can use its slam attack as a bonus action.', 67);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The golem makes two slam attacks.', 67);
@@ -2195,8 +2378,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Berserk
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Acid Absorption', 'Whenever the golem is subjected to acid damage, it takes no damage and instead regains a number of hit points equal to the acid damage dealt.', 67);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The golem''s weapon attacks are magical.', 67);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (67, 21);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (68, 10, 12, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (68, 68, 'null', 8, 11, 78, 4, 14, 'Natural Armor', 'Cloaker');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (68, 68, 'null', 8, 11, 78, 4, 14, 'Natural Armor', 'Cloaker', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/245/1000/1000/636252767458838228.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 2, 15);
@@ -2222,8 +2407,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Damage 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the cloaker remains motionless without its underside exposed, it is indistinguishable from a dark leather cloak.', 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (68, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (68, 58);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (69, 12, 16, 96);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (69, 69, 'null', 9, 17, 200, 6, 14, 'Natural Armor', 'Cloud Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (69, 69, 'null', 9, 17, 200, 6, 14, 'Natural Armor', 'Cloud Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/249/1000/1000/636252767619414260.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 2, 10);
@@ -2248,8 +2435,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The giant''s innate spellcasting ability is Charisma. It can innately cast the following spells, requiring no material components: At will: detect magic, fog cloud, light 3/day each: feather fall, fly, misty step, telekinesis 1/day each: control weather, gaseous form', 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (69, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (69, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (70, 6, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (70, 70, 'null', 0.5, 11, 27, 1, 11, '', 'Cockatrice');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (70, 70, 'null', 0.5, 11, 27, 1, 11, '', 'Cockatrice', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/251/315/315/636252767744669874.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 2, 12);
@@ -2266,8 +2455,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 70, 
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 70, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4 + 1) piercing damage, and the target must succeed on a DC 11 Constitution saving throw against being magically petrified. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified for 24 hours.', 70);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (70, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (71, 8, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (71, 71, 'null', 0, 10, 4, 3, 10, '', 'Commoner');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (71, 71, 'null', 0, 10, 4, 3, 10, '', 'Commoner', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 2, 10);
@@ -2282,8 +2473,10 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (71, '5');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 71, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Club', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.', 71);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (71, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (72, 10, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (72, 72, 'null', 0.25, 10, 13, 4, 12, '', 'Constrictor Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (72, 72, 'null', 0.25, 10, 13, 4, 12, '', 'Constrictor Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 2, 14);
@@ -2301,8 +2494,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 72, '2
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Constrict', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 6 (1d8 + 2) bludgeoning damage, and the target is grappled (escape DC 14). Until this grapple ends, the creature is restrained, and the snake can''t constrict another target.', 72);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage.', 72);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (72, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (73, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (73, 73, 'null', 1, 14, 22, 3, 16, 'Natural Armor', 'Copper Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (73, 73, 'null', 1, 14, 22, 3, 16, 'Natural Armor', 'Copper Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/255/1000/1000/636252768002215182.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 2, 12);
@@ -2325,14 +2520,16 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 73, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 73, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 73, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 73, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (73, '1', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (73, '1', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage.', 73);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slowing Breath', 'The dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw. On a failed save, the creature can''t use reactions, its speed is halved, and it can''t make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.', 73);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath Weapons (Recharge 5–6)', 'The dragon uses one of the following breath weapons.', 73);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Breath', 'The dragon exhales acid in an 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 18 (4d8) acid damage on a failed save, or half as much damage on a successful one.', 73);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (73, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (74, 8, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (74, 74, 'null', 4, 15, 97, 3, 19, 'Natural Armor', 'Couatl');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (74, 74, 'null', 4, 15, 97, 3, 19, 'Natural Armor', 'Couatl', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/257/1000/1000/636252768143323827.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 2, 20);
@@ -2350,11 +2547,11 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (74, '26');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 74, '1');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (90, 74, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 74, '4');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (74, '10', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (74, '2', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (74, '8', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (74, '12', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (74, '11', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (74, '11', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (74, '10', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (74, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (74, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (74, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Constrict', 'Melee Weapon Attack: +6 to hit, reach 10 ft., one Medium or smaller creature. Hit: 10 (2d6 + 3) bludgeoning damage, and the target is grappled (escape DC 15). Until this grapple ends, the target is restrained, and the couatl can''t constrict another target.', 74);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +8 to hit, reach 5 ft., one creature. Hit: 8 (1d6 + 5) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 24 hours. Until this poison ends, the target is unconscious. Another creature can use an action to shake the target awake.', 74);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Change Shape', 'The couatl magically polymorphs into a humanoid or beast that has a challenge rating equal to or less than its own, or back into its true form. It reverts to its true form if it dies. Any equipment it is wearing or carrying is absorbed or borne by the new form (the couatl''s choice).In a new form, the couatl retains its game statistics and ability to speak, but its AC, movement modes, Strength, Dexterity, and other actions are replaced by those of the new form, and it gains any statistics and capabilities (except class features, legendary actions, and lair actions) that the new form has but that it lacks. If the new form has a bite attack, the couatl can use its bite in that form.', 74);
@@ -2363,8 +2560,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The couatl''s weapon attacks are magical.', 74);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (74, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (74, 64);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (75, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (75, 75, 'null', 0, 9, 2, 5, 11, 'Natural Armor', 'Crab');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (75, 75, 'null', 0, 9, 2, 5, 11, 'Natural Armor', 'Crab', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 2, 11);
@@ -2383,8 +2582,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 75, '2
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 bludgeoning damage.', 75);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The crab can breathe air and water.', 75);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (75, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (76, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (76, 76, 'null', 0.5, 10, 19, 4, 12, 'Natural Armor', 'Crocodile');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (76, 76, 'null', 0.5, 10, 19, 4, 12, 'Natural Armor', 'Crocodile', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 2, 10);
@@ -2402,8 +2603,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 76, '17
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (1d10 + 2) piercing damage, and the target is grappled (escape DC 12). Until this grapple ends, the target is restrained, and the crocodile can''t bite another target.', 76);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'The crocodile can hold its breath for 15 minutes.', 76);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (76, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (77, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (77, 77, 'null', 2, 11, 33, 3, 13, 'Leather Armor', 'Cult Fanatic');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (77, 77, 'null', 2, 11, 33, 3, 13, 'Leather Armor', 'Cult Fanatic', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/259/1000/1000/636252768307230924.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 2, 14);
@@ -2424,8 +2627,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Dark Devotion', 'The fanatic has advantage on saving throws against being charmed or frightened.', 77);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The fanatic is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared: Cantrips (at will): light, sacred flame, thaumaturgy 1st level (4 slots): command, inflict wounds, shield of faith 2nd level (3 slots): hold person, spiritual weapon', 77);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (77, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (78, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (78, 78, 'null', 0.125, 10, 9, 3, 12, 'Leather Armor', 'Cultist');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (78, 78, 'null', 0.125, 10, 9, 3, 12, 'Leather Armor', 'Cultist', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/481/1000/1000/636364323106021375.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 2, 12);
@@ -2443,8 +2648,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 78, '15
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Scimitar', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 4 (1d6 + 1) slashing damage.', 78);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Dark Devotion', 'The cultist has advantage on saving throws against being charmed or frightened.', 78);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (78, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (79, 12, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (79, 79, 'null', 6, 8, 138, 6, 14, 'Natural Armor', 'Cyclops');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (79, 79, 'null', 6, 8, 138, 6, 14, 'Natural Armor', 'Cyclops', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/470/1000/1000/636376290137285130.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 2, 11);
@@ -2462,8 +2669,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatcl
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The cyclops makes two greatclub attacks.', 79);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Poor Depth Perception', 'The cyclops has disadvantage on any attack roll against a target more than 30 feet away.', 79);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (79, 35);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (80, 6, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (80, 80, 'null', 0.5, 10, 22, 1, 11, '', 'Darkmantle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (80, 80, 'null', 0.5, 10, 22, 1, 11, '', 'Darkmantle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/263/315/315/636252768676699519.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 2, 12);
@@ -2484,8 +2693,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Crush',
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the darkmantle remains motionless, it is indistinguishable from a cave formation such as a stalactite or stalagmite.', 80);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The darkmantle can''t use its blindsight while deafened.', 80);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (80, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (81, 8, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (81, 81, 'null', 1, 15, 39, 3, 12, '', 'Death Dog');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (81, 81, 'null', 1, 15, 39, 3, 12, '', 'Death Dog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/265/1000/1000/636252768823194310.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 2, 14);
@@ -2505,8 +2716,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dog makes two bite attacks.', 81);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Two-Headed', 'The dog has advantage on Wisdom (Perception) checks and on saving throws against being blinded, charmed, deafened, frightened, stunned, or knocked unconscious.', 81);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (81, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (82, 6, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (82, 82, 'null', 0.5, 12, 16, 1, 15, 'Chain Shirt', 'Deep Gnome (Svirfneblin)');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (82, 82, 'null', 0.5, 12, 16, 1, 15, 'Chain Shirt', 'Deep Gnome (Svirfneblin)', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/112/1000/1000/636323610009818415.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 2, 14);
@@ -2531,8 +2744,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (82, 53);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (82, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (82, 55);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (83, 8, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (83, 83, 'null', 0, 12, 4, 3, 13, '', 'Deer');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (83, 83, 'null', 0, 12, 4, 3, 13, '', 'Deer', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 2, 16);
@@ -2547,8 +2762,10 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (83, '17');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 83, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.', 83);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (83, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (84, 8, 16, 64);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (84, 84, 'null', 10, 19, 136, 3, 17, 'Natural Armor', 'Deva');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (84, 84, 'null', 10, 19, 136, 3, 17, 'Natural Armor', 'Deva', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/267/1000/1000/636252768980059444.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 2, 18);
@@ -2570,10 +2787,14 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 84, '
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (84, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (84, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (84, '4');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (84, '11', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (84, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (84, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (84, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (84, '11', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (84, '11', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (84, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (84, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (84, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (84, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (84, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (84, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Mace', 'Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) bludgeoning damage plus 18 (4d8) radiant damage.', 84);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Healing Touch (3/Day)', 'The deva touches another creature. The target magically regains 20 (4d8 + 2) hit points and is freed from any curse, disease, poison, blindness, or deafness.', 84);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The deva makes two melee attacks.', 84);
@@ -2583,8 +2804,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Angelic
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The deva''s spellcasting ability is Charisma (spell save DC 17). The deva can innately cast the following spells, requiring only verbal components: At will: detect evil and good 1/day each: commune, raise dead', 84);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (84, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (84, 64);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (85, 10, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (85, 85, 'null', 1, 13, 37, 4, 14, 'Natural Armor', 'Dire Wolf');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (85, 85, 'null', 1, 13, 37, 4, 14, 'Natural Armor', 'Dire Wolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/484/315/315/636376300478361995.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 2, 15);
@@ -2603,8 +2826,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 85);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The wolf has advantage on an attack roll against a creature if at least one of the wolf''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 85);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (85, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (86, 10, 14, 84);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (86, 86, 'null', 11, 13, 161, 4, 17, 'Natural Armor', 'Djinni');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (86, 86, 'null', 11, 13, 161, 4, 17, 'Natural Armor', 'Djinni', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/281/315/315/636252770322204007.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 2, 15);
@@ -2622,16 +2847,18 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (86, '7');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 86, '1');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (90, 86, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 86, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (86, '6', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (86, '13', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (86, '6', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (86, '13', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Scimitar', 'Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage plus 3 (1d6) lightning or thunder damage (djinni''s choice).', 86);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Create Whirlwind', 'A 5-foot-radius, 30-foot-tall cylinder of swirling air magically forms on a point the djinni can see within 120 feet of it. The whirlwind lasts as long as the djinni maintains concentration (as if concentrating on a spell). Any creature but the djinni that enters the whirlwind must succeed on a DC 18 Strength saving throw or be restrained by it. The djinni can move the whirlwind up to 60 feet as an action, and creatures restrained by the whirlwind move with it. The whirlwind ends if the djinni loses sight of it.A creature can use its action to free a creature restrained by the whirlwind, including itself, by succeeding on a DC 18 Strength check. If the check succeeds, the creature is no longer restrained and moves to the nearest space outside the whirlwind.', 86);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The djinni makes three scimitar attacks.', 86);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Elemental Demise', 'If the djinni dies, its body disintegrates into a warm breeze, leaving behind only equipment the djinni was wearing or carrying.', 86);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The djinni''s innate spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). It can innately cast the following spells, requiring no material components: At will: detect evil and good, detect magic, thunderwave 3/day each: create food and water (can create wine instead of water) , tongues, wind walk 1/day each: conjure elemental (air elemental only), creation, gaseous form, invisibility, major image, plane shift', 86);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (86, 2);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (87, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (87, 87, 'null', 3, 11, 52, 3, 14, '', 'Doppelganger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (87, 87, 'null', 3, 11, 52, 3, 14, '', 'Doppelganger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/289/315/315/636252770983164351.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 2, 18);
@@ -2655,8 +2882,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ambushe
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapechanger', 'The doppelganger can use its action to polymorph into a Small or Medium humanoid it has seen, or back into its true form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn''t transformed. It reverts to its true form if it dies.', 87);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Surprise Attack', 'If the doppelganger surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 10 (3d6) damage from the attack.', 87);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (87, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (88, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (88, 88, 'null', 0.25, 10, 19, 4, 10, '', 'Draft Horse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (88, 88, 'null', 0.25, 10, 19, 4, 10, '', 'Draft Horse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 2, 10);
@@ -2671,8 +2900,10 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (88, '17');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 88, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) bludgeoning damage.', 88);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (88, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (89, 20, 22, 110);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (89, 89, 'null', 17, 11, 341, 2, 20, 'Natural Armor', 'Dragon Turtle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (89, 89, 'null', 17, 11, 341, 2, 20, 'Natural Armor', 'Dragon Turtle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/291/1000/1000/636252771128151641.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 2, 10);
@@ -2690,7 +2921,7 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (89, '6');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 89, '1');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 89, '9');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 89, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (89, '4', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (89, '4', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Steam Breath (Recharge 5–6)', 'The dragon turtle exhales scalding steam in a 60-foot cone. Each creature in that area must make a DC 18 Constitution saving throw, taking 52 (15d6) fire damage on a failed save, or half as much damage on a successful one. Being underwater doesn''t grant resistance against this damage.', 89);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 26 (3d12 + 7) piercing damage.', 89);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +13 to hit, reach 15 ft., one target. Hit: 26 (3d12 + 7) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be pushed up to 10 feet away from the dragon turtle and knocked prone.', 89);
@@ -2699,8 +2930,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon turtle can breathe air and water.', 89);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (89, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (89, 47);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (90, 6, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (90, 90, 'null', 0.25, 9, 18, 1, 11, 'Natural Armor', 'Dretch');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (90, 90, 'null', 0.25, 9, 18, 1, 11, 'Natural Armor', 'Dretch', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/293/1000/1000/636252771253285096.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 2, 11);
@@ -2715,18 +2948,20 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (90, '15');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 90, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 90, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (90, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (90, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (90, '3', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (90, '4', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (90, '6', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (90, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (90, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (90, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (90, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 5 (2d4) slashing damage.', 90);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) piercing damage.', 90);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fetid Cloud (1/Day)', 'A 10­-foot radius of disgusting green gas extends out from the dretch. The gas spreads around corners, and its area is lightly obscured. It lasts for 1 minute or until a strong wind disperses it. Any creature that starts its turn in that area must succeed on a DC 11 Constitution saving throw or be poisoned until the start of its next turn. While poisoned in this way, the target can take either an action or a bonus action on its turn, not both, and can''t take reactions.', 90);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dretch makes two attacks: one with its bite and one with its claws.', 90);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (90, 4);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (90, 61);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (91, 10, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (91, 91, 'null', 6, 15, 123, 4, 19, 'Natural Armor', 'Drider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (91, 91, 'null', 6, 15, 123, 4, 19, 'Natural Armor', 'Drider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/295/1000/1000/636252771409285458.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 2, 16);
@@ -2754,8 +2989,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunligh
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The drider''s innate spellcasting ability is Wisdom (spell save DC 13). The drider can innately cast the following spells, requiring no material components: At will: dancing lights 1/day each: darkness, faerie fire', 91);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (91, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (91, 56);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (92, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (92, 92, 'null', 0.25, 12, 13, 3, 15, 'Chain Shirt', 'Drow');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (92, 92, 'null', 0.25, 12, 13, 3, 15, 'Chain Shirt', 'Drow', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/501/1000/1000/636376310726273495.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 2, 14);
@@ -2778,8 +3015,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunligh
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The drow’s spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:At will: dancing lights1/day each: darkness, faerie fire', 92);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (92, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (92, 56);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (93, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (93, 93, 'null', 2, 14, 27, 3, 11, '16 With Barkskin', 'Druid');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (93, 93, 'null', 2, 14, 27, 3, 11, '16 With Barkskin', 'Druid', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/299/1000/1000/636252771583275655.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 2, 12);
@@ -2798,8 +3037,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 93, '12
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Quarterstaff', 'Melee Weapon Attack: +2 to hit (+4 to hit with shillelagh), reach 5 ft., one target. Hit: 3 (1d6) bludgeoning damage, 4 (1d8) bludgeoning damage if wielded with two hands, or 6 (1d8 + 2) bludgeoning damage with shillelagh.', 93);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The druid is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). It has the following druid spells prepared: Cantrips (at will): druidcraft, produce flame, shillelagh 1st level (4 slots): entangle, longstrider, speak with animals, thunderwave 2nd level (3 slots): animal messenger, barkskin', 93);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (93, 67);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (94, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (94, 94, 'null', 1, 14, 22, 3, 11, '16 With Barkskin', 'Dryad');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (94, 94, 'null', 1, 14, 22, 3, 11, '16 With Barkskin', 'Dryad', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/307/1000/1000/636252771953950206.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 2, 12);
@@ -2823,8 +3064,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Speak w
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The dryad''s innate spellcasting ability is Charisma (spell save DC 14). The dryad can innately cast the following spells, requiring no material components: At will: druidcraft 3/day each: entangle, goodberry 1/day each: barkskin, pass without trace, shillelagh', 94);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (94, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (94, 56);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (95, 8, 4, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (95, 95, 'null', 1, 10, 26, 3, 16, 'Scale Mail, Shield', 'Duergar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (95, 95, 'null', 1, 10, 26, 3, 16, 'Scale Mail, Shield', 'Duergar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/309/1000/1000/636252772101183765.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 2, 11);
@@ -2838,7 +3081,7 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (95, '4');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (95, '16');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (25, 95, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 95, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (95, '9', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (95, '9', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Enlarge (Recharges after a Short or Long Rest)', 'For 1 minute, the duergar magically increases in size, along with anything it is wearing or carrying. While enlarged, the duergar is Large, doubles its damage dice on Strength-based weapon attacks (included in the attacks), and makes Strength checks and Strength saving throws with advantage. If the duergar lacks the room to become Large, it attains the maximum size possible in the space available.', 95);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Invisibility (Recharges after a Short or Long Rest)', 'The duergar magically turns invisible until it attacks, casts a spell, or uses its Enlarge, or until its concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment the duergar wears or carries is invisible with it.', 95);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Javelin', 'Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage, or 9 (2d6 + 2) piercing damage while enlarged.', 95);
@@ -2847,8 +3090,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Duergar
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunlight Sensitivity', 'While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.', 95);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (95, 33);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (95, 68);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (96, 6, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (96, 96, 'null', 0.5, 12, 17, 1, 12, '', 'Dust Mephit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (96, 96, 'null', 0.5, 12, 17, 1, 12, '', 'Dust Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/313/1000/1000/636252772213922157.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 2, 14);
@@ -2866,16 +3111,18 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 96, '17
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 96, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 96, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (96, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (96, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (96, '4', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (96, '9', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (96, '4');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) slashing damage.', 96);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Blinding Breath (Recharge 6)', 'The mephit exhales a 15- foot cone of blinding dust. Each creature in that area must succeed on a DC 10 Dexterity saving throw or be blinded for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 96);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Death Burst', 'When the mephit dies, it explodes in a burst of dust. Each creature within 5 feet of it must then succeed on a DC 10 Constitution saving throw or be blinded for 1 minute. A blinded creature can repeat the saving throw on each of its turns, ending the effect on itself on a success.', 96);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', '(1/Day). The mephit can innately cast sleep, requiring no material components. Its innate spellcasting ability is Charisma.', 96);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (96, 2);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (96, 53);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (97, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (97, 97, 'null', 0, 14, 3, 1, 12, '', 'Eagle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (97, 97, 'null', 0, 14, 3, 1, 12, '', 'Eagle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/515/1000/1000/636376317171111968.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 2, 15);
@@ -2893,8 +3140,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 97, '12
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Talons', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.', 97);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The eagle has advantage on Wisdom (Perception) checks that rely on sight.', 97);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (97, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (98, 10, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (98, 98, 'null', 5, 10, 126, 4, 17, 'Natural Armor', 'Earth Elemental');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (98, 98, 'null', 5, 10, 126, 4, 17, 'Natural Armor', 'Earth Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/317/315/315/636252772331779404.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 2, 8);
@@ -2915,18 +3164,24 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (98
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (98, '8');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (98, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (98, '15');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (98, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (98, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (98, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (98, '12', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (98, '13', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (98, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (98, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (98, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (98, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (98, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (98, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (98, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (98, '9', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (98, '13');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage.', 98);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The elemental makes two slam attacks.', 98);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Siege Monster', 'The elemental deals double damage to objects and structures.', 98);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Earth Glide', 'The elemental can burrow through nonmagical, unworked earth and stone. While doing so, the elemental doesn''t disturb the material it moves through.', 98);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (98, 53);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (99, 10, 16, 112);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (99, 99, 'null', 11, 12, 200, 4, 17, 'Natural Armor', 'Efreeti');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (99, 99, 'null', 11, 12, 200, 4, 17, 'Natural Armor', 'Efreeti', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/325/1000/1000/636252775714332067.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 2, 12);
@@ -2944,15 +3199,17 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (99, '16');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 99, '1');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 99, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 99, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (99, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (99, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hurl Flame', 'Ranged Spell Attack: +7 to hit, range 120 ft., one target. Hit: 17 (5d6) fire damage.', 99);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Scimitar', 'Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage plus 7 (2d6) fire damage.', 99);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The efreeti makes two scimitar attacks or uses its Hurl Flame twice.', 99);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Elemental Demise', 'If the efreeti dies, its body disintegrates in a flash of fire and puff of smoke, leaving behind only equipment the efreeti was wearing or carrying.', 99);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The efreeti''s innate spellcasting ability is Charisma (spell save DC 15, +7 to hit with spell attacks). It can innately cast the following spells, requiring no material components: At will: detect magic 3/day: enlarge/reduce, tongues 1/day each: conjure elemental (fire elemental only), gaseous form, invisibility, major image, plane shift, wall of fire', 99);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (99, 24);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (100, 12, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (100, 100, 'null', 4, 10, 76, 6, 12, 'Natural Armor', 'Elephant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (100, 100, 'null', 4, 10, 76, 6, 12, 'Natural Armor', 'Elephant', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 2, 9);
@@ -2969,8 +3226,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Stomp',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 'Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) piercing damage.', 100);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the elephant moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the elephant can make one stomp attack against it as a bonus action.', 100);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (100, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (101, 10, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (101, 101, 'null', 0.25, 10, 13, 4, 10, '', 'Elk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (101, 101, 'null', 0.25, 10, 13, 4, 10, '', 'Elk', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 2, 10);
@@ -2987,8 +3246,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves'
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Ram', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.', 101);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the elk moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.', 101);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (101, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (102, 8, 18, 72);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (102, 102, 'null', 12, 12, 153, 3, 18, 'Plate', 'Erinyes');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (102, 102, 'null', 12, 12, 153, 3, 18, 'Plate', 'Erinyes', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/329/1000/1000/636252776041158657.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 2, 16);
@@ -3008,12 +3269,18 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 102,
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 102, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 102, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (102, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (102, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (102, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (102, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (102, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (102, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (102, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (102, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (102, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (102, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (102, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (102, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (102, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (102, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (102, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (102, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (102, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (102, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (102, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longsword', 'Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) slashing damage, or 9 (1d10 + 4) slashing damage if used with two hands, plus 13 (3d8) poison damage.', 102);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The erinyes makes three attacks.', 102);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow', 'Ranged Weapon Attack: +7 to hit, range 150/600 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 13 (3d8) poison damage, and the target must succeed on a DC 14 Constitution saving throw or be poisoned. The poison lasts until it is removed by the lesser restoration spell or similar magic.', 102);
@@ -3022,8 +3289,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hellish
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (102, 'The erinyes adds 4 to its AC against one melee attack that would hit it. To do so, the erinyes must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (102, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (102, 48);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (103, 8, 8, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (103, 103, 'null', 2, 13, 44, 3, 13, 'Natural Armor', 'Ettercap');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (103, 103, 'null', 2, 13, 44, 3, 13, 'Natural Armor', 'Ettercap', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/339/315/315/636252776771842998.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 2, 15);
@@ -3049,8 +3318,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Sen
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider Climb', 'The ettercap can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.', 103);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The ettercap ignores movement restrictions caused by webbing.', 103);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (103, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (104, 10, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (104, 104, 'null', 4, 14, 85, 4, 12, 'Natural Armor', 'Ettin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (104, 104, 'null', 4, 14, 85, 4, 12, 'Natural Armor', 'Ettin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/341/1000/1000/636252776953634777.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 2, 8);
@@ -3072,8 +3343,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Two Hea
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Wakeful', 'When one of the ettin''s heads is asleep, its other head is awake.', 104);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (104, 39);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (104, 35);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (105, 10, 12, 36);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (105, 105, 'null', 5, 10, 102, 4, 13, '', 'Fire Elemental');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (105, 105, 'null', 5, 10, 102, 4, 13, '', 'Fire Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/343/1000/1000/636252777098624896.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 2, 17);
@@ -3095,19 +3368,26 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (10
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (105, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (105, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (105, '15');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (105, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (105, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (105, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (105, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (105, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (105, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (105, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (105, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (105, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (105, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (105, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (105, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (105, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (105, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (105, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Touch', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 5 (1d10) fire damage at the start of each of its turns.', 105);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The elemental makes two touch attacks.', 105);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Fire Form', 'The elemental can move through a space as narrow as 1 inch wide without squeezing. A creature that touches the elemental or hits it with a melee attack while within 5 feet of it takes 5 (1d10) fire damage. In addition, the elemental can enter a hostile creature''s space and stop there. The first time it enters a creature''s space on a turn, that creature takes 5 (1d10) fire damage and catches fire; until someone takes an action to douse the fire, the creature takes 5 (1d10) fire damage at the start of each of its turns.', 105);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumination', 'The elemental sheds bright light in a 30-foot radius and dim light in an additional 30 feet.', 105);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Susceptibility', 'For every 5 feet the elemental moves in water, or for every gallon of water splashed on it, it takes 1 cold damage.', 105);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (105, 24);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (106, 12, 13, 78);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (106, 106, 'null', 9, 16, 162, 6, 18, 'Plate', 'Fire Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (106, 106, 'null', 9, 16, 162, 6, 18, 'Plate', 'Fire Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/357/1000/1000/636252778143767005.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 2, 9);
@@ -3125,13 +3405,15 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (106, '16');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 106, '1');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (11, 106, '4');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 106, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (106, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (106, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rock', 'Ranged Weapon Attack: +11 to hit, range 60/240 ft., one target. Hit: 29 (4d10 + 7) bludgeoning damage.', 106);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatsword', 'Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 28 (6d6 + 7) slashing damage.', 106);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The giant makes two greatsword attacks.', 106);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (106, 35);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (107, 4, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (107, 107, 'null', 4, 12, 40, 5, 13, '', 'Flameskull');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (107, 107, 'null', 4, 12, 40, 5, 13, '', 'Flameskull', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/487/315/315/636364325235118776.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 2, 17);
@@ -3153,12 +3435,12 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (10
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (107, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (107, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (107, '13');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (107, '3', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (107, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (107, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (107, '6', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (107, '7', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (107, '8', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (107, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (107, '7', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (107, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (107, '3', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (107, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (107, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Ray', 'Ranged Spell Attack: +5 to hit, range 30 ft., one target. Hit: 10 (3d6) fire damage.', 107);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The flameskull uses Fire Ray twice.', 107);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Resistance', 'The flameskull has advantage on saving throws against spells and other magical effects.', 107);
@@ -3171,8 +3453,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellca
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rejuvenation', 'If the flameskull is destroyed, it regains all its hit points in 1 hour unless holy water is sprinkled on its remains or a dispel magic or remove curse spell is cast on them.', 107);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumination', 'The flameskull sheds either dim light in a 15-foot radius, or bright light in a 15-foot radius and dim light for an additional 15 feet. It can switch between the options as an action.', 107);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (107, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (108, 8, 11, 44);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (108, 108, 'null', 5, 10, 93, 3, 9, '', 'Flesh Golem');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (108, 108, 'null', 5, 10, 93, 3, 9, '', 'Flesh Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/359/315/315/636252778311644574.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 2, 9);
@@ -3192,11 +3476,11 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (10
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (108, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (108, '8');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (108, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (108, '6', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (108, '9', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (108, '2', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (108, '8', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (108, '12', true, false, false, true, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (108, '6', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (108, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (108, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (108, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (108, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.', 108);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The golem makes two slam attacks.', 108);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Resistance', 'The golem has advantage on saving throws against spells and other magical effects.', 108);
@@ -3206,8 +3490,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Immutab
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Berserk', 'Whenever the golem starts its turn with 40 hit points or fewer, roll a d6. On a 6, the golem goes berserk. On each of its turns while berserk, the golem attacks the nearest creature it can see. If no creature is near enough to move to and attack, the golem attacks an object, with preference for an object smaller than itself. Once the golem goes berserk, it continues to do so until it is destroyed or regains all its hit points.The golem''s creator, if within 60 feet of the berserk golem, can try to calm it by speaking firmly and persuasively. The golem must be able to hear its creator, who must take an action to make a DC 15 Charisma (Persuasion) check. If the check succeeds, the golem ceases being berserk. If it takes damage while still at 40 hit points or fewer, the golem might go berserk again.', 108);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The golem''s weapon attacks are magical.', 108);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (108, 21);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (109, 4, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (109, 109, 'null', 0.125, 11, 5, 5, 14, '', 'Flying Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (109, 109, 'null', 0.125, 11, 5, 5, 14, '', 'Flying Snake', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/517/1000/1000/636376319640572721.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 2, 18);
@@ -3226,8 +3512,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 109, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1 piercing damage plus 7 (3d4) poison damage.', 109);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby', 'The snake doesn''t provoke opportunity attacks when it flies out of an enemy''s reach.', 109);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (109, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (110, 6, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (110, 110, 'null', 0.25, 7, 17, 1, 17, 'Natural Armor', 'Flying Sword');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (110, 110, 'null', 0.25, 7, 17, 1, 17, 'Natural Armor', 'Flying Sword', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/77/599/1000/1000/636473151106171093.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 2, 15);
@@ -3250,14 +3538,16 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (11
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (110, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (110, '8');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (110, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (110, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (110, '10', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (110, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (110, '10', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longsword', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage.', 110);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Antimagic Susceptibility', 'The sword is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the sword must succeed on a Constitution saving throw against the caster''s spell save DC or fall unconscious for 1 minute.', 110);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the sword remains motionless and isn''t flying, it is indistinguishable from a normal sword.', 110);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (110, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (111, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (111, 111, 'null', 0, 11, 1, 5, 11, '', 'Frog');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (111, 111, 'null', 0, 11, 1, 5, 11, '', 'Frog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/523/315/315/636376321230650501.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 2, 13);
@@ -3277,8 +3567,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 111, '
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Standing Leap', 'The frog''s long jump is up to 10 feet and its high jump is up to 5 feet, with or without a running start.', 111);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The frog can breathe air and water.', 111);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (111, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (112, 12, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (112, 112, 'null', 8, 13, 138, 6, 15, 'Patchwork Armor', 'Frost Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (112, 112, 'null', 8, 13, 138, 6, 15, 'Patchwork Armor', 'Frost Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/405/1000/1000/636252786158646348.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 2, 9);
@@ -3296,13 +3588,15 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (112, '25');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 112, '1');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 112, '4');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 112, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (112, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (112, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greataxe', 'Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 25 (3d12 + 6) slashing damage.', 112);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rock', 'Ranged Weapon Attack: +9 to hit, range 60/240 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.', 112);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The giant makes two greataxe attacks.', 112);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (112, 35);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (113, 8, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (113, 113, 'null', 2, 10, 52, 3, 15, 'Natural Armor', 'Gargoyle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (113, 113, 'null', 2, 10, 52, 3, 15, 'Natural Armor', 'Gargoyle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/407/315/315/636252786295384889.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 2, 11);
@@ -3320,17 +3614,23 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 113, '
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (113, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (113, '8');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (113, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (113, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (113, '2', false, true, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (113, '8', false, true, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (113, '12', false, true, false, true, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (113, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (113, '2', false, '1');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (113, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (113, '8', false, '1');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (113, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (113, '12', false, '1');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (113, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (113, '9', true, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) slashing damage.', 113);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.', 113);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The gargoyle makes two attacks: one with its bite and one with its claws.', 113);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the gargoyle remains motionless, it is indistinguishable from an inanimate statue.', 113);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (113, 53);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (114, 10, 8, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (114, 114, 'null', 2, 8, 84, 4, 6, '', 'Gelatinous Cube');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (114, 114, 'null', 2, 8, 84, 4, 6, '', 'Gelatinous Cube', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/409/1000/1000/636252786406028958.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 2, 3);
@@ -3355,8 +3655,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Engulf'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Transparent', 'Even when the cube is in plain sight, it takes a successful DC 15 Wisdom (Perception) check to spot a cube that has neither moved nor attacked. A creature that tries to enter the cube''s space while unaware of the cube is surprised by the cube.', 114);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ooze Cube', 'The cube takes up its entire space. Other creatures can enter the space, but a creature that does so is subjected to the cube''s Engulf and has disadvantage on the saving throw. Creatures inside the cube can be seen but have total cover.A creature within 5 feet of the cube can take an action to pull a creature or object out of the cube. Doing so requires a successful DC 12 Strength check, and the creature making the attempt takes 10 (3d6) acid damage.The cube can hold only one Large creature or up to four Medium or smaller creatures inside it at a time.', 114);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (114, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (115, 8, 8, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (115, 115, 'null', 2, 10, 36, 3, 13, '', 'Ghast');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (115, 115, 'null', 2, 10, 36, 3, 13, '', 'Ghast', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/411/315/315/636252786516023032.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 2, 17);
@@ -3373,15 +3675,17 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 115, '
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (115, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (115, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (115, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (115, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (115, '7', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (115, '7', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (115, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage. If the target is a creature other than an undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 115);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 12 (2d8 + 3) piercing damage.', 115);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Turning Defiance', 'The ghast and any ghouls within 30 feet of it have advantage on saving throws against effects that turn undead.', 115);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stench', 'Any creature that starts its turn within 5 feet of the ghast must succeed on a DC 10 Constitution saving throw or be poisoned until the start of its next turn. On a successful saving throw, the creature is immune to the ghast''s Stench for 24 hours.', 115);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (115, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (116, 8, 10, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (116, 116, 'null', 4, 11, 45, 3, 11, '', 'Ghost');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (116, 116, 'null', 4, 11, 45, 3, 11, '', 'Ghost', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/413/1000/1000/636252786639798307.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 2, 13);
@@ -3405,16 +3709,26 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (11
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (116, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (116, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (116, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '3', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '7', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '1', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '13', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (116, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '1', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '1', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '13', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '13', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '3', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '3', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '7', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '7', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (116, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (116, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Horrifying Visage', 'Each non-undead creature within 60 feet of the ghost that can see it must succeed on a DC 13 Wisdom saving throw or be frightened for 1 minute. If the save fails by 5 or more, the target also ages 1d4 × 10 years. A frightened target can repeat the saving throw at the end of each of its turns, ending the frightened condition on itself on a success. If a target''s saving throw is successful or the effect ends for it, the target is immune to this ghost''s Horrifying Visage for the next 24 hours. The aging effect can be reversed with a greater restoration spell, but only within 24 hours of it occurring.', 116);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Possession (Recharge 6)', 'One humanoid that the ghost can see within 5 feet of it must succeed on a DC 13 Charisma saving throw or be possessed by the ghost; the ghost then disappears, and the target is incapacitated and loses control of its body. The ghost now controls the body but doesn''t deprive the target of awareness. The ghost can''t be targeted by any attack, spell, or other effect, except ones that turn undead, and it retains its alignment, Intelligence, Wisdom, Charisma, and immunity to being charmed and frightened. It otherwise uses the possessed target''s statistics, but doesn''t gain access to the target''s knowledge, class features, or proficiencies.The possession lasts until the body drops to 0 hit points, the ghost ends it as a bonus action, or the ghost is turned or forced out by an effect like the dispel evil and good spell. When the possession ends, the ghost reappears in an unoccupied space within 5 feet of the body. The target is immune to this ghost''s Possession for 24 hours after succeeding on the saving throw or after the possession ends.', 116);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Withering Touch', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 17 (4d6 + 3) necrotic damage.', 116);
@@ -3422,8 +3736,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Etherea
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ethereal Sight', 'The ghost can see 60 feet into the Ethereal Plane when it is on the Material Plane, and vice versa.', 116);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorporeal Movement', 'The ghost can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.', 116);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (116, 38);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (117, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (117, 117, 'null', 1, 10, 22, 3, 12, '', 'Ghoul');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (117, 117, 'null', 1, 10, 22, 3, 12, '', 'Ghoul', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/483/315/315/636364323937041514.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 2, 15);
@@ -3440,12 +3756,14 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 117, '
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (117, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (117, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (117, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (117, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (117, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage. If the target is a creature other than an elf or undead, it must succeed on a DC 10 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 117);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 9 (2d6 + 2) piercing damage.', 117);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (117, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (118, 12, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (118, 118, 'null', 7, 14, 157, 6, 12, '', 'Giant Ape');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (118, 118, 'null', 7, 14, 157, 6, 12, '', 'Giant Ape', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 2, 14);
@@ -3465,8 +3783,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rock', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fist', 'Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 22 (3d10 + 6) bludgeoning damage.', 118);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The ape makes two fist attacks.', 118);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (118, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (119, 8, 2, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (119, 119, 'null', 0.25, 11, 13, 3, 10, '', 'Giant Badger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (119, 119, 'null', 0.25, 11, 13, 3, 10, '', 'Giant Badger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/530/1000/1000/636376327839601860.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 2, 10);
@@ -3486,8 +3806,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The badger makes two attacks: one with its bite and one with its claws.', 119);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The badger has advantage on Wisdom (Perception) checks that rely on smell.', 119);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (119, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (120, 10, 4, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (120, 120, 'null', 0.25, 11, 22, 4, 13, '', 'Giant Bat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (120, 120, 'null', 0.25, 11, 22, 4, 13, '', 'Giant Bat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 2, 16);
@@ -3506,8 +3828,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing', 'The bat has advantage on Wisdom (Perception) checks that rely on hearing.', 120);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The bat can''t use its blindsight while deafened.', 120);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (120, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (121, 10, 5, 15);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (121, 121, 'null', 2, 8, 42, 4, 12, 'Natural Armor', 'Giant Boar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (121, 121, 'null', 2, 8, 42, 4, 12, 'Natural Armor', 'Giant Boar', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 2, 10);
@@ -3524,8 +3848,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tusk', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Relentless (Recharges after a Short or Long Rest)', 'If the boar takes 10 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.', 121);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.', 121);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (121, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (122, 6, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (122, 122, 'null', 0.25, 8, 4, 1, 13, 'Natural Armor', 'Giant Centipede');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (122, 122, 'null', 0.25, 8, 4, 1, 13, 'Natural Armor', 'Giant Centipede', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 2, 14);
@@ -3542,8 +3868,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 122,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 122, '2');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.', 122);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (122, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (123, 12, 8, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (123, 123, 'null', 2, 12, 60, 6, 12, '', 'Giant Constrictor Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (123, 123, 'null', 2, 12, 60, 6, 12, '', 'Giant Constrictor Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 2, 14);
@@ -3562,8 +3890,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 123, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Constrict', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 13 (2d8 + 4) bludgeoning damage, and the target is grappled (escape DC 16). Until this grapple ends, the creature is restrained, and the snake can''t constrict another target.', 123);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage.', 123);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (123, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (124, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (124, 124, 'null', 0.125, 9, 13, 3, 15, 'Natural Armor', 'Giant Crab');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (124, 124, 'null', 0.125, 9, 13, 3, 15, 'Natural Armor', 'Giant Crab', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 2, 15);
@@ -3582,8 +3912,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 124, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage, and the target is grappled (escape DC 11). The crab has two claws, each of which can grapple only one target.', 124);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The crab can breathe air and water.', 124);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (124, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (125, 12, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (125, 125, 'null', 5, 10, 85, 6, 14, 'Natural Armor', 'Giant Crocodile');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (125, 125, 'null', 5, 10, 85, 6, 14, 'Natural Armor', 'Giant Crocodile', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 2, 9);
@@ -3603,8 +3935,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The crocodile makes two attacks: one with its bite and one with its tail.', 125);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'The crocodile can hold its breath for 30 minutes.', 125);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (125, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (126, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (126, 126, 'null', 1, 14, 26, 4, 13, '', 'Giant Eagle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (126, 126, 'null', 1, 14, 26, 4, 13, '', 'Giant Eagle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/894/315/315/636334286969931904.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 2, 17);
@@ -3625,8 +3959,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The eagle has advantage on Wisdom (Perception) checks that rely on sight.', 126);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (126, 30);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (126, 62);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (127, 12, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (127, 127, 'null', 2, 14, 42, 6, 14, 'Natural Armor', 'Giant Elk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (127, 127, 'null', 2, 14, 42, 6, 14, 'Natural Armor', 'Giant Elk', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 2, 16);
@@ -3646,8 +3982,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (127, 31);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (127, 41);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (127, 56);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (128, 6, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (128, 128, 'null', 0, 8, 4, 1, 13, 'Natural Armor', 'Giant Fire Beetle');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (128, 128, 'null', 0, 8, 4, 1, 13, 'Natural Armor', 'Giant Fire Beetle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/896/1000/1000/636334287498492864.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 2, 10);
@@ -3664,8 +4002,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 128, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d6 − 1) slashing damage.', 128);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumination', 'The beetle sheds bright light in a 10-foot radius and dim light for an additional 10 feet.', 128);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (128, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (129, 8, 4, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (129, 129, 'null', 0.25, 12, 18, 3, 11, '', 'Giant Frog');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (129, 129, 'null', 0.25, 12, 18, 3, 11, '', 'Giant Frog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/521/1000/1000/636376321052503535.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 2, 13);
@@ -3687,8 +4027,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Swallow
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Standing Leap', 'The frog''s long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start.', 129);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The frog can breathe air and water.', 129);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (129, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (130, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (130, 130, 'null', 0.5, 11, 19, 4, 11, 'Natural Armor', 'Giant Goat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (130, 130, 'null', 0.5, 11, 19, 4, 11, 'Natural Armor', 'Giant Goat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 2, 11);
@@ -3705,8 +4047,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Ram', '
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sure-Footed', 'The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.', 130);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 5 (2d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.', 130);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (130, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (131, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (131, 131, 'null', 1, 13, 45, 4, 12, '', 'Giant Hyena');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (131, 131, 'null', 1, 13, 45, 4, 12, '', 'Giant Hyena', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 2, 14);
@@ -3723,8 +4067,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 131, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.', 131);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rampage', 'When the hyena reduces a creature to 0 hit points with a melee attack on its turn, the hyena can take a bonus action to move up to half its speed and make a bite attack.', 131);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (131, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (132, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (132, 132, 'null', 0.25, 10, 19, 4, 12, 'Natural Armor', 'Giant Lizard');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (132, 132, 'null', 0.25, 10, 19, 4, 12, 'Natural Armor', 'Giant Lizard', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 2, 12);
@@ -3741,8 +4087,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 132,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 132, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage.', 132);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (132, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (133, 10, 8, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (133, 133, 'null', 1, 14, 52, 4, 11, '', 'Giant Octopus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (133, 133, 'null', 1, 14, 52, 4, 11, '', 'Giant Octopus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/898/315/315/636334288003435302.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 2, 13);
@@ -3765,8 +4113,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'While out of water, the octopus can hold its breath for 1 hour.', 133);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Underwater Camouflage', 'The octopus has advantage on Dexterity (Stealth) checks made while underwater.', 133);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (133, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (134, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (134, 134, 'null', 0.25, 15, 19, 4, 12, '', 'Giant Owl');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (134, 134, 'null', 0.25, 15, 19, 4, 12, '', 'Giant Owl', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/535/1000/1000/636376331788287090.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 2, 15);
@@ -3789,8 +4139,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (134, 44);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (134, 41);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (134, 56);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (135, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (135, 135, 'null', 0.25, 12, 11, 3, 14, '', 'Giant Poisonous Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (135, 135, 'null', 0.25, 12, 11, 3, 14, '', 'Giant Poisonous Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 2, 18);
@@ -3808,8 +4160,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 135, '1
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 135, '2');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 6 (1d4 + 4) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.', 135);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (135, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (136, 6, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (136, 136, 'null', 0.125, 10, 7, 1, 12, '', 'Giant Rat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (136, 136, 'null', 0.125, 10, 7, 1, 12, '', 'Giant Rat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/538/1000/1000/636376332197953299.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 2, 15);
@@ -3827,8 +4181,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The rat has advantage on Wisdom (Perception) checks that rely on smell.', 136);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The rat has advantage on an attack roll against a creature if at least one of the rat''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 136);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (136, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (137, 10, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (137, 137, 'null', 3, 9, 52, 4, 15, 'Natural Armor', 'Giant Scorpion');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (137, 137, 'null', 3, 9, 52, 4, 15, 'Natural Armor', 'Giant Scorpion', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 2, 13);
@@ -3846,8 +4202,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sting',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The scorpion makes three attacks: two with its claws and one with its sting.', 137);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) bludgeoning damage, and the target is grappled (escape DC 12). The scorpion has two claws, each of which can grapple only one target.', 137);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (137, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (138, 10, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (138, 138, 'null', 0.5, 11, 16, 4, 13, 'Natural Armor', 'Giant Sea Horse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (138, 138, 'null', 0.5, 11, 16, 4, 13, 'Natural Armor', 'Giant Sea Horse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 2, 15);
@@ -3865,8 +4223,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Ram', '
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Breathing', 'The sea horse can breathe only underwater.', 138);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the sea horse moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) bludgeoning damage. It the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.', 138);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (138, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (139, 12, 11, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (139, 139, 'null', 5, 13, 126, 6, 13, 'Natural Armor', 'Giant Shark');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (139, 139, 'null', 5, 13, 126, 6, 13, 'Natural Armor', 'Giant Shark', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 2, 11);
@@ -3886,8 +4246,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Breathing', 'The shark can breathe only underwater.', 139);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood Frenzy', 'The shark has advantage on melee attack rolls against any creature that doesn''t have all its hit points.', 139);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (139, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (140, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (140, 140, 'null', 1, 10, 26, 4, 14, 'Natural Armor', 'Giant Spider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (140, 140, 'null', 1, 10, 26, 4, 14, 'Natural Armor', 'Giant Spider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/323/1000/1000/636252775648743317.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 2, 16);
@@ -3910,8 +4272,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Sen
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider Climb', 'The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.', 140);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The spider ignores movement restrictions caused by webbing.', 140);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (140, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (141, 10, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (141, 141, 'null', 1, 10, 39, 4, 11, '', 'Giant Toad');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (141, 141, 'null', 1, 10, 39, 4, 11, '', 'Giant Toad', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 2, 13);
@@ -3931,8 +4295,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Swallow
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Standing Leap', 'The toad''s long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start.', 141);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The toad can breathe air and water.', 141);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (141, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (142, 10, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (142, 142, 'null', 1, 13, 22, 4, 10, '', 'Giant Vulture');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (142, 142, 'null', 1, 13, 22, 4, 10, '', 'Giant Vulture', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 2, 10);
@@ -3953,8 +4319,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight and Smell', 'The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell.', 142);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The vulture has advantage on an attack roll against a creature if at least one of the vulture''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 142);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (142, 8);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (143, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (143, 143, 'null', 0.5, 10, 13, 3, 12, '', 'Giant Wasp');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (143, 143, 'null', 0.5, 10, 13, 3, 12, '', 'Giant Wasp', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 2, 14);
@@ -3970,8 +4338,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (10, 143,
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 143, '2');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sting', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.', 143);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (143, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (144, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (144, 144, 'null', 0.125, 13, 9, 3, 13, '', 'Giant Weasel');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (144, 144, 'null', 0.125, 13, 9, 3, 13, '', 'Giant Weasel', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 2, 16);
@@ -3990,8 +4360,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 144, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage.', 144);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 144);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (144, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (145, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (145, 145, 'null', 0.25, 13, 11, 3, 13, '', 'Giant Wolf Spider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (145, 145, 'null', 0.25, 13, 11, 3, 13, '', 'Giant Wolf Spider', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 2, 16);
@@ -4014,8 +4386,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Sen
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider Climb', 'The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.', 145);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The spider ignores movement restrictions caused by webbing.', 145);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (145, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (146, 8, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (146, 146, 'null', 2, 10, 67, 3, 9, '', 'Gibbering Mouther');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (146, 146, 'null', 2, 10, 67, 3, 9, '', 'Gibbering Mouther', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/333/315/315/636252776252001529.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 2, 8);
@@ -4037,8 +4411,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Aberrant Ground', 'The ground in a 10-foot radius around the mouther is doughlike difficult terrain. Each creature that starts its turn in that area must succeed on a DC 10 Strength saving throw or have its speed reduced to 0 until the start of its next turn.', 146);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Gibbering', 'The mouther babbles incoherently while it can see any creature and isn''t incapacitated. Each creature that starts its turn within 20 feet of the mouther and can hear the gibbering must succeed on a DC 10 Wisdom saving throw. On a failure, the creature can''t take reactions until the start of its next turn and rolls a d8 to determine what it does during its turn. On a 1 to 4, the creature does nothing. On a 5 or 6, the creature takes no action or bonus action and uses all its movement to move in a randomly determined direction. On a 7 or 8, the creature makes a melee attack against a randomly determined creature within its reach or does nothing if it can''t make such an attack.', 146);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (146, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (147, 10, 15, 75);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (147, 147, 'null', 9, 13, 157, 4, 17, 'Natural Armor', 'Glabrezu');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (147, 147, 'null', 9, 13, 157, 4, 17, 'Natural Armor', 'Glabrezu', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/337/315/315/636252776677682465.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 2, 15);
@@ -4057,13 +4433,20 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (147, '15');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 147, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 147, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (147, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (147, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (147, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (147, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (147, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (147, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (147, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (147, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (147, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (147, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (147, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (147, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (147, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (147, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (147, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (147, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (147, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (147, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (147, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (147, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (147, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (147, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Pincer', 'Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) bludgeoning damage. If the target is a Medium or smaller creature, it is grappled (escape DC 15). The glabrezu has two pincers, each of which can grapple only one target.', 147);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fist', 'Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage.', 147);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The glabrezu makes four attacks: two with its pincers and two with its fists. Alternatively, it makes two attacks with its pincers and casts one spell.', 147);
@@ -4071,8 +4454,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The glabrezu''s spellcasting ability is Intelligence (spell save DC 16). The glabrezu can innately cast the following spells, requiring no material components: At will: darkness, detect magic, dispel magic 1/day each: confusion, fly, power word stun', 147);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (147, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (147, 61);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (148, 8, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (148, 148, 'null', 5, 11, 112, 3, 16, 'Studded Leather, Shield', 'Gladiator');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (148, 148, 'null', 5, 11, 112, 3, 16, 'Studded Leather, Shield', 'Gladiator', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 2, 15);
@@ -4097,8 +4482,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Brute',
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Brave', 'The gladiator has advantage on saving throws against being frightened.', 148);
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (148, 'The gladiator adds 3 to its AC against one melee attack that would hit it. To do so, the gladiator must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (148, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (149, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (149, 149, 'null', 0.5, 10, 22, 3, 15, 'Hide Armor, Shield', 'Gnoll');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (149, 149, 'null', 0.5, 10, 22, 3, 15, 'Hide Armor, Shield', 'Gnoll', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/345/1000/1000/636252777224997611.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 2, 12);
@@ -4117,8 +4504,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spear',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow', 'Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5 (1d8 + 1) piercing damage.', 149);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rampage', 'When the gnoll reduces a creature to 0 hit points with a melee attack on its turn, the gnoll can take a bonus action to move up to half its speed and make a bite attack.', 149);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (149, 45);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (150, 8, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (150, 150, 'null', 0, 10, 4, 3, 10, '', 'Goat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (150, 150, 'null', 0, 10, 4, 3, 10, '', 'Goat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 2, 10);
@@ -4135,8 +4524,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Ram', '
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sure-Footed', 'The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.', 150);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 2 (1d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.', 150);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (150, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (151, 6, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (151, 151, 'null', 0.25, 9, 7, 1, 15, 'Leather Armor, Shield', 'Goblin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (151, 151, 'null', 0.25, 9, 7, 1, 15, 'Leather Armor, Shield', 'Goblin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/351/315/315/636252777818652432.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 2, 14);
@@ -4156,8 +4547,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortbo
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Nimble Escape', 'The goblin can take the Disengage or Hide action as a bonus action on each of its turns.', 151);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (151, 7);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (151, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (152, 8, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (152, 152, 'null', 3, 14, 60, 3, 17, 'Natural Armor', 'Gold Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (152, 152, 'null', 3, 14, 60, 3, 17, 'Natural Armor', 'Gold Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/516/315/315/636285466148376212.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 2, 14);
@@ -4180,15 +4573,17 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 152, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 152, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 152, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 152, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (152, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (152, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', ': Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage.', 152);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Weakening Breath', ': The dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 152);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath Weapons (Recharge 5–6)', ': The dragon uses one of the following breath weapons.', 152);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath', ': The dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 22 (4d10) fire damage on a failed save, or half as much damage on a successful one.', 152);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', ': The dragon can breathe air and water.', 152);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (152, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (153, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (153, 153, 'null', 5, 14, 114, 4, 19, 'Natural Armor', 'Gorgon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (153, 153, 'null', 5, 14, 114, 4, 19, 'Natural Armor', 'Gorgon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/355/315/315/636252778125099430.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 2, 11);
@@ -4209,8 +4604,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Petrify
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 'Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 18 (2d12 + 5) piercing damage.', 153);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the gorgon moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the gorgon can make one attack with its hooves against it as a bonus action.', 153);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (153, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (154, 8, 3, 9);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (154, 154, 'null', 0.5, 8, 22, 3, 8, '', 'Gray Ooze');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (154, 154, 'null', 0.5, 8, 22, 3, 8, '', 'Gray Ooze', 'https://media-waterdeep.cursecdn.com/attachments/2/658/ooze.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 2, 6);
@@ -4232,16 +4629,18 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (15
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (154, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (154, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (154, '13');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (154, '1', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (154, '3', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (154, '4', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (154, '1', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (154, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (154, '4', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Pseudopod', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage plus 7 (2d6) acid damage, and if the target is wearing nonmagical metal armor, its armor is partly corroded and takes a permanent and cumulative −1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10.', 154);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amorphous', 'The ooze can move through a space as narrow as 1 inch wide without squeezing.', 154);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Corrode Metal', 'Any nonmagical weapon made of metal that hits the ooze corrodes. After dealing damage, the weapon takes a permanent and cumulative −1 penalty to damage rolls. If its penalty drops to −5, the weapon is destroyed. Nonmagical ammunition made of metal that hits the ooze is destroyed after dealing damage.The ooze can eat through 2-inch-thick, nonmagical metal in 1 round.', 154);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the ooze remains motionless, it is indistinguishable from an oily pool or wet rock.', 154);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (154, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (155, 8, 7, 7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (155, 155, 'null', 2, 14, 38, 3, 17, 'Natural Armor', 'Green Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (155, 155, 'null', 2, 14, 38, 3, 17, 'Natural Armor', 'Green Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/363/315/315/636252778639163748.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 2, 12);
@@ -4265,13 +4664,15 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 155, '1
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 155, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 155, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (155, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (155, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (155, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Poison Breath (Recharge 5–6)', 'The dragon exhales poisonous gas in a 15-foot cone. Each creature in that area must make a DC 11 Constitution saving throw, taking 21 (6d6) poison damage on a failed save, or half as much damage on a successful one.', 155);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 3 (1d6) poison damage.', 155);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 155);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (155, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (156, 8, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (156, 156, 'null', 3, 14, 82, 3, 17, 'Natural Armor', 'Green Hag');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (156, 156, 'null', 3, 14, 82, 3, 17, 'Natural Armor', 'Green Hag', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/365/315/315/636252778948574879.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 2, 12);
@@ -4298,8 +4699,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Mimicry
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (156, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (156, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (156, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (157, 8, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (157, 157, 'null', 2, 12, 27, 3, 14, 'Natural Armor', 'Grick');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (157, 157, 'null', 2, 12, 27, 3, 14, 'Natural Armor', 'Grick', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/369/1000/1000/636252779341924439.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 2, 14);
@@ -4314,16 +4717,21 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (157, '23');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 157, '1');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 157, '3');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 157, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (157, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (157, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (157, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (157, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (157, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (157, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (157, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (157, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (157, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tentacles', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage.', 157);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beak', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.', 157);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The grick makes one attack with its tentacles. If that attack hits, the grick can make one beak attack against the same target.', 157);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stone Camouflage', 'The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.', 157);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (157, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (158, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (158, 158, 'null', 2, 15, 59, 4, 12, '', 'Griffon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (158, 158, 'null', 2, 15, 59, 4, 12, '', 'Griffon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/373/315/315/636252779693862725.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 2, 15);
@@ -4344,8 +4752,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The griffon makes two attacks: one with its beak and one with its claws.', 158);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The griffon has advantage on Wisdom (Perception) checks that rely on sight.', 158);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (158, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (159, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (159, 159, 'null', 0.25, 13, 11, 3, 11, '', 'Grimlock');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (159, 159, 'null', 0.25, 13, 11, 3, 11, '', 'Grimlock', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/375/315/315/636252780049813181.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 2, 12);
@@ -4368,8 +4778,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blind S
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stone Camouflage', 'The grimlock has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.', 159);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The grimlock has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 159);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (159, 68);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (160, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (160, 160, 'null', 0.125, 12, 11, 3, 16, 'Chain Shirt, Shield', 'Guard');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (160, 160, 'null', 0.125, 12, 11, 3, 16, 'Chain Shirt, Shield', 'Guard', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 2, 12);
@@ -4385,8 +4797,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 160,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 160, '12');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spear', 'Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.', 160);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (160, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (161, 10, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (161, 161, 'null', 10, 14, 127, 4, 18, 'Natural Armor', 'Guardian Naga');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (161, 161, 'null', 10, 14, 127, 4, 18, 'Natural Armor', 'Guardian Naga', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/377/315/315/636252780447421771.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 2, 18);
@@ -4407,15 +4821,17 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 161,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 161, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (161, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (161, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (161, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (161, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +8 to hit, reach 10 ft., one creature. Hit: 8 (1d8 + 4) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one.', 161);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spit Poison', 'Ranged Weapon Attack: +8 to hit, range 15/30 ft., one creature. Hit: The target must make a DC 15 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one.', 161);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The naga is an 11th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 16, +8 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following cleric spells prepared: Cantrips (at will): mending, sacred flame, thaumaturgy 1st level (4 slots): command, cure wounds, shield of faith 2nd level (3 slots): calm emotions, hold person 3rd level (3 slots): bestow curse, clairvoyance 4th level (3 slots): banishment, freedom of movement 5th level (2 slots): flame strike, geas 6th level (1 slot): true seeing', 161);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rejuvenation', 'If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning.', 161);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (161, 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (161, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (162, 10, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (162, 162, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 11, 18, 136, 4, 17, 'Natural Armor', 'Gynosphinx');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (162, 162, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 11, 18, 136, 4, 17, 'Natural Armor', 'Gynosphinx', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/383/315/315/636252780786457550.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 2, 15);
@@ -4436,10 +4852,14 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (12, 162, '
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 162, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (162, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (162, '4');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (162, '10', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (162, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (162, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (162, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (162, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (162, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (162, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (162, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (162, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (162, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (162, '10', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (162, '10', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The sphinx makes two claw attacks.', 162);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.', 162);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Inscrutable', 'The sphinx is immune to any effect that would sense its emotions or read its thoughts, as well as any divination spell that it refuses. Wisdom (Insight) checks made to ascertain the sphinx''s intentions or sincerity have disadvantage.', 162);
@@ -4450,8 +4870,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (162, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (162, 'The sphinx casts a spell from its list of prepared spells, using a spell slot as normal.', 'Cast a Spell (Costs 3 Actions)');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (162, 66);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (162, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (163, 8, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (163, 163, 'null', 5, 12, 65, 3, 18, 'Plate', 'Half-Red Dragon Veteran');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (163, 163, 'null', 5, 12, 65, 3, 18, 'Plate', 'Half-Red Dragon Veteran', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/387/315/315/636252781353903793.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 2, 13);
@@ -4468,7 +4890,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 163, '4
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 163, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 163, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 163, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (163, '4', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (163, '4', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longsword', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands.', 163);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortsword', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.', 163);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath (Recharge 5–6)', 'The veteran exhales fire in a 15-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 24 (7d6) fire damage on a failed save, or half as much damage on a successful one.', 163);
@@ -4476,8 +4898,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Heavy C
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.', 163);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (163, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (163, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (164, 8, 7, 7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (164, 164, 'null', 1, 10, 38, 3, 11, '', 'Harpy');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (164, 164, 'null', 1, 10, 38, 3, 11, '', 'Harpy', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/391/315/315/636252781955908234.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 2, 13);
@@ -4496,8 +4920,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Club', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Luring Song', 'The harpy sings a magical melody. Every humanoid and giant within 300 feet of the harpy that can hear the song must succeed on a DC 11 Wisdom saving throw or be charmed until the song ends. The harpy must take a bonus action on its subsequent turns to continue singing. It can stop singing at any time. The song ends if the harpy is incapacitated.While charmed by the harpy, a target is incapacitated and ignores the songs of other harpies. If the charmed target is more than 5 feet away from the harpy, the target must move on its turn toward the harpy by the most direct route, trying to get within 5 feet. It doesn''t avoid opportunity attacks, but before moving into damaging terrain, such as lava or a pit, and whenever it takes damage from a source other than the harpy, the target can repeat the saving throw. A charmed target can also repeat the saving throw at the end of each of its turns. If the saving throw is successful, the effect ends on it.A target that successfully saves is immune to this harpy''s song for the next 24 hours.', 164);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The harpy makes two attacks: one with its claws and one with its club.', 164);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (164, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (165, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (165, 165, 'null', 0, 14, 1, 5, 13, '', 'Hawk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (165, 165, 'null', 0, 14, 1, 5, 13, '', 'Hawk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/900/1000/1000/636334288270143064.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 2, 16);
@@ -4515,8 +4941,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 165, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Talons', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 slashing damage.', 165);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The hawk has advantage on Wisdom (Perception) checks that rely on sight.', 165);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (165, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (166, 8, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (166, 166, 'null', 3, 15, 45, 3, 15, 'Natural Armor', 'Hell Hound');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (166, 166, 'null', 3, 15, 45, 3, 15, 'Natural Armor', 'Hell Hound', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/393/315/315/636252782461361426.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 2, 12);
@@ -4531,14 +4959,16 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (166, '16');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 166, '1');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 166, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 166, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (166, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (166, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath (Recharge 5–6)', 'The hound exhales fire in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 21 (6d6) fire damage on a failed save, or half as much damage on a successful one.', 166);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 7 (2d6) fire damage.', 166);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The hound has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 166);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The hound has advantage on an attack roll against a creature if at least one of the hound''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 166);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (166, 25);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (167, 10, 13, 65);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (167, 167, 'null', 8, 11, 136, 4, 16, 'Natural Armor', 'Hezrou');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (167, 167, 'null', 8, 11, 136, 4, 16, 'Natural Armor', 'Hezrou', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/321/315/315/636252775562934524.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 2, 17);
@@ -4556,13 +4986,20 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (167, '15');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 167, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 167, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (167, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (167, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (167, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (167, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (167, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (167, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (167, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (167, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (167, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (167, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (167, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (167, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (167, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (167, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (167, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (167, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (167, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (167, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (167, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (167, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (167, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (167, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage.', 167);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The hezrou makes three attacks: one with its bite and two with its claws.', 167);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.', 167);
@@ -4570,8 +5007,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stench', 'Any creature that starts its turn within 10 feet of the hezrou must succeed on a DC 14 Constitution saving throw or be poisoned until the start of its next turn. On a successful saving throw, the creature is immune to the hezrou''s stench for 24 hours.', 167);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (167, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (167, 61);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (168, 12, 10, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (168, 168, 'null', 5, 12, 105, 6, 13, 'Natural Armor', 'Hill Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (168, 168, 'null', 5, 12, 105, 6, 13, 'Natural Armor', 'Hill Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/331/315/315/636252776196140305.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 2, 8);
@@ -4589,8 +5028,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rock', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatclub', 'Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 18 (3d8 + 5) bludgeoning damage.', 168);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The giant makes two greatclub attacks.', 168);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (168, 35);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (169, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (169, 169, 'null', 1, 15, 19, 4, 11, '', 'Hippogriff');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (169, 169, 'null', 1, 15, 19, 4, 11, '', 'Hippogriff', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/335/315/315/636252776578605778.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 2, 13);
@@ -4610,8 +5051,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The hippogriff makes two attacks: one with its beak and one with its claws.', 169);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The hippogriff has advantage on Wisdom (Perception) checks that rely on sight.', 169);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (169, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (170, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (170, 170, 'null', 0.5, 10, 11, 3, 18, 'Chain Mail, Shield', 'Hobgoblin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (170, 170, 'null', 0.5, 10, 11, 3, 18, 'Chain Mail, Shield', 'Hobgoblin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/389/315/315/636252781431932597.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 2, 12);
@@ -4630,8 +5073,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Martial Advantage', 'Once per turn, the hobgoblin can deal an extra 7 (2d6) damage to a creature it hits with a weapon attack if that creature is within 5 feet of an ally of the hobgoblin that isn''t incapacitated.', 170);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (170, 7);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (170, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (171, 4, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (171, 171, 'null', 0, 10, 5, 5, 13, 'Natural Armor', 'Homunculus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (171, 171, 'null', 0, 10, 5, 5, 13, 'Natural Armor', 'Homunculus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/287/315/315/636379803928245506.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 2, 15);
@@ -4648,12 +5093,14 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 171,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 171, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (171, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (171, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (171, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (171, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must succeed on a DC 10 Constitution saving throw or be poisoned for 1 minute. If the saving throw fails by 5 or more, the target is instead poisoned for 5 (1d10) minutes and unconscious while poisoned in this way.', 171);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Telepathic Bond', 'While the homunculus is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically.', 171);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (171, 21);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (172, 10, 17, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (172, 172, 'null', 11, 13, 148, 4, 18, 'Natural Armor', 'Horned Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (172, 172, 'null', 11, 13, 148, 4, 18, 'Natural Armor', 'Horned Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/347/315/315/636252777255936976.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 2, 17);
@@ -4673,12 +5120,18 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 172,
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 172, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 172, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (172, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (172, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (172, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (172, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (172, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (172, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (172, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (172, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (172, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (172, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (172, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (172, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (172, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (172, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (172, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (172, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (172, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (172, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (172, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fork', 'Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 15 (2d8 + 6) piercing damage.', 172);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 10 (1d8 + 6) piercing damage. If the target is a creature other than an undead or a construct, it must succeed on a DC 17 Constitution saving throw or lose 10 (3d6) hit points at the start of each of its turns due to an infernal wound. Each time the devil hits the wounded target with this attack, the damage dealt by the wound increases by 10 (3d6). Any creature can take an action to stanch the wound with a successful DC 12 Wisdom (Medicine) check. The wound also closes if the target receives magical healing.', 172);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hurl Flame', 'Ranged Spell Attack: +7 to hit, range 150 ft., one target. Hit: 14 (4d6) fire damage. If the target is a flammable object that isn''t being worn or carried, it also catches fire.', 172);
@@ -4687,8 +5140,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Devil''
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Resistance', 'The devil has advantage on saving throws against spells and other magical effects.', 172);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (172, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (172, 48);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (173, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (173, 173, 'null', 2, 12, 45, 4, 12, 'Natural Armor', 'Hunter Shark');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (173, 173, 'null', 2, 12, 45, 4, 12, 'Natural Armor', 'Hunter Shark', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 2, 13);
@@ -4708,8 +5163,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Breathing', 'The shark can breathe only underwater.', 173);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood Frenzy', 'The shark has advantage on melee attack rolls against any creature that doesn''t have all its hit points.', 173);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (173, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (174, 12, 15, 75);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (174, 174, 'null', 8, 16, 172, 6, 15, 'Natural Armor', 'Hydra');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (174, 174, 'null', 8, 16, 172, 6, 15, 'Natural Armor', 'Hydra', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/349/315/315/636252777669218389.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 2, 12);
@@ -4732,8 +5189,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Reactiv
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Multiple Heads', 'The hydra has five heads. While it has more than one head, the hydra has advantage on saving throws against being blinded, charmed, deafened, frightened, stunned, and knocked unconscious.Whenever the hydra takes 25 or more damage in a single turn, one of its heads dies. If all its heads die, the hydra dies.At the end of its turn, it grows two heads for each of its heads that died since its last turn, unless it has taken fire damage since its last turn. The hydra regains 10 hit points for each head regrown in this way.', 174);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Wakeful', 'While the hydra sleeps, at least one of its heads is awake.', 174);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (174, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (175, 8, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (175, 175, 'null', 0, 13, 5, 3, 11, '', 'Hyena');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (175, 175, 'null', 0, 13, 5, 3, 11, '', 'Hyena', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/902/1000/1000/636334288674955736.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 2, 13);
@@ -4750,8 +5209,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 175, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) piercing damage.', 175);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The hyena has advantage on an attack roll against a creature if at least one of the hyena''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 175);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (175, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (176, 10, 19, 76);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (176, 176, 'null', 14, 12, 180, 4, 18, 'Natural Armor', 'Ice Devil');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (176, 176, 'null', 14, 12, 180, 4, 18, 'Natural Armor', 'Ice Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/353/315/315/636252777966974765.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 2, 14);
@@ -4771,12 +5232,18 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 176,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 176, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 176, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (176, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (176, '3', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (176, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (176, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (176, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (176, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (176, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (176, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (176, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (176, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (176, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (176, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (176, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (176, '3', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (176, '3', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (176, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (176, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (176, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (176, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Wall of Ice (Recharge 6)', 'The devil magically forms an opaque wall of ice on a solid surface it can see within 60 feet of it. The wall is 1 foot thick and up to 30 feet long and 10 feet high, or it''s a hemispherical dome up to 20 feet in diameter.When the wall appears, each creature in its space is pushed out of it by the shortest route. The creature chooses which side of the wall to end up on, unless the creature is incapacitated. The creature then makes a DC 17 Dexterity saving throw, taking 35 (10d6) cold damage on a failed save, or half as much damage on a successful one.The wall lasts for 1 minute or until the devil is incapacitated or dies. The wall can be damaged and breached; each 10-­foot section has AC 5, 30 hit points, vulnerability to fire damage, and immunity to acid, cold, necrotic, poison, and psychic damage. If a section is destroyed, it leaves behind a sheet of frigid air in the space the wall occupied. Whenever a creature finishes moving through the frigid air on a turn, willingly or otherwise, the creature must make a DC 17 Constitution saving throw, taking 17 (5d6) cold damage on a failed save, or half as much damage on a successful one. The frigid air dissipates when the rest of the wall vanishes.', 176);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 10 (2d4 + 5) slashing damage plus 10 (3d6) cold damage.', 176);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) piercing damage plus 10 (3d6) cold damage.', 176);
@@ -4786,8 +5253,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Devil''
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Resistance', 'The devil has advantage on saving throws against spells and other magical effects.', 176);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (176, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (176, 48);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (177, 6, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (177, 177, 'null', 0.5, 12, 21, 1, 11, '', 'Ice Mephit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (177, 177, 'null', 0.5, 12, 21, 1, 11, '', 'Ice Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/290/315/315/636379804105821214.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 2, 13);
@@ -4805,10 +5274,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 177, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 177, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 177, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (177, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (177, '3', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (177, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (177, '2', false, false, true, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (177, '4', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (177, '3', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (177, '9', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (177, '2');
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (177, '4');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4 + 1) slashing damage plus 2 (1d4) cold damage.', 177);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frost Breath (Recharge 6)', 'The mephit exhales a 15- foot cone of cold air. Each creature in that area must succeed on a DC 10 Dexterity saving throw, taking 5 (2d4) cold damage on a failed save, or half as much damage on a successful one.', 177);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the mephit remains motionless, it is indistinguishable from an ordinary shard of ice.', 177);
@@ -4816,8 +5285,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Death B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', '(1/Day). The mephit can innately cast fog cloud, requiring no material components. Its innate spellcasting ability is Charisma.', 177);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (177, 2);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (177, 47);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (178, 4, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (178, 178, 'null', 1, 11, 10, 5, 13, '', 'Imp');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (178, 178, 'null', 1, 11, 10, 5, 13, '', 'Imp', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/361/315/315/636252778560366227.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 2, 17);
@@ -4837,12 +5308,18 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 178, '7
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 178, '14');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 178, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (178, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (178, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (178, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (178, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (178, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (178, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (178, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (178, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (178, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (178, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (178, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (178, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (178, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (178, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (178, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (178, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (178, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (178, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (178, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Invisibility', 'The imp magically turns invisible until it attacks or until its concentration ends (as if concentrating on a spell). Any equipment the imp wears or carries is invisible with it.', 178);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sting (Bite in Beast Form)', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must make on a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.', 178);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Devil''s Sight', 'Magical darkness doesn''t impede the imp''s darkvision.', 178);
@@ -4850,8 +5327,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapechanger', 'The imp can use its action to polymorph into a beast form that resembles a rat (speed 20 ft.), a raven (20 ft., fly 60 ft.), or a spider (20 ft., climb 20 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn''t transformed. It reverts to its true form if it dies.', 178);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (178, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (178, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (179, 8, 16, 32);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (179, 179, 'null', 6, 18, 104, 3, 14, '', 'Invisible Stalker');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (179, 179, 'null', 6, 18, 104, 3, 14, '', 'Invisible Stalker', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/367/315/315/636252779159282339.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 2, 19);
@@ -4876,17 +5355,23 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (17
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (179, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (179, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (179, '15');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (179, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (179, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (179, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (179, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (179, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (179, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (179, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (179, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (179, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (179, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (179, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (179, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.', 179);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The stalker makes two slam attacks.', 179);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Invisibility', 'The stalker is invisible.', 179);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Faultless Tracker', 'The stalker is given a quarry by its summoner. The stalker knows the direction and distance to its quarry as long as the two of them are on the same plane of existence. The stalker also knows the location of its summoner.', 179);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (179, 46);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (180, 10, 20, 100);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (180, 180, 'null', 16, 10, 210, 4, 20, 'Natural Armor', 'Iron Golem');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (180, 180, 'null', 16, 10, 210, 4, 20, 'Natural Armor', 'Iron Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/371/315/315/636252779460570049.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 1, 24);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 2, 9);
@@ -4906,12 +5391,12 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (18
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (180, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (180, '8');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (180, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (180, '4', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (180, '9', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (180, '10', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (180, '2', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (180, '8', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (180, '12', true, false, false, true, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (180, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (180, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (180, '10', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (180, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (180, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (180, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +13 to hit, reach 5 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage.', 180);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sword', 'Melee Weapon Attack: +13 to hit, reach 10 ft., one target. Hit: 23 (3d10 + 7) slashing damage.', 180);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Poison Breath (Recharge 6)', 'The golem exhales poisonous gas in a 15-foot cone. Each creature in that area must make a DC 19 Constitution saving throw, taking 45 (10d8) poison damage on a failed save, or half as much damage on a successful one.', 180);
@@ -4921,8 +5406,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Immutable Form', 'The golem is immune to any spell or effect that would alter its form.', 180);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The golem''s weapon attacks are magical.', 180);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (180, 21);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (181, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (181, 181, 'null', 0, 13, 3, 1, 12, '', 'Jackal');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (181, 181, 'null', 0, 13, 3, 1, 12, '', 'Jackal', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 2, 15);
@@ -4940,8 +5427,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The jackal has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 181);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The jackal has advantage on an attack roll against a creature if at least one of the jackal''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 181);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (181, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (182, 12, 12, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (182, 182, 'null', 3, 13, 90, 6, 12, 'Natural Armor', 'Killer Whale');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (182, 182, 'null', 3, 13, 90, 6, 12, 'Natural Armor', 'Killer Whale', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 2, 10);
@@ -4962,8 +5451,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'The whale can hold its breath for 30 minutes.', 182);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The whale can''t use its blindsight while deafened.', 182);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (182, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (183, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (183, 183, 'null', 3, 10, 52, 3, 18, 'Plate', 'Knight');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (183, 183, 'null', 3, 10, 52, 3, 18, 'Plate', 'Knight', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 2, 11);
@@ -4985,8 +5476,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Brave', 'The knight has advantage on saving throws against being frightened.', 183);
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (183, 'The knight adds 2 to its AC against one melee attack that would hit it. To do so, the knight must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (183, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (184, 6, 2, -2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (184, 184, 'null', 0.125, 8, 5, 1, 12, '', 'Kobold');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (184, 184, 'null', 0.125, 8, 5, 1, 12, '', 'Kobold', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/379/1000/1000/636252780450300625.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 2, 15);
@@ -5006,8 +5499,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunlight Sensitivity', 'While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.', 184);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (184, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (184, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (185, 20, 27, 189);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (185, 185, 'The kraken can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The kraken regains spent legendary actions at the start of its turn.', 23, 14, 472, 2, 18, 'Natural Armor', 'Kraken');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (185, 185, 'The kraken can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The kraken regains spent legendary actions at the start of its turn.', 23, 14, 472, 2, 18, 'Natural Armor', 'Kraken', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/381/1000/1000/636252780680163799.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 2, 11);
@@ -5029,10 +5524,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 185,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 185, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (185, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (185, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (185, '6', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (185, '2', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (185, '8', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (185, '12', true, false, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (185, '6', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (185, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (185, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (185, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fling', 'One Large or smaller object held or creature grappled by the kraken is thrown up to 60 feet in a random direction and knocked prone. If a thrown target strikes a solid surface, the target takes 3 (1d6) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC 18 Dexterity saving throw or take the same damage and be knocked prone.', 185);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Storm', 'The kraken magically creates three bolts of lightning, each of which can strike a target the kraken can see within 120 feet of it. A target must make a DC 23 Dexterity saving throw, taking 22 (4d10) lightning damage on a failed save, or half as much damage on a successful one.', 185);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +17 to hit, reach 5 ft., one target. Hit: 23 (3d8 + 10) piercing damage. If the target is a Large or smaller creature grappled by the kraken, that creature is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the kraken, and it takes 42 (12d6) acid damage at the start of each of the kraken''s turns.If the kraken takes 50 damage or more on a single turn from a creature inside it, the kraken must succeed on a DC 25 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the kraken. If the kraken dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 15 feet of movement, exiting prone.', 185);
@@ -5049,8 +5544,10 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (185, 34);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (185, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (185, 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (185, 48);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (186, 10, 13, 26);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (186, 186, 'null', 4, 12, 97, 4, 13, 'Natural Armor', 'Lamia');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (186, 186, 'null', 4, 12, 97, 4, 13, 'Natural Armor', 'Lamia', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/385/315/315/636252780906064244.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 2, 13);
@@ -5073,8 +5570,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The lamia''s innate spellcasting ability is Charisma (spell save DC 13). It can innately cast the following spells, requiring no material components. At will: disguise self (any humanoid form), major image 3/day each: charm person, mirror image, scrying, suggestion 1/day: geas', 186);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (186, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (186, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (187, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (187, 187, 'null', 0, 10, 13, 3, 7, '', 'Lemure');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (187, 187, 'null', 0, 10, 13, 3, 7, '', 'Lemure', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/149/1000/1000/636252758704142054.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 2, 5);
@@ -5091,15 +5590,17 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 187, 
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (187, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (187, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (187, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (187, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (187, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (187, '3', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (187, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (187, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (187, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fist', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.', 187);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Devil''s Sight', 'Magical darkness doesn''t impede the lemure''s darkvision.', 187);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hellish Rejuvenation', 'A lemure that dies in the Nine Hells comes back to life with all its hit points in 1d10 days unless it is killed by a good-aligned creature with a bless spell cast on that creature or its remains are sprinkled with holy water.', 187);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (187, 25);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (188, 8, 18, 54);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (188, 188, 'The lich can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The lich regains spent legendary actions at the start of its turn.', 21, 19, 135, 3, 17, 'Natural Armor', 'Lich');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (188, 188, 'The lich can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The lich regains spent legendary actions at the start of its turn.', 21, 19, 135, 3, 17, 'Natural Armor', 'Lich', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/165/1000/1000/636252760084366499.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 2, 16);
@@ -5125,13 +5626,13 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (18
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (188, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (188, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (188, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (188, '9', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (188, '2', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (188, '8', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (188, '12', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (188, '3', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (188, '6', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (188, '7', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (188, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (188, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (188, '7', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (188, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (188, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (188, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (188, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Paralyzing Touch', 'Melee Spell Attack: +12 to hit, reach 5 ft., one creature. Hit: 10 (3d6) cold damage. The target must succeed on a DC 18 Constitution saving throw or be paralyzed for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 188);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The lich is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 20, +12 to hit with spell attacks). The lich has the following wizard spells prepared: Cantrips (at will): mage hand, prestidigitation, ray of frost 1st level (4 slots): detect magic, magic missile, shield, thunderwave 2nd level (3 slots): acid arrow, detect thoughts, invisibility, mirror image 3rd level (3 slots): animate dead, counterspell, dispel magic, fireball 4th level (3 slots): blight, dimension door 5th level (3 slots): cloudkill, scrying 6th level (1 slot): disintegrate, globe of invulnerability 7th level (1 slot): finger of death, plane shift 8th level (1 slot): dominate monster, power word stun 9th level (1 slot): power word kill', 188);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Turn Resistance', 'The lich has advantage on saving throws against any effect that turns undead.', 188);
@@ -5142,8 +5643,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (188, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (188, 'The lich fixes its gaze on one creature it can see within 10 feet of it. The target must succeed on a DC 18 Wisdom saving throw against this magic or become frightened for 1 minute. The frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target''s saving throw is successful or the effect ends for it, the target is immune to the lich''s gaze for the next 24 hours.', 'Frightening Gaze (Costs 2 Actions)');
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (188, 'The lich casts a cantrip.', 'Cantrip');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (188, 26);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (189, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (189, 189, 'null', 1, 13, 26, 4, 12, '', 'Lion');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (189, 189, 'null', 1, 13, 26, 4, 12, '', 'Lion', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 2, 15);
@@ -5165,8 +5668,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce', 'If the lion moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the lion can make one bite attack against it as a bonus action.', 189);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Running Leap', 'With a 10-foot running start, the lion can long jump up to 25 feet.', 189);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (189, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (190, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (190, 190, 'null', 0, 9, 2, 5, 10, '', 'Lizard');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (190, 190, 'null', 0, 9, 2, 5, 10, '', 'Lizard', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 2, 11);
@@ -5183,8 +5688,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 190,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 190, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 piercing damage.', 190);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (190, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (191, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (191, 191, 'null', 0.5, 13, 22, 3, 15, 'Natural Armor, Shield', 'Lizardfolk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (191, 191, 'null', 0.5, 13, 22, 3, 15, 'Natural Armor, Shield', 'Lizardfolk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/233/315/315/636252766314905259.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 2, 10);
@@ -5208,8 +5715,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Javelin
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The lizardfolk makes two melee attacks, each one with a different weapon.', 191);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'The lizardfolk can hold its breath for 15 minutes.', 191);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (191, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (192, 8, 9, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (192, 192, 'null', 6, 11, 40, 3, 12, '15 With Mage Armor', 'Mage');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (192, 192, 'null', 6, 11, 40, 3, 12, '15 With Mage Armor', 'Mage', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 1, 9);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 2, 14);
@@ -5229,8 +5738,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 192, '3
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Dagger', 'Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d4 + 2) piercing damage.', 192);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared: Cantrips (at will): fire bolt, light, mage hand, prestidigitation 1st level (4 slots): detect magic, mage armor, magic missile, shield 2nd level (3 slots): misty step, suggestion 3rd level (3 slots): counterspell, fireball, fly 4th level (3 slots): greater invisibility, ice storm 5th level (1 slot): cone of cold', 192);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (192, 37);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (193, 6, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (193, 193, 'null', 0.5, 10, 22, 1, 11, '', 'Magma Mephit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (193, 193, 'null', 0.5, 10, 22, 1, 11, '', 'Magma Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/292/315/315/636379804350894228.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 2, 12);
@@ -5247,9 +5758,9 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 193,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 193, '17');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 193, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (193, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (193, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (193, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (193, '3', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (193, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (193, '9', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (193, '3');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4 + 1) slashing damage plus 2 (1d4) fire damage.', 193);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath (Recharge 6)', 'The mephit exhales a 15-foot cone of fire. Each creature in that area must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one.', 193);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the mephit remains motionless, it is indistinguishable from an ordinary mound of magma.', 193);
@@ -5257,8 +5768,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Death B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', '(1/Day). The mephit can innately cast heat metal (spell save DC 10), requiring no material components. Its innate spellcasting ability is Charisma.', 193);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (193, 53);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (193, 24);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (194, 6, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (194, 194, 'null', 0.5, 10, 9, 1, 14, 'Natural Armor', 'Magmin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (194, 194, 'null', 0.5, 10, 9, 1, 14, 'Natural Armor', 'Magmin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/183/315/315/636252762034276620.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 2, 15);
@@ -5272,16 +5785,22 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (194, '7');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (194, '14');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 194, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 194, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (194, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (194, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (194, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (194, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (194, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (194, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (194, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (194, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (194, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (194, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (194, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (194, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Touch', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d6) fire damage. If the target is a creature or a flammable object, it ignites. Until a creature takes an action to douse the fire, the target takes 3 (1d6) fire damage at the end of each of its turns.', 194);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ignited Illumination', 'As a bonus action, the magmin can set itself ablaze or extinguish its flames. While ablaze, the magmin sheds bright light in a 10-foot radius and dim light for an additional 10 feet.', 194);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Death Burst', 'When the magmin dies, it explodes in a burst of fire and magma. Each creature within 10 feet of it must make a DC 11 Dexterity saving throw, taking 7 (2d6) fire damage on a failed save, or half as much damage on a successful one. Flammable objects that aren''t being worn or carried in that area are ignited.', 194);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (194, 24);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (195, 12, 11, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (195, 195, 'null', 6, 10, 126, 6, 13, 'Natural Armor', 'Mammoth');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (195, 195, 'null', 6, 10, 126, 6, 13, 'Natural Armor', 'Mammoth', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 1, 24);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 2, 9);
@@ -5298,8 +5817,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Stomp',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 'Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 25 (4d8 + 7) piercing damage.', 195);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the mammoth moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 18 Strength saving throw or be knocked prone. If the target is prone, the mammoth can make one stomp attack against it as a bonus action.', 195);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (195, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (196, 10, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (196, 196, 'null', 3, 11, 68, 4, 14, 'Natural Armor', 'Manticore');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (196, 196, 'null', 3, 11, 68, 4, 14, 'Natural Armor', 'Manticore', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/187/315/315/636252762623266809.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 2, 16);
@@ -5320,8 +5841,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.', 196);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Tail Spike Regrowth', 'The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest.', 196);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (196, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (197, 10, 18, 90);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (197, 197, 'null', 16, 13, 189, 4, 18, 'Natural Armor', 'Marilith');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (197, 197, 'null', 16, 13, 189, 4, 18, 'Natural Armor', 'Marilith', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/189/315/315/636252763036079032.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 2, 20);
@@ -5340,13 +5863,20 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (197, '15');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 197, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 197, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (197, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (197, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (197, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (197, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (197, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (197, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (197, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (197, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (197, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (197, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (197, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (197, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (197, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (197, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (197, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (197, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (197, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (197, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (197, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (197, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (197, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (197, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longsword', 'Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.', 197);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +9 to hit, reach 10 ft., one creature. Hit: 15 (2d10 + 4) bludgeoning damage. If the target is Medium or smaller, it is grappled (escape DC 19). Until this grapple ends, the target is restrained, the marilith can automatically hit the target with its tail, and the marilith can''t make tail attacks against other targets.', 197);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Teleport', 'The marilith magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.', 197);
@@ -5357,8 +5887,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic W
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (197, 'The marilith adds 5 to its AC against one melee attack that would hit it. To do so, the marilith must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (197, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (197, 61);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (198, 8, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (198, 198, 'null', 0.125, 13, 5, 3, 12, '', 'Mastiff');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (198, 198, 'null', 0.125, 13, 5, 3, 12, '', 'Mastiff', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/191/1000/1000/636252763295291063.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 2, 14);
@@ -5375,8 +5907,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 198, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.', 198);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The mastiff has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 198);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (198, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (199, 8, 17, 51);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (199, 199, 'null', 6, 14, 127, 3, 15, 'Natural Armor', 'Medusa');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (199, 199, 'null', 6, 14, 127, 3, 15, 'Natural Armor', 'Medusa', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/580/1000/1000/636376361850900325.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 2, 15);
@@ -5400,8 +5934,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow', 'Ranged Weapon Attack: +5 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage plus 7 (2d6) poison damage.', 199);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Petrifying Gaze', 'When a creature that can see the medusa''s eyes starts its turn within 30 feet of the medusa, the medusa can force it to make a DC 14 Constitution saving throw if the medusa isn''t incapacitated and can see the creature. If the saving throw fails by 5 or more, the creature is instantly petrified. Otherwise, a creature that fails the save begins to turn to stone and is restrained. The restrained creature must repeat the saving throw at the end of its next turn, becoming petrified on a failure or ending the effect on a success. The petrification lasts until the creature is freed by the greater restoration spell or other magic.Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can''t see the medusa until the start of its next turn, when it can avert its eyes again. If the creature looks at the medusa in the meantime, it must immediately make the save.If the medusa sees itself reflected on a polished surface within 30 feet of it and in an area of bright light, the medusa is, due to its curse, affected by its own gaze.', 199);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (199, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (200, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (200, 200, 'null', 0.125, 12, 11, 3, 11, '', 'Merfolk');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (200, 200, 'null', 0.125, 12, 11, 3, 11, '', 'Merfolk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/197/1000/1000/636252763841141413.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 2, 13);
@@ -5420,8 +5956,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spear',
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The merfolk can breathe air and water.', 200);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (200, 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (200, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (201, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (201, 201, 'null', 2, 10, 45, 4, 13, 'Natural Armor', 'Merrow');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (201, 201, 'null', 2, 10, 45, 4, 13, 'Natural Armor', 'Merrow', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/203/315/315/636252764097970952.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 2, 10);
@@ -5443,8 +5981,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The merrow can breathe air and water.', 201);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (201, 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (201, 61);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (202, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (202, 202, 'null', 2, 11, 58, 3, 12, 'Natural Armor', 'Mimic');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (202, 202, 'null', 2, 11, 58, 3, 12, 'Natural Armor', 'Mimic', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/211/315/315/636252764731637373.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 2, 12);
@@ -5460,7 +6000,7 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (15, 202,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 202, '17');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 202, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (202, '13');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (202, '1', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (202, '1', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage plus 4 (1d8) acid damage.', 202);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Pseudopod', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage. If the mimic is in object form, the target is subjected to its Adhesive trait.', 202);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapechanger', 'The mimic can use its action to polymorph into an object or back into its true, amorphous form. Its statistics are the same in each form. Any equipment it is wearing or carrying isn''t transformed. It reverts to its true form if it dies.', 202);
@@ -5468,8 +6008,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Adhesiv
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Grappler', 'The mimic has advantage on attack rolls against any creature grappled by it.', 202);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance (Object Form Only)', 'While the mimic remains motionless, it is indistinguishable from an ordinary object.', 202);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (202, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (203, 10, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (203, 203, 'null', 3, 17, 76, 4, 14, 'Natural Armor', 'Minotaur');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (203, 203, 'null', 3, 17, 76, 4, 14, 'Natural Armor', 'Minotaur', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/217/1000/1000/636252765009181721.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 2, 11);
@@ -5490,8 +6032,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Labyrin
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the minotaur moves at least 10 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 feet away and knocked prone.', 203);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Reckless', 'At the start of its turn, the minotaur can gain advantage on all melee weapon attack rolls it makes during that turn, but attack rolls against it have advantage until the start of its next turn.', 203);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (203, 61);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (204, 10, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (204, 204, 'null', 2, 9, 67, 4, 12, 'Natural Armor', 'Minotaur Skeleton');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (204, 204, 'null', 2, 9, 67, 4, 12, 'Natural Armor', 'Minotaur Skeleton', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/480/1000/1000/636376298435934058.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 2, 11);
@@ -5507,14 +6051,16 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 204,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 204, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (204, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (204, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (204, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (204, '2', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (204, '9', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (204, '2');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greataxe', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 17 (2d12 + 4) slashing damage.', 204);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) piercing damage.', 204);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the skeleton moves at least 10 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be pushed up to 10 feet away and knocked prone.', 204);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (204, 3);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (205, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (205, 205, 'null', 0.125, 10, 11, 3, 10, '', 'Mule');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (205, 205, 'null', 0.125, 10, 11, 3, 10, '', 'Mule', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 2, 10);
@@ -5531,8 +6077,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Beast of Burden', 'The mule is considered to be a Large animal for the purpose of determining its carrying capacity.', 205);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sure-Footed', 'The mule has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.', 205);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (205, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (206, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (206, 206, 'null', 3, 10, 58, 3, 11, 'Natural Armor', 'Mummy');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (206, 206, 'null', 3, 10, 58, 3, 11, 'Natural Armor', 'Mummy', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/225/1000/1000/636252765553048566.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 2, 8);
@@ -5552,18 +6100,25 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (20
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (206, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (206, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (206, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (206, '7', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (206, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (206, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (206, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (206, '12', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (206, '4', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (206, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (206, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (206, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (206, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (206, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (206, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (206, '7', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (206, '7', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (206, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (206, '9', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (206, '4');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rotting Fist', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage plus 10 (3d6) necrotic damage. If the target is a creature, it must succeed on a DC 12 Constitution saving throw or be cursed with mummy rot. The cursed target can''t regain hit points, and its hit point maximum decreases by 10 (3d6) for every 24 hours that elapse. If the curse reduces the target''s hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the remove curse spell or other magic.', 206);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Dreadful Glare', 'The mummy targets one creature it can see within 60 feet of it. If the target can see the mummy, it must succeed on a DC 11 Wisdom saving throw against this magic or become frightened until the end of the mummy''s next turn. If the target fails the saving throw by 5 or more, it is also paralyzed for the same duration. A target that succeeds on the saving throw is immune to the Dreadful Glare of all mummies (but not mummy lords) for the next 24 hours.', 206);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The mummy can use its Dreadful Glare and makes one attack with its rotting fist.', 206);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (206, 22);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (207, 8, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (207, 207, 'The mummy lord can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The mummy lord regains spent legendary actions at the start of its turn.', 15, 14, 97, 3, 17, 'Natural Armor', 'Mummy Lord');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (207, 207, 'The mummy lord can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The mummy lord regains spent legendary actions at the start of its turn.', 15, 14, 97, 3, 17, 'Natural Armor', 'Mummy Lord', 'https://media-waterdeep.cursecdn.com/attachments/2/660/undead.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 2, 10);
@@ -5588,12 +6143,12 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (20
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (207, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (207, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (207, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (207, '7', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (207, '9', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (207, '2', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (207, '8', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (207, '12', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (207, '4', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (207, '7', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (207, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (207, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (207, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (207, '12', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (207, '4');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rotting Fist', 'Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 14 (3d6 + 4) bludgeoning damage plus 21 (6d6) necrotic damage. If the target is a creature, it must succeed on a DC 16 Constitution saving throw or be cursed with mummy rot. The cursed target can''t regain hit points, and its hit point maximum decreases by 10 (3d6) for every 24 hours that elapse. If the curse reduces the target''s hit point maximum to 0, the target dies, and its body turns to dust. The curse lasts until removed by the remove curse spell or other magic.', 207);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Dreadful Glare', 'The mummy lord targets one creature it can see within 60 feet of it. If the target can see the mummy lord, it must succeed on a DC 16 Wisdom saving throw against this magic or become frightened until the end of the mummy''s next turn. If the target fails the saving throw by 5 or more, it is also paralyzed for the same duration. A target that succeeds on the saving throw is immune to the Dreadful Glare of all mummies and mummy lords for the next 24 hours.', 207);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The mummy can use its Dreadful Glare and makes one attack with its rotting fist.', 207);
@@ -5606,8 +6161,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (207, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (207, 'The mummy lord magically transforms into a whirlwind of sand, moves up to 60 feet, and reverts to its normal form. While in whirlwind form, the mummy lord is immune to all damage, and it can''t be grappled, petrified, knocked prone, restrained, or stunned. Equipment worn or carried by the mummy lord remain in its possession.', 'Whirlwind of Sand (Costs 2 Actions)');
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (207, 'The mummy lord magically unleashes negative energy. Creatures within 60 feet of the mummy lord, including ones behind barriers and around corners, can''t regain hit points until the end of the mummy lord''s next turn.', 'Channel Negative Energy (Costs 2 Actions)');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (207, 22);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (208, 10, 16, 96);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (208, 208, 'null', 13, 11, 184, 4, 18, 'Natural Armor', 'Nalfeshnee');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (208, 208, 'null', 13, 11, 184, 4, 18, 'Natural Armor', 'Nalfeshnee', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/261/1000/1000/636252768396688147.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 2, 10);
@@ -5627,13 +6184,20 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 208,
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 208, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 208, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (208, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (208, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (208, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (208, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (208, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (208, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (208, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (208, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (208, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (208, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (208, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (208, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (208, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (208, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (208, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (208, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (208, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (208, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (208, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (208, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (208, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (208, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Horror Nimbus (Recharge 5–6)', 'The nalfeshnee magically emits scintillating, multicolored light. Each creature within 15 feet of the nalfeshnee that can see the light must succeed on a DC 15 Wisdom saving throw or be frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the nalfeshnee''s Horror Nimbus for the next 24 hours.', 208);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 32 (5d10 + 5) piercing damage.', 208);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Teleport', 'The nalfeshnee magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.', 208);
@@ -5642,8 +6206,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Resistance', 'The nalfeshnee has advantage on saving throws against spells and other magical effects.', 208);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (208, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (208, 61);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (209, 8, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (209, 209, 'null', 5, 16, 112, 3, 17, 'Natural Armor', 'Night Hag');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (209, 209, 'null', 5, 16, 112, 3, 17, 'Natural Armor', 'Night Hag', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/269/1000/1000/636252769277562895.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 2, 15);
@@ -5662,11 +6228,16 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 209, '7
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 209, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 209, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (209, '6');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (209, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (209, '4', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (209, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (209, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (209, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (209, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (209, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (209, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (209, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (209, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (209, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (209, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (209, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (209, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (209, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', '(Hag Form Only). Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.', 209);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Nightmare Haunting (1/Day)', 'While on the Ethereal Plane, the hag magically touches a sleeping humanoid on the Material Plane. A protection from evil and good spell cast on the target prevents this contact, as does a magic circle. As long as the contact persists, the target has dreadful visions. If these visions last for at least 1 hour, the target gains no benefit from its rest, and its hit point maximum is reduced by 5 (1d10). If this effect reduces the target''s hit point maximum to 0, the target dies, and if the target was evil, its soul is trapped in the hag''s soul bag. The reduction to the target''s hit point maximum lasts until removed by the greater restoration spell or similar magic.', 209);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Etherealness', 'The hag magically enters the Ethereal Plane from the Material Plane, or vice versa. To do so, the hag must have a heartstone in her possession.', 209);
@@ -5677,8 +6248,10 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (209, 34);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (209, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (209, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (209, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (210, 10, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (210, 210, 'null', 3, 11, 68, 4, 13, 'Natural Armor', 'Nightmare');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (210, 210, 'null', 3, 11, 68, 4, 13, 'Natural Armor', 'Nightmare', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/273/315/315/636252769493472144.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 2, 15);
@@ -5692,15 +6265,17 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (210, '11');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (210, '3');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 210, '1');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (90, 210, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (210, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (210, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage plus 7 (2d6) fire damage.', 210);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Ethereal Stride', 'The nightmare and up to three willing creatures within 5 feet of it magically enter the Ethereal Plane from the Material Plane, or vice versa.', 210);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Confer Fire Resistance', 'The nightmare can grant resistance to fire damage to anyone riding it.', 210);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumination', 'The nightmare sheds bright light in a 10-foot radius and dim light for an additional 10 feet.', 210);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (210, 5);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (210, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (211, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (211, 211, 'null', 0.125, 12, 9, 3, 15, 'Breastplate', 'Noble');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (211, 211, 'null', 0.125, 12, 9, 3, 15, 'Breastplate', 'Noble', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/277/1000/1000/636252769861281900.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 2, 12);
@@ -5719,8 +6294,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 211, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rapier', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) piercing damage.', 211);
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (211, 'The noble adds 2 to its AC against one melee attack that would hit it. To do so, the noble must see the attacker and be wielding a melee weapon.', 'Parry');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (211, 65);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (212, 8, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (212, 212, 'null', 2, 12, 45, 3, 15, 'Natural', 'Nothic');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (212, 212, 'null', 2, 12, 45, 3, 15, 'Natural', 'Nothic', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/475/1000/1000/636364321398842272.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 2, 16);
@@ -5744,8 +6321,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.', 212);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The nothic has advantage on Wisdom (Perception) checks that rely on sight.', 212);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (212, 68);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (213, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (213, 213, 'null', 2, 8, 45, 4, 8, '', 'Ochre Jelly');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (213, 213, 'null', 2, 8, 45, 4, 8, '', 'Ochre Jelly', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/279/1000/1000/636252770058723674.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 2, 6);
@@ -5766,16 +6345,18 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (21
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (213, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (213, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (213, '13');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (213, '6', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (213, '12', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (213, '1', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (213, '1', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (213, '6', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (213, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Pseudopod', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) bludgeoning damage plus 3 (1d6) acid damage.', 213);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amorphous', 'The jelly can move through a space as narrow as 1 inch wide without squeezing.', 213);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider Climb', 'The jelly can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.', 213);
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (213, 'When a jelly that is Medium or larger is subjected to lightning or slashing damage, it splits into two new jellies if it has at least 10 hit points. Each new jelly has hit points equal to half the original jelly''s, rounded down. New jellies are one size smaller than the original jelly.', 'Split');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (213, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (214, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (214, 214, 'null', 0, 12, 3, 1, 12, '', 'Octopus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (214, 214, 'null', 0, 12, 3, 1, 12, '', 'Octopus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/921/315/315/636334602449110996.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 2, 15);
@@ -5798,8 +6379,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water B
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'While out of water, the octopus can hold its breath for 30 minutes.', 214);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Underwater Camouflage', 'The octopus has advantage on Dexterity (Stealth) checks made while underwater.', 214);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (214, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (215, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (215, 215, 'null', 2, 8, 59, 4, 11, 'Hide Armor', 'Ogre');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (215, 215, 'null', 2, 8, 59, 4, 11, 'Hide Armor', 'Ogre', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/285/315/315/636252770535203221.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 2, 8);
@@ -5817,8 +6400,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Javelin
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatclub', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.', 215);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (215, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (215, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (216, 10, 9, 36);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (216, 216, 'null', 2, 8, 85, 4, 8, '', 'Ogre Zombie');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (216, 216, 'null', 2, 8, 85, 4, 8, '', 'Ogre Zombie', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/287/315/315/636252770700032248.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 2, 6);
@@ -5834,13 +6419,15 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (216, '12');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 216, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 216, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (216, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (216, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (216, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Morningstar', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.', 216);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Undead Fortitude', 'If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.', 216);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (216, 60);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (216, 50);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (217, 10, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (217, 217, 'null', 7, 14, 110, 4, 16, 'Chain Mail', 'Oni');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (217, 217, 'null', 7, 14, 110, 4, 16, 'Chain Mail', 'Oni', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/297/1000/1000/636252771507213738.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 2, 11);
@@ -5871,8 +6458,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The oni''s weapon attacks are magical.', 217);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (217, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (217, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (218, 8, 2, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (218, 218, 'null', 0.5, 10, 15, 3, 13, 'Hide Armor', 'Orc');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (218, 218, 'null', 0.5, 10, 15, 3, 13, 'Hide Armor', 'Orc', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/301/1000/1000/636252771691385727.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 2, 12);
@@ -5892,8 +6481,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Javelin
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Aggressive', '. As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.', 218);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (218, 39);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (218, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (219, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (219, 219, 'null', 5, 11, 114, 4, 14, 'Natural Armor', 'Otyugh');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (219, 219, 'null', 5, 11, 114, 4, 14, 'Natural Armor', 'Otyugh', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/305/315/315/636252771931366466.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 2, 11);
@@ -5914,8 +6505,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tentacle', 'Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 7 (1d8 + 3) bludgeoning damage plus 4 (1d8) piercing damage. If the target is Medium or smaller, it is grappled (escape DC 13) and restrained until the grapple ends. The otyugh has two tentacles, each of which can grapple one target.', 219);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Limited Telepathy', 'The otyugh can magically transmit simple messages and images to any creature within 120 feet of it that can understand a language. This form of telepathy doesn''t allow the receiving creature to telepathically respond.', 219);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (219, 57);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (220, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (220, 220, 'null', 0, 13, 1, 5, 11, '', 'Owl');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (220, 220, 'null', 0, 13, 1, 5, 11, '', 'Owl', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/533/1000/1000/636376331660233857.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 2, 13);
@@ -5936,8 +6529,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Talons'
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Sight', 'The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight.', 220);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby', 'The owl doesn''t provoke opportunity attacks when it flies out of an enemy''s reach.', 220);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (220, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (221, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (221, 221, 'null', 3, 13, 59, 4, 13, 'Natural Armor', 'Owlbear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (221, 221, 'null', 3, 13, 59, 4, 13, 'Natural Armor', 'Owlbear', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/315/315/315/636252772225295187.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 2, 12);
@@ -5957,8 +6552,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The owlbear makes two attacks: one with its beak and one with its claws.', 221);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight and Smell', 'The owlbear has advantage on Wisdom (Perception) checks that rely on sight or smell.', 221);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (221, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (222, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (222, 222, 'null', 0.25, 14, 13, 3, 12, '', 'Panther');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (222, 222, 'null', 0.25, 14, 13, 3, 12, '', 'Panther', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 2, 15);
@@ -5979,8 +6576,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The panther has advantage on Wisdom (Perception) checks that rely on smell.', 222);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce', 'If the panther moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the panther can make one bite attack against it as a bonus action.', 222);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (222, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (223, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (223, 223, 'null', 2, 16, 59, 4, 12, '', 'Pegasus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (223, 223, 'null', 2, 16, 59, 4, 12, '', 'Pegasus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/303/1000/1000/636379808797059368.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 2, 15);
@@ -6003,8 +6602,10 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (223, 42);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (223, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (223, 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (223, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (224, 10, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (224, 224, 'null', 3, 10, 32, 4, 13, 'Natural Armor', 'Phase Spider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (224, 224, 'null', 3, 10, 32, 4, 13, 'Natural Armor', 'Phase Spider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/319/315/315/636252772538300448.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 2, 15);
@@ -6025,8 +6626,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Etherea
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider Climb', 'The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.', 224);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The spider ignores movement restrictions caused by webbing.', 224);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (224, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (225, 10, 24, 168);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (225, 225, 'null', 20, 14, 300, 4, 19, 'Natural Armor', 'Pit Fiend');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (225, 225, 'null', 20, 14, 300, 4, 19, 'Natural Armor', 'Pit Fiend', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/311/315/315/636252772132434763.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 1, 26);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 2, 14);
@@ -6045,12 +6648,18 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 225,
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 225, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 225, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (225, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (225, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (225, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (225, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (225, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (225, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (225, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (225, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (225, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (225, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (225, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (225, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (225, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (225, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (225, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (225, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (225, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (225, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (225, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Mace', 'Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 15 (2d6 + 8) bludgeoning damage plus 21 (6d6) fire damage.', 225);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +14 to hit, reach 5 ft., one target. Hit: 22 (4d6 + 8) piercing damage. The target must succeed on a DC 21 Constitution saving throw or become poisoned. While poisoned in this way, the target can''t regain hit points, and it takes 21 (6d6) poison damage at the start of each of its turns. The poisoned target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 225);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 24 (3d10 + 8) bludgeoning damage.', 225);
@@ -6062,8 +6671,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic W
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'detect magicfireballhold monsterwall of fire', 225);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (225, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (225, 48);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (226, 10, 16, 112);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (226, 226, 'null', 16, 21, 200, 4, 19, 'Natural Armor', 'Planetar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (226, 226, 'null', 16, 21, 200, 4, 19, 'Natural Armor', 'Planetar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/303/315/315/636252771762002496.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 1, 24);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 2, 20);
@@ -6085,10 +6696,14 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 226, 
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (226, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (226, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (226, '4');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (226, '11', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (226, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (226, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (226, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (226, '11', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (226, '11', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (226, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (226, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (226, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (226, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (226, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (226, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatsword', 'Melee Weapon Attack: +12 to hit, reach 5 ft., one target. Hit: 21 (4d6 + 7) slashing damage plus 22 (5d8) radiant damage.', 226);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Healing Touch', '(4/Day). The planetar touches another creature. The target magically regains 30 (6d8 + 3) hit points and is freed from any curse, disease, poison, blindness, or deafness.', 226);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The planetar makes two melee attacks.', 226);
@@ -6098,8 +6713,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Angelic
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The planetar''s spellcasting ability is Charisma (spell save DC 20). The planetar can innately cast the following spells, requiring no material components: At will: detect evil and good, invisibility (self only) 3/day each: blade barrier, dispel evil and good, flame strike, raise dead 1/day each: commune, control weather, insect plague', 226);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (226, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (226, 64);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (227, 10, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (227, 227, 'null', 2, 13, 68, 4, 13, 'Natural Armor', 'Plesiosaurus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (227, 227, 'null', 2, 13, 68, 4, 13, 'Natural Armor', 'Plesiosaurus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/488/315/315/636376304583147024.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 2, 15);
@@ -6118,8 +6735,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 227, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 14 (3d6 + 4) piercing damage.', 227);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Breath', 'The plesiosaurus can hold its breath for 1 hour.', 227);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (227, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (228, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (228, 228, 'null', 0.125, 10, 2, 5, 13, '', 'Poisonous Snake');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (228, 228, 'null', 0.125, 10, 2, 5, 13, '', 'Poisonous Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 2, 16);
@@ -6136,8 +6755,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 228,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 228, '2');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 piercing damage, and the target must make a DC 10 Constitution saving throw, taking 5 (2d4) poison damage on a failed save, or half as much damage on a successful one.', 228);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (228, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (229, 10, 5, 15);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (229, 229, 'null', 2, 13, 42, 4, 12, 'Natural Armor', 'Polar Bear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (229, 229, 'null', 2, 13, 42, 4, 12, 'Natural Armor', 'Polar Bear', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 2, 10);
@@ -6157,8 +6778,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The bear makes two attacks: one with its bite and one with its claws.', 229);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The bear has advantage on Wisdom (Perception) checks that rely on smell.', 229);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (229, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (230, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (230, 230, 'null', 0.125, 10, 11, 3, 10, '', 'Pony');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (230, 230, 'null', 0.125, 10, 11, 3, 10, '', 'Pony', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 2, 10);
@@ -6173,8 +6796,10 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (230, '17');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 230, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage.', 230);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (230, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (231, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (231, 231, 'null', 2, 13, 27, 3, 13, 'Chain Shirt', 'Priest');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (231, 231, 'null', 2, 13, 27, 3, 13, 'Chain Shirt', 'Priest', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 2, 10);
@@ -6194,8 +6819,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Mace', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The priest is a 5th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 13, +5 to hit with spell attacks). The priest has the following cleric spells prepared:Cantrips (at will): light, sacred flame, thaumaturgy1st level (4 slots): cure wounds, guiding bolt, sanctuary2nd level (3 slots): lesser restoration, spiritual weapon3rd level (2 slots): dispel magic, spirit guardians', 231);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Divine Eminence', 'As a bonus action, the priest can expend a spell slot to cause its melee weapon attacks to magically deal an extra 10 (3d6) radiant damage to a target on a hit. This benefit lasts until the end of the turn. If the priest expends a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each level above 1st.', 231);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (231, 65);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (232, 4, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (232, 232, 'null', 0.25, 13, 7, 5, 13, 'Natural Armor', 'Pseudodragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (232, 232, 'null', 0.25, 13, 7, 5, 13, 'Natural Armor', 'Pseudodragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/283/1000/1000/636252770521719244.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 2, 15);
@@ -6219,8 +6846,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Limited Telepathy', 'The pseudodragon can magically communicate simple ideas, emotions, and images telepathically with any creature within 100 feet of it that can understand a language.', 232);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (232, 60);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (232, 43);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (233, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (233, 233, 'null', 0.25, 11, 13, 3, 13, 'Natural Armor', 'Pteranodon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (233, 233, 'null', 0.25, 11, 13, 3, 13, 'Natural Armor', 'Pteranodon', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 2, 15);
@@ -6237,8 +6866,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 233,
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) piercing damage.', 233);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby', 'The pteranodon doesn’t provoke an opportunity attack when it flies out of an enemy’s reach.</div>', 233);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (233, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (234, 20, 15, 90);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (234, 234, 'null', 15, 9, 247, 2, 18, 'Natural Armor', 'Purple Worm');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (234, 234, 'null', 15, 9, 247, 2, 18, 'Natural Armor', 'Purple Worm', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/275/315/315/636252769846436684.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 1, 28);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 2, 7);
@@ -6261,8 +6892,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The worm makes two attacks: one with its bite and one with its stinger.', 234);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Tunneler', 'The worm can burrow through solid rock at half its burrow speed and leaves a 10-foot-diameter tunnel in its wake.', 234);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (234, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (235, 4, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (235, 235, 'null', 1, 10, 7, 5, 13, '', 'Quasit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (235, 235, 'null', 1, 10, 7, 5, 13, '', 'Quasit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/271/315/315/636252769318699115.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 2, 17);
@@ -6278,13 +6911,20 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 235,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 235, '17');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 235, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (235, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (235, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (235, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (235, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (235, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (235, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (235, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (235, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (235, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (235, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (235, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (235, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (235, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (235, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (235, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (235, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (235, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (235, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (235, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (235, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (235, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (235, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws (Bite in Beast Form)', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage, and the target must succeed on a DC 10 Constitution saving throw or take 5 (2d4) poison damage and become poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 235);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Invisibility', 'The quasit magically turns invisible until it attacks or uses Scare, or until its concentration ends (as if concentrating on a spell). Any equipment the quasit wears or carries is invisible with it.', 235);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Scare (1/Day)', 'One creature of the quasit''s choice within 20 feet of it must succeed on a DC 10 Wisdom saving throw or be frightened for 1 minute. The target can repeat the saving throw at the end of each of its turns, with disadvantage if the quasit is within line of sight, ending the effect on itself on a success.', 235);
@@ -6292,8 +6932,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapechanger', 'The quasit can use its action to polymorph into a beast form that resembles a bat (speed 10 ft. fly 40 ft.), a centipede (40 ft., climb 40 ft.), or a toad (40 ft., swim 40 ft.), or back into its true form. Its statistics are the same in each form, except for the speed changes noted. Any equipment it is wearing or carrying isn''t transformed. It reverts to its true form if it dies.', 235);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (235, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (235, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (236, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (236, 236, 'null', 0, 8, 1, 5, 13, '', 'Quipper');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (236, 236, 'null', 0, 8, 1, 5, 13, '', 'Quipper', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/253/1000/1000/636252767919065233.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 2, 16);
@@ -6312,8 +6954,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Breathing', 'The quipper can breathe only underwater.', 236);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood Frenzy', 'The quipper has advantage on melee attack rolls against any creature that doesn''t have all its hit points.', 236);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (236, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (237, 8, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (237, 237, 'null', 13, 13, 110, 3, 16, 'Natural Armor', 'Rakshasa');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (237, 237, 'null', 13, 13, 110, 3, 16, 'Natural Armor', 'Rakshasa', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/247/315/315/636252767480157951.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 2, 17);
@@ -6329,17 +6973,19 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 237,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (10, 237, '5');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 237, '7');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 237, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (237, '2', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (237, '8', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (237, '12', true, false, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (237, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (237, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (237, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The rakshasa makes two claw attacks.', 237);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage, and the target is cursed if it is a creature. The magical curse takes effect whenever the target takes a short or long rest, filling the target''s thoughts with horrible images and dreams. The cursed target gains no benefit from finishing a short or long rest. The curse lasts until it is lifted by a remove curse spell or similar magic.', 237);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Limited Magic Immunity', 'The rakshasa can''t be affected or detected by spells of 6th level or lower unless it wishes to be. It has advantage on saving throws against all other spells and magical effects.', 237);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The rakshasa''s innate spellcasting ability is Charisma (spell save DC 18, +10 to hit with spell attacks). The rakshasa can innately cast the following spells, requiring no material components:At will: detect thoughts, disguise self, mage hand, minor illusion3/day each: charm person, detect magic, invisibility, major image, suggestion1/day each: dominate person, fly, plane shift, true seeing', 237);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (237, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (237, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (238, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (238, 238, 'null', 0, 10, 1, 5, 10, '', 'Rat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (238, 238, 'null', 0, 10, 1, 5, 10, '', 'Rat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/541/315/315/636376335435407571.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 2, 11);
@@ -6356,8 +7002,10 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 238, '
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 piercing damage.', 238);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The rat has advantage on Wisdom (Perception) checks that rely on smell.', 238);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (238, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (239, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (239, 239, 'null', 0, 13, 1, 5, 12, '', 'Raven');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (239, 239, 'null', 0, 13, 1, 5, 12, '', 'Raven', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/553/1000/1000/636376341568391037.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 2, 14);
@@ -6375,8 +7023,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 239, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beak', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 piercing damage.', 239);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Mimicry', 'The raven can mimic simple sounds it has heard, such as a person whispering, a baby crying, or an animal chittering. A creature that hears the sounds can tell they are imitations with a successful DC 10 Wisdom (Insight) check.', 239);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (239, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (240, 8, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (240, 240, 'null', 4, 14, 75, 3, 17, 'Natural Armor', 'Red Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (240, 240, 'null', 4, 14, 75, 3, 17, 'Natural Armor', 'Red Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/239/315/315/636252766855622680.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 2, 10);
@@ -6399,12 +7049,14 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 240, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 240, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 240, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 240, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (240, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (240, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath (Recharge 5–6)', 'The dragon exhales fire in a 15-foot cone. Each creature in that area must make a DC 13 Dexterity saving throw, taking 24 (7d6) fire damage on a failed save, or half as much damage on a successful one.', 240);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage plus 3 (1d6) fire damage.', 240);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (240, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (241, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (241, 241, 'null', 0.5, 12, 22, 3, 12, 'Natural Armor', 'Reef Shark');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (241, 241, 'null', 0.5, 12, 22, 3, 12, 'Natural Armor', 'Reef Shark', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 2, 13);
@@ -6424,8 +7076,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Breathing', 'The shark can breathe only underwater.', 241);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The shark has advantage on an attack roll against a creature if at least one of the shark''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 241);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (241, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (242, 12, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (242, 242, 'null', 11, 10, 195, 6, 17, 'Natural Armor', 'Remorhaz');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (242, 242, 'null', 11, 10, 195, 6, 17, 'Natural Armor', 'Remorhaz', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/231/315/315/636252766143328421.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 1, 24);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 2, 13);
@@ -6441,14 +7095,16 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 242,
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 242, '7');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 242, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 242, '3');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (242, '3', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (242, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (242, '3', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (242, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 40 (6d10 + 7) piercing damage plus 10 (3d6) fire damage. If the target is a creature, it is grappled (escape DC 17). Until this grapple ends, the target is restrained, and the remorhaz can''t bite another target.', 242);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Swallow', 'The remorhaz makes one bite attack against a Medium or smaller creature it is grappling. If the attack hits, that creature takes the bite''s damage and is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the remorhaz, and it takes 21 (6d6) acid damage at the start of each of the remorhaz''s turns.If the remorhaz takes 30 damage or more on a single turn from a creature inside it, the remorhaz must succeed on a DC 15 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the remorhaz. If the remorhaz dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 15 feet of movement, exiting prone.', 242);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated Body', 'A creature that touches the remorhaz or hits it with a melee attack while within 5 feet of it takes 10 (3d6) fire damage.', 242);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (242, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (243, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (243, 243, 'null', 2, 11, 45, 4, 11, 'Natural Armor', 'Rhinoceros');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (243, 243, 'null', 2, 11, 45, 4, 11, 'Natural Armor', 'Rhinoceros', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 2, 8);
@@ -6464,8 +7120,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 243,
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) bludgeoning damage.', 243);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge', 'If the rhinoceros moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) bludgeoning damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.', 243);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (243, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (244, 10, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (244, 244, 'null', 0.25, 10, 13, 4, 10, '', 'Riding Horse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (244, 244, 'null', 0.25, 10, 13, 4, 10, '', 'Riding Horse', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/904/315/315/636334288913250513.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 2, 10);
@@ -6480,8 +7138,10 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (244, '17');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 244, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.', 244);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (244, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (245, 20, 16, 80);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (245, 245, 'null', 11, 14, 248, 2, 15, 'Natural Armor', 'Roc');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (245, 245, 'null', 11, 14, 248, 2, 15, 'Natural Armor', 'Roc', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/229/315/315/636252765590929622.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 1, 28);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 2, 10);
@@ -6505,8 +7165,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Talons'
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The roc makes two attacks: one with its beak and one with its talons.', 245);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight', 'The roc has advantage on Wisdom (Perception) checks that rely on sight.', 245);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (245, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (246, 10, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (246, 246, 'null', 5, 16, 93, 4, 20, 'Natural Armor', 'Roper');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (246, 246, 'null', 5, 16, 93, 4, 20, 'Natural Armor', 'Roper', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/560/1000/1000/636376344528091115.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 2, 8);
@@ -6531,8 +7193,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the roper remains motionless, it is indistinguishable from a normal cave formation, such as a stalagmite.', 246);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Grasping Tendrils', 'The roper can have up to six tendrils at a time. Each tendril can be attacked (AC 20; 10 hit points; immunity to poison and psychic damage). Destroying a tendril deals no damage to the roper, which can extrude a replacement tendril on its next turn. A tendril can also be broken if a creature takes an action and succeeds on a DC 15 Strength check against it.', 246);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (246, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (247, 10, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (247, 247, 'null', 2, 6, 33, 4, 12, '', 'Rug of Smothering');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (247, 247, 'null', 2, 6, 33, 4, 12, '', 'Rug of Smothering', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/213/1000/1000/636252764761726261.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 2, 14);
@@ -6553,15 +7217,17 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (24
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (247, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (247, '8');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (247, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (247, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (247, '10', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (247, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (247, '10', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Smother', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one Medium or smaller creature. Hit: The creature is grappled (escape DC 13). Until this grapple ends, the target is restrained, blinded, and at risk of suffocating, and the rug can''t smother another target. In addition, at the start of each of the target''s turns, the target takes 10 (2d6 + 3) bludgeoning damage.', 247);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Antimagic Susceptibility', 'The rug is incapacitated while in the area of an antimagic field. If targeted by dispel magic, the rug must succeed on a Constitution saving throw against the caster''s spell save DC or fall unconscious for 1 minute.', 247);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Damage Transfer', 'While it is grappling a creature, the rug takes only half the damage dealt to it, and the creature grappled by the rug takes the other half.', 247);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the rug remains motionless, it is indistinguishable from a normal rug.', 247);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (247, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (248, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (248, 248, 'null', 0.5, 11, 27, 3, 14, 'Natural Armor', 'Rust Monster');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (248, 248, 'null', 0.5, 11, 27, 3, 14, 'Natural Armor', 'Rust Monster', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/207/1000/1000/636252764265020108.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 2, 12);
@@ -6580,8 +7246,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Antenna
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rust Metal', 'Any nonmagical weapon made of metal that hits the rust monster corrodes. After dealing damage, the weapon takes a permanent and cumulative −1 penalty to damage rolls. If its penalty drops to −5, the weapon is destroyed. Nonmagical ammunition made of metal that hits the rust monster is destroyed after dealing damage.', 248);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Iron Scent', 'The rust monster can pinpoint, by scent, the location of ferrous metal within 30 feet of it.', 248);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (248, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (249, 10, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (249, 249, 'null', 2, 13, 52, 4, 12, '', 'Saber-Toothed Tiger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (249, 249, 'null', 2, 13, 52, 4, 12, '', 'Saber-Toothed Tiger', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 2, 14);
@@ -6601,8 +7269,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The tiger has advantage on Wisdom (Perception) checks that rely on smell.', 249);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce', 'If the tiger moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.', 249);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (249, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (250, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (250, 250, 'null', 0.5, 15, 22, 3, 12, 'Natural Armor', 'Sahuagin');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (250, 250, 'null', 0.5, 15, 22, 3, 12, 'Natural Armor', 'Sahuagin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/177/1000/1000/636252761683746719.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 2, 11);
@@ -6626,8 +7296,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Limited
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood Frenzy', 'The sahuagin has advantage on melee attack rolls against any creature that doesn''t have all its hit points.', 250);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shark Telepathy', 'The sahuagin can magically command any shark within 120 feet of it, using a limited telepathy.', 250);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (250, 15);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (251, 10, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (251, 251, 'null', 5, 10, 90, 4, 15, 'Natural Armor', 'Salamander');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (251, 251, 'null', 5, 10, 90, 4, 15, 'Natural Armor', 'Salamander', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/173/1000/1000/636252761197608364.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 2, 14);
@@ -6641,19 +7313,25 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (251, '3');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (251, '7');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 251, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 251, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (251, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (251, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (251, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (251, '12', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (251, '3', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (251, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (251, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (251, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (251, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (251, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (251, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (251, '4', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (251, '4', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (251, '3');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage plus 7 (2d6) fire damage, and the target is grappled (escape DC 14). Until this grapple ends, the target is restrained, the salamander can automatically hit the target with its tail, and the salamander can''t make tail attacks against other targets.', 251);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The salamander makes two attacks: one with its spear and one with its tail.', 251);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spear', 'Melee or Ranged Weapon Attack: +7 to hit, reach 5 ft. or range 20 ft./60 ft., one target. Hit: 11 (2d6 + 4) piercing damage, or 13 (2d8 + 4) piercing damage if used with two hands to make a melee attack, plus 3 (1d6) fire damage.', 251);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated Weapons', 'Any metal melee weapon the salamander wields deals an extra 3 (1d6) fire damage on a hit (included in the attack).', 251);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated Body', 'A creature that touches the salamander or hits it with a melee attack while within 5 feet of it takes 7 (2d6) fire damage.', 251);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (251, 24);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (252, 8, 7, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (252, 252, 'null', 0.5, 12, 31, 3, 14, 'Leather Armor', 'Satyr');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (252, 252, 'null', 0.5, 12, 31, 3, 14, 'Leather Armor', 'Satyr', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/169/1000/1000/636252760706340605.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 2, 16);
@@ -6676,8 +7354,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (252, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (252, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (252, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (253, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (253, 253, 'null', 0, 9, 1, 5, 11, 'Natural Armor', 'Scorpion');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (253, 253, 'null', 0, 9, 1, 5, 11, 'Natural Armor', 'Scorpion', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 2, 11);
@@ -6693,8 +7373,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (10, 253,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 253, '2');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sting', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must make a DC 9 Constitution saving throw, taking 4 (1d8) poison damage on a failed save, or half as much damage on a successful one.', 253);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (253, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (254, 8, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (254, 254, 'null', 0.5, 15, 16, 3, 13, 'Leather Armor', 'Scout');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (254, 254, 'null', 0.5, 15, 16, 3, 13, 'Leather Armor', 'Scout', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/163/1000/1000/636252759915100020.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 2, 14);
@@ -6716,8 +7398,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow', 'Ranged Weapon Attack: +4 to hit, ranged 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.', 254);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Sight', 'The scout has advantage on Wisdom (Perception) checks that rely on hearing or sight.', 254);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (254, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (255, 8, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (255, 255, 'null', 2, 11, 52, 3, 14, 'Natural Armor', 'Sea Hag');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (255, 255, 'null', 2, 11, 52, 3, 14, 'Natural Armor', 'Sea Hag', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/159/1000/1000/636252759356069260.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 2, 13);
@@ -6740,8 +7424,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (255, 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (255, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (255, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (256, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (256, 256, 'null', 0, 10, 1, 5, 11, '', 'Sea Horse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (256, 256, 'null', 0, 10, 1, 5, 11, '', 'Sea Horse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 2, 12);
@@ -6757,8 +7443,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (0, 256, 
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 256, '9');
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Breathing', 'The sea horse can breathe only underwater.', 256);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (256, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (257, 8, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (257, 257, 'null', 0.5, 10, 16, 3, 12, '', 'Shadow');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (257, 257, 'null', 0.5, 10, 16, 3, 12, '', 'Shadow', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/155/315/315/636252758977032019.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 2, 14);
@@ -6781,24 +7469,36 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (25
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (257, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (257, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (257, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '7', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '1', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '13', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '12', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (257, '11', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '1', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '1', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '13', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '13', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '7', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '7', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (257, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (257, '9', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (257, '11');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Strength Drain', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d6 + 2) necrotic damage, and the target''s Strength score is reduced by 1d4. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.If a non-evil humanoid dies from this attack, a new shadow rises from the corpse 1d4 hours later.', 257);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amorphous', 'The shadow can move through a space as narrow as 1 inch wide without squeezing.', 257);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunlight Weakness', 'While in sunlight, the shadow has disadvantage on attack rolls, ability checks, and saving throws.', 257);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shadow Stealth', 'While in dim light or darkness, the shadow can take the Hide action as a bonus action.', 257);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (257, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (258, 10, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (258, 258, 'null', 5, 10, 136, 4, 15, 'Natural Armor', 'Shambling Mound');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (258, 258, 'null', 5, 10, 136, 4, 15, 'Natural Armor', 'Shambling Mound', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/563/315/315/636376346968079714.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 2, 8);
@@ -6817,16 +7517,18 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 258, '
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (258, '9');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (258, '10');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (258, '11');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (258, '6', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (258, '3', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (258, '4', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (258, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (258, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (258, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.', 258);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Engulf', 'The shambling mound engulfs a Medium or smaller creature grappled by it. The engulfed target is blinded, restrained, and unable to breathe, and it must succeed on a DC 14 Constitution saving throw at the start of each of the mound''s turns or take 13 (2d8 + 4) bludgeoning damage. If the mound moves, the engulfed target moves with it. The mound can have only one creature engulfed at a time.', 258);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The shambling mound makes two slam attacks. If both attacks hit a Medium or smaller target, the target is grappled (escape DC 14), and the shambling mound uses its Engulf on it.', 258);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Lightning Absorption', 'Whenever the shambling mound is subjected to lightning damage, it takes no damage and regains a number of hit points equal to the lightning damage dealt.', 258);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (258, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (259, 10, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (259, 259, 'null', 7, 10, 142, 4, 17, 'Natural Armor', 'Shield Guardian');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (259, 259, 'null', 7, 10, 142, 4, 17, 'Natural Armor', 'Shield Guardian', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/145/315/315/636252758362792494.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 2, 8);
@@ -6846,7 +7548,7 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (25
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (259, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (259, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (259, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (259, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (259, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fist', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.', 259);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The guardian makes two fist attacks.', 259);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Regeneration', 'The shield guardian regains 10 hit points at the start of its turn if it has at least 1 hit point.', 259);
@@ -6854,8 +7556,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spell S
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Bound', 'The shield guardian is magically bound to an amulet. As long as the guardian and its amulet are on the same plane of existence, the amulet''s wearer can telepathically call the guardian to travel to it, and the guardian knows the distance and direction to the amulet. If the guardian is within 60 feet of the amulet''s wearer, half of any damage the wearer takes (rounded up) is transferred to the guardian.', 259);
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (259, 'When a creature makes an attack against the wearer of the guardian''s amulet, the guardian grants a +2 bonus to the wearer''s AC if the guardian is within 5 feet of the wearer.', 'Shield');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (259, 32);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (260, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (260, 260, 'null', 0, 6, 13, 3, 5, '', 'Shrieker');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (260, 260, 'null', 0, 6, 13, 3, 5, '', 'Shrieker', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/571/1000/1000/636376357634308010.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 2, 1);
@@ -6875,8 +7579,10 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (26
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the shrieker remains motionless, it is indistinguishable from an ordinary fungus.', 260);
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (260, 'When bright light or a creature is within 30 feet of the shrieker, it emits a shriek audible within 300 feet of it. The shrieker continues to shriek until the disturbance moves out of range and for 1d4 of the shrieker''s turns afterward.', 'Shriek');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (260, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (261, 8, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (261, 261, 'null', 2, 14, 45, 3, 17, 'Natural Armor', 'Silver Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (261, 261, 'null', 2, 14, 45, 3, 17, 'Natural Armor', 'Silver Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/143/315/315/636252757538355953.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 2, 10);
@@ -6898,14 +7604,16 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 261, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 261, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 261, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 261, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (261, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (261, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (1d10 + 4) piercing damage.', 261);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Cold Breath', 'The dragon exhales an icy blast in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.', 261);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Paralyzing Breath', 'The dragon exhales paralyzing gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 261);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath Weapons (Recharge 5–6)', 'The dragon uses one of the following breath weapons.', 261);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (261, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (262, 8, 2, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (262, 262, 'null', 0.25, 9, 13, 3, 13, 'Armor Scraps', 'Skeleton');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (262, 262, 'null', 0.25, 9, 13, 3, 13, 'Armor Scraps', 'Skeleton', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/472/315/315/636376294573239565.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 2, 14);
@@ -6921,13 +7629,15 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 262,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 262, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (262, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (262, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (262, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (262, '2', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (262, '9', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (262, '2');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortsword', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.', 262);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortbow', 'Ranged Weapon Attack: +4 to hit, range 80/320 ft., one target. Hit: 5 (1d6 + 2) piercing damage.', 262);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (262, 54);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (263, 10, 18, 144);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (263, 263, 'The solar can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The solar regains spent legendary actions at the start of its turn.', 21, 24, 243, 4, 21, 'Natural Armor', 'Solar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (263, 263, 'The solar can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The solar regains spent legendary actions at the start of its turn.', 21, 24, 243, 4, 21, 'Natural Armor', 'Solar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/121/315/315/636252748079664097.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 1, 26);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 2, 22);
@@ -6950,12 +7660,18 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (26
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (263, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (263, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (263, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (263, '7', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (263, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (263, '11', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (263, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (263, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (263, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (263, '11', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (263, '11', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (263, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (263, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (263, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (263, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (263, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (263, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (263, '7', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (263, '7', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (263, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (263, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slaying Longbow', 'Ranged Weapon Attack: +13 to hit, range 150/600 ft., one target. Hit: 15 (2d8 + 6) piercing damage plus 27 (6d8) radiant damage. If the target is a creature that has 100 hit points or fewer, it must succeed on a DC 15 Constitution saving throw or die.', 263);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Flying Sword', 'The solar releases its greatsword to hover magically in an unoccupied space within 5 feet of it. If the solar can see the sword, the solar can mentally command it as a bonus action to fly up to 50 feet and either make one attack against a target or return to the solar''s hands. If the hovering sword is targeted by any effect, the solar is considered to be holding it. The hovering sword falls if the solar dies.', 263);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatsword', 'Melee Weapon Attack: +15 to hit, reach 5 ft., one target. Hit: 22 (4d6 + 8) slashing damage plus 27 (6d8) radiant damage.', 263);
@@ -6970,8 +7686,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (263, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (263, 'The solar emits magical, divine energy. Each creature of its choice in a 10-foot radius must make a DC 23 Dexterity saving throw, taking 14 (4d6) fire damage plus 14 (4d6) radiant damage on a failed save, or half as much damage on a successful one.', 'Searing Burst (Costs 2 Actions)');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (263, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (263, 64);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (264, 8, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (264, 264, 'null', 3, 16, 39, 3, 14, 'Natural', 'Spectator');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (264, 264, 'null', 3, 16, 39, 3, 14, 'Natural', 'Spectator', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/485/315/315/636364324602733616.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 2, 14);
@@ -6999,8 +7717,10 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (264, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (264, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (264, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (264, 58);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (265, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (265, 265, 'null', 1, 10, 22, 3, 12, '', 'Specter');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (265, 265, 'null', 1, 10, 22, 3, 12, '', 'Specter', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/119/1000/1000/636252747399435720.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 2, 14);
@@ -7024,22 +7744,34 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (26
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (265, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (265, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (265, '15');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '7', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '1', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '13', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (265, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '1', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '1', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '13', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '13', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '7', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '7', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (265, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (265, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Life Drain', 'Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 10 (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.', 265);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorporeal Movement', 'The specter can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.', 265);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunlight Sensitivity', 'While in sunlight, the specter has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.', 265);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (265, 54);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (266, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (266, 266, 'null', 0, 10, 1, 5, 12, '', 'Spider');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (266, 266, 'null', 0, 10, 1, 5, 12, '', 'Spider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/575/315/315/636376359864842950.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 2, 14);
@@ -7060,8 +7792,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Sen
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider Climb', 'The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.', 266);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Walker', 'The spider ignores movement restrictions caused by webbing.', 266);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (266, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (267, 10, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (267, 267, 'null', 8, 12, 75, 4, 15, 'Natural Armor', 'Spirit Naga');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (267, 267, 'null', 8, 12, 75, 4, 15, 'Natural Armor', 'Spirit Naga', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/117/315/315/636252746851035686.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 2, 17);
@@ -7081,14 +7815,16 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 267,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 267, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (267, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (267, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (267, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (267, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 7 (1d6 + 4) piercing damage, and the target must make a DC 13 Constitution saving throw, taking 31 (7d8) poison damage on a failed save, or half as much damage on a successful one.', 267);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellcasting', 'The naga is a 10th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks), and it needs only verbal components to cast its spells. It has the following wizard spells prepared: Cantrips (at will): mage hand, minor illusion, ray of frost 1st level (4 slots): charm person, detect magic, sleep 2nd level (3 slots): detect thoughts, hold person 3rd level (3 slots): lightning bolt, water breathing 4th level (3 slots): blight, dimension door 5th level (2 slots): dominate person', 267);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rejuvenation', 'If it dies, the naga returns to life in 1d6 days and regains all its hit points. Only a wish spell can prevent this trait from functioning.', 267);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (267, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (267, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (268, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (268, 268, 'null', 0.25, 13, 2, 5, 15, 'Leather Armor', 'Sprite');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (268, 268, 'null', 0.25, 13, 2, 5, 15, 'Leather Armor', 'Sprite', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/115/315/315/636252746444973630.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 2, 18);
@@ -7111,8 +7847,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortbo
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (268, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (268, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (268, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (269, 8, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (269, 269, 'null', 1, 16, 27, 3, 12, '', 'Spy');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (269, 269, 'null', 1, 16, 27, 3, 12, '', 'Spy', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 2, 15);
@@ -7138,8 +7876,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Cunning Action', 'On each of its turns, the spy can use a bonus action to take the Dash, Disengage, or Hide action.', 269);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sneak Attack (1/Turn)', 'The spy deals an extra 7 (2d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the spy that isn''t incapacitated and the spy doesn''t have disadvantage on the attack roll.', 269);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (269, 65);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (270, 6, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (270, 270, 'null', 0.25, 10, 21, 1, 10, '', 'Steam Mephit');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (270, 270, 'null', 0.25, 10, 21, 1, 10, '', 'Steam Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/113/315/315/636252745841820724.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 2, 11);
@@ -7155,16 +7895,18 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 270,
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 270, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 270, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (270, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (270, '4', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (270, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (270, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (270, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Steam Breath (Recharge 6)', 'The mephit exhales a 15- foot cone of scalding steam. Each creature in that area must succeed on a DC 10 Dexterity saving throw, taking 4 (1d8) fire damage on a failed save, or half as much damage on a successful one.', 270);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 2 (1d4) slashing damage plus 2 (1d4) fire damage.', 270);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Death Burst', 'When the mephit dies, it explodes in a cloud of steam. Each creature within 5 feet of the mephit must succeed on a DC 10 Dexterity saving throw or take 4 (1d8) fire damage.', 270);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', '(1/Day). The mephit can innately cast blur, requiring no material components. Its innate spellcasting ability is Charisma.', 270);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (270, 24);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (270, 47);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (271, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (271, 271, 'null', 0.125, 9, 2, 5, 14, 'Natural Armor', 'Stirge');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (271, 271, 'null', 0.125, 9, 2, 5, 14, 'Natural Armor', 'Stirge', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/111/1000/1000/636252745395103202.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 2, 16);
@@ -7181,8 +7923,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 271,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 271, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Blood Drain', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage, and the stirge attaches to the target. While attached, the stirge doesn''t attack. Instead, at the start of each of the stirge''s turns, the target loses 5 (1d4 + 3) hit points due to blood loss.The stirge can detach itself by spending 5 feet of its movement. It does so after it drains 10 hit points of blood from the target or the target dies. A creature, including the target, can use its action to detach the stirge.', 271);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (271, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (272, 12, 11, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (272, 272, 'null', 7, 14, 126, 6, 17, 'Natural Armor', 'Stone Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (272, 272, 'null', 7, 14, 126, 6, 17, 'Natural Armor', 'Stone Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/109/315/315/636252744518731463.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 2, 15);
@@ -7206,8 +7950,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stone Camouflage', 'The giant has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.', 272);
 INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (272, 'If a rock or similar object is hurled at the giant, the giant can, with a successful DC 10 Dexterity saving throw, catch the missile and take no bludgeoning damage from it.', 'Rock Catching');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (272, 35);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (273, 10, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (273, 273, 'null', 10, 10, 178, 4, 17, 'Natural Armor', 'Stone Golem');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (273, 273, 'null', 10, 10, 178, 4, 17, 'Natural Armor', 'Stone Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/107/315/315/636252743780112834.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 2, 9);
@@ -7227,11 +7973,11 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (27
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (273, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (273, '8');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (273, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (273, '9', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (273, '10', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (273, '2', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (273, '8', true, false, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (273, '12', true, false, false, true, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (273, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (273, '10', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (273, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (273, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (273, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 19 (3d8 + 6) bludgeoning damage.', 273);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slow (Recharge 5–6)', 'The golem targets one or more creatures it can see within 10 feet of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can''t use reactions, its speed is halved, and it can''t make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 273);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The golem makes two slam attacks.', 273);
@@ -7239,8 +7985,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic R
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Immutable Form', 'The golem is immune to any spell or effect that would alter its form.', 273);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Weapons', 'The golem''s weapon attacks are magical.', 273);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (273, 21);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (274, 12, 20, 100);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (274, 274, 'null', 13, 19, 230, 6, 16, 'Scale Mail', 'Storm Giant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (274, 274, 'null', 13, 19, 230, 6, 16, 'Scale Mail', 'Storm Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/105/315/315/636252743254029469.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 1, 29);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 2, 14);
@@ -7262,9 +8010,9 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (14, 274, '
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 274, '12');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 274, '6');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 274, '3');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (274, '6', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (274, '13', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (274, '3', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (274, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (274, '6', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (274, '13', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rock', 'Ranged Weapon Attack: +14 to hit, range 60/240 ft., one target. Hit: 35 (4d12 + 9) bludgeoning damage.', 274);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Strike (Recharge 5–6)', 'The giant hurls a magical lightning bolt at a point it can see within 500 feet of it. Each creature within 10 feet of that point must make a DC 17 Dexterity saving throw, taking 54 (12d8) lightning damage on a failed save, or half as much damage on a successful one.', 274);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greatsword', 'Melee Weapon Attack: +14 to hit, reach 10 ft., one target. Hit: 30 (6d6 + 9) slashing damage.', 274);
@@ -7273,8 +8021,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate Spellcasting', 'The giant''s innate spellcasting ability is Charisma (spell save DC 17). It can innately cast the following spells, requiring no material components: At will: detect magic, feather fall, levitate, light 3/day each: control weather, water breathing', 274);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (274, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (274, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (275, 8, 12, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (275, 275, 'null', 4, 15, 66, 3, 15, 'Natural Armor', 'Succubus/Incubus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (275, 275, 'null', 4, 15, 66, 3, 15, 'Natural Armor', 'Succubus/Incubus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/103/315/315/636252742573312994.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 2, 17);
@@ -7294,13 +8044,20 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 275, '7
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 275, '12');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 275, '14');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 275, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (275, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (275, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (275, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (275, '9', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (275, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (275, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (275, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (275, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (275, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (275, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (275, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (275, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (275, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (275, '9', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (275, '9', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (275, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (275, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (275, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (275, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (275, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (275, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw (Fiend Form Only)', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.', 275);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Charm', 'One humanoid the fiend can see within 30 feet of it must succeed on a DC 15 Wisdom saving throw or be magically charmed for 1 day. The charmed target obeys the fiend''s verbal or telepathic commands. If the target suffers any harm or receives a suicidal command, it can repeat the saving throw, ending the effect on a success. If the target successfully saves against the effect, or if the effect on it ends, the target is immune to this fiend''s Charm for the next 24 hours.The fiend can have only one target charmed at a time. If it charms another, the effect on the previous target ends.', 275);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Draining Kiss', 'The fiend kisses a creature charmed by it or a willing creature. The target must make a DC 15 Constitution saving throw against this magic, taking 32 (5d10 + 5) psychic damage on a failed save, or half as much damage on a successful one. The target''s hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.', 275);
@@ -7311,8 +8068,10 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (275, 4);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (275, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (275, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (275, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (276, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (276, 276, 'null', 0.25, 11, 22, 3, 12, '', 'Swarm of Bats');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (276, 276, 'null', 0.25, 11, 22, 3, 12, '', 'Swarm of Bats', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/906/315/315/636334289313689439.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 2, 15);
@@ -7335,16 +8094,18 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (27
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (276, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (276, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (276, '3');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (276, '2', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (276, '8', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (276, '12', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (276, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (276, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (276, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite ', 'Melee Weapon Attack: +4 to hit, reach 0 ft., one creature in the swarm''s space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing damage if the swarm has half of its hit points or fewer.', 276);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm', 'The swarm can occupy another creature’s space and vice versa, and the swarm can move through any opening large enough for a Tiny bat. The swarm can’t regain hit points or gain temporary hit points.', 276);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing', 'The swarm has advantage on Wisdom (Perception) checks that rely on hearing.', 276);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echolocation', 'The swarm can’t use its blindsight while deafened.', 276);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (276, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (277, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (277, 277, 'null', 0.5, 8, 22, 3, 12, 'Natural Armor', 'Swarm of Insects');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (277, 277, 'null', 0.5, 8, 22, 3, 12, 'Natural Armor', 'Swarm of Insects', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 2, 13);
@@ -7367,14 +8128,16 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (27
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (277, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (277, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (277, '3');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (277, '2', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (277, '8', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (277, '12', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (277, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (277, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (277, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm''s space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.', 277);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm', 'The swarm can occupy another creature''s space and vice versa, and the swarm can move through any opening large enough for a Tiny insect. The swarm can''t regain hit points or gain temporary hit points.', 277);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (277, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (278, 8, 8, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (278, 278, 'null', 2, 10, 36, 3, 14, '', 'Swarm of Poisonous Snakes');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (278, 278, 'null', 2, 10, 36, 3, 14, '', 'Swarm of Poisonous Snakes', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 2, 18);
@@ -7397,14 +8160,16 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (27
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (278, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (278, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (278, '3');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (278, '2', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (278, '8', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (278, '12', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (278, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (278, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (278, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', '. Melee Weapon Attack: +6 to hit, reach 0 ft., one creature in the swarm''s space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer. The target must make a DC 10 Constitution saving throw, taking 14 (4d6) poison damage on a failed save, or half as much damage on a successful one.', 278);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm', 'The swarm can occupy another creature''s space and vice versa, and the swarm can move through any opening large enough for a Tiny snake. The swarm can''t regain hit points or gain temporary hit points.', 278);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (278, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (279, 8, 8, -8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (279, 279, 'null', 1, 8, 28, 3, 13, '', 'Swarm of Quippers');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (279, 279, 'null', 1, 8, 28, 3, 13, '', 'Swarm of Quippers', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/276/315/315/636379781035768521.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 2, 16);
@@ -7427,16 +8192,18 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (27
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (279, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (279, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (279, '3');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (279, '2', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (279, '8', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (279, '12', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (279, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (279, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (279, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', '. Melee Weapon Attack: +5 to hit, reach 0 ft., one creature in the swarm''s space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing damage if the swarm has half of its hit points or fewer.', 279);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm', 'The swarm can occupy another creature''s space and vice versa, and the swarm can move through any opening large enough for a Tiny quipper. The swarm can''t regain hit points or gain temporary hit points.', 279);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Breathing', 'The swarm can breathe only underwater.', 279);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood Frenzy', 'The swarm has advantage on melee attack rolls against any creature that doesn''t have all its hit points.', 279);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (279, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (280, 8, 7, -7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (280, 280, 'null', 0.25, 10, 24, 3, 10, '', 'Swarm of Rats');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (280, 280, 'null', 0.25, 10, 24, 3, 10, '', 'Swarm of Rats', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/908/315/315/636334289541603972.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 1, 9);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 2, 11);
@@ -7458,15 +8225,17 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (28
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (280, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (280, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (280, '3');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (280, '2', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (280, '8', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (280, '12', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (280, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (280, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (280, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', '. Melee Weapon Attack: +2 to hit, reach 0 ft., one target in the swarm''s space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.', 280);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm', 'The swarm can occupy another creature''s space and vice versa, and the swarm can move through any opening large enough for a Tiny rat. The swarm can''t regain hit points or gain temporary hit points.', 280);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The swarm has advantage on Wisdom (Perception) checks that rely on smell.', 280);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (280, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (281, 8, 7, -7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (281, 281, 'null', 0.25, 15, 24, 3, 12, '', 'Swarm of Ravens');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (281, 281, 'null', 0.25, 15, 24, 3, 12, '', 'Swarm of Ravens', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/555/315/315/636376341743427326.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 2, 14);
@@ -7489,14 +8258,16 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (28
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (281, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (281, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (281, '3');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (281, '2', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (281, '8', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (281, '12', false, true, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (281, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (281, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (281, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beaks', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target in the swarm''s space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.', 281);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm', 'The swarm can occupy another creature''s space and vice versa, and the swarm can move through any opening large enough for a Tiny raven. The swarm can''t regain hit points or gain temporary hit points.', 281);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (281, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (282, 20, 33, 330);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (282, 282, 'The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The tarrasque regains spent legendary actions at the start of its turn.', 30, 10, 676, 2, 25, 'Natural Armor', 'Tarrasque');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (282, 282, 'The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The tarrasque regains spent legendary actions at the start of its turn.', 30, 10, 676, 2, 25, 'Natural Armor', 'Tarrasque', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/101/1000/1000/636252741877524077.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 2, 11);
@@ -7517,11 +8288,11 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (28
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (282, '4');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (282, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (282, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (282, '4', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (282, '9', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (282, '2', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (282, '8', true, false, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (282, '12', true, false, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (282, '4', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (282, '9', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (282, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (282, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (282, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Frightful Presence', 'Each creature of the tarrasque''s choice within 120 feet of it and aware of it must succeed on a DC 17 Wisdom saving throw or become frightened for 1 minute. A creature can repeat the saving throw at the end of each of its turns, with disadvantage if the tarrasque is within line of sight, ending the effect on itself on a success. If a creature''s saving throw is successful or the effect ends for it, the creature is immune to the tarrasque''s Frightful Presence for the next 24 hours.', 282);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +19 to hit, reach 10 ft., one target. Hit: 36 (4d12 + 10) piercing damage. If the target is a creature, it is grappled (escape DC 20). Until this grapple ends, the target is restrained, and the tarrasque can''t bite another target.', 282);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +19 to hit, reach 20ft., one target. Hit: 24 (4d6 + 10) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be knocked prone.', 282);
@@ -7537,8 +8308,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (282, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (282, 'The tarrasque moves up to half its speed.', 'Move');
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (282, 'The tarrasque makes one claw attack or tail attack.', 'Attack');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (282, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (283, 8, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (283, 283, 'null', 0.5, 10, 32, 3, 11, 'Leather Armor', 'Thug');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (283, 283, 'null', 0.5, 10, 32, 3, 11, 'Leather Armor', 'Thug', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/99/1000/1000/636252741335519081.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 2, 11);
@@ -7557,8 +8330,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Heavy C
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The thug makes two melee attacks.', 283);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The thug has advantage on an attack roll against a creature if at least one of the thug''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 283);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (283, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (284, 10, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (284, 284, 'null', 1, 13, 37, 4, 12, '', 'Tiger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (284, 284, 'null', 1, 13, 37, 4, 12, '', 'Tiger', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 2, 15);
@@ -7579,8 +8354,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The tiger has advantage on Wisdom (Perception) checks that rely on smell.', 284);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce', 'If the tiger moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.', 284);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (284, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (285, 12, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (285, 285, 'null', 9, 13, 138, 6, 16, 'Natural Armor', 'Treant');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (285, 285, 'null', 9, 13, 138, 6, 16, 'Natural Armor', 'Treant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/97/315/315/636252740537990664.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 2, 8);
@@ -7593,9 +8370,9 @@ INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (285, '10');
 INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (285, '2');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 285, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (285, '2', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (285, '8', false, true, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (285, '4', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (285, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (285, '8', false);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (285, '4');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 16 (3d6 + 6) bludgeoning damage.', 285);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rock', 'Ranged Weapon Attack: +10 to hit, range 60/180 ft., one target. Hit: 28 (4d10 + 6) bludgeoning damage.', 285);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Animate Trees (1/Day)', 'The treant magically animates one or two trees it can see within 60 feet of it. These trees have the same statistics as a treant, except they have Intelligence and Charisma scores of 1, they can''t speak, and they have only the Slam action option. An animated tree acts as an ally of the treant. The tree remains animate for 1 day or until it dies; until the treant dies or is more than 120 feet from the tree; or until the treant takes a bonus action to turn it back into an inanimate tree. The tree then takes root if possible.', 285);
@@ -7606,8 +8383,10 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (285, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (285, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (285, 27);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (285, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (286, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (286, 286, 'null', 0.125, 10, 11, 3, 12, 'Hide Armor', 'Tribal Warrior');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (286, 286, 'null', 0.125, 10, 11, 3, 12, 'Hide Armor', 'Tribal Warrior', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 2, 11);
@@ -7623,8 +8402,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 286,
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spear', 'Melee or Ranged Weapon Attack: +3 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 4 (1d6 + 1) piercing damage, or 5 (1d8 + 1) piercing damage if used with two hands to make a melee attack.', 286);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The warrior has advantage on an attack roll against a creature if at least one of the warrior''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 286);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (286, 12);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (287, 12, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (287, 287, 'null', 5, 10, 95, 6, 13, 'Natural Armor', 'Triceratops');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (287, 287, 'null', 5, 10, 95, 6, 13, 'Natural Armor', 'Triceratops', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 2, 9);
@@ -7641,8 +8422,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Stomp',
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Gore', 'Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 24 (4d8 + 6) piercing damage.', 287);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the triceratops moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the triceratops can make one stomp attack against it as a bonus action.', 287);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (287, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (288, 10, 8, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (288, 288, 'null', 5, 12, 84, 4, 15, 'Natural Armor', 'Troll');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (288, 288, 'null', 5, 12, 84, 4, 15, 'Natural Armor', 'Troll', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/95/315/315/636252739682234623.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 2, 13);
@@ -7663,8 +8446,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Regeneration', 'The troll regains 10 hit points at the start of its turn. If the troll takes acid or fire damage, this trait doesn''t function at the start of the troll''s next turn. The troll dies only if it starts its turn with 0 hit points and doesn''t regenerate.', 288);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The troll has advantage on Wisdom (Perception) checks that rely on smell.', 288);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (288, 35);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (289, 6, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (289, 289, 'null', 0.125, 9, 4, 1, 13, 'Natural Armor', 'Twig Blight');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (289, 289, 'null', 0.125, 9, 4, 1, 13, 'Natural Armor', 'Twig Blight', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/464/1000/1000/636376286997771487.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 2, 13);
@@ -7681,12 +8466,14 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 289, '1
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 289, '5');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (289, '9');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (289, '10');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (289, '4', false, false, true, false, false, false);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (289, '4');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) piercing damage.', 289);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the blight remains motionless, it is indistinguishable from a dead shrub.', 289);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (289, 16);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (290, 12, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (290, 290, 'null', 8, 14, 136, 6, 13, 'Natural Armor', 'Tyrannosaurus Rex');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (290, 290, 'null', 8, 14, 136, 6, 13, 'Natural Armor', 'Tyrannosaurus Rex', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/594/1000/1000/636376369004412963.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 2, 10);
@@ -7704,8 +8491,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 'Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 20 (3d8 + 7) bludgeoning damage.', 290);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The tyrannosaurus makes two attacks: one with its bite and one with its tail. It can''t make both attacks against the same target.', 290);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (290, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (291, 10, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (291, 291, 'The unicorn can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The unicorn regains spent legendary actions at the start of its turn.', 5, 13, 67, 4, 12, '', 'Unicorn');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (291, 291, 'The unicorn can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The unicorn regains spent legendary actions at the start of its turn.', 5, 13, 67, 4, 12, '', 'Unicorn', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/93/1000/1000/636252739248798123.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 2, 14);
@@ -7722,7 +8511,7 @@ INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 291, '
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (291, '6');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (291, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (291, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (291, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (291, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.', 291);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Horn', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.', 291);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Healing Touch (3/Day)', 'The unicorn touches another creature with its horn. The target magically regains 11 (2d8 + 2) hit points. In addition, the touch removes all diseases and neutralizes all poisons afflicting the target.', 291);
@@ -7739,8 +8528,10 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (291, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (291, 4);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (291, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (291, 69);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (292, 8, 17, 68);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (292, 292, 'The vampire can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The vampire regains spent legendary actions at the start of its turn.', 13, 17, 144, 3, 16, 'Natural Armor', 'Vampire');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (292, 292, 'The vampire can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The vampire regains spent legendary actions at the start of its turn.', 13, 17, 144, 3, 16, 'Natural Armor', 'Vampire', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/91/1000/1000/636252738665379794.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 2, 18);
@@ -7759,10 +8550,14 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 292,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 292, '17');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 292, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 292, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (292, '7', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (292, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (292, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (292, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (292, '7', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (292, '7', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (292, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (292, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (292, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (292, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (292, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (292, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Unarmed Strike (Vampire Form Only)', 'Melee Weapon Attack: +9 to hit, reach 5 ft., one creature. Hit: 8 (1d8 + 4) bludgeoning damage. Instead of dealing damage, the vampire can grapple the target (escape DC 18).', 292);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Children of the Night (1/Day)', 'The vampire magically calls 2d4 swarms of bats or rats (swarm of bats, swarm of rats), provided that the sun isn''t up. While outdoors, the vampire can call 3d6 wolves (wolf) instead. The called creatures arrive in 1d4 rounds, acting as allies of the vampire and obeying its spoken commands. The beasts remain for 1 hour, until the vampire dies, or until the vampire dismisses them as a bonus action.', 292);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite (Bat or Vampire Form Only)', 'Melee Weapon Attack: +9 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 7 (1d6 + 4) piercing damage plus 10 (3d6) necrotic damage. The target''s hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0. A humanoid slain in this way and then buried in the ground rises the following night as a vampire spawn under the vampire''s control.', 292);
@@ -7778,8 +8573,10 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (292, '
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (292, 'The vampire moves up to its speed without provoking opportunity attacks.', 'Move');
 INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (292, '(Costs 2 Actions). The vampire makes one bite attack.', 'Bite');
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (292, 22);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (293, 8, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (293, 293, 'null', 5, 13, 82, 3, 15, 'Natural Armor', 'Vampire Spawn');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (293, 293, 'null', 5, 13, 82, 3, 15, 'Natural Armor', 'Vampire Spawn', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/89/1000/1000/636252738148839638.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 2, 16);
@@ -7797,10 +8594,14 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 293,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 293, '17');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 293, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 293, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (293, '7', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (293, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (293, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (293, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (293, '7', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (293, '7', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (293, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (293, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (293, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (293, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (293, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (293, '12', false);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 8 (2d4 + 3) slashing damage. Instead of dealing damage, the vampire can grapple the target (escape DC 13).', 293);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one willing creature, or a creature that is grappled by the vampire, incapacitated, or restrained. Hit: 6 (1d6 + 3) piercing damage plus 7 (2d6) necrotic damage. The target''s hit point maximum is reduced by an amount equal to the necrotic damage taken, and the vampire regains hit points equal to that amount. The reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.', 293);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The vampire makes two attacks, only one of which can be a bite attack.', 293);
@@ -7808,8 +8609,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Regener
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spider Climb', 'The vampire can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.', 293);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Vampire Weaknesses', 'The vampire has the following flaws: Forbiddance. The vampire can''t enter a residence without an invitation from one of the occupants. Harmed by Running Water. The vampire takes 20 acid damage when it ends its turn in running water. Stake to the Heart. The vampire is destroyed if a piercing weapon made of wood is driven into its heart while it is incapacitated in its resting place. Sunlight Hypersensitivity. The vampire takes 20 radiant damage when it starts its turn in sunlight. While in sunlight, it has disadvantage on attack rolls and ability checks.', 293);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (293, 22);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (294, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (294, 294, 'null', 3, 12, 58, 3, 17, 'Splint', 'Veteran');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (294, 294, 'null', 3, 12, 58, 3, 17, 'Splint', 'Veteran', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 2, 13);
@@ -7829,8 +8632,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortsw
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Heavy Crossbow', 'Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6 (1d10 + 1) piercing damage.', 294);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.', 294);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (294, 52);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (295, 8, 4, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (295, 295, 'null', 0.25, 6, 18, 3, 5, '', 'Violet Fungus');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (295, 295, 'null', 0.25, 6, 18, 3, 5, '', 'Violet Fungus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/573/315/315/636376357964412799.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 2, 1);
@@ -7851,8 +8656,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Rotting
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The fungus makes 1d4 Rotting Touch attacks.', 295);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False Appearance', 'While the violet fungus remains motionless, it is indistinguishable from an ordinary fungus.', 295);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (295, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (296, 10, 11, 44);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (296, 296, 'null', 6, 11, 104, 4, 15, 'Natural Armor', 'Vrock');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (296, 296, 'null', 6, 11, 104, 4, 15, 'Natural Armor', 'Vrock', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/87/315/315/636252737538172594.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 2, 15);
@@ -7871,13 +8678,20 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 296,
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 296, '2');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 296, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (296, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (296, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (296, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (296, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (296, '6', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (296, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (296, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (296, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (296, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (296, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (296, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (296, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (296, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (296, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (296, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (296, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (296, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (296, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (296, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (296, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (296, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (296, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beak', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.', 296);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Stunning Screech (1/Day)', 'The vrock emits a horrific screech. Each creature within 20 feet of it that can hear it and that isn''t a demon must succeed on a DC 14 Constitution saving throw or be stunned until the end of the vrock''s next turn.', 296);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Talons', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 14 (2d10 + 3) slashing damage.', 296);
@@ -7886,8 +8700,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic Resistance', 'The vrock has advantage on saving throws against spells and other magical effects.', 296);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (296, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (296, 61);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (297, 8, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (297, 297, 'null', 0, 13, 5, 3, 10, '', 'Vulture');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (297, 297, 'null', 0, 13, 5, 3, 10, '', 'Vulture', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 2, 10);
@@ -7906,8 +8722,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beak', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sight and Smell', 'The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell.', 297);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The vulture has advantage on an attack roll against a creature if at least one of the vulture''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 297);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (297, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (298, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (298, 298, 'null', 0.5, 11, 19, 4, 11, '', 'Warhorse');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (298, 298, 'null', 0.5, 11, 19, 4, 11, '', 'Warhorse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 2, 12);
@@ -7923,8 +8741,10 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 298,
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.', 298);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampling Charge', 'If the horse moves at least 20 feet straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action.', 298);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (298, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (299, 10, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (299, 299, 'null', 0.5, 9, 22, 4, 13, 'Barding Scraps', 'Warhorse Skeleton');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (299, 299, 'null', 0.5, 9, 22, 4, 13, 'Barding Scraps', 'Warhorse Skeleton', 'https://media-waterdeep.cursecdn.com/attachments/2/660/undead.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 2, 12);
@@ -7940,12 +8760,14 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (60, 299,
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 299, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (299, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (299, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (299, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (299, '2', false, false, true, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (299, '9', true);
+INSERT INTO dnd.monster_vulnerabilities (monster_id, damage_type_id) VALUES (299, '2');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.', 299);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (299, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (300, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (300, 300, 'null', 5, 10, 114, 4, 14, 'Natural Armor', 'Water Elemental');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (300, 300, 'null', 5, 10, 114, 4, 14, 'Natural Armor', 'Water Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/84/315/315/636252736680781387.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 2, 14);
@@ -7968,19 +8790,26 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (30
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (300, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (300, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (300, '15');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (300, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (300, '1', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (300, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (300, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (300, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (300, '1', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (300, '1', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (300, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (300, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (300, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (300, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (300, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (300, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (300, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (300, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) bludgeoning damage.', 300);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Whelm (Recharge 4–6)', 'Each creature in the elemental''s space must make a DC 15 Strength saving throw. On a failure, a target takes 13 (2d8 + 4) bludgeoning damage. If it is Large or smaller, it is also grappled (escape DC 14). Until this grapple ends, the target is restrained and unable to breathe unless it can breathe water. If the saving throw is successful, the target is pushed out of the elemental''s space.The elemental can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the elemental''s turns, each target grappled by it takes 13 (2d8 + 4) bludgeoning damage. A creature within 5 feet of the elemental can pull a creature or object out of it by taking an action to make a DC 14 Strength and succeeding.', 300);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The elemental makes two slam attacks.', 300);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water Form', 'The elemental can enter a hostile creature''s space and stop there. It can move through a space as narrow as 1 inch wide without squeezing.', 300);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Freeze', 'If the elemental takes cold damage, it partially freezes; its speed is reduced by 20 feet until the end of its next turn.', 300);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (300, 47);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (301, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (301, 301, 'null', 0, 13, 1, 5, 13, '', 'Weasel');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (301, 301, 'null', 0, 13, 1, 5, 13, '', 'Weasel', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 2, 16);
@@ -7998,8 +8827,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 301, '1
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 piercing damage.', 301);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The weasel has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 301);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (301, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (302, 8, 18, 54);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (302, 302, 'null', 5, 17, 135, 3, 10, 'In Humanoid Form, 11 In Bear And Hybrid Form', 'Werebear');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (302, 302, 'null', 5, 17, 135, 3, 10, 'In Humanoid Form, 11 In Bear And Hybrid Form', 'Werebear', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/82/1000/1000/636252736005297867.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 2, 10);
@@ -8014,9 +8845,12 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (302, '20');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 302, '1');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 302, '8');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 302, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (302, '2', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (302, '8', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (302, '12', true, false, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (302, '2', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (302, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (302, '8', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (302, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (302, '12', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (302, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Greataxe (Humanoid or Hybrid Form Only)', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) slashing damage.', 302);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite (Bear or Hybrid Form Only)', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 15 (2d10 + 4) piercing damage. If the target is a humanoid, it must succeed on a DC 14 Constitution saving throw or be cursed with werebear lycanthropy.', 302);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw (Bear or Hybrid Form Only)', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 13 (2d8 + 4) slashing damage.', 302);
@@ -8024,8 +8858,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapechanger', 'The werebear can use its action to polymorph into a Large bear-humanoid hybrid or into a Large bear, or back into its true form, which is humanoid. Its statistics, other than its size and AC, are the same in each form. Any equipment it is wearing or carrying isn''t transformed. It reverts to its true form if it dies.', 302);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The werebear has advantage on Wisdom (Perception) checks that rely on smell.', 302);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (302, 19);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (303, 8, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (303, 303, 'null', 4, 12, 78, 3, 10, 'In Humanoid Form, 11 In Boar Or Hybrid Form', 'Wereboar');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (303, 303, 'null', 4, 12, 78, 3, 10, 'In Humanoid Form, 11 In Boar Or Hybrid Form', 'Wereboar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/80/315/315/636252735506840152.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 2, 10);
@@ -8040,9 +8876,12 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (303, '4');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 303, '1');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 303, '6');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 303, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (303, '2', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (303, '8', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (303, '12', true, false, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (303, '2', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (303, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (303, '8', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (303, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (303, '12', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (303, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack (Humanoid or Hybrid Form Only)', 'The wereboar makes two attacks, only one of which can be with its tusks.', 303);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Maul (Humanoid or Hybrid Form Only)', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage.', 303);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tusks (Boar or Hybrid Form Only)', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with wereboar lycanthropy.', 303);
@@ -8050,8 +8889,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Relentl
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapechanger', 'The wereboar can use its action to polymorph into a boar-humanoid hybrid or into a boar, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn''t transformed. It reverts to its true form if it dies.', 303);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge (Boar or Hybrid Form Only)', 'If the wereboar moves at least 15 feet straight toward a target and then hits it with its tusks on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.', 303);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (303, 14);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (304, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (304, 304, 'null', 2, 12, 33, 3, 12, '', 'Wererat');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (304, 304, 'null', 2, 12, 33, 3, 12, '', 'Wererat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/78/1000/1000/636252735121410517.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 2, 15);
@@ -8067,9 +8908,12 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 304,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 304, '17');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 304, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 304, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (304, '2', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (304, '8', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (304, '12', true, false, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (304, '2', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (304, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (304, '8', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (304, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (304, '12', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (304, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack (Humanoid or Hybrid Form Only)', 'The wererat makes two attacks, only one of which can be a bite.', 304);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hand Crossbow (Humanoid or Hybrid Form Only)', 'Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage.', 304);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite (Rat or Hybrid Form Only)', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 11 Constitution saving throw or be cursed with wererat lycanthropy.', 304);
@@ -8077,8 +8921,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortsw
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapechanger', 'The wererat can use its action to polymorph into a rat-humanoid hybrid or into a giant rat, or back into its true form, which is humanoid. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn''t transformed. It reverts to its true form if it dies.', 304);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Smell', 'The wererat has advantage on Wisdom (Perception) checks that rely on smell.', 304);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (304, 13);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (305, 8, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (305, 305, 'null', 4, 15, 120, 3, 12, '', 'Weretiger');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (305, 305, 'null', 4, 15, 120, 3, 12, '', 'Weretiger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/76/1000/1000/636252734783831163.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 2, 15);
@@ -8095,9 +8941,12 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 305,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 305, '17');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 305, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 305, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (305, '2', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (305, '8', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (305, '12', true, false, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (305, '2', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (305, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (305, '8', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (305, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (305, '12', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (305, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack (Humanoid or Hybrid Form Only)', 'In humanoid form, the weretiger makes two scimitar attacks or two longbow attacks. In hybrid form, it can attack like a humanoid or make two claw attacks.', 305);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow (Humanoid or Hybrid Form Only)', 'Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.', 305);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite (Tiger or Hybrid Form Only)', 'Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage. If the target is a humanoid, it must succeed on a DC 13 Constitution saving throw or be cursed with weretiger lycanthropy.', 305);
@@ -8107,8 +8956,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapech
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The weretiger has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 305);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce (Tiger or Hybrid Form Only)', 'If the weretiger moves at least 15 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the weretiger can make one bite attack against it as a bonus action.', 305);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (305, 36);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (306, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (306, 306, 'null', 3, 14, 58, 3, 11, 'In Humanoid Form, 12 In Wolf Or Hybrid Form', 'Werewolf');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (306, 306, 'null', 3, 14, 58, 3, 11, 'In Humanoid Form, 12 In Wolf Or Hybrid Form', 'Werewolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/74/1000/1000/636252734224239957.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 2, 13);
@@ -8124,9 +8975,12 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (30, 306,
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 306, '4');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 306, '17');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 306, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (306, '2', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (306, '8', true, false, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (306, '12', true, false, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (306, '2', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (306, '2', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (306, '8', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (306, '8', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (306, '12', true, '2');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (306, '12', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite (Wolf or Hybrid Form Only)', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with werewolf lycanthropy.', 306);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack (Humanoid or Hybrid Form Only)', 'The werewolf makes two attacks: one with its bite and one with its claws or spear.', 306);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spear (Humanoid Form Only)', 'Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack.', 306);
@@ -8134,8 +8988,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claws (
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shapechanger', 'The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn''t transformed. It reverts to its true form if it dies.', 306);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 306);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (306, 59);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (307, 8, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (307, 307, 'null', 2, 14, 32, 3, 16, 'Natural Armor', 'White Dragon Wyrmling');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (307, 307, 'null', 2, 14, 32, 3, 16, 'Natural Armor', 'White Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/415/1000/1000/636252789083357808.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 2, 10);
@@ -8159,12 +9015,14 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (2, 307, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 307, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 307, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (10, 307, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (307, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (307, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 2 (1d4) cold damage.', 307);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Cold Breath (Recharge 5–6)', 'The dragon exhales an icy blast of hail in a 15-foot cone. Each creature in that area must make a DC 12 Constitution saving throw, taking 22 (5d8) cold damage on a failed save, or half as much damage on a successful one.', 307);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (307, 11);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (308, 8, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (308, 308, 'null', 3, 13, 45, 3, 14, 'Studded Leather', 'Wight');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (308, 308, 'null', 3, 13, 45, 3, 14, 'Studded Leather', 'Wight', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/56/315/315/636252726349692861.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 2, 14);
@@ -8182,19 +9040,26 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 308, '1
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 308, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (308, '11');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (308, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (308, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (308, '7', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (308, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (308, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (308, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (308, '7', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (308, '7', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (308, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (308, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (308, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (308, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (308, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (308, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (308, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (308, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longsword', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage, or 7 (1d10 + 2) slashing damage if used with two hands.', 308);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Life Drain', 'Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) necrotic damage. The target must succeed on a DC 13 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.A humanoid slain by this attack rises 24 hours later as a zombie under the wight''s control, unless the humanoid is restored to life or its body is destroyed. The wight can have no more than twelve zombies under its control at one time.', 308);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The wight makes two longsword attacks or two longbow attacks. It can use its Life Drain in place of one longsword attack.', 308);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Longbow', 'Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.', 308);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunlight Sensitivity', 'While in sunlight, the wight has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.', 308);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (308, 22);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (309, 4, 9, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (309, 309, 'null', 2, 12, 22, 5, 19, '', 'Will-o''-Wisp');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (309, 309, 'null', 2, 12, 22, 5, 19, '', 'Will-o''-Wisp', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/585/315/315/636376363763232290.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 2, 28);
@@ -8216,16 +9081,26 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (30
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (309, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (309, '12');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (309, '15');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '6', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '1', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '3', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '4', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '7', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '13', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '2', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '8', false, true, false, false, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (309, '12', false, true, false, false, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '1', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '1', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '7', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '7', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '13', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '13', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '6', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '6', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (309, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (309, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shock', 'Melee Spell Attack: +4 to hit, reach 5 ft., one creature. Hit: 9 (2d8) lightning damage.', 309);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Invisibility', 'The will-o''-wisp and its light magically become invisible until it attacks or uses its Consume Life, or until its concentration ends (as if concentrating on a spell).', 309);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Consume Life', 'As a bonus action, the will-o''-wisp can target one creature it can see within 5 feet of it that has 0 hit points and is still alive. The target must succeed on a DC 10 Constitution saving throw against this magic or die. If the target dies, the will-o''-wisp regains 10 (3d6) hit points.', 309);
@@ -8233,8 +9108,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Variabl
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorporeal Movement', 'The will-o''-wisp can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.', 309);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ephemeral', 'The will-o''-wisp can''t wear or carry anything.', 309);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (309, 22);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (310, 10, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (310, 310, 'null', 3, 15, 75, 4, 13, 'Natural Armor', 'Winter Wolf');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (310, 310, 'null', 3, 15, 75, 4, 13, 'Natural Armor', 'Winter Wolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/54/315/315/636252725270715296.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 2, 13);
@@ -8249,7 +9126,7 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (310, '23');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (50, 310, '1');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 310, '17');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 310, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (310, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (310, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.', 310);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Cold Breath (Recharge 5–6)', 'The wolf exhales a blast of freezing wind in a 15-foot cone. Each creature in that area must make a DC 12 Dexterity saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one.', 310);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 310);
@@ -8258,8 +9135,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Snow Ca
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (310, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (310, 28);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (310, 51);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (311, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (311, 311, 'null', 0.25, 13, 11, 3, 13, 'Natural Armor', 'Wolf');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (311, 311, 'null', 0.25, 13, 11, 3, 13, 'Natural Armor', 'Wolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/482/1000/1000/636376300223855327.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 2, 15);
@@ -8278,8 +9157,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 311);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Tactics', 'The wolf has advantage on attack rolls against a creature if at least one of the wolf''s allies is within 5 feet of the creature and the ally isn''t incapacitated.', 311);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (311, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (312, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (312, 312, 'null', 0.5, 14, 26, 4, 13, 'Natural Armor', 'Worg');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (312, 312, 'null', 0.5, 14, 26, 4, 13, 'Natural Armor', 'Worg', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/52/1000/1000/636252724662073178.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 2, 13);
@@ -8298,8 +9179,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Hearing and Smell', 'The worg has advantage on Wisdom (Perception) checks that rely on hearing or smell.', 312);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (312, 6);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (312, 7);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (313, 8, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (313, 313, 'null', 5, 12, 67, 3, 13, '', 'Wraith');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (313, 313, 'null', 5, 12, 67, 3, 13, '', 'Wraith', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/50/1000/1000/636252724191790008.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 2, 16);
@@ -8322,23 +9205,35 @@ INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (31
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (313, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (313, '13');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (313, '12');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '7', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '9', true, false, false, false, false, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '1', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '3', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '4', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '6', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '13', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '2', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '8', false, true, false, false, true, true);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (313, '12', false, true, false, false, true, true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '1', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '1', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '3', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '3', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '4', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '4', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '6', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '6', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '13', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '13', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '2', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '2', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '8', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '12', false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '7', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '7', true);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (313, '9', true, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (313, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Create Specter', 'The wraith targets a humanoid within 10 feet of it that has been dead for no longer than 1 minute and died violently. The target''s spirit rises as a specter in the space of its corpse or in the nearest unoccupied space. The specter is under the wraith''s control. The wraith can have no more than seven specters under its control at one time.', 313);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Life Drain', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one creature. Hit: 21 (4d8 + 3) necrotic damage. The target must succeed on a DC 14 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the target finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.', 313);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorporeal Movement', 'The wraith can move through other creatures and objects as if they were difficult terrain. It takes 5 (1d10) force damage if it ends its turn inside an object.', 313);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunlight Sensitivity', 'While in sunlight, the wraith has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.', 313);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (313, 22);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (314, 10, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (314, 314, 'null', 6, 14, 110, 4, 13, 'Natural Armor', 'Wyvern');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (314, 314, 'null', 6, 14, 110, 4, 13, 'Natural Armor', 'Wyvern', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/48/315/315/636252723695596000.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 2, 10);
@@ -8359,8 +9254,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Stinger', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one creature. Hit: 11 (2d6 + 4) piercing damage. The target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.', 314);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The wyvern makes two attacks: one with its bite and one with its stinger. While flying, it can use its claws in place of one other attack.', 314);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (314, 18);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (315, 8, 7, 42);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (315, 315, 'null', 5, 16, 73, 3, 19, 'Natural Armor', 'Xorn');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (315, 315, 'null', 5, 16, 73, 3, 19, 'Natural Armor', 'Xorn', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/46/1000/1000/636252723241554579.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 2, 10);
@@ -8378,8 +9275,10 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 315, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 315, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 315, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 315, '3');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (315, '8', false, true, false, true, true, false);
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (315, '12', false, true, false, true, true, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (315, '8', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (315, '8', false, '1');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (315, '12', false, '3');
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, attack_type_exception_id) VALUES (315, '12', false, '1');
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 13 (3d6 + 3) piercing damage.', 315);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The xorn makes three claw attacks and one bite attack.', 315);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.', 315);
@@ -8387,8 +9286,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stone C
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Treasure Sense', 'The xorn can pinpoint, by scent, the location of precious metals and stones, such as coins and gems, within 60 feet of it.', 315);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Earth Glide', 'The xorn can burrow through nonmagical, unworked earth and stone. While doing so, the xorn doesn''t disturb the material it moves through.', 315);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (315, 53);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (316, 10, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (316, 316, 'null', 3, 13, 51, 4, 12, 'Natural Armor', 'Yeti');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (316, 316, 'null', 3, 13, 51, 4, 12, 'Natural Armor', 'Yeti', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/8/662/1000/1000/636313413410825930.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 2, 13);
@@ -8405,7 +9306,7 @@ INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (40, 316,
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 316, '17');
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 316, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 316, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (316, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (316, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Chilling Gaze', 'The yeti targets one creature it can see within 30 feet of it. If the target can see the yeti, the target must succeed on a DC 13 Constitution saving throw against this magic or take 10 (3d6) cold damage and then be paralyzed for 1 minute, unless it is immune to cold damage. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If the target’s saving throw is successful, or if the effect ends on it, the target is immune to the Chilling Gaze of all yetis (but not abominable yetis) for 1 hour.', 316);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The yeti can use its Chilling Gaze and makes two claw attacks.', 316);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 7 (1d6 + 4) slashing damage plus 3 (1d6) cold damage.', 316);
@@ -8414,8 +9315,10 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Snow Camouflage', 'The yeti has advantage on Dexterity (Stealth) checks made to hide in snowy terrain.
 </div>', 316);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (316, 10);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (317, 10, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (317, 317, 'null', 7, 16, 127, 4, 18, 'Natural Armor', 'Young Black Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (317, 317, 'null', 7, 16, 127, 4, 18, 'Natural Armor', 'Young Black Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/70/1000/1000/636252732861675698.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 2, 14);
@@ -8438,7 +9341,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 317, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 317, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 317, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 317, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (317, '1', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (317, '1', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Breath (Recharge 5–6)', 'The dragon exhales acid in a 30­-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 49 (11d8) acid damage on a failed save, or half as much damage on a successful one.', 317);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) acid damage.', 317);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dragon makes three attacks: one with its bite and two with its claws.', 317);
@@ -8446,8 +9349,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 317);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (317, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (317, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (318, 10, 16, 64);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (318, 318, 'null', 9, 19, 152, 4, 18, 'Natural Armor', 'Young Blue Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (318, 318, 'null', 9, 19, 152, 4, 18, 'Natural Armor', 'Young Blue Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/68/1000/1000/636252732434296782.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 2, 10);
@@ -8470,15 +9375,17 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 318, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 318, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 318, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 318, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (318, '6', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (318, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Breath (Recharge 5–6)', 'The dragon exhales lightning in an 60-foot line that is 5 feet wide. Each creature in that line must make a DC 16 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.', 318);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +9 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage plus 5 (1d10) lightning damage.', 318);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dragon makes three attacks: one with its bite and two with its claws.', 318);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.', 318);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (318, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (318, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (319, 10, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (319, 319, 'null', 6, 16, 110, 4, 17, 'Natural Armor', 'Young Brass Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (319, 319, 'null', 6, 16, 110, 4, 17, 'Natural Armor', 'Young Brass Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/66/1000/1000/636252731911060874.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 2, 10);
@@ -8502,7 +9409,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 319, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (5, 319, '14');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 319, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 319, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (319, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (319, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage.', 319);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sleep Breath', 'The dragon exhales sleep gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw or fall unconscious for 5 minutes. This effect ends for a creature if the creature takes damage or someone uses an action to wake it.', 319);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dragon makes three attacks: one with its bite and two with its claws.', 319);
@@ -8511,8 +9418,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath', 'The dragon exhales fire in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 42 (12d6) fire damage on a failed save, or half as much damage on a successful one.', 319);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (319, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (319, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (320, 10, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (320, 320, 'null', 8, 17, 142, 4, 18, 'Natural Armor', 'Young Bronze Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (320, 320, 'null', 8, 17, 142, 4, 18, 'Natural Armor', 'Young Bronze Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/64/315/315/636252731269768088.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 2, 10);
@@ -8536,7 +9445,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 320, '7
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 320, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 320, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 320, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (320, '6', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (320, '6', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Lightning Breath', 'The dragon exhales lightning in a 60- foot line that is 5 feet wide. Each creature in that line must make a DC 15 Dexterity saving throw, taking 55 (10d10) lightning damage on a failed save, or half as much damage on a successful one.', 320);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +8 to hit, reach 10 ft., one target. Hit: 16 (2d10 + 5) piercing damage.', 320);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Repulsion Breath', 'The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 15 Strength saving throw. On a failed save, the creature is pushed 40 feet away from the dragon.', 320);
@@ -8546,8 +9455,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 320);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (320, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (320, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (321, 10, 14, 42);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (321, 321, 'null', 7, 17, 119, 4, 17, 'Natural Armor', 'Young Copper Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (321, 321, 'null', 7, 17, 119, 4, 17, 'Natural Armor', 'Young Copper Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/62/1000/1000/636252729761648292.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 2, 12);
@@ -8571,7 +9482,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 321, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 321, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 321, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 321, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (321, '1', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (321, '1', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage.', 321);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slowing Breath', 'The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 14 Constitution saving throw. On a failed save, the creature can''t use reactions, its speed is halved, and it can''t make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save.', 321);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dragon makes three attacks: one with its bite and two with its claws.', 321);
@@ -8580,8 +9491,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Breath', 'The dragon exhales acid in an 40-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw, taking 40 (9d8) acid damage on a failed save, or half as much damage on a successful one.', 321);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (321, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (321, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (322, 10, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (322, 322, 'null', 10, 19, 178, 4, 18, 'Natural Armor', 'Young Gold Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (322, 322, 'null', 10, 19, 178, 4, 18, 'Natural Armor', 'Young Gold Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/60/1000/1000/636252729283446963.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 2, 14);
@@ -8606,7 +9519,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 322, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (9, 322, '14');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 322, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 322, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (322, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (322, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.', 322);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Weakening Breath', 'The dragon exhales gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Strength saving throw or have disadvantage on Strength-based attack rolls, Strength checks, and Strength saving throws for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 322);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dragon makes three attacks: one with its bite and two with its claws.', 322);
@@ -8616,8 +9529,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Br
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 322);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (322, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (322, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (323, 10, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (323, 323, 'null', 8, 17, 136, 4, 18, 'Natural Armor', 'Young Green Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (323, 323, 'null', 8, 17, 136, 4, 18, 'Natural Armor', 'Young Green Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/58/315/315/636252728834677623.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 2, 12);
@@ -8642,7 +9557,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (7, 323, '1
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 323, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 323, '2');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (323, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (323, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (323, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Poison Breath (Recharge 5–6)', 'The dragon exhales poisonous gas in a 30-foot cone. Each creature in that area must make a DC 14 Constitution saving throw, taking 42 (12d6) poison damage on a failed save, or half as much damage on a successful one.', 323);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 7 (2d6) poison damage.', 323);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dragon makes three attacks: one with its bite and two with its claws.', 323);
@@ -8650,8 +9565,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibious', 'The dragon can breathe air and water.', 323);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (323, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (323, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (324, 10, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (324, 324, 'null', 10, 18, 178, 4, 18, 'Natural Armor', 'Young Red Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (324, 324, 'null', 10, 18, 178, 4, 18, 'Natural Armor', 'Young Red Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/399/315/315/636252784386259001.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 2, 10);
@@ -8674,15 +9591,17 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (4, 324, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (8, 324, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 324, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 324, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (324, '4', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (324, '4', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Breath (Recharge 5–6)', 'The dragon exhales fire in a 30-foot cone. Each creature in that area must make a DC 17 Dexterity saving throw, taking 56 (16d6) fire damage on a failed save, or half as much damage on a successful one.', 324);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 3 (1d6) fire damage.', 324);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dragon makes three attacks: one with its bite and two with its claws.', 324);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +10 to hit, reach 5 ft., one target. Hit: 13 (2d6 + 6) slashing damage.', 324);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (324, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (324, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (325, 10, 16, 80);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (325, 325, 'null', 9, 18, 168, 4, 18, 'Natural Armor', 'Young Silver Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (325, 325, 'null', 9, 18, 168, 4, 18, 'Natural Armor', 'Young Silver Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/401/315/315/636252784740667730.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 2, 10);
@@ -8706,7 +9625,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 325, '6
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 325, '3');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 325, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 325, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (325, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (325, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +10 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage.', 325);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Cold Breath', 'The dragon exhales an icy blast in a 30-foot cone. Each creature in that area must make a DC 17 Constitution saving throw, taking 54 (12d8) cold damage on a failed save, or half as much damage on a successful one.', 325);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Paralyzing Breath', 'The dragon exhales paralyzing gas in a 30-foot cone. Each creature in that area must succeed on a DC 17 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.', 325);
@@ -8715,8 +9634,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath Weapons (Recharge 5–6)', 'The dragon uses one of the following breath weapons.', 325);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (325, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (325, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (326, 10, 14, 56);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (326, 326, 'null', 6, 16, 133, 4, 17, 'Natural Armor', 'Young White Dragon');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (326, 326, 'null', 6, 16, 133, 4, 17, 'Natural Armor', 'Young White Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/403/1000/1000/636252785358767533.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 2, 10);
@@ -8740,7 +9661,7 @@ INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (3, 326, '1
 INSERT INTO dnd.monsters_skills (bonus, monster_id, skill_id) VALUES (6, 326, '12');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (120, 326, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (30, 326, '2');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (326, '3', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (326, '3', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 'Melee Weapon Attack: +7 to hit, reach 10 ft., one target. Hit: 15 (2d10 + 4) piercing damage plus 4 (1d8) cold damage.', 326);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiattack', 'The dragon makes three attacks: one with its bite and two with its claws.', 326);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 'Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.', 326);
@@ -8748,8 +9669,10 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Cold Br
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ice Walk', 'The dragon can move across and climb icy surfaces without needing to make an ability check. Additionally, difficult terrain composed of ice or snow doesn''t cost it extra movement.', 326);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (326, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (326, 28);
+
+
 INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (327, 8, 3, 9);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name) VALUES (327, 327, 'null', 0.25, 8, 22, 3, 8, '', 'Zombie');
+INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (327, 327, 'null', 0.25, 8, 22, 3, 8, '', 'Zombie', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/71/1000/1000/636252733510786769.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 2, 6);
@@ -8765,7 +9688,9 @@ INSERT INTO dnd.monster_type_relation (monster_id, type_id) VALUES (327, '12');
 INSERT INTO dnd.speed_of_monsters (value, monster_id, speed_id) VALUES (20, 327, '1');
 INSERT INTO dnd.monsters_senses (range, monster_id, sense_id) VALUES (60, 327, '1');
 INSERT INTO dnd.monster_condition_immunity (monster_id, condition_id) VALUES (327, '1');
-INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune, is_resistant, is_vulnerable, adamantine_attack_flag, magic_attack_flag, silver_attack_flag) VALUES (327, '9', true, false, false, false, false, false);
+INSERT INTO dnd.monster_damage (monster_id, damage_id, is_immune) VALUES (327, '9', true);
 INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Slam', 'Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage.', 327);
 INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Undead Fortitude', 'If damage reduces the zombie to 0 hit points, it must make a Constitution saving throw with a DC of 5 + the damage taken, unless the damage is radiant or from a critical hit. On a success, the zombie drops to 1 hit point instead.', 327);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (327, 21);
+
+

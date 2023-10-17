@@ -9,20 +9,22 @@ import lombok.Setter;
 
 import java.util.Set;
 
-@Entity
-@Getter
 @Setter
-@Table(name = SQLConfig.DAMAGE_TYPE_TABLE, schema = SQLConfig.SCHEMA)
-public class DamageType {
-    @GeneratedValue
+@Getter
+@Entity
+@Table(name = SQLConfig.ATTACK_TYPE_TABLE, schema = SQLConfig.SCHEMA)
+public class AttackType
+{
     @Id
+    @GeneratedValue
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "damageType", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "attackType", fetch = FetchType.LAZY)
     private Set<MonsterVulnerability> vulnerabilities;
 
-    @OneToMany(mappedBy = "damageType", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "attackTypeException", fetch = FetchType.LAZY)
     private Set<MonsterDamage> damageTakenModifiers;
+
 
 }

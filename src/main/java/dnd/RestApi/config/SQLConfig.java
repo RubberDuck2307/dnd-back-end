@@ -27,6 +27,8 @@ public class SQLConfig {
     public static final String MONSTER_DAMAGE_TABLE = "monster_damage";
     public static final String ABILITY_TABLE = "ability";
     public static final String MONSTER_SAVING_THROWS_TABLE = "monster_saving_throws";
+    public static final String ATTACK_TYPE_TABLE = "attack_type";
+    public static final String MONSTER_VULNERABILITIES_TABLE = "monster_vulnerabilities";
 
 
 
