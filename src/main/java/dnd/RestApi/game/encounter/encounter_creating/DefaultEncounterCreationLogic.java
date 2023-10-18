@@ -1,6 +1,6 @@
 package dnd.RestApi.game.encounter.encounter_creating;
 
-import dnd.RestApi.exception.custom_exception.NoSuchEncounterException;
+import dnd.RestApi.api.exception_handling.custom_exception.NoSuchEncounterException;
 import dnd.RestApi.game.creature.monster.Monster;
 import dnd.RestApi.api.repositories.monster.MonsterRepository;
 import dnd.RestApi.game.encounter.Encounter;
@@ -40,14 +40,14 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
     public ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
                                                       boolean differentKindOfMonsters, int maxAmountOfMonster) {
         return createRandomEncounter(xp, amountOfEncounters, xpTolerance, differentKindOfMonsters, maxAmountOfMonster,
-                true);
+                true, null);
     }
 
 
     @Override
     public ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
                                                       boolean differentKindOfMonsters, int maxAmountOfMonsters,
-                                                      boolean onlyOneKindOfMonsterPerCr) {
+                                                      boolean onlyOneKindOfMonsterPerCr, Long monsterGroupId) {
 
         if (!validateInputForEncounterGeneration(xp, amountOfEncounters, xpTolerance, maxAmountOfMonsters))
             return new ArrayList<>();
@@ -57,30 +57,45 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
         }
 
         if (differentKindOfMonsters) {
-            List<Double> avCrs = encounterDifficultyMap.getCRs();
+
+            List<Double> avCrs = getAvailableCrsForMonsterGroup(monsterGroupId);
 
             ArrayList<ArrayList<Double>> allPossibleCrs = getCrsForEncounter(xp, maxAmountOfMonsters,
                     avCrs, xpTolerance);
 
             if (onlyOneKindOfMonsterPerCr)
-                return generateEncountersFromDatabase(amountOfEncounters, false, allPossibleCrs);
-            else return generateEncountersFromDatabase(amountOfEncounters, true, allPossibleCrs);
+                return generateEncountersFromDatabase(amountOfEncounters, false, allPossibleCrs,
+                        monsterGroupId);
+            else return generateEncountersFromDatabase(amountOfEncounters, true, allPossibleCrs,
+                    monsterGroupId);
 
         } else {
 
             ArrayList<ArrayList<Double>> allPossibleCrs = new ArrayList<>();
-            for (Double cr : encounterDifficultyMap.getCRs()) {
+
+            List<Double> avCrs = getAvailableCrsForMonsterGroup(monsterGroupId);
+
+            for (Double cr : avCrs) { //get all possible crs combinations by passing only one cr at a time
                 allPossibleCrs.addAll(getCrsForEncounter(xp, maxAmountOfMonsters,
                         Collections.singletonList(cr), xpTolerance));
             }
 
-            return generateEncountersFromDatabase(amountOfEncounters, false, allPossibleCrs);
+            return generateEncountersFromDatabase(amountOfEncounters, false, allPossibleCrs, monsterGroupId);
 
         }
     }
 
+    private List<Double> getAvailableCrsForMonsterGroup(Long monsterGroupId) {
+        List<Double> avCrs;
+        if (monsterGroupId == null)
+            avCrs = encounterDifficultyMap.getCRs();
+        else avCrs = monsterRepository.getAllCrWhereMonsterGroupsContaining_Id(monsterGroupId);
+        return avCrs;
+    }
 
-    private boolean validateInputForEncounterGeneration(int xp, int amountOfEncounters, float xpTolerance, int maxAmountOfMonster) {
+
+    private boolean validateInputForEncounterGeneration(int xp, int amountOfEncounters, float xpTolerance, int
+            maxAmountOfMonster) {
         if (xp < 0 || amountOfEncounters < 0 || xpTolerance < 0 || maxAmountOfMonster < 0) {
             throw new IllegalArgumentException("Parameters cannot be negative");
         }
@@ -90,7 +105,8 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
 
 
     private ArrayList<Encounter> generateEncountersFromDatabase(Integer amountOfEncounters, boolean differentKindOfMonsters,
-                                                                ArrayList<ArrayList<Double>> allPossibleCrs) {
+                                                                ArrayList<ArrayList<Double>> allPossibleCrs, Long
+                                                                        monsterGroupId) {
         if (allPossibleCrs.size() == 0) {
             throw new NoSuchEncounterException("No encounter with given parameters exists");
         }
@@ -113,7 +129,8 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
             }
         }
 
-        HashMap<Double, List<Monster>> monstersByCr = monsterRepository.getMonstersByCrAndAmount(amountOfCrs);
+        HashMap<Double, List<Monster>> monstersByCr = monsterRepository.getMonstersByCrAmountAndMonsterGroupId(
+                amountOfCrs, monsterGroupId);
 
         ArrayList<Encounter> encounters = new ArrayList<>();
         if (differentKindOfMonsters) {

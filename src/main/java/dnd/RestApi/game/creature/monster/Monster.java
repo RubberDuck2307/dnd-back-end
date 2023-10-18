@@ -98,7 +98,14 @@ public class Monster extends Creature {
     )
     private Set<Condition> conditionImmunities;
 
-
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            schema = SCHEMA,
+            name = SQLConfig.MONSTER_GROUP_MONSTER_RELATION_TABLE,
+            joinColumns = @JoinColumn(name = "monster_id"),
+            inverseJoinColumns = @JoinColumn(name = "monster_group_id")
+    )
+    private Set<MonsterGroup> monsterGroups;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private DiceRoll hitDice;
@@ -112,7 +119,15 @@ public class Monster extends Creature {
         return monsterName + " " + cr;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Monster monster = (Monster) o;
+
+        return id == monster.id;
+    }
 
 
 

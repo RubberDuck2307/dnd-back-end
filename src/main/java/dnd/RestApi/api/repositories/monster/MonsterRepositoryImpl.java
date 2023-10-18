@@ -1,6 +1,8 @@
 package dnd.RestApi.api.repositories.monster;
 
+import dnd.RestApi.config.SQLConfig;
 import dnd.RestApi.game.creature.monster.Monster;
+import dnd.RestApi.game.creature.monster.MonsterGroup;
 import jakarta.persistence.EntityManager;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -27,6 +29,11 @@ public class MonsterRepositoryImpl {
      * @return HashMap containing monsters with the corresponding crs as keys
      */
     public HashMap<Double, List<Monster>> getMonstersByCrAndAmount(HashMap<Double, Integer> crs) {
+        return getMonstersByCrAmountAndMonsterGroupId(crs, null);
+    }
+
+    public HashMap<Double, List<Monster>> getMonstersByCrAmountAndMonsterGroupId(HashMap<Double, Integer> crs,
+                                                                               Long monsterGroupId) {
         Session session = entityManager.unwrap(Session.class);
 
         if (crs.isEmpty())
@@ -34,12 +41,16 @@ public class MonsterRepositoryImpl {
 
         StringBuilder countQueryString = new StringBuilder("SELECT COUNT(*)\n" +
                 "from dnd.monster\n" +
-                "where cr = :cr1");
+                "where cr = :cr1\n");
+
+        addMonsterGroupCondition(monsterGroupId, countQueryString);
+
 
         for (int i = 1; i < crs.size(); i++) {
             countQueryString.append("\n UNION ALL SELECT COUNT(*)\n" +
                     "from dnd.monster\n" +
-                    "where cr = :cr").append(i + 1);
+                    "where cr = :cr").append(i + 1).append("\n");
+            addMonsterGroupCondition(monsterGroupId, countQueryString);
         }
 
         Query<Integer> countQuery = session.createNativeQuery(countQueryString.toString(), Integer.class);
@@ -48,20 +59,29 @@ public class MonsterRepositoryImpl {
         for (int i = 0; i < crs.size(); i++) {
             countQuery.setParameter("cr" + (i + 1), crsKeyArray[i]);
         }
+        if (monsterGroupId != null)
+            countQuery.setParameter("monsterGroupId", monsterGroupId);
+
         //get amount of monster in database by cr
         HashMap<Double, Integer> amountOfMonstersByCr = convertCountQueryResultToHashMap(crs, countQuery.getResultList());
 
         StringBuilder queryString = new StringBuilder("(SELECT *\n" +
                 "from dnd.monster\n" +
-                "where cr = :cr1\n" +
-                "OFFSET floor(random() * :amt1)\n " +
+                "where cr = :cr1\n");
+
+        addMonsterGroupCondition(monsterGroupId, queryString);
+
+        queryString.append("OFFSET floor(random() * :amt1)\n " +
                 "LIMIT :lmt1)");
 
         for (int i = 1; i < crs.size(); i++) {
             queryString.append("\nUNION (SELECT *\n" +
                     "from dnd.monster\n" +
-                    "where cr = :cr").append(i + 1).append("\n" +
-                    "OFFSET floor(random() * :amt").append(i + 1).append(")\n" +
+                    "where cr = :cr").append(i + 1).append("\n");
+
+            addMonsterGroupCondition(monsterGroupId, queryString);
+
+            queryString.append("OFFSET floor(random() * :amt").append(i +1).append(")\n" +
                     "LIMIT :lmt").append(i + 1).append(")");
         }
 
@@ -74,12 +94,25 @@ public class MonsterRepositoryImpl {
             //set maximum possible offset. If there are fewer monsters in database than requested, set offset to 0
             query.setParameter("amt" + (i + 1), amt);
         }
+        if (monsterGroupId != null) {
+            query.setParameter("monsterGroupId", monsterGroupId);
+        }
 
         List<Monster> monsterList = query.getResultList();
         session.close();
         HashMap<Double, List<Monster>> monsters = convertMonsterQueryResultToHashMap(crs, amountOfMonstersByCr,
                 monsterList);
         return monsters;
+    }
+
+    private void addMonsterGroupCondition(Long monsterGroupId, StringBuilder countQueryString) {
+        if (monsterGroupId != null) {
+            countQueryString.append("AND id IN (SELECT monster_id\n" +
+                    "FROM ")
+                    .append(SQLConfig.SCHEMA).append(".")
+                    .append(SQLConfig.MONSTER_GROUP_MONSTER_RELATION_TABLE)
+                    .append("\nWHERE monster_group_id = :monsterGroupId)\n");
+        }
     }
 
     /**

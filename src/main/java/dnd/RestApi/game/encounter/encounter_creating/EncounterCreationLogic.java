@@ -1,8 +1,7 @@
 package dnd.RestApi.game.encounter.encounter_creating;
 
-import dnd.RestApi.exception.custom_exception.NoSuchEncounterException;
+import dnd.RestApi.api.exception_handling.custom_exception.NoSuchEncounterException;
 import dnd.RestApi.game.encounter.Encounter;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +30,7 @@ public interface EncounterCreationLogic {
      */
     ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
                                                boolean differentKindOfMonsters, int maxAmountOfMonster,
-                                               boolean onlyOneKindOfMonsterPerCr);
+                                               boolean onlyOneKindOfMonsterPerCr, Long monsterGroupId);
 
     /**
      * Creates random encounter with given xp, every encounter will have only one kind of monster per cr.
@@ -64,5 +63,6 @@ public interface EncounterCreationLogic {
      */
     ArrayList<ArrayList<Double>> getCrsForEncounter(int xp, int maxAmountOfMonsters, List<Double> availableCrList,
                                                      float xpTolerance);
+
 
 }

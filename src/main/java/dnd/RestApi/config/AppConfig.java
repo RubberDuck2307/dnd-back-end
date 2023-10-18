@@ -16,10 +16,6 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class AppConfig {
 
-    @Bean
-    public ObjectMapper objectMapper(){
-        return JsonMapper.builder().enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS).build();
-    }
 
     @Bean
     public EncounterCreationLogic encounterCreationLogic(MonsterRepository monsterRepository, EncounterDifficultyMap

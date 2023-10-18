@@ -1,6 +1,6 @@
 package dnd.RestApi;
 
-import dnd.RestApi.exception.custom_exception.NoSuchEncounterException;
+import dnd.RestApi.api.exception_handling.custom_exception.NoSuchEncounterException;
 import dnd.RestApi.game.creature.monster.Monster;
 import dnd.RestApi.api.repositories.monster.MonsterRepository;
 import dnd.RestApi.game.encounter.Encounter;
@@ -10,10 +10,7 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,39 +28,41 @@ public class EncounterCreationLogicTest {
     @Test
     public void getRandomEncounterOneEncounterOneMonsterTest() {
         ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(500,
-                 1, 0.1F , false, 1);
-       assertEquals(1, encounters.size());
-       assertEquals(450,encounters.get(0).getDifficulty_xp());
+                1, 0.1F, false, 1);
+        assertEquals(1, encounters.size());
+        assertEquals(450, encounters.get(0).getDifficulty_xp());
     }
 
     @Test
     public void getRandomEncounterMultipleEncountersOneMonsterTest() {
         ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(200,
-                50, 0.1F,false,  1);
+                50, 0.1F, false, 1);
         for (Encounter encounter : encounters) {
             assertTrue(encounter.getDifficulty_xp() > 0 && encounter.getDifficulty_xp() <= 220);
             assertEquals(1, encounter.getMonsters().size());
         }
     }
+
     @Test
-    public void getRandomEncounterNoSuchEncounterException(){
+    public void getRandomEncounterNoSuchEncounterException() {
         assertThrows(NoSuchEncounterException.class, () -> encounterCreationLogic.createRandomEncounter(1,
-                50, 0.1F,true,  2));
+                50, 0.1F, true, 2));
     }
 
 
-    @Test public void getRandomEncounterMultipleEncountersDifferentMonstersTestOnlyOneMonsterPerCr(){
+    @Test
+    public void getRandomEncounterMultipleEncountersDifferentMonstersTestOnlyOneMonsterPerCr() {
         ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(300,
-                50, 1,true,  6);
+                50, 1, true, 6);
         assertEquals(50, encounters.size());
         for (Encounter encounter : encounters) {
             assertTrue(encounter.getDifficulty_xp() > 0 && encounter.getDifficulty_xp() <= 600);
             assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 6);
-            HashMap<Double, ArrayList<Monster>>  monstersByCr = new HashMap<>();
+            HashMap<Double, ArrayList<Monster>> monstersByCr = new HashMap<>();
             for (Monster monster : encounter.getMonsters()) {
-                if(monstersByCr.containsKey(monster.getCr())){
+                if (monstersByCr.containsKey(monster.getCr())) {
                     assertEquals(monster.getId(), monstersByCr.get(monster.getCr()).get(0).getId());
-                }else{
+                } else {
                     ArrayList<Monster> monsters = new ArrayList<>();
                     monsters.add(monster);
                     monstersByCr.put(monster.getCr(), monsters);
@@ -73,18 +72,19 @@ public class EncounterCreationLogicTest {
     }
 
     @Test
-    public void getRandomEncounterMultipleEncounterMaxAmountOfMonsters(){
+    public void getRandomEncounterMultipleEncounterMaxAmountOfMonsters() {
         ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(900,
-                50, 0.2F,true,  99);
+                50, 0.2F, true, 99);
         for (Encounter encounter : encounters) {
             assertTrue(encounter.getMonsters().size() <= 10);
             assertTrue(encounter.getDifficulty_xp() >= 720 && encounter.getDifficulty_xp() <= 1080);
         }
     }
 
-    @Test public void getRandomEncounterMultipleEncounterIgnoreSmallXp(){
+    @Test
+    public void getRandomEncounterMultipleEncounterIgnoreSmallXp() {
         ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(6000,
-                50, 0.2F,true,  10);
+                50, 0.2F, true, 10);
         for (Encounter encounter : encounters) {
             assertTrue(encounter.getDifficulty_xp() > 4800 && encounter.getDifficulty_xp() <= 7200);
             assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 6);
@@ -94,30 +94,34 @@ public class EncounterCreationLogicTest {
         }
     }
 
-    @Test public void getRandomEncounterEdgeCase0Xp(){
+    @Test
+    public void getRandomEncounterEdgeCase0Xp() {
         assertThrows(NoSuchEncounterException.class, () -> encounterCreationLogic.createRandomEncounter(0,
-                50, 0F,true,  10));
+                50, 0F, true, 10));
     }
 
-    @Test public void getRandomEncounterEdgeCase0Monsters(){
+    @Test
+    public void getRandomEncounterEdgeCase0Monsters() {
         assertEquals(0, encounterCreationLogic.createRandomEncounter(100,
-                0, 0.1F,true,  10).size());
+                0, 0.1F, true, 10).size());
     }
 
-    @Test public void getRandomEncounterEdgeCaseNegativeInputs(){
+    @Test
+    public void getRandomEncounterEdgeCaseNegativeInputs() {
         assertThrows(IllegalArgumentException.class, () -> encounterCreationLogic.createRandomEncounter(-1,
-                50, 0.1F,true,  10));
+                50, 0.1F, true, 10));
         assertThrows(IllegalArgumentException.class, () -> encounterCreationLogic.createRandomEncounter(100,
-                -1, 0.1F,true,  10));
+                -1, 0.1F, true, 10));
         assertThrows(IllegalArgumentException.class, () -> encounterCreationLogic.createRandomEncounter(100,
-                50, -0.1F,true,  10));
+                50, -0.1F, true, 10));
         assertThrows(IllegalArgumentException.class, () -> encounterCreationLogic.createRandomEncounter(100,
-                50, 0.1F,true,  -1));
+                50, 0.1F, true, -1));
     }
 
-    @Test public void getRandomEncounterOneTypeOfMonster(){
+    @Test
+    public void getRandomEncounterOneTypeOfMonster() {
         ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(1000,
-                50, 1F,false,  10);
+                50, 1F, false, 10);
         for (Encounter encounter : encounters) {
             Set<Long> monsters = new HashSet<>();
             for (Monster monster : encounter.getMonsters()) {
@@ -128,9 +132,10 @@ public class EncounterCreationLogicTest {
         }
     }
 
-    @Test public void getRandomEncounterMultipleEncountersDifferentMonstersTestOnlyMultipleMonsterPerCr(){
+    @Test
+    public void getRandomEncounterMultipleEncountersDifferentMonstersMultipleMonsterPerCr() {
         ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(300,
-                200, 1,true,  6, false);
+                200, 1, true, 6, false, null);
         assertEquals(200, encounters.size());
 
         boolean difference = false;
@@ -138,12 +143,12 @@ public class EncounterCreationLogicTest {
         for (Encounter encounter : encounters) {
             assertTrue(encounter.getDifficulty_xp() > 0 && encounter.getDifficulty_xp() <= 600);
             assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 6);
-            HashMap<Double, ArrayList<Monster>>  monstersByCr = new HashMap<>();
+            HashMap<Double, ArrayList<Monster>> monstersByCr = new HashMap<>();
             for (Monster monster : encounter.getMonsters()) {
-                if(monstersByCr.containsKey(monster.getCr())){
-                    if(monster.getId() != monstersByCr.get(monster.getCr()).get(0).getId())
+                if (monstersByCr.containsKey(monster.getCr())) {
+                    if (monster.getId() != monstersByCr.get(monster.getCr()).get(0).getId())
                         difference = true;
-                }else{
+                } else {
                     ArrayList<Monster> monsters = new ArrayList<>();
                     monsters.add(monster);
                     monstersByCr.put(monster.getCr(), monsters);
@@ -153,8 +158,21 @@ public class EncounterCreationLogicTest {
         assertTrue(difference);
     }
 
-
-
+    @Test
+    public void testGetRandomEncounterMultipleEncountersDifferentMonstersMultipleMonsterPerCrMonsterGroup() {
+        ArrayList<Encounter> encounters = encounterCreationLogic.createRandomEncounter(600,
+                10, 1, true, 4, false, 1L);
+        assertEquals(10, encounters.size());
+        System.out.println(encounters);
+        for (Encounter encounter : encounters) {
+            assertTrue(encounter.getDifficulty_xp() > 0 && encounter.getDifficulty_xp() <= 1200);
+            assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 4);
+            for (Monster monster: encounter.getMonsters()){
+                Long[] monsterIdsInMonsterGroup = new Long[]{218L,215L,145L,311L,151L};
+                assertTrue(Arrays.asList(monsterIdsInMonsterGroup).contains(monster.getId()));
+            }
+        }
+    }
 
 
 }
