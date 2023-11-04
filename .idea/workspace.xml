@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ea8d3c2-4e07-4545-9ee7-c96a770c29fd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6ea8d3c2-4e07-4545-9ee7-c96a770c29fd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +26,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Java projects/dnd-back-end/encounter_service",
+    "last_opened_file_path": "C:/Java projects/dnd-back-end/MonsterAPI",
     "spring.configuration.checksum": "6a51804f85f17e32298545094d1ebafb",
     "vue.rearranger.settings.migration": "true"
   }
@@ -40,6 +38,19 @@
       <setting name="params" value="" />
       <setting name="workDir" value="" />
       <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="dnd-back-end" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="dnd-back-end" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -56,6 +67,7 @@
       <workItem from="1698141122732" duration="21000" />
       <workItem from="1699093604118" duration="25000" />
       <workItem from="1699093641791" duration="31000" />
+      <workItem from="1699093864338" duration="216000" />
     </task>
     <servers />
   </component>
