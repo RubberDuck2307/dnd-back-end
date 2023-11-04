@@ -19,19 +19,14 @@ public class EncounterDTOMapper {
         List<EncounterMonsterAmountDTO> monsters = new ArrayList<>();
         Set<Monster> foundMonsters = new HashSet<>();
 
-        /*encounter.getMonsters().forEach(mstr -> {
-            if (mstr instanceof Monster monster) {
-                if (!foundMonsters.contains(monster)) {
-                    foundMonsters.add(monster);
+        encounter.getMonsters().forEach(monster -> {
+            if (!foundMonsters.contains(monster)) {
+                foundMonsters.add(monster);
 
-                    monsters.add(new EncounterMonsterAmountDTO(monsterDTOMapper.getMonsterShortGetDTO(monster)
-                            , Collections.frequency(encounter.getMonsters(), monster)));
-                }
+                monsters.add(new EncounterMonsterAmountDTO(monsterDTOMapper.getMonsterShortGetDTO(monster)
+                        , Collections.frequency(encounter.getMonsters(), monster)));
             }
-            else {
-                throw new IllegalArgumentException("Monsters are not instance of the Monster class");
-            }
-        });*/
+        });
         return new EncounterShortGetDTO(monsters, encounter.getDifficultyXp(), encounter.getGainedXp());
     }
 }
