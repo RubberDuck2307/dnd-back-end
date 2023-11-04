@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package shared;
+
+message IdRpc{
+  int64 id = 1;
+}
+
+message AmountRpc{
+  int64 id = 1;
+}

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+
+package monster_service;
+
+import "shared.proto";
+
+message CrRpc{
+  float cr = 1;
+}
+
+message CrListRpc{
+  repeated CrRpc crs = 1;
+}
+
+message MonsterShortRpc{
+  int64 id = 1;
+  string name = 2;
+  float cr = 3;
+}
+
+message MonsterShortListRpc{
+  repeated MonsterShortRpc monsters = 1;
+}
+
+message getMonstersCrGroupRequestRpc{
+  map<string, int32> crs = 1;
+  int64 groupId = 2;
+}
+
+
+service MonsterService{
+  rpc getAmountOfMonsterByGroupId(shared.IdRpc) returns(shared.AmountRpc);
+  rpc getCrsByMonsterGroupId(shared.IdRpc) returns (CrListRpc);
+  rpc getMonstersByCrAndGroup(getMonstersCrGroupRequestRpc) returns (MonsterShortListRpc);
+  rpc getRandomMonsterByCr(CrRpc) returns (MonsterShortRpc);
+
+}
