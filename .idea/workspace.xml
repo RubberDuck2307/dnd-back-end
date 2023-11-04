@@ -2,86 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ea8d3c2-4e07-4545-9ee7-c96a770c29fd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/RestApiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/controllers/EncounterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/controllers/MonsterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/NameDescriptionEntityGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/ability/AbilityScoreShortGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/damage/DamageResistanceGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/damage/DamageVulnerabilityGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/dice/DiceRollGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/encounter/EncounterMonsterAmountDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/encounter/EncounterShortGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/monster/MonsterFullGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/monster/MonsterShortGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/sense/SenseGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/skill/SkillGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/dtos/speed/SpeedGetDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/exception_handling/ApiError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/exception_handling/RestResponseEntityHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/exception_handling/custom_exception/NoSuchEncounterException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/repositories/monster/MonsterRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/repositories/monster/MonsterRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/services/encounter/EncounterService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/api/services/monster/MonsterService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/config/AppConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/config/FileConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/config/RulesBeansConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/config/SQLConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/file/JsonFileReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/file/MonsterJson.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/file/SQLMonster.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/file/monster_json_to_sql/MonsterJsonToSqlConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/file/monster_json_to_sql/SqlDataFileCreator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/file/monster_json_to_sql/SqlDataFileMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/Ability.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/Character.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/Condition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/Creature.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/CreatureSize.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/Language.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/Sense.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/Skill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/Speed.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/LegendaryAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/Monster.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/MonsterAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/MonsterGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/MonsterReaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/MonsterTrait.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/ability_score/MonsterAbilityKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/ability_score/MonsterAbilityScore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/ability_score/MonsterSavingThrow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/damage/MonsterDamage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/damage/MonsterVulnerability.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/sense/MonsterSense.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/sense/MonsterSenseKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/skills_of_monsters/SkillsOfMonsters.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/skills_of_monsters/SkillsOfMonstersKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/speeds_of_monsters/SpeedsOfMonsters.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/monster/speeds_of_monsters/SpeedsOfMonstersKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/type/MonsterType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/type/TypeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/creature/type/TypeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/damage/AttackType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/damage/DamageType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/dice/DiceRoll.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/encounter/Encounter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/encounter/encounter_creating/DefaultEncounterCreationLogic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/encounter/encounter_creating/EncounterCreationLogic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/encounter/encounter_difficulty/ChallengeRatingSetting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/encounter/encounter_difficulty/DefaultEncounterDifficultyMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/encounter/encounter_difficulty/DifficultyMultiplierSetting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/encounter/encounter_difficulty/EncounterDifficultyMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/encounter/encounter_difficulty/EncounterDifficultyName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/game/encounter/encounter_difficulty/EncounterDifficultySetting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/utils/BooleanUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/main/java/dnd/RestApi/utils/ListUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/test/java/dnd/RestApi/EncounterCreationLogicTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/test/java/dnd/RestApi/FileReaderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/test/java/dnd/RestApi/UtilsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/test/java/dnd/RestApi/enpoints_tests/encounter.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MonsterAPI/src/test/java/dnd/RestApi/enpoints_tests/monster.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +16,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2XClp4fAnYkEEgCpi6z07Iu5OoJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -105,11 +27,24 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Java projects/Spring boot/dnd",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Java projects/dnd-back-end/encounter_service",
     "spring.configuration.checksum": "6a51804f85f17e32298545094d1ebafb",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -119,6 +54,8 @@
       <option name="presentableId" value="Default" />
       <updated>1698141121730</updated>
       <workItem from="1698141122732" duration="21000" />
+      <workItem from="1699093604118" duration="25000" />
+      <workItem from="1699093641791" duration="31000" />
     </task>
     <servers />
   </component>
