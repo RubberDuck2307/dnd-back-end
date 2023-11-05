@@ -38,7 +38,7 @@ public class DefaultEncounterDifficultyMap implements EncounterDifficultyMap {
     }
 
     @Override
-    public Integer getXp(Double cr) {
+    public Integer getXp(float cr) {
         return challengeRatings.stream().filter(challengeRatingSetting -> challengeRatingSetting.getCr() == cr).
                 findFirst().orElseThrow(() -> new NoSuchElementException("Invalid cr value")).getXp();
     }

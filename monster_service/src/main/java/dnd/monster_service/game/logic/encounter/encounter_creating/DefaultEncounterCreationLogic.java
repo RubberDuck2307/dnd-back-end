@@ -16,14 +16,14 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
 
 
     @Override
-    public int calculateEncounterDifficultyXp(List<Double> crs) {
+    public int calculateEncounterDifficultyXp(List<Float> crs) {
         return (int) (crs.stream().mapToInt(encounterDifficultyMap::getXp
         ).sum() * encounterDifficultyMap.getMultiplier(crs.size()));
     }
 
 
     @Override
-    public int calculateEncounterGainedXp(List<Double> crs) {
+    public int calculateEncounterGainedXp(List<Float> crs) {
         return crs.stream().mapToInt(encounterDifficultyMap::getXp).sum();
     }
 
@@ -33,7 +33,7 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
 
     @Override
     public ArrayList<ArrayList<Double>> getCrsForEncounter(int xp, int maxAmountOfMonsters,
-                                                           List<Double> availableCrList, float xpTolerance) {
+                                                           List<Float> availableCrList, float xpTolerance) {
         validateInput(xp, maxAmountOfMonsters, availableCrList, xpTolerance);
 
         int maxXp = xp + (int) (xp * xpTolerance);
@@ -73,7 +73,7 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
     }
 
 
-    private void validateInput(int xp, int maxAmountOfMonsters, List<Double> availableCrList, float xpTolerance) {
+    private void validateInput(int xp, int maxAmountOfMonsters, List<Float> availableCrList, float xpTolerance) {
         if (availableCrList.size() == 0) {
             throw new IllegalArgumentException("availableCrList must not be empty");
         }

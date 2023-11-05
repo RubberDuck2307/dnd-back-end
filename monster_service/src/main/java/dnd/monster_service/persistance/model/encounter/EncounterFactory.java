@@ -15,7 +15,7 @@ public class EncounterFactory {
 
     public Encounter createEncounter(List<Monster> monsters){
 
-        List<Double> crs = new ArrayList<>();
+        List<Float> crs = new ArrayList<>();
         monsters.forEach(monster -> crs.add(monster.getCr()));
 
         return new Encounter( new ArrayList<>(monsters), encounterCreationLogic.calculateEncounterGainedXp(crs),

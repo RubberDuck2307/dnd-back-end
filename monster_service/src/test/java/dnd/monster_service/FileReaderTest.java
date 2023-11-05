@@ -24,7 +24,7 @@ public class FileReaderTest {
     @Test
     public void isEncounterDifficultiesMapCorrectlyLoaded() {
         assertEquals(25, encounterDifficultiesMap.getXpThreshold(1, EncounterDifficultyName.EASY));
-        assertEquals(25, encounterDifficultiesMap.getXp(0.125));
+        assertEquals(25, encounterDifficultiesMap.getXp(0.125F));
         assertEquals(1.5, encounterDifficultiesMap.getMultiplier(2));
     }
 

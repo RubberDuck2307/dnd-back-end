@@ -38,7 +38,7 @@ public class EncounterCreationLogicTest {
         ArrayList<Encounter> encounters = encounterService.createRandomEncounter(200,
                 50, 0.1F, false, 1);
         for (Encounter encounter : encounters) {
-            assertTrue(encounter.getDifficultyXp() > 0 && encounter.getDifficultyXp() <= 220);
+            assertTrue(encounter.getDifficultyXp() > 180 && encounter.getDifficultyXp() <= 220);
             assertEquals(1, encounter.getMonsters().size());
         }
     }
@@ -53,10 +53,10 @@ public class EncounterCreationLogicTest {
     @Test
     public void getRandomEncounterMultipleEncountersDifferentMonstersTestOnlyOneMonsterPerCr() {
         ArrayList<Encounter> encounters = encounterService.createRandomEncounter(300,
-                50, 1, true, 6);
+                50, 0.5F, true, 6);
         assertEquals(50, encounters.size());
         for (Encounter encounter : encounters) {
-            assertTrue(encounter.getDifficultyXp() > 0 && encounter.getDifficultyXp() <= 600);
+            assertTrue(encounter.getDifficultyXp() >= 150 && encounter.getDifficultyXp() <= 450);
             assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 6);
             HashMap<Double, ArrayList<Monster>> monstersByCr = new HashMap<>();
             for (Monster monster : encounter.getMonsters()) {
@@ -134,15 +134,15 @@ public class EncounterCreationLogicTest {
 
     @Test
     public void getRandomEncounterMultipleEncountersDifferentMonstersMultipleMonsterPerCr() {
-        ArrayList<Encounter> encounters = encounterService.createRandomEncounter(300,
-                200, 1, true, 6,
+        ArrayList<Encounter> encounters = encounterService.createRandomEncounter(2400,
+                200, 0.5F, true, 6,
                 false, null);
         assertEquals(200, encounters.size());
 
         boolean difference = false;
 
         for (Encounter encounter : encounters) {
-            assertTrue(encounter.getDifficultyXp() > 0 && encounter.getDifficultyXp() <= 600);
+            assertTrue(encounter.getDifficultyXp() >= 1200 && encounter.getDifficultyXp() <= 3600);
             assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 6);
             HashMap<Double, ArrayList<Monster>> monstersByCr = new HashMap<>();
             for (Monster monster : encounter.getMonsters()) {

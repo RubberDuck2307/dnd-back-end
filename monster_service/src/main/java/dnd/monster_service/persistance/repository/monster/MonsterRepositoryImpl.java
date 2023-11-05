@@ -12,7 +12,6 @@ import java.util.*;
 
 
 @Component
-// TODO change to repository
 public class MonsterRepositoryImpl {
 
     private final EntityManager entityManager;
@@ -27,12 +26,12 @@ public class MonsterRepositoryImpl {
      * @param crs Map where the keys represent the cr and the values the amount of monsters with that cr that should be returned
      * @return HashMap containing monsters with the corresponding crs as keys
      */
-    public HashMap<Double, List<Monster>> getMonstersByCrAndAmount(HashMap<Double, Integer> crs) {
+    public Map<Float, List<Monster>> getMonstersByCrAndAmount(Map<Float, Integer> crs) {
         return getMonstersByCrAmountAndMonsterGroupId(crs, null);
     }
 
-    public HashMap<Double, List<Monster>> getMonstersByCrAmountAndMonsterGroupId(HashMap<Double, Integer> crs,
-                                                                                 Long monsterGroupId) {
+    public Map<Float, Integer> getAmountOfMonstersByCrAndMonsterGroup(Map<Float, Integer> crs,
+                                                                           Long monsterGroupId){
         Session session = entityManager.unwrap(Session.class);
 
         if (crs.isEmpty())
@@ -54,15 +53,23 @@ public class MonsterRepositoryImpl {
 
         Query<Integer> countQuery = session.createNativeQuery(countQueryString.toString(), Integer.class);
 
-        Double[] crsKeyArray = crs.keySet().toArray(new Double[0]);
+        Float[] crsKeyArray = crs.keySet().toArray(new Float[0]);
         for (int i = 0; i < crs.size(); i++) {
             countQuery.setParameter("cr" + (i + 1), crsKeyArray[i]);
         }
         if (monsterGroupId != null)
             countQuery.setParameter("monsterGroupId", monsterGroupId);
 
-        //get amount of monster in database by cr
-        HashMap<Double, Integer> amountOfMonstersByCr = convertCountQueryResultToHashMap(crs, countQuery.getResultList());
+        return convertCountQueryResultToMap(crs, countQuery.getResultList());
+    }
+
+    public Map<Float, List<Monster>> getMonstersByCrAmountAndMonsterGroupId(Map<Float, Integer> crs,
+                                                                                 Long monsterGroupId) {
+        Session session = entityManager.unwrap(Session.class);
+
+        Map<Float, Integer> amountOfMonstersByCr = getAmountOfMonstersByCrAndMonsterGroup(crs, monsterGroupId);
+
+        Float[] crsKeyArray = crs.keySet().toArray(new Float[0]);
 
         StringBuilder queryString = new StringBuilder("(SELECT *\n" +
                 "from dnd.monster\n" +
@@ -99,7 +106,7 @@ public class MonsterRepositoryImpl {
 
         List<Monster> monsterList = query.getResultList();
         session.close();
-        HashMap<Double, List<Monster>> monsters = convertMonsterQueryResultToHashMap(crs, amountOfMonstersByCr,
+        Map<Float, List<Monster>> monsters = convertMonsterQueryResultToMap(crs, amountOfMonstersByCr,
                 monsterList);
         return monsters;
     }
@@ -122,14 +129,14 @@ public class MonsterRepositoryImpl {
      * @return hashmap with cr as key and list of monsters as value
      */
 
-    private HashMap<Double, List<Monster>> convertMonsterQueryResultToHashMap(HashMap<Double, Integer> crs,
-                                                                              HashMap<Double, Integer> amountOfMonstersByCr,
+    private Map<Float, List<Monster>> convertMonsterQueryResultToMap(Map<Float, Integer> crs,
+                                                                              Map<Float, Integer> amountOfMonstersByCr,
                                                                               List<Monster> monsters) {
         //sort monsters by cr and their amounts by cr
         // the array is then sliced to get the correct amount of monsters and put into the result hashmap
         monsters.sort(Comparator.comparing(Monster::getCr));
-        HashMap<Double, List<Monster>> result = new HashMap<>();
-        Double[] keys =  crs.keySet().stream().sorted().toArray(Double[]::new);
+        HashMap<Float, List<Monster>> result = new HashMap<>();
+        Float[] keys =  crs.keySet().stream().sorted().toArray(Float[]::new);
         int index = 0;
         for (int i = 0; i < crs.size(); i++) {
             //if there are fewer monsters in database than requested, set amount to amount in database
@@ -147,10 +154,10 @@ public class MonsterRepositoryImpl {
      * @param amounts amounts of monsters with the corresponding crs in the database in the same order as the crs
      * @return hashmap containing the amounts of monsters with the corresponding crs in the database
      */
-    private HashMap<Double, Integer> convertCountQueryResultToHashMap(HashMap<Double, Integer> crs,
+    private Map<Float, Integer> convertCountQueryResultToMap(Map<Float, Integer> crs,
                                                                       List<Integer> amounts) {
-        HashMap<Double, Integer> result = new HashMap<>();
-        Double[] keys = crs.keySet().toArray(new Double[0]);
+        HashMap<Float, Integer> result = new HashMap<>();
+        Float[] keys = crs.keySet().toArray(new Float[0]);
         for (int i = 0; i < amounts.size(); i++) {
             if (amounts.get(i) == 0)
                 throw new IllegalArgumentException("There are no monsters with cr = " + keys[i] + " in the database");

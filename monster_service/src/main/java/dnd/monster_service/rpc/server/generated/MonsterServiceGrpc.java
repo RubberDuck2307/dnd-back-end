@@ -1,6 +1,5 @@
-package generated.monster_service;
+package dnd.monster_service.rpc.server.generated;
 
-import generated.Shared;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -14,7 +13,7 @@ public final class MonsterServiceGrpc {
 
   private MonsterServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "monster_service.MonsterService";
+  public static final String SERVICE_NAME = "monster_service.MonsterService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<Shared.IdRpc,
@@ -79,29 +78,29 @@ public final class MonsterServiceGrpc {
     return getGetCrsByMonsterGroupIdMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<MonsterServiceOuterClass.getMonstersCrGroupRequestRpc,
-      MonsterServiceOuterClass.MonsterShortListRpc> getGetMonstersByCrAndGroupMethod;
+  private static volatile io.grpc.MethodDescriptor<MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc,
+      MonsterServiceOuterClass.MonstersByCrRpc> getGetMonstersByCrAndGroupMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getMonstersByCrAndGroup",
-      requestType = MonsterServiceOuterClass.getMonstersCrGroupRequestRpc.class,
-      responseType = MonsterServiceOuterClass.MonsterShortListRpc.class,
+      requestType = MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc.class,
+      responseType = MonsterServiceOuterClass.MonstersByCrRpc.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<MonsterServiceOuterClass.getMonstersCrGroupRequestRpc,
-      MonsterServiceOuterClass.MonsterShortListRpc> getGetMonstersByCrAndGroupMethod() {
-    io.grpc.MethodDescriptor<MonsterServiceOuterClass.getMonstersCrGroupRequestRpc, MonsterServiceOuterClass.MonsterShortListRpc> getGetMonstersByCrAndGroupMethod;
+  public static io.grpc.MethodDescriptor<MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc,
+      MonsterServiceOuterClass.MonstersByCrRpc> getGetMonstersByCrAndGroupMethod() {
+    io.grpc.MethodDescriptor<MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc, MonsterServiceOuterClass.MonstersByCrRpc> getGetMonstersByCrAndGroupMethod;
     if ((getGetMonstersByCrAndGroupMethod = MonsterServiceGrpc.getGetMonstersByCrAndGroupMethod) == null) {
       synchronized (MonsterServiceGrpc.class) {
         if ((getGetMonstersByCrAndGroupMethod = MonsterServiceGrpc.getGetMonstersByCrAndGroupMethod) == null) {
           MonsterServiceGrpc.getGetMonstersByCrAndGroupMethod = getGetMonstersByCrAndGroupMethod =
-              io.grpc.MethodDescriptor.<MonsterServiceOuterClass.getMonstersCrGroupRequestRpc, MonsterServiceOuterClass.MonsterShortListRpc>newBuilder()
+              io.grpc.MethodDescriptor.<MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc, MonsterServiceOuterClass.MonstersByCrRpc>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getMonstersByCrAndGroup"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MonsterServiceOuterClass.getMonstersCrGroupRequestRpc.getDefaultInstance()))
+                  MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MonsterServiceOuterClass.MonsterShortListRpc.getDefaultInstance()))
+                  MonsterServiceOuterClass.MonstersByCrRpc.getDefaultInstance()))
               .setSchemaDescriptor(new MonsterServiceMethodDescriptorSupplier("getMonstersByCrAndGroup"))
               .build();
         }
@@ -110,35 +109,35 @@ public final class MonsterServiceGrpc {
     return getGetMonstersByCrAndGroupMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<MonsterServiceOuterClass.CrRpc,
-      MonsterServiceOuterClass.MonsterShortRpc> getGetRandomMonsterByCrMethod;
+  private static volatile io.grpc.MethodDescriptor<MonsterServiceOuterClass.RandomMonsterRequestRpc,
+      MonsterServiceOuterClass.MonsterShortListRpc> getGetRandomMonstersByCrMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "getRandomMonsterByCr",
-      requestType = MonsterServiceOuterClass.CrRpc.class,
-      responseType = MonsterServiceOuterClass.MonsterShortRpc.class,
+      fullMethodName = SERVICE_NAME + '/' + "getRandomMonstersByCr",
+      requestType = MonsterServiceOuterClass.RandomMonsterRequestRpc.class,
+      responseType = MonsterServiceOuterClass.MonsterShortListRpc.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<MonsterServiceOuterClass.CrRpc,
-      MonsterServiceOuterClass.MonsterShortRpc> getGetRandomMonsterByCrMethod() {
-    io.grpc.MethodDescriptor<MonsterServiceOuterClass.CrRpc, MonsterServiceOuterClass.MonsterShortRpc> getGetRandomMonsterByCrMethod;
-    if ((getGetRandomMonsterByCrMethod = MonsterServiceGrpc.getGetRandomMonsterByCrMethod) == null) {
+  public static io.grpc.MethodDescriptor<MonsterServiceOuterClass.RandomMonsterRequestRpc,
+      MonsterServiceOuterClass.MonsterShortListRpc> getGetRandomMonstersByCrMethod() {
+    io.grpc.MethodDescriptor<MonsterServiceOuterClass.RandomMonsterRequestRpc, MonsterServiceOuterClass.MonsterShortListRpc> getGetRandomMonstersByCrMethod;
+    if ((getGetRandomMonstersByCrMethod = MonsterServiceGrpc.getGetRandomMonstersByCrMethod) == null) {
       synchronized (MonsterServiceGrpc.class) {
-        if ((getGetRandomMonsterByCrMethod = MonsterServiceGrpc.getGetRandomMonsterByCrMethod) == null) {
-          MonsterServiceGrpc.getGetRandomMonsterByCrMethod = getGetRandomMonsterByCrMethod =
-              io.grpc.MethodDescriptor.<MonsterServiceOuterClass.CrRpc, MonsterServiceOuterClass.MonsterShortRpc>newBuilder()
+        if ((getGetRandomMonstersByCrMethod = MonsterServiceGrpc.getGetRandomMonstersByCrMethod) == null) {
+          MonsterServiceGrpc.getGetRandomMonstersByCrMethod = getGetRandomMonstersByCrMethod =
+              io.grpc.MethodDescriptor.<MonsterServiceOuterClass.RandomMonsterRequestRpc, MonsterServiceOuterClass.MonsterShortListRpc>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getRandomMonsterByCr"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getRandomMonstersByCr"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MonsterServiceOuterClass.CrRpc.getDefaultInstance()))
+                  MonsterServiceOuterClass.RandomMonsterRequestRpc.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MonsterServiceOuterClass.MonsterShortRpc.getDefaultInstance()))
-              .setSchemaDescriptor(new MonsterServiceMethodDescriptorSupplier("getRandomMonsterByCr"))
+                  MonsterServiceOuterClass.MonsterShortListRpc.getDefaultInstance()))
+              .setSchemaDescriptor(new MonsterServiceMethodDescriptorSupplier("getRandomMonstersByCr"))
               .build();
         }
       }
     }
-    return getGetRandomMonsterByCrMethod;
+    return getGetRandomMonstersByCrMethod;
   }
 
   /**
@@ -147,7 +146,7 @@ public final class MonsterServiceGrpc {
   public static MonsterServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MonsterServiceStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<MonsterServiceStub>() {
-        @java.lang.Override
+        @Override
         public MonsterServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new MonsterServiceStub(channel, callOptions);
         }
@@ -162,7 +161,7 @@ public final class MonsterServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MonsterServiceBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<MonsterServiceBlockingStub>() {
-        @java.lang.Override
+        @Override
         public MonsterServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new MonsterServiceBlockingStub(channel, callOptions);
         }
@@ -177,7 +176,7 @@ public final class MonsterServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MonsterServiceFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<MonsterServiceFutureStub>() {
-        @java.lang.Override
+        @Override
         public MonsterServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new MonsterServiceFutureStub(channel, callOptions);
         }
@@ -205,16 +204,16 @@ public final class MonsterServiceGrpc {
 
     /**
      */
-    default void getMonstersByCrAndGroup(MonsterServiceOuterClass.getMonstersCrGroupRequestRpc request,
-                                         io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc> responseObserver) {
+    default void getMonstersByCrAndGroup(MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc request,
+                                         io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonstersByCrRpc> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMonstersByCrAndGroupMethod(), responseObserver);
     }
 
     /**
      */
-    default void getRandomMonsterByCr(MonsterServiceOuterClass.CrRpc request,
-                                      io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortRpc> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRandomMonsterByCrMethod(), responseObserver);
+    default void getRandomMonstersByCr(MonsterServiceOuterClass.RandomMonsterRequestRpc request,
+                                       io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRandomMonstersByCrMethod(), responseObserver);
     }
   }
 
@@ -224,7 +223,7 @@ public final class MonsterServiceGrpc {
   public static abstract class MonsterServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return MonsterServiceGrpc.bindService(this);
     }
   }
@@ -239,7 +238,7 @@ public final class MonsterServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected MonsterServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MonsterServiceStub(channel, callOptions);
@@ -263,18 +262,18 @@ public final class MonsterServiceGrpc {
 
     /**
      */
-    public void getMonstersByCrAndGroup(MonsterServiceOuterClass.getMonstersCrGroupRequestRpc request,
-                                        io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc> responseObserver) {
+    public void getMonstersByCrAndGroup(MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc request,
+                                        io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonstersByCrRpc> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMonstersByCrAndGroupMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void getRandomMonsterByCr(MonsterServiceOuterClass.CrRpc request,
-                                     io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortRpc> responseObserver) {
+    public void getRandomMonstersByCr(MonsterServiceOuterClass.RandomMonsterRequestRpc request,
+                                      io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetRandomMonsterByCrMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetRandomMonstersByCrMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -288,7 +287,7 @@ public final class MonsterServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected MonsterServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MonsterServiceBlockingStub(channel, callOptions);
@@ -310,16 +309,16 @@ public final class MonsterServiceGrpc {
 
     /**
      */
-    public MonsterServiceOuterClass.MonsterShortListRpc getMonstersByCrAndGroup(MonsterServiceOuterClass.getMonstersCrGroupRequestRpc request) {
+    public MonsterServiceOuterClass.MonstersByCrRpc getMonstersByCrAndGroup(MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMonstersByCrAndGroupMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public MonsterServiceOuterClass.MonsterShortRpc getRandomMonsterByCr(MonsterServiceOuterClass.CrRpc request) {
+    public MonsterServiceOuterClass.MonsterShortListRpc getRandomMonstersByCr(MonsterServiceOuterClass.RandomMonsterRequestRpc request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetRandomMonsterByCrMethod(), getCallOptions(), request);
+          getChannel(), getGetRandomMonstersByCrMethod(), getCallOptions(), request);
     }
   }
 
@@ -333,7 +332,7 @@ public final class MonsterServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected MonsterServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MonsterServiceFutureStub(channel, callOptions);
@@ -357,25 +356,25 @@ public final class MonsterServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<MonsterServiceOuterClass.MonsterShortListRpc> getMonstersByCrAndGroup(
-        MonsterServiceOuterClass.getMonstersCrGroupRequestRpc request) {
+    public com.google.common.util.concurrent.ListenableFuture<MonsterServiceOuterClass.MonstersByCrRpc> getMonstersByCrAndGroup(
+        MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMonstersByCrAndGroupMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<MonsterServiceOuterClass.MonsterShortRpc> getRandomMonsterByCr(
-        MonsterServiceOuterClass.CrRpc request) {
+    public com.google.common.util.concurrent.ListenableFuture<MonsterServiceOuterClass.MonsterShortListRpc> getRandomMonstersByCr(
+        MonsterServiceOuterClass.RandomMonsterRequestRpc request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetRandomMonsterByCrMethod(), getCallOptions()), request);
+          getChannel().newCall(getGetRandomMonstersByCrMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_GET_AMOUNT_OF_MONSTER_BY_GROUP_ID = 0;
   private static final int METHODID_GET_CRS_BY_MONSTER_GROUP_ID = 1;
   private static final int METHODID_GET_MONSTERS_BY_CR_AND_GROUP = 2;
-  private static final int METHODID_GET_RANDOM_MONSTER_BY_CR = 3;
+  private static final int METHODID_GET_RANDOM_MONSTERS_BY_CR = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -390,8 +389,8 @@ public final class MonsterServiceGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_AMOUNT_OF_MONSTER_BY_GROUP_ID:
@@ -403,20 +402,20 @@ public final class MonsterServiceGrpc {
               (io.grpc.stub.StreamObserver<MonsterServiceOuterClass.CrListRpc>) responseObserver);
           break;
         case METHODID_GET_MONSTERS_BY_CR_AND_GROUP:
-          serviceImpl.getMonstersByCrAndGroup((MonsterServiceOuterClass.getMonstersCrGroupRequestRpc) request,
-              (io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc>) responseObserver);
+          serviceImpl.getMonstersByCrAndGroup((MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc) request,
+              (io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonstersByCrRpc>) responseObserver);
           break;
-        case METHODID_GET_RANDOM_MONSTER_BY_CR:
-          serviceImpl.getRandomMonsterByCr((MonsterServiceOuterClass.CrRpc) request,
-              (io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortRpc>) responseObserver);
+        case METHODID_GET_RANDOM_MONSTERS_BY_CR:
+          serviceImpl.getRandomMonstersByCr((MonsterServiceOuterClass.RandomMonsterRequestRpc) request,
+              (io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -446,16 +445,16 @@ public final class MonsterServiceGrpc {
           getGetMonstersByCrAndGroupMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              MonsterServiceOuterClass.getMonstersCrGroupRequestRpc,
-              MonsterServiceOuterClass.MonsterShortListRpc>(
+              MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc,
+              MonsterServiceOuterClass.MonstersByCrRpc>(
                 service, METHODID_GET_MONSTERS_BY_CR_AND_GROUP)))
         .addMethod(
-          getGetRandomMonsterByCrMethod(),
+          getGetRandomMonstersByCrMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              MonsterServiceOuterClass.CrRpc,
-              MonsterServiceOuterClass.MonsterShortRpc>(
-                service, METHODID_GET_RANDOM_MONSTER_BY_CR)))
+              MonsterServiceOuterClass.RandomMonsterRequestRpc,
+              MonsterServiceOuterClass.MonsterShortListRpc>(
+                service, METHODID_GET_RANDOM_MONSTERS_BY_CR)))
         .build();
   }
 
@@ -463,12 +462,12 @@ public final class MonsterServiceGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     MonsterServiceBaseDescriptorSupplier() {}
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return MonsterServiceOuterClass.getDescriptor();
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("MonsterService");
     }
@@ -482,13 +481,13 @@ public final class MonsterServiceGrpc {
   private static final class MonsterServiceMethodDescriptorSupplier
       extends MonsterServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final java.lang.String methodName;
+    private final String methodName;
 
-    MonsterServiceMethodDescriptorSupplier(java.lang.String methodName) {
+    MonsterServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }
@@ -507,7 +506,7 @@ public final class MonsterServiceGrpc {
               .addMethod(getGetAmountOfMonsterByGroupIdMethod())
               .addMethod(getGetCrsByMonsterGroupIdMethod())
               .addMethod(getGetMonstersByCrAndGroupMethod())
-              .addMethod(getGetRandomMonsterByCrMethod())
+              .addMethod(getGetRandomMonstersByCrMethod())
               .build();
         }
       }

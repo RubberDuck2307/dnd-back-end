@@ -1,3 +1,4 @@
+/*
 package dnd.monster_service.persistance.service.implementation;
 
 import dnd.monster_service.api.exception_handling.custom_exception.NoSuchEncounterException;
@@ -29,7 +30,8 @@ public class PostgresEncounterService implements EncounterService {
     private int variabilityModifier;
 
 
-    /**
+    */
+/**
      * Creates random encounter with given xp, every encounter will have only one kind of monster per cr.
      * For Example: Encounter made of 2 monsters with cr 1 and 2 monsters with cr 2 will have 1 kind of monster with cr
      * 1 and 1 kind of monster with cr 2
@@ -43,7 +45,8 @@ public class PostgresEncounterService implements EncounterService {
      *                                with monsters that are closest to the given xp, ignoring the xpTolerance
      * @return list of encounters
      * @throws NoSuchEncounterException if there is no possible combination to create encounters with the given xp
-     */
+     *//*
+
 
     @Override
     public ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
@@ -53,7 +56,8 @@ public class PostgresEncounterService implements EncounterService {
     }
 
 
-    /**
+    */
+/**
      * Creates random encounter with given xp
      *
      * @param xp                        desired xp for encounter
@@ -69,7 +73,8 @@ public class PostgresEncounterService implements EncounterService {
      *                                  If false, the encounter can have multiple kinds of monsters with the same cr
      * @return list of encounters
      * @throws NoSuchEncounterException if there is no possible combination to create encounters with the given xp
-     */
+     *//*
+
 
     @Override
     public ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
@@ -200,12 +205,14 @@ public class PostgresEncounterService implements EncounterService {
     }
 
 
-    /**
+    */
+/**
      * Calculate amount of monsters for each cr adjusted by variabilityModifier to increase diversity
      *
      * @param chosenCrs list of crs for each encounter
      * @return Hash map with cr as key and amount of monsters with that cr as value
-     */
+     *//*
+
     private HashMap<Double, Integer> calculateAmountsOfMonstersPerCr(ArrayList<ArrayList<Double>> chosenCrs) {
         HashMap<Double, Integer> amountOfCrs = new HashMap<>();
         for (ArrayList<Double> crs : chosenCrs) {
@@ -220,22 +227,6 @@ public class PostgresEncounterService implements EncounterService {
         return amountOfCrs;
     }
 
-    private ArrayList<Encounter> generateOneMonsterEncounters(Integer xp, Integer amountOfEncounters) {
-        return getRandomMonstersByCR(encounterDifficultyMap.getCr(xp), amountOfEncounters).stream().map(monster -> {
-            ArrayList<Monster> monsters = new ArrayList<>();
-            monsters.add(monster);
-            return encounterFactory.createEncounter(monsters);
-        }).collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
-    }
-
-    private ArrayList<Monster> getRandomMonstersByCR(double cr, int amountOfMonsters) {
-        long amount = monsterRepository.countAllByCrIs(cr);
-        if (amount < amountOfMonsters) {
-            amountOfMonsters = Math.toIntExact(amount);
-        }
-        int random = (int) (Math.random() * (amount - amountOfMonsters));
-        Page<Monster> monsters = monsterRepository.getAllByCrIs(cr, PageRequest.of(random, amountOfMonsters));
-        return new ArrayList<>(monsters.getContent());
-    }
 
 }
+*/

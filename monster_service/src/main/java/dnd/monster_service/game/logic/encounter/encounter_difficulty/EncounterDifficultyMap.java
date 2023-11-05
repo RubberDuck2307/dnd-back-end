@@ -8,7 +8,7 @@ public interface EncounterDifficultyMap {
 
     Double getMultiplier(Integer number);
 
-    Integer getXp(Double cr);
+    Integer getXp(float cr);
 
     /**
         Returns cr closest to xp

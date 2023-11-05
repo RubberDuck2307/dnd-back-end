@@ -12,14 +12,16 @@ import java.util.*;
 @Repository
 public interface MonsterRepository extends JpaRepository<Monster, Long> {
 
-    Long countAllByCrIs(Double cr);
-
+    int countAllByCrIs(Double cr);
     Optional<Monster> findByMonsterNameIgnoreCase(String name);
     Page<Monster> getAllByCrIs(Double cr, Pageable pageable);
-    HashMap<Double, List<Monster>> getMonstersByCrAndAmount(HashMap<Double, Integer> crs);
+    Map<Float, List<Monster>> getMonstersByCrAndAmount(Map<Float, Integer> crs);
 
-    HashMap<Double, List<Monster>> getMonstersByCrAmountAndMonsterGroupId(HashMap<Double, Integer> crs,
+    Map<Float, List<Monster>> getMonstersByCrAmountAndMonsterGroupId(Map<Float, Integer> crs,
                                                                           Long monsterGroupId);
+    Map<Float, Integer> getAmountOfMonstersByCrAndMonsterGroup(Map<Float, Integer> crs, Long monsterGroupId);
+    @Query("select count(m) from Monster m join m.monsterGroups mg where mg.id = :id")
+    int countByMonsterGroupId(Long id);
     @Query("SELECT distinct m.cr FROM MonsterGroup mg JOIN mg.monsters m WHERE mg.id = :id")
-    List<Double> getAllCrWhereMonsterGroupsContaining_Id(Long id);
+    List<Float> getAllCrWhereMonsterGroupsContaining_Id(Long id);
 }

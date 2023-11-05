@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EncounterController {
 
-    private final EncounterService encounterService;
+/*    private final EncounterService encounterService;
     private final EncounterDTOMapper encounterDTOMapper;
 
     @GetMapping("/random")
@@ -27,6 +27,6 @@ public class EncounterController {
         List<Encounter> encounters = encounterService.createRandomEncounter(xp, 5, 0.2f, true, 10);
         return new ResponseEntity<>(encounters.stream().map(encounterDTOMapper::getEncounterShortGetDTO).toList()
                 , HttpStatus.OK);
-    }
+    }*/
 
 }

@@ -32,7 +32,7 @@ public class Monster extends Creature{
     @Id
     @GeneratedValue
     private long id;
-    private Double cr;
+    private Float cr;
     private String monsterName;
     private Short passivePerception;
     private String imageUrl;
