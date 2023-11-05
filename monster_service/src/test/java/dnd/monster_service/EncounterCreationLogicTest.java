@@ -58,7 +58,7 @@ public class EncounterCreationLogicTest {
         for (Encounter encounter : encounters) {
             assertTrue(encounter.getDifficultyXp() >= 150 && encounter.getDifficultyXp() <= 450);
             assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 6);
-            HashMap<Double, ArrayList<Monster>> monstersByCr = new HashMap<>();
+            HashMap<Float, ArrayList<Monster>> monstersByCr = new HashMap<>();
             for (Monster monster : encounter.getMonsters()) {
                 if (monstersByCr.containsKey(monster.getCr())) {
                     assertEquals(monster.getId(), monstersByCr.get(monster.getCr()).get(0).getId());
@@ -144,7 +144,7 @@ public class EncounterCreationLogicTest {
         for (Encounter encounter : encounters) {
             assertTrue(encounter.getDifficultyXp() >= 1200 && encounter.getDifficultyXp() <= 3600);
             assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 6);
-            HashMap<Double, ArrayList<Monster>> monstersByCr = new HashMap<>();
+            HashMap<Float, ArrayList<Monster>> monstersByCr = new HashMap<>();
             for (Monster monster : encounter.getMonsters()) {
                 if (monstersByCr.containsKey(monster.getCr())) {
                     if (monster.getId() != monstersByCr.get(monster.getCr()).get(0).getId())
