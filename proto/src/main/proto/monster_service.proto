@@ -23,16 +23,28 @@ message MonsterShortListRpc{
   repeated MonsterShortRpc monsters = 1;
 }
 
-message getMonstersCrGroupRequestRpc{
+message GetMonstersCrGroupRequestRpc{
   map<string, int32> crs = 1;
   int64 groupId = 2;
 }
 
+message RandomMonsterRequestRpc{
+  float cr = 1;
+  int32 amount = 2;
+}
+
+message MonstersByCrRpc{
+  map<string, MonsterShortListRpc> monsters = 1;
+}
+
+message AmountOfCrRpc{
+  map<string, int32> crMap = 1;
+}
 
 service MonsterService{
-  rpc getAmountOfMonsterByGroupId(shared.IdRpc) returns(shared.AmountRpc);
-  rpc getCrsByMonsterGroupId(shared.IdRpc) returns (CrListRpc);
-  rpc getMonstersByCrAndGroup(getMonstersCrGroupRequestRpc) returns (MonsterShortListRpc);
-  rpc getRandomMonsterByCr(CrRpc) returns (MonsterShortRpc);
-
+  rpc getAmountOfMonsterByGroupId(IdRpc) returns(AmountRpc);
+  rpc getCrsByMonsterGroupId(IdRpc) returns (CrListRpc);
+  rpc getMonstersByCrAndGroup(GetMonstersCrGroupRequestRpc) returns (MonstersByCrRpc);
+  rpc getRandomMonstersByCr(RandomMonsterRequestRpc) returns (MonsterShortListRpc);
+  rpc getMonstersByCrAmount(AmountOfCrRpc) returns (MonstersByCrRpc);
 }
