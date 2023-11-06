@@ -20,6 +20,7 @@ public interface MonsterRepository extends JpaRepository<Monster, Long> {
     Map<Float, List<Monster>> getMonstersByCrAmountAndMonsterGroupId(Map<Float, Integer> crs,
                                                                           long monsterGroupId);
     Map<Float, Integer> getAmountOfMonstersByCrAndMonsterGroup(Map<Float, Integer> crs, long monsterGroupId);
+
     @Query("select count(m) from Monster m join m.monsterGroups mg where mg.id = :id")
     int countByMonsterGroupId(long id);
     @Query("SELECT distinct m.cr FROM MonsterGroup mg JOIN mg.monsters m WHERE mg.id = :id")

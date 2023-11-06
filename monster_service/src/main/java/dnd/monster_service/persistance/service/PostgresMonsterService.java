@@ -1,9 +1,8 @@
-package dnd.monster_service.persistance.service.implementation;
+package dnd.monster_service.persistance.service;
 
 
 import dnd.monster_service.persistance.model.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterRepository;
-import dnd.monster_service.persistance.service.interfaces.MonsterService;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.math3.util.Precision;
 import org.springframework.data.domain.Page;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
@@ -56,6 +54,13 @@ public class PostgresMonsterService implements MonsterService {
     @Override
     public Map<Float, List<Monster>> getMonstersByCr(Map<Float, Integer> amountOfCrs) {
        return getMonstersByCrAndGroup(amountOfCrs, 0);
+    }
+
+    @Override
+    public List<Monster> getMonsters(int pageSize, int pageNumber) {
+        pageSize = Math.max(pageSize, 20);
+        pageNumber = Math.max(pageNumber, 0);
+       return monsterRepository.findAll(PageRequest.of(pageNumber, pageSize)).getContent();
     }
 
 

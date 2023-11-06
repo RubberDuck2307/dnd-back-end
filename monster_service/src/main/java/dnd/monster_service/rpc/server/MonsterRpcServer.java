@@ -1,7 +1,7 @@
 package dnd.monster_service.rpc.server;
 
 import dnd.monster_service.persistance.model.creature.monster.Monster;
-import dnd.monster_service.persistance.service.interfaces.MonsterService;
+import dnd.monster_service.persistance.service.MonsterService;
 import dnd.monster_service.rpc.mapper.MonsterInMapper;
 import dnd.monster_service.rpc.mapper.MonsterOutMapper;
 import dnd.monster_service.rpc.server.generated.MonsterServiceGrpc;
@@ -10,7 +10,6 @@ import dnd.monster_service.rpc.server.generated.Shared;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import net.devh.boot.grpc.server.service.GrpcService;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -69,6 +68,15 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
                 parseGetMonstersCrGroupRequest(request), request.getGroupId());
         MonsterServiceOuterClass.MonstersByCrRpc monstersByCrRpc = monsterOutMapper.buildMonstersByCrRpc(monsters);
         responseObserver.onNext(monstersByCrRpc);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void getMonsters(MonsterServiceOuterClass.GetMonstersRequestRpc request,
+                            StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc> responseObserver) {
+        if (!request.hasFilters())
+         responseObserver.onNext(monsterOutMapper.buildMonsterShortListRpc(monsterService.getMonsters
+                 (request.getAmount(), request.getPage())));
         responseObserver.onCompleted();
     }
 }
