@@ -17,11 +17,11 @@ public class SqlDataFileMain {
     public static void main(String[] args) throws IOException {
 
         ObjectMapper objectMapper = JsonMapper.builder().enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS).build();
-        JsonFileReader fileReader = new JsonFileReader(null, objectMapper, new File(MONSTERS_FILE_PATH));
+        JsonFileReader fileReader = new JsonFileReader( objectMapper);
 
         MonsterJsonToSqlConverter monsterJsonToSqlConverter = new MonsterJsonToSqlConverter();
         SqlDataFileCreator sqlDataFileCreator = new SqlDataFileCreator(monsterJsonToSqlConverter);
-        sqlDataFileCreator.writeAll(fileReader.readMonstersJson(), fileReader.readConditions());
+        sqlDataFileCreator.writeAll(fileReader.readMonstersJson( new File(MONSTERS_FILE_PATH)), fileReader.readConditions());
 
     }
 }

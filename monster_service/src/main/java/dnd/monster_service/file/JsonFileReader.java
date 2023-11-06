@@ -3,8 +3,7 @@ package dnd.monster_service.file;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import dnd.monster_service.game.logic.encounter.encounter_difficulty.DefaultEncounterDifficultyMap;
-import dnd.monster_service.game.logic.encounter.encounter_difficulty.EncounterDifficultyMap;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -17,27 +16,13 @@ import java.util.Map;
 import java.util.Scanner;
 
 @Component
+@RequiredArgsConstructor
 public class JsonFileReader {
 
-    private final File encounterDifficultyFile;
     private final ObjectMapper objectMapper;
-    private final File monstersFile;
 
-    @Autowired
-    public JsonFileReader(@Qualifier("encounterDifficultyFile") File encounterDifficultyFile, ObjectMapper objectMapper,
-                          @Qualifier("monstersFile") File monstersFile) {
-        this.encounterDifficultyFile = encounterDifficultyFile;
-        this.objectMapper = objectMapper;
-        this.monstersFile = monstersFile;
-    }
-
-    public EncounterDifficultyMap readEncounterDifficultyMap() throws FileNotFoundException, JsonProcessingException {
-        String json = readFile(encounterDifficultyFile);
-        return objectMapper.readValue(json, DefaultEncounterDifficultyMap.class);
-    }
-
-    public List<MonsterJson> readMonstersJson() throws FileNotFoundException, JsonProcessingException {
-        String json = readFile(monstersFile);
+    public List<MonsterJson> readMonstersJson(File file) throws FileNotFoundException, JsonProcessingException {
+        String json = readFile(file);
         return objectMapper.readValue(json, objectMapper.getTypeFactory().
                 constructCollectionType(List.class, MonsterJson.class));
     }
