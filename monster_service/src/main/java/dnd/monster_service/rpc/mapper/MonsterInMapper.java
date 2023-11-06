@@ -11,13 +11,19 @@ import java.util.stream.Collectors;
 @Component
 public class MonsterInMapper {
     public Map<Float, Integer> parseGetMonstersCrGroupRequest(MonsterServiceOuterClass.
-                                                                            GetMonstersCrGroupRequestRpc monsters){
-      return  monsters.getCrsMap().entrySet().stream().collect(
+                                                                      GetMonstersCrGroupRequestRpc request) {
+        return parseCrMap(request.getCrsMap());
+    }
+
+    public Map<Float, Integer> parseAmountOfCr(MonsterServiceOuterClass.AmountOfCrRpc request) {
+        return parseCrMap(request.getCrMapMap());
+    }
+
+    private Map<Float, Integer> parseCrMap (Map <String, Integer> crMap) {
+        return crMap.entrySet().stream().collect(
                 Collectors.toMap(
                         entry -> Float.parseFloat(entry.getKey()),
                         Map.Entry::getValue
                 ));
-
     }
-
 }

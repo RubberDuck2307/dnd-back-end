@@ -15,7 +15,6 @@ public class MonsterJsonToSqlConverter {
     public MonsterJsonToSqlConverter() {
     }
 
-
     public Set<String> loadMonsterSize(List<MonsterJson> monsterJsons) {
         Set<String> sizes = new HashSet<>();
         monsterJsons.forEach(

@@ -1,6 +1,6 @@
 package dnd.monster_service.persistance.service.interfaces;
 
-import dnd.monster_service.api.exception_handling.custom_exception.NoSuchEncounterException;
+
 import dnd.monster_service.persistance.model.encounter.Encounter;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public interface EncounterService {
      * @param maxAmountOfMonster      maximal amount of monsters in encounter. If set to 1, the method will return encounters
      *                                with monsters that are closest to the given xp, ignoring the xpTolerance
      * @return list of encounters
-     * @throws NoSuchEncounterException if there is no possible combination to create encounters with the given xp
+     * @throws dnd.monster_service.NoSuchEncounterException if there is no possible combination to create encounters with the given xp
      */
 
     ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
@@ -40,7 +40,7 @@ public interface EncounterService {
      *                                  cr 2 will have 1 kind of monster with cr 1 and 1 kind of monster with cr 2
      *                                  If false, the encounter can have multiple kinds of monsters with the same cr
      * @return list of encounters
-     * @throws NoSuchEncounterException if there is no possible combination to create encounters with the given xp
+     * @throws dnd.monster_service.NoSuchEncounterException if there is no possible combination to create encounters with the given xp
      */
 
     ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,

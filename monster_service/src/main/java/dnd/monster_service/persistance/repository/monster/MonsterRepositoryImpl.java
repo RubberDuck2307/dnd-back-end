@@ -27,11 +27,11 @@ public class MonsterRepositoryImpl {
      * @return HashMap containing monsters with the corresponding crs as keys
      */
     public Map<Float, List<Monster>> getMonstersByCrAndAmount(Map<Float, Integer> crs) {
-        return getMonstersByCrAmountAndMonsterGroupId(crs, null);
+        return getMonstersByCrAmountAndMonsterGroupId(crs, 0);
     }
 
     public Map<Float, Integer> getAmountOfMonstersByCrAndMonsterGroup(Map<Float, Integer> crs,
-                                                                           Long monsterGroupId){
+                                                                           long monsterGroupId){
         Session session = entityManager.unwrap(Session.class);
 
         if (crs.isEmpty())
@@ -57,14 +57,14 @@ public class MonsterRepositoryImpl {
         for (int i = 0; i < crs.size(); i++) {
             countQuery.setParameter("cr" + (i + 1), crsKeyArray[i]);
         }
-        if (monsterGroupId != null)
+        if (monsterGroupId != 0)
             countQuery.setParameter("monsterGroupId", monsterGroupId);
 
         return convertCountQueryResultToMap(crs, countQuery.getResultList());
     }
 
     public Map<Float, List<Monster>> getMonstersByCrAmountAndMonsterGroupId(Map<Float, Integer> crs,
-                                                                                 Long monsterGroupId) {
+                                                                                 long monsterGroupId) {
         Session session = entityManager.unwrap(Session.class);
 
         Map<Float, Integer> amountOfMonstersByCr = getAmountOfMonstersByCrAndMonsterGroup(crs, monsterGroupId);
@@ -100,7 +100,7 @@ public class MonsterRepositoryImpl {
             //set maximum possible offset. If there are fewer monsters in database than requested, set offset to 0
             query.setParameter("amt" + (i + 1), amt);
         }
-        if (monsterGroupId != null) {
+        if (monsterGroupId !=  0) {
             query.setParameter("monsterGroupId", monsterGroupId);
         }
 
@@ -111,8 +111,8 @@ public class MonsterRepositoryImpl {
         return monsters;
     }
 
-    private void addMonsterGroupCondition(Long monsterGroupId, StringBuilder countQueryString) {
-        if (monsterGroupId != null) {
+    private void addMonsterGroupCondition(long monsterGroupId, StringBuilder countQueryString) {
+        if (monsterGroupId != 0) {
             countQueryString.append("AND id IN (SELECT monster_id\n" +
                     "FROM ")
                     .append(SQLConfig.SCHEMA).append(".")

@@ -24,6 +24,15 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
     private final MonsterInMapper monsterInMapper;
 
     @Override
+    public void getMonstersByCrAmount(MonsterServiceOuterClass.AmountOfCrRpc request,
+                                      StreamObserver<MonsterServiceOuterClass.MonstersByCrRpc> responseObserver) {
+        Map<Float, List<Monster>> monsters = monsterService.getMonstersByCr(monsterInMapper.parseAmountOfCr(request));
+        MonsterServiceOuterClass.MonstersByCrRpc monstersByCrRpc = monsterOutMapper.buildMonstersByCrRpc(monsters);
+        responseObserver.onNext(monstersByCrRpc);
+        responseObserver.onCompleted();
+    }
+
+    @Override
     public void getCrsByMonsterGroupId(Shared.IdRpc request,
                                        StreamObserver<MonsterServiceOuterClass.CrListRpc> responseObserver) {
         List<Float> monsterGroupCrs = monsterService.getCrsByMonsterGroup(request.getId());
