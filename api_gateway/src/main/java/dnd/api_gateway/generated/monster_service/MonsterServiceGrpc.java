@@ -1,4 +1,6 @@
-package generated.monster_service;
+package dnd.api_gateway.generated.monster_service;
+
+import dnd.api_gateway.generated.Shared;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -12,7 +14,7 @@ public final class MonsterServiceGrpc {
 
   private MonsterServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "MonsterService";
+  public static final String SERVICE_NAME = "MonsterService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<Shared.IdRpc,
@@ -207,7 +209,7 @@ public final class MonsterServiceGrpc {
   public static MonsterServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MonsterServiceStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<MonsterServiceStub>() {
-        @java.lang.Override
+        @Override
         public MonsterServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new MonsterServiceStub(channel, callOptions);
         }
@@ -222,7 +224,7 @@ public final class MonsterServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MonsterServiceBlockingStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<MonsterServiceBlockingStub>() {
-        @java.lang.Override
+        @Override
         public MonsterServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new MonsterServiceBlockingStub(channel, callOptions);
         }
@@ -237,7 +239,7 @@ public final class MonsterServiceGrpc {
       io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MonsterServiceFutureStub> factory =
       new io.grpc.stub.AbstractStub.StubFactory<MonsterServiceFutureStub>() {
-        @java.lang.Override
+        @Override
         public MonsterServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
           return new MonsterServiceFutureStub(channel, callOptions);
         }
@@ -298,7 +300,7 @@ public final class MonsterServiceGrpc {
   public static abstract class MonsterServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return MonsterServiceGrpc.bindService(this);
     }
   }
@@ -313,7 +315,7 @@ public final class MonsterServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected MonsterServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MonsterServiceStub(channel, callOptions);
@@ -378,7 +380,7 @@ public final class MonsterServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected MonsterServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MonsterServiceBlockingStub(channel, callOptions);
@@ -437,7 +439,7 @@ public final class MonsterServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected MonsterServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MonsterServiceFutureStub(channel, callOptions);
@@ -512,8 +514,8 @@ public final class MonsterServiceGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_AMOUNT_OF_MONSTER_BY_GROUP_ID:
@@ -545,8 +547,8 @@ public final class MonsterServiceGrpc {
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -607,12 +609,12 @@ public final class MonsterServiceGrpc {
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     MonsterServiceBaseDescriptorSupplier() {}
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return MonsterServiceOuterClass.getDescriptor();
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
       return getFileDescriptor().findServiceByName("MonsterService");
     }
@@ -626,13 +628,13 @@ public final class MonsterServiceGrpc {
   private static final class MonsterServiceMethodDescriptorSupplier
       extends MonsterServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final java.lang.String methodName;
+    private final String methodName;
 
-    MonsterServiceMethodDescriptorSupplier(java.lang.String methodName) {
+    MonsterServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
       return getServiceDescriptor().findMethodByName(methodName);
     }
