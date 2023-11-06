@@ -1,7 +1,6 @@
 package dnd.encounter_service.logic.encounter_difficulty;
 
 import dnd.encounter_service.utils.ListUtils;
-import dnd.rest_api.utils.ListUtils;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,13 +18,13 @@ public class DefaultEncounterDifficultyMap implements EncounterDifficultyMap {
     private ArrayList<ChallengeRatingSetting> challengeRatings;
 
     @Override
-    public Integer getXpThreshold(Integer level, EncounterDifficultyName difficultyName) {
+    public int getXpThreshold(int level, EncounterDifficultyName difficultyName) {
         return thresholds.stream().filter(threshold -> threshold.getLevel().equals(level)).
                 findFirst().orElseThrow().getDifficulty(difficultyName);
     }
 
     @Override
-    public Double getMultiplier(Integer number) {
+    public double getMultiplier(int number) {
         int[] array = multipliers.stream().mapToInt(DifficultyMultiplierSetting::getNumber).toArray();
         int correspondingMultiplier = ListUtils.BinarySearchHighestValueSmallerThanX(array, number);
         Double multiplier  = 1.0;
@@ -39,13 +38,13 @@ public class DefaultEncounterDifficultyMap implements EncounterDifficultyMap {
     }
 
     @Override
-    public Integer getXp(Double cr) {
+    public int getXp(float cr) {
         return challengeRatings.stream().filter(challengeRatingSetting -> challengeRatingSetting.getCr() == cr).
                 findFirst().orElseThrow(() -> new NoSuchElementException("Invalid cr value")).getXp();
     }
 
     @Override
-    public Double getCr(Integer xp) {
+    public float getCr(int xp) {
         ChallengeRatingSetting closestChallengeRatingSetting = challengeRatings.get(0);
         for (ChallengeRatingSetting challengeRatingSetting : challengeRatings) {
             {
@@ -63,7 +62,7 @@ public class DefaultEncounterDifficultyMap implements EncounterDifficultyMap {
     }
 
     @Override
-    public List<Double> getCRs() {
+    public List<Float> getCRs() {
         return challengeRatings.stream().map(ChallengeRatingSetting::getCr).toList();
     }
 

@@ -1,7 +1,8 @@
-package dnd.monster_service.persistance.model.encounter;
+package dnd.encounter_service.model.encounter;
 
-import dnd.monster_service.game.logic.encounter.encounter_creating.EncounterCreationLogic;
-import dnd.monster_service.persistance.model.creature.monster.Monster;
+
+import dnd.encounter_service.logic.encounter_creation.EncounterCreationLogic;
+import dnd.encounter_service.model.Monster;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

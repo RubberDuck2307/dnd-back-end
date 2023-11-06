@@ -1,12 +1,14 @@
-package dnd.monster_service;
+package dnd.encounter_service;
 
-import dnd.monster_service.api.exception_handling.custom_exception.NoSuchEncounterException;
-import dnd.monster_service.persistance.model.creature.monster.Monster;
-import dnd.monster_service.persistance.repository.monster.MonsterRepository;
-import dnd.monster_service.persistance.model.encounter.Encounter;
-import dnd.monster_service.game.logic.encounter.encounter_difficulty.EncounterDifficultyMap;
-import dnd.monster_service.persistance.service.interfaces.EncounterService;
-import org.junit.jupiter.api.*;
+
+import dnd.encounter_service.exception.NoSuchEncounterException;
+import dnd.encounter_service.logic.encounter_difficulty.EncounterDifficultyMap;
+import dnd.encounter_service.model.Monster;
+import dnd.encounter_service.model.encounter.Encounter;
+import dnd.encounter_service.service.EncounterService;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -18,8 +20,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class EncounterCreationLogicTest {
 
-    @Autowired
-    MonsterRepository monsterRepository;
     @Autowired
     EncounterService encounterService;
     @Autowired

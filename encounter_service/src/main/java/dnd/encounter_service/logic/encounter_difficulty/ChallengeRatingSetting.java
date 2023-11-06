@@ -8,7 +8,7 @@ import lombok.Getter;
 @Data
 public class ChallengeRatingSetting {
 
-    private double cr;
+    private float cr;
     private int xp;
 
 }

@@ -1,7 +1,7 @@
 package dnd.encounter_service.logic.encounter_creation;
 
 import dnd.encounter_service.logic.encounter_difficulty.EncounterDifficultyMap;
-import dnd.rest_api.utils.ListUtils;
+import dnd.encounter_service.utils.ListUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -18,14 +18,14 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
 
 
     @Override
-    public int calculateEncounterDifficultyXp(List<Double> crs) {
+    public int calculateEncounterDifficultyXp(List<Float> crs) {
         return (int) (crs.stream().mapToInt(encounterDifficultyMap::getXp
         ).sum() * encounterDifficultyMap.getMultiplier(crs.size()));
     }
 
 
     @Override
-    public int calculateEncounterGainedXp(List<Double> crs) {
+    public int calculateEncounterGainedXp(List<Float> crs) {
         return crs.stream().mapToInt(encounterDifficultyMap::getXp).sum();
     }
 
@@ -34,8 +34,8 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
      */
 
     @Override
-    public ArrayList<ArrayList<Double>> getCrsForEncounter(int xp, int maxAmountOfMonsters,
-                                                           List<Double> availableCrList, float xpTolerance) {
+    public ArrayList<ArrayList<Float>> getCrsForEncounter(int xp, int maxAmountOfMonsters,
+                                                           List<Float> availableCrList, float xpTolerance) {
         validateInput(xp, maxAmountOfMonsters, availableCrList, xpTolerance);
 
         int maxXp = xp + (int) (xp * xpTolerance);
@@ -54,12 +54,12 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
         }
         if (minXp / 10 > xpList[0])
             lowerIndex = Arrays.binarySearch(xpList, ListUtils.BinarySearchHighestValueSmallerThanX(xpList, minXp / 10)) + 1;
-        ArrayList<ArrayList<Double>> crsLists = new ArrayList<>();
+        ArrayList<ArrayList<Float>> crsLists = new ArrayList<>();
 
 
         while (upperIndex >= lowerIndex) {
-            ArrayList<ArrayList<Double>> listsOfCrs = new ArrayList<>();
-            ArrayList<Double> crs = new ArrayList<>();
+            ArrayList<ArrayList<Float>> listsOfCrs = new ArrayList<>();
+            ArrayList<Float> crs = new ArrayList<>();
             listsOfCrs.add(crs);
             getCrsRecursive(maxXp, minXp, 0, 0, listsOfCrs, Arrays.copyOfRange(xpList, lowerIndex,
                     upperIndex + 1), maxAmountOfMonsters);
@@ -75,7 +75,7 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
     }
 
 
-    private void validateInput(int xp, int maxAmountOfMonsters, List<Double> availableCrList, float xpTolerance) {
+    private void validateInput(int xp, int maxAmountOfMonsters, List<Float> availableCrList, float xpTolerance) {
         if (availableCrList.size() == 0) {
             throw new IllegalArgumentException("availableCrList must not be empty");
         }
@@ -103,8 +103,8 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
      * @param maxAmountOfMonsters the maximum amount of monsters in the encounter
      */
     private void getCrsRecursive(int maxXp, int minXp, int currentXp, int index,
-                                 ArrayList<ArrayList<Double>> crs, int[] xpList, int maxAmountOfMonsters) {
-        double multiplier = encounterDifficultyMap.getMultiplier(crs.get(index).size() + 1);
+                                 ArrayList<ArrayList<Float>> crs, int[] xpList, int maxAmountOfMonsters) {
+        Double multiplier = encounterDifficultyMap.getMultiplier(crs.get(index).size() + 1);
 
         if (maxAmountOfMonsters == 0) {
             if (currentXp * multiplier < minXp) {
@@ -142,7 +142,7 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
             int originalArrayIndex = index;
 
             while (arrayReductionIndex >= 0) {
-                ArrayList<Double> newCrs = new ArrayList<>(crs.get(originalArrayIndex));
+                ArrayList<Float> newCrs = new ArrayList<>(crs.get(originalArrayIndex));
                 crs.add(newCrs);
                 index = crs.size() - 1;
 

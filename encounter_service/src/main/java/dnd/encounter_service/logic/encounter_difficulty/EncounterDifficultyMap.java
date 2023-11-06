@@ -4,16 +4,16 @@ import java.util.List;
 
 public interface EncounterDifficultyMap {
 
-    Integer getXpThreshold(Integer level, EncounterDifficultyName difficultyName);
+    int getXpThreshold(int level, EncounterDifficultyName difficultyName);
 
-    Double getMultiplier(Integer number);
+    double getMultiplier(int number);
 
-    Integer getXp(Double cr);
+    int getXp(float cr);
 
     /**
         Returns cr closest to xp
      */
-    Double getCr(Integer xp);
+    float getCr(int xp);
 
     /**
      * Returns list of xp representing each level of challenge rating (cr)
@@ -23,5 +23,5 @@ public interface EncounterDifficultyMap {
     /**
      * Returns lists of alle challenge ratings
      */
-    List<Double> getCRs();
+    List<Float> getCRs();
 }

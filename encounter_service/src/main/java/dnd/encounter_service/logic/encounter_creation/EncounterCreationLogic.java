@@ -5,9 +5,9 @@ import java.util.List;
 
 public interface EncounterCreationLogic {
 
-    int calculateEncounterDifficultyXp(List<Double> crs);
+    int calculateEncounterDifficultyXp(List<Float> crs);
 
-    int calculateEncounterGainedXp(List<Double> crs);
+    int calculateEncounterGainedXp(List<Float> crs);
 
     /**
      * Calculates all possible combinations of crs that add up to xp
@@ -18,7 +18,7 @@ public interface EncounterCreationLogic {
      *                    Example: 0.1 means that xp can be 10% off from desired xp
      * @return list of lists of crs that add up to xp each list represents one possible encounter
      */
-    ArrayList<ArrayList<Double>> getCrsForEncounter(int xp, int maxAmountOfMonsters, List<Double> availableCrList,
+    ArrayList<ArrayList<Float>> getCrsForEncounter(int xp, int maxAmountOfMonsters, List<Float> availableCrList,
                                                      float xpTolerance);
 
 }
