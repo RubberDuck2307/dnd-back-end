@@ -1,8 +1,5 @@
 syntax = "proto3";
 
-
-package monster_service;
-
 import "shared.proto";
 
 message CrRpc{
@@ -41,10 +38,25 @@ message AmountOfCrRpc{
   map<string, int32> crMap = 1;
 }
 
+message GetMonstersRequestRpc{
+  int32 amount = 1;
+  int32 page = 2;
+  MonsterFiltersRpc filters = 3;
+}
+
+message MonsterFiltersRpc{
+  string name = 1;
+  float cr = 2;
+  int64 groupId = 3;
+  string type = 4;
+  string size = 5;
+}
+
 service MonsterService{
   rpc getAmountOfMonsterByGroupId(IdRpc) returns(AmountRpc);
   rpc getCrsByMonsterGroupId(IdRpc) returns (CrListRpc);
   rpc getMonstersByCrAndGroup(GetMonstersCrGroupRequestRpc) returns (MonstersByCrRpc);
   rpc getRandomMonstersByCr(RandomMonsterRequestRpc) returns (MonsterShortListRpc);
   rpc getMonstersByCrAmount(AmountOfCrRpc) returns (MonstersByCrRpc);
+  rpc getMonsters(GetMonstersRequestRpc) returns (MonsterShortListRpc);
 }
