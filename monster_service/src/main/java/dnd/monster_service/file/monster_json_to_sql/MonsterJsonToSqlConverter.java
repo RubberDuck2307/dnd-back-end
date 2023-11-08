@@ -2,11 +2,11 @@ package dnd.monster_service.file.monster_json_to_sql;
 
 import dnd.monster_service.file.MonsterJson;
 import dnd.monster_service.file.SQLMonster;
-import dnd.monster_service.persistance.model.creature.monster.LegendaryAction;
-import dnd.monster_service.persistance.model.creature.monster.MonsterAction;
-import dnd.monster_service.persistance.model.creature.monster.MonsterReaction;
-import dnd.monster_service.persistance.model.creature.monster.MonsterTrait;
-import dnd.monster_service.persistance.model.dice.DiceRoll;
+import dnd.monster_service.persistance.entity.creature.monster.LegendaryAction;
+import dnd.monster_service.persistance.entity.creature.monster.MonsterAction;
+import dnd.monster_service.persistance.entity.creature.monster.MonsterReaction;
+import dnd.monster_service.persistance.entity.creature.monster.MonsterTrait;
+import dnd.monster_service.persistance.entity.dice.DiceRoll;
 
 import java.util.*;
 

@@ -1,10 +1,10 @@
 package dnd.monster_service.file;
 
-import dnd.monster_service.persistance.model.creature.monster.LegendaryAction;
-import dnd.monster_service.persistance.model.creature.monster.MonsterAction;
-import dnd.monster_service.persistance.model.creature.monster.MonsterReaction;
-import dnd.monster_service.persistance.model.creature.monster.MonsterTrait;
-import dnd.monster_service.persistance.model.dice.DiceRoll;
+import dnd.monster_service.persistance.entity.creature.monster.LegendaryAction;
+import dnd.monster_service.persistance.entity.creature.monster.MonsterAction;
+import dnd.monster_service.persistance.entity.creature.monster.MonsterReaction;
+import dnd.monster_service.persistance.entity.creature.monster.MonsterTrait;
+import dnd.monster_service.persistance.entity.dice.DiceRoll;
 import lombok.Getter;
 import lombok.Setter;
 

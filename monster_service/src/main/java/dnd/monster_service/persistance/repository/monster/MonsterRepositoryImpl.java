@@ -1,7 +1,7 @@
 package dnd.monster_service.persistance.repository.monster;
 
 import dnd.monster_service.config.SQLConfig;
-import dnd.monster_service.persistance.model.creature.monster.Monster;
+import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import jakarta.persistence.EntityManager;
 import org.hibernate.Session;
 import org.hibernate.query.Query;

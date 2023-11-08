@@ -3,7 +3,7 @@ package dnd.monster_service.file.monster_json_to_sql;
 import dnd.monster_service.config.SQLConfig;
 import dnd.monster_service.file.MonsterJson;
 import dnd.monster_service.file.SQLMonster;
-import dnd.monster_service.persistance.model.creature.Ability;
+import dnd.monster_service.persistance.entity.creature.Ability;
 
 import java.io.FileWriter;
 import java.io.IOException;

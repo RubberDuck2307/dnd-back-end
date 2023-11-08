@@ -1,7 +1,7 @@
 package dnd.monster_service;
 
-import dnd.monster_service.persistance.model.creature.monster.Monster;
-import dnd.monster_service.persistance.service.MonsterService;
+import dnd.monster_service.persistance.entity.creature.monster.Monster;
+import dnd.monster_service.model.MonsterService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

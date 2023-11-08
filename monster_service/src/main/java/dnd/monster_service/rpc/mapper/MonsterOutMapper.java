@@ -1,6 +1,6 @@
 package dnd.monster_service.rpc.mapper;
 
-import dnd.monster_service.persistance.model.creature.monster.Monster;
+import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.rpc.server.generated.MonsterServiceOuterClass;
 import org.springframework.stereotype.Component;
 

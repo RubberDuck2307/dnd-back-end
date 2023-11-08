@@ -1,7 +1,7 @@
 package dnd.monster_service.rpc.server;
 
-import dnd.monster_service.persistance.model.creature.monster.Monster;
-import dnd.monster_service.persistance.service.MonsterService;
+import dnd.monster_service.persistance.entity.creature.monster.Monster;
+import dnd.monster_service.model.MonsterService;
 import dnd.monster_service.rpc.mapper.MonsterInMapper;
 import dnd.monster_service.rpc.mapper.MonsterOutMapper;
 import dnd.monster_service.rpc.server.generated.MonsterServiceGrpc;
@@ -55,7 +55,6 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
     public void getRandomMonstersByCr(MonsterServiceOuterClass.RandomMonsterRequestRpc request,
                                       StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc> responseObserver) {
         List<Monster> monsters = monsterService.getRandomMonstersByCr(request.getCr(), request.getAmount());
-        System.out.println(request.getAmount());
         MonsterServiceOuterClass.MonsterShortListRpc monsterShortListRpc = monsterOutMapper.buildMonsterShortListRpc(monsters);
         responseObserver.onNext(monsterShortListRpc);
         responseObserver.onCompleted();

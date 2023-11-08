@@ -1,6 +1,6 @@
 package dnd.monster_service.persistance.repository.monster;
 
-import dnd.monster_service.persistance.model.creature.monster.Monster;
+import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
