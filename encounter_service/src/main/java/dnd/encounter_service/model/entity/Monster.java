@@ -1,4 +1,4 @@
-package dnd.encounter_service.model;
+package dnd.encounter_service.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

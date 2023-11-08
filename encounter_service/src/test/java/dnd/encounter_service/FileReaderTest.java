@@ -2,7 +2,7 @@ package dnd.encounter_service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dnd.encounter_service.file.JsonFileReader;
-import dnd.encounter_service.logic.encounter_difficulty.EncounterDifficultyMap;
+import dnd.encounter_service.logic.encounter_difficulty.DifficultyService;
 import dnd.encounter_service.logic.encounter_difficulty.EncounterDifficultyName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FileReaderTest {
 
     @Autowired
-    EncounterDifficultyMap encounterDifficultiesMap;
+    DifficultyService encounterDifficultiesMap;
     @Autowired
     JsonFileReader jsonFileReader;
     @Autowired

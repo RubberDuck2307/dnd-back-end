@@ -2,7 +2,7 @@ package dnd.encounter_service.logic.encounter_difficulty;
 
 import java.util.List;
 
-public interface EncounterDifficultyMap {
+public interface DifficultyService {
 
     int getXpThreshold(int level, EncounterDifficultyName difficultyName);
 

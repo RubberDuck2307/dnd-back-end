@@ -2,9 +2,7 @@ package dnd.encounter_service.config;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import dnd.encounter_service.file.JsonFileReader;
-import dnd.encounter_service.logic.encounter_creation.DefaultEncounterCreationLogic;
-import dnd.encounter_service.logic.encounter_creation.EncounterCreationLogic;
-import dnd.encounter_service.logic.encounter_difficulty.EncounterDifficultyMap;
+import dnd.encounter_service.logic.encounter_difficulty.DifficultyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +15,7 @@ public class LogicConfig {
     private final JsonFileReader fileReader;
 
     @Bean
-    public EncounterDifficultyMap encounterDifficultyMap() throws FileNotFoundException, JsonProcessingException {
+    public DifficultyService encounterDifficultyMap() throws FileNotFoundException, JsonProcessingException {
         return fileReader.readEncounterDifficultyMap();
     }
 

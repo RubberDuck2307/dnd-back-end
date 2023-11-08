@@ -1,6 +1,6 @@
 package dnd.encounter_service.logic.encounter_creation;
 
-import dnd.encounter_service.logic.encounter_difficulty.EncounterDifficultyMap;
+import dnd.encounter_service.logic.encounter_difficulty.DifficultyService;
 import dnd.encounter_service.utils.ListUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,21 +12,21 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
 
-    private final EncounterDifficultyMap encounterDifficultyMap;
+    private final DifficultyService difficultyService;
     @Value("${game.monster.creation.max-monsters}")
     private int maxAmountOfMonstersInEncounter;
 
 
     @Override
     public int calculateEncounterDifficultyXp(List<Float> crs) {
-        return (int) (crs.stream().mapToInt(encounterDifficultyMap::getXp
-        ).sum() * encounterDifficultyMap.getMultiplier(crs.size()));
+        return (int) (crs.stream().mapToInt(difficultyService::getXp
+        ).sum() * difficultyService.getMultiplier(crs.size()));
     }
 
 
     @Override
     public int calculateEncounterGainedXp(List<Float> crs) {
-        return crs.stream().mapToInt(encounterDifficultyMap::getXp).sum();
+        return crs.stream().mapToInt(difficultyService::getXp).sum();
     }
 
     /**
@@ -44,7 +44,7 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
         if (maxAmountOfMonsters > maxAmountOfMonstersInEncounter)
             maxAmountOfMonsters = maxAmountOfMonstersInEncounter;
 
-        int[] xpList = availableCrList.stream().mapToInt(encounterDifficultyMap::getXp).toArray();
+        int[] xpList = availableCrList.stream().mapToInt(difficultyService::getXp).toArray();
         int upperIndex;
         int lowerIndex = 0;
         try {
@@ -104,7 +104,7 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
      */
     private void getCrsRecursive(int maxXp, int minXp, int currentXp, int index,
                                  ArrayList<ArrayList<Float>> crs, int[] xpList, int maxAmountOfMonsters) {
-        Double multiplier = encounterDifficultyMap.getMultiplier(crs.get(index).size() + 1);
+        Double multiplier = difficultyService.getMultiplier(crs.get(index).size() + 1);
 
         if (maxAmountOfMonsters == 0) {
             if (currentXp * multiplier < minXp) {
@@ -124,14 +124,14 @@ public class DefaultEncounterCreationLogic implements EncounterCreationLogic {
             return;
         }
 
-        crs.get(index).add(encounterDifficultyMap.getCr(addedXp));
+        crs.get(index).add(difficultyService.getCr(addedXp));
         currentXp += addedXp;
 
         if (currentXp * multiplier >= minXp && (maxAmountOfMonsters - 1) != 0) {
             int arrayReductionIndex;
 
             try {
-                double nextMultiplier = encounterDifficultyMap.getMultiplier(crs.get(index).size() + 1);
+                double nextMultiplier = difficultyService.getMultiplier(crs.get(index).size() + 1);
                 arrayReductionIndex = Arrays.binarySearch(xpList,
                         ListUtils.BinarySearchHighestValueSmallerThanX
                                 (xpList, (int) (maxXp / nextMultiplier - currentXp)));

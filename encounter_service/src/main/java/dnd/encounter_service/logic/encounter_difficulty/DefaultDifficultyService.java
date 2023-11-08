@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 
 @Setter
 @Getter
-public class DefaultEncounterDifficultyMap implements EncounterDifficultyMap {
+public class DefaultDifficultyService implements DifficultyService {
 
     private ArrayList<EncounterDifficultySetting> thresholds;
     private ArrayList<DifficultyMultiplierSetting> multipliers;

@@ -3,8 +3,8 @@ package dnd.encounter_service.file;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import dnd.encounter_service.logic.encounter_difficulty.DefaultEncounterDifficultyMap;
-import dnd.encounter_service.logic.encounter_difficulty.EncounterDifficultyMap;
+import dnd.encounter_service.logic.encounter_difficulty.DefaultDifficultyService;
+import dnd.encounter_service.logic.encounter_difficulty.DifficultyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,9 +24,9 @@ public class JsonFileReader {
         this.objectMapper = objectMapper;
     }
 
-    public EncounterDifficultyMap readEncounterDifficultyMap() throws FileNotFoundException, JsonProcessingException {
+    public DifficultyService readEncounterDifficultyMap() throws FileNotFoundException, JsonProcessingException {
         String json = readFile(new File(encounterDifficultySetting));
-        return objectMapper.readValue(json, DefaultEncounterDifficultyMap.class);
+        return objectMapper.readValue(json, DefaultDifficultyService.class);
     }
 
     private String readFile(File file) throws FileNotFoundException {

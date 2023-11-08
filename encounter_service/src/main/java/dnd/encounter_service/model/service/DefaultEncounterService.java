@@ -1,10 +1,10 @@
-package dnd.encounter_service.service;
+package dnd.encounter_service.model.service;
 
 import dnd.encounter_service.logic.encounter_creation.EncounterCreationLogic;
-import dnd.encounter_service.logic.encounter_difficulty.EncounterDifficultyMap;
-import dnd.encounter_service.model.Monster;
-import dnd.encounter_service.model.encounter.Encounter;
-import dnd.encounter_service.model.encounter.EncounterFactory;
+import dnd.encounter_service.logic.encounter_difficulty.DifficultyService;
+import dnd.encounter_service.model.entity.Monster;
+import dnd.encounter_service.model.entity.encounter.Encounter;
+import dnd.encounter_service.model.entity.encounter.EncounterFactory;
 import dnd.encounter_service.grpc.monster_service.MonsterService;
 import dnd.encounter_service.utils.ListUtils;
 import lombok.RequiredArgsConstructor;
@@ -16,11 +16,11 @@ import java.util.*;
 
 @Service
 @RequiredArgsConstructor
-public class EncounterService {
+public class DefaultEncounterService implements EncounterService {
 
     private final EncounterCreationLogic encounterCreationLogic;
     private final MonsterService monsterService;
-    private final EncounterDifficultyMap encounterDifficultyMap;
+    private final DifficultyService difficultyService;
     private final EncounterFactory encounterFactory;
     @Value("${game.monster.creation.diversity}")
     private int variabilityModifier;
@@ -43,6 +43,7 @@ public class EncounterService {
      */
 
 
+    @Override
     public ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
                                                       boolean differentKindOfMonsters, int maxAmountOfMonster) {
         return createRandomEncounter(xp, amountOfEncounters, xpTolerance, differentKindOfMonsters, maxAmountOfMonster,
@@ -69,6 +70,7 @@ public class EncounterService {
      */
 
 
+    @Override
     public ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
                                                       boolean differentKindOfMonsters, int maxAmountOfMonsters,
                                                       boolean onlyOneKindOfMonsterPerCr, Long monsterGroupId) {
@@ -95,7 +97,7 @@ public class EncounterService {
             (int xp, int amountOfEncounters, float xpTolerance, int maxAmountOfMonsters, Long monsterGroupId) {
         ArrayList<ArrayList<Float>> allPossibleCrs = new ArrayList<>();
 
-        List<Float> avCrs = monsterGroupId == null || monsterGroupId == 0 ? encounterDifficultyMap.getCRs() :
+        List<Float> avCrs = monsterGroupId == null || monsterGroupId == 0 ? difficultyService.getCRs() :
                 monsterService.getCrsByMonsterGroup(monsterGroupId);
 
         for (Float cr : avCrs) { //get all possible crs combinations by passing only one cr at a time
@@ -111,7 +113,7 @@ public class EncounterService {
              boolean onlyOneKindOfMonsterPerCr, Long monsterGroupId) {
         List<Float> avCrs;
         if (monsterGroupId == null || monsterGroupId == 0)
-            avCrs = encounterDifficultyMap.getCRs();
+            avCrs = difficultyService.getCRs();
         else
             avCrs = monsterService.getCrsByMonsterGroup(monsterGroupId);
         ArrayList<ArrayList<Float>> allPossibleCrs = encounterCreationLogic.getCrsForEncounter(xp,
@@ -218,7 +220,7 @@ public class EncounterService {
     }
 
     private ArrayList<Encounter> generateOneMonsterEncounters(Integer xp, Integer amountOfEncounters) {
-        return monsterService.getRandomMonstersByCr(encounterDifficultyMap.getCr(xp), amountOfEncounters).stream()
+        return monsterService.getRandomMonstersByCr(difficultyService.getCr(xp), amountOfEncounters).stream()
                 .map(monster -> {
                     ArrayList<Monster> monsters = new ArrayList<>();
                     monsters.add(monster);
