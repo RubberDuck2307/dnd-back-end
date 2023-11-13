@@ -2,7 +2,10 @@ package dnd.monster_service.persistance.repository.monster;
 
 import dnd.monster_service.config.SQLConfig;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
+import dnd.monster_service.persistance.entity.creature.monster.MonsterGroup;
+import dnd.monster_service.persistance.entity.creature.type.MonsterType;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.criteria.*;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +25,6 @@ public class MonsterRepositoryImpl {
     }
 
     /**
-     *
      * @param crs Map where the keys represent the cr and the values the amount of monsters with that cr that should be returned
      * @return HashMap containing monsters with the corresponding crs as keys
      */
@@ -31,7 +33,7 @@ public class MonsterRepositoryImpl {
     }
 
     public Map<Float, Integer> getAmountOfMonstersByCrAndMonsterGroup(Map<Float, Integer> crs,
-                                                                           long monsterGroupId){
+                                                                      long monsterGroupId) {
         Session session = entityManager.unwrap(Session.class);
 
         if (crs.isEmpty())
@@ -64,7 +66,7 @@ public class MonsterRepositoryImpl {
     }
 
     public Map<Float, List<Monster>> getMonstersByCrAmountAndMonsterGroupId(Map<Float, Integer> crs,
-                                                                                 long monsterGroupId) {
+                                                                            long monsterGroupId) {
         Session session = entityManager.unwrap(Session.class);
 
         Map<Float, Integer> amountOfMonstersByCr = getAmountOfMonstersByCrAndMonsterGroup(crs, monsterGroupId);
@@ -87,7 +89,7 @@ public class MonsterRepositoryImpl {
 
             addMonsterGroupCondition(monsterGroupId, queryString);
 
-            queryString.append("OFFSET floor(random() * :amt").append(i +1).append(")\n" +
+            queryString.append("OFFSET floor(random() * :amt").append(i + 1).append(")\n" +
                     "LIMIT :lmt").append(i + 1).append(")");
         }
 
@@ -100,7 +102,7 @@ public class MonsterRepositoryImpl {
             //set maximum possible offset. If there are fewer monsters in database than requested, set offset to 0
             query.setParameter("amt" + (i + 1), amt);
         }
-        if (monsterGroupId !=  0) {
+        if (monsterGroupId != 0) {
             query.setParameter("monsterGroupId", monsterGroupId);
         }
 
@@ -114,7 +116,7 @@ public class MonsterRepositoryImpl {
     private void addMonsterGroupCondition(long monsterGroupId, StringBuilder countQueryString) {
         if (monsterGroupId != 0) {
             countQueryString.append("AND id IN (SELECT monster_id\n" +
-                    "FROM ")
+                            "FROM ")
                     .append(SQLConfig.SCHEMA).append(".")
                     .append(SQLConfig.MONSTER_GROUP_MONSTER_RELATION_TABLE)
                     .append("\nWHERE monster_group_id = :monsterGroupId)\n");
@@ -123,39 +125,39 @@ public class MonsterRepositoryImpl {
 
     /**
      * Converts the result of the query to a hashmap with cr as key and list of monsters as value
-     * @param crs amounts of requested monsters by cr
+     *
+     * @param crs                  amounts of requested monsters by cr
      * @param amountOfMonstersByCr amount of monsters in database by cr
-     * @param monsters monsters from database
+     * @param monsters             monsters from database
      * @return hashmap with cr as key and list of monsters as value
      */
 
     private Map<Float, List<Monster>> convertMonsterQueryResultToMap(Map<Float, Integer> crs,
-                                                                              Map<Float, Integer> amountOfMonstersByCr,
-                                                                              List<Monster> monsters) {
+                                                                     Map<Float, Integer> amountOfMonstersByCr,
+                                                                     List<Monster> monsters) {
         //sort monsters by cr and their amounts by cr
         // the array is then sliced to get the correct amount of monsters and put into the result hashmap
         monsters.sort(Comparator.comparing(Monster::getCr));
         HashMap<Float, List<Monster>> result = new HashMap<>();
-        Float[] keys =  crs.keySet().stream().sorted().toArray(Float[]::new);
+        Float[] keys = crs.keySet().stream().sorted().toArray(Float[]::new);
         int index = 0;
         for (int i = 0; i < crs.size(); i++) {
             //if there are fewer monsters in database than requested, set amount to amount in database
             int amount = Math.min(crs.get(keys[i]), amountOfMonstersByCr.get(keys[i]));
             result.put(keys[i], monsters.subList(index, index + amount));
-                index += amount;
+            index += amount;
         }
 
         return result;
     }
 
     /**
-     *
-     * @param crs amounts of requested monsters by cr
+     * @param crs     amounts of requested monsters by cr
      * @param amounts amounts of monsters with the corresponding crs in the database in the same order as the crs
      * @return hashmap containing the amounts of monsters with the corresponding crs in the database
      */
     private Map<Float, Integer> convertCountQueryResultToMap(Map<Float, Integer> crs,
-                                                                      List<Integer> amounts) {
+                                                             List<Integer> amounts) {
         HashMap<Float, Integer> result = new HashMap<>();
         Float[] keys = crs.keySet().toArray(new Float[0]);
         for (int i = 0; i < amounts.size(); i++) {
@@ -164,6 +166,41 @@ public class MonsterRepositoryImpl {
             result.put(keys[i], amounts.get(i));
         }
 
+        return result;
+    }
+
+    public List<Monster> getMonstersFiltered(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter) {
+        Session session = entityManager.unwrap(Session.class);
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Monster> criteriaQuery = criteriaBuilder.createQuery(Monster.class);
+        Root<Monster> root = criteriaQuery.from(Monster.class);
+
+        List<Predicate> predicates = new ArrayList<>();
+
+        if (monsterSearchFilter.name() != null && !monsterSearchFilter.name().isEmpty()) {
+            predicates.add(criteriaBuilder.like(criteriaBuilder.lower(
+                    root.get("monsterName")), "%" + monsterSearchFilter.name().toLowerCase() + "%"));
+        }
+
+        if (monsterSearchFilter.cr() != null) {
+            predicates.add(criteriaBuilder.equal(root.get("cr"), monsterSearchFilter.cr()));
+        }
+
+        if (monsterSearchFilter.groupId() != null) {
+            Join<Monster, MonsterGroup> monsterGroupMonsterRelationJoin = root.join("monsterGroups");
+            predicates.add(criteriaBuilder.equal(monsterGroupMonsterRelationJoin.get("id"),
+                    monsterSearchFilter.groupId()));
+        }
+        if (monsterSearchFilter.type() != null) {
+            Join<Monster, MonsterType> monsterTypeJoin = root.join("types");
+            predicates.add(criteriaBuilder.like(criteriaBuilder.lower(monsterTypeJoin.get("name"))
+                    , "%" + monsterSearchFilter.type().toLowerCase() + "%"));
+        }
+
+        criteriaQuery.where(predicates.toArray(new Predicate[0]));
+        List<Monster> result = session.createQuery(criteriaQuery).setFirstResult(pageNumber * pageSize)
+                .setMaxResults(pageSize).getResultList();
+        session.close();
         return result;
     }
 

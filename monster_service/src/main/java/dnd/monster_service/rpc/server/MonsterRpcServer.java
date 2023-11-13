@@ -2,6 +2,7 @@ package dnd.monster_service.rpc.server;
 
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.model.MonsterService;
+import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
 import dnd.monster_service.rpc.mapper.MonsterInMapper;
 import dnd.monster_service.rpc.mapper.MonsterOutMapper;
 import dnd.monster_service.rpc.server.generated.MonsterServiceGrpc;
@@ -73,9 +74,15 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
     @Override
     public void getMonsters(MonsterServiceOuterClass.GetMonstersRequestRpc request,
                             StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc> responseObserver) {
+
+        List<Monster> monsters;
         if (!request.hasFilters())
-         responseObserver.onNext(monsterOutMapper.buildMonsterShortListRpc(monsterService.getMonsters
-                 (request.getAmount(), request.getPage())));
+            monsters = monsterService.getMonsters(request.getAmount(), request.getPage());
+        else {
+            MonsterSearchFilter monsterSearchFilter = monsterInMapper.parseMonsterFilters(request.getFilters());
+            monsters = monsterService.getMonsters(request.getAmount(), request.getPage(), monsterSearchFilter);
+        }
+        responseObserver.onNext(monsterOutMapper.buildMonsterShortListRpc(monsters));
         responseObserver.onCompleted();
     }
 }

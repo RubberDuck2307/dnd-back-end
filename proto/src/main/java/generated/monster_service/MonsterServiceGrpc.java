@@ -170,27 +170,27 @@ public final class MonsterServiceGrpc {
     return getGetMonstersByCrAmountMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<MonsterServiceOuterClass.getMonstersRequestRpc,
+  private static volatile io.grpc.MethodDescriptor<MonsterServiceOuterClass.GetMonstersRequestRpc,
       MonsterServiceOuterClass.MonsterShortListRpc> getGetMonstersMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getMonsters",
-      requestType = MonsterServiceOuterClass.getMonstersRequestRpc.class,
+      requestType = MonsterServiceOuterClass.GetMonstersRequestRpc.class,
       responseType = MonsterServiceOuterClass.MonsterShortListRpc.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<MonsterServiceOuterClass.getMonstersRequestRpc,
+  public static io.grpc.MethodDescriptor<MonsterServiceOuterClass.GetMonstersRequestRpc,
       MonsterServiceOuterClass.MonsterShortListRpc> getGetMonstersMethod() {
-    io.grpc.MethodDescriptor<MonsterServiceOuterClass.getMonstersRequestRpc, MonsterServiceOuterClass.MonsterShortListRpc> getGetMonstersMethod;
+    io.grpc.MethodDescriptor<MonsterServiceOuterClass.GetMonstersRequestRpc, MonsterServiceOuterClass.MonsterShortListRpc> getGetMonstersMethod;
     if ((getGetMonstersMethod = MonsterServiceGrpc.getGetMonstersMethod) == null) {
       synchronized (MonsterServiceGrpc.class) {
         if ((getGetMonstersMethod = MonsterServiceGrpc.getGetMonstersMethod) == null) {
           MonsterServiceGrpc.getGetMonstersMethod = getGetMonstersMethod =
-              io.grpc.MethodDescriptor.<MonsterServiceOuterClass.getMonstersRequestRpc, MonsterServiceOuterClass.MonsterShortListRpc>newBuilder()
+              io.grpc.MethodDescriptor.<MonsterServiceOuterClass.GetMonstersRequestRpc, MonsterServiceOuterClass.MonsterShortListRpc>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getMonsters"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  MonsterServiceOuterClass.getMonstersRequestRpc.getDefaultInstance()))
+                  MonsterServiceOuterClass.GetMonstersRequestRpc.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   MonsterServiceOuterClass.MonsterShortListRpc.getDefaultInstance()))
               .setSchemaDescriptor(new MonsterServiceMethodDescriptorSupplier("getMonsters"))
@@ -252,14 +252,14 @@ public final class MonsterServiceGrpc {
     /**
      */
     default void getAmountOfMonsterByGroupId(Shared.IdRpc request,
-        io.grpc.stub.StreamObserver<Shared.AmountRpc> responseObserver) {
+                                             io.grpc.stub.StreamObserver<Shared.AmountRpc> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAmountOfMonsterByGroupIdMethod(), responseObserver);
     }
 
     /**
      */
     default void getCrsByMonsterGroupId(Shared.IdRpc request,
-        io.grpc.stub.StreamObserver<MonsterServiceOuterClass.CrListRpc> responseObserver) {
+                                        io.grpc.stub.StreamObserver<MonsterServiceOuterClass.CrListRpc> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCrsByMonsterGroupIdMethod(), responseObserver);
     }
 
@@ -286,7 +286,7 @@ public final class MonsterServiceGrpc {
 
     /**
      */
-    default void getMonsters(MonsterServiceOuterClass.getMonstersRequestRpc request,
+    default void getMonsters(MonsterServiceOuterClass.GetMonstersRequestRpc request,
         io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMonstersMethod(), responseObserver);
     }
@@ -322,7 +322,7 @@ public final class MonsterServiceGrpc {
     /**
      */
     public void getAmountOfMonsterByGroupId(Shared.IdRpc request,
-        io.grpc.stub.StreamObserver<Shared.AmountRpc> responseObserver) {
+                                            io.grpc.stub.StreamObserver<Shared.AmountRpc> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAmountOfMonsterByGroupIdMethod(), getCallOptions()), request, responseObserver);
     }
@@ -330,7 +330,7 @@ public final class MonsterServiceGrpc {
     /**
      */
     public void getCrsByMonsterGroupId(Shared.IdRpc request,
-        io.grpc.stub.StreamObserver<MonsterServiceOuterClass.CrListRpc> responseObserver) {
+                                       io.grpc.stub.StreamObserver<MonsterServiceOuterClass.CrListRpc> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetCrsByMonsterGroupIdMethod(), getCallOptions()), request, responseObserver);
     }
@@ -361,7 +361,7 @@ public final class MonsterServiceGrpc {
 
     /**
      */
-    public void getMonsters(MonsterServiceOuterClass.getMonstersRequestRpc request,
+    public void getMonsters(MonsterServiceOuterClass.GetMonstersRequestRpc request,
         io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMonstersMethod(), getCallOptions()), request, responseObserver);
@@ -421,7 +421,7 @@ public final class MonsterServiceGrpc {
 
     /**
      */
-    public MonsterServiceOuterClass.MonsterShortListRpc getMonsters(MonsterServiceOuterClass.getMonstersRequestRpc request) {
+    public MonsterServiceOuterClass.MonsterShortListRpc getMonsters(MonsterServiceOuterClass.GetMonstersRequestRpc request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMonstersMethod(), getCallOptions(), request);
     }
@@ -486,7 +486,7 @@ public final class MonsterServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<MonsterServiceOuterClass.MonsterShortListRpc> getMonsters(
-        MonsterServiceOuterClass.getMonstersRequestRpc request) {
+        MonsterServiceOuterClass.GetMonstersRequestRpc request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMonstersMethod(), getCallOptions()), request);
     }
@@ -537,7 +537,7 @@ public final class MonsterServiceGrpc {
               (io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonstersByCrRpc>) responseObserver);
           break;
         case METHODID_GET_MONSTERS:
-          serviceImpl.getMonsters((MonsterServiceOuterClass.getMonstersRequestRpc) request,
+          serviceImpl.getMonsters((MonsterServiceOuterClass.GetMonstersRequestRpc) request,
               (io.grpc.stub.StreamObserver<MonsterServiceOuterClass.MonsterShortListRpc>) responseObserver);
           break;
         default:
@@ -597,7 +597,7 @@ public final class MonsterServiceGrpc {
           getGetMonstersMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              MonsterServiceOuterClass.getMonstersRequestRpc,
+              MonsterServiceOuterClass.GetMonstersRequestRpc,
               MonsterServiceOuterClass.MonsterShortListRpc>(
                 service, METHODID_GET_MONSTERS)))
         .build();

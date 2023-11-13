@@ -27,7 +27,7 @@ import static dnd.monster_service.config.SQLConfig.SCHEMA;
 @Setter
 @NoArgsConstructor
 
-public class Monster extends Creature{
+public class Monster extends Creature {
 
     @Id
     @GeneratedValue
@@ -98,7 +98,7 @@ public class Monster extends Creature{
     )
     private Set<Condition> conditionImmunities;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             schema = SCHEMA,
             name = SQLConfig.MONSTER_GROUP_MONSTER_RELATION_TABLE,
@@ -115,7 +115,7 @@ public class Monster extends Creature{
         super.setHitPoints((short) hitDice.getAverage());
     }
 
-    public String toString(){
+    public String toString() {
         return monsterName + " " + cr;
     }
 
@@ -128,7 +128,6 @@ public class Monster extends Creature{
 
         return id == monster.id;
     }
-
 
 
 }

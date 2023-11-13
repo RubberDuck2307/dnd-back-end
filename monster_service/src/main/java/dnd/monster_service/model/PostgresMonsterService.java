@@ -3,6 +3,7 @@ package dnd.monster_service.model;
 
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterRepository;
+import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.math3.util.Precision;
 import org.springframework.data.domain.Page;
@@ -61,6 +62,11 @@ public class PostgresMonsterService implements MonsterService {
         pageSize = Math.max(pageSize, 20);
         pageNumber = Math.max(pageNumber, 0);
        return monsterRepository.findAll(PageRequest.of(pageNumber, pageSize)).getContent();
+    }
+
+    @Override
+    public List<Monster> getMonsters(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter) {
+        return monsterRepository.getMonstersFiltered(pageSize, pageNumber, monsterSearchFilter);
     }
 
 

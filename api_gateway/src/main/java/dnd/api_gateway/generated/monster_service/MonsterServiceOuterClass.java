@@ -6,17 +6,17 @@ import dnd.api_gateway.generated.Shared;
 public final class MonsterServiceOuterClass {
   private MonsterServiceOuterClass() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+          com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+          com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+            (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface CrRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CrRpc)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:CrRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>float cr = 1;</code>
@@ -28,10 +28,10 @@ public final class MonsterServiceOuterClass {
    * Protobuf type {@code CrRpc}
    */
   public static final class CrRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:CrRpc)
-      CrRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:CrRpc)
+          CrRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
     // Use CrRpc.newBuilder() to construct.
     private CrRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -39,24 +39,24 @@ public final class MonsterServiceOuterClass {
     private CrRpc() {
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
       return new CrRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return MonsterServiceOuterClass.internal_static_CrRpc_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
       return MonsterServiceOuterClass.internal_static_CrRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              CrRpc.class, Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.CrRpc.class, MonsterServiceOuterClass.CrRpc.Builder.class);
     }
 
     public static final int CR_FIELD_NUMBER = 1;
@@ -65,13 +65,13 @@ public final class MonsterServiceOuterClass {
      * <code>float cr = 1;</code>
      * @return The cr.
      */
-    @Override
+    @java.lang.Override
     public float getCr() {
       return cr_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -81,48 +81,48 @@ public final class MonsterServiceOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (Float.floatToRawIntBits(cr_) != 0) {
+            throws java.io.IOException {
+      if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         output.writeFloat(1, cr_);
       }
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (Float.floatToRawIntBits(cr_) != 0) {
+      if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, cr_);
+                .computeFloatSize(1, cr_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof CrRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.CrRpc)) {
         return super.equals(obj);
       }
-      CrRpc other = (CrRpc) obj;
+      MonsterServiceOuterClass.CrRpc other = (MonsterServiceOuterClass.CrRpc) obj;
 
-      if (Float.floatToIntBits(getCr())
-          != Float.floatToIntBits(
+      if (java.lang.Float.floatToIntBits(getCr())
+              != java.lang.Float.floatToIntBits(
               other.getCr())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -130,102 +130,102 @@ public final class MonsterServiceOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CR_FIELD_NUMBER;
-      hash = (53 * hash) + Float.floatToIntBits(
-          getCr());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getCr());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static CrRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static CrRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static CrRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static CrRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static CrRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static CrRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static CrRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.CrRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static CrRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.CrRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static CrRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static CrRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.CrRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static CrRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static CrRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.CrRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.CrRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.CrRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(CrRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.CrRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -233,20 +233,20 @@ public final class MonsterServiceOuterClass {
      * Protobuf type {@code CrRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:CrRpc)
-        CrRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:CrRpc)
+            MonsterServiceOuterClass.CrRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return MonsterServiceOuterClass.internal_static_CrRpc_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
         return MonsterServiceOuterClass.internal_static_CrRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                CrRpc.class, Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.CrRpc.class, MonsterServiceOuterClass.CrRpc.Builder.class);
       }
 
       // Construct using generated.monster_service.MonsterServiceOuterClass.CrRpc.newBuilder()
@@ -255,11 +255,11 @@ public final class MonsterServiceOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -267,85 +267,85 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return MonsterServiceOuterClass.internal_static_CrRpc_descriptor;
       }
 
-      @Override
-      public CrRpc getDefaultInstanceForType() {
-        return CrRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.CrRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.CrRpc.getDefaultInstance();
       }
 
-      @Override
-      public CrRpc build() {
-        CrRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.CrRpc build() {
+        MonsterServiceOuterClass.CrRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public CrRpc buildPartial() {
-        CrRpc result = new CrRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.CrRpc buildPartial() {
+        MonsterServiceOuterClass.CrRpc result = new MonsterServiceOuterClass.CrRpc(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(CrRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.CrRpc result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.cr_ = cr_;
         }
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof CrRpc) {
-          return mergeFrom((CrRpc)other);
+        if (other instanceof MonsterServiceOuterClass.CrRpc) {
+          return mergeFrom((MonsterServiceOuterClass.CrRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(CrRpc other) {
-        if (other == CrRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.CrRpc other) {
+        if (other == MonsterServiceOuterClass.CrRpc.getDefaultInstance()) return this;
         if (other.getCr() != 0F) {
           setCr(other.getCr());
         }
@@ -354,18 +354,18 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -402,7 +402,7 @@ public final class MonsterServiceOuterClass {
        * <code>float cr = 1;</code>
        * @return The cr.
        */
-      @Override
+      @java.lang.Override
       public float getCr() {
         return cr_;
       }
@@ -428,15 +428,15 @@ public final class MonsterServiceOuterClass {
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -445,22 +445,22 @@ public final class MonsterServiceOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:CrRpc)
-    private static final CrRpc DEFAULT_INSTANCE;
+    private static final MonsterServiceOuterClass.CrRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new CrRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.CrRpc();
     }
 
-    public static CrRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.CrRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<CrRpc>
-        PARSER = new com.google.protobuf.AbstractParser<CrRpc>() {
-      @Override
+            PARSER = new com.google.protobuf.AbstractParser<CrRpc>() {
+      @java.lang.Override
       public CrRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -470,7 +470,7 @@ public final class MonsterServiceOuterClass {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
@@ -480,31 +480,31 @@ public final class MonsterServiceOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<CrRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public CrRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.CrRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface CrListRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CrListRpc)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:CrListRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
-    java.util.List<CrRpc>
-        getCrsList();
+    java.util.List<MonsterServiceOuterClass.CrRpc>
+    getCrsList();
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
-    CrRpc getCrs(int index);
+    MonsterServiceOuterClass.CrRpc getCrs(int index);
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
@@ -512,22 +512,22 @@ public final class MonsterServiceOuterClass {
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
-    java.util.List<? extends CrRpcOrBuilder>
-        getCrsOrBuilderList();
+    java.util.List<? extends MonsterServiceOuterClass.CrRpcOrBuilder>
+    getCrsOrBuilderList();
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
-    CrRpcOrBuilder getCrsOrBuilder(
-        int index);
+    MonsterServiceOuterClass.CrRpcOrBuilder getCrsOrBuilder(
+            int index);
   }
   /**
    * Protobuf type {@code CrListRpc}
    */
   public static final class CrListRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:CrListRpc)
-      CrListRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:CrListRpc)
+          CrListRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
     // Use CrListRpc.newBuilder() to construct.
     private CrListRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -536,69 +536,69 @@ public final class MonsterServiceOuterClass {
       crs_ = java.util.Collections.emptyList();
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
       return new CrListRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return MonsterServiceOuterClass.internal_static_CrListRpc_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
       return MonsterServiceOuterClass.internal_static_CrListRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              CrListRpc.class, Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.CrListRpc.class, MonsterServiceOuterClass.CrListRpc.Builder.class);
     }
 
     public static final int CRS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<CrRpc> crs_;
+    private java.util.List<MonsterServiceOuterClass.CrRpc> crs_;
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
-    @Override
-    public java.util.List<CrRpc> getCrsList() {
+    @java.lang.Override
+    public java.util.List<MonsterServiceOuterClass.CrRpc> getCrsList() {
       return crs_;
     }
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
-    @Override
-    public java.util.List<? extends CrRpcOrBuilder>
-        getCrsOrBuilderList() {
+    @java.lang.Override
+    public java.util.List<? extends MonsterServiceOuterClass.CrRpcOrBuilder>
+    getCrsOrBuilderList() {
       return crs_;
     }
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public int getCrsCount() {
       return crs_.size();
     }
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
-    @Override
-    public CrRpc getCrs(int index) {
+    @java.lang.Override
+    public MonsterServiceOuterClass.CrRpc getCrs(int index) {
       return crs_.get(index);
     }
     /**
      * <code>repeated .CrRpc crs = 1;</code>
      */
-    @Override
-    public CrRpcOrBuilder getCrsOrBuilder(
-        int index) {
+    @java.lang.Override
+    public MonsterServiceOuterClass.CrRpcOrBuilder getCrsOrBuilder(
+            int index) {
       return crs_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -608,16 +608,16 @@ public final class MonsterServiceOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       for (int i = 0; i < crs_.size(); i++) {
         output.writeMessage(1, crs_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -625,30 +625,30 @@ public final class MonsterServiceOuterClass {
       size = 0;
       for (int i = 0; i < crs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, crs_.get(i));
+                .computeMessageSize(1, crs_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof CrListRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.CrListRpc)) {
         return super.equals(obj);
       }
-      CrListRpc other = (CrListRpc) obj;
+      MonsterServiceOuterClass.CrListRpc other = (MonsterServiceOuterClass.CrListRpc) obj;
 
       if (!getCrsList()
-          .equals(other.getCrsList())) return false;
+              .equals(other.getCrsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -664,95 +664,95 @@ public final class MonsterServiceOuterClass {
       return hash;
     }
 
-    public static CrListRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static CrListRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static CrListRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static CrListRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static CrListRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static CrListRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static CrListRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static CrListRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static CrListRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static CrListRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.CrListRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static CrListRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static CrListRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.CrListRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.CrListRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(CrListRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.CrListRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -760,20 +760,20 @@ public final class MonsterServiceOuterClass {
      * Protobuf type {@code CrListRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:CrListRpc)
-        CrListRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:CrListRpc)
+            MonsterServiceOuterClass.CrListRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return MonsterServiceOuterClass.internal_static_CrListRpc_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
         return MonsterServiceOuterClass.internal_static_CrListRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                CrListRpc.class, Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.CrListRpc.class, MonsterServiceOuterClass.CrListRpc.Builder.class);
       }
 
       // Construct using generated.monster_service.MonsterServiceOuterClass.CrListRpc.newBuilder()
@@ -782,11 +782,11 @@ public final class MonsterServiceOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -800,36 +800,36 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return MonsterServiceOuterClass.internal_static_CrListRpc_descriptor;
       }
 
-      @Override
-      public CrListRpc getDefaultInstanceForType() {
-        return CrListRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.CrListRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.CrListRpc.getDefaultInstance();
       }
 
-      @Override
-      public CrListRpc build() {
-        CrListRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.CrListRpc build() {
+        MonsterServiceOuterClass.CrListRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public CrListRpc buildPartial() {
-        CrListRpc result = new CrListRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.CrListRpc buildPartial() {
+        MonsterServiceOuterClass.CrListRpc result = new MonsterServiceOuterClass.CrListRpc(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(CrListRpc result) {
+      private void buildPartialRepeatedFields(MonsterServiceOuterClass.CrListRpc result) {
         if (crsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             crs_ = java.util.Collections.unmodifiableList(crs_);
@@ -841,54 +841,54 @@ public final class MonsterServiceOuterClass {
         }
       }
 
-      private void buildPartial0(CrListRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.CrListRpc result) {
         int from_bitField0_ = bitField0_;
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof CrListRpc) {
-          return mergeFrom((CrListRpc)other);
+        if (other instanceof MonsterServiceOuterClass.CrListRpc) {
+          return mergeFrom((MonsterServiceOuterClass.CrListRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(CrListRpc other) {
-        if (other == CrListRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.CrListRpc other) {
+        if (other == MonsterServiceOuterClass.CrListRpc.getDefaultInstance()) return this;
         if (crsBuilder_ == null) {
           if (!other.crs_.isEmpty()) {
             if (crs_.isEmpty()) {
@@ -907,9 +907,9 @@ public final class MonsterServiceOuterClass {
               crsBuilder_ = null;
               crs_ = other.crs_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              crsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCrsFieldBuilder() : null;
+              crsBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                              getCrsFieldBuilder() : null;
             } else {
               crsBuilder_.addAllMessages(other.crs_);
             }
@@ -920,18 +920,18 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -942,10 +942,10 @@ public final class MonsterServiceOuterClass {
                 done = true;
                 break;
               case 10: {
-                CrRpc m =
-                    input.readMessage(
-                        CrRpc.parser(),
-                        extensionRegistry);
+                MonsterServiceOuterClass.CrRpc m =
+                        input.readMessage(
+                                MonsterServiceOuterClass.CrRpc.parser(),
+                                extensionRegistry);
                 if (crsBuilder_ == null) {
                   ensureCrsIsMutable();
                   crs_.add(m);
@@ -971,22 +971,22 @@ public final class MonsterServiceOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<CrRpc> crs_ =
-        java.util.Collections.emptyList();
+      private java.util.List<MonsterServiceOuterClass.CrRpc> crs_ =
+              java.util.Collections.emptyList();
       private void ensureCrsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          crs_ = new java.util.ArrayList<CrRpc>(crs_);
+          crs_ = new java.util.ArrayList<MonsterServiceOuterClass.CrRpc>(crs_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          CrRpc, CrRpc.Builder, CrRpcOrBuilder> crsBuilder_;
+              MonsterServiceOuterClass.CrRpc, MonsterServiceOuterClass.CrRpc.Builder, MonsterServiceOuterClass.CrRpcOrBuilder> crsBuilder_;
 
       /**
        * <code>repeated .CrRpc crs = 1;</code>
        */
-      public java.util.List<CrRpc> getCrsList() {
+      public java.util.List<MonsterServiceOuterClass.CrRpc> getCrsList() {
         if (crsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(crs_);
         } else {
@@ -1006,7 +1006,7 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .CrRpc crs = 1;</code>
        */
-      public CrRpc getCrs(int index) {
+      public MonsterServiceOuterClass.CrRpc getCrs(int index) {
         if (crsBuilder_ == null) {
           return crs_.get(index);
         } else {
@@ -1017,7 +1017,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .CrRpc crs = 1;</code>
        */
       public Builder setCrs(
-          int index, CrRpc value) {
+              int index, MonsterServiceOuterClass.CrRpc value) {
         if (crsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1034,7 +1034,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .CrRpc crs = 1;</code>
        */
       public Builder setCrs(
-          int index, CrRpc.Builder builderForValue) {
+              int index, MonsterServiceOuterClass.CrRpc.Builder builderForValue) {
         if (crsBuilder_ == null) {
           ensureCrsIsMutable();
           crs_.set(index, builderForValue.build());
@@ -1047,7 +1047,7 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .CrRpc crs = 1;</code>
        */
-      public Builder addCrs(CrRpc value) {
+      public Builder addCrs(MonsterServiceOuterClass.CrRpc value) {
         if (crsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1064,7 +1064,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .CrRpc crs = 1;</code>
        */
       public Builder addCrs(
-          int index, CrRpc value) {
+              int index, MonsterServiceOuterClass.CrRpc value) {
         if (crsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1081,7 +1081,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .CrRpc crs = 1;</code>
        */
       public Builder addCrs(
-          CrRpc.Builder builderForValue) {
+              MonsterServiceOuterClass.CrRpc.Builder builderForValue) {
         if (crsBuilder_ == null) {
           ensureCrsIsMutable();
           crs_.add(builderForValue.build());
@@ -1095,7 +1095,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .CrRpc crs = 1;</code>
        */
       public Builder addCrs(
-          int index, CrRpc.Builder builderForValue) {
+              int index, MonsterServiceOuterClass.CrRpc.Builder builderForValue) {
         if (crsBuilder_ == null) {
           ensureCrsIsMutable();
           crs_.add(index, builderForValue.build());
@@ -1109,11 +1109,11 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .CrRpc crs = 1;</code>
        */
       public Builder addAllCrs(
-          Iterable<? extends CrRpc> values) {
+              java.lang.Iterable<? extends MonsterServiceOuterClass.CrRpc> values) {
         if (crsBuilder_ == null) {
           ensureCrsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, crs_);
+                  values, crs_);
           onChanged();
         } else {
           crsBuilder_.addAllMessages(values);
@@ -1149,15 +1149,15 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .CrRpc crs = 1;</code>
        */
-      public CrRpc.Builder getCrsBuilder(
-          int index) {
+      public MonsterServiceOuterClass.CrRpc.Builder getCrsBuilder(
+              int index) {
         return getCrsFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .CrRpc crs = 1;</code>
        */
-      public CrRpcOrBuilder getCrsOrBuilder(
-          int index) {
+      public MonsterServiceOuterClass.CrRpcOrBuilder getCrsOrBuilder(
+              int index) {
         if (crsBuilder_ == null) {
           return crs_.get(index);  } else {
           return crsBuilder_.getMessageOrBuilder(index);
@@ -1166,8 +1166,8 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .CrRpc crs = 1;</code>
        */
-      public java.util.List<? extends CrRpcOrBuilder>
-           getCrsOrBuilderList() {
+      public java.util.List<? extends MonsterServiceOuterClass.CrRpcOrBuilder>
+      getCrsOrBuilderList() {
         if (crsBuilder_ != null) {
           return crsBuilder_.getMessageOrBuilderList();
         } else {
@@ -1177,31 +1177,31 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .CrRpc crs = 1;</code>
        */
-      public CrRpc.Builder addCrsBuilder() {
+      public MonsterServiceOuterClass.CrRpc.Builder addCrsBuilder() {
         return getCrsFieldBuilder().addBuilder(
-            CrRpc.getDefaultInstance());
+                MonsterServiceOuterClass.CrRpc.getDefaultInstance());
       }
       /**
        * <code>repeated .CrRpc crs = 1;</code>
        */
-      public CrRpc.Builder addCrsBuilder(
-          int index) {
+      public MonsterServiceOuterClass.CrRpc.Builder addCrsBuilder(
+              int index) {
         return getCrsFieldBuilder().addBuilder(
-            index, CrRpc.getDefaultInstance());
+                index, MonsterServiceOuterClass.CrRpc.getDefaultInstance());
       }
       /**
        * <code>repeated .CrRpc crs = 1;</code>
        */
-      public java.util.List<CrRpc.Builder>
-           getCrsBuilderList() {
+      public java.util.List<MonsterServiceOuterClass.CrRpc.Builder>
+      getCrsBuilderList() {
         return getCrsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          CrRpc, CrRpc.Builder, CrRpcOrBuilder>
-          getCrsFieldBuilder() {
+              MonsterServiceOuterClass.CrRpc, MonsterServiceOuterClass.CrRpc.Builder, MonsterServiceOuterClass.CrRpcOrBuilder>
+      getCrsFieldBuilder() {
         if (crsBuilder_ == null) {
           crsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              CrRpc, CrRpc.Builder, CrRpcOrBuilder>(
+                  MonsterServiceOuterClass.CrRpc, MonsterServiceOuterClass.CrRpc.Builder, MonsterServiceOuterClass.CrRpcOrBuilder>(
                   crs_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1210,15 +1210,15 @@ public final class MonsterServiceOuterClass {
         }
         return crsBuilder_;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -1227,22 +1227,22 @@ public final class MonsterServiceOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:CrListRpc)
-    private static final CrListRpc DEFAULT_INSTANCE;
+    private static final MonsterServiceOuterClass.CrListRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new CrListRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.CrListRpc();
     }
 
-    public static CrListRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.CrListRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<CrListRpc>
-        PARSER = new com.google.protobuf.AbstractParser<CrListRpc>() {
-      @Override
+            PARSER = new com.google.protobuf.AbstractParser<CrListRpc>() {
+      @java.lang.Override
       public CrListRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -1252,7 +1252,7 @@ public final class MonsterServiceOuterClass {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
@@ -1262,21 +1262,21 @@ public final class MonsterServiceOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<CrListRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public CrListRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.CrListRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface MonsterShortRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MonsterShortRpc)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:MonsterShortRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>int64 id = 1;</code>
@@ -1288,13 +1288,13 @@ public final class MonsterServiceOuterClass {
      * <code>string name = 2;</code>
      * @return The name.
      */
-    String getName();
+    java.lang.String getName();
     /**
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+    getNameBytes();
 
     /**
      * <code>float cr = 3;</code>
@@ -1306,10 +1306,10 @@ public final class MonsterServiceOuterClass {
    * Protobuf type {@code MonsterShortRpc}
    */
   public static final class MonsterShortRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MonsterShortRpc)
-      MonsterShortRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:MonsterShortRpc)
+          MonsterShortRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
     // Use MonsterShortRpc.newBuilder() to construct.
     private MonsterShortRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1318,24 +1318,24 @@ public final class MonsterServiceOuterClass {
       name_ = "";
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
       return new MonsterShortRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return MonsterServiceOuterClass.internal_static_MonsterShortRpc_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
       return MonsterServiceOuterClass.internal_static_MonsterShortRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              MonsterShortRpc.class, Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.MonsterShortRpc.class, MonsterServiceOuterClass.MonsterShortRpc.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -1344,27 +1344,27 @@ public final class MonsterServiceOuterClass {
      * <code>int64 id = 1;</code>
      * @return The id.
      */
-    @Override
+    @java.lang.Override
     public long getId() {
       return id_;
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private volatile Object name_ = "";
+    private volatile java.lang.Object name_ = "";
     /**
      * <code>string name = 2;</code>
      * @return The name.
      */
-    @Override
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
       }
@@ -1373,14 +1373,14 @@ public final class MonsterServiceOuterClass {
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+    getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1394,13 +1394,13 @@ public final class MonsterServiceOuterClass {
      * <code>float cr = 3;</code>
      * @return The cr.
      */
-    @Override
+    @java.lang.Override
     public float getCr() {
       return cr_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1410,22 +1410,22 @@ public final class MonsterServiceOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       if (id_ != 0L) {
         output.writeInt64(1, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
-      if (Float.floatToRawIntBits(cr_) != 0) {
+      if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         output.writeFloat(3, cr_);
       }
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1433,42 +1433,42 @@ public final class MonsterServiceOuterClass {
       size = 0;
       if (id_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
+                .computeInt64Size(1, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
       }
-      if (Float.floatToRawIntBits(cr_) != 0) {
+      if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, cr_);
+                .computeFloatSize(3, cr_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof MonsterShortRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.MonsterShortRpc)) {
         return super.equals(obj);
       }
-      MonsterShortRpc other = (MonsterShortRpc) obj;
+      MonsterServiceOuterClass.MonsterShortRpc other = (MonsterServiceOuterClass.MonsterShortRpc) obj;
 
       if (getId()
-          != other.getId()) return false;
+              != other.getId()) return false;
       if (!getName()
-          .equals(other.getName())) return false;
-      if (Float.floatToIntBits(getCr())
-          != Float.floatToIntBits(
+              .equals(other.getName())) return false;
+      if (java.lang.Float.floatToIntBits(getCr())
+              != java.lang.Float.floatToIntBits(
               other.getCr())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1477,106 +1477,106 @@ public final class MonsterServiceOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
+              getId());
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + CR_FIELD_NUMBER;
-      hash = (53 * hash) + Float.floatToIntBits(
-          getCr());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getCr());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static MonsterShortRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MonsterShortRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MonsterShortRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MonsterShortRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MonsterShortRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MonsterShortRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MonsterShortRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static MonsterShortRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static MonsterShortRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static MonsterShortRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonsterShortRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static MonsterShortRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static MonsterShortRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.MonsterShortRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.MonsterShortRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MonsterShortRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.MonsterShortRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1584,20 +1584,20 @@ public final class MonsterServiceOuterClass {
      * Protobuf type {@code MonsterShortRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MonsterShortRpc)
-        MonsterShortRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:MonsterShortRpc)
+            MonsterServiceOuterClass.MonsterShortRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return MonsterServiceOuterClass.internal_static_MonsterShortRpc_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
         return MonsterServiceOuterClass.internal_static_MonsterShortRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                MonsterShortRpc.class, Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.MonsterShortRpc.class, MonsterServiceOuterClass.MonsterShortRpc.Builder.class);
       }
 
       // Construct using generated.monster_service.MonsterServiceOuterClass.MonsterShortRpc.newBuilder()
@@ -1606,11 +1606,11 @@ public final class MonsterServiceOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -1620,35 +1620,35 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return MonsterServiceOuterClass.internal_static_MonsterShortRpc_descriptor;
       }
 
-      @Override
-      public MonsterShortRpc getDefaultInstanceForType() {
-        return MonsterShortRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterShortRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.MonsterShortRpc.getDefaultInstance();
       }
 
-      @Override
-      public MonsterShortRpc build() {
-        MonsterShortRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterShortRpc build() {
+        MonsterServiceOuterClass.MonsterShortRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public MonsterShortRpc buildPartial() {
-        MonsterShortRpc result = new MonsterShortRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterShortRpc buildPartial() {
+        MonsterServiceOuterClass.MonsterShortRpc result = new MonsterServiceOuterClass.MonsterShortRpc(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(MonsterShortRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.MonsterShortRpc result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
@@ -1661,50 +1661,50 @@ public final class MonsterServiceOuterClass {
         }
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MonsterShortRpc) {
-          return mergeFrom((MonsterShortRpc)other);
+        if (other instanceof MonsterServiceOuterClass.MonsterShortRpc) {
+          return mergeFrom((MonsterServiceOuterClass.MonsterShortRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MonsterShortRpc other) {
-        if (other == MonsterShortRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.MonsterShortRpc other) {
+        if (other == MonsterServiceOuterClass.MonsterShortRpc.getDefaultInstance()) return this;
         if (other.getId() != 0L) {
           setId(other.getId());
         }
@@ -1721,18 +1721,18 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -1779,7 +1779,7 @@ public final class MonsterServiceOuterClass {
        * <code>int64 id = 1;</code>
        * @return The id.
        */
-      @Override
+      @java.lang.Override
       public long getId() {
         return id_;
       }
@@ -1806,21 +1806,21 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      private Object name_ = "";
+      private java.lang.Object name_ = "";
       /**
        * <code>string name = 2;</code>
        * @return The name.
        */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+                  (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1828,12 +1828,12 @@ public final class MonsterServiceOuterClass {
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
+      getNameBytes() {
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -1846,7 +1846,7 @@ public final class MonsterServiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder setName(
-          String value) {
+              java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         name_ = value;
         bitField0_ |= 0x00000002;
@@ -1869,7 +1869,7 @@ public final class MonsterServiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         name_ = value;
@@ -1883,7 +1883,7 @@ public final class MonsterServiceOuterClass {
        * <code>float cr = 3;</code>
        * @return The cr.
        */
-      @Override
+      @java.lang.Override
       public float getCr() {
         return cr_;
       }
@@ -1909,15 +1909,15 @@ public final class MonsterServiceOuterClass {
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -1926,22 +1926,22 @@ public final class MonsterServiceOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:MonsterShortRpc)
-    private static final MonsterShortRpc DEFAULT_INSTANCE;
+    private static final MonsterServiceOuterClass.MonsterShortRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MonsterShortRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.MonsterShortRpc();
     }
 
-    public static MonsterShortRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.MonsterShortRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<MonsterShortRpc>
-        PARSER = new com.google.protobuf.AbstractParser<MonsterShortRpc>() {
-      @Override
+            PARSER = new com.google.protobuf.AbstractParser<MonsterShortRpc>() {
+      @java.lang.Override
       public MonsterShortRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -1951,7 +1951,7 @@ public final class MonsterServiceOuterClass {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
@@ -1961,31 +1961,31 @@ public final class MonsterServiceOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MonsterShortRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public MonsterShortRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.MonsterShortRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface MonsterShortListRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MonsterShortListRpc)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:MonsterShortListRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
-    java.util.List<MonsterShortRpc>
-        getMonstersList();
+    java.util.List<MonsterServiceOuterClass.MonsterShortRpc>
+    getMonstersList();
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
-    MonsterShortRpc getMonsters(int index);
+    MonsterServiceOuterClass.MonsterShortRpc getMonsters(int index);
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
@@ -1993,22 +1993,22 @@ public final class MonsterServiceOuterClass {
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
-    java.util.List<? extends MonsterShortRpcOrBuilder>
-        getMonstersOrBuilderList();
+    java.util.List<? extends MonsterServiceOuterClass.MonsterShortRpcOrBuilder>
+    getMonstersOrBuilderList();
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
-    MonsterShortRpcOrBuilder getMonstersOrBuilder(
-        int index);
+    MonsterServiceOuterClass.MonsterShortRpcOrBuilder getMonstersOrBuilder(
+            int index);
   }
   /**
    * Protobuf type {@code MonsterShortListRpc}
    */
   public static final class MonsterShortListRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MonsterShortListRpc)
-      MonsterShortListRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:MonsterShortListRpc)
+          MonsterShortListRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
     // Use MonsterShortListRpc.newBuilder() to construct.
     private MonsterShortListRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2017,69 +2017,69 @@ public final class MonsterServiceOuterClass {
       monsters_ = java.util.Collections.emptyList();
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
       return new MonsterShortListRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return MonsterServiceOuterClass.internal_static_MonsterShortListRpc_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
       return MonsterServiceOuterClass.internal_static_MonsterShortListRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              MonsterShortListRpc.class, Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.MonsterShortListRpc.class, MonsterServiceOuterClass.MonsterShortListRpc.Builder.class);
     }
 
     public static final int MONSTERS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<MonsterShortRpc> monsters_;
+    private java.util.List<MonsterServiceOuterClass.MonsterShortRpc> monsters_;
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
-    @Override
-    public java.util.List<MonsterShortRpc> getMonstersList() {
+    @java.lang.Override
+    public java.util.List<MonsterServiceOuterClass.MonsterShortRpc> getMonstersList() {
       return monsters_;
     }
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
-    @Override
-    public java.util.List<? extends MonsterShortRpcOrBuilder>
-        getMonstersOrBuilderList() {
+    @java.lang.Override
+    public java.util.List<? extends MonsterServiceOuterClass.MonsterShortRpcOrBuilder>
+    getMonstersOrBuilderList() {
       return monsters_;
     }
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public int getMonstersCount() {
       return monsters_.size();
     }
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
-    @Override
-    public MonsterShortRpc getMonsters(int index) {
+    @java.lang.Override
+    public MonsterServiceOuterClass.MonsterShortRpc getMonsters(int index) {
       return monsters_.get(index);
     }
     /**
      * <code>repeated .MonsterShortRpc monsters = 1;</code>
      */
-    @Override
-    public MonsterShortRpcOrBuilder getMonstersOrBuilder(
-        int index) {
+    @java.lang.Override
+    public MonsterServiceOuterClass.MonsterShortRpcOrBuilder getMonstersOrBuilder(
+            int index) {
       return monsters_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2089,16 +2089,16 @@ public final class MonsterServiceOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       for (int i = 0; i < monsters_.size(); i++) {
         output.writeMessage(1, monsters_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2106,30 +2106,30 @@ public final class MonsterServiceOuterClass {
       size = 0;
       for (int i = 0; i < monsters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, monsters_.get(i));
+                .computeMessageSize(1, monsters_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof MonsterShortListRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.MonsterShortListRpc)) {
         return super.equals(obj);
       }
-      MonsterShortListRpc other = (MonsterShortListRpc) obj;
+      MonsterServiceOuterClass.MonsterShortListRpc other = (MonsterServiceOuterClass.MonsterShortListRpc) obj;
 
       if (!getMonstersList()
-          .equals(other.getMonstersList())) return false;
+              .equals(other.getMonstersList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -2145,95 +2145,95 @@ public final class MonsterServiceOuterClass {
       return hash;
     }
 
-    public static MonsterShortListRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MonsterShortListRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MonsterShortListRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MonsterShortListRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MonsterShortListRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MonsterShortListRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MonsterShortListRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static MonsterShortListRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static MonsterShortListRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static MonsterShortListRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static MonsterShortListRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static MonsterShortListRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.MonsterShortListRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MonsterShortListRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.MonsterShortListRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2241,20 +2241,20 @@ public final class MonsterServiceOuterClass {
      * Protobuf type {@code MonsterShortListRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MonsterShortListRpc)
-        MonsterShortListRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:MonsterShortListRpc)
+            MonsterServiceOuterClass.MonsterShortListRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return MonsterServiceOuterClass.internal_static_MonsterShortListRpc_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
         return MonsterServiceOuterClass.internal_static_MonsterShortListRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                MonsterShortListRpc.class, Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.MonsterShortListRpc.class, MonsterServiceOuterClass.MonsterShortListRpc.Builder.class);
       }
 
       // Construct using generated.monster_service.MonsterServiceOuterClass.MonsterShortListRpc.newBuilder()
@@ -2263,11 +2263,11 @@ public final class MonsterServiceOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -2281,36 +2281,36 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return MonsterServiceOuterClass.internal_static_MonsterShortListRpc_descriptor;
       }
 
-      @Override
-      public MonsterShortListRpc getDefaultInstanceForType() {
-        return MonsterShortListRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterShortListRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.MonsterShortListRpc.getDefaultInstance();
       }
 
-      @Override
-      public MonsterShortListRpc build() {
-        MonsterShortListRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterShortListRpc build() {
+        MonsterServiceOuterClass.MonsterShortListRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public MonsterShortListRpc buildPartial() {
-        MonsterShortListRpc result = new MonsterShortListRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterShortListRpc buildPartial() {
+        MonsterServiceOuterClass.MonsterShortListRpc result = new MonsterServiceOuterClass.MonsterShortListRpc(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(MonsterShortListRpc result) {
+      private void buildPartialRepeatedFields(MonsterServiceOuterClass.MonsterShortListRpc result) {
         if (monstersBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             monsters_ = java.util.Collections.unmodifiableList(monsters_);
@@ -2322,54 +2322,54 @@ public final class MonsterServiceOuterClass {
         }
       }
 
-      private void buildPartial0(MonsterShortListRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.MonsterShortListRpc result) {
         int from_bitField0_ = bitField0_;
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MonsterShortListRpc) {
-          return mergeFrom((MonsterShortListRpc)other);
+        if (other instanceof MonsterServiceOuterClass.MonsterShortListRpc) {
+          return mergeFrom((MonsterServiceOuterClass.MonsterShortListRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MonsterShortListRpc other) {
-        if (other == MonsterShortListRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.MonsterShortListRpc other) {
+        if (other == MonsterServiceOuterClass.MonsterShortListRpc.getDefaultInstance()) return this;
         if (monstersBuilder_ == null) {
           if (!other.monsters_.isEmpty()) {
             if (monsters_.isEmpty()) {
@@ -2388,9 +2388,9 @@ public final class MonsterServiceOuterClass {
               monstersBuilder_ = null;
               monsters_ = other.monsters_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              monstersBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMonstersFieldBuilder() : null;
+              monstersBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                              getMonstersFieldBuilder() : null;
             } else {
               monstersBuilder_.addAllMessages(other.monsters_);
             }
@@ -2401,18 +2401,18 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -2423,10 +2423,10 @@ public final class MonsterServiceOuterClass {
                 done = true;
                 break;
               case 10: {
-                MonsterShortRpc m =
-                    input.readMessage(
-                        MonsterShortRpc.parser(),
-                        extensionRegistry);
+                MonsterServiceOuterClass.MonsterShortRpc m =
+                        input.readMessage(
+                                MonsterServiceOuterClass.MonsterShortRpc.parser(),
+                                extensionRegistry);
                 if (monstersBuilder_ == null) {
                   ensureMonstersIsMutable();
                   monsters_.add(m);
@@ -2452,22 +2452,22 @@ public final class MonsterServiceOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<MonsterShortRpc> monsters_ =
-        java.util.Collections.emptyList();
+      private java.util.List<MonsterServiceOuterClass.MonsterShortRpc> monsters_ =
+              java.util.Collections.emptyList();
       private void ensureMonstersIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          monsters_ = new java.util.ArrayList<MonsterShortRpc>(monsters_);
+          monsters_ = new java.util.ArrayList<MonsterServiceOuterClass.MonsterShortRpc>(monsters_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          MonsterShortRpc, MonsterShortRpc.Builder, MonsterShortRpcOrBuilder> monstersBuilder_;
+              MonsterServiceOuterClass.MonsterShortRpc, MonsterServiceOuterClass.MonsterShortRpc.Builder, MonsterServiceOuterClass.MonsterShortRpcOrBuilder> monstersBuilder_;
 
       /**
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
-      public java.util.List<MonsterShortRpc> getMonstersList() {
+      public java.util.List<MonsterServiceOuterClass.MonsterShortRpc> getMonstersList() {
         if (monstersBuilder_ == null) {
           return java.util.Collections.unmodifiableList(monsters_);
         } else {
@@ -2487,7 +2487,7 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
-      public MonsterShortRpc getMonsters(int index) {
+      public MonsterServiceOuterClass.MonsterShortRpc getMonsters(int index) {
         if (monstersBuilder_ == null) {
           return monsters_.get(index);
         } else {
@@ -2498,7 +2498,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
       public Builder setMonsters(
-          int index, MonsterShortRpc value) {
+              int index, MonsterServiceOuterClass.MonsterShortRpc value) {
         if (monstersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2515,7 +2515,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
       public Builder setMonsters(
-          int index, MonsterShortRpc.Builder builderForValue) {
+              int index, MonsterServiceOuterClass.MonsterShortRpc.Builder builderForValue) {
         if (monstersBuilder_ == null) {
           ensureMonstersIsMutable();
           monsters_.set(index, builderForValue.build());
@@ -2528,7 +2528,7 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
-      public Builder addMonsters(MonsterShortRpc value) {
+      public Builder addMonsters(MonsterServiceOuterClass.MonsterShortRpc value) {
         if (monstersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2545,7 +2545,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
       public Builder addMonsters(
-          int index, MonsterShortRpc value) {
+              int index, MonsterServiceOuterClass.MonsterShortRpc value) {
         if (monstersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2562,7 +2562,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
       public Builder addMonsters(
-          MonsterShortRpc.Builder builderForValue) {
+              MonsterServiceOuterClass.MonsterShortRpc.Builder builderForValue) {
         if (monstersBuilder_ == null) {
           ensureMonstersIsMutable();
           monsters_.add(builderForValue.build());
@@ -2576,7 +2576,7 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
       public Builder addMonsters(
-          int index, MonsterShortRpc.Builder builderForValue) {
+              int index, MonsterServiceOuterClass.MonsterShortRpc.Builder builderForValue) {
         if (monstersBuilder_ == null) {
           ensureMonstersIsMutable();
           monsters_.add(index, builderForValue.build());
@@ -2590,11 +2590,11 @@ public final class MonsterServiceOuterClass {
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
       public Builder addAllMonsters(
-          Iterable<? extends MonsterShortRpc> values) {
+              java.lang.Iterable<? extends MonsterServiceOuterClass.MonsterShortRpc> values) {
         if (monstersBuilder_ == null) {
           ensureMonstersIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, monsters_);
+                  values, monsters_);
           onChanged();
         } else {
           monstersBuilder_.addAllMessages(values);
@@ -2630,15 +2630,15 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
-      public MonsterShortRpc.Builder getMonstersBuilder(
-          int index) {
+      public MonsterServiceOuterClass.MonsterShortRpc.Builder getMonstersBuilder(
+              int index) {
         return getMonstersFieldBuilder().getBuilder(index);
       }
       /**
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
-      public MonsterShortRpcOrBuilder getMonstersOrBuilder(
-          int index) {
+      public MonsterServiceOuterClass.MonsterShortRpcOrBuilder getMonstersOrBuilder(
+              int index) {
         if (monstersBuilder_ == null) {
           return monsters_.get(index);  } else {
           return monstersBuilder_.getMessageOrBuilder(index);
@@ -2647,8 +2647,8 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
-      public java.util.List<? extends MonsterShortRpcOrBuilder>
-           getMonstersOrBuilderList() {
+      public java.util.List<? extends MonsterServiceOuterClass.MonsterShortRpcOrBuilder>
+      getMonstersOrBuilderList() {
         if (monstersBuilder_ != null) {
           return monstersBuilder_.getMessageOrBuilderList();
         } else {
@@ -2658,31 +2658,31 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
-      public MonsterShortRpc.Builder addMonstersBuilder() {
+      public MonsterServiceOuterClass.MonsterShortRpc.Builder addMonstersBuilder() {
         return getMonstersFieldBuilder().addBuilder(
-            MonsterShortRpc.getDefaultInstance());
+                MonsterServiceOuterClass.MonsterShortRpc.getDefaultInstance());
       }
       /**
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
-      public MonsterShortRpc.Builder addMonstersBuilder(
-          int index) {
+      public MonsterServiceOuterClass.MonsterShortRpc.Builder addMonstersBuilder(
+              int index) {
         return getMonstersFieldBuilder().addBuilder(
-            index, MonsterShortRpc.getDefaultInstance());
+                index, MonsterServiceOuterClass.MonsterShortRpc.getDefaultInstance());
       }
       /**
        * <code>repeated .MonsterShortRpc monsters = 1;</code>
        */
-      public java.util.List<MonsterShortRpc.Builder>
-           getMonstersBuilderList() {
+      public java.util.List<MonsterServiceOuterClass.MonsterShortRpc.Builder>
+      getMonstersBuilderList() {
         return getMonstersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          MonsterShortRpc, MonsterShortRpc.Builder, MonsterShortRpcOrBuilder>
-          getMonstersFieldBuilder() {
+              MonsterServiceOuterClass.MonsterShortRpc, MonsterServiceOuterClass.MonsterShortRpc.Builder, MonsterServiceOuterClass.MonsterShortRpcOrBuilder>
+      getMonstersFieldBuilder() {
         if (monstersBuilder_ == null) {
           monstersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              MonsterShortRpc, MonsterShortRpc.Builder, MonsterShortRpcOrBuilder>(
+                  MonsterServiceOuterClass.MonsterShortRpc, MonsterServiceOuterClass.MonsterShortRpc.Builder, MonsterServiceOuterClass.MonsterShortRpcOrBuilder>(
                   monsters_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2691,15 +2691,15 @@ public final class MonsterServiceOuterClass {
         }
         return monstersBuilder_;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -2708,22 +2708,22 @@ public final class MonsterServiceOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:MonsterShortListRpc)
-    private static final MonsterShortListRpc DEFAULT_INSTANCE;
+    private static final MonsterServiceOuterClass.MonsterShortListRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MonsterShortListRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.MonsterShortListRpc();
     }
 
-    public static MonsterShortListRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.MonsterShortListRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<MonsterShortListRpc>
-        PARSER = new com.google.protobuf.AbstractParser<MonsterShortListRpc>() {
-      @Override
+            PARSER = new com.google.protobuf.AbstractParser<MonsterShortListRpc>() {
+      @java.lang.Override
       public MonsterShortListRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -2733,7 +2733,7 @@ public final class MonsterServiceOuterClass {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
@@ -2743,21 +2743,21 @@ public final class MonsterServiceOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MonsterShortListRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public MonsterShortListRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.MonsterShortListRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface GetMonstersCrGroupRequestRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:GetMonstersCrGroupRequestRpc)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:GetMonstersCrGroupRequestRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>map&lt;string, int32&gt; crs = 1;</code>
@@ -2767,29 +2767,29 @@ public final class MonsterServiceOuterClass {
      * <code>map&lt;string, int32&gt; crs = 1;</code>
      */
     boolean containsCrs(
-        String key);
+            java.lang.String key);
     /**
      * Use {@link #getCrsMap()} instead.
      */
-    @Deprecated
-    java.util.Map<String, Integer>
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Integer>
     getCrs();
     /**
      * <code>map&lt;string, int32&gt; crs = 1;</code>
      */
-    java.util.Map<String, Integer>
+    java.util.Map<java.lang.String, java.lang.Integer>
     getCrsMap();
     /**
      * <code>map&lt;string, int32&gt; crs = 1;</code>
      */
     int getCrsOrDefault(
-        String key,
-        int defaultValue);
+            java.lang.String key,
+            int defaultValue);
     /**
      * <code>map&lt;string, int32&gt; crs = 1;</code>
      */
     int getCrsOrThrow(
-        String key);
+            java.lang.String key);
 
     /**
      * <code>int64 groupId = 2;</code>
@@ -2801,10 +2801,10 @@ public final class MonsterServiceOuterClass {
    * Protobuf type {@code GetMonstersCrGroupRequestRpc}
    */
   public static final class GetMonstersCrGroupRequestRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:GetMonstersCrGroupRequestRpc)
-      GetMonstersCrGroupRequestRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:GetMonstersCrGroupRequestRpc)
+          GetMonstersCrGroupRequestRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
     // Use GetMonstersCrGroupRequestRpc.newBuilder() to construct.
     private GetMonstersCrGroupRequestRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2812,58 +2812,58 @@ public final class MonsterServiceOuterClass {
     private GetMonstersCrGroupRequestRpc() {
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
       return new GetMonstersCrGroupRequestRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return MonsterServiceOuterClass.internal_static_GetMonstersCrGroupRequestRpc_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    @Override
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+            int number) {
       switch (number) {
         case 1:
           return internalGetCrs();
         default:
           throw new RuntimeException(
-              "Invalid map field number: " + number);
+                  "Invalid map field number: " + number);
       }
     }
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
       return MonsterServiceOuterClass.internal_static_GetMonstersCrGroupRequestRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              GetMonstersCrGroupRequestRpc.class, Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc.class, MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc.Builder.class);
     }
 
     public static final int CRS_FIELD_NUMBER = 1;
     private static final class CrsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, Integer> defaultEntry =
+              java.lang.String, java.lang.Integer> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, Integer>newDefaultInstance(
-                  MonsterServiceOuterClass.internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.INT32,
-                  0);
+                      .<java.lang.String, java.lang.Integer>newDefaultInstance(
+                              MonsterServiceOuterClass.internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_descriptor,
+                              com.google.protobuf.WireFormat.FieldType.STRING,
+                              "",
+                              com.google.protobuf.WireFormat.FieldType.INT32,
+                              0);
     }
     @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
-        String, Integer> crs_;
-    private com.google.protobuf.MapField<String, Integer>
+            java.lang.String, java.lang.Integer> crs_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
     internalGetCrs() {
       if (crs_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            CrsDefaultEntryHolder.defaultEntry);
+                CrsDefaultEntryHolder.defaultEntry);
       }
       return crs_;
     }
@@ -2873,50 +2873,50 @@ public final class MonsterServiceOuterClass {
     /**
      * <code>map&lt;string, int32&gt; crs = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public boolean containsCrs(
-        String key) {
+            java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
       return internalGetCrs().getMap().containsKey(key);
     }
     /**
      * Use {@link #getCrsMap()} instead.
      */
-    @Override
-    @Deprecated
-    public java.util.Map<String, Integer> getCrs() {
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getCrs() {
       return getCrsMap();
     }
     /**
      * <code>map&lt;string, int32&gt; crs = 1;</code>
      */
-    @Override
-    public java.util.Map<String, Integer> getCrsMap() {
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Integer> getCrsMap() {
       return internalGetCrs().getMap();
     }
     /**
      * <code>map&lt;string, int32&gt; crs = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public int getCrsOrDefault(
-        String key,
-        int defaultValue) {
+            java.lang.String key,
+            int defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<String, Integer> map =
-          internalGetCrs().getMap();
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+              internalGetCrs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
      * <code>map&lt;string, int32&gt; crs = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public int getCrsOrThrow(
-        String key) {
+            java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<String, Integer> map =
-          internalGetCrs().getMap();
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+              internalGetCrs().getMap();
       if (!map.containsKey(key)) {
-        throw new IllegalArgumentException();
+        throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
@@ -2927,13 +2927,13 @@ public final class MonsterServiceOuterClass {
      * <code>int64 groupId = 2;</code>
      * @return The groupId.
      */
-    @Override
+    @java.lang.Override
     public long getGroupId() {
       return groupId_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2943,65 +2943,65 @@ public final class MonsterServiceOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetCrs(),
-          CrsDefaultEntryHolder.defaultEntry,
-          1);
+              .serializeStringMapTo(
+                      output,
+                      internalGetCrs(),
+                      CrsDefaultEntryHolder.defaultEntry,
+                      1);
       if (groupId_ != 0L) {
         output.writeInt64(2, groupId_);
       }
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<String, Integer> entry
-           : internalGetCrs().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, Integer>
-        crs__ = CrsDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
+              : internalGetCrs().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+                crs__ = CrsDefaultEntryHolder.defaultEntry.newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, crs__);
+                .computeMessageSize(1, crs__);
       }
       if (groupId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, groupId_);
+                .computeInt64Size(2, groupId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof GetMonstersCrGroupRequestRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc)) {
         return super.equals(obj);
       }
-      GetMonstersCrGroupRequestRpc other = (GetMonstersCrGroupRequestRpc) obj;
+      MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc other = (MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc) obj;
 
       if (!internalGetCrs().equals(
-          other.internalGetCrs())) return false;
+              other.internalGetCrs())) return false;
       if (getGroupId()
-          != other.getGroupId()) return false;
+              != other.getGroupId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -3014,101 +3014,101 @@ public final class MonsterServiceOuterClass {
       }
       hash = (37 * hash) + GROUPID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGroupId());
+              getGroupId());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static GetMonstersCrGroupRequestRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GetMonstersCrGroupRequestRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GetMonstersCrGroupRequestRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GetMonstersCrGroupRequestRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GetMonstersCrGroupRequestRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static GetMonstersCrGroupRequestRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static GetMonstersCrGroupRequestRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static GetMonstersCrGroupRequestRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static GetMonstersCrGroupRequestRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static GetMonstersCrGroupRequestRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static GetMonstersCrGroupRequestRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static GetMonstersCrGroupRequestRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(GetMonstersCrGroupRequestRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -3116,42 +3116,42 @@ public final class MonsterServiceOuterClass {
      * Protobuf type {@code GetMonstersCrGroupRequestRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:GetMonstersCrGroupRequestRpc)
-        GetMonstersCrGroupRequestRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:GetMonstersCrGroupRequestRpc)
+            MonsterServiceOuterClass.GetMonstersCrGroupRequestRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return MonsterServiceOuterClass.internal_static_GetMonstersCrGroupRequestRpc_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
       protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
+              int number) {
         switch (number) {
           case 1:
             return internalGetCrs();
           default:
             throw new RuntimeException(
-                "Invalid map field number: " + number);
+                    "Invalid map field number: " + number);
         }
       }
       @SuppressWarnings({"rawtypes"})
       protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
+              int number) {
         switch (number) {
           case 1:
             return internalGetMutableCrs();
           default:
             throw new RuntimeException(
-                "Invalid map field number: " + number);
+                    "Invalid map field number: " + number);
         }
       }
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
         return MonsterServiceOuterClass.internal_static_GetMonstersCrGroupRequestRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                GetMonstersCrGroupRequestRpc.class, Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc.class, MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc.Builder.class);
       }
 
       // Construct using generated.monster_service.MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc.newBuilder()
@@ -3160,11 +3160,11 @@ public final class MonsterServiceOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -3173,35 +3173,35 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return MonsterServiceOuterClass.internal_static_GetMonstersCrGroupRequestRpc_descriptor;
       }
 
-      @Override
-      public GetMonstersCrGroupRequestRpc getDefaultInstanceForType() {
-        return GetMonstersCrGroupRequestRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc.getDefaultInstance();
       }
 
-      @Override
-      public GetMonstersCrGroupRequestRpc build() {
-        GetMonstersCrGroupRequestRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc build() {
+        MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public GetMonstersCrGroupRequestRpc buildPartial() {
-        GetMonstersCrGroupRequestRpc result = new GetMonstersCrGroupRequestRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc buildPartial() {
+        MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc result = new MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(GetMonstersCrGroupRequestRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.crs_ = internalGetCrs();
@@ -3212,52 +3212,52 @@ public final class MonsterServiceOuterClass {
         }
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof GetMonstersCrGroupRequestRpc) {
-          return mergeFrom((GetMonstersCrGroupRequestRpc)other);
+        if (other instanceof MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc) {
+          return mergeFrom((MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(GetMonstersCrGroupRequestRpc other) {
-        if (other == GetMonstersCrGroupRequestRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc other) {
+        if (other == MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc.getDefaultInstance()) return this;
         internalGetMutableCrs().mergeFrom(
-            other.internalGetCrs());
+                other.internalGetCrs());
         bitField0_ |= 0x00000001;
         if (other.getGroupId() != 0L) {
           setGroupId(other.getGroupId());
@@ -3267,18 +3267,18 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -3289,11 +3289,11 @@ public final class MonsterServiceOuterClass {
                 done = true;
                 break;
               case 10: {
-                com.google.protobuf.MapEntry<String, Integer>
-                crs__ = input.readMessage(
-                    CrsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+                        crs__ = input.readMessage(
+                        CrsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableCrs().getMutableMap().put(
-                    crs__.getKey(), crs__.getValue());
+                        crs__.getKey(), crs__.getValue());
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
@@ -3320,20 +3320,20 @@ public final class MonsterServiceOuterClass {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          String, Integer> crs_;
-      private com.google.protobuf.MapField<String, Integer>
-          internalGetCrs() {
+              java.lang.String, java.lang.Integer> crs_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+      internalGetCrs() {
         if (crs_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              CrsDefaultEntryHolder.defaultEntry);
+                  CrsDefaultEntryHolder.defaultEntry);
         }
         return crs_;
       }
-      private com.google.protobuf.MapField<String, Integer>
-          internalGetMutableCrs() {
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+      internalGetMutableCrs() {
         if (crs_ == null) {
           crs_ = com.google.protobuf.MapField.newMapField(
-              CrsDefaultEntryHolder.defaultEntry);
+                  CrsDefaultEntryHolder.defaultEntry);
         }
         if (!crs_.isMutable()) {
           crs_ = crs_.copy();
@@ -3348,75 +3348,75 @@ public final class MonsterServiceOuterClass {
       /**
        * <code>map&lt;string, int32&gt; crs = 1;</code>
        */
-      @Override
+      @java.lang.Override
       public boolean containsCrs(
-          String key) {
+              java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
         return internalGetCrs().getMap().containsKey(key);
       }
       /**
        * Use {@link #getCrsMap()} instead.
        */
-      @Override
-      @Deprecated
-      public java.util.Map<String, Integer> getCrs() {
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Integer> getCrs() {
         return getCrsMap();
       }
       /**
        * <code>map&lt;string, int32&gt; crs = 1;</code>
        */
-      @Override
-      public java.util.Map<String, Integer> getCrsMap() {
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.Integer> getCrsMap() {
         return internalGetCrs().getMap();
       }
       /**
        * <code>map&lt;string, int32&gt; crs = 1;</code>
        */
-      @Override
+      @java.lang.Override
       public int getCrsOrDefault(
-          String key,
-          int defaultValue) {
+              java.lang.String key,
+              int defaultValue) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<String, Integer> map =
-            internalGetCrs().getMap();
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+                internalGetCrs().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
        * <code>map&lt;string, int32&gt; crs = 1;</code>
        */
-      @Override
+      @java.lang.Override
       public int getCrsOrThrow(
-          String key) {
+              java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<String, Integer> map =
-            internalGetCrs().getMap();
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+                internalGetCrs().getMap();
         if (!map.containsKey(key)) {
-          throw new IllegalArgumentException();
+          throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
       public Builder clearCrs() {
         bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableCrs().getMutableMap()
-            .clear();
+                .clear();
         return this;
       }
       /**
        * <code>map&lt;string, int32&gt; crs = 1;</code>
        */
       public Builder removeCrs(
-          String key) {
+              java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableCrs().getMutableMap()
-            .remove(key);
+                .remove(key);
         return this;
       }
       /**
        * Use alternate mutation accessors instead.
        */
-      @Deprecated
-      public java.util.Map<String, Integer>
-          getMutableCrs() {
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Integer>
+      getMutableCrs() {
         bitField0_ |= 0x00000001;
         return internalGetMutableCrs().getMutableMap();
       }
@@ -3424,12 +3424,12 @@ public final class MonsterServiceOuterClass {
        * <code>map&lt;string, int32&gt; crs = 1;</code>
        */
       public Builder putCrs(
-          String key,
-          int value) {
+              java.lang.String key,
+              int value) {
         if (key == null) { throw new NullPointerException("map key"); }
 
         internalGetMutableCrs().getMutableMap()
-            .put(key, value);
+                .put(key, value);
         bitField0_ |= 0x00000001;
         return this;
       }
@@ -3437,9 +3437,9 @@ public final class MonsterServiceOuterClass {
        * <code>map&lt;string, int32&gt; crs = 1;</code>
        */
       public Builder putAllCrs(
-          java.util.Map<String, Integer> values) {
+              java.util.Map<java.lang.String, java.lang.Integer> values) {
         internalGetMutableCrs().getMutableMap()
-            .putAll(values);
+                .putAll(values);
         bitField0_ |= 0x00000001;
         return this;
       }
@@ -3449,7 +3449,7 @@ public final class MonsterServiceOuterClass {
        * <code>int64 groupId = 2;</code>
        * @return The groupId.
        */
-      @Override
+      @java.lang.Override
       public long getGroupId() {
         return groupId_;
       }
@@ -3475,15 +3475,15 @@ public final class MonsterServiceOuterClass {
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -3492,22 +3492,22 @@ public final class MonsterServiceOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:GetMonstersCrGroupRequestRpc)
-    private static final GetMonstersCrGroupRequestRpc DEFAULT_INSTANCE;
+    private static final MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new GetMonstersCrGroupRequestRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc();
     }
 
-    public static GetMonstersCrGroupRequestRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<GetMonstersCrGroupRequestRpc>
-        PARSER = new com.google.protobuf.AbstractParser<GetMonstersCrGroupRequestRpc>() {
-      @Override
+            PARSER = new com.google.protobuf.AbstractParser<GetMonstersCrGroupRequestRpc>() {
+      @java.lang.Override
       public GetMonstersCrGroupRequestRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -3517,7 +3517,7 @@ public final class MonsterServiceOuterClass {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
@@ -3527,21 +3527,21 @@ public final class MonsterServiceOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<GetMonstersCrGroupRequestRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public GetMonstersCrGroupRequestRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface RandomMonsterRequestRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:RandomMonsterRequestRpc)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:RandomMonsterRequestRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>float cr = 1;</code>
@@ -3559,10 +3559,10 @@ public final class MonsterServiceOuterClass {
    * Protobuf type {@code RandomMonsterRequestRpc}
    */
   public static final class RandomMonsterRequestRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:RandomMonsterRequestRpc)
-      RandomMonsterRequestRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:RandomMonsterRequestRpc)
+          RandomMonsterRequestRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
     // Use RandomMonsterRequestRpc.newBuilder() to construct.
     private RandomMonsterRequestRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3570,24 +3570,24 @@ public final class MonsterServiceOuterClass {
     private RandomMonsterRequestRpc() {
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
       return new RandomMonsterRequestRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return MonsterServiceOuterClass.internal_static_RandomMonsterRequestRpc_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
       return MonsterServiceOuterClass.internal_static_RandomMonsterRequestRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              RandomMonsterRequestRpc.class, Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.RandomMonsterRequestRpc.class, MonsterServiceOuterClass.RandomMonsterRequestRpc.Builder.class);
     }
 
     public static final int CR_FIELD_NUMBER = 1;
@@ -3596,7 +3596,7 @@ public final class MonsterServiceOuterClass {
      * <code>float cr = 1;</code>
      * @return The cr.
      */
-    @Override
+    @java.lang.Override
     public float getCr() {
       return cr_;
     }
@@ -3607,13 +3607,13 @@ public final class MonsterServiceOuterClass {
      * <code>int32 amount = 2;</code>
      * @return The amount.
      */
-    @Override
+    @java.lang.Override
     public int getAmount() {
       return amount_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3623,10 +3623,10 @@ public final class MonsterServiceOuterClass {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (Float.floatToRawIntBits(cr_) != 0) {
+            throws java.io.IOException {
+      if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         output.writeFloat(1, cr_);
       }
       if (amount_ != 0) {
@@ -3635,45 +3635,45 @@ public final class MonsterServiceOuterClass {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (Float.floatToRawIntBits(cr_) != 0) {
+      if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, cr_);
+                .computeFloatSize(1, cr_);
       }
       if (amount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, amount_);
+                .computeInt32Size(2, amount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof RandomMonsterRequestRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.RandomMonsterRequestRpc)) {
         return super.equals(obj);
       }
-      RandomMonsterRequestRpc other = (RandomMonsterRequestRpc) obj;
+      MonsterServiceOuterClass.RandomMonsterRequestRpc other = (MonsterServiceOuterClass.RandomMonsterRequestRpc) obj;
 
-      if (Float.floatToIntBits(getCr())
-          != Float.floatToIntBits(
+      if (java.lang.Float.floatToIntBits(getCr())
+              != java.lang.Float.floatToIntBits(
               other.getCr())) return false;
       if (getAmount()
-          != other.getAmount()) return false;
+              != other.getAmount()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -3681,8 +3681,8 @@ public final class MonsterServiceOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CR_FIELD_NUMBER;
-      hash = (53 * hash) + Float.floatToIntBits(
-          getCr());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getCr());
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getAmount();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -3690,95 +3690,95 @@ public final class MonsterServiceOuterClass {
       return hash;
     }
 
-    public static RandomMonsterRequestRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RandomMonsterRequestRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RandomMonsterRequestRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RandomMonsterRequestRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RandomMonsterRequestRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static RandomMonsterRequestRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static RandomMonsterRequestRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static RandomMonsterRequestRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static RandomMonsterRequestRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static RandomMonsterRequestRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RandomMonsterRequestRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RandomMonsterRequestRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(RandomMonsterRequestRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.RandomMonsterRequestRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -3786,20 +3786,20 @@ public final class MonsterServiceOuterClass {
      * Protobuf type {@code RandomMonsterRequestRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:RandomMonsterRequestRpc)
-        RandomMonsterRequestRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:RandomMonsterRequestRpc)
+            MonsterServiceOuterClass.RandomMonsterRequestRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return MonsterServiceOuterClass.internal_static_RandomMonsterRequestRpc_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
         return MonsterServiceOuterClass.internal_static_RandomMonsterRequestRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                RandomMonsterRequestRpc.class, Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.RandomMonsterRequestRpc.class, MonsterServiceOuterClass.RandomMonsterRequestRpc.Builder.class);
       }
 
       // Construct using generated.monster_service.MonsterServiceOuterClass.RandomMonsterRequestRpc.newBuilder()
@@ -3808,11 +3808,11 @@ public final class MonsterServiceOuterClass {
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -3821,35 +3821,35 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return MonsterServiceOuterClass.internal_static_RandomMonsterRequestRpc_descriptor;
       }
 
-      @Override
-      public RandomMonsterRequestRpc getDefaultInstanceForType() {
-        return RandomMonsterRequestRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.RandomMonsterRequestRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.RandomMonsterRequestRpc.getDefaultInstance();
       }
 
-      @Override
-      public RandomMonsterRequestRpc build() {
-        RandomMonsterRequestRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.RandomMonsterRequestRpc build() {
+        MonsterServiceOuterClass.RandomMonsterRequestRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public RandomMonsterRequestRpc buildPartial() {
-        RandomMonsterRequestRpc result = new RandomMonsterRequestRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.RandomMonsterRequestRpc buildPartial() {
+        MonsterServiceOuterClass.RandomMonsterRequestRpc result = new MonsterServiceOuterClass.RandomMonsterRequestRpc(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(RandomMonsterRequestRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.RandomMonsterRequestRpc result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.cr_ = cr_;
@@ -3859,50 +3859,50 @@ public final class MonsterServiceOuterClass {
         }
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RandomMonsterRequestRpc) {
-          return mergeFrom((RandomMonsterRequestRpc)other);
+        if (other instanceof MonsterServiceOuterClass.RandomMonsterRequestRpc) {
+          return mergeFrom((MonsterServiceOuterClass.RandomMonsterRequestRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(RandomMonsterRequestRpc other) {
-        if (other == RandomMonsterRequestRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.RandomMonsterRequestRpc other) {
+        if (other == MonsterServiceOuterClass.RandomMonsterRequestRpc.getDefaultInstance()) return this;
         if (other.getCr() != 0F) {
           setCr(other.getCr());
         }
@@ -3914,18 +3914,18 @@ public final class MonsterServiceOuterClass {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -3967,7 +3967,7 @@ public final class MonsterServiceOuterClass {
        * <code>float cr = 1;</code>
        * @return The cr.
        */
-      @Override
+      @java.lang.Override
       public float getCr() {
         return cr_;
       }
@@ -3999,7 +3999,7 @@ public final class MonsterServiceOuterClass {
        * <code>int32 amount = 2;</code>
        * @return The amount.
        */
-      @Override
+      @java.lang.Override
       public int getAmount() {
         return amount_;
       }
@@ -4025,15 +4025,15 @@ public final class MonsterServiceOuterClass {
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -4042,22 +4042,22 @@ public final class MonsterServiceOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:RandomMonsterRequestRpc)
-    private static final RandomMonsterRequestRpc DEFAULT_INSTANCE;
+    private static final MonsterServiceOuterClass.RandomMonsterRequestRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new RandomMonsterRequestRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.RandomMonsterRequestRpc();
     }
 
-    public static RandomMonsterRequestRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.RandomMonsterRequestRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<RandomMonsterRequestRpc>
-        PARSER = new com.google.protobuf.AbstractParser<RandomMonsterRequestRpc>() {
-      @Override
+            PARSER = new com.google.protobuf.AbstractParser<RandomMonsterRequestRpc>() {
+      @java.lang.Override
       public RandomMonsterRequestRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -4067,7 +4067,7 @@ public final class MonsterServiceOuterClass {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
@@ -4077,21 +4077,21 @@ public final class MonsterServiceOuterClass {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<RandomMonsterRequestRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public RandomMonsterRequestRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.RandomMonsterRequestRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface MonstersByCrRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:MonstersByCrRpc)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:MonstersByCrRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
@@ -4101,40 +4101,40 @@ public final class MonsterServiceOuterClass {
      * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
      */
     boolean containsMonsters(
-        String key);
+            java.lang.String key);
     /**
      * Use {@link #getMonstersMap()} instead.
      */
-    @Deprecated
-    java.util.Map<String, MonsterShortListRpc>
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc>
     getMonsters();
     /**
      * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
      */
-    java.util.Map<String, MonsterShortListRpc>
+    java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc>
     getMonstersMap();
     /**
      * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
      */
     /* nullable */
-MonsterShortListRpc getMonstersOrDefault(
-        String key,
-        /* nullable */
-MonsterShortListRpc defaultValue);
+    MonsterServiceOuterClass.MonsterShortListRpc getMonstersOrDefault(
+            java.lang.String key,
+            /* nullable */
+            MonsterServiceOuterClass.MonsterShortListRpc defaultValue);
     /**
      * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
      */
-    MonsterShortListRpc getMonstersOrThrow(
-        String key);
+    MonsterServiceOuterClass.MonsterShortListRpc getMonstersOrThrow(
+            java.lang.String key);
   }
   /**
    * Protobuf type {@code MonstersByCrRpc}
    */
   public static final class MonstersByCrRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:MonstersByCrRpc)
-      MonstersByCrRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:MonstersByCrRpc)
+          MonstersByCrRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
     // Use MonstersByCrRpc.newBuilder() to construct.
     private MonstersByCrRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4142,58 +4142,58 @@ MonsterShortListRpc defaultValue);
     private MonstersByCrRpc() {
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
       return new MonstersByCrRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return MonsterServiceOuterClass.internal_static_MonstersByCrRpc_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    @Override
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+            int number) {
       switch (number) {
         case 1:
           return internalGetMonsters();
         default:
           throw new RuntimeException(
-              "Invalid map field number: " + number);
+                  "Invalid map field number: " + number);
       }
     }
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
       return MonsterServiceOuterClass.internal_static_MonstersByCrRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              MonstersByCrRpc.class, Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.MonstersByCrRpc.class, MonsterServiceOuterClass.MonstersByCrRpc.Builder.class);
     }
 
     public static final int MONSTERS_FIELD_NUMBER = 1;
     private static final class MonstersDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, MonsterShortListRpc> defaultEntry =
+              java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, MonsterShortListRpc>newDefaultInstance(
-                  MonsterServiceOuterClass.internal_static_MonstersByCrRpc_MonstersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  MonsterShortListRpc.getDefaultInstance());
+                      .<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc>newDefaultInstance(
+                              MonsterServiceOuterClass.internal_static_MonstersByCrRpc_MonstersEntry_descriptor,
+                              com.google.protobuf.WireFormat.FieldType.STRING,
+                              "",
+                              com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                              MonsterServiceOuterClass.MonsterShortListRpc.getDefaultInstance());
     }
     @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
-        String, MonsterShortListRpc> monsters_;
-    private com.google.protobuf.MapField<String, MonsterShortListRpc>
+            java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> monsters_;
+    private com.google.protobuf.MapField<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc>
     internalGetMonsters() {
       if (monsters_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            MonstersDefaultEntryHolder.defaultEntry);
+                MonstersDefaultEntryHolder.defaultEntry);
       }
       return monsters_;
     }
@@ -4203,58 +4203,58 @@ MonsterShortListRpc defaultValue);
     /**
      * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public boolean containsMonsters(
-        String key) {
+            java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
       return internalGetMonsters().getMap().containsKey(key);
     }
     /**
      * Use {@link #getMonstersMap()} instead.
      */
-    @Override
-    @Deprecated
-    public java.util.Map<String, MonsterShortListRpc> getMonsters() {
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> getMonsters() {
       return getMonstersMap();
     }
     /**
      * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
      */
-    @Override
-    public java.util.Map<String, MonsterShortListRpc> getMonstersMap() {
+    @java.lang.Override
+    public java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> getMonstersMap() {
       return internalGetMonsters().getMap();
     }
     /**
      * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public /* nullable */
-MonsterShortListRpc getMonstersOrDefault(
-        String key,
-        /* nullable */
-MonsterShortListRpc defaultValue) {
+    MonsterServiceOuterClass.MonsterShortListRpc getMonstersOrDefault(
+            java.lang.String key,
+            /* nullable */
+            MonsterServiceOuterClass.MonsterShortListRpc defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<String, MonsterShortListRpc> map =
-          internalGetMonsters().getMap();
+      java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> map =
+              internalGetMonsters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
      * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
      */
-    @Override
-    public MonsterShortListRpc getMonstersOrThrow(
-        String key) {
+    @java.lang.Override
+    public MonsterServiceOuterClass.MonsterShortListRpc getMonstersOrThrow(
+            java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<String, MonsterShortListRpc> map =
-          internalGetMonsters().getMap();
+      java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> map =
+              internalGetMonsters().getMap();
       if (!map.containsKey(key)) {
-        throw new IllegalArgumentException();
+        throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4264,56 +4264,56 @@ MonsterShortListRpc defaultValue) {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetMonsters(),
-          MonstersDefaultEntryHolder.defaultEntry,
-          1);
+              .serializeStringMapTo(
+                      output,
+                      internalGetMonsters(),
+                      MonstersDefaultEntryHolder.defaultEntry,
+                      1);
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<String, MonsterShortListRpc> entry
-           : internalGetMonsters().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, MonsterShortListRpc>
-        monsters__ = MonstersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      for (java.util.Map.Entry<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> entry
+              : internalGetMonsters().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc>
+                monsters__ = MonstersDefaultEntryHolder.defaultEntry.newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, monsters__);
+                .computeMessageSize(1, monsters__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof MonstersByCrRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.MonstersByCrRpc)) {
         return super.equals(obj);
       }
-      MonstersByCrRpc other = (MonstersByCrRpc) obj;
+      MonsterServiceOuterClass.MonstersByCrRpc other = (MonsterServiceOuterClass.MonstersByCrRpc) obj;
 
       if (!internalGetMonsters().equals(
-          other.internalGetMonsters())) return false;
+              other.internalGetMonsters())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -4329,95 +4329,95 @@ MonsterShortListRpc defaultValue) {
       return hash;
     }
 
-    public static MonstersByCrRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MonstersByCrRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MonstersByCrRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MonstersByCrRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MonstersByCrRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static MonstersByCrRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static MonstersByCrRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static MonstersByCrRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static MonstersByCrRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static MonstersByCrRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static MonstersByCrRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static MonstersByCrRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.MonstersByCrRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(MonstersByCrRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.MonstersByCrRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4425,42 +4425,42 @@ MonsterShortListRpc defaultValue) {
      * Protobuf type {@code MonstersByCrRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:MonstersByCrRpc)
-        MonstersByCrRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:MonstersByCrRpc)
+            MonsterServiceOuterClass.MonstersByCrRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return MonsterServiceOuterClass.internal_static_MonstersByCrRpc_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
       protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
+              int number) {
         switch (number) {
           case 1:
             return internalGetMonsters();
           default:
             throw new RuntimeException(
-                "Invalid map field number: " + number);
+                    "Invalid map field number: " + number);
         }
       }
       @SuppressWarnings({"rawtypes"})
       protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
+              int number) {
         switch (number) {
           case 1:
             return internalGetMutableMonsters();
           default:
             throw new RuntimeException(
-                "Invalid map field number: " + number);
+                    "Invalid map field number: " + number);
         }
       }
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
         return MonsterServiceOuterClass.internal_static_MonstersByCrRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                MonstersByCrRpc.class, Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.MonstersByCrRpc.class, MonsterServiceOuterClass.MonstersByCrRpc.Builder.class);
       }
 
       // Construct using generated.monster_service.MonsterServiceOuterClass.MonstersByCrRpc.newBuilder()
@@ -4469,11 +4469,11 @@ MonsterShortListRpc defaultValue) {
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -4481,35 +4481,35 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return MonsterServiceOuterClass.internal_static_MonstersByCrRpc_descriptor;
       }
 
-      @Override
-      public MonstersByCrRpc getDefaultInstanceForType() {
-        return MonstersByCrRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonstersByCrRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.MonstersByCrRpc.getDefaultInstance();
       }
 
-      @Override
-      public MonstersByCrRpc build() {
-        MonstersByCrRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonstersByCrRpc build() {
+        MonsterServiceOuterClass.MonstersByCrRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public MonstersByCrRpc buildPartial() {
-        MonstersByCrRpc result = new MonstersByCrRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonstersByCrRpc buildPartial() {
+        MonsterServiceOuterClass.MonstersByCrRpc result = new MonsterServiceOuterClass.MonstersByCrRpc(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(MonstersByCrRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.MonstersByCrRpc result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.monsters_ = internalGetMonsters();
@@ -4517,70 +4517,70 @@ MonsterShortListRpc defaultValue) {
         }
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MonstersByCrRpc) {
-          return mergeFrom((MonstersByCrRpc)other);
+        if (other instanceof MonsterServiceOuterClass.MonstersByCrRpc) {
+          return mergeFrom((MonsterServiceOuterClass.MonstersByCrRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(MonstersByCrRpc other) {
-        if (other == MonstersByCrRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.MonstersByCrRpc other) {
+        if (other == MonsterServiceOuterClass.MonstersByCrRpc.getDefaultInstance()) return this;
         internalGetMutableMonsters().mergeFrom(
-            other.internalGetMonsters());
+                other.internalGetMonsters());
         bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -4591,11 +4591,11 @@ MonsterShortListRpc defaultValue) {
                 done = true;
                 break;
               case 10: {
-                com.google.protobuf.MapEntry<String, MonsterShortListRpc>
-                monsters__ = input.readMessage(
-                    MonstersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                com.google.protobuf.MapEntry<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc>
+                        monsters__ = input.readMessage(
+                        MonstersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableMonsters().getMutableMap().put(
-                    monsters__.getKey(), monsters__.getValue());
+                        monsters__.getKey(), monsters__.getValue());
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
@@ -4617,20 +4617,20 @@ MonsterShortListRpc defaultValue) {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          String, MonsterShortListRpc> monsters_;
-      private com.google.protobuf.MapField<String, MonsterShortListRpc>
-          internalGetMonsters() {
+              java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> monsters_;
+      private com.google.protobuf.MapField<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc>
+      internalGetMonsters() {
         if (monsters_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              MonstersDefaultEntryHolder.defaultEntry);
+                  MonstersDefaultEntryHolder.defaultEntry);
         }
         return monsters_;
       }
-      private com.google.protobuf.MapField<String, MonsterShortListRpc>
-          internalGetMutableMonsters() {
+      private com.google.protobuf.MapField<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc>
+      internalGetMutableMonsters() {
         if (monsters_ == null) {
           monsters_ = com.google.protobuf.MapField.newMapField(
-              MonstersDefaultEntryHolder.defaultEntry);
+                  MonstersDefaultEntryHolder.defaultEntry);
         }
         if (!monsters_.isMutable()) {
           monsters_ = monsters_.copy();
@@ -4645,77 +4645,77 @@ MonsterShortListRpc defaultValue) {
       /**
        * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
        */
-      @Override
+      @java.lang.Override
       public boolean containsMonsters(
-          String key) {
+              java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
         return internalGetMonsters().getMap().containsKey(key);
       }
       /**
        * Use {@link #getMonstersMap()} instead.
        */
-      @Override
-      @Deprecated
-      public java.util.Map<String, MonsterShortListRpc> getMonsters() {
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> getMonsters() {
         return getMonstersMap();
       }
       /**
        * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
        */
-      @Override
-      public java.util.Map<String, MonsterShortListRpc> getMonstersMap() {
+      @java.lang.Override
+      public java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> getMonstersMap() {
         return internalGetMonsters().getMap();
       }
       /**
        * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
        */
-      @Override
+      @java.lang.Override
       public /* nullable */
-MonsterShortListRpc getMonstersOrDefault(
-          String key,
-          /* nullable */
-MonsterShortListRpc defaultValue) {
+      MonsterServiceOuterClass.MonsterShortListRpc getMonstersOrDefault(
+              java.lang.String key,
+              /* nullable */
+              MonsterServiceOuterClass.MonsterShortListRpc defaultValue) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<String, MonsterShortListRpc> map =
-            internalGetMonsters().getMap();
+        java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> map =
+                internalGetMonsters().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
        * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
        */
-      @Override
-      public MonsterShortListRpc getMonstersOrThrow(
-          String key) {
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterShortListRpc getMonstersOrThrow(
+              java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<String, MonsterShortListRpc> map =
-            internalGetMonsters().getMap();
+        java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> map =
+                internalGetMonsters().getMap();
         if (!map.containsKey(key)) {
-          throw new IllegalArgumentException();
+          throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
       public Builder clearMonsters() {
         bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableMonsters().getMutableMap()
-            .clear();
+                .clear();
         return this;
       }
       /**
        * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
        */
       public Builder removeMonsters(
-          String key) {
+              java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableMonsters().getMutableMap()
-            .remove(key);
+                .remove(key);
         return this;
       }
       /**
        * Use alternate mutation accessors instead.
        */
-      @Deprecated
-      public java.util.Map<String, MonsterShortListRpc>
-          getMutableMonsters() {
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc>
+      getMutableMonsters() {
         bitField0_ |= 0x00000001;
         return internalGetMutableMonsters().getMutableMap();
       }
@@ -4723,12 +4723,12 @@ MonsterShortListRpc defaultValue) {
        * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
        */
       public Builder putMonsters(
-          String key,
-          MonsterShortListRpc value) {
+              java.lang.String key,
+              MonsterServiceOuterClass.MonsterShortListRpc value) {
         if (key == null) { throw new NullPointerException("map key"); }
         if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableMonsters().getMutableMap()
-            .put(key, value);
+                .put(key, value);
         bitField0_ |= 0x00000001;
         return this;
       }
@@ -4736,21 +4736,21 @@ MonsterShortListRpc defaultValue) {
        * <code>map&lt;string, .MonsterShortListRpc&gt; monsters = 1;</code>
        */
       public Builder putAllMonsters(
-          java.util.Map<String, MonsterShortListRpc> values) {
+              java.util.Map<java.lang.String, MonsterServiceOuterClass.MonsterShortListRpc> values) {
         internalGetMutableMonsters().getMutableMap()
-            .putAll(values);
+                .putAll(values);
         bitField0_ |= 0x00000001;
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -4759,22 +4759,22 @@ MonsterShortListRpc defaultValue) {
     }
 
     // @@protoc_insertion_point(class_scope:MonstersByCrRpc)
-    private static final MonstersByCrRpc DEFAULT_INSTANCE;
+    private static final MonsterServiceOuterClass.MonstersByCrRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new MonstersByCrRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.MonstersByCrRpc();
     }
 
-    public static MonstersByCrRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.MonstersByCrRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<MonstersByCrRpc>
-        PARSER = new com.google.protobuf.AbstractParser<MonstersByCrRpc>() {
-      @Override
+            PARSER = new com.google.protobuf.AbstractParser<MonstersByCrRpc>() {
+      @java.lang.Override
       public MonstersByCrRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -4784,7 +4784,7 @@ MonsterShortListRpc defaultValue) {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
@@ -4794,21 +4794,21 @@ MonsterShortListRpc defaultValue) {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<MonstersByCrRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public MonstersByCrRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.MonstersByCrRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   public interface AmountOfCrRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:AmountOfCrRpc)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:AmountOfCrRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>map&lt;string, int32&gt; crMap = 1;</code>
@@ -4818,38 +4818,38 @@ MonsterShortListRpc defaultValue) {
      * <code>map&lt;string, int32&gt; crMap = 1;</code>
      */
     boolean containsCrMap(
-        String key);
+            java.lang.String key);
     /**
      * Use {@link #getCrMapMap()} instead.
      */
-    @Deprecated
-    java.util.Map<String, Integer>
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Integer>
     getCrMap();
     /**
      * <code>map&lt;string, int32&gt; crMap = 1;</code>
      */
-    java.util.Map<String, Integer>
+    java.util.Map<java.lang.String, java.lang.Integer>
     getCrMapMap();
     /**
      * <code>map&lt;string, int32&gt; crMap = 1;</code>
      */
     int getCrMapOrDefault(
-        String key,
-        int defaultValue);
+            java.lang.String key,
+            int defaultValue);
     /**
      * <code>map&lt;string, int32&gt; crMap = 1;</code>
      */
     int getCrMapOrThrow(
-        String key);
+            java.lang.String key);
   }
   /**
    * Protobuf type {@code AmountOfCrRpc}
    */
   public static final class AmountOfCrRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:AmountOfCrRpc)
-      AmountOfCrRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:AmountOfCrRpc)
+          AmountOfCrRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
     // Use AmountOfCrRpc.newBuilder() to construct.
     private AmountOfCrRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4857,58 +4857,58 @@ MonsterShortListRpc defaultValue) {
     private AmountOfCrRpc() {
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
       return new AmountOfCrRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    getDescriptor() {
       return MonsterServiceOuterClass.internal_static_AmountOfCrRpc_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    @Override
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+            int number) {
       switch (number) {
         case 1:
           return internalGetCrMap();
         default:
           throw new RuntimeException(
-              "Invalid map field number: " + number);
+                  "Invalid map field number: " + number);
       }
     }
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
       return MonsterServiceOuterClass.internal_static_AmountOfCrRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              AmountOfCrRpc.class, Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.AmountOfCrRpc.class, MonsterServiceOuterClass.AmountOfCrRpc.Builder.class);
     }
 
     public static final int CRMAP_FIELD_NUMBER = 1;
     private static final class CrMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, Integer> defaultEntry =
+              java.lang.String, java.lang.Integer> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, Integer>newDefaultInstance(
-                  MonsterServiceOuterClass.internal_static_AmountOfCrRpc_CrMapEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.INT32,
-                  0);
+                      .<java.lang.String, java.lang.Integer>newDefaultInstance(
+                              MonsterServiceOuterClass.internal_static_AmountOfCrRpc_CrMapEntry_descriptor,
+                              com.google.protobuf.WireFormat.FieldType.STRING,
+                              "",
+                              com.google.protobuf.WireFormat.FieldType.INT32,
+                              0);
     }
     @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
-        String, Integer> crMap_;
-    private com.google.protobuf.MapField<String, Integer>
+            java.lang.String, java.lang.Integer> crMap_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
     internalGetCrMap() {
       if (crMap_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            CrMapDefaultEntryHolder.defaultEntry);
+                CrMapDefaultEntryHolder.defaultEntry);
       }
       return crMap_;
     }
@@ -4918,56 +4918,56 @@ MonsterShortListRpc defaultValue) {
     /**
      * <code>map&lt;string, int32&gt; crMap = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public boolean containsCrMap(
-        String key) {
+            java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
       return internalGetCrMap().getMap().containsKey(key);
     }
     /**
      * Use {@link #getCrMapMap()} instead.
      */
-    @Override
-    @Deprecated
-    public java.util.Map<String, Integer> getCrMap() {
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getCrMap() {
       return getCrMapMap();
     }
     /**
      * <code>map&lt;string, int32&gt; crMap = 1;</code>
      */
-    @Override
-    public java.util.Map<String, Integer> getCrMapMap() {
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Integer> getCrMapMap() {
       return internalGetCrMap().getMap();
     }
     /**
      * <code>map&lt;string, int32&gt; crMap = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public int getCrMapOrDefault(
-        String key,
-        int defaultValue) {
+            java.lang.String key,
+            int defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<String, Integer> map =
-          internalGetCrMap().getMap();
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+              internalGetCrMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
      * <code>map&lt;string, int32&gt; crMap = 1;</code>
      */
-    @Override
+    @java.lang.Override
     public int getCrMapOrThrow(
-        String key) {
+            java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<String, Integer> map =
-          internalGetCrMap().getMap();
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+              internalGetCrMap().getMap();
       if (!map.containsKey(key)) {
-        throw new IllegalArgumentException();
+        throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4977,56 +4977,56 @@ MonsterShortListRpc defaultValue) {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetCrMap(),
-          CrMapDefaultEntryHolder.defaultEntry,
-          1);
+              .serializeStringMapTo(
+                      output,
+                      internalGetCrMap(),
+                      CrMapDefaultEntryHolder.defaultEntry,
+                      1);
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<String, Integer> entry
-           : internalGetCrMap().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, Integer>
-        crMap__ = CrMapDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
+              : internalGetCrMap().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+                crMap__ = CrMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, crMap__);
+                .computeMessageSize(1, crMap__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof AmountOfCrRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.AmountOfCrRpc)) {
         return super.equals(obj);
       }
-      AmountOfCrRpc other = (AmountOfCrRpc) obj;
+      MonsterServiceOuterClass.AmountOfCrRpc other = (MonsterServiceOuterClass.AmountOfCrRpc) obj;
 
       if (!internalGetCrMap().equals(
-          other.internalGetCrMap())) return false;
+              other.internalGetCrMap())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -5042,95 +5042,95 @@ MonsterShortListRpc defaultValue) {
       return hash;
     }
 
-    public static AmountOfCrRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static AmountOfCrRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static AmountOfCrRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static AmountOfCrRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static AmountOfCrRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static AmountOfCrRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static AmountOfCrRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static AmountOfCrRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static AmountOfCrRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static AmountOfCrRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static AmountOfCrRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static AmountOfCrRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.AmountOfCrRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(AmountOfCrRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.AmountOfCrRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -5138,42 +5138,42 @@ MonsterShortListRpc defaultValue) {
      * Protobuf type {@code AmountOfCrRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:AmountOfCrRpc)
-        AmountOfCrRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:AmountOfCrRpc)
+            MonsterServiceOuterClass.AmountOfCrRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return MonsterServiceOuterClass.internal_static_AmountOfCrRpc_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
       protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
+              int number) {
         switch (number) {
           case 1:
             return internalGetCrMap();
           default:
             throw new RuntimeException(
-                "Invalid map field number: " + number);
+                    "Invalid map field number: " + number);
         }
       }
       @SuppressWarnings({"rawtypes"})
       protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
+              int number) {
         switch (number) {
           case 1:
             return internalGetMutableCrMap();
           default:
             throw new RuntimeException(
-                "Invalid map field number: " + number);
+                    "Invalid map field number: " + number);
         }
       }
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
         return MonsterServiceOuterClass.internal_static_AmountOfCrRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                AmountOfCrRpc.class, Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.AmountOfCrRpc.class, MonsterServiceOuterClass.AmountOfCrRpc.Builder.class);
       }
 
       // Construct using generated.monster_service.MonsterServiceOuterClass.AmountOfCrRpc.newBuilder()
@@ -5182,11 +5182,11 @@ MonsterShortListRpc defaultValue) {
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -5194,35 +5194,35 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
+      getDescriptorForType() {
         return MonsterServiceOuterClass.internal_static_AmountOfCrRpc_descriptor;
       }
 
-      @Override
-      public AmountOfCrRpc getDefaultInstanceForType() {
-        return AmountOfCrRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.AmountOfCrRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.AmountOfCrRpc.getDefaultInstance();
       }
 
-      @Override
-      public AmountOfCrRpc build() {
-        AmountOfCrRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.AmountOfCrRpc build() {
+        MonsterServiceOuterClass.AmountOfCrRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public AmountOfCrRpc buildPartial() {
-        AmountOfCrRpc result = new AmountOfCrRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.AmountOfCrRpc buildPartial() {
+        MonsterServiceOuterClass.AmountOfCrRpc result = new MonsterServiceOuterClass.AmountOfCrRpc(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(AmountOfCrRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.AmountOfCrRpc result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.crMap_ = internalGetCrMap();
@@ -5230,70 +5230,70 @@ MonsterShortListRpc defaultValue) {
         }
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof AmountOfCrRpc) {
-          return mergeFrom((AmountOfCrRpc)other);
+        if (other instanceof MonsterServiceOuterClass.AmountOfCrRpc) {
+          return mergeFrom((MonsterServiceOuterClass.AmountOfCrRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(AmountOfCrRpc other) {
-        if (other == AmountOfCrRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.AmountOfCrRpc other) {
+        if (other == MonsterServiceOuterClass.AmountOfCrRpc.getDefaultInstance()) return this;
         internalGetMutableCrMap().mergeFrom(
-            other.internalGetCrMap());
+                other.internalGetCrMap());
         bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -5304,11 +5304,11 @@ MonsterShortListRpc defaultValue) {
                 done = true;
                 break;
               case 10: {
-                com.google.protobuf.MapEntry<String, Integer>
-                crMap__ = input.readMessage(
-                    CrMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+                        crMap__ = input.readMessage(
+                        CrMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableCrMap().getMutableMap().put(
-                    crMap__.getKey(), crMap__.getValue());
+                        crMap__.getKey(), crMap__.getValue());
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
@@ -5330,20 +5330,20 @@ MonsterShortListRpc defaultValue) {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          String, Integer> crMap_;
-      private com.google.protobuf.MapField<String, Integer>
-          internalGetCrMap() {
+              java.lang.String, java.lang.Integer> crMap_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+      internalGetCrMap() {
         if (crMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              CrMapDefaultEntryHolder.defaultEntry);
+                  CrMapDefaultEntryHolder.defaultEntry);
         }
         return crMap_;
       }
-      private com.google.protobuf.MapField<String, Integer>
-          internalGetMutableCrMap() {
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+      internalGetMutableCrMap() {
         if (crMap_ == null) {
           crMap_ = com.google.protobuf.MapField.newMapField(
-              CrMapDefaultEntryHolder.defaultEntry);
+                  CrMapDefaultEntryHolder.defaultEntry);
         }
         if (!crMap_.isMutable()) {
           crMap_ = crMap_.copy();
@@ -5358,75 +5358,75 @@ MonsterShortListRpc defaultValue) {
       /**
        * <code>map&lt;string, int32&gt; crMap = 1;</code>
        */
-      @Override
+      @java.lang.Override
       public boolean containsCrMap(
-          String key) {
+              java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
         return internalGetCrMap().getMap().containsKey(key);
       }
       /**
        * Use {@link #getCrMapMap()} instead.
        */
-      @Override
-      @Deprecated
-      public java.util.Map<String, Integer> getCrMap() {
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Integer> getCrMap() {
         return getCrMapMap();
       }
       /**
        * <code>map&lt;string, int32&gt; crMap = 1;</code>
        */
-      @Override
-      public java.util.Map<String, Integer> getCrMapMap() {
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.Integer> getCrMapMap() {
         return internalGetCrMap().getMap();
       }
       /**
        * <code>map&lt;string, int32&gt; crMap = 1;</code>
        */
-      @Override
+      @java.lang.Override
       public int getCrMapOrDefault(
-          String key,
-          int defaultValue) {
+              java.lang.String key,
+              int defaultValue) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<String, Integer> map =
-            internalGetCrMap().getMap();
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+                internalGetCrMap().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
        * <code>map&lt;string, int32&gt; crMap = 1;</code>
        */
-      @Override
+      @java.lang.Override
       public int getCrMapOrThrow(
-          String key) {
+              java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<String, Integer> map =
-            internalGetCrMap().getMap();
+        java.util.Map<java.lang.String, java.lang.Integer> map =
+                internalGetCrMap().getMap();
         if (!map.containsKey(key)) {
-          throw new IllegalArgumentException();
+          throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
       public Builder clearCrMap() {
         bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableCrMap().getMutableMap()
-            .clear();
+                .clear();
         return this;
       }
       /**
        * <code>map&lt;string, int32&gt; crMap = 1;</code>
        */
       public Builder removeCrMap(
-          String key) {
+              java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
         internalGetMutableCrMap().getMutableMap()
-            .remove(key);
+                .remove(key);
         return this;
       }
       /**
        * Use alternate mutation accessors instead.
        */
-      @Deprecated
-      public java.util.Map<String, Integer>
-          getMutableCrMap() {
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Integer>
+      getMutableCrMap() {
         bitField0_ |= 0x00000001;
         return internalGetMutableCrMap().getMutableMap();
       }
@@ -5434,12 +5434,12 @@ MonsterShortListRpc defaultValue) {
        * <code>map&lt;string, int32&gt; crMap = 1;</code>
        */
       public Builder putCrMap(
-          String key,
-          int value) {
+              java.lang.String key,
+              int value) {
         if (key == null) { throw new NullPointerException("map key"); }
 
         internalGetMutableCrMap().getMutableMap()
-            .put(key, value);
+                .put(key, value);
         bitField0_ |= 0x00000001;
         return this;
       }
@@ -5447,21 +5447,21 @@ MonsterShortListRpc defaultValue) {
        * <code>map&lt;string, int32&gt; crMap = 1;</code>
        */
       public Builder putAllCrMap(
-          java.util.Map<String, Integer> values) {
+              java.util.Map<java.lang.String, java.lang.Integer> values) {
         internalGetMutableCrMap().getMutableMap()
-            .putAll(values);
+                .putAll(values);
         bitField0_ |= 0x00000001;
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -5470,22 +5470,22 @@ MonsterShortListRpc defaultValue) {
     }
 
     // @@protoc_insertion_point(class_scope:AmountOfCrRpc)
-    private static final AmountOfCrRpc DEFAULT_INSTANCE;
+    private static final MonsterServiceOuterClass.AmountOfCrRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new AmountOfCrRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.AmountOfCrRpc();
     }
 
-    public static AmountOfCrRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.AmountOfCrRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static final com.google.protobuf.Parser<AmountOfCrRpc>
-        PARSER = new com.google.protobuf.AbstractParser<AmountOfCrRpc>() {
-      @Override
+            PARSER = new com.google.protobuf.AbstractParser<AmountOfCrRpc>() {
+      @java.lang.Override
       public AmountOfCrRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -5495,7 +5495,7 @@ MonsterShortListRpc defaultValue) {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
@@ -5505,21 +5505,21 @@ MonsterShortListRpc defaultValue) {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<AmountOfCrRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public AmountOfCrRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.AmountOfCrRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface getMonstersRequestRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:getMonstersRequestRpc)
-      com.google.protobuf.MessageOrBuilder {
+  public interface GetMonstersRequestRpcOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:GetMonstersRequestRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>int32 amount = 1;</code>
@@ -5534,53 +5534,53 @@ MonsterShortListRpc defaultValue) {
     int getPage();
 
     /**
-     * <code>.monsterFiltersRpc filters = 3;</code>
+     * <code>.MonsterFiltersRpc filters = 3;</code>
      * @return Whether the filters field is set.
      */
     boolean hasFilters();
     /**
-     * <code>.monsterFiltersRpc filters = 3;</code>
+     * <code>.MonsterFiltersRpc filters = 3;</code>
      * @return The filters.
      */
-    monsterFiltersRpc getFilters();
+    MonsterServiceOuterClass.MonsterFiltersRpc getFilters();
     /**
-     * <code>.monsterFiltersRpc filters = 3;</code>
+     * <code>.MonsterFiltersRpc filters = 3;</code>
      */
-    monsterFiltersRpcOrBuilder getFiltersOrBuilder();
+    MonsterServiceOuterClass.MonsterFiltersRpcOrBuilder getFiltersOrBuilder();
   }
   /**
-   * Protobuf type {@code getMonstersRequestRpc}
+   * Protobuf type {@code GetMonstersRequestRpc}
    */
-  public static final class getMonstersRequestRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:getMonstersRequestRpc)
-      getMonstersRequestRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use getMonstersRequestRpc.newBuilder() to construct.
-    private getMonstersRequestRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  public static final class GetMonstersRequestRpc extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:GetMonstersRequestRpc)
+          GetMonstersRequestRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GetMonstersRequestRpc.newBuilder() to construct.
+    private GetMonstersRequestRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private getMonstersRequestRpc() {
+    private GetMonstersRequestRpc() {
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new getMonstersRequestRpc();
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+      return new GetMonstersRequestRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return MonsterServiceOuterClass.internal_static_getMonstersRequestRpc_descriptor;
+    getDescriptor() {
+      return MonsterServiceOuterClass.internal_static_GetMonstersRequestRpc_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return MonsterServiceOuterClass.internal_static_getMonstersRequestRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              getMonstersRequestRpc.class, Builder.class);
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return MonsterServiceOuterClass.internal_static_GetMonstersRequestRpc_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.GetMonstersRequestRpc.class, MonsterServiceOuterClass.GetMonstersRequestRpc.Builder.class);
     }
 
     private int bitField0_;
@@ -5590,7 +5590,7 @@ MonsterShortListRpc defaultValue) {
      * <code>int32 amount = 1;</code>
      * @return The amount.
      */
-    @Override
+    @java.lang.Override
     public int getAmount() {
       return amount_;
     }
@@ -5601,39 +5601,39 @@ MonsterShortListRpc defaultValue) {
      * <code>int32 page = 2;</code>
      * @return The page.
      */
-    @Override
+    @java.lang.Override
     public int getPage() {
       return page_;
     }
 
     public static final int FILTERS_FIELD_NUMBER = 3;
-    private monsterFiltersRpc filters_;
+    private MonsterServiceOuterClass.MonsterFiltersRpc filters_;
     /**
-     * <code>.monsterFiltersRpc filters = 3;</code>
+     * <code>.MonsterFiltersRpc filters = 3;</code>
      * @return Whether the filters field is set.
      */
-    @Override
+    @java.lang.Override
     public boolean hasFilters() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.monsterFiltersRpc filters = 3;</code>
+     * <code>.MonsterFiltersRpc filters = 3;</code>
      * @return The filters.
      */
-    @Override
-    public monsterFiltersRpc getFilters() {
-      return filters_ == null ? monsterFiltersRpc.getDefaultInstance() : filters_;
+    @java.lang.Override
+    public MonsterServiceOuterClass.MonsterFiltersRpc getFilters() {
+      return filters_ == null ? MonsterServiceOuterClass.MonsterFiltersRpc.getDefaultInstance() : filters_;
     }
     /**
-     * <code>.monsterFiltersRpc filters = 3;</code>
+     * <code>.MonsterFiltersRpc filters = 3;</code>
      */
-    @Override
-    public monsterFiltersRpcOrBuilder getFiltersOrBuilder() {
-      return filters_ == null ? monsterFiltersRpc.getDefaultInstance() : filters_;
+    @java.lang.Override
+    public MonsterServiceOuterClass.MonsterFiltersRpcOrBuilder getFiltersOrBuilder() {
+      return filters_ == null ? MonsterServiceOuterClass.MonsterFiltersRpc.getDefaultInstance() : filters_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5643,9 +5643,9 @@ MonsterShortListRpc defaultValue) {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       if (amount_ != 0) {
         output.writeInt32(1, amount_);
       }
@@ -5658,7 +5658,7 @@ MonsterShortListRpc defaultValue) {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5666,45 +5666,45 @@ MonsterShortListRpc defaultValue) {
       size = 0;
       if (amount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, amount_);
+                .computeInt32Size(1, amount_);
       }
       if (page_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, page_);
+                .computeInt32Size(2, page_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getFilters());
+                .computeMessageSize(3, getFilters());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof getMonstersRequestRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.GetMonstersRequestRpc)) {
         return super.equals(obj);
       }
-      getMonstersRequestRpc other = (getMonstersRequestRpc) obj;
+      MonsterServiceOuterClass.GetMonstersRequestRpc other = (MonsterServiceOuterClass.GetMonstersRequestRpc) obj;
 
       if (getAmount()
-          != other.getAmount()) return false;
+              != other.getAmount()) return false;
       if (getPage()
-          != other.getPage()) return false;
+              != other.getPage()) return false;
       if (hasFilters() != other.hasFilters()) return false;
       if (hasFilters()) {
         if (!getFilters()
-            .equals(other.getFilters())) return false;
+                .equals(other.getFilters())) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -5724,125 +5724,125 @@ MonsterShortListRpc defaultValue) {
       return hash;
     }
 
-    public static getMonstersRequestRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static getMonstersRequestRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static getMonstersRequestRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static getMonstersRequestRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static getMonstersRequestRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static getMonstersRequestRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static getMonstersRequestRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static getMonstersRequestRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static getMonstersRequestRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static getMonstersRequestRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static getMonstersRequestRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static getMonstersRequestRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(getMonstersRequestRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.GetMonstersRequestRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code getMonstersRequestRpc}
+     * Protobuf type {@code GetMonstersRequestRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:getMonstersRequestRpc)
-        getMonstersRequestRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:GetMonstersRequestRpc)
+            MonsterServiceOuterClass.GetMonstersRequestRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return MonsterServiceOuterClass.internal_static_getMonstersRequestRpc_descriptor;
+      getDescriptor() {
+        return MonsterServiceOuterClass.internal_static_GetMonstersRequestRpc_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return MonsterServiceOuterClass.internal_static_getMonstersRequestRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                getMonstersRequestRpc.class, Builder.class);
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return MonsterServiceOuterClass.internal_static_GetMonstersRequestRpc_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.GetMonstersRequestRpc.class, MonsterServiceOuterClass.GetMonstersRequestRpc.Builder.class);
       }
 
-      // Construct using generated.monster_service.MonsterServiceOuterClass.getMonstersRequestRpc.newBuilder()
+      // Construct using generated.monster_service.MonsterServiceOuterClass.GetMonstersRequestRpc.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -5852,7 +5852,7 @@ MonsterShortListRpc defaultValue) {
           getFiltersFieldBuilder();
         }
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -5866,35 +5866,35 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return MonsterServiceOuterClass.internal_static_getMonstersRequestRpc_descriptor;
+      getDescriptorForType() {
+        return MonsterServiceOuterClass.internal_static_GetMonstersRequestRpc_descriptor;
       }
 
-      @Override
-      public getMonstersRequestRpc getDefaultInstanceForType() {
-        return getMonstersRequestRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.GetMonstersRequestRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.GetMonstersRequestRpc.getDefaultInstance();
       }
 
-      @Override
-      public getMonstersRequestRpc build() {
-        getMonstersRequestRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.GetMonstersRequestRpc build() {
+        MonsterServiceOuterClass.GetMonstersRequestRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public getMonstersRequestRpc buildPartial() {
-        getMonstersRequestRpc result = new getMonstersRequestRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.GetMonstersRequestRpc buildPartial() {
+        MonsterServiceOuterClass.GetMonstersRequestRpc result = new MonsterServiceOuterClass.GetMonstersRequestRpc(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(getMonstersRequestRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.GetMonstersRequestRpc result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.amount_ = amount_;
@@ -5905,57 +5905,57 @@ MonsterShortListRpc defaultValue) {
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.filters_ = filtersBuilder_ == null
-              ? filters_
-              : filtersBuilder_.build();
+                  ? filters_
+                  : filtersBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         result.bitField0_ |= to_bitField0_;
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof getMonstersRequestRpc) {
-          return mergeFrom((getMonstersRequestRpc)other);
+        if (other instanceof MonsterServiceOuterClass.GetMonstersRequestRpc) {
+          return mergeFrom((MonsterServiceOuterClass.GetMonstersRequestRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(getMonstersRequestRpc other) {
-        if (other == getMonstersRequestRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.GetMonstersRequestRpc other) {
+        if (other == MonsterServiceOuterClass.GetMonstersRequestRpc.getDefaultInstance()) return this;
         if (other.getAmount() != 0) {
           setAmount(other.getAmount());
         }
@@ -5970,18 +5970,18 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -6003,8 +6003,8 @@ MonsterShortListRpc defaultValue) {
               } // case 16
               case 26: {
                 input.readMessage(
-                    getFiltersFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                        getFiltersFieldBuilder().getBuilder(),
+                        extensionRegistry);
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
@@ -6030,7 +6030,7 @@ MonsterShortListRpc defaultValue) {
        * <code>int32 amount = 1;</code>
        * @return The amount.
        */
-      @Override
+      @java.lang.Override
       public int getAmount() {
         return amount_;
       }
@@ -6062,7 +6062,7 @@ MonsterShortListRpc defaultValue) {
        * <code>int32 page = 2;</code>
        * @return The page.
        */
-      @Override
+      @java.lang.Override
       public int getPage() {
         return page_;
       }
@@ -6089,31 +6089,31 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
 
-      private monsterFiltersRpc filters_;
+      private MonsterServiceOuterClass.MonsterFiltersRpc filters_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          monsterFiltersRpc, monsterFiltersRpc.Builder, monsterFiltersRpcOrBuilder> filtersBuilder_;
+              MonsterServiceOuterClass.MonsterFiltersRpc, MonsterServiceOuterClass.MonsterFiltersRpc.Builder, MonsterServiceOuterClass.MonsterFiltersRpcOrBuilder> filtersBuilder_;
       /**
-       * <code>.monsterFiltersRpc filters = 3;</code>
+       * <code>.MonsterFiltersRpc filters = 3;</code>
        * @return Whether the filters field is set.
        */
       public boolean hasFilters() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>.monsterFiltersRpc filters = 3;</code>
+       * <code>.MonsterFiltersRpc filters = 3;</code>
        * @return The filters.
        */
-      public monsterFiltersRpc getFilters() {
+      public MonsterServiceOuterClass.MonsterFiltersRpc getFilters() {
         if (filtersBuilder_ == null) {
-          return filters_ == null ? monsterFiltersRpc.getDefaultInstance() : filters_;
+          return filters_ == null ? MonsterServiceOuterClass.MonsterFiltersRpc.getDefaultInstance() : filters_;
         } else {
           return filtersBuilder_.getMessage();
         }
       }
       /**
-       * <code>.monsterFiltersRpc filters = 3;</code>
+       * <code>.MonsterFiltersRpc filters = 3;</code>
        */
-      public Builder setFilters(monsterFiltersRpc value) {
+      public Builder setFilters(MonsterServiceOuterClass.MonsterFiltersRpc value) {
         if (filtersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6127,10 +6127,10 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
       /**
-       * <code>.monsterFiltersRpc filters = 3;</code>
+       * <code>.MonsterFiltersRpc filters = 3;</code>
        */
       public Builder setFilters(
-          monsterFiltersRpc.Builder builderForValue) {
+              MonsterServiceOuterClass.MonsterFiltersRpc.Builder builderForValue) {
         if (filtersBuilder_ == null) {
           filters_ = builderForValue.build();
         } else {
@@ -6141,13 +6141,13 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
       /**
-       * <code>.monsterFiltersRpc filters = 3;</code>
+       * <code>.MonsterFiltersRpc filters = 3;</code>
        */
-      public Builder mergeFilters(monsterFiltersRpc value) {
+      public Builder mergeFilters(MonsterServiceOuterClass.MonsterFiltersRpc value) {
         if (filtersBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
-            filters_ != null &&
-            filters_ != monsterFiltersRpc.getDefaultInstance()) {
+                  filters_ != null &&
+                  filters_ != MonsterServiceOuterClass.MonsterFiltersRpc.getDefaultInstance()) {
             getFiltersBuilder().mergeFrom(value);
           } else {
             filters_ = value;
@@ -6162,7 +6162,7 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
       /**
-       * <code>.monsterFiltersRpc filters = 3;</code>
+       * <code>.MonsterFiltersRpc filters = 3;</code>
        */
       public Builder clearFilters() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -6175,33 +6175,33 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
       /**
-       * <code>.monsterFiltersRpc filters = 3;</code>
+       * <code>.MonsterFiltersRpc filters = 3;</code>
        */
-      public monsterFiltersRpc.Builder getFiltersBuilder() {
+      public MonsterServiceOuterClass.MonsterFiltersRpc.Builder getFiltersBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return getFiltersFieldBuilder().getBuilder();
       }
       /**
-       * <code>.monsterFiltersRpc filters = 3;</code>
+       * <code>.MonsterFiltersRpc filters = 3;</code>
        */
-      public monsterFiltersRpcOrBuilder getFiltersOrBuilder() {
+      public MonsterServiceOuterClass.MonsterFiltersRpcOrBuilder getFiltersOrBuilder() {
         if (filtersBuilder_ != null) {
           return filtersBuilder_.getMessageOrBuilder();
         } else {
           return filters_ == null ?
-              monsterFiltersRpc.getDefaultInstance() : filters_;
+                  MonsterServiceOuterClass.MonsterFiltersRpc.getDefaultInstance() : filters_;
         }
       }
       /**
-       * <code>.monsterFiltersRpc filters = 3;</code>
+       * <code>.MonsterFiltersRpc filters = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          monsterFiltersRpc, monsterFiltersRpc.Builder, monsterFiltersRpcOrBuilder>
-          getFiltersFieldBuilder() {
+              MonsterServiceOuterClass.MonsterFiltersRpc, MonsterServiceOuterClass.MonsterFiltersRpc.Builder, MonsterServiceOuterClass.MonsterFiltersRpcOrBuilder>
+      getFiltersFieldBuilder() {
         if (filtersBuilder_ == null) {
           filtersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              monsterFiltersRpc, monsterFiltersRpc.Builder, monsterFiltersRpcOrBuilder>(
+                  MonsterServiceOuterClass.MonsterFiltersRpc, MonsterServiceOuterClass.MonsterFiltersRpc.Builder, MonsterServiceOuterClass.MonsterFiltersRpcOrBuilder>(
                   getFilters(),
                   getParentForChildren(),
                   isClean());
@@ -6209,39 +6209,39 @@ MonsterShortListRpc defaultValue) {
         }
         return filtersBuilder_;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:getMonstersRequestRpc)
+      // @@protoc_insertion_point(builder_scope:GetMonstersRequestRpc)
     }
 
-    // @@protoc_insertion_point(class_scope:getMonstersRequestRpc)
-    private static final getMonstersRequestRpc DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:GetMonstersRequestRpc)
+    private static final MonsterServiceOuterClass.GetMonstersRequestRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new getMonstersRequestRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.GetMonstersRequestRpc();
     }
 
-    public static getMonstersRequestRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.GetMonstersRequestRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<getMonstersRequestRpc>
-        PARSER = new com.google.protobuf.AbstractParser<getMonstersRequestRpc>() {
-      @Override
-      public getMonstersRequestRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+    private static final com.google.protobuf.Parser<GetMonstersRequestRpc>
+            PARSER = new com.google.protobuf.AbstractParser<GetMonstersRequestRpc>() {
+      @java.lang.Override
+      public GetMonstersRequestRpc parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -6251,43 +6251,43 @@ MonsterShortListRpc defaultValue) {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
     };
 
-    public static com.google.protobuf.Parser<getMonstersRequestRpc> parser() {
+    public static com.google.protobuf.Parser<GetMonstersRequestRpc> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<getMonstersRequestRpc> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetMonstersRequestRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public getMonstersRequestRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.GetMonstersRequestRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface monsterFiltersRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:monsterFiltersRpc)
-      com.google.protobuf.MessageOrBuilder {
+  public interface MonsterFiltersRpcOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:MonsterFiltersRpc)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string name = 1;</code>
      * @return The name.
      */
-    String getName();
+    java.lang.String getName();
     /**
      * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+    getNameBytes();
 
     /**
      * <code>float cr = 2;</code>
@@ -6305,80 +6305,80 @@ MonsterShortListRpc defaultValue) {
      * <code>string type = 4;</code>
      * @return The type.
      */
-    String getType();
+    java.lang.String getType();
     /**
      * <code>string type = 4;</code>
      * @return The bytes for type.
      */
     com.google.protobuf.ByteString
-        getTypeBytes();
+    getTypeBytes();
 
     /**
      * <code>string size = 5;</code>
      * @return The size.
      */
-    String getSize();
+    java.lang.String getSize();
     /**
      * <code>string size = 5;</code>
      * @return The bytes for size.
      */
     com.google.protobuf.ByteString
-        getSizeBytes();
+    getSizeBytes();
   }
   /**
-   * Protobuf type {@code monsterFiltersRpc}
+   * Protobuf type {@code MonsterFiltersRpc}
    */
-  public static final class monsterFiltersRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:monsterFiltersRpc)
-      monsterFiltersRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use monsterFiltersRpc.newBuilder() to construct.
-    private monsterFiltersRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  public static final class MonsterFiltersRpc extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:MonsterFiltersRpc)
+          MonsterFiltersRpcOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MonsterFiltersRpc.newBuilder() to construct.
+    private MonsterFiltersRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private monsterFiltersRpc() {
+    private MonsterFiltersRpc() {
       name_ = "";
       type_ = "";
       size_ = "";
     }
 
-    @Override
+    @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new monsterFiltersRpc();
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+      return new MonsterFiltersRpc();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return MonsterServiceOuterClass.internal_static_monsterFiltersRpc_descriptor;
+    getDescriptor() {
+      return MonsterServiceOuterClass.internal_static_MonsterFiltersRpc_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return MonsterServiceOuterClass.internal_static_monsterFiltersRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              monsterFiltersRpc.class, Builder.class);
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return MonsterServiceOuterClass.internal_static_MonsterFiltersRpc_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      MonsterServiceOuterClass.MonsterFiltersRpc.class, MonsterServiceOuterClass.MonsterFiltersRpc.Builder.class);
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private volatile Object name_ = "";
+    private volatile java.lang.Object name_ = "";
     /**
      * <code>string name = 1;</code>
      * @return The name.
      */
-    @Override
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
       }
@@ -6387,14 +6387,14 @@ MonsterShortListRpc defaultValue) {
      * <code>string name = 1;</code>
      * @return The bytes for name.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+    getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -6408,7 +6408,7 @@ MonsterShortListRpc defaultValue) {
      * <code>float cr = 2;</code>
      * @return The cr.
      */
-    @Override
+    @java.lang.Override
     public float getCr() {
       return cr_;
     }
@@ -6419,27 +6419,27 @@ MonsterShortListRpc defaultValue) {
      * <code>int64 groupId = 3;</code>
      * @return The groupId.
      */
-    @Override
+    @java.lang.Override
     public long getGroupId() {
       return groupId_;
     }
 
     public static final int TYPE_FIELD_NUMBER = 4;
     @SuppressWarnings("serial")
-    private volatile Object type_ = "";
+    private volatile java.lang.Object type_ = "";
     /**
      * <code>string type = 4;</code>
      * @return The type.
      */
-    @Override
-    public String getType() {
-      Object ref = type_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         type_ = s;
         return s;
       }
@@ -6448,14 +6448,14 @@ MonsterShortListRpc defaultValue) {
      * <code>string type = 4;</code>
      * @return The bytes for type.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getTypeBytes() {
-      Object ref = type_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+    getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         type_ = b;
         return b;
       } else {
@@ -6465,20 +6465,20 @@ MonsterShortListRpc defaultValue) {
 
     public static final int SIZE_FIELD_NUMBER = 5;
     @SuppressWarnings("serial")
-    private volatile Object size_ = "";
+    private volatile java.lang.Object size_ = "";
     /**
      * <code>string size = 5;</code>
      * @return The size.
      */
-    @Override
-    public String getSize() {
-      Object ref = size_;
-      if (ref instanceof String) {
-        return (String) ref;
+    @java.lang.Override
+    public java.lang.String getSize() {
+      java.lang.Object ref = size_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
         size_ = s;
         return s;
       }
@@ -6487,14 +6487,14 @@ MonsterShortListRpc defaultValue) {
      * <code>string size = 5;</code>
      * @return The bytes for size.
      */
-    @Override
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getSizeBytes() {
-      Object ref = size_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+    getSizeBytes() {
+      java.lang.Object ref = size_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         size_ = b;
         return b;
       } else {
@@ -6503,7 +6503,7 @@ MonsterShortListRpc defaultValue) {
     }
 
     private byte memoizedIsInitialized = -1;
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6513,13 +6513,13 @@ MonsterShortListRpc defaultValue) {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (Float.floatToRawIntBits(cr_) != 0) {
+      if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         output.writeFloat(2, cr_);
       }
       if (groupId_ != 0L) {
@@ -6534,7 +6534,7 @@ MonsterShortListRpc defaultValue) {
       getUnknownFields().writeTo(output);
     }
 
-    @Override
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6543,13 +6543,13 @@ MonsterShortListRpc defaultValue) {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (Float.floatToRawIntBits(cr_) != 0) {
+      if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, cr_);
+                .computeFloatSize(2, cr_);
       }
       if (groupId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, groupId_);
+                .computeInt64Size(3, groupId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, type_);
@@ -6562,32 +6562,32 @@ MonsterShortListRpc defaultValue) {
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof monsterFiltersRpc)) {
+      if (!(obj instanceof MonsterServiceOuterClass.MonsterFiltersRpc)) {
         return super.equals(obj);
       }
-      monsterFiltersRpc other = (monsterFiltersRpc) obj;
+      MonsterServiceOuterClass.MonsterFiltersRpc other = (MonsterServiceOuterClass.MonsterFiltersRpc) obj;
 
       if (!getName()
-          .equals(other.getName())) return false;
-      if (Float.floatToIntBits(getCr())
-          != Float.floatToIntBits(
+              .equals(other.getName())) return false;
+      if (java.lang.Float.floatToIntBits(getCr())
+              != java.lang.Float.floatToIntBits(
               other.getCr())) return false;
       if (getGroupId()
-          != other.getGroupId()) return false;
+              != other.getGroupId()) return false;
       if (!getType()
-          .equals(other.getType())) return false;
+              .equals(other.getType())) return false;
       if (!getSize()
-          .equals(other.getSize())) return false;
+              .equals(other.getSize())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -6597,11 +6597,11 @@ MonsterShortListRpc defaultValue) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + CR_FIELD_NUMBER;
-      hash = (53 * hash) + Float.floatToIntBits(
-          getCr());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getCr());
       hash = (37 * hash) + GROUPID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGroupId());
+              getGroupId());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
@@ -6611,129 +6611,129 @@ MonsterShortListRpc defaultValue) {
       return hash;
     }
 
-    public static monsterFiltersRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static monsterFiltersRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static monsterFiltersRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static monsterFiltersRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static monsterFiltersRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static monsterFiltersRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static monsterFiltersRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static monsterFiltersRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static monsterFiltersRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static monsterFiltersRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static monsterFiltersRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static monsterFiltersRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input);
     }
 
-    @Override
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+    public static MonsterServiceOuterClass.MonsterFiltersRpc parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(monsterFiltersRpc prototype) {
+    public static Builder newBuilder(MonsterServiceOuterClass.MonsterFiltersRpc prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @Override
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code monsterFiltersRpc}
+     * Protobuf type {@code MonsterFiltersRpc}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:monsterFiltersRpc)
-        monsterFiltersRpcOrBuilder {
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:MonsterFiltersRpc)
+            MonsterServiceOuterClass.MonsterFiltersRpcOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return MonsterServiceOuterClass.internal_static_monsterFiltersRpc_descriptor;
+      getDescriptor() {
+        return MonsterServiceOuterClass.internal_static_MonsterFiltersRpc_descriptor;
       }
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return MonsterServiceOuterClass.internal_static_monsterFiltersRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                monsterFiltersRpc.class, Builder.class);
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return MonsterServiceOuterClass.internal_static_MonsterFiltersRpc_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        MonsterServiceOuterClass.MonsterFiltersRpc.class, MonsterServiceOuterClass.MonsterFiltersRpc.Builder.class);
       }
 
-      // Construct using generated.monster_service.MonsterServiceOuterClass.monsterFiltersRpc.newBuilder()
+      // Construct using generated.monster_service.MonsterServiceOuterClass.MonsterFiltersRpc.newBuilder()
       private Builder() {
 
       }
 
       private Builder(
-          BuilderParent parent) {
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
 
       }
-      @Override
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
@@ -6745,35 +6745,35 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return MonsterServiceOuterClass.internal_static_monsterFiltersRpc_descriptor;
+      getDescriptorForType() {
+        return MonsterServiceOuterClass.internal_static_MonsterFiltersRpc_descriptor;
       }
 
-      @Override
-      public monsterFiltersRpc getDefaultInstanceForType() {
-        return monsterFiltersRpc.getDefaultInstance();
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterFiltersRpc getDefaultInstanceForType() {
+        return MonsterServiceOuterClass.MonsterFiltersRpc.getDefaultInstance();
       }
 
-      @Override
-      public monsterFiltersRpc build() {
-        monsterFiltersRpc result = buildPartial();
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterFiltersRpc build() {
+        MonsterServiceOuterClass.MonsterFiltersRpc result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      @Override
-      public monsterFiltersRpc buildPartial() {
-        monsterFiltersRpc result = new monsterFiltersRpc(this);
+      @java.lang.Override
+      public MonsterServiceOuterClass.MonsterFiltersRpc buildPartial() {
+        MonsterServiceOuterClass.MonsterFiltersRpc result = new MonsterServiceOuterClass.MonsterFiltersRpc(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(monsterFiltersRpc result) {
+      private void buildPartial0(MonsterServiceOuterClass.MonsterFiltersRpc result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.name_ = name_;
@@ -6792,50 +6792,50 @@ MonsterShortListRpc defaultValue) {
         }
       }
 
-      @Override
+      @java.lang.Override
       public Builder clone() {
         return super.clone();
       }
-      @Override
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @Override
+      @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @Override
+      @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @Override
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof monsterFiltersRpc) {
-          return mergeFrom((monsterFiltersRpc)other);
+        if (other instanceof MonsterServiceOuterClass.MonsterFiltersRpc) {
+          return mergeFrom((MonsterServiceOuterClass.MonsterFiltersRpc)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(monsterFiltersRpc other) {
-        if (other == monsterFiltersRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(MonsterServiceOuterClass.MonsterFiltersRpc other) {
+        if (other == MonsterServiceOuterClass.MonsterFiltersRpc.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           bitField0_ |= 0x00000001;
@@ -6862,18 +6862,18 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
 
-      @Override
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @Override
+      @java.lang.Override
       public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
         if (extensionRegistry == null) {
-          throw new NullPointerException();
+          throw new java.lang.NullPointerException();
         }
         try {
           boolean done = false;
@@ -6925,21 +6925,21 @@ MonsterShortListRpc defaultValue) {
       }
       private int bitField0_;
 
-      private Object name_ = "";
+      private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
        * @return The name.
        */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+                  (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -6947,12 +6947,12 @@ MonsterShortListRpc defaultValue) {
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
+      getNameBytes() {
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -6965,7 +6965,7 @@ MonsterShortListRpc defaultValue) {
        * @return This builder for chaining.
        */
       public Builder setName(
-          String value) {
+              java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         name_ = value;
         bitField0_ |= 0x00000001;
@@ -6988,7 +6988,7 @@ MonsterShortListRpc defaultValue) {
        * @return This builder for chaining.
        */
       public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         name_ = value;
@@ -7002,7 +7002,7 @@ MonsterShortListRpc defaultValue) {
        * <code>float cr = 2;</code>
        * @return The cr.
        */
-      @Override
+      @java.lang.Override
       public float getCr() {
         return cr_;
       }
@@ -7034,7 +7034,7 @@ MonsterShortListRpc defaultValue) {
        * <code>int64 groupId = 3;</code>
        * @return The groupId.
        */
-      @Override
+      @java.lang.Override
       public long getGroupId() {
         return groupId_;
       }
@@ -7061,21 +7061,21 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
 
-      private Object type_ = "";
+      private java.lang.Object type_ = "";
       /**
        * <code>string type = 4;</code>
        * @return The type.
        */
-      public String getType() {
-        Object ref = type_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+                  (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
           type_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -7083,12 +7083,12 @@ MonsterShortListRpc defaultValue) {
        * @return The bytes for type.
        */
       public com.google.protobuf.ByteString
-          getTypeBytes() {
-        Object ref = type_;
+      getTypeBytes() {
+        java.lang.Object ref = type_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           type_ = b;
           return b;
         } else {
@@ -7101,7 +7101,7 @@ MonsterShortListRpc defaultValue) {
        * @return This builder for chaining.
        */
       public Builder setType(
-          String value) {
+              java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         type_ = value;
         bitField0_ |= 0x00000008;
@@ -7124,7 +7124,7 @@ MonsterShortListRpc defaultValue) {
        * @return This builder for chaining.
        */
       public Builder setTypeBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         type_ = value;
@@ -7133,21 +7133,21 @@ MonsterShortListRpc defaultValue) {
         return this;
       }
 
-      private Object size_ = "";
+      private java.lang.Object size_ = "";
       /**
        * <code>string size = 5;</code>
        * @return The size.
        */
-      public String getSize() {
-        Object ref = size_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getSize() {
+        java.lang.Object ref = size_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+                  (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
           size_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -7155,12 +7155,12 @@ MonsterShortListRpc defaultValue) {
        * @return The bytes for size.
        */
       public com.google.protobuf.ByteString
-          getSizeBytes() {
-        Object ref = size_;
+      getSizeBytes() {
+        java.lang.Object ref = size_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           size_ = b;
           return b;
         } else {
@@ -7173,7 +7173,7 @@ MonsterShortListRpc defaultValue) {
        * @return This builder for chaining.
        */
       public Builder setSize(
-          String value) {
+              java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         size_ = value;
         bitField0_ |= 0x00000010;
@@ -7196,7 +7196,7 @@ MonsterShortListRpc defaultValue) {
        * @return This builder for chaining.
        */
       public Builder setSizeBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         size_ = value;
@@ -7204,39 +7204,39 @@ MonsterShortListRpc defaultValue) {
         onChanged();
         return this;
       }
-      @Override
+      @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @Override
+      @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
-      // @@protoc_insertion_point(builder_scope:monsterFiltersRpc)
+      // @@protoc_insertion_point(builder_scope:MonsterFiltersRpc)
     }
 
-    // @@protoc_insertion_point(class_scope:monsterFiltersRpc)
-    private static final monsterFiltersRpc DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:MonsterFiltersRpc)
+    private static final MonsterServiceOuterClass.MonsterFiltersRpc DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new monsterFiltersRpc();
+      DEFAULT_INSTANCE = new MonsterServiceOuterClass.MonsterFiltersRpc();
     }
 
-    public static monsterFiltersRpc getDefaultInstance() {
+    public static MonsterServiceOuterClass.MonsterFiltersRpc getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<monsterFiltersRpc>
-        PARSER = new com.google.protobuf.AbstractParser<monsterFiltersRpc>() {
-      @Override
-      public monsterFiltersRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+    private static final com.google.protobuf.Parser<MonsterFiltersRpc>
+            PARSER = new com.google.protobuf.AbstractParser<MonsterFiltersRpc>() {
+      @java.lang.Override
+      public MonsterFiltersRpc parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         Builder builder = newBuilder();
         try {
           builder.mergeFrom(input, extensionRegistry);
@@ -7246,217 +7246,217 @@ MonsterShortListRpc defaultValue) {
           throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
+                  .setUnfinishedMessage(builder.buildPartial());
         }
         return builder.buildPartial();
       }
     };
 
-    public static com.google.protobuf.Parser<monsterFiltersRpc> parser() {
+    public static com.google.protobuf.Parser<MonsterFiltersRpc> parser() {
       return PARSER;
     }
 
-    @Override
-    public com.google.protobuf.Parser<monsterFiltersRpc> getParserForType() {
+    @java.lang.Override
+    public com.google.protobuf.Parser<MonsterFiltersRpc> getParserForType() {
       return PARSER;
     }
 
-    @Override
-    public monsterFiltersRpc getDefaultInstanceForType() {
+    @java.lang.Override
+    public MonsterServiceOuterClass.MonsterFiltersRpc getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CrRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CrRpc_fieldAccessorTable;
+          internal_static_CrRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_CrRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CrListRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CrListRpc_fieldAccessorTable;
+          internal_static_CrListRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_CrListRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MonsterShortRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MonsterShortRpc_fieldAccessorTable;
+          internal_static_MonsterShortRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_MonsterShortRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MonsterShortListRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MonsterShortListRpc_fieldAccessorTable;
+          internal_static_MonsterShortListRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_MonsterShortListRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GetMonstersCrGroupRequestRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GetMonstersCrGroupRequestRpc_fieldAccessorTable;
+          internal_static_GetMonstersCrGroupRequestRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_GetMonstersCrGroupRequestRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_fieldAccessorTable;
+          internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RandomMonsterRequestRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RandomMonsterRequestRpc_fieldAccessorTable;
+          internal_static_RandomMonsterRequestRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_RandomMonsterRequestRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MonstersByCrRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MonstersByCrRpc_fieldAccessorTable;
+          internal_static_MonstersByCrRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_MonstersByCrRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_MonstersByCrRpc_MonstersEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_MonstersByCrRpc_MonstersEntry_fieldAccessorTable;
+          internal_static_MonstersByCrRpc_MonstersEntry_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_MonstersByCrRpc_MonstersEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AmountOfCrRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AmountOfCrRpc_fieldAccessorTable;
+          internal_static_AmountOfCrRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_AmountOfCrRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AmountOfCrRpc_CrMapEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AmountOfCrRpc_CrMapEntry_fieldAccessorTable;
+          internal_static_AmountOfCrRpc_CrMapEntry_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_AmountOfCrRpc_CrMapEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_getMonstersRequestRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_getMonstersRequestRpc_fieldAccessorTable;
+          internal_static_GetMonstersRequestRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_GetMonstersRequestRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_monsterFiltersRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_monsterFiltersRpc_fieldAccessorTable;
+          internal_static_MonsterFiltersRpc_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_MonsterFiltersRpc_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  getDescriptor() {
     return descriptor;
   }
   private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+          descriptor;
   static {
-    String[] descriptorData = {
-      "\n\025monster_service.proto\032\014shared.proto\"\023\n" +
-      "\005CrRpc\022\n\n\002cr\030\001 \001(\002\" \n\tCrListRpc\022\023\n\003crs\030\001" +
-      " \003(\0132\006.CrRpc\"7\n\017MonsterShortRpc\022\n\n\002id\030\001 " +
-      "\001(\003\022\014\n\004name\030\002 \001(\t\022\n\n\002cr\030\003 \001(\002\"9\n\023Monster" +
-      "ShortListRpc\022\"\n\010monsters\030\001 \003(\0132\020.Monster" +
-      "ShortRpc\"\220\001\n\034GetMonstersCrGroupRequestRp" +
-      "c\0223\n\003crs\030\001 \003(\0132&.GetMonstersCrGroupReque" +
-      "stRpc.CrsEntry\022\017\n\007groupId\030\002 \001(\003\032*\n\010CrsEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\"5\n\027R" +
-      "andomMonsterRequestRpc\022\n\n\002cr\030\001 \001(\002\022\016\n\006am" +
-      "ount\030\002 \001(\005\"\212\001\n\017MonstersByCrRpc\0220\n\010monste" +
-      "rs\030\001 \003(\0132\036.MonstersByCrRpc.MonstersEntry" +
-      "\032E\n\rMonstersEntry\022\013\n\003key\030\001 \001(\t\022#\n\005value\030" +
-      "\002 \001(\0132\024.MonsterShortListRpc:\0028\001\"g\n\rAmoun" +
-      "tOfCrRpc\022(\n\005crMap\030\001 \003(\0132\031.AmountOfCrRpc." +
-      "CrMapEntry\032,\n\nCrMapEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
-      "\005value\030\002 \001(\005:\0028\001\"Z\n\025getMonstersRequestRp" +
-      "c\022\016\n\006amount\030\001 \001(\005\022\014\n\004page\030\002 \001(\005\022#\n\007filte" +
-      "rs\030\003 \001(\0132\022.monsterFiltersRpc\"Z\n\021monsterF" +
-      "iltersRpc\022\014\n\004name\030\001 \001(\t\022\n\n\002cr\030\002 \001(\002\022\017\n\007g" +
-      "roupId\030\003 \001(\003\022\014\n\004type\030\004 \001(\t\022\014\n\004size\030\005 \001(\t" +
-      "2\376\002\n\016MonsterService\0221\n\033getAmountOfMonste" +
-      "rByGroupId\022\006.IdRpc\032\n.AmountRpc\022,\n\026getCrs" +
-      "ByMonsterGroupId\022\006.IdRpc\032\n.CrListRpc\022J\n\027" +
-      "getMonstersByCrAndGroup\022\035.GetMonstersCrG" +
-      "roupRequestRpc\032\020.MonstersByCrRpc\022G\n\025getR" +
-      "andomMonstersByCr\022\030.RandomMonsterRequest" +
-      "Rpc\032\024.MonsterShortListRpc\0229\n\025getMonsters" +
-      "ByCrAmount\022\016.AmountOfCrRpc\032\020.MonstersByC" +
-      "rRpc\022;\n\013getMonsters\022\026.getMonstersRequest" +
-      "Rpc\032\024.MonsterShortListRpcb\006proto3"
+    java.lang.String[] descriptorData = {
+            "\n\025monster_service.proto\032\014shared.proto\"\023\n" +
+                    "\005CrRpc\022\n\n\002cr\030\001 \001(\002\" \n\tCrListRpc\022\023\n\003crs\030\001" +
+                    " \003(\0132\006.CrRpc\"7\n\017MonsterShortRpc\022\n\n\002id\030\001 " +
+                    "\001(\003\022\014\n\004name\030\002 \001(\t\022\n\n\002cr\030\003 \001(\002\"9\n\023Monster" +
+                    "ShortListRpc\022\"\n\010monsters\030\001 \003(\0132\020.Monster" +
+                    "ShortRpc\"\220\001\n\034GetMonstersCrGroupRequestRp" +
+                    "c\0223\n\003crs\030\001 \003(\0132&.GetMonstersCrGroupReque" +
+                    "stRpc.CrsEntry\022\017\n\007groupId\030\002 \001(\003\032*\n\010CrsEn" +
+                    "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\005:\0028\001\"5\n\027R" +
+                    "andomMonsterRequestRpc\022\n\n\002cr\030\001 \001(\002\022\016\n\006am" +
+                    "ount\030\002 \001(\005\"\212\001\n\017MonstersByCrRpc\0220\n\010monste" +
+                    "rs\030\001 \003(\0132\036.MonstersByCrRpc.MonstersEntry" +
+                    "\032E\n\rMonstersEntry\022\013\n\003key\030\001 \001(\t\022#\n\005value\030" +
+                    "\002 \001(\0132\024.MonsterShortListRpc:\0028\001\"g\n\rAmoun" +
+                    "tOfCrRpc\022(\n\005crMap\030\001 \003(\0132\031.AmountOfCrRpc." +
+                    "CrMapEntry\032,\n\nCrMapEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+                    "\005value\030\002 \001(\005:\0028\001\"Z\n\025GetMonstersRequestRp" +
+                    "c\022\016\n\006amount\030\001 \001(\005\022\014\n\004page\030\002 \001(\005\022#\n\007filte" +
+                    "rs\030\003 \001(\0132\022.MonsterFiltersRpc\"Z\n\021MonsterF" +
+                    "iltersRpc\022\014\n\004name\030\001 \001(\t\022\n\n\002cr\030\002 \001(\002\022\017\n\007g" +
+                    "roupId\030\003 \001(\003\022\014\n\004type\030\004 \001(\t\022\014\n\004size\030\005 \001(\t" +
+                    "2\376\002\n\016MonsterService\0221\n\033getAmountOfMonste" +
+                    "rByGroupId\022\006.IdRpc\032\n.AmountRpc\022,\n\026getCrs" +
+                    "ByMonsterGroupId\022\006.IdRpc\032\n.CrListRpc\022J\n\027" +
+                    "getMonstersByCrAndGroup\022\035.GetMonstersCrG" +
+                    "roupRequestRpc\032\020.MonstersByCrRpc\022G\n\025getR" +
+                    "andomMonstersByCr\022\030.RandomMonsterRequest" +
+                    "Rpc\032\024.MonsterShortListRpc\0229\n\025getMonsters" +
+                    "ByCrAmount\022\016.AmountOfCrRpc\032\020.MonstersByC" +
+                    "rRpc\022;\n\013getMonsters\022\026.GetMonstersRequest" +
+                    "Rpc\032\024.MonsterShortListRpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          Shared.getDescriptor(),
-        });
+            .internalBuildGeneratedFileFrom(descriptorData,
+                    new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            Shared.getDescriptor(),
+                    });
     internal_static_CrRpc_descriptor =
-      getDescriptor().getMessageTypes().get(0);
+            getDescriptor().getMessageTypes().get(0);
     internal_static_CrRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CrRpc_descriptor,
-        new String[] { "Cr", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_CrRpc_descriptor,
+            new java.lang.String[] { "Cr", });
     internal_static_CrListRpc_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+            getDescriptor().getMessageTypes().get(1);
     internal_static_CrListRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CrListRpc_descriptor,
-        new String[] { "Crs", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_CrListRpc_descriptor,
+            new java.lang.String[] { "Crs", });
     internal_static_MonsterShortRpc_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+            getDescriptor().getMessageTypes().get(2);
     internal_static_MonsterShortRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MonsterShortRpc_descriptor,
-        new String[] { "Id", "Name", "Cr", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_MonsterShortRpc_descriptor,
+            new java.lang.String[] { "Id", "Name", "Cr", });
     internal_static_MonsterShortListRpc_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+            getDescriptor().getMessageTypes().get(3);
     internal_static_MonsterShortListRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MonsterShortListRpc_descriptor,
-        new String[] { "Monsters", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_MonsterShortListRpc_descriptor,
+            new java.lang.String[] { "Monsters", });
     internal_static_GetMonstersCrGroupRequestRpc_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+            getDescriptor().getMessageTypes().get(4);
     internal_static_GetMonstersCrGroupRequestRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GetMonstersCrGroupRequestRpc_descriptor,
-        new String[] { "Crs", "GroupId", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_GetMonstersCrGroupRequestRpc_descriptor,
+            new java.lang.String[] { "Crs", "GroupId", });
     internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_descriptor =
-      internal_static_GetMonstersCrGroupRequestRpc_descriptor.getNestedTypes().get(0);
+            internal_static_GetMonstersCrGroupRequestRpc_descriptor.getNestedTypes().get(0);
     internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_descriptor,
-        new String[] { "Key", "Value", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_GetMonstersCrGroupRequestRpc_CrsEntry_descriptor,
+            new java.lang.String[] { "Key", "Value", });
     internal_static_RandomMonsterRequestRpc_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+            getDescriptor().getMessageTypes().get(5);
     internal_static_RandomMonsterRequestRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RandomMonsterRequestRpc_descriptor,
-        new String[] { "Cr", "Amount", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_RandomMonsterRequestRpc_descriptor,
+            new java.lang.String[] { "Cr", "Amount", });
     internal_static_MonstersByCrRpc_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+            getDescriptor().getMessageTypes().get(6);
     internal_static_MonstersByCrRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MonstersByCrRpc_descriptor,
-        new String[] { "Monsters", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_MonstersByCrRpc_descriptor,
+            new java.lang.String[] { "Monsters", });
     internal_static_MonstersByCrRpc_MonstersEntry_descriptor =
-      internal_static_MonstersByCrRpc_descriptor.getNestedTypes().get(0);
+            internal_static_MonstersByCrRpc_descriptor.getNestedTypes().get(0);
     internal_static_MonstersByCrRpc_MonstersEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_MonstersByCrRpc_MonstersEntry_descriptor,
-        new String[] { "Key", "Value", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_MonstersByCrRpc_MonstersEntry_descriptor,
+            new java.lang.String[] { "Key", "Value", });
     internal_static_AmountOfCrRpc_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+            getDescriptor().getMessageTypes().get(7);
     internal_static_AmountOfCrRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AmountOfCrRpc_descriptor,
-        new String[] { "CrMap", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_AmountOfCrRpc_descriptor,
+            new java.lang.String[] { "CrMap", });
     internal_static_AmountOfCrRpc_CrMapEntry_descriptor =
-      internal_static_AmountOfCrRpc_descriptor.getNestedTypes().get(0);
+            internal_static_AmountOfCrRpc_descriptor.getNestedTypes().get(0);
     internal_static_AmountOfCrRpc_CrMapEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AmountOfCrRpc_CrMapEntry_descriptor,
-        new String[] { "Key", "Value", });
-    internal_static_getMonstersRequestRpc_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_getMonstersRequestRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_getMonstersRequestRpc_descriptor,
-        new String[] { "Amount", "Page", "Filters", });
-    internal_static_monsterFiltersRpc_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_monsterFiltersRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_monsterFiltersRpc_descriptor,
-        new String[] { "Name", "Cr", "GroupId", "Type", "Size", });
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_AmountOfCrRpc_CrMapEntry_descriptor,
+            new java.lang.String[] { "Key", "Value", });
+    internal_static_GetMonstersRequestRpc_descriptor =
+            getDescriptor().getMessageTypes().get(8);
+    internal_static_GetMonstersRequestRpc_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_GetMonstersRequestRpc_descriptor,
+            new java.lang.String[] { "Amount", "Page", "Filters", });
+    internal_static_MonsterFiltersRpc_descriptor =
+            getDescriptor().getMessageTypes().get(9);
+    internal_static_MonsterFiltersRpc_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_MonsterFiltersRpc_descriptor,
+            new java.lang.String[] { "Name", "Cr", "GroupId", "Type", "Size", });
     Shared.getDescriptor();
   }
 
