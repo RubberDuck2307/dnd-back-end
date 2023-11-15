@@ -1,11 +1,17 @@
 package dnd.monster_service.model;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import dnd.monster_service.config.RabbitMqConfig;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterRepository;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
+import dnd.monster_service.rabbitMq.transport_entity.Monster.MessageMqFactory;
+import dnd.monster_service.rabbitMq.transport_entity.Monster.MonsterMq;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.math3.util.Precision;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -18,7 +24,10 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class PostgresMonsterService implements MonsterService {
 
+    private final MessageMqFactory messageMqFactory;
     private final MonsterRepository monsterRepository;
+    private final RabbitTemplate rabbitTemplate;
+    private final ObjectMapper objectMapper;
 
     @Override
     public List<Monster> getRandomMonstersByCr(double cr, int amountOfMonsters) {
@@ -69,5 +78,10 @@ public class PostgresMonsterService implements MonsterService {
         return monsterRepository.getMonstersFiltered(pageSize, pageNumber, monsterSearchFilter);
     }
 
+    public void addMonster() throws JsonProcessingException {
+        MonsterMq monster = messageMqFactory.monsterCreatedMessage(1, "test", 2F, true);
+        rabbitTemplate.convertAndSend(RabbitMqConfig.topicExchangeName, "monster",
+                objectMapper.writeValueAsString(monster));
+    }
 
 }

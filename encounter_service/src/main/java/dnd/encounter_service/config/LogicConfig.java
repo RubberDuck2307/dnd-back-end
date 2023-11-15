@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 @RequiredArgsConstructor
 @Configuration
 public class LogicConfig {
+
     private final JsonFileReader fileReader;
 
     @Bean
