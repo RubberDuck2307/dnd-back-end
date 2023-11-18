@@ -8,12 +8,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(schema = SqlConfig.MONSTER_VIEW_SCHEMA, name = "monster_view")
+@Table( schema = SqlConfig.SCHEMA, name = "monster_view")
 public class Monster {
 
     @Id
     private Long id;
     private String name;
+    @Column( columnDefinition = "real")
     private Float cr;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<MonsterGroup> monsterGroups;

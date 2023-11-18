@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 public class MonsterMessageConvertor {
 
     public Monster parseMonsterMqCreate(MonsterMq monsterMqCreate){
+
         return new Monster(monsterMqCreate.getId(), monsterMqCreate.getName(), monsterMqCreate.getCr(), null);
     }
 

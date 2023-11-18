@@ -1,28 +1,24 @@
 package dnd.monster_service.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.*;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
-import org.springframework.amqp.support.converter.MessageConverter;
 
 @Configuration
 public class RabbitMqConfig {
 
-    public static final String topicExchangeName = "monster";
-    public static final String monsterCreatedQueue = "monster";
+    public static final String TOPIC_EXCHANGE_NAME = "monster";
+    public static final String MONSTER_CREATED_QUEUE = "monster";
+    public static final String MONSTER_ROUTING_KEY = "monster";
 
     @Bean
     public Queue queue() {
-        return new Queue(monsterCreatedQueue, false);
+        return new Queue(MONSTER_CREATED_QUEUE, false);
     }
 
     @Bean
     public TopicExchange exchange() {
-        return new TopicExchange(topicExchangeName);
+        return new TopicExchange(TOPIC_EXCHANGE_NAME);
     }
 
     @Bean

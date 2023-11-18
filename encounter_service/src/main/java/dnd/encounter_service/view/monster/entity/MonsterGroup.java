@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-@Table(schema = SqlConfig.MONSTER_VIEW_SCHEMA, name = "monster_monster_group")
+@Table(schema = SqlConfig.SCHEMA, name = "monster_monster_group")
 public class MonsterGroup {
     @EmbeddedId
     private MonsterGroupId id;

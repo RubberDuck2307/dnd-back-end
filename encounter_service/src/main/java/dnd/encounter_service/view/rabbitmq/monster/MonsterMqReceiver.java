@@ -3,6 +3,7 @@ package dnd.encounter_service.view.rabbitmq.monster;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dnd.encounter_service.config.RabbitMqConfig;
 import dnd.encounter_service.view.rabbitmq.monster.message.MonsterMq;
 import dnd.encounter_service.view.rabbitmq.monster.message.RabbitMqMessage;
 import lombok.RequiredArgsConstructor;
@@ -18,15 +19,15 @@ public class MonsterMqReceiver {
     private final ObjectMapper objectMapper;
     private final MonsterViewConsumerService service;
     private final Logger logger = Logger.getLogger(MonsterMqReceiver.class.getName());
-    @RabbitListener(queues = {"monsterCreated"})
+    @RabbitListener(queues = {RabbitMqConfig.MONSTER_QUEUE})
     public void receiveMessage(String message) throws JsonProcessingException {
         logger.info("Received <" + message + ">");
         handleMessage(message);
     }
 
     private void handleMessage(String message) throws JsonProcessingException {
-        TypeReference<RabbitMqMessage> mapType = new TypeReference<>(){};
-        RabbitMqMessage rabbitMqMessage = objectMapper.readValue(message, mapType);
+
+        RabbitMqMessage rabbitMqMessage = objectMapper.readValue(message, RabbitMqMessage.class);
 
         switch (rabbitMqMessage.getType()){
             case "monsterCreated":

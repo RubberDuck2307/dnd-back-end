@@ -9,7 +9,9 @@ public class ApplicationConfig {
 
     @Bean
     public ObjectMapper objectMapper() {
+
         return new ObjectMapper();
+
     }
 
 }

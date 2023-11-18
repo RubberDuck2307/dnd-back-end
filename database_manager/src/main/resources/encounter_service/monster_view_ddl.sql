@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS monster_view
 (
     id   BIGINT primary key,
     name VARCHAR(255)  not null,
-    cr   DECIMAL(3, 1) not null
+    cr   REAL not null
 );
 
 CREATE TABLE IF NOT EXISTS monster_monster_group

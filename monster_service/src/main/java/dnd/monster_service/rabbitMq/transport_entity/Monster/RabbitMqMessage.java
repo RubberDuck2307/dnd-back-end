@@ -2,23 +2,19 @@ package dnd.monster_service.rabbitMq.transport_entity.Monster;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
-@JsonTypeInfo(
-        use = JsonTypeInfo.Id.NAME,
-        property = "type")
-@JsonSubTypes({
-        @JsonSubTypes.Type(value = MonsterMq.class, name = "monster"),
-        @JsonSubTypes.Type(value = IdMessageMq.class, name = "id"),
-        @JsonSubTypes.Type(value = GroupMq.class, name = "group"),
-        @JsonSubTypes.Type(value = MonsterGroupMq.class, name = "monsterGroup")
-
-})
+@Getter
+@Setter
 public class RabbitMqMessage implements Serializable {
     private final String type;
+
 
     public RabbitMqMessage(String type) {
         this.type = type;
     }
+
 }

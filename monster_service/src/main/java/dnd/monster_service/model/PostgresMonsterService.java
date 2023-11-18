@@ -63,14 +63,14 @@ public class PostgresMonsterService implements MonsterService {
 
     @Override
     public Map<Float, List<Monster>> getMonstersByCr(Map<Float, Integer> amountOfCrs) {
-       return getMonstersByCrAndGroup(amountOfCrs, 0);
+        return getMonstersByCrAndGroup(amountOfCrs, 0);
     }
 
     @Override
     public List<Monster> getMonsters(int pageSize, int pageNumber) {
         pageSize = Math.max(pageSize, 20);
         pageNumber = Math.max(pageNumber, 0);
-       return monsterRepository.findAll(PageRequest.of(pageNumber, pageSize)).getContent();
+        return monsterRepository.findAll(PageRequest.of(pageNumber, pageSize)).getContent();
     }
 
     @Override
@@ -80,7 +80,7 @@ public class PostgresMonsterService implements MonsterService {
 
     public void addMonster() throws JsonProcessingException {
         MonsterMq monster = messageMqFactory.monsterCreatedMessage(1, "test", 2F, true);
-        rabbitTemplate.convertAndSend(RabbitMqConfig.topicExchangeName, "monster",
+        rabbitTemplate.convertAndSend(RabbitMqConfig.TOPIC_EXCHANGE_NAME, RabbitMqConfig.MONSTER_ROUTING_KEY,
                 objectMapper.writeValueAsString(monster));
     }
 
