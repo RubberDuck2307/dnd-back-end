@@ -27,7 +27,7 @@ public class MonsterService {
     public List<MonsterViewGroupMonsterEntity> getAllMonstersInGroupsFromDatabase() {
         return jdbcTemplate.query("SELECT monster_id, monster_group_id FROM "
                         + MonsterServiceConfig.SCHEMA + "." + MonsterServiceConfig.MONSTER_GROUP_MONSTER_TABLE,
-                (rs, rowNum) -> new MonsterViewGroupMonsterEntity(rs.getLong("monster_id"),
-                        rs.getLong("monster_group_id")));
+                (rs, rowNum) -> new MonsterViewGroupMonsterEntity(rs.getLong("monster_group_id"),
+                        rs.getLong("monster_id")));
     }
 }

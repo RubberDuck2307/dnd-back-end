@@ -6,7 +6,7 @@ import dnd.encounter_service.grpc.generated.monster_service.MonsterServiceGrpc;
 import dnd.encounter_service.grpc.generated.monster_service.MonsterServiceOuterClass;
 import dnd.encounter_service.grpc.mapper.monster.MonsterServiceInMapper;
 import dnd.encounter_service.grpc.mapper.monster.MonsterServiceOutMapper;
-import dnd.encounter_service.model.entity.Monster;
+import dnd.encounter_service.model.entity.encounter.Monster;
 import lombok.RequiredArgsConstructor;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Component;

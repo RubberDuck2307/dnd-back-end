@@ -1,12 +1,13 @@
-package dnd.encounter_service.view.rabbitmq.monster.message;
+package dnd.encounter_service.rabbitmq.monster.message;
 
+import dnd.encounter_service.rabbitmq.shared.RabbitMqMessage;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
 
-public class MonsterMq extends RabbitMqMessage{
+public class MonsterMq extends RabbitMqMessage {
 
     private final long Id;
     private final String name;

@@ -1,6 +1,6 @@
 package dnd.encounter_service.grpc.monster_service;
 
-import dnd.encounter_service.model.entity.Monster;
+import dnd.encounter_service.model.entity.encounter.Monster;
 
 import java.util.List;
 import java.util.Map;

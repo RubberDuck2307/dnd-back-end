@@ -4,16 +4,16 @@ import dnd.encounter_service.config.SqlConfig;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.Set;
 
 @Entity
-@Table(schema = SqlConfig.SCHEMA, name = "monster_monster_group")
-public class MonsterGroup {
+@Table(schema = SqlConfig.SCHEMA, name = SqlConfig.MONSTER_VIEW_GROUP_MONSTER_TABLE)
+public class MonsterGroupView {
     @EmbeddedId
     private MonsterGroupId id;
     @ManyToOne
     @MapsId("monsterId")
-    private Monster monster;
+    @JoinColumn(name = "monster_id")
+    private MonsterView monster;
 
     @Embeddable
     public static class MonsterGroupId implements Serializable {

@@ -13,7 +13,6 @@ import java.util.*;
 public interface MonsterRepository extends JpaRepository<Monster, Long> {
 
     int countAllByCrIs(Double cr);
-    Optional<Monster> findByMonsterNameIgnoreCase(String name);
     Page<Monster> getAllByCrIs(Double cr, Pageable pageable);
     Map<Float, List<Monster>> getMonstersByCrAndAmount(Map<Float, Integer> crs);
 

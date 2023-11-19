@@ -1,7 +1,7 @@
 package dnd.encounter_service.grpc.mapper.monster;
 
 import dnd.encounter_service.grpc.generated.monster_service.MonsterServiceOuterClass;
-import dnd.encounter_service.model.entity.Monster;
+import dnd.encounter_service.model.entity.encounter.Monster;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -1,9 +1,10 @@
-package dnd.encounter_service.view.rabbitmq.monster.message;
+package dnd.encounter_service.rabbitmq.monster.message;
 
+import dnd.encounter_service.rabbitmq.shared.RabbitMqMessage;
 import lombok.Getter;
 
 @Getter
-public class GroupMq extends RabbitMqMessage{
+public class GroupMq extends RabbitMqMessage {
 
     private final long id;
     private final String name;

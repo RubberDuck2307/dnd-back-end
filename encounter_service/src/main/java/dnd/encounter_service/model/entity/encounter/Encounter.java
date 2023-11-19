@@ -1,6 +1,5 @@
 package dnd.encounter_service.model.entity.encounter;
 
-import dnd.encounter_service.model.entity.Monster;
 import lombok.Getter;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package dnd.encounter_service.view.rabbitmq.monster.message;
+package dnd.encounter_service.rabbitmq.shared;
 
 import lombok.Getter;
 
