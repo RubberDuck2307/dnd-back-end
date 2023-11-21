@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message MonsterRpc{
+  float cr = 1;
+  string name = 2;
+}
+
+message GenerateEncounterRpc{
+  int32 amountOfMonsters = 1;
+  int32 xp = 2;
+  int32 xpTolerance = 3;
+  int32 maxAmountOfMonsters = 4;
+  bool differentKindOfMonsters = 5;
+  bool onlyOneKindOfMonsterPerCr = 6;
+  int64 monsterGroupId = 7;
+}
+
+message MonsterAmountRpc{
+  int32 amount = 1;
+  MonsterRpc monster = 2;
+}
+
+message EncounterRpc{
+  repeated MonsterAmountRpc monsters = 1;
+}
+
+service EncounterService{
+  rpc generateEncounter(GenerateEncounterRpc) returns (EncounterRpc);
+}
