@@ -2,13 +2,6 @@ syntax = "proto3";
 
 import "shared.proto";
 
-message CrRpc{
-  float cr = 1;
-}
-
-message CrListRpc{
-  repeated CrRpc crs = 1;
-}
 
 message MonsterShortRpc{
   int64 id = 1;
@@ -20,23 +13,12 @@ message MonsterShortListRpc{
   repeated MonsterShortRpc monsters = 1;
 }
 
-message GetMonstersCrGroupRequestRpc{
-  map<string, int32> crs = 1;
-  int64 groupId = 2;
-}
 
 message RandomMonsterRequestRpc{
   float cr = 1;
   int32 amount = 2;
 }
 
-message MonstersByCrRpc{
-  map<string, MonsterShortListRpc> monsters = 1;
-}
-
-message AmountOfCrRpc{
-  map<string, int32> crMap = 1;
-}
 
 message GetMonstersRequestRpc{
   int32 amount = 1;
@@ -53,10 +35,6 @@ message MonsterFiltersRpc{
 }
 
 service MonsterService{
-  rpc getAmountOfMonsterByGroupId(IdRpc) returns(AmountRpc);
-  rpc getCrsByMonsterGroupId(IdRpc) returns (CrListRpc);
-  rpc getMonstersByCrAndGroup(GetMonstersCrGroupRequestRpc) returns (MonstersByCrRpc);
   rpc getRandomMonstersByCr(RandomMonsterRequestRpc) returns (MonsterShortListRpc);
-  rpc getMonstersByCrAmount(AmountOfCrRpc) returns (MonstersByCrRpc);
   rpc getMonsters(GetMonstersRequestRpc) returns (MonsterShortListRpc);
 }

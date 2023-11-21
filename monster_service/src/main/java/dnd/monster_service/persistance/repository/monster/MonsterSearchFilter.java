@@ -1,6 +1,18 @@
 package dnd.monster_service.persistance.repository.monster;
 
-public record MonsterSearchFilter(String name, String type, Float cr, Long groupId) {
+import lombok.*;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@Builder
+@NoArgsConstructor
+public class MonsterSearchFilter{
+
+    private String name;
+    private String type;
+    private Float cr;
+    private Long groupId;
 
 }
 

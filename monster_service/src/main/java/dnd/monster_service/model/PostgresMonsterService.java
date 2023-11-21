@@ -40,31 +40,10 @@ public class PostgresMonsterService implements MonsterService {
             return new ArrayList<>();
         }
         int random = (int) (Math.random() * (amount - amountOfMonsters));
-        Page<Monster> monsters = monsterRepository.getAllByCrIs(cr, PageRequest.of(random, amountOfMonsters));
-        return new ArrayList<>(monsters.getContent());
+        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().cr((float) cr).build();
+        return monsterRepository.getMonstersFiltered(random, amountOfMonsters, monsterSearchFilter);
     }
 
-    @Override
-    public Map<Float, List<Monster>> getMonstersByCrAndGroup(Map<Float, Integer> amountOfCrs, long groupId) {
-        return monsterRepository.getMonstersByCrAmountAndMonsterGroupId(amountOfCrs, groupId);
-    }
-
-    @Override
-    public int getAmountOfMonsterInGroup(long groupId) {
-        return monsterRepository.countByMonsterGroupId(groupId);
-    }
-
-    @Override
-    public List<Float> getCrsByMonsterGroup(long groupId) {
-        List<Float> avCrs;
-        avCrs = monsterRepository.getAllCrWhereMonsterGroupsContaining_Id(groupId);
-        return avCrs;
-    }
-
-    @Override
-    public Map<Float, List<Monster>> getMonstersByCr(Map<Float, Integer> amountOfCrs) {
-        return getMonstersByCrAndGroup(amountOfCrs, 0);
-    }
 
     @Override
     public List<Monster> getMonsters(int pageSize, int pageNumber) {

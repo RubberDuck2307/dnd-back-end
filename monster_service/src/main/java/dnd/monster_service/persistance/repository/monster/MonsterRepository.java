@@ -13,16 +13,18 @@ import java.util.*;
 public interface MonsterRepository extends JpaRepository<Monster, Long> {
 
     int countAllByCrIs(Double cr);
-    Page<Monster> getAllByCrIs(Double cr, Pageable pageable);
-    Map<Float, List<Monster>> getMonstersByCrAndAmount(Map<Float, Integer> crs);
 
-    Map<Float, List<Monster>> getMonstersByCrAmountAndMonsterGroupId(Map<Float, Integer> crs,
-                                                                          long monsterGroupId);
-    Map<Float, Integer> getAmountOfMonstersByCrAndMonsterGroup(Map<Float, Integer> crs, long monsterGroupId);
-
+    /**
+     * fetches monsters from the database based on the search filters.
+     * @param pageSize Specifies the amount of monsters per page
+     * @param pageNumber Specifies the page that should be returned
+     * @param monsterSearchFilter Specifies the search filters, if a filter is null it will be ignored. If any attribute
+     *                           of the filter is null the attribute will be ignored.
+     * @return List of monsters that match the search filters
+     */
     List<Monster> getMonstersFiltered(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter);
     @Query("select count(m) from Monster m join m.monsterGroups mg where mg.id = :id")
     int countByMonsterGroupId(long id);
-    @Query("SELECT distinct m.cr FROM MonsterGroup mg JOIN mg.monsters m WHERE mg.id = :id")
-    List<Float> getAllCrWhereMonsterGroupsContaining_Id(long id);
+
+
 }

@@ -23,34 +23,7 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
     private final MonsterOutMapper monsterOutMapper;
     private final MonsterInMapper monsterInMapper;
 
-    @Override
-    public void getMonstersByCrAmount(MonsterServiceOuterClass.AmountOfCrRpc request,
-                                      StreamObserver<MonsterServiceOuterClass.MonstersByCrRpc> responseObserver) {
-        Map<Float, List<Monster>> monsters = monsterService.getMonstersByCr(monsterInMapper.parseAmountOfCr(request));
-        MonsterServiceOuterClass.MonstersByCrRpc monstersByCrRpc = monsterOutMapper.buildMonstersByCrRpc(monsters);
-        responseObserver.onNext(monstersByCrRpc);
-        responseObserver.onCompleted();
-    }
 
-    @Override
-    public void getCrsByMonsterGroupId(Shared.IdRpc request,
-                                       StreamObserver<MonsterServiceOuterClass.CrListRpc> responseObserver) {
-        List<Float> monsterGroupCrs = monsterService.getCrsByMonsterGroup(request.getId());
-        MonsterServiceOuterClass.CrListRpc crListRpc = monsterOutMapper.buildCrListRpc(monsterGroupCrs);
-        responseObserver.onNext(crListRpc);
-        responseObserver.onCompleted();
-
-    }
-
-    @Override
-    public void getAmountOfMonsterByGroupId(Shared.IdRpc request, StreamObserver<Shared.AmountRpc> responseObserver) {
-        int amountOfMonster = monsterService.getAmountOfMonsterInGroup(request.getId());
-        Shared.AmountRpc amountRpc = Shared.AmountRpc.newBuilder()
-                .setAmount(amountOfMonster)
-                .build();
-        responseObserver.onNext(amountRpc);
-        responseObserver.onCompleted();
-    }
 
     @Override
     public void getRandomMonstersByCr(MonsterServiceOuterClass.RandomMonsterRequestRpc request,
@@ -58,16 +31,6 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
         List<Monster> monsters = monsterService.getRandomMonstersByCr(request.getCr(), request.getAmount());
         MonsterServiceOuterClass.MonsterShortListRpc monsterShortListRpc = monsterOutMapper.buildMonsterShortListRpc(monsters);
         responseObserver.onNext(monsterShortListRpc);
-        responseObserver.onCompleted();
-    }
-
-    @Override
-    public void getMonstersByCrAndGroup(MonsterServiceOuterClass.GetMonstersCrGroupRequestRpc request,
-                                        StreamObserver<MonsterServiceOuterClass.MonstersByCrRpc> responseObserver) {
-        Map<Float, List<Monster>> monsters = monsterService.getMonstersByCrAndGroup(monsterInMapper.
-                parseGetMonstersCrGroupRequest(request), request.getGroupId());
-        MonsterServiceOuterClass.MonstersByCrRpc monstersByCrRpc = monsterOutMapper.buildMonstersByCrRpc(monsters);
-        responseObserver.onNext(monstersByCrRpc);
         responseObserver.onCompleted();
     }
 
