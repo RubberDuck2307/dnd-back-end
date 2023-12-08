@@ -42,7 +42,7 @@ public class MonsterRepositoryImpl {
 
         List<Predicate> predicates = new ArrayList<>();
 
-        if (monsterSearchFilter.name() != null && !monsterSearchFilter.name().isEmpty()) {
+        if (monsterSearchFilter.getName() != null && !monsterSearchFilter.name().isEmpty()) {
             predicates.add(criteriaBuilder.like(criteriaBuilder.lower(
                     root.get("monsterName")), "%" + monsterSearchFilter.name().toLowerCase() + "%"));
         }

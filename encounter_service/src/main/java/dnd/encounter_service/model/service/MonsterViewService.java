@@ -1,7 +1,8 @@
-package dnd.encounter_service.view.monster;
+package dnd.encounter_service.model.service;
 
-import dnd.encounter_service.grpc.monster_service.MonsterService;
+import dnd.encounter_service.model.service.interfaces.MonsterService;
 import dnd.encounter_service.model.entity.encounter.Monster;
+import dnd.encounter_service.view.monster.MonsterViewRepository;
 import dnd.encounter_service.view.monster.entity.MonsterView;
 import dnd.encounter_service.view.monster.entity.MonsterViewMapper;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;

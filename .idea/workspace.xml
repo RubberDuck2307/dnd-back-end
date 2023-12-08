@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ea8d3c2-4e07-4545-9ee7-c96a770c29fd" name="Changes" comment="" />
+    <list default="true" id="6ea8d3c2-4e07-4545-9ee7-c96a770c29fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/EncounterGrpcMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/EncounterServiceServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/generated/EncounterServiceGrpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/generated/EncounterServiceOuterClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/encounter_service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/generated/monster_service/MonsterServiceGrpc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/generated/monster_service/MonsterServiceOuterClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/mapper/monster/MonsterServiceInMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/mapper/monster/MonsterServiceOutMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/monster_service/MonsterGRpcClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/grpc/monster_service/MonsterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/model/service/interfaces/MonsterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/model/service/DefaultEncounterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/model/service/DefaultEncounterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/model/service/EncounterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/model/service/interfaces/EncounterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/view/monster/MonsterViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/encounter_service/src/main/java/dnd/encounter_service/model/service/MonsterViewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/encounter_service/src/test/java/dnd/encounter_service/EncounterCreationLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/encounter_service/src/test/java/dnd/encounter_service/EncounterCreationLogicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monster_service/src/main/java/dnd/monster_service/persistance/repository/monster/MonsterRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/monster_service/src/main/java/dnd/monster_service/persistance/repository/monster/MonsterRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/src/main/java/generated/Shared.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/src/main/java/generated/monster_service/MonsterServiceGrpc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/src/main/java/generated/monster_service/MonsterServiceOuterClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/src/main/proto/encounter_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/src/main/proto/encounter_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proto/src/main/proto/monster_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/proto/src/main/proto/monster_service.proto" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,11 +52,25 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Java projects/dnd-back-end/MonsterAPI",
+    "last_opened_file_path": "C:/Java projects/dnd-back-end/java_proto",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "6a51804f85f17e32298545094d1ebafb",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Java projects\dnd-back-end\java_proto" />
+      <recent name="C:\Java projects\dnd-back-end" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Java projects\dnd-back-end\java_proto\output\src\main\java\" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <setting name="path" value="" />
@@ -68,6 +108,7 @@
       <workItem from="1699093604118" duration="25000" />
       <workItem from="1699093641791" duration="31000" />
       <workItem from="1699093864338" duration="216000" />
+      <workItem from="1702067847114" duration="545000" />
     </task>
     <servers />
   </component>

@@ -1,13 +1,12 @@
 package dnd.encounter_service.config;
 
-import dnd.encounter_service.grpc.monster_service.MonsterService;
+import dnd.encounter_service.model.service.interfaces.MonsterService;
 import dnd.encounter_service.logic.encounter_creation.DefaultEncounterCreationLogic;
 import dnd.encounter_service.logic.encounter_creation.EncounterCreationLogic;
 import dnd.encounter_service.logic.encounter_difficulty.DifficultyService;
 import dnd.encounter_service.view.monster.MonsterViewRepository;
-import dnd.encounter_service.view.monster.MonsterViewService;
+import dnd.encounter_service.model.service.MonsterViewService;
 import dnd.encounter_service.view.monster.entity.MonsterViewMapper;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

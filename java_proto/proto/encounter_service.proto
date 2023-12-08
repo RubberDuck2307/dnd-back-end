@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option java_package = "dnd.generated";
+
 message MonsterRpc{
   float cr = 1;
   string name = 2;

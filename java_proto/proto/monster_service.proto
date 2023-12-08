@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-
+option java_package = "dnd.generated";
 
 message MonsterShortRpc{
   int64 id = 1;

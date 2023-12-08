@@ -1,4 +1,4 @@
-package dnd.encounter_service.model.service;
+package dnd.encounter_service.model.service.interfaces;
 
 import dnd.encounter_service.exception.NoSuchEncounterException;
 import dnd.encounter_service.model.entity.encounter.Encounter;
