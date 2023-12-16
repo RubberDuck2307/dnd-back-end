@@ -15,10 +15,21 @@ import java.util.List;
 public class EncounterServiceServer extends EncounterServiceGrpc.EncounterServiceImplBase {
 
     private final EncounterService encounterService;
+    private final EncounterGrpcMapper encounterGrpcMapper;
 
     @Override
     public void generateEncounters(EncounterServiceOuterClass.GenerateEncounterRpc request,
                                    StreamObserver<EncounterServiceOuterClass.EncounterListRpc> responseObserver) {
-        super.generateEncounters(request, responseObserver);
+        List<Encounter> encounters = encounterService.createRandomEncounter(request.getXp(),
+                request.getAmountOfEncounters(), request.getXpTolerance(),
+                request.getDifferentKindOfMonsters(),request.getMaxAmountOfMonsters(),
+                request.getOnlyOneKindOfMonsterPerCr(), request.getMonsterGroupId());
+
+        EncounterServiceOuterClass.EncounterListRpc encounterListRpc = encounterGrpcMapper.
+                buildEncounterListRpc(encounters);
+
+        responseObserver.onNext(encounterListRpc);
+        responseObserver.onCompleted();
+
     }
 }

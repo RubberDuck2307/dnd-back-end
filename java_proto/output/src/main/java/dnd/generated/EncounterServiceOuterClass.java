@@ -35,6 +35,12 @@ public final class EncounterServiceOuterClass {
      */
     com.google.protobuf.ByteString
         getNameBytes();
+
+    /**
+     * <code>int64 monsterId = 3;</code>
+     * @return The monsterId.
+     */
+    long getMonsterId();
   }
   /**
    * Protobuf type {@code MonsterRpc}
@@ -122,6 +128,17 @@ public final class EncounterServiceOuterClass {
       }
     }
 
+    public static final int MONSTERID_FIELD_NUMBER = 3;
+    private long monsterId_ = 0L;
+    /**
+     * <code>int64 monsterId = 3;</code>
+     * @return The monsterId.
+     */
+    @java.lang.Override
+    public long getMonsterId() {
+      return monsterId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -142,6 +159,9 @@ public final class EncounterServiceOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
       }
+      if (monsterId_ != 0L) {
+        output.writeInt64(3, monsterId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -157,6 +177,10 @@ public final class EncounterServiceOuterClass {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      }
+      if (monsterId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, monsterId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -178,6 +202,8 @@ public final class EncounterServiceOuterClass {
               other.getCr())) return false;
       if (!getName()
           .equals(other.getName())) return false;
+      if (getMonsterId()
+          != other.getMonsterId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -194,6 +220,9 @@ public final class EncounterServiceOuterClass {
           getCr());
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + MONSTERID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMonsterId());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -327,6 +356,7 @@ public final class EncounterServiceOuterClass {
         bitField0_ = 0;
         cr_ = 0F;
         name_ = "";
+        monsterId_ = 0L;
         return this;
       }
 
@@ -365,6 +395,9 @@ public final class EncounterServiceOuterClass {
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.monsterId_ = monsterId_;
         }
       }
 
@@ -420,6 +453,9 @@ public final class EncounterServiceOuterClass {
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.getMonsterId() != 0L) {
+          setMonsterId(other.getMonsterId());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -456,6 +492,11 @@ public final class EncounterServiceOuterClass {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+              case 24: {
+                monsterId_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -576,6 +617,38 @@ public final class EncounterServiceOuterClass {
         onChanged();
         return this;
       }
+
+      private long monsterId_ ;
+      /**
+       * <code>int64 monsterId = 3;</code>
+       * @return The monsterId.
+       */
+      @java.lang.Override
+      public long getMonsterId() {
+        return monsterId_;
+      }
+      /**
+       * <code>int64 monsterId = 3;</code>
+       * @param value The monsterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonsterId(long value) {
+
+        monsterId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 monsterId = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonsterId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        monsterId_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -657,10 +730,10 @@ public final class EncounterServiceOuterClass {
     int getXp();
 
     /**
-     * <code>int32 xpTolerance = 3;</code>
+     * <code>float xpTolerance = 3;</code>
      * @return The xpTolerance.
      */
-    int getXpTolerance();
+    float getXpTolerance();
 
     /**
      * <code>int32 maxAmountOfMonsters = 4;</code>
@@ -744,13 +817,13 @@ public final class EncounterServiceOuterClass {
     }
 
     public static final int XPTOLERANCE_FIELD_NUMBER = 3;
-    private int xpTolerance_ = 0;
+    private float xpTolerance_ = 0F;
     /**
-     * <code>int32 xpTolerance = 3;</code>
+     * <code>float xpTolerance = 3;</code>
      * @return The xpTolerance.
      */
     @java.lang.Override
-    public int getXpTolerance() {
+    public float getXpTolerance() {
       return xpTolerance_;
     }
 
@@ -818,8 +891,8 @@ public final class EncounterServiceOuterClass {
       if (xp_ != 0) {
         output.writeInt32(2, xp_);
       }
-      if (xpTolerance_ != 0) {
-        output.writeInt32(3, xpTolerance_);
+      if (java.lang.Float.floatToRawIntBits(xpTolerance_) != 0) {
+        output.writeFloat(3, xpTolerance_);
       }
       if (maxAmountOfMonsters_ != 0) {
         output.writeInt32(4, maxAmountOfMonsters_);
@@ -850,9 +923,9 @@ public final class EncounterServiceOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, xp_);
       }
-      if (xpTolerance_ != 0) {
+      if (java.lang.Float.floatToRawIntBits(xpTolerance_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, xpTolerance_);
+          .computeFloatSize(3, xpTolerance_);
       }
       if (maxAmountOfMonsters_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -889,8 +962,9 @@ public final class EncounterServiceOuterClass {
           != other.getAmountOfEncounters()) return false;
       if (getXp()
           != other.getXp()) return false;
-      if (getXpTolerance()
-          != other.getXpTolerance()) return false;
+      if (java.lang.Float.floatToIntBits(getXpTolerance())
+          != java.lang.Float.floatToIntBits(
+              other.getXpTolerance())) return false;
       if (getMaxAmountOfMonsters()
           != other.getMaxAmountOfMonsters()) return false;
       if (getDifferentKindOfMonsters()
@@ -915,7 +989,8 @@ public final class EncounterServiceOuterClass {
       hash = (37 * hash) + XP_FIELD_NUMBER;
       hash = (53 * hash) + getXp();
       hash = (37 * hash) + XPTOLERANCE_FIELD_NUMBER;
-      hash = (53 * hash) + getXpTolerance();
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getXpTolerance());
       hash = (37 * hash) + MAXAMOUNTOFMONSTERS_FIELD_NUMBER;
       hash = (53 * hash) + getMaxAmountOfMonsters();
       hash = (37 * hash) + DIFFERENTKINDOFMONSTERS_FIELD_NUMBER;
@@ -1060,7 +1135,7 @@ public final class EncounterServiceOuterClass {
         bitField0_ = 0;
         amountOfEncounters_ = 0;
         xp_ = 0;
-        xpTolerance_ = 0;
+        xpTolerance_ = 0F;
         maxAmountOfMonsters_ = 0;
         differentKindOfMonsters_ = false;
         onlyOneKindOfMonsterPerCr_ = false;
@@ -1171,7 +1246,7 @@ public final class EncounterServiceOuterClass {
         if (other.getXp() != 0) {
           setXp(other.getXp());
         }
-        if (other.getXpTolerance() != 0) {
+        if (other.getXpTolerance() != 0F) {
           setXpTolerance(other.getXpTolerance());
         }
         if (other.getMaxAmountOfMonsters() != 0) {
@@ -1222,11 +1297,11 @@ public final class EncounterServiceOuterClass {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
-              case 24: {
-                xpTolerance_ = input.readInt32();
+              case 29: {
+                xpTolerance_ = input.readFloat();
                 bitField0_ |= 0x00000004;
                 break;
-              } // case 24
+              } // case 29
               case 32: {
                 maxAmountOfMonsters_ = input.readInt32();
                 bitField0_ |= 0x00000008;
@@ -1328,21 +1403,21 @@ public final class EncounterServiceOuterClass {
         return this;
       }
 
-      private int xpTolerance_ ;
+      private float xpTolerance_ ;
       /**
-       * <code>int32 xpTolerance = 3;</code>
+       * <code>float xpTolerance = 3;</code>
        * @return The xpTolerance.
        */
       @java.lang.Override
-      public int getXpTolerance() {
+      public float getXpTolerance() {
         return xpTolerance_;
       }
       /**
-       * <code>int32 xpTolerance = 3;</code>
+       * <code>float xpTolerance = 3;</code>
        * @param value The xpTolerance to set.
        * @return This builder for chaining.
        */
-      public Builder setXpTolerance(int value) {
+      public Builder setXpTolerance(float value) {
 
         xpTolerance_ = value;
         bitField0_ |= 0x00000004;
@@ -1350,12 +1425,12 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>int32 xpTolerance = 3;</code>
+       * <code>float xpTolerance = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearXpTolerance() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        xpTolerance_ = 0;
+        xpTolerance_ = 0F;
         onChanged();
         return this;
       }
@@ -2240,25 +2315,37 @@ public final class EncounterServiceOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>int32 difficultyXp = 1;</code>
+     * @return The difficultyXp.
+     */
+    int getDifficultyXp();
+
+    /**
+     * <code>int32 gainedXp = 2;</code>
+     * @return The gainedXp.
+     */
+    int getGainedXp();
+
+    /**
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     java.util.List<dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc> 
         getMonstersList();
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc getMonsters(int index);
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     int getMonstersCount();
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     java.util.List<? extends dnd.generated.EncounterServiceOuterClass.MonsterAmountRpcOrBuilder> 
         getMonstersOrBuilderList();
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     dnd.generated.EncounterServiceOuterClass.MonsterAmountRpcOrBuilder getMonstersOrBuilder(
         int index);
@@ -2299,18 +2386,40 @@ public final class EncounterServiceOuterClass {
               dnd.generated.EncounterServiceOuterClass.EncounterRpc.class, dnd.generated.EncounterServiceOuterClass.EncounterRpc.Builder.class);
     }
 
-    public static final int MONSTERS_FIELD_NUMBER = 1;
+    public static final int DIFFICULTYXP_FIELD_NUMBER = 1;
+    private int difficultyXp_ = 0;
+    /**
+     * <code>int32 difficultyXp = 1;</code>
+     * @return The difficultyXp.
+     */
+    @java.lang.Override
+    public int getDifficultyXp() {
+      return difficultyXp_;
+    }
+
+    public static final int GAINEDXP_FIELD_NUMBER = 2;
+    private int gainedXp_ = 0;
+    /**
+     * <code>int32 gainedXp = 2;</code>
+     * @return The gainedXp.
+     */
+    @java.lang.Override
+    public int getGainedXp() {
+      return gainedXp_;
+    }
+
+    public static final int MONSTERS_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
     private java.util.List<dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc> monsters_;
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     @java.lang.Override
     public java.util.List<dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc> getMonstersList() {
       return monsters_;
     }
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends dnd.generated.EncounterServiceOuterClass.MonsterAmountRpcOrBuilder> 
@@ -2318,21 +2427,21 @@ public final class EncounterServiceOuterClass {
       return monsters_;
     }
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     @java.lang.Override
     public int getMonstersCount() {
       return monsters_.size();
     }
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     @java.lang.Override
     public dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc getMonsters(int index) {
       return monsters_.get(index);
     }
     /**
-     * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+     * <code>repeated .MonsterAmountRpc monsters = 3;</code>
      */
     @java.lang.Override
     public dnd.generated.EncounterServiceOuterClass.MonsterAmountRpcOrBuilder getMonstersOrBuilder(
@@ -2354,8 +2463,14 @@ public final class EncounterServiceOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (difficultyXp_ != 0) {
+        output.writeInt32(1, difficultyXp_);
+      }
+      if (gainedXp_ != 0) {
+        output.writeInt32(2, gainedXp_);
+      }
       for (int i = 0; i < monsters_.size(); i++) {
-        output.writeMessage(1, monsters_.get(i));
+        output.writeMessage(3, monsters_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -2366,9 +2481,17 @@ public final class EncounterServiceOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (difficultyXp_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, difficultyXp_);
+      }
+      if (gainedXp_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, gainedXp_);
+      }
       for (int i = 0; i < monsters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, monsters_.get(i));
+          .computeMessageSize(3, monsters_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2385,6 +2508,10 @@ public final class EncounterServiceOuterClass {
       }
       dnd.generated.EncounterServiceOuterClass.EncounterRpc other = (dnd.generated.EncounterServiceOuterClass.EncounterRpc) obj;
 
+      if (getDifficultyXp()
+          != other.getDifficultyXp()) return false;
+      if (getGainedXp()
+          != other.getGainedXp()) return false;
       if (!getMonstersList()
           .equals(other.getMonstersList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -2398,6 +2525,10 @@ public final class EncounterServiceOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DIFFICULTYXP_FIELD_NUMBER;
+      hash = (53 * hash) + getDifficultyXp();
+      hash = (37 * hash) + GAINEDXP_FIELD_NUMBER;
+      hash = (53 * hash) + getGainedXp();
       if (getMonstersCount() > 0) {
         hash = (37 * hash) + MONSTERS_FIELD_NUMBER;
         hash = (53 * hash) + getMonstersList().hashCode();
@@ -2533,13 +2664,15 @@ public final class EncounterServiceOuterClass {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        difficultyXp_ = 0;
+        gainedXp_ = 0;
         if (monstersBuilder_ == null) {
           monsters_ = java.util.Collections.emptyList();
         } else {
           monsters_ = null;
           monstersBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -2574,9 +2707,9 @@ public final class EncounterServiceOuterClass {
 
       private void buildPartialRepeatedFields(dnd.generated.EncounterServiceOuterClass.EncounterRpc result) {
         if (monstersBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             monsters_ = java.util.Collections.unmodifiableList(monsters_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.monsters_ = monsters_;
         } else {
@@ -2586,6 +2719,12 @@ public final class EncounterServiceOuterClass {
 
       private void buildPartial0(dnd.generated.EncounterServiceOuterClass.EncounterRpc result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.difficultyXp_ = difficultyXp_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.gainedXp_ = gainedXp_;
+        }
       }
 
       @java.lang.Override
@@ -2632,11 +2771,17 @@ public final class EncounterServiceOuterClass {
 
       public Builder mergeFrom(dnd.generated.EncounterServiceOuterClass.EncounterRpc other) {
         if (other == dnd.generated.EncounterServiceOuterClass.EncounterRpc.getDefaultInstance()) return this;
+        if (other.getDifficultyXp() != 0) {
+          setDifficultyXp(other.getDifficultyXp());
+        }
+        if (other.getGainedXp() != 0) {
+          setGainedXp(other.getGainedXp());
+        }
         if (monstersBuilder_ == null) {
           if (!other.monsters_.isEmpty()) {
             if (monsters_.isEmpty()) {
               monsters_ = other.monsters_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureMonstersIsMutable();
               monsters_.addAll(other.monsters_);
@@ -2649,7 +2794,7 @@ public final class EncounterServiceOuterClass {
               monstersBuilder_.dispose();
               monstersBuilder_ = null;
               monsters_ = other.monsters_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               monstersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMonstersFieldBuilder() : null;
@@ -2684,7 +2829,17 @@ public final class EncounterServiceOuterClass {
               case 0:
                 done = true;
                 break;
-              case 10: {
+              case 8: {
+                difficultyXp_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                gainedXp_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
                 dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc m =
                     input.readMessage(
                         dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.parser(),
@@ -2696,7 +2851,7 @@ public final class EncounterServiceOuterClass {
                   monstersBuilder_.addMessage(m);
                 }
                 break;
-              } // case 10
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2714,12 +2869,76 @@ public final class EncounterServiceOuterClass {
       }
       private int bitField0_;
 
+      private int difficultyXp_ ;
+      /**
+       * <code>int32 difficultyXp = 1;</code>
+       * @return The difficultyXp.
+       */
+      @java.lang.Override
+      public int getDifficultyXp() {
+        return difficultyXp_;
+      }
+      /**
+       * <code>int32 difficultyXp = 1;</code>
+       * @param value The difficultyXp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDifficultyXp(int value) {
+
+        difficultyXp_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 difficultyXp = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDifficultyXp() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        difficultyXp_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gainedXp_ ;
+      /**
+       * <code>int32 gainedXp = 2;</code>
+       * @return The gainedXp.
+       */
+      @java.lang.Override
+      public int getGainedXp() {
+        return gainedXp_;
+      }
+      /**
+       * <code>int32 gainedXp = 2;</code>
+       * @param value The gainedXp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGainedXp(int value) {
+
+        gainedXp_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 gainedXp = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGainedXp() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        gainedXp_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc> monsters_ =
         java.util.Collections.emptyList();
       private void ensureMonstersIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           monsters_ = new java.util.ArrayList<dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc>(monsters_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -2727,7 +2946,7 @@ public final class EncounterServiceOuterClass {
           dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc, dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.Builder, dnd.generated.EncounterServiceOuterClass.MonsterAmountRpcOrBuilder> monstersBuilder_;
 
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public java.util.List<dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc> getMonstersList() {
         if (monstersBuilder_ == null) {
@@ -2737,7 +2956,7 @@ public final class EncounterServiceOuterClass {
         }
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public int getMonstersCount() {
         if (monstersBuilder_ == null) {
@@ -2747,7 +2966,7 @@ public final class EncounterServiceOuterClass {
         }
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc getMonsters(int index) {
         if (monstersBuilder_ == null) {
@@ -2757,7 +2976,7 @@ public final class EncounterServiceOuterClass {
         }
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public Builder setMonsters(
           int index, dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc value) {
@@ -2774,7 +2993,7 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public Builder setMonsters(
           int index, dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.Builder builderForValue) {
@@ -2788,7 +3007,7 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public Builder addMonsters(dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc value) {
         if (monstersBuilder_ == null) {
@@ -2804,7 +3023,7 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public Builder addMonsters(
           int index, dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc value) {
@@ -2821,7 +3040,7 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public Builder addMonsters(
           dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.Builder builderForValue) {
@@ -2835,7 +3054,7 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public Builder addMonsters(
           int index, dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.Builder builderForValue) {
@@ -2849,7 +3068,7 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public Builder addAllMonsters(
           java.lang.Iterable<? extends dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc> values) {
@@ -2864,12 +3083,12 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public Builder clearMonsters() {
         if (monstersBuilder_ == null) {
           monsters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           monstersBuilder_.clear();
@@ -2877,7 +3096,7 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public Builder removeMonsters(int index) {
         if (monstersBuilder_ == null) {
@@ -2890,14 +3109,14 @@ public final class EncounterServiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.Builder getMonstersBuilder(
           int index) {
         return getMonstersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public dnd.generated.EncounterServiceOuterClass.MonsterAmountRpcOrBuilder getMonstersOrBuilder(
           int index) {
@@ -2907,7 +3126,7 @@ public final class EncounterServiceOuterClass {
         }
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public java.util.List<? extends dnd.generated.EncounterServiceOuterClass.MonsterAmountRpcOrBuilder> 
            getMonstersOrBuilderList() {
@@ -2918,14 +3137,14 @@ public final class EncounterServiceOuterClass {
         }
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.Builder addMonstersBuilder() {
         return getMonstersFieldBuilder().addBuilder(
             dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.getDefaultInstance());
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.Builder addMonstersBuilder(
           int index) {
@@ -2933,7 +3152,7 @@ public final class EncounterServiceOuterClass {
             index, dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.getDefaultInstance());
       }
       /**
-       * <code>repeated .MonsterAmountRpc monsters = 1;</code>
+       * <code>repeated .MonsterAmountRpc monsters = 3;</code>
        */
       public java.util.List<dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.Builder> 
            getMonstersBuilderList() {
@@ -2946,7 +3165,7 @@ public final class EncounterServiceOuterClass {
           monstersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc, dnd.generated.EncounterServiceOuterClass.MonsterAmountRpc.Builder, dnd.generated.EncounterServiceOuterClass.MonsterAmountRpcOrBuilder>(
                   monsters_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           monsters_ = null;
@@ -3833,20 +4052,22 @@ public final class EncounterServiceOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027encounter_service.proto\"&\n\nMonsterRpc\022" +
-      "\n\n\002cr\030\001 \001(\002\022\014\n\004name\030\002 \001(\t\"\314\001\n\024GenerateEn" +
-      "counterRpc\022\032\n\022amountOfEncounters\030\001 \001(\005\022\n" +
-      "\n\002xp\030\002 \001(\005\022\023\n\013xpTolerance\030\003 \001(\005\022\033\n\023maxAm" +
-      "ountOfMonsters\030\004 \001(\005\022\037\n\027differentKindOfM" +
-      "onsters\030\005 \001(\010\022!\n\031onlyOneKindOfMonsterPer" +
-      "Cr\030\006 \001(\010\022\026\n\016monsterGroupId\030\007 \001(\003\"@\n\020Mons" +
-      "terAmountRpc\022\016\n\006amount\030\001 \001(\005\022\034\n\007monster\030" +
-      "\002 \001(\0132\013.MonsterRpc\"3\n\014EncounterRpc\022#\n\010mo" +
-      "nsters\030\001 \003(\0132\021.MonsterAmountRpc\"5\n\020Encou" +
-      "nterListRpc\022!\n\nencounters\030\001 \003(\0132\r.Encoun" +
-      "terRpc2R\n\020EncounterService\022>\n\022generateEn" +
-      "counters\022\025.GenerateEncounterRpc\032\021.Encoun" +
-      "terListRpcB\017\n\rdnd.generatedb\006proto3"
+      "\n\027encounter_service.proto\"9\n\nMonsterRpc\022" +
+      "\n\n\002cr\030\001 \001(\002\022\014\n\004name\030\002 \001(\t\022\021\n\tmonsterId\030\003" +
+      " \001(\003\"\314\001\n\024GenerateEncounterRpc\022\032\n\022amountO" +
+      "fEncounters\030\001 \001(\005\022\n\n\002xp\030\002 \001(\005\022\023\n\013xpToler" +
+      "ance\030\003 \001(\002\022\033\n\023maxAmountOfMonsters\030\004 \001(\005\022" +
+      "\037\n\027differentKindOfMonsters\030\005 \001(\010\022!\n\031only" +
+      "OneKindOfMonsterPerCr\030\006 \001(\010\022\026\n\016monsterGr" +
+      "oupId\030\007 \001(\003\"@\n\020MonsterAmountRpc\022\016\n\006amoun" +
+      "t\030\001 \001(\005\022\034\n\007monster\030\002 \001(\0132\013.MonsterRpc\"[\n" +
+      "\014EncounterRpc\022\024\n\014difficultyXp\030\001 \001(\005\022\020\n\010g" +
+      "ainedXp\030\002 \001(\005\022#\n\010monsters\030\003 \003(\0132\021.Monste" +
+      "rAmountRpc\"5\n\020EncounterListRpc\022!\n\nencoun" +
+      "ters\030\001 \003(\0132\r.EncounterRpc2R\n\020EncounterSe" +
+      "rvice\022>\n\022generateEncounters\022\025.GenerateEn" +
+      "counterRpc\032\021.EncounterListRpcB\017\n\rdnd.gen" +
+      "eratedb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3857,7 +4078,7 @@ public final class EncounterServiceOuterClass {
     internal_static_MonsterRpc_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MonsterRpc_descriptor,
-        new java.lang.String[] { "Cr", "Name", });
+        new java.lang.String[] { "Cr", "Name", "MonsterId", });
     internal_static_GenerateEncounterRpc_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_GenerateEncounterRpc_fieldAccessorTable = new
@@ -3875,7 +4096,7 @@ public final class EncounterServiceOuterClass {
     internal_static_EncounterRpc_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EncounterRpc_descriptor,
-        new java.lang.String[] { "Monsters", });
+        new java.lang.String[] { "DifficultyXp", "GainedXp", "Monsters", });
     internal_static_EncounterListRpc_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_EncounterListRpc_fieldAccessorTable = new

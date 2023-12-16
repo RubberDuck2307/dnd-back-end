@@ -1,22 +1,16 @@
 package dnd.monster_service.rpc.mapper;
 
+import dnd.generated.MonsterServiceOuterClass;
+import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
-import dnd.monster_service.rpc.server.generated.MonsterServiceOuterClass;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 @Component
-public class MonsterInMapper {
-    public Map<Float, Integer> parseGetMonstersCrGroupRequest(MonsterServiceOuterClass.
-                                                                      GetMonstersCrGroupRequestRpc request) {
-        return parseCrMap(request.getCrsMap());
-    }
-
-    public Map<Float, Integer> parseAmountOfCr(MonsterServiceOuterClass.AmountOfCrRpc request) {
-        return parseCrMap(request.getCrMapMap());
-    }
+public class MonsterMapper {
 
     private Map<Float, Integer> parseCrMap (Map <String, Integer> crMap) {
         return crMap.entrySet().stream().collect(
@@ -33,4 +27,22 @@ public class MonsterInMapper {
         Long groupId = filtersRpc.getGroupId() == 0 ? null : filtersRpc.getGroupId();
         return new MonsterSearchFilter(name, type, cr, groupId);
     }
+
+    public MonsterServiceOuterClass.MonsterShortRpc buildMonsterShortRpc(Monster monster){
+        return MonsterServiceOuterClass.MonsterShortRpc.newBuilder()
+                .setId(monster.getId())
+                .setName(monster.getMonsterName())
+                .setCr(monster.getCr())
+                .build();
+    }
+
+    public MonsterServiceOuterClass.MonsterShortListRpc buildMonsterShortListRpc(List<Monster> monsters){
+        List<MonsterServiceOuterClass.MonsterShortRpc> monstersRpc = monsters.stream()
+                .map(this::buildMonsterShortRpc)
+                .toList();
+        return MonsterServiceOuterClass.MonsterShortListRpc.newBuilder()
+                .addAllMonsters(monstersRpc)
+                .build();
+    }
+
 }

@@ -1,6 +1,5 @@
 package dnd.encounter_service.model.service;
 
-import dnd.encounter_service.model.service.interfaces.MonsterService;
 import dnd.encounter_service.model.entity.encounter.Monster;
 import dnd.encounter_service.view.monster.MonsterViewRepository;
 import dnd.encounter_service.view.monster.entity.MonsterView;
@@ -17,7 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class MonsterViewService implements MonsterService {
+public class MonsterViewService implements dnd.encounter_service.model.service.interfaces.MonsterViewService {
 
     private final MonsterViewRepository monsterRepository;
     private final MonsterViewMapper monsterViewMapper;

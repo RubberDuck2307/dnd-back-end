@@ -5,12 +5,13 @@ option java_package = "dnd.generated";
 message MonsterRpc{
   float cr = 1;
   string name = 2;
+  int64 monsterId = 3;
 }
 
 message GenerateEncounterRpc{
   int32 amountOfEncounters = 1;
   int32 xp = 2;
-  int32 xpTolerance = 3;
+  float xpTolerance = 3;
   int32 maxAmountOfMonsters = 4;
   bool differentKindOfMonsters = 5;
   bool onlyOneKindOfMonsterPerCr = 6;
@@ -23,7 +24,9 @@ message MonsterAmountRpc{
 }
 
 message EncounterRpc{
-  repeated MonsterAmountRpc monsters = 1;
+  int32 difficultyXp = 1;
+  int32 gainedXp = 2;
+  repeated MonsterAmountRpc monsters = 3;
 }
 
 message EncounterListRpc{

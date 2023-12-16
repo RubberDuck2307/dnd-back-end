@@ -42,24 +42,24 @@ public class MonsterRepositoryImpl {
 
         List<Predicate> predicates = new ArrayList<>();
 
-        if (monsterSearchFilter.getName() != null && !monsterSearchFilter.name().isEmpty()) {
+        if (monsterSearchFilter.getName() != null && !monsterSearchFilter.getName().isEmpty()) {
             predicates.add(criteriaBuilder.like(criteriaBuilder.lower(
-                    root.get("monsterName")), "%" + monsterSearchFilter.name().toLowerCase() + "%"));
+                    root.get("monsterName")), "%" + monsterSearchFilter.getName().toLowerCase() + "%"));
         }
 
-        if (monsterSearchFilter.cr() != null) {
-            predicates.add(criteriaBuilder.equal(root.get("cr"), monsterSearchFilter.cr()));
+        if (monsterSearchFilter.getCr() != null) {
+            predicates.add(criteriaBuilder.equal(root.get("cr"), monsterSearchFilter.getCr()));
         }
 
-        if (monsterSearchFilter.groupId() != null) {
+        if (monsterSearchFilter.getGroupId() != null) {
             Join<Monster, MonsterGroup> monsterGroupMonsterRelationJoin = root.join("monsterGroups");
             predicates.add(criteriaBuilder.equal(monsterGroupMonsterRelationJoin.get("id"),
-                    monsterSearchFilter.groupId()));
+                    monsterSearchFilter.getGroupId()));
         }
-        if (monsterSearchFilter.type() != null) {
+        if (monsterSearchFilter.getType() != null) {
             Join<Monster, MonsterType> monsterTypeJoin = root.join("types");
             predicates.add(criteriaBuilder.like(criteriaBuilder.lower(monsterTypeJoin.get("name"))
-                    , "%" + monsterSearchFilter.type().toLowerCase() + "%"));
+                    , "%" + monsterSearchFilter.getType().toLowerCase() + "%"));
         }
 
         criteriaQuery.where(predicates.toArray(new Predicate[0]));

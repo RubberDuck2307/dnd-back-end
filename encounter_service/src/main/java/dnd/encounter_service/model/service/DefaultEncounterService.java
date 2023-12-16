@@ -6,7 +6,7 @@ import dnd.encounter_service.model.entity.encounter.Monster;
 import dnd.encounter_service.model.entity.encounter.Encounter;
 import dnd.encounter_service.model.entity.encounter.EncounterFactory;
 import dnd.encounter_service.model.service.interfaces.EncounterService;
-import dnd.encounter_service.model.service.interfaces.MonsterService;
+import dnd.encounter_service.model.service.interfaces.MonsterViewService;
 import dnd.encounter_service.utils.ListUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,7 +20,7 @@ import java.util.*;
 public class DefaultEncounterService implements EncounterService {
 
     private final EncounterCreationLogic encounterCreationLogic;
-    private final MonsterService monsterService;
+    private final MonsterViewService monsterViewService;
     private final DifficultyService difficultyService;
     private final EncounterFactory encounterFactory;
     @Value("${game.monster.creation.diversity}")
@@ -99,7 +99,7 @@ public class DefaultEncounterService implements EncounterService {
         ArrayList<ArrayList<Float>> allPossibleCrs = new ArrayList<>();
 
         List<Float> avCrs = monsterGroupId == null || monsterGroupId == 0 ? difficultyService.getCRs() :
-                monsterService.getCrsByMonsterGroup(monsterGroupId);
+                monsterViewService.getCrsByMonsterGroup(monsterGroupId);
 
         for (Float cr : avCrs) { //get all possible crs combinations by passing only one cr at a time
             allPossibleCrs.addAll(encounterCreationLogic.getCrsForEncounter(xp, maxAmountOfMonsters,
@@ -116,7 +116,7 @@ public class DefaultEncounterService implements EncounterService {
         if (monsterGroupId == null || monsterGroupId == 0)
             avCrs = difficultyService.getCRs();
         else
-            avCrs = monsterService.getCrsByMonsterGroup(monsterGroupId);
+            avCrs = monsterViewService.getCrsByMonsterGroup(monsterGroupId);
         ArrayList<ArrayList<Float>> allPossibleCrs = encounterCreationLogic.getCrsForEncounter(xp,
                 maxAmountOfMonsters, avCrs, xpTolerance);
 
@@ -155,9 +155,9 @@ public class DefaultEncounterService implements EncounterService {
         HashMap<Float, Integer> amountOfCrs = calculateAmountsOfMonstersPerCr(chosenCrs);
         Map<Float, List<Monster>> monstersByCr;
         if (monsterGroupId == null || monsterGroupId == 0) {
-            monstersByCr = monsterService.getMonstersByCrAmount(amountOfCrs);
+            monstersByCr = monsterViewService.getMonstersByCrAmount(amountOfCrs);
         } else {
-            monstersByCr = monsterService.getMonstersByCrAndGroup(
+            monstersByCr = monsterViewService.getMonstersByCrAndGroup(
                     amountOfCrs, monsterGroupId);
         }
         return createEncounters(differentKindOfMonsters, chosenCrs, monstersByCr);
@@ -221,7 +221,7 @@ public class DefaultEncounterService implements EncounterService {
     }
 
     private ArrayList<Encounter> generateOneMonsterEncounters(Integer xp, Integer amountOfEncounters) {
-        return monsterService.getRandomMonstersByCr(difficultyService.getCr(xp), amountOfEncounters).stream()
+        return monsterViewService.getRandomMonstersByCr(difficultyService.getCr(xp), amountOfEncounters).stream()
                 .map(monster -> {
                     ArrayList<Monster> monsters = new ArrayList<>();
                     monsters.add(monster);
