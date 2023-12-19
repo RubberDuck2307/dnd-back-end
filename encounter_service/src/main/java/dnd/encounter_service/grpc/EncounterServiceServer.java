@@ -18,7 +18,7 @@ public class EncounterServiceServer extends EncounterServiceGrpc.EncounterServic
     private final EncounterGrpcMapper encounterGrpcMapper;
 
     @Override
-    public void generateEncounters(EncounterServiceOuterClass.GenerateEncounterRpc request,
+    public void generateEncounters(EncounterServiceOuterClass.GenerateEncounterRequest request,
                                    StreamObserver<EncounterServiceOuterClass.EncounterListRpc> responseObserver) {
         List<Encounter> encounters = encounterService.createRandomEncounter(request.getXp(),
                 request.getAmountOfEncounters(), request.getXpTolerance(),

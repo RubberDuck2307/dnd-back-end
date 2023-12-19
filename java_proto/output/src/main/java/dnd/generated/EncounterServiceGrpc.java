@@ -15,27 +15,27 @@ public final class EncounterServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "EncounterService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc,
+  private static volatile io.grpc.MethodDescriptor<dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest,
       dnd.generated.EncounterServiceOuterClass.EncounterListRpc> getGenerateEncountersMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "generateEncounters",
-      requestType = dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc.class,
+      requestType = dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest.class,
       responseType = dnd.generated.EncounterServiceOuterClass.EncounterListRpc.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc,
+  public static io.grpc.MethodDescriptor<dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest,
       dnd.generated.EncounterServiceOuterClass.EncounterListRpc> getGenerateEncountersMethod() {
-    io.grpc.MethodDescriptor<dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc, dnd.generated.EncounterServiceOuterClass.EncounterListRpc> getGenerateEncountersMethod;
+    io.grpc.MethodDescriptor<dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest, dnd.generated.EncounterServiceOuterClass.EncounterListRpc> getGenerateEncountersMethod;
     if ((getGenerateEncountersMethod = EncounterServiceGrpc.getGenerateEncountersMethod) == null) {
       synchronized (EncounterServiceGrpc.class) {
         if ((getGenerateEncountersMethod = EncounterServiceGrpc.getGenerateEncountersMethod) == null) {
           EncounterServiceGrpc.getGenerateEncountersMethod = getGenerateEncountersMethod =
-              io.grpc.MethodDescriptor.<dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc, dnd.generated.EncounterServiceOuterClass.EncounterListRpc>newBuilder()
+              io.grpc.MethodDescriptor.<dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest, dnd.generated.EncounterServiceOuterClass.EncounterListRpc>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "generateEncounters"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc.getDefaultInstance()))
+                  dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   dnd.generated.EncounterServiceOuterClass.EncounterListRpc.getDefaultInstance()))
               .setSchemaDescriptor(new EncounterServiceMethodDescriptorSupplier("generateEncounters"))
@@ -96,7 +96,7 @@ public final class EncounterServiceGrpc {
 
     /**
      */
-    default void generateEncounters(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc request,
+    default void generateEncounters(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest request,
         io.grpc.stub.StreamObserver<dnd.generated.EncounterServiceOuterClass.EncounterListRpc> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateEncountersMethod(), responseObserver);
     }
@@ -131,7 +131,7 @@ public final class EncounterServiceGrpc {
 
     /**
      */
-    public void generateEncounters(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc request,
+    public void generateEncounters(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest request,
         io.grpc.stub.StreamObserver<dnd.generated.EncounterServiceOuterClass.EncounterListRpc> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateEncountersMethod(), getCallOptions()), request, responseObserver);
@@ -156,7 +156,7 @@ public final class EncounterServiceGrpc {
 
     /**
      */
-    public dnd.generated.EncounterServiceOuterClass.EncounterListRpc generateEncounters(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc request) {
+    public dnd.generated.EncounterServiceOuterClass.EncounterListRpc generateEncounters(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateEncountersMethod(), getCallOptions(), request);
     }
@@ -181,7 +181,7 @@ public final class EncounterServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<dnd.generated.EncounterServiceOuterClass.EncounterListRpc> generateEncounters(
-        dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc request) {
+        dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateEncountersMethod(), getCallOptions()), request);
     }
@@ -207,7 +207,7 @@ public final class EncounterServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GENERATE_ENCOUNTERS:
-          serviceImpl.generateEncounters((dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc) request,
+          serviceImpl.generateEncounters((dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest) request,
               (io.grpc.stub.StreamObserver<dnd.generated.EncounterServiceOuterClass.EncounterListRpc>) responseObserver);
           break;
         default:
@@ -232,7 +232,7 @@ public final class EncounterServiceGrpc {
           getGenerateEncountersMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc,
+              dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest,
               dnd.generated.EncounterServiceOuterClass.EncounterListRpc>(
                 service, METHODID_GENERATE_ENCOUNTERS)))
         .build();

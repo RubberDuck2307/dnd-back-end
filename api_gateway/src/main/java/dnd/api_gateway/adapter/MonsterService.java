@@ -1,7 +1,6 @@
-package dnd.api_gateway.model.monster.service.monster;
+package dnd.api_gateway.adapter;
 
 import dnd.api_gateway.dto.monster.MonsterGetShortDTO;
-import dnd.api_gateway.model.monster.entity.Monster;
 
 import java.util.List;
 

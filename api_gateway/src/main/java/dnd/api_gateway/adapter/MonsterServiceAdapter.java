@@ -1,7 +1,9 @@
-package dnd.api_gateway.model.monster.service.monster;
+package dnd.api_gateway.adapter;
 
+import dnd.api_gateway.client.MonsterGrpcClient;
 import dnd.api_gateway.dto.monster.MonsterGetShortDTO;
-import dnd.api_gateway.generated.monster_service.MonsterServiceOuterClass;
+import dnd.api_gateway.mapper.MonsterMapper;
+import dnd.generated.MonsterServiceOuterClass;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -10,13 +12,17 @@ import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
-public class MonsterServiceAdapter implements MonsterService{
+public class MonsterServiceAdapter implements MonsterService {
 
     private final MonsterGrpcClient monsterGrpcClient;
+    private final MonsterMapper monsterMapper;
     @Override
     public List<MonsterGetShortDTO> getMonsters(int page, int size, String name, String type, Float cr, Long groupId) {
-       MonsterServiceOuterClass.MonsterShortListRpc rpcList = monsterGrpcClient.getMonsters(page, size, name, type, cr,
-               groupId);
+
+        MonsterServiceOuterClass.MonsterFiltersRpc filtersRpc = monsterMapper
+                .buildMonsterFiltersRpc(name, type, cr, groupId);
+        
+       MonsterServiceOuterClass.MonsterShortListRpc rpcList = monsterGrpcClient.getMonsters(page, size, filtersRpc);
         return parseMonsterShortListRpc(rpcList);
     }
     private MonsterGetShortDTO parseMonsterShort(MonsterServiceOuterClass.MonsterShortRpc monsterShortRpc){

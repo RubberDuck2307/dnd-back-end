@@ -1,8 +1,7 @@
 package dnd.api_gateway.controller;
 
 import dnd.api_gateway.dto.monster.MonsterGetShortDTO;
-import dnd.api_gateway.model.monster.entity.Monster;
-import dnd.api_gateway.model.monster.service.monster.MonsterService;
+import dnd.api_gateway.adapter.MonsterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/monster")
+@RequestMapping("${url.versioning}/monster")
 @RequiredArgsConstructor
 public class MonsterController {
 

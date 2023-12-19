@@ -713,8 +713,8 @@ public final class EncounterServiceOuterClass {
 
   }
 
-  public interface GenerateEncounterRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:GenerateEncounterRpc)
+  public interface GenerateEncounterRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:GenerateEncounterRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -760,38 +760,38 @@ public final class EncounterServiceOuterClass {
     long getMonsterGroupId();
   }
   /**
-   * Protobuf type {@code GenerateEncounterRpc}
+   * Protobuf type {@code GenerateEncounterRequest}
    */
-  public static final class GenerateEncounterRpc extends
+  public static final class GenerateEncounterRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:GenerateEncounterRpc)
-      GenerateEncounterRpcOrBuilder {
+      // @@protoc_insertion_point(message_implements:GenerateEncounterRequest)
+      GenerateEncounterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use GenerateEncounterRpc.newBuilder() to construct.
-    private GenerateEncounterRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use GenerateEncounterRequest.newBuilder() to construct.
+    private GenerateEncounterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private GenerateEncounterRpc() {
+    private GenerateEncounterRequest() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new GenerateEncounterRpc();
+      return new GenerateEncounterRequest();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRpc_descriptor;
+      return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRpc_fieldAccessorTable
+      return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc.class, dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc.Builder.class);
+              dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest.class, dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest.Builder.class);
     }
 
     public static final int AMOUNTOFENCOUNTERS_FIELD_NUMBER = 1;
@@ -953,10 +953,10 @@ public final class EncounterServiceOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc)) {
+      if (!(obj instanceof dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest)) {
         return super.equals(obj);
       }
-      dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc other = (dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc) obj;
+      dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest other = (dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest) obj;
 
       if (getAmountOfEncounters()
           != other.getAmountOfEncounters()) return false;
@@ -1007,44 +1007,44 @@ public final class EncounterServiceOuterClass {
       return hash;
     }
 
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(byte[] data)
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(java.io.InputStream input)
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1052,26 +1052,26 @@ public final class EncounterServiceOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseDelimitedFrom(java.io.InputStream input)
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseDelimitedFrom(
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc parseFrom(
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1084,7 +1084,7 @@ public final class EncounterServiceOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc prototype) {
+    public static Builder newBuilder(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1100,26 +1100,26 @@ public final class EncounterServiceOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code GenerateEncounterRpc}
+     * Protobuf type {@code GenerateEncounterRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:GenerateEncounterRpc)
-        dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpcOrBuilder {
+        // @@protoc_insertion_point(builder_implements:GenerateEncounterRequest)
+        dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRpc_descriptor;
+        return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRpc_fieldAccessorTable
+        return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc.class, dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc.Builder.class);
+                dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest.class, dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest.Builder.class);
       }
 
-      // Construct using dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc.newBuilder()
+      // Construct using dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest.newBuilder()
       private Builder() {
 
       }
@@ -1146,17 +1146,17 @@ public final class EncounterServiceOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRpc_descriptor;
+        return dnd.generated.EncounterServiceOuterClass.internal_static_GenerateEncounterRequest_descriptor;
       }
 
       @java.lang.Override
-      public dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc getDefaultInstanceForType() {
-        return dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc.getDefaultInstance();
+      public dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest getDefaultInstanceForType() {
+        return dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc build() {
-        dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc result = buildPartial();
+      public dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest build() {
+        dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1164,14 +1164,14 @@ public final class EncounterServiceOuterClass {
       }
 
       @java.lang.Override
-      public dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc buildPartial() {
-        dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc result = new dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc(this);
+      public dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest buildPartial() {
+        dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest result = new dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc result) {
+      private void buildPartial0(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.amountOfEncounters_ = amountOfEncounters_;
@@ -1230,16 +1230,16 @@ public final class EncounterServiceOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc) {
-          return mergeFrom((dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc)other);
+        if (other instanceof dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest) {
+          return mergeFrom((dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc other) {
-        if (other == dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc.getDefaultInstance()) return this;
+      public Builder mergeFrom(dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest other) {
+        if (other == dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest.getDefaultInstance()) return this;
         if (other.getAmountOfEncounters() != 0) {
           setAmountOfEncounters(other.getAmountOfEncounters());
         }
@@ -1575,23 +1575,23 @@ public final class EncounterServiceOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:GenerateEncounterRpc)
+      // @@protoc_insertion_point(builder_scope:GenerateEncounterRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:GenerateEncounterRpc)
-    private static final dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:GenerateEncounterRequest)
+    private static final dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc();
+      DEFAULT_INSTANCE = new dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest();
     }
 
-    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc getDefaultInstance() {
+    public static dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<GenerateEncounterRpc>
-        PARSER = new com.google.protobuf.AbstractParser<GenerateEncounterRpc>() {
+    private static final com.google.protobuf.Parser<GenerateEncounterRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GenerateEncounterRequest>() {
       @java.lang.Override
-      public GenerateEncounterRpc parsePartialFrom(
+      public GenerateEncounterRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1610,17 +1610,17 @@ public final class EncounterServiceOuterClass {
       }
     };
 
-    public static com.google.protobuf.Parser<GenerateEncounterRpc> parser() {
+    public static com.google.protobuf.Parser<GenerateEncounterRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<GenerateEncounterRpc> getParserForType() {
+    public com.google.protobuf.Parser<GenerateEncounterRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public dnd.generated.EncounterServiceOuterClass.GenerateEncounterRpc getDefaultInstanceForType() {
+    public dnd.generated.EncounterServiceOuterClass.GenerateEncounterRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4024,10 +4024,10 @@ public final class EncounterServiceOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_MonsterRpc_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GenerateEncounterRpc_descriptor;
+    internal_static_GenerateEncounterRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GenerateEncounterRpc_fieldAccessorTable;
+      internal_static_GenerateEncounterRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_MonsterAmountRpc_descriptor;
   private static final 
@@ -4054,20 +4054,20 @@ public final class EncounterServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027encounter_service.proto\"9\n\nMonsterRpc\022" +
       "\n\n\002cr\030\001 \001(\002\022\014\n\004name\030\002 \001(\t\022\021\n\tmonsterId\030\003" +
-      " \001(\003\"\314\001\n\024GenerateEncounterRpc\022\032\n\022amountO" +
-      "fEncounters\030\001 \001(\005\022\n\n\002xp\030\002 \001(\005\022\023\n\013xpToler" +
-      "ance\030\003 \001(\002\022\033\n\023maxAmountOfMonsters\030\004 \001(\005\022" +
-      "\037\n\027differentKindOfMonsters\030\005 \001(\010\022!\n\031only" +
-      "OneKindOfMonsterPerCr\030\006 \001(\010\022\026\n\016monsterGr" +
-      "oupId\030\007 \001(\003\"@\n\020MonsterAmountRpc\022\016\n\006amoun" +
-      "t\030\001 \001(\005\022\034\n\007monster\030\002 \001(\0132\013.MonsterRpc\"[\n" +
-      "\014EncounterRpc\022\024\n\014difficultyXp\030\001 \001(\005\022\020\n\010g" +
-      "ainedXp\030\002 \001(\005\022#\n\010monsters\030\003 \003(\0132\021.Monste" +
-      "rAmountRpc\"5\n\020EncounterListRpc\022!\n\nencoun" +
-      "ters\030\001 \003(\0132\r.EncounterRpc2R\n\020EncounterSe" +
-      "rvice\022>\n\022generateEncounters\022\025.GenerateEn" +
-      "counterRpc\032\021.EncounterListRpcB\017\n\rdnd.gen" +
-      "eratedb\006proto3"
+      " \001(\003\"\320\001\n\030GenerateEncounterRequest\022\032\n\022amo" +
+      "untOfEncounters\030\001 \001(\005\022\n\n\002xp\030\002 \001(\005\022\023\n\013xpT" +
+      "olerance\030\003 \001(\002\022\033\n\023maxAmountOfMonsters\030\004 " +
+      "\001(\005\022\037\n\027differentKindOfMonsters\030\005 \001(\010\022!\n\031" +
+      "onlyOneKindOfMonsterPerCr\030\006 \001(\010\022\026\n\016monst" +
+      "erGroupId\030\007 \001(\003\"@\n\020MonsterAmountRpc\022\016\n\006a" +
+      "mount\030\001 \001(\005\022\034\n\007monster\030\002 \001(\0132\013.MonsterRp" +
+      "c\"[\n\014EncounterRpc\022\024\n\014difficultyXp\030\001 \001(\005\022" +
+      "\020\n\010gainedXp\030\002 \001(\005\022#\n\010monsters\030\003 \003(\0132\021.Mo" +
+      "nsterAmountRpc\"5\n\020EncounterListRpc\022!\n\nen" +
+      "counters\030\001 \003(\0132\r.EncounterRpc2V\n\020Encount" +
+      "erService\022B\n\022generateEncounters\022\031.Genera" +
+      "teEncounterRequest\032\021.EncounterListRpcB\017\n" +
+      "\rdnd.generatedb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4079,11 +4079,11 @@ public final class EncounterServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MonsterRpc_descriptor,
         new java.lang.String[] { "Cr", "Name", "MonsterId", });
-    internal_static_GenerateEncounterRpc_descriptor =
+    internal_static_GenerateEncounterRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_GenerateEncounterRpc_fieldAccessorTable = new
+    internal_static_GenerateEncounterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GenerateEncounterRpc_descriptor,
+        internal_static_GenerateEncounterRequest_descriptor,
         new java.lang.String[] { "AmountOfEncounters", "Xp", "XpTolerance", "MaxAmountOfMonsters", "DifferentKindOfMonsters", "OnlyOneKindOfMonsterPerCr", "MonsterGroupId", });
     internal_static_MonsterAmountRpc_descriptor =
       getDescriptor().getMessageTypes().get(2);

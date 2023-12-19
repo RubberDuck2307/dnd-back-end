@@ -1,10 +1,11 @@
-package dnd.api_gateway.model.monster.service.monster;
+package dnd.api_gateway.mapper;
 
-import dnd.api_gateway.generated.monster_service.MonsterServiceOuterClass;
+
+import dnd.generated.MonsterServiceOuterClass;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MonsterRpcMapper {
+public class MonsterMapper {
 
     public MonsterServiceOuterClass.MonsterFiltersRpc buildMonsterFiltersRpc(String name, String type, Float cr,
                                                                              Long groupId) {

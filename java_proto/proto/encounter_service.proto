@@ -8,7 +8,7 @@ message MonsterRpc{
   int64 monsterId = 3;
 }
 
-message GenerateEncounterRpc{
+message GenerateEncounterRequest{
   int32 amountOfEncounters = 1;
   int32 xp = 2;
   float xpTolerance = 3;
@@ -35,5 +35,5 @@ message EncounterListRpc{
 
 
 service EncounterService{
-  rpc generateEncounters(GenerateEncounterRpc) returns (EncounterListRpc);
+  rpc generateEncounters(GenerateEncounterRequest) returns (EncounterListRpc);
 }

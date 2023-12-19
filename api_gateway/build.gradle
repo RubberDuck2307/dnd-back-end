@@ -26,6 +26,7 @@ dependencies {
 	compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
 	implementation 'net.devh:grpc-client-spring-boot-starter:2.15.0.RELEASE'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation files('../java_proto/output/target/java_proto_output-1.0-SNAPSHOT.jar')
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
