@@ -1,1 +1,1 @@
-GET http://localhost:8080/encounter/generated?xp=1000
+GET http://localhost:8080/encounter/generated?xp=100

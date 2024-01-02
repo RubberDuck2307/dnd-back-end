@@ -5,6 +5,7 @@ import dnd.api_gateway.dto.encounter.EncounterDTO;
 import dnd.api_gateway.dto.encounter.EncounterListDTO;
 import dnd.api_gateway.method_parameters.encounter.GenerateEncounterParams;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
