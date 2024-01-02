@@ -15,7 +15,7 @@ public class GenerateEncounterParams {
     public boolean differentKindOfMonsters;
     public int maxAmountOfMonsters;
     public boolean onlyOneKindOfMonsterPerCr;
-    public Long monsterGroupId;
+    public long monsterGroupId;
 
 
 }

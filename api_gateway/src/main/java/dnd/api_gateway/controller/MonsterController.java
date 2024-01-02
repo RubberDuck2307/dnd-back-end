@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("${url.versioning}/monster")
+@RequestMapping("/monster")
 @RequiredArgsConstructor
 public class MonsterController {
 

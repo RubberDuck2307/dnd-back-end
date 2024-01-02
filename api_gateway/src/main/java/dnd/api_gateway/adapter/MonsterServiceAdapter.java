@@ -23,18 +23,6 @@ public class MonsterServiceAdapter implements MonsterService {
                 .buildMonsterFiltersRpc(name, type, cr, groupId);
         
        MonsterServiceOuterClass.MonsterShortListRpc rpcList = monsterGrpcClient.getMonsters(page, size, filtersRpc);
-        return parseMonsterShortListRpc(rpcList);
-    }
-    private MonsterGetShortDTO parseMonsterShort(MonsterServiceOuterClass.MonsterShortRpc monsterShortRpc){
-        return MonsterGetShortDTO.builder()
-                .Cr(monsterShortRpc.getCr())
-                .id(monsterShortRpc.getId())
-                .name(monsterShortRpc.getName())
-                .build();
-    }
-    private List<MonsterGetShortDTO> parseMonsterShortListRpc(MonsterServiceOuterClass.MonsterShortListRpc list){
-        return list.getMonstersList().stream()
-                .map(this::parseMonsterShort)
-                .collect(Collectors.toList());
+        return monsterMapper.buildMonsterGetShortDTOList(rpcList);
     }
 }
