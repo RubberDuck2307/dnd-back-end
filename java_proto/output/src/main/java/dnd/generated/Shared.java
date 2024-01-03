@@ -14,60 +14,199 @@ public final class Shared {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface IdRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:IdRpc)
+  public interface ErrorResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ErrorResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
+     * <code>string message = 1;</code>
+     * @return The message.
      */
-    long getId();
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 1;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>string errorType = 2;</code>
+     * @return The errorType.
+     */
+    java.lang.String getErrorType();
+    /**
+     * <code>string errorType = 2;</code>
+     * @return The bytes for errorType.
+     */
+    com.google.protobuf.ByteString
+        getErrorTypeBytes();
+
+    /**
+     * <code>string stackTrace = 3;</code>
+     * @return The stackTrace.
+     */
+    java.lang.String getStackTrace();
+    /**
+     * <code>string stackTrace = 3;</code>
+     * @return The bytes for stackTrace.
+     */
+    com.google.protobuf.ByteString
+        getStackTraceBytes();
   }
   /**
-   * Protobuf type {@code IdRpc}
+   * Protobuf type {@code ErrorResponse}
    */
-  public static final class IdRpc extends
+  public static final class ErrorResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:IdRpc)
-      IdRpcOrBuilder {
+      // @@protoc_insertion_point(message_implements:ErrorResponse)
+      ErrorResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use IdRpc.newBuilder() to construct.
-    private IdRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ErrorResponse.newBuilder() to construct.
+    private ErrorResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private IdRpc() {
+    private ErrorResponse() {
+      message_ = "";
+      errorType_ = "";
+      stackTrace_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new IdRpc();
+      return new ErrorResponse();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return dnd.generated.Shared.internal_static_IdRpc_descriptor;
+      return dnd.generated.Shared.internal_static_ErrorResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return dnd.generated.Shared.internal_static_IdRpc_fieldAccessorTable
+      return dnd.generated.Shared.internal_static_ErrorResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              dnd.generated.Shared.IdRpc.class, dnd.generated.Shared.IdRpc.Builder.class);
+              dnd.generated.Shared.ErrorResponse.class, dnd.generated.Shared.ErrorResponse.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_ = 0L;
+    public static final int MESSAGE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
     /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
+     * <code>string message = 1;</code>
+     * @return The message.
      */
     @java.lang.Override
-    public long getId() {
-      return id_;
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 1;</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERRORTYPE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object errorType_ = "";
+    /**
+     * <code>string errorType = 2;</code>
+     * @return The errorType.
+     */
+    @java.lang.Override
+    public java.lang.String getErrorType() {
+      java.lang.Object ref = errorType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string errorType = 2;</code>
+     * @return The bytes for errorType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorTypeBytes() {
+      java.lang.Object ref = errorType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errorType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STACKTRACE_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object stackTrace_ = "";
+    /**
+     * <code>string stackTrace = 3;</code>
+     * @return The stackTrace.
+     */
+    @java.lang.Override
+    public java.lang.String getStackTrace() {
+      java.lang.Object ref = stackTrace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stackTrace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string stackTrace = 3;</code>
+     * @return The bytes for stackTrace.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStackTraceBytes() {
+      java.lang.Object ref = stackTrace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stackTrace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -84,8 +223,14 @@ public final class Shared {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0L) {
-        output.writeInt64(1, id_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stackTrace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, stackTrace_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -96,9 +241,14 @@ public final class Shared {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, id_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stackTrace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, stackTrace_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -110,13 +260,17 @@ public final class Shared {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof dnd.generated.Shared.IdRpc)) {
+      if (!(obj instanceof dnd.generated.Shared.ErrorResponse)) {
         return super.equals(obj);
       }
-      dnd.generated.Shared.IdRpc other = (dnd.generated.Shared.IdRpc) obj;
+      dnd.generated.Shared.ErrorResponse other = (dnd.generated.Shared.ErrorResponse) obj;
 
-      if (getId()
-          != other.getId()) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!getErrorType()
+          .equals(other.getErrorType())) return false;
+      if (!getStackTrace()
+          .equals(other.getStackTrace())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -128,52 +282,55 @@ public final class Shared {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + ERRORTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorType().hashCode();
+      hash = (37 * hash) + STACKTRACE_FIELD_NUMBER;
+      hash = (53 * hash) + getStackTrace().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static dnd.generated.Shared.IdRpc parseFrom(
+    public static dnd.generated.Shared.ErrorResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static dnd.generated.Shared.IdRpc parseFrom(
+    public static dnd.generated.Shared.ErrorResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static dnd.generated.Shared.IdRpc parseFrom(
+    public static dnd.generated.Shared.ErrorResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static dnd.generated.Shared.IdRpc parseFrom(
+    public static dnd.generated.Shared.ErrorResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static dnd.generated.Shared.IdRpc parseFrom(byte[] data)
+    public static dnd.generated.Shared.ErrorResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static dnd.generated.Shared.IdRpc parseFrom(
+    public static dnd.generated.Shared.ErrorResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static dnd.generated.Shared.IdRpc parseFrom(java.io.InputStream input)
+    public static dnd.generated.Shared.ErrorResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static dnd.generated.Shared.IdRpc parseFrom(
+    public static dnd.generated.Shared.ErrorResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -181,26 +338,26 @@ public final class Shared {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static dnd.generated.Shared.IdRpc parseDelimitedFrom(java.io.InputStream input)
+    public static dnd.generated.Shared.ErrorResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static dnd.generated.Shared.IdRpc parseDelimitedFrom(
+    public static dnd.generated.Shared.ErrorResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static dnd.generated.Shared.IdRpc parseFrom(
+    public static dnd.generated.Shared.ErrorResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static dnd.generated.Shared.IdRpc parseFrom(
+    public static dnd.generated.Shared.ErrorResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -213,7 +370,7 @@ public final class Shared {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(dnd.generated.Shared.IdRpc prototype) {
+    public static Builder newBuilder(dnd.generated.Shared.ErrorResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -229,26 +386,26 @@ public final class Shared {
       return builder;
     }
     /**
-     * Protobuf type {@code IdRpc}
+     * Protobuf type {@code ErrorResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:IdRpc)
-        dnd.generated.Shared.IdRpcOrBuilder {
+        // @@protoc_insertion_point(builder_implements:ErrorResponse)
+        dnd.generated.Shared.ErrorResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return dnd.generated.Shared.internal_static_IdRpc_descriptor;
+        return dnd.generated.Shared.internal_static_ErrorResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return dnd.generated.Shared.internal_static_IdRpc_fieldAccessorTable
+        return dnd.generated.Shared.internal_static_ErrorResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                dnd.generated.Shared.IdRpc.class, dnd.generated.Shared.IdRpc.Builder.class);
+                dnd.generated.Shared.ErrorResponse.class, dnd.generated.Shared.ErrorResponse.Builder.class);
       }
 
-      // Construct using dnd.generated.Shared.IdRpc.newBuilder()
+      // Construct using dnd.generated.Shared.ErrorResponse.newBuilder()
       private Builder() {
 
       }
@@ -262,24 +419,26 @@ public final class Shared {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        id_ = 0L;
+        message_ = "";
+        errorType_ = "";
+        stackTrace_ = "";
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return dnd.generated.Shared.internal_static_IdRpc_descriptor;
+        return dnd.generated.Shared.internal_static_ErrorResponse_descriptor;
       }
 
       @java.lang.Override
-      public dnd.generated.Shared.IdRpc getDefaultInstanceForType() {
-        return dnd.generated.Shared.IdRpc.getDefaultInstance();
+      public dnd.generated.Shared.ErrorResponse getDefaultInstanceForType() {
+        return dnd.generated.Shared.ErrorResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public dnd.generated.Shared.IdRpc build() {
-        dnd.generated.Shared.IdRpc result = buildPartial();
+      public dnd.generated.Shared.ErrorResponse build() {
+        dnd.generated.Shared.ErrorResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -287,17 +446,23 @@ public final class Shared {
       }
 
       @java.lang.Override
-      public dnd.generated.Shared.IdRpc buildPartial() {
-        dnd.generated.Shared.IdRpc result = new dnd.generated.Shared.IdRpc(this);
+      public dnd.generated.Shared.ErrorResponse buildPartial() {
+        dnd.generated.Shared.ErrorResponse result = new dnd.generated.Shared.ErrorResponse(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(dnd.generated.Shared.IdRpc result) {
+      private void buildPartial0(dnd.generated.Shared.ErrorResponse result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
+          result.message_ = message_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.errorType_ = errorType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.stackTrace_ = stackTrace_;
         }
       }
 
@@ -335,18 +500,30 @@ public final class Shared {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof dnd.generated.Shared.IdRpc) {
-          return mergeFrom((dnd.generated.Shared.IdRpc)other);
+        if (other instanceof dnd.generated.Shared.ErrorResponse) {
+          return mergeFrom((dnd.generated.Shared.ErrorResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(dnd.generated.Shared.IdRpc other) {
-        if (other == dnd.generated.Shared.IdRpc.getDefaultInstance()) return this;
-        if (other.getId() != 0L) {
-          setId(other.getId());
+      public Builder mergeFrom(dnd.generated.Shared.ErrorResponse other) {
+        if (other == dnd.generated.Shared.ErrorResponse.getDefaultInstance()) return this;
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getErrorType().isEmpty()) {
+          errorType_ = other.errorType_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getStackTrace().isEmpty()) {
+          stackTrace_ = other.stackTrace_;
+          bitField0_ |= 0x00000004;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -374,11 +551,21 @@ public final class Shared {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                id_ = input.readInt64();
+              case 10: {
+                message_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
+              } // case 10
+              case 18: {
+                errorType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                stackTrace_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -396,511 +583,218 @@ public final class Shared {
       }
       private int bitField0_;
 
-      private long id_ ;
+      private java.lang.Object message_ = "";
       /**
-       * <code>int64 id = 1;</code>
-       * @return The id.
+       * <code>string message = 1;</code>
+       * @return The message.
        */
-      @java.lang.Override
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>int64 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(long value) {
-
-        id_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:IdRpc)
-    }
-
-    // @@protoc_insertion_point(class_scope:IdRpc)
-    private static final dnd.generated.Shared.IdRpc DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new dnd.generated.Shared.IdRpc();
-    }
-
-    public static dnd.generated.Shared.IdRpc getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<IdRpc>
-        PARSER = new com.google.protobuf.AbstractParser<IdRpc>() {
-      @java.lang.Override
-      public IdRpc parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<IdRpc> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<IdRpc> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public dnd.generated.Shared.IdRpc getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface AmountRpcOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:AmountRpc)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int64 amount = 1;</code>
-     * @return The amount.
-     */
-    long getAmount();
-  }
-  /**
-   * Protobuf type {@code AmountRpc}
-   */
-  public static final class AmountRpc extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:AmountRpc)
-      AmountRpcOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use AmountRpc.newBuilder() to construct.
-    private AmountRpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private AmountRpc() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new AmountRpc();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return dnd.generated.Shared.internal_static_AmountRpc_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return dnd.generated.Shared.internal_static_AmountRpc_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              dnd.generated.Shared.AmountRpc.class, dnd.generated.Shared.AmountRpc.Builder.class);
-    }
-
-    public static final int AMOUNT_FIELD_NUMBER = 1;
-    private long amount_ = 0L;
-    /**
-     * <code>int64 amount = 1;</code>
-     * @return The amount.
-     */
-    @java.lang.Override
-    public long getAmount() {
-      return amount_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (amount_ != 0L) {
-        output.writeInt64(1, amount_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (amount_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, amount_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof dnd.generated.Shared.AmountRpc)) {
-        return super.equals(obj);
-      }
-      dnd.generated.Shared.AmountRpc other = (dnd.generated.Shared.AmountRpc) obj;
-
-      if (getAmount()
-          != other.getAmount()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAmount());
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static dnd.generated.Shared.AmountRpc parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static dnd.generated.Shared.AmountRpc parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static dnd.generated.Shared.AmountRpc parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static dnd.generated.Shared.AmountRpc parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static dnd.generated.Shared.AmountRpc parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static dnd.generated.Shared.AmountRpc parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static dnd.generated.Shared.AmountRpc parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static dnd.generated.Shared.AmountRpc parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static dnd.generated.Shared.AmountRpc parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static dnd.generated.Shared.AmountRpc parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static dnd.generated.Shared.AmountRpc parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static dnd.generated.Shared.AmountRpc parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(dnd.generated.Shared.AmountRpc prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code AmountRpc}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:AmountRpc)
-        dnd.generated.Shared.AmountRpcOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return dnd.generated.Shared.internal_static_AmountRpc_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return dnd.generated.Shared.internal_static_AmountRpc_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                dnd.generated.Shared.AmountRpc.class, dnd.generated.Shared.AmountRpc.Builder.class);
-      }
-
-      // Construct using dnd.generated.Shared.AmountRpc.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        amount_ = 0L;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return dnd.generated.Shared.internal_static_AmountRpc_descriptor;
-      }
-
-      @java.lang.Override
-      public dnd.generated.Shared.AmountRpc getDefaultInstanceForType() {
-        return dnd.generated.Shared.AmountRpc.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public dnd.generated.Shared.AmountRpc build() {
-        dnd.generated.Shared.AmountRpc result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public dnd.generated.Shared.AmountRpc buildPartial() {
-        dnd.generated.Shared.AmountRpc result = new dnd.generated.Shared.AmountRpc(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(dnd.generated.Shared.AmountRpc result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.amount_ = amount_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof dnd.generated.Shared.AmountRpc) {
-          return mergeFrom((dnd.generated.Shared.AmountRpc)other);
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
         } else {
-          super.mergeFrom(other);
-          return this;
+          return (java.lang.String) ref;
         }
       }
-
-      public Builder mergeFrom(dnd.generated.Shared.AmountRpc other) {
-        if (other == dnd.generated.Shared.AmountRpc.getDefaultInstance()) return this;
-        if (other.getAmount() != 0L) {
-          setAmount(other.getAmount());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                amount_ = input.readInt64();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private long amount_ ;
       /**
-       * <code>int64 amount = 1;</code>
-       * @return The amount.
+       * <code>string message = 1;</code>
+       * @return The bytes for message.
        */
-      @java.lang.Override
-      public long getAmount() {
-        return amount_;
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>int64 amount = 1;</code>
-       * @param value The amount to set.
+       * <code>string message = 1;</code>
+       * @param value The message to set.
        * @return This builder for chaining.
        */
-      public Builder setAmount(long value) {
-
-        amount_ = value;
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 amount = 1;</code>
+       * <code>string message = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAmount() {
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
         bitField0_ = (bitField0_ & ~0x00000001);
-        amount_ = 0L;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 1;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errorType_ = "";
+      /**
+       * <code>string errorType = 2;</code>
+       * @return The errorType.
+       */
+      public java.lang.String getErrorType() {
+        java.lang.Object ref = errorType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errorType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string errorType = 2;</code>
+       * @return The bytes for errorType.
+       */
+      public com.google.protobuf.ByteString
+          getErrorTypeBytes() {
+        java.lang.Object ref = errorType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errorType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string errorType = 2;</code>
+       * @param value The errorType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        errorType_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string errorType = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrorType() {
+        errorType_ = getDefaultInstance().getErrorType();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string errorType = 2;</code>
+       * @param value The bytes for errorType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        errorType_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object stackTrace_ = "";
+      /**
+       * <code>string stackTrace = 3;</code>
+       * @return The stackTrace.
+       */
+      public java.lang.String getStackTrace() {
+        java.lang.Object ref = stackTrace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stackTrace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string stackTrace = 3;</code>
+       * @return The bytes for stackTrace.
+       */
+      public com.google.protobuf.ByteString
+          getStackTraceBytes() {
+        java.lang.Object ref = stackTrace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stackTrace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string stackTrace = 3;</code>
+       * @param value The stackTrace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStackTrace(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        stackTrace_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stackTrace = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStackTrace() {
+        stackTrace_ = getDefaultInstance().getStackTrace();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stackTrace = 3;</code>
+       * @param value The bytes for stackTrace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStackTraceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        stackTrace_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -917,23 +811,23 @@ public final class Shared {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:AmountRpc)
+      // @@protoc_insertion_point(builder_scope:ErrorResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:AmountRpc)
-    private static final dnd.generated.Shared.AmountRpc DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:ErrorResponse)
+    private static final dnd.generated.Shared.ErrorResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new dnd.generated.Shared.AmountRpc();
+      DEFAULT_INSTANCE = new dnd.generated.Shared.ErrorResponse();
     }
 
-    public static dnd.generated.Shared.AmountRpc getDefaultInstance() {
+    public static dnd.generated.Shared.ErrorResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AmountRpc>
-        PARSER = new com.google.protobuf.AbstractParser<AmountRpc>() {
+    private static final com.google.protobuf.Parser<ErrorResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ErrorResponse>() {
       @java.lang.Override
-      public AmountRpc parsePartialFrom(
+      public ErrorResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -952,32 +846,27 @@ public final class Shared {
       }
     };
 
-    public static com.google.protobuf.Parser<AmountRpc> parser() {
+    public static com.google.protobuf.Parser<ErrorResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AmountRpc> getParserForType() {
+    public com.google.protobuf.Parser<ErrorResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public dnd.generated.Shared.AmountRpc getDefaultInstanceForType() {
+    public dnd.generated.Shared.ErrorResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_IdRpc_descriptor;
+    internal_static_ErrorResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_IdRpc_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AmountRpc_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AmountRpc_fieldAccessorTable;
+      internal_static_ErrorResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -987,26 +876,20 @@ public final class Shared {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014shared.proto\"\023\n\005IdRpc\022\n\n\002id\030\001 \001(\003\"\033\n\tA" +
-      "mountRpc\022\016\n\006amount\030\001 \001(\003B\017\n\rdnd.generate" +
-      "db\006proto3"
+      "\n\014shared.proto\"G\n\rErrorResponse\022\017\n\007messa" +
+      "ge\030\001 \001(\t\022\021\n\terrorType\030\002 \001(\t\022\022\n\nstackTrac" +
+      "e\030\003 \001(\tB\017\n\rdnd.generatedb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_IdRpc_descriptor =
+    internal_static_ErrorResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_IdRpc_fieldAccessorTable = new
+    internal_static_ErrorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_IdRpc_descriptor,
-        new java.lang.String[] { "Id", });
-    internal_static_AmountRpc_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_AmountRpc_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AmountRpc_descriptor,
-        new java.lang.String[] { "Amount", });
+        internal_static_ErrorResponse_descriptor,
+        new java.lang.String[] { "Message", "ErrorType", "StackTrace", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

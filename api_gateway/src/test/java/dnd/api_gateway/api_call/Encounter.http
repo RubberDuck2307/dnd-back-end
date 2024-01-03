@@ -1,1 +1,1 @@
-GET http://localhost:8080/encounter/generated?xp=100
+GET http://localhost:8080/encounter/generated?xp=100&monsterGroup=20

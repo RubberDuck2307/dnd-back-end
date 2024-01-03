@@ -1,12 +1,16 @@
 package dnd.encounter_service.grpc;
 
+import dnd.encounter_service.exception.NoSuchEncounterException;
 import dnd.encounter_service.model.entity.encounter.Encounter;
 import dnd.encounter_service.model.service.interfaces.EncounterService;
 import dnd.generated.EncounterServiceGrpc;
 import dnd.generated.EncounterServiceOuterClass;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import net.devh.boot.grpc.server.service.GrpcService;
+import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -16,19 +20,26 @@ public class EncounterServiceServer extends EncounterServiceGrpc.EncounterServic
 
     private final EncounterService encounterService;
     private final EncounterGrpcMapper encounterGrpcMapper;
+    private final GrpcExceptionHandler exceptionHandler;
 
     @Override
     public void generateEncounters(EncounterServiceOuterClass.GenerateEncounterRequest request,
                                    StreamObserver<EncounterServiceOuterClass.EncounterListRpc> responseObserver) {
-        List<Encounter> encounters = encounterService.createRandomEncounter(request.getXp(),
-                request.getAmountOfEncounters(), request.getXpTolerance(),
-                request.getDifferentKindOfMonsters(),request.getMaxAmountOfMonsters(),
-                request.getOnlyOneKindOfMonsterPerCr(), request.getMonsterGroupId());
+        List<Encounter> encounters;
+        try {
+            encounters = encounterService.createRandomEncounter(request.getXp(),
+                    request.getAmountOfEncounters(), request.getXpTolerance(),
+                    request.getDifferentKindOfMonsters(), request.getMaxAmountOfMonsters(),
+                    request.getOnlyOneKindOfMonsterPerCr(), request.getMonsterGroupId());
+        } catch (Exception e) {
+            responseObserver.onError(exceptionHandler.buildException(e));
+            return;
+        }
 
         EncounterServiceOuterClass.EncounterListRpc encounterListRpc = encounterGrpcMapper.
                 buildEncounterListRpc(encounters);
-
         responseObserver.onNext(encounterListRpc);
+
         responseObserver.onCompleted();
 
     }

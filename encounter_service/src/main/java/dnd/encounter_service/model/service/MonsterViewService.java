@@ -23,7 +23,11 @@ public class MonsterViewService implements dnd.encounter_service.model.service.i
 
     @Override
     public List<Float> getCrsByMonsterGroup(long monsterGroupId) {
-        return monsterRepository.getAvailableCrForMonsterGroup(monsterGroupId);
+        List<Float> crs = monsterRepository.getAvailableCrForMonsterGroup(monsterGroupId);
+        if (crs.size() == 0) {
+            throw new IllegalArgumentException("No monsters with the given monster group were found");
+        }
+        return crs;
     }
 
     @Override

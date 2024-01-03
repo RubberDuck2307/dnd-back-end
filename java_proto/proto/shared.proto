@@ -3,10 +3,10 @@ syntax = "proto3";
 option java_package = "dnd.generated";
 
 
-message IdRpc{
-  int64 id = 1;
-}
 
-message AmountRpc{
-  int64 amount = 1;
+message ErrorResponse {
+    string message = 1;
+    string errorType = 2;
+    string stackTrace = 3;
+
 }
