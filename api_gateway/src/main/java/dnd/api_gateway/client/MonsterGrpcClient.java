@@ -3,6 +3,7 @@ package dnd.api_gateway.client;
 
 
 import dnd.api_gateway.mapper.MonsterMapper;
+import dnd.generated.MonsterCreateOuterClass;
 import dnd.generated.MonsterServiceGrpc;
 import dnd.generated.MonsterServiceOuterClass;
 import net.devh.boot.grpc.client.inject.GrpcClient;
@@ -21,8 +22,6 @@ public class MonsterGrpcClient {
 
     public MonsterServiceOuterClass.MonsterShortListRpc getMonsters(int page, int size,
                                                                     MonsterServiceOuterClass.MonsterFiltersRpc filtersRpc) {
-
-
         return monsterStub.getMonsters(MonsterServiceOuterClass.GetMonstersRequestRpc.newBuilder()
                 .setAmount(size)
                 .setPage(page)
@@ -31,4 +30,7 @@ public class MonsterGrpcClient {
     }
 
 
+    public void createMonster(MonsterCreateOuterClass.MonsterCreate monsterCreate) {
+        monsterStub.createMonster(monsterCreate);
+    }
 }

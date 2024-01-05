@@ -3830,24 +3830,29 @@ public final class MonsterServiceOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025monster_service.proto\"7\n\017MonsterShortR" +
-      "pc\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\n\n\002cr\030\003 \001(\002" +
-      "\"9\n\023MonsterShortListRpc\022\"\n\010monsters\030\001 \003(" +
-      "\0132\020.MonsterShortRpc\"5\n\027RandomMonsterRequ" +
-      "estRpc\022\n\n\002cr\030\001 \001(\002\022\016\n\006amount\030\002 \001(\005\"Z\n\025Ge" +
-      "tMonstersRequestRpc\022\016\n\006amount\030\001 \001(\005\022\014\n\004p" +
-      "age\030\002 \001(\005\022#\n\007filters\030\003 \001(\0132\022.MonsterFilt" +
-      "ersRpc\"Z\n\021MonsterFiltersRpc\022\014\n\004name\030\001 \001(" +
-      "\t\022\n\n\002cr\030\002 \001(\002\022\017\n\007groupId\030\003 \001(\003\022\014\n\004type\030\004" +
-      " \001(\t\022\014\n\004size\030\005 \001(\t2\226\001\n\016MonsterService\022G\n" +
-      "\025getRandomMonstersByCr\022\030.RandomMonsterRe" +
-      "questRpc\032\024.MonsterShortListRpc\022;\n\013getMon" +
-      "sters\022\026.GetMonstersRequestRpc\032\024.MonsterS" +
-      "hortListRpcB\017\n\rdnd.generatedb\006proto3"
+      "\n\025monster_service.proto\032\034monster/monster" +
+      "_create.proto\032\022shared/empty.proto\"7\n\017Mon" +
+      "sterShortRpc\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\n" +
+      "\n\002cr\030\003 \001(\002\"9\n\023MonsterShortListRpc\022\"\n\010mon" +
+      "sters\030\001 \003(\0132\020.MonsterShortRpc\"5\n\027RandomM" +
+      "onsterRequestRpc\022\n\n\002cr\030\001 \001(\002\022\016\n\006amount\030\002" +
+      " \001(\005\"Z\n\025GetMonstersRequestRpc\022\016\n\006amount\030" +
+      "\001 \001(\005\022\014\n\004page\030\002 \001(\005\022#\n\007filters\030\003 \001(\0132\022.M" +
+      "onsterFiltersRpc\"Z\n\021MonsterFiltersRpc\022\014\n" +
+      "\004name\030\001 \001(\t\022\n\n\002cr\030\002 \001(\002\022\017\n\007groupId\030\003 \001(\003" +
+      "\022\014\n\004type\030\004 \001(\t\022\014\n\004size\030\005 \001(\t2\277\001\n\016Monster" +
+      "Service\022G\n\025getRandomMonstersByCr\022\030.Rando" +
+      "mMonsterRequestRpc\032\024.MonsterShortListRpc" +
+      "\022;\n\013getMonsters\022\026.GetMonstersRequestRpc\032" +
+      "\024.MonsterShortListRpc\022\'\n\rcreateMonster\022\016" +
+      ".MonsterCreate\032\006.EmptyB\017\n\rdnd.generatedb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          dnd.generated.MonsterCreateOuterClass.getDescriptor(),
+          dnd.generated.EmptyOuterClass.getDescriptor(),
         });
     internal_static_MonsterShortRpc_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3879,6 +3884,8 @@ public final class MonsterServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MonsterFiltersRpc_descriptor,
         new java.lang.String[] { "Name", "Cr", "GroupId", "Type", "Size", });
+    dnd.generated.MonsterCreateOuterClass.getDescriptor();
+    dnd.generated.EmptyOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

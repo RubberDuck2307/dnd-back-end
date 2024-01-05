@@ -38,14 +38,15 @@ public class Monster extends Creature {
     private String imageUrl;
     @Column(columnDefinition = "TEXT")
     private String legendaryActionDescription;
-
+    private Boolean homebrew;
+    private String description;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             schema = SCHEMA,
             name = SQLConfig.MONSTER_TYPE_RELATION_TABLE,
             joinColumns = @JoinColumn(name = "monster_id"),
             inverseJoinColumns = @JoinColumn(name = "type_id"))
-    private Set<MonsterType> types;
+    private Set<MonsterType> types ;
 
     @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<MonsterAbilityScore> monsterAbilityScores;

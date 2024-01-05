@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "dnd.generated";
+
+import "shared/ability_score.proto";
+
+message MonsterCreate{
+  string name = 1;
+  float cr = 2;
+  repeated string type = 3;
+  string imageUrl = 4;
+  string description = 5;
+  string size = 6;
+  AbilityScore abilityScore = 7;
+}
+

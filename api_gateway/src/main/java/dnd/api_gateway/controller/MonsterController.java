@@ -1,5 +1,7 @@
 package dnd.api_gateway.controller;
 
+import dnd.api_gateway.dto.monster.MonsterCreateDTO;
+import dnd.api_gateway.dto.monster.MonsterFullGetDto;
 import dnd.api_gateway.dto.monster.MonsterGetShortDTO;
 import dnd.api_gateway.adapter.MonsterService;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +34,10 @@ public class MonsterController {
         return "Hello World";
     }
 
+    @PostMapping("/")
+    public ResponseEntity<MonsterFullGetDto> createMonster(@RequestBody MonsterCreateDTO dto){
+      return ResponseEntity.status(201).body(monsterService.createMonster(dto));
+    }
 
 
 }

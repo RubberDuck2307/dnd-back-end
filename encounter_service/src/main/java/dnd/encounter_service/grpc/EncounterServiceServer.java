@@ -39,4 +39,6 @@ public class EncounterServiceServer extends EncounterServiceGrpc.EncounterServic
         responseObserver.onCompleted();
 
     }
+
+    public
 }

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "dnd.generated";
+
+import "shared/ability.proto";
+
+message AbilityScore{
+    repeated Ability abilities = 1;
+}

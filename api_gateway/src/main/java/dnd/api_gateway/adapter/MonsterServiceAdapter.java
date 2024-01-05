@@ -1,6 +1,8 @@
 package dnd.api_gateway.adapter;
 
 import dnd.api_gateway.client.MonsterGrpcClient;
+import dnd.api_gateway.dto.monster.MonsterCreateDTO;
+import dnd.api_gateway.dto.monster.MonsterFullGetDto;
 import dnd.api_gateway.dto.monster.MonsterGetShortDTO;
 import dnd.api_gateway.mapper.MonsterMapper;
 import dnd.generated.MonsterServiceOuterClass;
@@ -24,5 +26,11 @@ public class MonsterServiceAdapter implements MonsterService {
         
        MonsterServiceOuterClass.MonsterShortListRpc rpcList = monsterGrpcClient.getMonsters(page, size, filtersRpc);
         return monsterMapper.buildMonsterGetShortDTOList(rpcList);
+    }
+
+    @Override
+    public MonsterFullGetDto createMonster(MonsterCreateDTO dto) {
+        monsterGrpcClient.createMonster(monsterMapper.buildMonsterCreate(dto));
+        return null;
     }
 }

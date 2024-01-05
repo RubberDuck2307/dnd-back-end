@@ -1,5 +1,7 @@
 package dnd.monster_service.rpc.server;
 
+import dnd.generated.EmptyOuterClass;
+import dnd.generated.MonsterCreateOuterClass;
 import dnd.generated.MonsterServiceGrpc;
 import dnd.generated.MonsterServiceOuterClass;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
@@ -43,5 +45,11 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
         }
         responseObserver.onNext(mapper.buildMonsterShortListRpc(monsters));
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public void createMonster(MonsterCreateOuterClass.MonsterCreate request,
+                              StreamObserver<EmptyOuterClass.Empty> responseObserver) {
+        super.createMonster(request, responseObserver);
     }
 }
