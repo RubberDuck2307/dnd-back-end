@@ -8,10 +8,10 @@ import dnd.encounter_service.model.entity.encounter.EncounterFactory;
 import dnd.encounter_service.model.service.interfaces.EncounterService;
 import dnd.encounter_service.model.service.interfaces.MonsterViewService;
 import dnd.encounter_service.utils.ListUtils;
+import dnd.exception.NoSuchEncounterException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import dnd.encounter_service.exception.NoSuchEncounterException;
 
 import java.util.*;
 
@@ -44,6 +44,7 @@ public class DefaultEncounterService implements EncounterService {
      */
 
 
+    @SuppressWarnings("JavadocReference")
     @Override
     public ArrayList<Encounter> createRandomEncounter(int xp, int amountOfEncounters, float xpTolerance,
                                                       boolean differentKindOfMonsters, int maxAmountOfMonster) {

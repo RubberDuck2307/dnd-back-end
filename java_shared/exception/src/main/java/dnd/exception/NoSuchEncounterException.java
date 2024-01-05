@@ -1,4 +1,4 @@
-package dnd.encounter_service.exception;
+package dnd.exception;
 
 public class NoSuchEncounterException extends RuntimeException {
     public NoSuchEncounterException(String message) {

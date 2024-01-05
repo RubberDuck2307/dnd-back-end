@@ -1,16 +1,13 @@
 package dnd.encounter_service.grpc;
 
-import dnd.encounter_service.exception.NoSuchEncounterException;
 import dnd.encounter_service.model.entity.encounter.Encounter;
 import dnd.encounter_service.model.service.interfaces.EncounterService;
+import dnd.exception.GrpcExceptionHandler;
 import dnd.generated.EncounterServiceGrpc;
 import dnd.generated.EncounterServiceOuterClass;
-import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import net.devh.boot.grpc.server.service.GrpcService;
-import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -35,7 +32,6 @@ public class EncounterServiceServer extends EncounterServiceGrpc.EncounterServic
             responseObserver.onError(exceptionHandler.buildException(e));
             return;
         }
-
         EncounterServiceOuterClass.EncounterListRpc encounterListRpc = encounterGrpcMapper.
                 buildEncounterListRpc(encounters);
         responseObserver.onNext(encounterListRpc);
