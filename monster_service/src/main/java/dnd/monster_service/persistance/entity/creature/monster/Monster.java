@@ -1,14 +1,12 @@
 package dnd.monster_service.persistance.entity.creature.monster;
 
 import dnd.monster_service.config.SQLConfig;
+import dnd.monster_service.persistance.entity.creature.*;
 import dnd.monster_service.persistance.entity.creature.monster.damage.MonsterDamage;
 import dnd.monster_service.persistance.entity.creature.monster.damage.MonsterVulnerability;
 import dnd.monster_service.persistance.entity.creature.monster.sense.MonsterSense;
 import dnd.monster_service.persistance.entity.creature.monster.skills_of_monsters.SkillsOfMonsters;
 import dnd.monster_service.persistance.entity.creature.type.MonsterType;
-import dnd.monster_service.persistance.entity.creature.Condition;
-import dnd.monster_service.persistance.entity.creature.Creature;
-import dnd.monster_service.persistance.entity.creature.Language;
 import dnd.monster_service.persistance.entity.creature.monster.ability_score.MonsterAbilityScore;
 import dnd.monster_service.persistance.entity.creature.monster.ability_score.MonsterSavingThrow;
 import dnd.monster_service.persistance.entity.creature.monster.speeds_of_monsters.SpeedsOfMonsters;
@@ -30,7 +28,7 @@ import static dnd.monster_service.config.SQLConfig.SCHEMA;
 public class Monster extends Creature {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private Float cr;
     private String monsterName;
@@ -128,6 +126,16 @@ public class Monster extends Creature {
         Monster monster = (Monster) o;
 
         return id == monster.id;
+    }
+
+    public void setMonsterAbilityScores(Set<MonsterAbilityScore> abilities) {
+      /*  if (abilities.size() != 6) {
+            throw new IllegalArgumentException("There must be 6 abilities");
+        } */
+        for (MonsterAbilityScore ability : abilities) {
+            ability.setMonster(this);
+        }
+
     }
 
 

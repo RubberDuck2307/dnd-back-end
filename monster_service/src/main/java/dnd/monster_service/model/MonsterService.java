@@ -10,7 +10,7 @@ public interface MonsterService {
 
     List<Monster> getRandomMonstersByCr(double cr, int amountOfMonsters);
     List<Monster> getMonsters(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter);
-
+    Monster addMonster(Monster monster);
     List<Monster> getMonsters(int pageSize, int pageNumber);
 
 }

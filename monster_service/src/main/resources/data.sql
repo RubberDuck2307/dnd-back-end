@@ -216,8 +216,8 @@ INSERT INTO dnd.sense (id, name) VALUES (3, 'Tremorsense');
 INSERT INTO dnd.sense (id, name) VALUES (4, 'Truesight');
 INSERT INTO dnd.sense (id, name) VALUES (5, 'Blindsight  (blind beyond this radius)');
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (1, 10, 18, 36);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (1, 1, 'The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The aboleth regains spent legendary actions at the start of its turn.', 10, 20, 135, 4, 17, 'Natural Armor', 'Aboleth', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/11/1000/1000/636238825975375671.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 18, 36);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (1, 'The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The aboleth regains spent legendary actions at the start of its turn.', 10, 20, 135, 4, 17, 'Natural Armor', 'Aboleth', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/11/1000/1000/636238825975375671.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (1, 2, 9);
@@ -251,8 +251,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (1, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (1, 58);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (2, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (2, 2, 'null', 0.25, 12, 9, 3, 10, '', 'Acolyte', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (2, 'null', 0.25, 12, 9, 3, 10, '', 'Acolyte', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (2, 2, 10);
@@ -272,8 +272,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellca
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (2, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (3, 12, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (3, 3, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 21, 195, 6, 19, 'Natural Armor', 'Adult Black Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/13/1000/1000/636238871029832086.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 17, 85);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (3, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 21, 195, 6, 19, 'Natural Armor', 'Adult Black Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/13/1000/1000/636238871029832086.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (3, 2, 14);
@@ -312,8 +312,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (3, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (3, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (4, 12, 18, 108);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (4, 4, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 22, 225, 6, 19, 'Natural Armor', 'Adult Blue Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/16/1000/1000/636238882493439723.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 18, 108);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (4, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 22, 225, 6, 19, 'Natural Armor', 'Adult Blue Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/16/1000/1000/636238882493439723.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (4, 2, 10);
@@ -351,8 +351,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (4, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (4, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (5, 12, 15, 75);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (5, 5, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 172, 6, 18, 'Natural Armor', 'Adult Brass Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/18/1000/1000/636238885681129014.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 15, 75);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (5, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 172, 6, 18, 'Natural Armor', 'Adult Brass Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/18/1000/1000/636238885681129014.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (5, 2, 10);
@@ -394,8 +394,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (5, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (5, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (6, 12, 17, 102);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (6, 6, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 212, 6, 19, 'Natural Armor', 'Adult Bronze Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/20/1000/1000/636238888310108665.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 17, 102);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (6, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 212, 6, 19, 'Natural Armor', 'Adult Bronze Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/20/1000/1000/636238888310108665.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (6, 2, 10);
@@ -438,8 +438,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (6, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (6, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (7, 12, 16, 80);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (7, 7, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 22, 184, 6, 18, 'Natural Armor', 'Adult Copper Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/22/1000/1000/636238956325913912.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 16, 80);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (7, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 14, 22, 184, 6, 18, 'Natural Armor', 'Adult Copper Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/22/1000/1000/636238956325913912.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (7, 2, 12);
@@ -480,8 +480,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (7, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (7, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (8, 12, 19, 133);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (8, 8, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 24, 256, 6, 19, 'Natural Armor', 'Adult Gold Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/24/1000/1000/636238958915127190.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 19, 133);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (8, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 24, 256, 6, 19, 'Natural Armor', 'Adult Gold Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/24/1000/1000/636238958915127190.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (8, 2, 14);
@@ -525,8 +525,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (8, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (8, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (9, 12, 18, 90);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (9, 9, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 207, 6, 19, 'Natural Armor', 'Adult Green Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/26/1000/1000/636238962276510242.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 18, 90);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (9, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 15, 22, 207, 6, 19, 'Natural Armor', 'Adult Green Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/26/1000/1000/636238962276510242.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (9, 2, 12);
@@ -569,8 +569,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (9, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (9, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (10, 12, 19, 133);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (10, 10, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 23, 256, 6, 19, 'Natural Armor', 'Adult Red Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/28/1000/1000/636238971817119794.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 19, 133);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (10, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 17, 23, 256, 6, 19, 'Natural Armor', 'Adult Red Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/28/1000/1000/636238971817119794.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (10, 2, 10);
@@ -608,8 +608,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (10, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (10, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (11, 12, 18, 126);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (11, 11, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 21, 243, 6, 19, 'Natural Armor', 'Adult Silver Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/123/1000/1000/636252753945133025.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 18, 126);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (11, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 16, 21, 243, 6, 19, 'Natural Armor', 'Adult Silver Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/123/1000/1000/636252753945133025.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (11, 2, 10);
@@ -651,8 +651,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (11, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (11, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (12, 12, 16, 96);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (12, 12, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 200, 6, 18, 'Natural Armor', 'Adult White Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/125/1000/1000/636252755468117001.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 16, 96);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (12, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 13, 21, 200, 6, 18, 'Natural Armor', 'Adult White Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/125/1000/1000/636252755468117001.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (12, 2, 10);
@@ -692,8 +692,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (12, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (12, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (13, 10, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (13, 13, 'null', 5, 10, 90, 4, 15, '', 'Air Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/127/1000/1000/636252755648556800.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 12, 24);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (13, 'null', 5, 10, 90, 4, 15, '', 'Air Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/127/1000/1000/636252755648556800.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (13, 2, 20);
@@ -735,8 +735,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Air For
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (13, 2);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (14, 10, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (14, 14, 'null', 2, 15, 51, 4, 13, 'Natural Armor', 'Allosaurus', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (14, 'null', 2, 15, 51, 4, 13, 'Natural Armor', 'Allosaurus', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (14, 2, 13);
@@ -756,8 +756,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (14, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (15, 20, 21, 147);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (15, 15, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 26, 367, 2, 22, 'Natural Armor', 'Ancient Black Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/129/315/315/636252755854649337.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 21, 147);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (15, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 26, 367, 2, 22, 'Natural Armor', 'Ancient Black Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/129/315/315/636252755854649337.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (15, 2, 14);
@@ -796,8 +796,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (15, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (15, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (16, 20, 26, 208);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (16, 16, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 27, 481, 2, 22, 'Natural Armor', 'Ancient Blue Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/131/1000/1000/636252756020185006.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 26, 208);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (16, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 27, 481, 2, 22, 'Natural Armor', 'Ancient Blue Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/131/1000/1000/636252756020185006.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 1, 29);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (16, 2, 10);
@@ -835,8 +835,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (16, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (16, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (17, 20, 17, 119);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (17, 17, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 24, 297, 2, 20, 'Natural Armor', 'Ancient Brass Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/133/1000/1000/636252756157427258.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 17, 119);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (17, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 24, 297, 2, 20, 'Natural Armor', 'Ancient Brass Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/133/1000/1000/636252756157427258.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (17, 2, 10);
@@ -879,8 +879,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (17, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (17, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (18, 20, 24, 192);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (18, 18, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 444, 2, 22, 'Natural Armor', 'Ancient Bronze Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/135/315/315/636252756372367681.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 24, 192);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (18, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 444, 2, 22, 'Natural Armor', 'Ancient Bronze Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/135/315/315/636252756372367681.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 1, 29);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (18, 2, 10);
@@ -923,8 +923,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (18, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (18, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (19, 20, 20, 140);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (19, 19, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 27, 350, 2, 21, 'Natural Armor', 'Ancient Copper Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/137/1000/1000/636252756714896878.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 20, 140);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (19, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 21, 27, 350, 2, 21, 'Natural Armor', 'Ancient Copper Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/137/1000/1000/636252756714896878.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (19, 2, 12);
@@ -966,8 +966,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (19, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (19, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (20, 20, 28, 252);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (20, 20, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 27, 546, 2, 22, 'Natural Armor', 'Ancient Gold Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/139/315/315/636252756930565101.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 28, 252);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (20, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 27, 546, 2, 22, 'Natural Armor', 'Ancient Gold Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/139/315/315/636252756930565101.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (20, 2, 14);
@@ -1011,8 +1011,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (20, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (20, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (21, 20, 22, 154);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (21, 21, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 385, 2, 21, 'Natural Armor', 'Ancient Green Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/141/1000/1000/636252757319464533.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 22, 154);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (21, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 22, 27, 385, 2, 21, 'Natural Armor', 'Ancient Green Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/141/1000/1000/636252757319464533.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (21, 2, 12);
@@ -1055,8 +1055,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (21, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (21, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (22, 20, 28, 252);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (22, 22, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 26, 546, 2, 22, 'Natural Armor', 'Ancient Red Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/147/1000/1000/636252758629652181.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 28, 252);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (22, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 24, 26, 546, 2, 22, 'Natural Armor', 'Ancient Red Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/147/1000/1000/636252758629652181.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (22, 2, 10);
@@ -1094,8 +1094,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (22, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (22, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (23, 20, 25, 225);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (23, 23, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 26, 487, 2, 22, 'Natural Armor', 'Ancient Silver Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/151/1000/1000/636252758799225927.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 25, 225);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (23, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 23, 26, 487, 2, 22, 'Natural Armor', 'Ancient Silver Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/151/1000/1000/636252758799225927.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (23, 2, 10);
@@ -1137,8 +1137,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (23, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (23, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (24, 20, 18, 144);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (24, 24, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 23, 333, 2, 20, 'Natural Armor', 'Ancient White Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/153/1000/1000/636252758955886210.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 18, 144);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (24, 'The dragon can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The dragon regains spent legendary actions at the start of its turn.', 20, 23, 333, 2, 20, 'Natural Armor', 'Ancient White Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/153/1000/1000/636252758955886210.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 1, 26);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (24, 2, 10);
@@ -1178,8 +1178,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (24, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (24, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (25, 10, 19, 95);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (25, 25, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 17, 20, 199, 4, 17, 'Natural Armor', 'Androsphinx', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/157/1000/1000/636252759145617281.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 19, 95);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (25, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 17, 20, 199, 4, 17, 'Natural Armor', 'Androsphinx', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/157/1000/1000/636252759145617281.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (25, 2, 10);
@@ -1223,8 +1223,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (25, 66);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (25, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (26, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (26, 26, 'null', 1, 6, 33, 3, 18, 'Natural Armor', 'Animated Armor', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/8/429/1000/1000/636306156895834255.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (26, 'null', 1, 6, 33, 3, 18, 'Natural Armor', 'Animated Armor', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/8/429/1000/1000/636306156895834255.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (26, 2, 11);
@@ -1255,8 +1255,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (26, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (27, 10, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (27, 27, 'null', 2, 11, 39, 4, 14, 'Natural Armor, 11 While Prone', 'Ankheg', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/161/315/315/636252759871983921.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (27, 'null', 2, 11, 39, 4, 14, 'Natural Armor, 11 While Prone', 'Ankheg', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/161/315/315/636252759871983921.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (27, 2, 11);
@@ -1277,8 +1277,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Sp
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (27, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (28, 12, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (28, 28, 'null', 3, 11, 68, 6, 15, 'Natural', 'Ankylosaurus', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 8, 16);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (28, 'null', 3, 11, 68, 6, 15, 'Natural', 'Ankylosaurus', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (28, 2, 11);
@@ -1295,8 +1295,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Tail', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (28, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (29, 8, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (29, 29, 'null', 0.5, 13, 19, 3, 12, '', 'Ape', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (29, 'null', 0.5, 13, 19, 3, 12, '', 'Ape', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (29, 2, 14);
@@ -1318,8 +1318,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (29, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (30, 8, 18, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (30, 30, 'null', 12, 12, 99, 3, 12, '15 With Mage Armor', 'Archmage', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/167/1000/1000/636252760213195530.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 18, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (30, 'null', 12, 12, 99, 3, 12, '15 With Mage Armor', 'Archmage', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/167/1000/1000/636252760213195530.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (30, 2, 14);
@@ -1342,8 +1342,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellca
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (30, 49);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (31, 8, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (31, 31, 'null', 8, 13, 78, 3, 15, 'Studded Leather', 'Assassin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/910/315/315/636334293020978804.png');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 12, 24);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (31, 'null', 8, 13, 78, 3, 15, 'Studded Leather', 'Assassin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/910/315/315/636334293020978804.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (31, 2, 16);
@@ -1372,8 +1372,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sneak A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (31, 9);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (32, 6, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (32, 32, 'null', 0, 10, 10, 1, 9, '', 'Awakened Shrub', 'https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (32, 'null', 0, 10, 10, 1, 9, '', 'Awakened Shrub', 'https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (32, 2, 8);
@@ -1393,8 +1393,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (32, 29);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (33, 12, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (33, 33, 'null', 2, 10, 59, 6, 13, 'Natural Armor', 'Awakened Tree', 'https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 7, 14);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (33, 'null', 2, 10, 59, 6, 13, 'Natural Armor', 'Awakened Tree', 'https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (33, 2, 6);
@@ -1415,8 +1415,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (33, 29);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (34, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (34, 34, 'null', 0.25, 10, 19, 4, 11, '', 'Axe Beak', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (34, 'null', 0.25, 10, 19, 4, 11, '', 'Axe Beak', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (34, 2, 12);
@@ -1433,8 +1433,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Beak', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (34, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (35, 8, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (35, 35, 'null', 2, 11, 39, 3, 17, 'Natural Armor, Shield', 'Azer', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/171/1000/1000/636252761112348397.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (35, 'null', 2, 11, 39, 3, 17, 'Natural Armor, Shield', 'Azer', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/171/1000/1000/636252761112348397.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (35, 2, 12);
@@ -1458,8 +1458,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (35, 24);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (36, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (36, 36, 'null', 0, 11, 3, 1, 12, '', 'Baboon', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (36, 'null', 0, 11, 3, 1, 12, '', 'Baboon', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (36, 2, 14);
@@ -1478,8 +1478,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (36, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (37, 4, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (37, 37, 'null', 0, 11, 3, 5, 10, '', 'Badger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/528/1000/1000/636376327632236333.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, 1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (37, 'null', 0, 11, 3, 5, 10, '', 'Badger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/528/1000/1000/636376327632236333.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (37, 2, 11);
@@ -1499,8 +1499,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (37, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (38, 12, 21, 126);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (38, 38, 'null', 19, 13, 262, 6, 19, 'Natural Armor', 'Balor', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/175/1000/1000/636252761612038117.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 21, 126);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (38, 'null', 19, 13, 262, 6, 19, 'Natural Armor', 'Balor', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/175/1000/1000/636252761612038117.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 1, 26);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (38, 2, 15);
@@ -1546,8 +1546,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (38, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (38, 61);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (39, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (39, 39, 'null', 0.125, 10, 11, 3, 12, 'Leather Armor', 'Bandit', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (39, 'null', 0.125, 10, 11, 3, 12, 'Leather Armor', 'Bandit', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (39, 2, 12);
@@ -1565,8 +1565,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Scimita
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (39, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (40, 8, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (40, 40, 'null', 2, 10, 65, 3, 15, 'Studded Leather', 'Bandit Captain', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/181/1000/1000/636252761965117015.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 10, 20);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (40, 'null', 2, 10, 65, 3, 15, 'Studded Leather', 'Bandit Captain', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/181/1000/1000/636252761965117015.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (40, 2, 16);
@@ -1591,8 +1591,8 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (40, 'T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (40, 65);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (41, 8, 13, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (41, 41, 'null', 4, 10, 58, 3, 12, '', 'Banshee', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/8/446/315/315/636306384206418474.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 13, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (41, 'null', 4, 10, 58, 3, 12, '', 'Banshee', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/8/446/315/315/636306384206418474.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (41, 2, 14);
@@ -1646,8 +1646,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (41, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (41, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (42, 8, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (42, 42, 'null', 5, 18, 110, 3, 15, 'Natural Armor', 'Barbed Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/486/315/315/636376302569423870.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 13, 52);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (42, 'null', 5, 18, 110, 3, 15, 'Natural Armor', 'Barbed Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/486/315/315/636376302569423870.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (42, 2, 17);
@@ -1692,8 +1692,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (42, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (42, 48);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (43, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (43, 43, 'null', 3, 9, 52, 3, 15, 'Natural Armor', 'Basilisk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/185/1000/1000/636252762168821795.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, 16);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (43, 'null', 3, 9, 52, 3, 15, 'Natural Armor', 'Basilisk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/185/1000/1000/636252762168821795.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (43, 2, 8);
@@ -1712,8 +1712,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Petrify
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (43, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (44, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (44, 44, 'null', 0, 11, 1, 5, 12, '', 'Bat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/305/1000/1000/636379812593010967.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (44, 'null', 0, 11, 1, 5, 12, '', 'Bat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/305/1000/1000/636379812593010967.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (44, 2, 15);
@@ -1734,8 +1734,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echoloc
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (44, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (45, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (45, 45, 'null', 3, 10, 52, 3, 13, 'Natural Armor', 'Bearded Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/193/1000/1000/636252763397604505.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, 16);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (45, 'null', 3, 10, 52, 3, 13, 'Natural Armor', 'Bearded Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/193/1000/1000/636252763397604505.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (45, 2, 15);
@@ -1775,8 +1775,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (45, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (45, 48);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (46, 12, 16, 64);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (46, 46, 'null', 11, 16, 168, 6, 17, 'Natural Armor', 'Behir', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/195/1000/1000/636252763748680024.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 16, 64);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (46, 'null', 11, 16, 168, 6, 17, 'Natural Armor', 'Behir', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/195/1000/1000/636252763748680024.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (46, 2, 16);
@@ -1802,8 +1802,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (46, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (47, 8, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (47, 47, 'null', 2, 10, 67, 3, 13, 'Hide Armor', 'Berserker', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 9, 27);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (47, 'null', 2, 10, 67, 3, 13, 'Hide Armor', 'Berserker', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (47, 2, 12);
@@ -1821,8 +1821,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Reckles
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (47, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (48, 8, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (48, 48, 'null', 0.5, 13, 19, 3, 11, 'Natural Armor', 'Black Bear', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (48, 'null', 0.5, 13, 19, 3, 11, 'Natural Armor', 'Black Bear', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (48, 2, 10);
@@ -1844,8 +1844,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (48, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (49, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (49, 49, 'null', 2, 14, 33, 3, 17, 'Natural Armor', 'Black Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/496/1000/1000/636376308217017511.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (49, 'null', 2, 14, 33, 3, 17, 'Natural Armor', 'Black Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/496/1000/1000/636376308217017511.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (49, 2, 14);
@@ -1875,8 +1875,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (49, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (50, 10, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (50, 50, 'null', 4, 8, 85, 4, 7, '', 'Black Pudding', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/201/315/315/636252764027417823.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 10, 30);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (50, 'null', 4, 8, 85, 4, 7, '', 'Black Pudding', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/201/315/315/636252764027417823.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (50, 2, 5);
@@ -1909,8 +1909,8 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (50, 'W
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (50, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (51, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (51, 51, 'null', 0.25, 13, 22, 3, 13, '', 'Blink Dog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/205/315/315/636252764168652859.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (51, 'null', 0.25, 13, 22, 3, 13, '', 'Blink Dog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/205/315/315/636252764168652859.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (51, 2, 17);
@@ -1931,8 +1931,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (51, 63);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (52, 6, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (52, 52, 'null', 0.125, 14, 7, 1, 12, '', 'Blood Hawk', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 2, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (52, 'null', 0.125, 14, 7, 1, 12, '', 'Blood Hawk', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (52, 2, 14);
@@ -1953,8 +1953,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (52, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (53, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (53, 53, 'null', 3, 14, 52, 3, 17, 'Natural Armor', 'Blue Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/209/1000/1000/636252764637244026.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, 16);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (53, 'null', 3, 14, 52, 3, 17, 'Natural Armor', 'Blue Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/209/1000/1000/636252764637244026.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (53, 2, 10);
@@ -1983,8 +1983,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (53, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (54, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (54, 54, 'null', 0.25, 9, 11, 3, 11, 'Natural Armor', 'Boar', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (54, 'null', 0.25, 9, 11, 3, 11, 'Natural Armor', 'Boar', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (54, 2, 11);
@@ -2003,8 +2003,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (54, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (55, 10, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (55, 55, 'null', 9, 12, 142, 4, 19, 'Natural Armor', 'Bone Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/481/1000/1000/636328225187253200.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 15, 60);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (55, 'null', 9, 12, 142, 4, 19, 'Natural Armor', 'Bone Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/481/1000/1000/636328225187253200.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (55, 2, 16);
@@ -2046,8 +2046,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (55, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (55, 48);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (56, 8, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (56, 56, 'null', 1, 14, 16, 3, 16, 'Natural Armor', 'Brass Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/215/315/315/636252764963208954.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (56, 'null', 1, 14, 16, 3, 16, 'Natural Armor', 'Brass Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/215/315/315/636252764963208954.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (56, 2, 10);
@@ -2078,8 +2078,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Fire Br
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (56, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (57, 8, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (57, 57, 'null', 2, 14, 32, 3, 17, 'Natural Armor', 'Bronze Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/492/315/315/636376306909593829.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 10);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (57, 'null', 2, 14, 32, 3, 17, 'Natural Armor', 'Bronze Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/492/315/315/636376306909593829.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (57, 2, 10);
@@ -2111,8 +2111,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (57, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (58, 10, 4, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (58, 58, 'null', 1, 13, 34, 4, 11, 'Natural Armor', 'Brown Bear', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 4, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (58, 'null', 1, 13, 34, 4, 11, 'Natural Armor', 'Brown Bear', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (58, 2, 10);
@@ -2134,8 +2134,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (58, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (59, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (59, 59, 'null', 1, 10, 27, 3, 16, 'Hide Armor, Shield', 'Bugbear', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/221/1000/1000/636252765234633232.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 5);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (59, 'null', 1, 10, 27, 3, 16, 'Hide Armor, Shield', 'Bugbear', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/221/1000/1000/636252765234633232.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (59, 2, 14);
@@ -2159,8 +2159,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (59, 7);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (59, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (60, 10, 9, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (60, 60, 'null', 5, 16, 94, 4, 17, 'Natural Armor', 'Bulette', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/223/315/315/636252765369632881.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 9, 45);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (60, 'null', 5, 16, 94, 4, 17, 'Natural Armor', 'Bulette', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/223/315/315/636252765369632881.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (60, 2, 11);
@@ -2183,8 +2183,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Standin
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (60, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (61, 10, 2, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (61, 61, 'null', 0.125, 9, 15, 4, 9, '', 'Camel', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 2, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (61, 'null', 0.125, 9, 15, 4, 9, '', 'Camel', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (61, 2, 8);
@@ -2201,8 +2201,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (61, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (62, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (62, 62, 'null', 0, 13, 2, 5, 12, '', 'Cat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (62, 'null', 0, 13, 2, 5, 12, '', 'Cat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (62, 2, 15);
@@ -2223,8 +2223,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (62, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (63, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (63, 63, 'null', 2, 13, 45, 4, 12, '', 'Centaur', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/227/1000/1000/636252765573266420.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (63, 'null', 2, 13, 45, 4, 12, '', 'Centaur', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/227/1000/1000/636252765573266420.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (63, 2, 14);
@@ -2249,8 +2249,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (63, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (63, 56);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (64, 8, 10, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (64, 64, 'null', 8, 11, 85, 3, 16, 'Natural Armor', 'Chain Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/235/1000/1000/636252766618069332.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 10, 40);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (64, 'null', 8, 11, 85, 3, 16, 'Natural Armor', 'Chain Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/235/1000/1000/636252766618069332.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (64, 2, 15);
@@ -2290,8 +2290,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (64, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (64, 48);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (65, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (65, 65, 'null', 6, 18, 114, 4, 14, 'Natural Armor', 'Chimera', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/237/1000/1000/636252766770156389.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 12, 48);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (65, 'null', 6, 18, 114, 4, 14, 'Natural Armor', 'Chimera', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/237/1000/1000/636252766770156389.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (65, 2, 11);
@@ -2315,8 +2315,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (65, 17);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (66, 10, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (66, 66, 'null', 4, 14, 93, 4, 16, 'Natural Armor', 'Chuul', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/241/1000/1000/636252767122656355.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 11, 33);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (66, 'null', 4, 14, 93, 4, 16, 'Natural Armor', 'Chuul', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/241/1000/1000/636252767122656355.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (66, 2, 10);
@@ -2342,8 +2342,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (66, 23);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (67, 10, 14, 56);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (67, 67, 'null', 9, 9, 133, 4, 14, 'Natural Armor', 'Clay Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/243/315/315/636252767318152303.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 14, 56);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (67, 'null', 9, 9, 133, 4, 14, 'Natural Armor', 'Clay Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/243/315/315/636252767318152303.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (67, 2, 9);
@@ -2380,8 +2380,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic W
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (67, 21);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (68, 10, 12, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (68, 68, 'null', 8, 11, 78, 4, 14, 'Natural Armor', 'Cloaker', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/245/1000/1000/636252767458838228.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 12, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (68, 'null', 8, 11, 78, 4, 14, 'Natural Armor', 'Cloaker', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/245/1000/1000/636252767458838228.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (68, 2, 15);
@@ -2409,8 +2409,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (68, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (68, 58);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (69, 12, 16, 96);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (69, 69, 'null', 9, 17, 200, 6, 14, 'Natural Armor', 'Cloud Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/249/1000/1000/636252767619414260.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 16, 96);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (69, 'null', 9, 17, 200, 6, 14, 'Natural Armor', 'Cloud Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/249/1000/1000/636252767619414260.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 1, 27);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (69, 2, 10);
@@ -2437,8 +2437,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (69, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (69, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (70, 6, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (70, 70, 'null', 0.5, 11, 27, 1, 11, '', 'Cockatrice', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/251/315/315/636252767744669874.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 6, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (70, 'null', 0.5, 11, 27, 1, 11, '', 'Cockatrice', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/251/315/315/636252767744669874.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (70, 2, 12);
@@ -2457,8 +2457,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (70, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (71, 8, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (71, 71, 'null', 0, 10, 4, 3, 10, '', 'Commoner', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (71, 'null', 0, 10, 4, 3, 10, '', 'Commoner', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (71, 2, 10);
@@ -2475,8 +2475,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Club', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (71, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (72, 10, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (72, 72, 'null', 0.25, 10, 13, 4, 12, '', 'Constrictor Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (72, 'null', 0.25, 10, 13, 4, 12, '', 'Constrictor Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (72, 2, 14);
@@ -2496,8 +2496,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (72, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (73, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (73, 73, 'null', 1, 14, 22, 3, 16, 'Natural Armor', 'Copper Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/255/1000/1000/636252768002215182.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (73, 'null', 1, 14, 22, 3, 16, 'Natural Armor', 'Copper Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/255/1000/1000/636252768002215182.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (73, 2, 12);
@@ -2528,8 +2528,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Acid Br
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (73, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (74, 8, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (74, 74, 'null', 4, 15, 97, 3, 19, 'Natural Armor', 'Couatl', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/257/1000/1000/636252768143323827.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 13, 39);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (74, 'null', 4, 15, 97, 3, 19, 'Natural Armor', 'Couatl', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/257/1000/1000/636252768143323827.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (74, 2, 20);
@@ -2562,8 +2562,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (74, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (74, 64);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (75, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (75, 75, 'null', 0, 9, 2, 5, 11, 'Natural Armor', 'Crab', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (75, 'null', 0, 9, 2, 5, 11, 'Natural Armor', 'Crab', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (75, 2, 11);
@@ -2584,8 +2584,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (75, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (76, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (76, 76, 'null', 0.5, 10, 19, 4, 12, 'Natural Armor', 'Crocodile', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (76, 'null', 0.5, 10, 19, 4, 12, 'Natural Armor', 'Crocodile', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (76, 2, 10);
@@ -2605,8 +2605,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Br
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (76, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (77, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (77, 77, 'null', 2, 11, 33, 3, 13, 'Leather Armor', 'Cult Fanatic', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/259/1000/1000/636252768307230924.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (77, 'null', 2, 11, 33, 3, 13, 'Leather Armor', 'Cult Fanatic', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/259/1000/1000/636252768307230924.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (77, 2, 14);
@@ -2629,8 +2629,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellca
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (77, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (78, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (78, 78, 'null', 0.125, 10, 9, 3, 12, 'Leather Armor', 'Cultist', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/481/1000/1000/636364323106021375.png');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (78, 'null', 0.125, 10, 9, 3, 12, 'Leather Armor', 'Cultist', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/481/1000/1000/636364323106021375.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (78, 2, 12);
@@ -2650,8 +2650,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Dark De
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (78, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (79, 12, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (79, 79, 'null', 6, 8, 138, 6, 14, 'Natural Armor', 'Cyclops', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/470/1000/1000/636376290137285130.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 12, 60);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (79, 'null', 6, 8, 138, 6, 14, 'Natural Armor', 'Cyclops', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/470/1000/1000/636376290137285130.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (79, 2, 11);
@@ -2671,8 +2671,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Poor De
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (79, 35);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (80, 6, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (80, 80, 'null', 0.5, 10, 22, 1, 11, '', 'Darkmantle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/263/315/315/636252768676699519.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 5, 5);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (80, 'null', 0.5, 10, 22, 1, 11, '', 'Darkmantle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/263/315/315/636252768676699519.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (80, 2, 12);
@@ -2695,8 +2695,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echoloc
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (80, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (81, 8, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (81, 81, 'null', 1, 15, 39, 3, 12, '', 'Death Dog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/265/1000/1000/636252768823194310.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (81, 'null', 1, 15, 39, 3, 12, '', 'Death Dog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/265/1000/1000/636252768823194310.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (81, 2, 14);
@@ -2718,8 +2718,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Two-Hea
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (81, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (82, 6, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (82, 82, 'null', 0.5, 12, 16, 1, 15, 'Chain Shirt', 'Deep Gnome (Svirfneblin)', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/112/1000/1000/636323610009818415.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 3, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (82, 'null', 0.5, 12, 16, 1, 15, 'Chain Shirt', 'Deep Gnome (Svirfneblin)', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/112/1000/1000/636323610009818415.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (82, 2, 14);
@@ -2746,8 +2746,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (82, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (82, 55);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (83, 8, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (83, 83, 'null', 0, 12, 4, 3, 13, '', 'Deer', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (83, 'null', 0, 12, 4, 3, 13, '', 'Deer', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (83, 2, 16);
@@ -2764,8 +2764,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (83, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (84, 8, 16, 64);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (84, 84, 'null', 10, 19, 136, 3, 17, 'Natural Armor', 'Deva', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/267/1000/1000/636252768980059444.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 16, 64);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (84, 'null', 10, 19, 136, 3, 17, 'Natural Armor', 'Deva', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/267/1000/1000/636252768980059444.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (84, 2, 18);
@@ -2806,8 +2806,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (84, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (84, 64);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (85, 10, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (85, 85, 'null', 1, 13, 37, 4, 14, 'Natural Armor', 'Dire Wolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/484/315/315/636376300478361995.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 5, 10);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (85, 'null', 1, 13, 37, 4, 14, 'Natural Armor', 'Dire Wolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/484/315/315/636376300478361995.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (85, 2, 15);
@@ -2828,8 +2828,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (85, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (86, 10, 14, 84);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (86, 86, 'null', 11, 13, 161, 4, 17, 'Natural Armor', 'Djinni', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/281/315/315/636252770322204007.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 14, 84);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (86, 'null', 11, 13, 161, 4, 17, 'Natural Armor', 'Djinni', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/281/315/315/636252770322204007.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (86, 2, 15);
@@ -2857,8 +2857,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (86, 2);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (87, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (87, 87, 'null', 3, 11, 52, 3, 14, '', 'Doppelganger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/289/315/315/636252770983164351.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, 16);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (87, 'null', 3, 11, 52, 3, 14, '', 'Doppelganger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/289/315/315/636252770983164351.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (87, 2, 18);
@@ -2884,8 +2884,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Surpris
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (87, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (88, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (88, 88, 'null', 0.25, 10, 19, 4, 10, '', 'Draft Horse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (88, 'null', 0.25, 10, 19, 4, 10, '', 'Draft Horse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (88, 2, 10);
@@ -2902,8 +2902,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (88, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (89, 20, 22, 110);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (89, 89, 'null', 17, 11, 341, 2, 20, 'Natural Armor', 'Dragon Turtle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/291/1000/1000/636252771128151641.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 22, 110);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (89, 'null', 17, 11, 341, 2, 20, 'Natural Armor', 'Dragon Turtle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/291/1000/1000/636252771128151641.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (89, 2, 10);
@@ -2932,8 +2932,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (89, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (89, 47);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (90, 6, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (90, 90, 'null', 0.25, 9, 18, 1, 11, 'Natural Armor', 'Dretch', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/293/1000/1000/636252771253285096.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (90, 'null', 0.25, 9, 18, 1, 11, 'Natural Armor', 'Dretch', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/293/1000/1000/636252771253285096.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (90, 2, 11);
@@ -2960,8 +2960,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (90, 4);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (90, 61);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (91, 10, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (91, 91, 'null', 6, 15, 123, 4, 19, 'Natural Armor', 'Drider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/295/1000/1000/636252771409285458.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 13, 52);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (91, 'null', 6, 15, 123, 4, 19, 'Natural Armor', 'Drider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/295/1000/1000/636252771409285458.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (91, 2, 16);
@@ -2991,8 +2991,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (91, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (91, 56);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (92, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (92, 92, 'null', 0.25, 12, 13, 3, 15, 'Chain Shirt', 'Drow', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/501/1000/1000/636376310726273495.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (92, 'null', 0.25, 12, 13, 3, 15, 'Chain Shirt', 'Drow', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/501/1000/1000/636376310726273495.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (92, 2, 14);
@@ -3017,8 +3017,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (92, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (92, 56);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (93, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (93, 93, 'null', 2, 14, 27, 3, 11, '16 With Barkskin', 'Druid', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/299/1000/1000/636252771583275655.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 5);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (93, 'null', 2, 14, 27, 3, 11, '16 With Barkskin', 'Druid', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/299/1000/1000/636252771583275655.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (93, 2, 12);
@@ -3039,8 +3039,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellca
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (93, 67);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (94, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (94, 94, 'null', 1, 14, 22, 3, 11, '16 With Barkskin', 'Dryad', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/307/1000/1000/636252771953950206.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (94, 'null', 1, 14, 22, 3, 11, '16 With Barkskin', 'Dryad', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/307/1000/1000/636252771953950206.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (94, 2, 12);
@@ -3066,8 +3066,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (94, 40);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (94, 56);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (95, 8, 4, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (95, 95, 'null', 1, 10, 26, 3, 16, 'Scale Mail, Shield', 'Duergar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/309/1000/1000/636252772101183765.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 4, 8);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (95, 'null', 1, 10, 26, 3, 16, 'Scale Mail, Shield', 'Duergar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/309/1000/1000/636252772101183765.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (95, 2, 11);
@@ -3092,8 +3092,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (95, 33);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (95, 68);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (96, 6, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (96, 96, 'null', 0.5, 12, 17, 1, 12, '', 'Dust Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/313/1000/1000/636252772213922157.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 5, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (96, 'null', 0.5, 12, 17, 1, 12, '', 'Dust Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/313/1000/1000/636252772213922157.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (96, 2, 14);
@@ -3121,8 +3121,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (96, 2);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (96, 53);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (97, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (97, 97, 'null', 0, 14, 3, 1, 12, '', 'Eagle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/515/1000/1000/636376317171111968.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (97, 'null', 0, 14, 3, 1, 12, '', 'Eagle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/515/1000/1000/636376317171111968.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (97, 2, 15);
@@ -3142,8 +3142,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (97, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (98, 10, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (98, 98, 'null', 5, 10, 126, 4, 17, 'Natural Armor', 'Earth Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/317/315/315/636252772331779404.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 12, 60);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (98, 'null', 5, 10, 126, 4, 17, 'Natural Armor', 'Earth Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/317/315/315/636252772331779404.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (98, 2, 8);
@@ -3180,8 +3180,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Earth G
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (98, 53);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (99, 10, 16, 112);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (99, 99, 'null', 11, 12, 200, 4, 17, 'Natural Armor', 'Efreeti', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/325/1000/1000/636252775714332067.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 16, 112);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (99, 'null', 11, 12, 200, 4, 17, 'Natural Armor', 'Efreeti', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/325/1000/1000/636252775714332067.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (99, 2, 12);
@@ -3208,8 +3208,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Innate 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (99, 24);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (100, 12, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (100, 100, 'null', 4, 10, 76, 6, 12, 'Natural Armor', 'Elephant', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 8, 24);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (100, 'null', 4, 10, 76, 6, 12, 'Natural Armor', 'Elephant', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (100, 2, 9);
@@ -3228,8 +3228,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampli
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (100, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (101, 10, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (101, 101, 'null', 0.25, 10, 13, 4, 10, '', 'Elk', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (101, 'null', 0.25, 10, 13, 4, 10, '', 'Elk', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (101, 2, 10);
@@ -3248,8 +3248,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (101, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (102, 8, 18, 72);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (102, 102, 'null', 12, 12, 153, 3, 18, 'Plate', 'Erinyes', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/329/1000/1000/636252776041158657.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 18, 72);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (102, 'null', 12, 12, 153, 3, 18, 'Plate', 'Erinyes', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/329/1000/1000/636252776041158657.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (102, 2, 16);
@@ -3291,8 +3291,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (102, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (102, 48);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (103, 8, 8, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (103, 103, 'null', 2, 13, 44, 3, 13, 'Natural Armor', 'Ettercap', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/339/315/315/636252776771842998.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, 8);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (103, 'null', 2, 13, 44, 3, 13, 'Natural Armor', 'Ettercap', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/339/315/315/636252776771842998.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (103, 2, 15);
@@ -3320,8 +3320,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Wal
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (103, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (104, 10, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (104, 104, 'null', 4, 14, 85, 4, 12, 'Natural Armor', 'Ettin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/341/1000/1000/636252776953634777.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 10, 30);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (104, 'null', 4, 14, 85, 4, 12, 'Natural Armor', 'Ettin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/341/1000/1000/636252776953634777.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (104, 2, 8);
@@ -3345,8 +3345,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (104, 39);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (104, 35);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (105, 10, 12, 36);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (105, 105, 'null', 5, 10, 102, 4, 13, '', 'Fire Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/343/1000/1000/636252777098624896.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 12, 36);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (105, 'null', 5, 10, 102, 4, 13, '', 'Fire Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/343/1000/1000/636252777098624896.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (105, 2, 17);
@@ -3386,8 +3386,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water S
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (105, 24);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (106, 12, 13, 78);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (106, 106, 'null', 9, 16, 162, 6, 18, 'Plate', 'Fire Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/357/1000/1000/636252778143767005.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 13, 78);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (106, 'null', 9, 16, 162, 6, 18, 'Plate', 'Fire Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/357/1000/1000/636252778143767005.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (106, 2, 9);
@@ -3412,8 +3412,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (106, 35);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (107, 4, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (107, 107, 'null', 4, 12, 40, 5, 13, '', 'Flameskull', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/487/315/315/636364325235118776.png');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 9, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (107, 'null', 4, 12, 40, 5, 13, '', 'Flameskull', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/487/315/315/636364325235118776.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (107, 2, 17);
@@ -3455,8 +3455,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumin
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (107, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (108, 8, 11, 44);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (108, 108, 'null', 5, 10, 93, 3, 9, '', 'Flesh Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/359/315/315/636252778311644574.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 11, 44);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (108, 'null', 5, 10, 93, 3, 9, '', 'Flesh Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/359/315/315/636252778311644574.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (108, 2, 9);
@@ -3492,8 +3492,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic W
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (108, 21);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (109, 4, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (109, 109, 'null', 0.125, 11, 5, 5, 14, '', 'Flying Snake', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/517/1000/1000/636376319640572721.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 2, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (109, 'null', 0.125, 11, 5, 5, 14, '', 'Flying Snake', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/517/1000/1000/636376319640572721.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (109, 2, 18);
@@ -3514,8 +3514,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (109, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (110, 6, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (110, 110, 'null', 0.25, 7, 17, 1, 17, 'Natural Armor', 'Flying Sword', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/77/599/1000/1000/636473151106171093.png');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 5, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (110, 'null', 0.25, 7, 17, 1, 17, 'Natural Armor', 'Flying Sword', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/77/599/1000/1000/636473151106171093.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (110, 2, 15);
@@ -3546,8 +3546,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (110, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (111, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (111, 111, 'null', 0, 11, 1, 5, 11, '', 'Frog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/523/315/315/636376321230650501.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (111, 'null', 0, 11, 1, 5, 11, '', 'Frog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/523/315/315/636376321230650501.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (111, 2, 13);
@@ -3569,8 +3569,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (111, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (112, 12, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (112, 112, 'null', 8, 13, 138, 6, 15, 'Patchwork Armor', 'Frost Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/405/1000/1000/636252786158646348.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 12, 60);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (112, 'null', 8, 13, 138, 6, 15, 'Patchwork Armor', 'Frost Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/405/1000/1000/636252786158646348.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (112, 2, 9);
@@ -3595,8 +3595,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (112, 35);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (113, 8, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (113, 113, 'null', 2, 10, 52, 3, 15, 'Natural Armor', 'Gargoyle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/407/315/315/636252786295384889.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 7, 21);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (113, 'null', 2, 10, 52, 3, 15, 'Natural Armor', 'Gargoyle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/407/315/315/636252786295384889.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (113, 2, 11);
@@ -3629,8 +3629,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (113, 53);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (114, 10, 8, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (114, 114, 'null', 2, 8, 84, 4, 6, '', 'Gelatinous Cube', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/409/1000/1000/636252786406028958.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 8, 40);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (114, 'null', 2, 8, 84, 4, 6, '', 'Gelatinous Cube', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/409/1000/1000/636252786406028958.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (114, 2, 3);
@@ -3657,8 +3657,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ooze Cu
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (114, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (115, 8, 8, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (115, 115, 'null', 2, 10, 36, 3, 13, '', 'Ghast', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/411/315/315/636252786516023032.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (115, 'null', 2, 10, 36, 3, 13, '', 'Ghast', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/411/315/315/636252786516023032.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (115, 2, 17);
@@ -3684,8 +3684,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stench'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (115, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (116, 8, 10, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (116, 116, 'null', 4, 11, 45, 3, 11, '', 'Ghost', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/413/1000/1000/636252786639798307.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 10, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (116, 'null', 4, 11, 45, 3, 11, '', 'Ghost', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/413/1000/1000/636252786639798307.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (116, 2, 13);
@@ -3738,8 +3738,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Incorpo
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (116, 38);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (117, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (117, 117, 'null', 1, 10, 22, 3, 12, '', 'Ghoul', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/483/315/315/636364323937041514.png');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (117, 'null', 1, 10, 22, 3, 12, '', 'Ghoul', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/483/315/315/636364323937041514.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (117, 2, 15);
@@ -3762,8 +3762,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (117, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (118, 12, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (118, 118, 'null', 7, 14, 157, 6, 12, '', 'Giant Ape', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 15, 60);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (118, 'null', 7, 14, 157, 6, 12, '', 'Giant Ape', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (118, 2, 14);
@@ -3785,8 +3785,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (118, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (119, 8, 2, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (119, 119, 'null', 0.25, 11, 13, 3, 10, '', 'Giant Badger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/530/1000/1000/636376327839601860.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (119, 'null', 0.25, 11, 13, 3, 10, '', 'Giant Badger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/530/1000/1000/636376327839601860.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (119, 2, 10);
@@ -3808,8 +3808,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (119, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (120, 10, 4, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (120, 120, 'null', 0.25, 11, 22, 4, 13, '', 'Giant Bat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 4, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (120, 'null', 0.25, 11, 22, 4, 13, '', 'Giant Bat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (120, 2, 16);
@@ -3830,8 +3830,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echoloc
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (120, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (121, 10, 5, 15);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (121, 121, 'null', 2, 8, 42, 4, 12, 'Natural Armor', 'Giant Boar', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 5, 15);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (121, 'null', 2, 8, 42, 4, 12, 'Natural Armor', 'Giant Boar', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (121, 2, 10);
@@ -3850,8 +3850,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (121, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (122, 6, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (122, 122, 'null', 0.25, 8, 4, 1, 13, 'Natural Armor', 'Giant Centipede', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 1, 1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (122, 'null', 0.25, 8, 4, 1, 13, 'Natural Armor', 'Giant Centipede', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (122, 2, 14);
@@ -3870,8 +3870,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (122, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (123, 12, 8, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (123, 123, 'null', 2, 12, 60, 6, 12, '', 'Giant Constrictor Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 8, 8);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (123, 'null', 2, 12, 60, 6, 12, '', 'Giant Constrictor Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (123, 2, 14);
@@ -3892,8 +3892,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (123, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (124, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (124, 124, 'null', 0.125, 9, 13, 3, 15, 'Natural Armor', 'Giant Crab', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (124, 'null', 0.125, 9, 13, 3, 15, 'Natural Armor', 'Giant Crab', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (124, 2, 15);
@@ -3914,8 +3914,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (124, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (125, 12, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (125, 125, 'null', 5, 10, 85, 6, 14, 'Natural Armor', 'Giant Crocodile', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 9, 27);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (125, 'null', 5, 10, 85, 6, 14, 'Natural Armor', 'Giant Crocodile', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (125, 2, 9);
@@ -3937,8 +3937,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Br
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (125, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (126, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (126, 126, 'null', 1, 14, 26, 4, 13, '', 'Giant Eagle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/894/315/315/636334286969931904.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (126, 'null', 1, 14, 26, 4, 13, '', 'Giant Eagle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/894/315/315/636334286969931904.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (126, 2, 17);
@@ -3961,8 +3961,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (126, 30);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (126, 62);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (127, 12, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (127, 127, 'null', 2, 14, 42, 6, 14, 'Natural Armor', 'Giant Elk', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 5, 10);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (127, 'null', 2, 14, 42, 6, 14, 'Natural Armor', 'Giant Elk', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (127, 2, 16);
@@ -3984,8 +3984,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (127, 41);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (127, 56);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (128, 6, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (128, 128, 'null', 0, 8, 4, 1, 13, 'Natural Armor', 'Giant Fire Beetle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/896/1000/1000/636334287498492864.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 1, 1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (128, 'null', 0, 8, 4, 1, 13, 'Natural Armor', 'Giant Fire Beetle', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/896/1000/1000/636334287498492864.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (128, 2, 10);
@@ -4004,8 +4004,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Illumin
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (128, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (129, 8, 4, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (129, 129, 'null', 0.25, 12, 18, 3, 11, '', 'Giant Frog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/521/1000/1000/636376321052503535.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 4, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (129, 'null', 0.25, 12, 18, 3, 11, '', 'Giant Frog', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/521/1000/1000/636376321052503535.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (129, 2, 13);
@@ -4029,8 +4029,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (129, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (130, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (130, 130, 'null', 0.5, 11, 19, 4, 11, 'Natural Armor', 'Giant Goat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (130, 'null', 0.5, 11, 19, 4, 11, 'Natural Armor', 'Giant Goat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (130, 2, 11);
@@ -4049,8 +4049,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (130, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (131, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (131, 131, 'null', 1, 13, 45, 4, 12, '', 'Giant Hyena', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (131, 'null', 1, 13, 45, 4, 12, '', 'Giant Hyena', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (131, 2, 14);
@@ -4069,8 +4069,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rampage
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (131, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (132, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (132, 132, 'null', 0.25, 10, 19, 4, 12, 'Natural Armor', 'Giant Lizard', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (132, 'null', 0.25, 10, 19, 4, 12, 'Natural Armor', 'Giant Lizard', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (132, 2, 12);
@@ -4089,8 +4089,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (132, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (133, 10, 8, 8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (133, 133, 'null', 1, 14, 52, 4, 11, '', 'Giant Octopus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/898/315/315/636334288003435302.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 8, 8);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (133, 'null', 1, 14, 52, 4, 11, '', 'Giant Octopus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/898/315/315/636334288003435302.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (133, 2, 13);
@@ -4115,8 +4115,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Underwa
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (133, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (134, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (134, 134, 'null', 0.25, 15, 19, 4, 12, '', 'Giant Owl', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/535/1000/1000/636376331788287090.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (134, 'null', 0.25, 15, 19, 4, 12, '', 'Giant Owl', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/535/1000/1000/636376331788287090.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (134, 2, 15);
@@ -4141,8 +4141,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (134, 41);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (134, 56);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (135, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (135, 135, 'null', 0.25, 12, 11, 3, 14, '', 'Giant Poisonous Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (135, 'null', 0.25, 12, 11, 3, 14, '', 'Giant Poisonous Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (135, 2, 18);
@@ -4162,8 +4162,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (135, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (136, 6, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (136, 136, 'null', 0.125, 10, 7, 1, 12, '', 'Giant Rat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/538/1000/1000/636376332197953299.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 2, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (136, 'null', 0.125, 10, 7, 1, 12, '', 'Giant Rat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/538/1000/1000/636376332197953299.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (136, 2, 15);
@@ -4183,8 +4183,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (136, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (137, 10, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (137, 137, 'null', 3, 9, 52, 4, 15, 'Natural Armor', 'Giant Scorpion', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 7, 14);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (137, 'null', 3, 9, 52, 4, 15, 'Natural Armor', 'Giant Scorpion', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (137, 2, 13);
@@ -4204,8 +4204,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Claw', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (137, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (138, 10, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (138, 138, 'null', 0.5, 11, 16, 4, 13, 'Natural Armor', 'Giant Sea Horse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (138, 'null', 0.5, 11, 16, 4, 13, 'Natural Armor', 'Giant Sea Horse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (138, 2, 15);
@@ -4225,8 +4225,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (138, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (139, 12, 11, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (139, 139, 'null', 5, 13, 126, 6, 13, 'Natural Armor', 'Giant Shark', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 11, 55);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (139, 'null', 5, 13, 126, 6, 13, 'Natural Armor', 'Giant Shark', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (139, 2, 11);
@@ -4248,8 +4248,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood F
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (139, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (140, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (140, 140, 'null', 1, 10, 26, 4, 14, 'Natural Armor', 'Giant Spider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/323/1000/1000/636252775648743317.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (140, 'null', 1, 10, 26, 4, 14, 'Natural Armor', 'Giant Spider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/323/1000/1000/636252775648743317.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (140, 2, 16);
@@ -4274,8 +4274,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Wal
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (140, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (141, 10, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (141, 141, 'null', 1, 10, 39, 4, 11, '', 'Giant Toad', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (141, 'null', 1, 10, 39, 4, 11, '', 'Giant Toad', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (141, 2, 13);
@@ -4297,8 +4297,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (141, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (142, 10, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (142, 142, 'null', 1, 13, 22, 4, 10, '', 'Giant Vulture', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (142, 'null', 1, 13, 22, 4, 10, '', 'Giant Vulture', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (142, 2, 10);
@@ -4321,8 +4321,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (142, 8);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (143, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (143, 143, 'null', 0.5, 10, 13, 3, 12, '', 'Giant Wasp', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (143, 'null', 0.5, 10, 13, 3, 12, '', 'Giant Wasp', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (143, 2, 14);
@@ -4340,8 +4340,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sting',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (143, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (144, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (144, 144, 'null', 0.125, 13, 9, 3, 13, '', 'Giant Weasel', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (144, 'null', 0.125, 13, 9, 3, 13, '', 'Giant Weasel', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (144, 2, 16);
@@ -4362,8 +4362,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (144, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (145, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (145, 145, 'null', 0.25, 13, 11, 3, 13, '', 'Giant Wolf Spider', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (145, 'null', 0.25, 13, 11, 3, 13, '', 'Giant Wolf Spider', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (145, 2, 16);
@@ -4388,8 +4388,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Wal
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (145, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (146, 8, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (146, 146, 'null', 2, 10, 67, 3, 9, '', 'Gibbering Mouther', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/333/315/315/636252776252001529.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 9, 27);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (146, 'null', 2, 10, 67, 3, 9, '', 'Gibbering Mouther', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/333/315/315/636252776252001529.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (146, 2, 8);
@@ -4413,8 +4413,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Gibberi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (146, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (147, 10, 15, 75);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (147, 147, 'null', 9, 13, 157, 4, 17, 'Natural Armor', 'Glabrezu', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/337/315/315/636252776677682465.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 15, 75);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (147, 'null', 9, 13, 157, 4, 17, 'Natural Armor', 'Glabrezu', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/337/315/315/636252776677682465.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (147, 2, 15);
@@ -4456,8 +4456,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (147, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (147, 61);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (148, 8, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (148, 148, 'null', 5, 11, 112, 3, 16, 'Studded Leather, Shield', 'Gladiator', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 15, 45);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (148, 'null', 5, 11, 112, 3, 16, 'Studded Leather, Shield', 'Gladiator', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (148, 2, 15);
@@ -4484,8 +4484,8 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (148, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (148, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (149, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (149, 149, 'null', 0.5, 10, 22, 3, 15, 'Hide Armor, Shield', 'Gnoll', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/345/1000/1000/636252777224997611.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (149, 'null', 0.5, 10, 22, 3, 15, 'Hide Armor, Shield', 'Gnoll', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/345/1000/1000/636252777224997611.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (149, 2, 12);
@@ -4506,8 +4506,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Rampage
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (149, 45);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (150, 8, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (150, 150, 'null', 0, 10, 4, 3, 10, '', 'Goat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (150, 'null', 0, 10, 4, 3, 10, '', 'Goat', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (150, 2, 10);
@@ -4526,8 +4526,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (150, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (151, 6, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (151, 151, 'null', 0.25, 9, 7, 1, 15, 'Leather Armor, Shield', 'Goblin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/351/315/315/636252777818652432.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 2, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (151, 'null', 0.25, 9, 7, 1, 15, 'Leather Armor, Shield', 'Goblin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/351/315/315/636252777818652432.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (151, 2, 14);
@@ -4549,8 +4549,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (151, 7);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (151, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (152, 8, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (152, 152, 'null', 3, 14, 60, 3, 17, 'Natural Armor', 'Gold Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/516/315/315/636285466148376212.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, 24);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (152, 'null', 3, 14, 60, 3, 17, 'Natural Armor', 'Gold Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/516/315/315/636285466148376212.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (152, 2, 14);
@@ -4582,8 +4582,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (152, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (153, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (153, 153, 'null', 5, 14, 114, 4, 19, 'Natural Armor', 'Gorgon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/355/315/315/636252778125099430.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 12, 48);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (153, 'null', 5, 14, 114, 4, 19, 'Natural Armor', 'Gorgon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/355/315/315/636252778125099430.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (153, 2, 11);
@@ -4606,8 +4606,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampli
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (153, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (154, 8, 3, 9);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (154, 154, 'null', 0.5, 8, 22, 3, 8, '', 'Gray Ooze', 'https://media-waterdeep.cursecdn.com/attachments/2/658/ooze.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 9);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (154, 'null', 0.5, 8, 22, 3, 8, '', 'Gray Ooze', 'https://media-waterdeep.cursecdn.com/attachments/2/658/ooze.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (154, 2, 6);
@@ -4639,8 +4639,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (154, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (155, 8, 7, 7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (155, 155, 'null', 2, 14, 38, 3, 17, 'Natural Armor', 'Green Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/363/315/315/636252778639163748.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 7, 7);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (155, 'null', 2, 14, 38, 3, 17, 'Natural Armor', 'Green Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/363/315/315/636252778639163748.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (155, 2, 12);
@@ -4671,8 +4671,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Amphibi
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (155, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (156, 8, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (156, 156, 'null', 3, 14, 82, 3, 17, 'Natural Armor', 'Green Hag', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/365/315/315/636252778948574879.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 11, 33);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (156, 'null', 3, 14, 82, 3, 17, 'Natural Armor', 'Green Hag', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/365/315/315/636252778948574879.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (156, 2, 12);
@@ -4701,8 +4701,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (156, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (156, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (157, 8, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (157, 157, 'null', 2, 12, 27, 3, 14, 'Natural Armor', 'Grick', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/369/1000/1000/636252779341924439.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (157, 'null', 2, 12, 27, 3, 14, 'Natural Armor', 'Grick', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/369/1000/1000/636252779341924439.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (157, 2, 14);
@@ -4730,8 +4730,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Stone C
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (157, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (158, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (158, 158, 'null', 2, 15, 59, 4, 12, '', 'Griffon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/373/315/315/636252779693862725.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 7, 21);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (158, 'null', 2, 15, 59, 4, 12, '', 'Griffon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/373/315/315/636252779693862725.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (158, 2, 15);
@@ -4754,8 +4754,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (158, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (159, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (159, 159, 'null', 0.25, 13, 11, 3, 11, '', 'Grimlock', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/375/315/315/636252780049813181.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (159, 'null', 0.25, 13, 11, 3, 11, '', 'Grimlock', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/375/315/315/636252780049813181.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (159, 2, 12);
@@ -4780,8 +4780,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (159, 68);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (160, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (160, 160, 'null', 0.125, 12, 11, 3, 16, 'Chain Shirt, Shield', 'Guard', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (160, 'null', 0.125, 12, 11, 3, 16, 'Chain Shirt, Shield', 'Guard', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (160, 2, 12);
@@ -4799,8 +4799,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Spear',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (160, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (161, 10, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (161, 161, 'null', 10, 14, 127, 4, 18, 'Natural Armor', 'Guardian Naga', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/377/315/315/636252780447421771.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 15, 45);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (161, 'null', 10, 14, 127, 4, 18, 'Natural Armor', 'Guardian Naga', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/377/315/315/636252780447421771.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (161, 2, 18);
@@ -4830,8 +4830,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (161, 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (161, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (162, 10, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (162, 162, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 11, 18, 136, 4, 17, 'Natural Armor', 'Gynosphinx', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/383/315/315/636252780786457550.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 16, 48);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (162, 'The sphinx can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The sphinx regains spent legendary actions at the start of its turn.', 11, 18, 136, 4, 17, 'Natural Armor', 'Gynosphinx', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/383/315/315/636252780786457550.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (162, 2, 15);
@@ -4872,8 +4872,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (162, 66);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (162, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (163, 8, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (163, 163, 'null', 5, 12, 65, 3, 18, 'Plate', 'Half-Red Dragon Veteran', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/387/315/315/636252781353903793.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 10, 20);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (163, 'null', 5, 12, 65, 3, 18, 'Plate', 'Half-Red Dragon Veteran', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/387/315/315/636252781353903793.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (163, 2, 13);
@@ -4900,8 +4900,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (163, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (163, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (164, 8, 7, 7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (164, 164, 'null', 1, 10, 38, 3, 11, '', 'Harpy', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/391/315/315/636252781955908234.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 7, 7);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (164, 'null', 1, 10, 38, 3, 11, '', 'Harpy', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/391/315/315/636252781955908234.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (164, 2, 13);
@@ -4922,8 +4922,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (164, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (165, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (165, 165, 'null', 0, 14, 1, 5, 13, '', 'Hawk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/900/1000/1000/636334288270143064.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (165, 'null', 0, 14, 1, 5, 13, '', 'Hawk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/900/1000/1000/636334288270143064.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (165, 2, 16);
@@ -4943,8 +4943,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (165, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (166, 8, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (166, 166, 'null', 3, 15, 45, 3, 15, 'Natural Armor', 'Hell Hound', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/393/315/315/636252782461361426.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 7, 14);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (166, 'null', 3, 15, 45, 3, 15, 'Natural Armor', 'Hell Hound', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/393/315/315/636252782461361426.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (166, 2, 12);
@@ -4967,8 +4967,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (166, 25);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (167, 10, 13, 65);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (167, 167, 'null', 8, 11, 136, 4, 16, 'Natural Armor', 'Hezrou', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/321/315/315/636252775562934524.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 13, 65);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (167, 'null', 8, 11, 136, 4, 16, 'Natural Armor', 'Hezrou', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/321/315/315/636252775562934524.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (167, 2, 17);
@@ -5009,8 +5009,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (167, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (167, 61);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (168, 12, 10, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (168, 168, 'null', 5, 12, 105, 6, 13, 'Natural Armor', 'Hill Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/331/315/315/636252776196140305.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 10, 40);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (168, 'null', 5, 12, 105, 6, 13, 'Natural Armor', 'Hill Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/331/315/315/636252776196140305.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (168, 2, 8);
@@ -5030,8 +5030,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (168, 35);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (169, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (169, 169, 'null', 1, 15, 19, 4, 11, '', 'Hippogriff', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/335/315/315/636252776578605778.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (169, 'null', 1, 15, 19, 4, 11, '', 'Hippogriff', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/335/315/315/636252776578605778.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (169, 2, 13);
@@ -5053,8 +5053,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (169, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (170, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (170, 170, 'null', 0.5, 10, 11, 3, 18, 'Chain Mail, Shield', 'Hobgoblin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/389/315/315/636252781431932597.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (170, 'null', 0.5, 10, 11, 3, 18, 'Chain Mail, Shield', 'Hobgoblin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/389/315/315/636252781431932597.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (170, 2, 12);
@@ -5075,8 +5075,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (170, 7);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (170, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (171, 4, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (171, 171, 'null', 0, 10, 5, 5, 13, 'Natural Armor', 'Homunculus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/287/315/315/636379803928245506.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 2, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (171, 'null', 0, 10, 5, 5, 13, 'Natural Armor', 'Homunculus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/287/315/315/636379803928245506.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (171, 2, 15);
@@ -5099,8 +5099,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Telepat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (171, 21);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (172, 10, 17, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (172, 172, 'null', 11, 13, 148, 4, 18, 'Natural Armor', 'Horned Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/347/315/315/636252777255936976.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 17, 55);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (172, 'null', 11, 13, 148, 4, 18, 'Natural Armor', 'Horned Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/347/315/315/636252777255936976.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (172, 2, 17);
@@ -5142,8 +5142,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (172, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (172, 48);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (173, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (173, 173, 'null', 2, 12, 45, 4, 12, 'Natural Armor', 'Hunter Shark', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (173, 'null', 2, 12, 45, 4, 12, 'Natural Armor', 'Hunter Shark', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (173, 2, 13);
@@ -5165,8 +5165,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood F
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (173, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (174, 12, 15, 75);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (174, 174, 'null', 8, 16, 172, 6, 15, 'Natural Armor', 'Hydra', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/349/315/315/636252777669218389.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 15, 75);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (174, 'null', 8, 16, 172, 6, 15, 'Natural Armor', 'Hydra', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/349/315/315/636252777669218389.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (174, 2, 12);
@@ -5191,8 +5191,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Wakeful
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (174, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (175, 8, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (175, 175, 'null', 0, 13, 5, 3, 11, '', 'Hyena', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/902/1000/1000/636334288674955736.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 1, 1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (175, 'null', 0, 13, 5, 3, 11, '', 'Hyena', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/902/1000/1000/636334288674955736.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (175, 2, 13);
@@ -5211,8 +5211,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (175, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (176, 10, 19, 76);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (176, 176, 'null', 14, 12, 180, 4, 18, 'Natural Armor', 'Ice Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/353/315/315/636252777966974765.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 19, 76);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (176, 'null', 14, 12, 180, 4, 18, 'Natural Armor', 'Ice Devil', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/353/315/315/636252777966974765.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (176, 2, 14);
@@ -5255,8 +5255,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (176, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (176, 48);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (177, 6, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (177, 177, 'null', 0.5, 12, 21, 1, 11, '', 'Ice Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/290/315/315/636379804105821214.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 6, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (177, 'null', 0.5, 12, 21, 1, 11, '', 'Ice Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/290/315/315/636379804105821214.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (177, 2, 13);
@@ -5287,8 +5287,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (177, 2);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (177, 47);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (178, 4, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (178, 178, 'null', 1, 11, 10, 5, 13, '', 'Imp', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/361/315/315/636252778560366227.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (178, 'null', 1, 11, 10, 5, 13, '', 'Imp', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/361/315/315/636252778560366227.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (178, 2, 17);
@@ -5329,8 +5329,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (178, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (178, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (179, 8, 16, 32);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (179, 179, 'null', 6, 18, 104, 3, 14, '', 'Invisible Stalker', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/367/315/315/636252779159282339.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 16, 32);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (179, 'null', 6, 18, 104, 3, 14, '', 'Invisible Stalker', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/367/315/315/636252779159282339.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (179, 2, 19);
@@ -5370,8 +5370,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Faultle
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (179, 46);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (180, 10, 20, 100);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (180, 180, 'null', 16, 10, 210, 4, 20, 'Natural Armor', 'Iron Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/371/315/315/636252779460570049.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 20, 100);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (180, 'null', 16, 10, 210, 4, 20, 'Natural Armor', 'Iron Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/371/315/315/636252779460570049.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 1, 24);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (180, 2, 9);
@@ -5408,8 +5408,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic W
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (180, 21);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (181, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (181, 181, 'null', 0, 13, 3, 1, 12, '', 'Jackal', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (181, 'null', 0, 13, 3, 1, 12, '', 'Jackal', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (181, 2, 15);
@@ -5429,8 +5429,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (181, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (182, 12, 12, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (182, 182, 'null', 3, 13, 90, 6, 12, 'Natural Armor', 'Killer Whale', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 12, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (182, 'null', 3, 13, 90, 6, 12, 'Natural Armor', 'Killer Whale', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (182, 2, 10);
@@ -5453,8 +5453,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echoloc
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (182, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (183, 8, 8, 16);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (183, 183, 'null', 3, 10, 52, 3, 18, 'Plate', 'Knight', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, 16);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (183, 'null', 3, 10, 52, 3, 18, 'Plate', 'Knight', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (183, 2, 11);
@@ -5478,8 +5478,8 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (183, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (183, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (184, 6, 2, -2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (184, 184, 'null', 0.125, 8, 5, 1, 12, '', 'Kobold', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/379/1000/1000/636252780450300625.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 2, -2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (184, 'null', 0.125, 8, 5, 1, 12, '', 'Kobold', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/379/1000/1000/636252780450300625.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (184, 2, 15);
@@ -5501,8 +5501,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (184, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (184, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (185, 20, 27, 189);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (185, 185, 'The kraken can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The kraken regains spent legendary actions at the start of its turn.', 23, 14, 472, 2, 18, 'Natural Armor', 'Kraken', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/381/1000/1000/636252780680163799.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 27, 189);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (185, 'The kraken can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The kraken regains spent legendary actions at the start of its turn.', 23, 14, 472, 2, 18, 'Natural Armor', 'Kraken', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/381/1000/1000/636252780680163799.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (185, 2, 11);
@@ -5546,8 +5546,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (185, 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (185, 48);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (186, 10, 13, 26);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (186, 186, 'null', 4, 12, 97, 4, 13, 'Natural Armor', 'Lamia', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/385/315/315/636252780906064244.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 13, 26);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (186, 'null', 4, 12, 97, 4, 13, 'Natural Armor', 'Lamia', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/385/315/315/636252780906064244.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (186, 2, 13);
@@ -5572,8 +5572,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (186, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (186, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (187, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (187, 187, 'null', 0, 10, 13, 3, 7, '', 'Lemure', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/149/1000/1000/636252758704142054.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (187, 'null', 0, 10, 13, 3, 7, '', 'Lemure', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/149/1000/1000/636252758704142054.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (187, 2, 5);
@@ -5599,8 +5599,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hellish
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (187, 25);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (188, 8, 18, 54);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (188, 188, 'The lich can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The lich regains spent legendary actions at the start of its turn.', 21, 19, 135, 3, 17, 'Natural Armor', 'Lich', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/165/1000/1000/636252760084366499.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 18, 54);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (188, 'The lich can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The lich regains spent legendary actions at the start of its turn.', 21, 19, 135, 3, 17, 'Natural Armor', 'Lich', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/165/1000/1000/636252760084366499.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (188, 2, 16);
@@ -5645,8 +5645,8 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (188, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (188, 26);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (189, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (189, 189, 'null', 1, 13, 26, 4, 12, '', 'Lion', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (189, 'null', 1, 13, 26, 4, 12, '', 'Lion', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (189, 2, 15);
@@ -5670,8 +5670,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Running
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (189, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (190, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (190, 190, 'null', 0, 9, 2, 5, 10, '', 'Lizard', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (190, 'null', 0, 9, 2, 5, 10, '', 'Lizard', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (190, 2, 11);
@@ -5690,8 +5690,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (190, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (191, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (191, 191, 'null', 0.5, 13, 22, 3, 15, 'Natural Armor, Shield', 'Lizardfolk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/233/315/315/636252766314905259.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (191, 'null', 0.5, 13, 22, 3, 15, 'Natural Armor, Shield', 'Lizardfolk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/233/315/315/636252766314905259.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (191, 2, 10);
@@ -5717,8 +5717,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Br
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (191, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (192, 8, 9, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (192, 192, 'null', 6, 11, 40, 3, 12, '15 With Mage Armor', 'Mage', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 9, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (192, 'null', 6, 11, 40, 3, 12, '15 With Mage Armor', 'Mage', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 1, 9);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (192, 2, 14);
@@ -5740,8 +5740,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Spellca
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (192, 37);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (193, 6, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (193, 193, 'null', 0.5, 10, 22, 1, 11, '', 'Magma Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/292/315/315/636379804350894228.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 5, 5);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (193, 'null', 0.5, 10, 22, 1, 11, '', 'Magma Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/292/315/315/636379804350894228.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (193, 2, 12);
@@ -5770,8 +5770,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (193, 53);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (193, 24);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (194, 6, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (194, 194, 'null', 0.5, 10, 9, 1, 14, 'Natural Armor', 'Magmin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/183/315/315/636252762034276620.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (194, 'null', 0.5, 10, 9, 1, 14, 'Natural Armor', 'Magmin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/183/315/315/636252762034276620.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (194, 2, 15);
@@ -5799,8 +5799,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Death B
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (194, 24);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (195, 12, 11, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (195, 195, 'null', 6, 10, 126, 6, 13, 'Natural Armor', 'Mammoth', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 11, 55);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (195, 'null', 6, 10, 126, 6, 13, 'Natural Armor', 'Mammoth', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 1, 24);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (195, 2, 9);
@@ -5819,8 +5819,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampli
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (195, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (196, 10, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (196, 196, 'null', 3, 11, 68, 4, 14, 'Natural Armor', 'Manticore', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/187/315/315/636252762623266809.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 8, 24);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (196, 'null', 3, 11, 68, 4, 14, 'Natural Armor', 'Manticore', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/187/315/315/636252762623266809.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (196, 2, 16);
@@ -5843,8 +5843,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Tail Sp
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (196, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (197, 10, 18, 90);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (197, 197, 'null', 16, 13, 189, 4, 18, 'Natural Armor', 'Marilith', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/189/315/315/636252763036079032.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 18, 90);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (197, 'null', 16, 13, 189, 4, 18, 'Natural Armor', 'Marilith', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/189/315/315/636252763036079032.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (197, 2, 20);
@@ -5889,8 +5889,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (197, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (197, 61);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (198, 8, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (198, 198, 'null', 0.125, 13, 5, 3, 12, '', 'Mastiff', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/191/1000/1000/636252763295291063.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 1, 1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (198, 'null', 0.125, 13, 5, 3, 12, '', 'Mastiff', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/191/1000/1000/636252763295291063.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (198, 2, 14);
@@ -5909,8 +5909,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (198, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (199, 8, 17, 51);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (199, 199, 'null', 6, 14, 127, 3, 15, 'Natural Armor', 'Medusa', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/580/1000/1000/636376361850900325.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 17, 51);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (199, 'null', 6, 14, 127, 3, 15, 'Natural Armor', 'Medusa', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/580/1000/1000/636376361850900325.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (199, 2, 15);
@@ -5936,8 +5936,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Petrify
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (199, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (200, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (200, 200, 'null', 0.125, 12, 11, 3, 11, '', 'Merfolk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/197/1000/1000/636252763841141413.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (200, 'null', 0.125, 12, 11, 3, 11, '', 'Merfolk', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/197/1000/1000/636252763841141413.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (200, 2, 13);
@@ -5958,8 +5958,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (200, 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (200, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (201, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (201, 201, 'null', 2, 10, 45, 4, 13, 'Natural Armor', 'Merrow', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/203/315/315/636252764097970952.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (201, 'null', 2, 10, 45, 4, 13, 'Natural Armor', 'Merrow', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/203/315/315/636252764097970952.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (201, 2, 10);
@@ -5983,8 +5983,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (201, 47);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (201, 61);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (202, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (202, 202, 'null', 2, 11, 58, 3, 12, 'Natural Armor', 'Mimic', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/211/315/315/636252764731637373.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 9, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (202, 'null', 2, 11, 58, 3, 12, 'Natural Armor', 'Mimic', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/211/315/315/636252764731637373.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (202, 2, 12);
@@ -6010,8 +6010,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (202, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (203, 10, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (203, 203, 'null', 3, 17, 76, 4, 14, 'Natural Armor', 'Minotaur', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/217/1000/1000/636252765009181721.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 9, 27);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (203, 'null', 3, 17, 76, 4, 14, 'Natural Armor', 'Minotaur', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/217/1000/1000/636252765009181721.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (203, 2, 11);
@@ -6034,8 +6034,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Reckles
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (203, 61);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (204, 10, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (204, 204, 'null', 2, 9, 67, 4, 12, 'Natural Armor', 'Minotaur Skeleton', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/480/1000/1000/636376298435934058.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 9, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (204, 'null', 2, 9, 67, 4, 12, 'Natural Armor', 'Minotaur Skeleton', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/480/1000/1000/636376298435934058.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (204, 2, 11);
@@ -6059,8 +6059,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (204, 3);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (205, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (205, 205, 'null', 0.125, 10, 11, 3, 10, '', 'Mule', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (205, 'null', 0.125, 10, 11, 3, 10, '', 'Mule', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (205, 2, 10);
@@ -6079,8 +6079,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sure-Fo
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (205, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (206, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (206, 206, 'null', 3, 10, 58, 3, 11, 'Natural Armor', 'Mummy', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/225/1000/1000/636252765553048566.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 9, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (206, 'null', 3, 10, 58, 3, 11, 'Natural Armor', 'Mummy', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/225/1000/1000/636252765553048566.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (206, 2, 8);
@@ -6117,8 +6117,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (206, 22);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (207, 8, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (207, 207, 'The mummy lord can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The mummy lord regains spent legendary actions at the start of its turn.', 15, 14, 97, 3, 17, 'Natural Armor', 'Mummy Lord', 'https://media-waterdeep.cursecdn.com/attachments/2/660/undead.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 13, 39);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (207, 'The mummy lord can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The mummy lord regains spent legendary actions at the start of its turn.', 15, 14, 97, 3, 17, 'Natural Armor', 'Mummy Lord', 'https://media-waterdeep.cursecdn.com/attachments/2/660/undead.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (207, 2, 10);
@@ -6163,8 +6163,8 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (207, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (207, 22);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (208, 10, 16, 96);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (208, 208, 'null', 13, 11, 184, 4, 18, 'Natural Armor', 'Nalfeshnee', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/261/1000/1000/636252768396688147.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 16, 96);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (208, 'null', 13, 11, 184, 4, 18, 'Natural Armor', 'Nalfeshnee', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/261/1000/1000/636252768396688147.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (208, 2, 10);
@@ -6208,8 +6208,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (208, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (208, 61);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (209, 8, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (209, 209, 'null', 5, 16, 112, 3, 17, 'Natural Armor', 'Night Hag', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/269/1000/1000/636252769277562895.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 15, 45);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (209, 'null', 5, 16, 112, 3, 17, 'Natural Armor', 'Night Hag', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/269/1000/1000/636252769277562895.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (209, 2, 15);
@@ -6250,8 +6250,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (209, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (209, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (210, 10, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (210, 210, 'null', 3, 11, 68, 4, 13, 'Natural Armor', 'Nightmare', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/273/315/315/636252769493472144.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 8, 24);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (210, 'null', 3, 11, 68, 4, 13, 'Natural Armor', 'Nightmare', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/273/315/315/636252769493472144.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (210, 2, 15);
@@ -6274,8 +6274,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (210, 5);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (210, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (211, 8, 2, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (211, 211, 'null', 0.125, 12, 9, 3, 15, 'Breastplate', 'Noble', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/277/1000/1000/636252769861281900.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (211, 'null', 0.125, 12, 9, 3, 15, 'Breastplate', 'Noble', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/277/1000/1000/636252769861281900.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (211, 2, 12);
@@ -6296,8 +6296,8 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (211, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (211, 65);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (212, 8, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (212, 212, 'null', 2, 12, 45, 3, 15, 'Natural', 'Nothic', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/475/1000/1000/636364321398842272.png');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (212, 'null', 2, 12, 45, 3, 15, 'Natural', 'Nothic', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/475/1000/1000/636364321398842272.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (212, 2, 16);
@@ -6323,8 +6323,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (212, 68);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (213, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (213, 213, 'null', 2, 8, 45, 4, 8, '', 'Ochre Jelly', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/279/1000/1000/636252770058723674.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (213, 'null', 2, 8, 45, 4, 8, '', 'Ochre Jelly', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/279/1000/1000/636252770058723674.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (213, 2, 6);
@@ -6355,8 +6355,8 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (213, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (213, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (214, 6, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (214, 214, 'null', 0, 12, 3, 1, 12, '', 'Octopus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/921/315/315/636334602449110996.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (214, 'null', 0, 12, 3, 1, 12, '', 'Octopus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/921/315/315/636334602449110996.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (214, 2, 15);
@@ -6381,8 +6381,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Underwa
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (214, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (215, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (215, 215, 'null', 2, 8, 59, 4, 11, 'Hide Armor', 'Ogre', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/285/315/315/636252770535203221.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 7, 21);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (215, 'null', 2, 8, 59, 4, 11, 'Hide Armor', 'Ogre', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/285/315/315/636252770535203221.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (215, 2, 8);
@@ -6402,8 +6402,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (215, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (215, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (216, 10, 9, 36);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (216, 216, 'null', 2, 8, 85, 4, 8, '', 'Ogre Zombie', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/287/315/315/636252770700032248.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 9, 36);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (216, 'null', 2, 8, 85, 4, 8, '', 'Ogre Zombie', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/287/315/315/636252770700032248.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (216, 2, 6);
@@ -6426,8 +6426,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (216, 60);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (216, 50);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (217, 10, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (217, 217, 'null', 7, 14, 110, 4, 16, 'Chain Mail', 'Oni', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/297/1000/1000/636252771507213738.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 13, 39);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (217, 'null', 7, 14, 110, 4, 16, 'Chain Mail', 'Oni', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/297/1000/1000/636252771507213738.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (217, 2, 11);
@@ -6460,8 +6460,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (217, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (217, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (218, 8, 2, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (218, 218, 'null', 0.5, 10, 15, 3, 13, 'Hide Armor', 'Orc', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/301/1000/1000/636252771691385727.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (218, 'null', 0.5, 10, 15, 3, 13, 'Hide Armor', 'Orc', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/301/1000/1000/636252771691385727.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (218, 2, 12);
@@ -6483,8 +6483,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (218, 39);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (218, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (219, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (219, 219, 'null', 5, 11, 114, 4, 14, 'Natural Armor', 'Otyugh', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/305/315/315/636252771931366466.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 12, 48);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (219, 'null', 5, 11, 114, 4, 14, 'Natural Armor', 'Otyugh', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/305/315/315/636252771931366466.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (219, 2, 11);
@@ -6507,8 +6507,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Limited
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (219, 57);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (220, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (220, 220, 'null', 0, 13, 1, 5, 11, '', 'Owl', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/533/1000/1000/636376331660233857.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (220, 'null', 0, 13, 1, 5, 11, '', 'Owl', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/533/1000/1000/636376331660233857.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (220, 2, 13);
@@ -6531,8 +6531,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (220, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (221, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (221, 221, 'null', 3, 13, 59, 4, 13, 'Natural Armor', 'Owlbear', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/315/315/315/636252772225295187.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 7, 21);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (221, 'null', 3, 13, 59, 4, 13, 'Natural Armor', 'Owlbear', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/315/315/315/636252772225295187.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (221, 2, 12);
@@ -6554,8 +6554,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (221, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (222, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (222, 222, 'null', 0.25, 14, 13, 3, 12, '', 'Panther', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (222, 'null', 0.25, 14, 13, 3, 12, '', 'Panther', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (222, 2, 15);
@@ -6578,8 +6578,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (222, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (223, 10, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (223, 223, 'null', 2, 16, 59, 4, 12, '', 'Pegasus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/303/1000/1000/636379808797059368.png');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 7, 21);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (223, 'null', 2, 16, 59, 4, 12, '', 'Pegasus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/303/1000/1000/636379808797059368.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (223, 2, 15);
@@ -6604,8 +6604,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (223, 69);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (223, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (224, 10, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (224, 224, 'null', 3, 10, 32, 4, 13, 'Natural Armor', 'Phase Spider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/319/315/315/636252772538300448.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 5, 5);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (224, 'null', 3, 10, 32, 4, 13, 'Natural Armor', 'Phase Spider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/319/315/315/636252772538300448.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (224, 2, 15);
@@ -6628,8 +6628,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Wal
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (224, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (225, 10, 24, 168);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (225, 225, 'null', 20, 14, 300, 4, 19, 'Natural Armor', 'Pit Fiend', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/311/315/315/636252772132434763.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 24, 168);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (225, 'null', 20, 14, 300, 4, 19, 'Natural Armor', 'Pit Fiend', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/311/315/315/636252772132434763.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 1, 26);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (225, 2, 14);
@@ -6673,8 +6673,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (225, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (225, 48);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (226, 10, 16, 112);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (226, 226, 'null', 16, 21, 200, 4, 19, 'Natural Armor', 'Planetar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/303/315/315/636252771762002496.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 16, 112);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (226, 'null', 16, 21, 200, 4, 19, 'Natural Armor', 'Planetar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/303/315/315/636252771762002496.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 1, 24);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (226, 2, 20);
@@ -6715,8 +6715,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (226, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (226, 64);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (227, 10, 8, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (227, 227, 'null', 2, 13, 68, 4, 13, 'Natural Armor', 'Plesiosaurus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/488/315/315/636376304583147024.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 8, 24);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (227, 'null', 2, 13, 68, 4, 13, 'Natural Armor', 'Plesiosaurus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/488/315/315/636376304583147024.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (227, 2, 15);
@@ -6737,8 +6737,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Hold Br
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (227, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (228, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (228, 228, 'null', 0.125, 10, 2, 5, 13, '', 'Poisonous Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (228, 'null', 0.125, 10, 2, 5, 13, '', 'Poisonous Snake', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (228, 2, 16);
@@ -6757,8 +6757,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (228, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (229, 10, 5, 15);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (229, 229, 'null', 2, 13, 42, 4, 12, 'Natural Armor', 'Polar Bear', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 5, 15);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (229, 'null', 2, 13, 42, 4, 12, 'Natural Armor', 'Polar Bear', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 1, 20);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (229, 2, 10);
@@ -6780,8 +6780,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (229, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (230, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (230, 230, 'null', 0.125, 10, 11, 3, 10, '', 'Pony', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (230, 'null', 0.125, 10, 11, 3, 10, '', 'Pony', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (230, 2, 10);
@@ -6798,8 +6798,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (230, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (231, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (231, 231, 'null', 2, 13, 27, 3, 13, 'Chain Shirt', 'Priest', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 5);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (231, 'null', 2, 13, 27, 3, 13, 'Chain Shirt', 'Priest', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (231, 2, 10);
@@ -6821,8 +6821,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Divine 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (231, 65);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (232, 4, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (232, 232, 'null', 0.25, 13, 7, 5, 13, 'Natural Armor', 'Pseudodragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/283/1000/1000/636252770521719244.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (232, 'null', 0.25, 13, 7, 5, 13, 'Natural Armor', 'Pseudodragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/283/1000/1000/636252770521719244.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (232, 2, 15);
@@ -6848,8 +6848,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (232, 60);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (232, 43);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (233, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (233, 233, 'null', 0.25, 11, 13, 3, 13, 'Natural Armor', 'Pteranodon', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (233, 'null', 0.25, 11, 13, 3, 13, 'Natural Armor', 'Pteranodon', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (233, 2, 15);
@@ -6868,8 +6868,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Flyby',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (233, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (234, 20, 15, 90);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (234, 234, 'null', 15, 9, 247, 2, 18, 'Natural Armor', 'Purple Worm', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/275/315/315/636252769846436684.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 15, 90);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (234, 'null', 15, 9, 247, 2, 18, 'Natural Armor', 'Purple Worm', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/275/315/315/636252769846436684.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 1, 28);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (234, 2, 7);
@@ -6894,8 +6894,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Tunnele
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (234, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (235, 4, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (235, 235, 'null', 1, 10, 7, 5, 13, '', 'Quasit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/271/315/315/636252769318699115.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (235, 'null', 1, 10, 7, 5, 13, '', 'Quasit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/271/315/315/636252769318699115.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (235, 2, 17);
@@ -6934,8 +6934,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (235, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (235, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (236, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (236, 236, 'null', 0, 8, 1, 5, 13, '', 'Quipper', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/253/1000/1000/636252767919065233.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (236, 'null', 0, 8, 1, 5, 13, '', 'Quipper', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/253/1000/1000/636252767919065233.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (236, 2, 16);
@@ -6956,8 +6956,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood F
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (236, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (237, 8, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (237, 237, 'null', 13, 13, 110, 3, 16, 'Natural Armor', 'Rakshasa', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/247/315/315/636252767480157951.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 13, 52);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (237, 'null', 13, 13, 110, 3, 16, 'Natural Armor', 'Rakshasa', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/247/315/315/636252767480157951.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (237, 2, 17);
@@ -6984,8 +6984,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (237, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (237, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (238, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (238, 238, 'null', 0, 10, 1, 5, 10, '', 'Rat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/541/315/315/636376335435407571.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (238, 'null', 0, 10, 1, 5, 10, '', 'Rat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/541/315/315/636376335435407571.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (238, 2, 11);
@@ -7004,8 +7004,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (238, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (239, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (239, 239, 'null', 0, 13, 1, 5, 12, '', 'Raven', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/553/1000/1000/636376341568391037.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (239, 'null', 0, 13, 1, 5, 12, '', 'Raven', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/553/1000/1000/636376341568391037.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (239, 2, 14);
@@ -7025,8 +7025,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Mimicry
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (239, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (240, 8, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (240, 240, 'null', 4, 14, 75, 3, 17, 'Natural Armor', 'Red Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/239/315/315/636252766855622680.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 10, 30);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (240, 'null', 4, 14, 75, 3, 17, 'Natural Armor', 'Red Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/239/315/315/636252766855622680.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (240, 2, 10);
@@ -7055,8 +7055,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Bite', 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (240, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (241, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (241, 241, 'null', 0.5, 12, 22, 3, 12, 'Natural Armor', 'Reef Shark', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (241, 'null', 0.5, 12, 22, 3, 12, 'Natural Armor', 'Reef Shark', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (241, 2, 13);
@@ -7078,8 +7078,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (241, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (242, 12, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (242, 242, 'null', 11, 10, 195, 6, 17, 'Natural Armor', 'Remorhaz', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/231/315/315/636252766143328421.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 17, 85);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (242, 'null', 11, 10, 195, 6, 17, 'Natural Armor', 'Remorhaz', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/231/315/315/636252766143328421.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 1, 24);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (242, 2, 13);
@@ -7103,8 +7103,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (242, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (243, 10, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (243, 243, 'null', 2, 11, 45, 4, 11, 'Natural Armor', 'Rhinoceros', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (243, 'null', 2, 11, 45, 4, 11, 'Natural Armor', 'Rhinoceros', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (243, 2, 8);
@@ -7122,8 +7122,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (243, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (244, 10, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (244, 244, 'null', 0.25, 10, 13, 4, 10, '', 'Riding Horse', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/904/315/315/636334288913250513.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (244, 'null', 0.25, 10, 13, 4, 10, '', 'Riding Horse', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/904/315/315/636334288913250513.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (244, 2, 10);
@@ -7140,8 +7140,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (244, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (245, 20, 16, 80);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (245, 245, 'null', 11, 14, 248, 2, 15, 'Natural Armor', 'Roc', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/229/315/315/636252765590929622.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 16, 80);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (245, 'null', 11, 14, 248, 2, 15, 'Natural Armor', 'Roc', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/229/315/315/636252765590929622.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 1, 28);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (245, 2, 10);
@@ -7167,8 +7167,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Si
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (245, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (246, 10, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (246, 246, 'null', 5, 16, 93, 4, 20, 'Natural Armor', 'Roper', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/560/1000/1000/636376344528091115.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 11, 33);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (246, 'null', 5, 16, 93, 4, 20, 'Natural Armor', 'Roper', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/560/1000/1000/636376344528091115.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (246, 2, 8);
@@ -7195,8 +7195,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Graspin
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (246, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (247, 10, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (247, 247, 'null', 2, 6, 33, 4, 12, '', 'Rug of Smothering', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/213/1000/1000/636252764761726261.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (247, 'null', 2, 6, 33, 4, 12, '', 'Rug of Smothering', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/213/1000/1000/636252764761726261.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (247, 2, 14);
@@ -7226,8 +7226,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (247, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (248, 8, 5, 5);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (248, 248, 'null', 0.5, 11, 27, 3, 14, 'Natural Armor', 'Rust Monster', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/207/1000/1000/636252764265020108.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 5);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (248, 'null', 0.5, 11, 27, 3, 14, 'Natural Armor', 'Rust Monster', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/207/1000/1000/636252764265020108.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (248, 2, 12);
@@ -7248,8 +7248,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Iron Sc
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (248, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (249, 10, 7, 14);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (249, 249, 'null', 2, 13, 52, 4, 12, '', 'Saber-Toothed Tiger', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 7, 14);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (249, 'null', 2, 13, 52, 4, 12, '', 'Saber-Toothed Tiger', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (249, 2, 14);
@@ -7271,8 +7271,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (249, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (250, 8, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (250, 250, 'null', 0.5, 15, 22, 3, 12, 'Natural Armor', 'Sahuagin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/177/1000/1000/636252761683746719.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (250, 'null', 0.5, 15, 22, 3, 12, 'Natural Armor', 'Sahuagin', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/177/1000/1000/636252761683746719.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (250, 2, 11);
@@ -7298,8 +7298,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shark T
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (250, 15);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (251, 10, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (251, 251, 'null', 5, 10, 90, 4, 15, 'Natural Armor', 'Salamander', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/173/1000/1000/636252761197608364.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 12, 24);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (251, 'null', 5, 10, 90, 4, 15, 'Natural Armor', 'Salamander', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/173/1000/1000/636252761197608364.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (251, 2, 14);
@@ -7330,8 +7330,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Heated 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (251, 24);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (252, 8, 7, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (252, 252, 'null', 0.5, 12, 31, 3, 14, 'Leather Armor', 'Satyr', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/169/1000/1000/636252760706340605.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 7, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (252, 'null', 0.5, 12, 31, 3, 14, 'Leather Armor', 'Satyr', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/169/1000/1000/636252760706340605.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (252, 2, 16);
@@ -7356,8 +7356,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (252, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (252, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (253, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (253, 253, 'null', 0, 9, 1, 5, 11, 'Natural Armor', 'Scorpion', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (253, 'null', 0, 9, 1, 5, 11, 'Natural Armor', 'Scorpion', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (253, 2, 11);
@@ -7375,8 +7375,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Sting',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (253, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (254, 8, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (254, 254, 'null', 0.5, 15, 16, 3, 13, 'Leather Armor', 'Scout', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/163/1000/1000/636252759915100020.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (254, 'null', 0.5, 15, 16, 3, 13, 'Leather Armor', 'Scout', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/163/1000/1000/636252759915100020.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 1, 11);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (254, 2, 14);
@@ -7400,8 +7400,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (254, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (255, 8, 7, 21);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (255, 255, 'null', 2, 11, 52, 3, 14, 'Natural Armor', 'Sea Hag', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/159/1000/1000/636252759356069260.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 7, 21);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (255, 'null', 2, 11, 52, 3, 14, 'Natural Armor', 'Sea Hag', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/159/1000/1000/636252759356069260.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (255, 2, 13);
@@ -7426,8 +7426,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (255, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (255, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (256, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (256, 256, 'null', 0, 10, 1, 5, 11, '', 'Sea Horse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (256, 'null', 0, 10, 1, 5, 11, '', 'Sea Horse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (256, 2, 12);
@@ -7445,8 +7445,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Water B
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (256, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (257, 8, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (257, 257, 'null', 0.5, 10, 16, 3, 12, '', 'Shadow', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/155/315/315/636252758977032019.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (257, 'null', 0.5, 10, 16, 3, 12, '', 'Shadow', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/155/315/315/636252758977032019.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (257, 2, 14);
@@ -7497,8 +7497,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Shadow 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (257, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (258, 10, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (258, 258, 'null', 5, 10, 136, 4, 15, 'Natural Armor', 'Shambling Mound', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/563/315/315/636376346968079714.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 16, 48);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (258, 'null', 5, 10, 136, 4, 15, 'Natural Armor', 'Shambling Mound', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/563/315/315/636376346968079714.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (258, 2, 8);
@@ -7527,8 +7527,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Lightni
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (258, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (259, 10, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (259, 259, 'null', 7, 10, 142, 4, 17, 'Natural Armor', 'Shield Guardian', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/145/315/315/636252758362792494.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 15, 60);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (259, 'null', 7, 10, 142, 4, 17, 'Natural Armor', 'Shield Guardian', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/145/315/315/636252758362792494.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (259, 2, 8);
@@ -7558,8 +7558,8 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (259, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (259, 32);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (260, 8, 3, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (260, 260, 'null', 0, 6, 13, 3, 5, '', 'Shrieker', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/571/1000/1000/636376357634308010.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (260, 'null', 0, 6, 13, 3, 5, '', 'Shrieker', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/571/1000/1000/636376357634308010.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (260, 2, 1);
@@ -7581,8 +7581,8 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (260, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (260, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (261, 8, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (261, 261, 'null', 2, 14, 45, 3, 17, 'Natural Armor', 'Silver Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/143/315/315/636252757538355953.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (261, 'null', 2, 14, 45, 3, 17, 'Natural Armor', 'Silver Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/143/315/315/636252757538355953.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (261, 2, 10);
@@ -7612,8 +7612,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Breath 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (261, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (262, 8, 2, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (262, 262, 'null', 0.25, 9, 13, 3, 13, 'Armor Scraps', 'Skeleton', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/472/315/315/636376294573239565.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (262, 'null', 0.25, 9, 13, 3, 13, 'Armor Scraps', 'Skeleton', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/472/315/315/636376294573239565.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (262, 2, 14);
@@ -7636,8 +7636,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Shortbo
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (262, 54);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (263, 10, 18, 144);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (263, 263, 'The solar can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The solar regains spent legendary actions at the start of its turn.', 21, 24, 243, 4, 21, 'Natural Armor', 'Solar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/121/315/315/636252748079664097.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 18, 144);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (263, 'The solar can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The solar regains spent legendary actions at the start of its turn.', 21, 24, 243, 4, 21, 'Natural Armor', 'Solar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/121/315/315/636252748079664097.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 1, 26);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (263, 2, 22);
@@ -7688,8 +7688,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (263, 1);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (263, 64);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (264, 8, 6, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (264, 264, 'null', 3, 16, 39, 3, 14, 'Natural', 'Spectator', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/485/315/315/636364324602733616.png');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (264, 'null', 3, 16, 39, 3, 14, 'Natural', 'Spectator', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/485/315/315/636364324602733616.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (264, 2, 14);
@@ -7719,8 +7719,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (264, 68);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (264, 58);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (265, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (265, 265, 'null', 1, 10, 22, 3, 12, '', 'Specter', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/119/1000/1000/636252747399435720.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (265, 'null', 1, 10, 22, 3, 12, '', 'Specter', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/119/1000/1000/636252747399435720.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (265, 2, 14);
@@ -7770,8 +7770,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunligh
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (265, 54);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (266, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (266, 266, 'null', 0, 10, 1, 5, 12, '', 'Spider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/575/315/315/636376359864842950.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (266, 'null', 0, 10, 1, 5, 12, '', 'Spider', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/575/315/315/636376359864842950.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 1, 2);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (266, 2, 14);
@@ -7794,8 +7794,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Web Wal
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (266, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (267, 10, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (267, 267, 'null', 8, 12, 75, 4, 15, 'Natural Armor', 'Spirit Naga', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/117/315/315/636252746851035686.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 10, 20);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (267, 'null', 8, 12, 75, 4, 15, 'Natural Armor', 'Spirit Naga', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/117/315/315/636252746851035686.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (267, 2, 17);
@@ -7823,8 +7823,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (267, 61);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (267, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (268, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (268, 268, 'null', 0.25, 13, 2, 5, 15, 'Leather Armor', 'Sprite', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/115/315/315/636252746444973630.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (268, 'null', 0.25, 13, 2, 5, 15, 'Leather Armor', 'Sprite', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/115/315/315/636252746444973630.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (268, 2, 18);
@@ -7849,8 +7849,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (268, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (268, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (269, 8, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (269, 269, 'null', 1, 16, 27, 3, 12, '', 'Spy', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (269, 'null', 1, 16, 27, 3, 12, '', 'Spy', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (269, 2, 15);
@@ -7878,8 +7878,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sneak A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (269, 65);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (270, 6, 6, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (270, 270, 'null', 0.25, 10, 21, 1, 10, '', 'Steam Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/113/315/315/636252745841820724.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 6, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (270, 'null', 0.25, 10, 21, 1, 10, '', 'Steam Mephit', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/113/315/315/636252745841820724.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (270, 2, 11);
@@ -7905,8 +7905,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (270, 24);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (270, 47);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (271, 4, 1, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (271, 271, 'null', 0.125, 9, 2, 5, 14, 'Natural Armor', 'Stirge', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/111/1000/1000/636252745395103202.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (271, 'null', 0.125, 9, 2, 5, 14, 'Natural Armor', 'Stirge', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/111/1000/1000/636252745395103202.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 1, 4);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (271, 2, 16);
@@ -7925,8 +7925,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Blood D
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (271, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (272, 12, 11, 55);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (272, 272, 'null', 7, 14, 126, 6, 17, 'Natural Armor', 'Stone Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/109/315/315/636252744518731463.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 11, 55);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (272, 'null', 7, 14, 126, 6, 17, 'Natural Armor', 'Stone Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/109/315/315/636252744518731463.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (272, 2, 15);
@@ -7952,8 +7952,8 @@ INSERT INTO dnd.monster_reactions (monster_id, description, name) VALUES (272, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (272, 35);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (273, 10, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (273, 273, 'null', 10, 10, 178, 4, 17, 'Natural Armor', 'Stone Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/107/315/315/636252743780112834.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 17, 85);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (273, 'null', 10, 10, 178, 4, 17, 'Natural Armor', 'Stone Golem', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/107/315/315/636252743780112834.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (273, 2, 9);
@@ -7987,8 +7987,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Magic W
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (273, 21);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (274, 12, 20, 100);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (274, 274, 'null', 13, 19, 230, 6, 16, 'Scale Mail', 'Storm Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/105/315/315/636252743254029469.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 20, 100);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (274, 'null', 13, 19, 230, 6, 16, 'Scale Mail', 'Storm Giant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/105/315/315/636252743254029469.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 1, 29);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (274, 2, 14);
@@ -8023,8 +8023,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (274, 35);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (274, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (275, 8, 12, 12);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (275, 275, 'null', 4, 15, 66, 3, 15, 'Natural Armor', 'Succubus/Incubus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/103/315/315/636252742573312994.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 12, 12);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (275, 'null', 4, 15, 66, 3, 15, 'Natural Armor', 'Succubus/Incubus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/103/315/315/636252742573312994.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (275, 2, 17);
@@ -8070,8 +8070,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (275, 48);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (275, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (276, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (276, 276, 'null', 0.25, 11, 22, 3, 12, '', 'Swarm of Bats', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/906/315/315/636334289313689439.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (276, 'null', 0.25, 11, 22, 3, 12, '', 'Swarm of Bats', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/906/315/315/636334289313689439.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 1, 5);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (276, 2, 15);
@@ -8104,8 +8104,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Echoloc
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (276, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (277, 8, 5, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (277, 277, 'null', 0.5, 8, 22, 3, 12, 'Natural Armor', 'Swarm of Insects', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (277, 'null', 0.5, 8, 22, 3, 12, 'Natural Armor', 'Swarm of Insects', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (277, 2, 13);
@@ -8136,8 +8136,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (277, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (278, 8, 8, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (278, 278, 'null', 2, 10, 36, 3, 14, '', 'Swarm of Poisonous Snakes', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (278, 'null', 2, 10, 36, 3, 14, '', 'Swarm of Poisonous Snakes', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 1, 8);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (278, 2, 18);
@@ -8168,8 +8168,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (278, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (279, 8, 8, -8);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (279, 279, 'null', 1, 8, 28, 3, 13, '', 'Swarm of Quippers', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/276/315/315/636379781035768521.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 8, -8);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (279, 'null', 1, 8, 28, 3, 13, '', 'Swarm of Quippers', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/276/315/315/636379781035768521.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (279, 2, 16);
@@ -8202,8 +8202,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Blood F
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (279, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (280, 8, 7, -7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (280, 280, 'null', 0.25, 10, 24, 3, 10, '', 'Swarm of Rats', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/908/315/315/636334289541603972.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 7, -7);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (280, 'null', 0.25, 10, 24, 3, 10, '', 'Swarm of Rats', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/908/315/315/636334289541603972.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 1, 9);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (280, 2, 11);
@@ -8234,8 +8234,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (280, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (281, 8, 7, -7);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (281, 281, 'null', 0.25, 15, 24, 3, 12, '', 'Swarm of Ravens', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/555/315/315/636376341743427326.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 7, -7);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (281, 'null', 0.25, 15, 24, 3, 12, '', 'Swarm of Ravens', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/555/315/315/636376341743427326.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (281, 2, 14);
@@ -8266,8 +8266,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Swarm',
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (281, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (282, 20, 33, 330);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (282, 282, 'The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The tarrasque regains spent legendary actions at the start of its turn.', 30, 10, 676, 2, 25, 'Natural Armor', 'Tarrasque', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/101/1000/1000/636252741877524077.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (20, 33, 330);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (282, 'The tarrasque can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The tarrasque regains spent legendary actions at the start of its turn.', 30, 10, 676, 2, 25, 'Natural Armor', 'Tarrasque', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/101/1000/1000/636252741877524077.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 1, 30);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (282, 2, 11);
@@ -8310,8 +8310,8 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (282, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (282, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (283, 8, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (283, 283, 'null', 0.5, 10, 32, 3, 11, 'Leather Armor', 'Thug', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/99/1000/1000/636252741335519081.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 10);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (283, 'null', 0.5, 10, 32, 3, 11, 'Leather Armor', 'Thug', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/99/1000/1000/636252741335519081.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (283, 2, 11);
@@ -8332,8 +8332,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (283, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (284, 10, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (284, 284, 'null', 1, 13, 37, 4, 12, '', 'Tiger', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 5, 10);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (284, 'null', 1, 13, 37, 4, 12, '', 'Tiger', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (284, 2, 15);
@@ -8356,8 +8356,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (284, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (285, 12, 12, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (285, 285, 'null', 9, 13, 138, 6, 16, 'Natural Armor', 'Treant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/97/315/315/636252740537990664.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 12, 60);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (285, 'null', 9, 13, 138, 6, 16, 'Natural Armor', 'Treant', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/97/315/315/636252740537990664.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (285, 2, 8);
@@ -8385,8 +8385,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (285, 27);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (285, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (286, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (286, 286, 'null', 0.125, 10, 11, 3, 12, 'Hide Armor', 'Tribal Warrior', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (286, 'null', 0.125, 10, 11, 3, 12, 'Hide Armor', 'Tribal Warrior', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (286, 2, 11);
@@ -8404,8 +8404,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (286, 12);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (287, 12, 10, 30);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (287, 287, 'null', 5, 10, 95, 6, 13, 'Natural Armor', 'Triceratops', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 10, 30);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (287, 'null', 5, 10, 95, 6, 13, 'Natural Armor', 'Triceratops', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 1, 22);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (287, 2, 9);
@@ -8424,8 +8424,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampli
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (287, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (288, 10, 8, 40);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (288, 288, 'null', 5, 12, 84, 4, 15, 'Natural Armor', 'Troll', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/95/315/315/636252739682234623.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 8, 40);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (288, 'null', 5, 12, 84, 4, 15, 'Natural Armor', 'Troll', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/95/315/315/636252739682234623.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (288, 2, 13);
@@ -8448,8 +8448,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (288, 35);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (289, 6, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (289, 289, 'null', 0.125, 9, 4, 1, 13, 'Natural Armor', 'Twig Blight', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/464/1000/1000/636376286997771487.png');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (6, 1, 1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (289, 'null', 0.125, 9, 4, 1, 13, 'Natural Armor', 'Twig Blight', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/464/1000/1000/636376286997771487.png');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (289, 2, 13);
@@ -8472,8 +8472,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (289, 16);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (290, 12, 13, 52);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (290, 290, 'null', 8, 14, 136, 6, 13, 'Natural Armor', 'Tyrannosaurus Rex', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/594/1000/1000/636376369004412963.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (12, 13, 52);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (290, 'null', 8, 14, 136, 6, 13, 'Natural Armor', 'Tyrannosaurus Rex', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/594/1000/1000/636376369004412963.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 1, 25);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (290, 2, 10);
@@ -8493,8 +8493,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (290, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (291, 10, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (291, 291, 'The unicorn can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The unicorn regains spent legendary actions at the start of its turn.', 5, 13, 67, 4, 12, '', 'Unicorn', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/93/1000/1000/636252739248798123.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 9, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (291, 'The unicorn can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The unicorn regains spent legendary actions at the start of its turn.', 5, 13, 67, 4, 12, '', 'Unicorn', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/93/1000/1000/636252739248798123.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (291, 2, 14);
@@ -8530,8 +8530,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (291, 56);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (291, 69);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (292, 8, 17, 68);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (292, 292, 'The vampire can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The vampire regains spent legendary actions at the start of its turn.', 13, 17, 144, 3, 16, 'Natural Armor', 'Vampire', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/91/1000/1000/636252738665379794.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 17, 68);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (292, 'The vampire can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature''s turn. The vampire regains spent legendary actions at the start of its turn.', 13, 17, 144, 3, 16, 'Natural Armor', 'Vampire', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/91/1000/1000/636252738665379794.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (292, 2, 18);
@@ -8575,8 +8575,8 @@ INSERT INTO dnd.legendary_actions (monster_id, description, name) VALUES (292, '
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (292, 22);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (293, 8, 11, 33);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (293, 293, 'null', 5, 13, 82, 3, 15, 'Natural Armor', 'Vampire Spawn', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/89/1000/1000/636252738148839638.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 11, 33);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (293, 'null', 5, 13, 82, 3, 15, 'Natural Armor', 'Vampire Spawn', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/89/1000/1000/636252738148839638.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (293, 2, 16);
@@ -8611,8 +8611,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Vampire
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (293, 22);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (294, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (294, 294, 'null', 3, 12, 58, 3, 17, 'Splint', 'Veteran', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 9, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (294, 'null', 3, 12, 58, 3, 17, 'Splint', 'Veteran', 'https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (294, 2, 13);
@@ -8634,8 +8634,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (294, 52);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (295, 8, 4, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (295, 295, 'null', 0.25, 6, 18, 3, 5, '', 'Violet Fungus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/573/315/315/636376357964412799.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 4, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (295, 'null', 0.25, 6, 18, 3, 5, '', 'Violet Fungus', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/573/315/315/636376357964412799.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (295, 2, 1);
@@ -8658,8 +8658,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('False A
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (295, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (296, 10, 11, 44);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (296, 296, 'null', 6, 11, 104, 4, 15, 'Natural Armor', 'Vrock', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/87/315/315/636252737538172594.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 11, 44);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (296, 'null', 6, 11, 104, 4, 15, 'Natural Armor', 'Vrock', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/87/315/315/636252737538172594.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (296, 2, 15);
@@ -8702,8 +8702,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (296, 64);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (296, 61);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (297, 8, 1, 1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (297, 297, 'null', 0, 13, 5, 3, 10, '', 'Vulture', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 1, 1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (297, 'null', 0, 13, 5, 3, 10, '', 'Vulture', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 1, 7);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (297, 2, 10);
@@ -8724,8 +8724,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (297, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (298, 10, 3, 3);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (298, 298, 'null', 0.5, 11, 19, 4, 11, '', 'Warhorse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 3);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (298, 'null', 0.5, 11, 19, 4, 11, '', 'Warhorse', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (298, 2, 12);
@@ -8743,8 +8743,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Trampli
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (298, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (299, 10, 3, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (299, 299, 'null', 0.5, 9, 22, 4, 13, 'Barding Scraps', 'Warhorse Skeleton', 'https://media-waterdeep.cursecdn.com/attachments/2/660/undead.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 3, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (299, 'null', 0.5, 9, 22, 4, 13, 'Barding Scraps', 'Warhorse Skeleton', 'https://media-waterdeep.cursecdn.com/attachments/2/660/undead.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (299, 2, 12);
@@ -8766,8 +8766,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Hooves'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (299, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (300, 10, 12, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (300, 300, 'null', 5, 10, 114, 4, 14, 'Natural Armor', 'Water Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/84/315/315/636252736680781387.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 12, 48);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (300, 'null', 5, 10, 114, 4, 14, 'Natural Armor', 'Water Elemental', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/84/315/315/636252736680781387.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (300, 2, 14);
@@ -8808,8 +8808,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Freeze'
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (300, 47);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (301, 4, 1, -1);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (301, 301, 'null', 0, 13, 1, 5, 13, '', 'Weasel', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 1, -1);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (301, 'null', 0, 13, 1, 5, 13, '', 'Weasel', 'https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 1, 3);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (301, 2, 16);
@@ -8829,8 +8829,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (301, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (302, 8, 18, 54);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (302, 302, 'null', 5, 17, 135, 3, 10, 'In Humanoid Form, 11 In Bear And Hybrid Form', 'Werebear', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/82/1000/1000/636252736005297867.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 18, 54);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (302, 'null', 5, 17, 135, 3, 10, 'In Humanoid Form, 11 In Bear And Hybrid Form', 'Werebear', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/82/1000/1000/636252736005297867.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (302, 2, 10);
@@ -8860,8 +8860,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (302, 19);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (303, 8, 12, 24);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (303, 303, 'null', 4, 12, 78, 3, 10, 'In Humanoid Form, 11 In Boar Or Hybrid Form', 'Wereboar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/80/315/315/636252735506840152.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 12, 24);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (303, 'null', 4, 12, 78, 3, 10, 'In Humanoid Form, 11 In Boar Or Hybrid Form', 'Wereboar', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/80/315/315/636252735506840152.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (303, 2, 10);
@@ -8891,8 +8891,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Charge 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (303, 14);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (304, 8, 6, 6);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (304, 304, 'null', 2, 12, 33, 3, 12, '', 'Wererat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/78/1000/1000/636252735121410517.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 6);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (304, 'null', 2, 12, 33, 3, 12, '', 'Wererat', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/78/1000/1000/636252735121410517.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 1, 10);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (304, 2, 15);
@@ -8923,8 +8923,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen Sm
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (304, 13);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (305, 8, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (305, 305, 'null', 4, 15, 120, 3, 12, '', 'Weretiger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/76/1000/1000/636252734783831163.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 16, 48);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (305, 'null', 4, 15, 120, 3, 12, '', 'Weretiger', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/76/1000/1000/636252734783831163.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (305, 2, 15);
@@ -8958,8 +8958,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pounce 
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (305, 36);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (306, 8, 9, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (306, 306, 'null', 3, 14, 58, 3, 11, 'In Humanoid Form, 12 In Wolf Or Hybrid Form', 'Werewolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/74/1000/1000/636252734224239957.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 9, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (306, 'null', 3, 14, 58, 3, 11, 'In Humanoid Form, 12 In Wolf Or Hybrid Form', 'Werewolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/74/1000/1000/636252734224239957.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (306, 2, 13);
@@ -8990,8 +8990,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Keen He
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (306, 59);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (307, 8, 5, 10);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (307, 307, 'null', 2, 14, 32, 3, 16, 'Natural Armor', 'White Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/415/1000/1000/636252789083357808.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 5, 10);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (307, 'null', 2, 14, 32, 3, 16, 'Natural Armor', 'White Dragon Wyrmling', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/415/1000/1000/636252789083357808.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 1, 14);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (307, 2, 10);
@@ -9021,8 +9021,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Cold Br
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (307, 11);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (308, 8, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (308, 308, 'null', 3, 13, 45, 3, 14, 'Studded Leather', 'Wight', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/56/315/315/636252726349692861.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 6, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (308, 'null', 3, 13, 45, 3, 14, 'Studded Leather', 'Wight', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/56/315/315/636252726349692861.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 1, 15);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (308, 2, 14);
@@ -9058,8 +9058,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunligh
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (308, 22);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (309, 4, 9, 0);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (309, 309, 'null', 2, 12, 22, 5, 19, '', 'Will-o''-Wisp', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/585/315/315/636376363763232290.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (4, 9, 0);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (309, 'null', 2, 12, 22, 5, 19, '', 'Will-o''-Wisp', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/585/315/315/636376363763232290.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 1, 1);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (309, 2, 28);
@@ -9110,8 +9110,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Ephemer
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (309, 22);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (310, 10, 10, 20);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (310, 310, 'null', 3, 15, 75, 4, 13, 'Natural Armor', 'Winter Wolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/54/315/315/636252725270715296.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 10, 20);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (310, 'null', 3, 15, 75, 4, 13, 'Natural Armor', 'Winter Wolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/54/315/315/636252725270715296.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (310, 2, 13);
@@ -9137,8 +9137,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (310, 28);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (310, 51);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (311, 8, 2, 2);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (311, 311, 'null', 0.25, 13, 11, 3, 13, 'Natural Armor', 'Wolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/482/1000/1000/636376300223855327.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 2, 2);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (311, 'null', 0.25, 13, 11, 3, 13, 'Natural Armor', 'Wolf', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/482/1000/1000/636376300223855327.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 1, 12);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (311, 2, 15);
@@ -9159,8 +9159,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Pack Ta
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (311, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (312, 10, 4, 4);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (312, 312, 'null', 0.5, 14, 26, 4, 13, 'Natural Armor', 'Worg', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/52/1000/1000/636252724662073178.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 4, 4);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (312, 'null', 0.5, 14, 26, 4, 13, 'Natural Armor', 'Worg', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/52/1000/1000/636252724662073178.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 1, 16);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (312, 2, 13);
@@ -9181,8 +9181,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (312, 6);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (312, 7);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (313, 8, 9, 27);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (313, 313, 'null', 5, 12, 67, 3, 13, '', 'Wraith', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/50/1000/1000/636252724191790008.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 9, 27);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (313, 'null', 5, 12, 67, 3, 13, '', 'Wraith', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/50/1000/1000/636252724191790008.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 1, 6);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (313, 2, 16);
@@ -9232,8 +9232,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Sunligh
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (313, 22);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (314, 10, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (314, 314, 'null', 6, 14, 110, 4, 13, 'Natural Armor', 'Wyvern', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/48/315/315/636252723695596000.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 13, 39);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (314, 'null', 6, 14, 110, 4, 13, 'Natural Armor', 'Wyvern', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/48/315/315/636252723695596000.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (314, 2, 10);
@@ -9256,8 +9256,8 @@ INSERT INTO dnd.monster_actions (name, description, monster_id) VALUES ('Multiat
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (314, 18);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (315, 8, 7, 42);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (315, 315, 'null', 5, 16, 73, 3, 19, 'Natural Armor', 'Xorn', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/46/1000/1000/636252723241554579.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 7, 42);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (315, 'null', 5, 16, 73, 3, 19, 'Natural Armor', 'Xorn', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/46/1000/1000/636252723241554579.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 1, 17);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (315, 2, 10);
@@ -9288,8 +9288,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Earth G
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (315, 53);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (316, 10, 6, 18);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (316, 316, 'null', 3, 13, 51, 4, 12, 'Natural Armor', 'Yeti', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/8/662/1000/1000/636313413410825930.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 6, 18);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (316, 'null', 3, 13, 51, 4, 12, 'Natural Armor', 'Yeti', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/8/662/1000/1000/636313413410825930.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (316, 2, 13);
@@ -9317,8 +9317,8 @@ INSERT INTO dnd.monster_traits (title, description, monster_id) VALUES ('Snow Ca
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (316, 10);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (317, 10, 15, 45);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (317, 317, 'null', 7, 16, 127, 4, 18, 'Natural Armor', 'Young Black Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/70/1000/1000/636252732861675698.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 15, 45);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (317, 'null', 7, 16, 127, 4, 18, 'Natural Armor', 'Young Black Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/70/1000/1000/636252732861675698.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (317, 2, 14);
@@ -9351,8 +9351,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (317, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (317, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (318, 10, 16, 64);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (318, 318, 'null', 9, 19, 152, 4, 18, 'Natural Armor', 'Young Blue Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/68/1000/1000/636252732434296782.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 16, 64);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (318, 'null', 9, 19, 152, 4, 18, 'Natural Armor', 'Young Blue Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/68/1000/1000/636252732434296782.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (318, 2, 10);
@@ -9384,8 +9384,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (318, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (318, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (319, 10, 13, 39);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (319, 319, 'null', 6, 16, 110, 4, 17, 'Natural Armor', 'Young Brass Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/66/1000/1000/636252731911060874.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 13, 39);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (319, 'null', 6, 16, 110, 4, 17, 'Natural Armor', 'Young Brass Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/66/1000/1000/636252731911060874.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (319, 2, 10);
@@ -9420,8 +9420,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (319, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (319, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (320, 10, 15, 60);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (320, 320, 'null', 8, 17, 142, 4, 18, 'Natural Armor', 'Young Bronze Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/64/315/315/636252731269768088.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 15, 60);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (320, 'null', 8, 17, 142, 4, 18, 'Natural Armor', 'Young Bronze Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/64/315/315/636252731269768088.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 1, 21);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (320, 2, 10);
@@ -9457,8 +9457,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (320, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (320, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (321, 10, 14, 42);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (321, 321, 'null', 7, 17, 119, 4, 17, 'Natural Armor', 'Young Copper Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/62/1000/1000/636252729761648292.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 14, 42);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (321, 'null', 7, 17, 119, 4, 17, 'Natural Armor', 'Young Copper Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/62/1000/1000/636252729761648292.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (321, 2, 12);
@@ -9493,8 +9493,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (321, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (321, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (322, 10, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (322, 322, 'null', 10, 19, 178, 4, 18, 'Natural Armor', 'Young Gold Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/60/1000/1000/636252729283446963.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 17, 85);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (322, 'null', 10, 19, 178, 4, 18, 'Natural Armor', 'Young Gold Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/60/1000/1000/636252729283446963.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (322, 2, 14);
@@ -9531,8 +9531,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (322, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (322, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (323, 10, 16, 48);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (323, 323, 'null', 8, 17, 136, 4, 18, 'Natural Armor', 'Young Green Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/58/315/315/636252728834677623.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 16, 48);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (323, 'null', 8, 17, 136, 4, 18, 'Natural Armor', 'Young Green Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/58/315/315/636252728834677623.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 1, 19);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (323, 2, 12);
@@ -9567,8 +9567,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (323, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (323, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (324, 10, 17, 85);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (324, 324, 'null', 10, 18, 178, 4, 18, 'Natural Armor', 'Young Red Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/399/315/315/636252784386259001.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 17, 85);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (324, 'null', 10, 18, 178, 4, 18, 'Natural Armor', 'Young Red Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/399/315/315/636252784386259001.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (324, 2, 10);
@@ -9600,8 +9600,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (324, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (324, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (325, 10, 16, 80);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (325, 325, 'null', 9, 18, 168, 4, 18, 'Natural Armor', 'Young Silver Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/401/315/315/636252784740667730.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 16, 80);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (325, 'null', 9, 18, 168, 4, 18, 'Natural Armor', 'Young Silver Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/401/315/315/636252784740667730.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 1, 23);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (325, 2, 10);
@@ -9636,8 +9636,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (325, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (325, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (326, 10, 14, 56);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (326, 326, 'null', 6, 16, 133, 4, 17, 'Natural Armor', 'Young White Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/403/1000/1000/636252785358767533.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (10, 14, 56);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (326, 'null', 6, 16, 133, 4, 17, 'Natural Armor', 'Young White Dragon', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/403/1000/1000/636252785358767533.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 1, 18);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (326, 2, 10);
@@ -9671,8 +9671,8 @@ INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (326, 11);
 INSERT INTO dnd.monster_languages (monster_id, language_id) VALUES (326, 28);
 
 
-INSERT INTO dnd.dice (id, dice, amount, constant) VALUES (327, 8, 3, 9);
-INSERT INTO dnd.monster (id, hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (327, 327, 'null', 0.25, 8, 22, 3, 8, '', 'Zombie', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/71/1000/1000/636252733510786769.jpeg');
+INSERT INTO dnd.dice (dice, amount, constant) VALUES (8, 3, 9);
+INSERT INTO dnd.monster (hit_dice_id, legendary_action_description, cr, passive_perception,hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (327, 'null', 0.25, 8, 22, 3, 8, '', 'Zombie', 'https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/71/1000/1000/636252733510786769.jpeg');
 
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 1, 13);
 INSERT INTO dnd.ability_score_monster (monster_id, ability_id, value) VALUES (327, 2, 6);

@@ -8,10 +8,12 @@ import io.grpc.protobuf.ProtoUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.logging.Logger;
 
 @Component
 public class GrpcExceptionHandler {
 
+    Logger logger = Logger.getLogger(GrpcExceptionHandler.class.getName());
     public StatusException buildException(Exception e) {
         StatusException statusException;
         switch (e.getClass().getSimpleName()) {
@@ -27,6 +29,7 @@ public class GrpcExceptionHandler {
     private StatusException handleInternalException(Exception e) {
         Metadata metadata = buildErrorResponseMetadata("InternalException", e.getMessage(),
                 e.getStackTrace());
+        logger.log(java.util.logging.Level.SEVERE, "InternalException", e);
         return Status.INTERNAL.asException(metadata);
     }
 

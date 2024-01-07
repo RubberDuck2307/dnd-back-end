@@ -57,10 +57,12 @@ public class PostgresMonsterService implements MonsterService {
         return monsterRepository.getMonstersFiltered(pageSize, pageNumber, monsterSearchFilter);
     }
 
-    public void addMonster() throws JsonProcessingException {
-        MonsterMq monster = messageMqFactory.monsterCreatedMessage(1, "test", 2F, true);
-        rabbitTemplate.convertAndSend(RabbitMqConfig.TOPIC_EXCHANGE_NAME, RabbitMqConfig.MONSTER_ROUTING_KEY,
-                objectMapper.writeValueAsString(monster));
+    public Monster addMonster(Monster monster) {
+        monster.setHomebrew(true);
+        monster = monsterRepository.save(monster);
+        MonsterMq monsterMq = messageMqFactory.monsterCreatedMessage(monster.getId(),
+                monster.getMonsterName(), monster.getCr(), true);
+        return monster;
     }
 
 }

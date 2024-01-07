@@ -3,14 +3,18 @@ syntax = "proto3";
 option java_package = "dnd.generated";
 
 import "shared/ability_score.proto";
+import "shared/hit_dice.proto";
 
 message MonsterCreate{
   string name = 1;
   float cr = 2;
-  repeated string type = 3;
   string imageUrl = 4;
   string description = 5;
   string size = 6;
-  AbilityScore abilityScore = 7;
+  int32 passivePerception = 7;
+  AbilityScore abilityScore = 8;
+  HitDice hitDice = 9;
+  int32 armorClass = 10;
+  string armorClassDescription = 11;
 }
 

@@ -1,7 +1,10 @@
 package dnd.monster_service.rpc.mapper;
 
+import dnd.generated.HitDiceOuterClass;
+import dnd.generated.MonsterCreateOuterClass;
 import dnd.generated.MonsterServiceOuterClass;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
+import dnd.monster_service.persistance.entity.dice.DiceRoll;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
 import org.springframework.stereotype.Component;
 
@@ -45,4 +48,11 @@ public class MonsterMapper {
                 .build();
     }
 
+    public DiceRoll parseHitDice(HitDiceOuterClass.HitDice hitDice){
+        DiceRoll diceRoll = new DiceRoll();
+        diceRoll.setDice((short) hitDice.getDice());
+        diceRoll.setConstant((short) hitDice.getConstant());
+        diceRoll.setAmount((short) hitDice.getCount());
+        return diceRoll;
+    }
 }

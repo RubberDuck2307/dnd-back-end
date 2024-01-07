@@ -37,31 +37,6 @@ public final class MonsterCreateOuterClass {
     float getCr();
 
     /**
-     * <code>repeated string type = 3;</code>
-     * @return A list containing the type.
-     */
-    java.util.List<java.lang.String>
-        getTypeList();
-    /**
-     * <code>repeated string type = 3;</code>
-     * @return The count of type.
-     */
-    int getTypeCount();
-    /**
-     * <code>repeated string type = 3;</code>
-     * @param index The index of the element to return.
-     * @return The type at the given index.
-     */
-    java.lang.String getType(int index);
-    /**
-     * <code>repeated string type = 3;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the type at the given index.
-     */
-    com.google.protobuf.ByteString
-        getTypeBytes(int index);
-
-    /**
      * <code>string imageUrl = 4;</code>
      * @return The imageUrl.
      */
@@ -98,19 +73,58 @@ public final class MonsterCreateOuterClass {
         getSizeBytes();
 
     /**
-     * <code>.AbilityScore abilityScore = 7;</code>
+     * <code>int32 passivePerception = 7;</code>
+     * @return The passivePerception.
+     */
+    int getPassivePerception();
+
+    /**
+     * <code>.AbilityScore abilityScore = 8;</code>
      * @return Whether the abilityScore field is set.
      */
     boolean hasAbilityScore();
     /**
-     * <code>.AbilityScore abilityScore = 7;</code>
+     * <code>.AbilityScore abilityScore = 8;</code>
      * @return The abilityScore.
      */
     dnd.generated.AbilityScoreOuterClass.AbilityScore getAbilityScore();
     /**
-     * <code>.AbilityScore abilityScore = 7;</code>
+     * <code>.AbilityScore abilityScore = 8;</code>
      */
     dnd.generated.AbilityScoreOuterClass.AbilityScoreOrBuilder getAbilityScoreOrBuilder();
+
+    /**
+     * <code>.HitDice hitDice = 9;</code>
+     * @return Whether the hitDice field is set.
+     */
+    boolean hasHitDice();
+    /**
+     * <code>.HitDice hitDice = 9;</code>
+     * @return The hitDice.
+     */
+    dnd.generated.HitDiceOuterClass.HitDice getHitDice();
+    /**
+     * <code>.HitDice hitDice = 9;</code>
+     */
+    dnd.generated.HitDiceOuterClass.HitDiceOrBuilder getHitDiceOrBuilder();
+
+    /**
+     * <code>int32 armorClass = 10;</code>
+     * @return The armorClass.
+     */
+    int getArmorClass();
+
+    /**
+     * <code>string armorClassDescription = 11;</code>
+     * @return The armorClassDescription.
+     */
+    java.lang.String getArmorClassDescription();
+    /**
+     * <code>string armorClassDescription = 11;</code>
+     * @return The bytes for armorClassDescription.
+     */
+    com.google.protobuf.ByteString
+        getArmorClassDescriptionBytes();
   }
   /**
    * Protobuf type {@code MonsterCreate}
@@ -126,11 +140,10 @@ public final class MonsterCreateOuterClass {
     }
     private MonsterCreate() {
       name_ = "";
-      type_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
       imageUrl_ = "";
       description_ = "";
       size_ = "";
+      armorClassDescription_ = "";
     }
 
     @java.lang.Override
@@ -202,43 +215,6 @@ public final class MonsterCreateOuterClass {
     @java.lang.Override
     public float getCr() {
       return cr_;
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList type_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    /**
-     * <code>repeated string type = 3;</code>
-     * @return A list containing the type.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getTypeList() {
-      return type_;
-    }
-    /**
-     * <code>repeated string type = 3;</code>
-     * @return The count of type.
-     */
-    public int getTypeCount() {
-      return type_.size();
-    }
-    /**
-     * <code>repeated string type = 3;</code>
-     * @param index The index of the element to return.
-     * @return The type at the given index.
-     */
-    public java.lang.String getType(int index) {
-      return type_.get(index);
-    }
-    /**
-     * <code>repeated string type = 3;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the type at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getTypeBytes(int index) {
-      return type_.getByteString(index);
     }
 
     public static final int IMAGEURL_FIELD_NUMBER = 4;
@@ -358,10 +334,21 @@ public final class MonsterCreateOuterClass {
       }
     }
 
-    public static final int ABILITYSCORE_FIELD_NUMBER = 7;
+    public static final int PASSIVEPERCEPTION_FIELD_NUMBER = 7;
+    private int passivePerception_ = 0;
+    /**
+     * <code>int32 passivePerception = 7;</code>
+     * @return The passivePerception.
+     */
+    @java.lang.Override
+    public int getPassivePerception() {
+      return passivePerception_;
+    }
+
+    public static final int ABILITYSCORE_FIELD_NUMBER = 8;
     private dnd.generated.AbilityScoreOuterClass.AbilityScore abilityScore_;
     /**
-     * <code>.AbilityScore abilityScore = 7;</code>
+     * <code>.AbilityScore abilityScore = 8;</code>
      * @return Whether the abilityScore field is set.
      */
     @java.lang.Override
@@ -369,7 +356,7 @@ public final class MonsterCreateOuterClass {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.AbilityScore abilityScore = 7;</code>
+     * <code>.AbilityScore abilityScore = 8;</code>
      * @return The abilityScore.
      */
     @java.lang.Override
@@ -377,11 +364,87 @@ public final class MonsterCreateOuterClass {
       return abilityScore_ == null ? dnd.generated.AbilityScoreOuterClass.AbilityScore.getDefaultInstance() : abilityScore_;
     }
     /**
-     * <code>.AbilityScore abilityScore = 7;</code>
+     * <code>.AbilityScore abilityScore = 8;</code>
      */
     @java.lang.Override
     public dnd.generated.AbilityScoreOuterClass.AbilityScoreOrBuilder getAbilityScoreOrBuilder() {
       return abilityScore_ == null ? dnd.generated.AbilityScoreOuterClass.AbilityScore.getDefaultInstance() : abilityScore_;
+    }
+
+    public static final int HITDICE_FIELD_NUMBER = 9;
+    private dnd.generated.HitDiceOuterClass.HitDice hitDice_;
+    /**
+     * <code>.HitDice hitDice = 9;</code>
+     * @return Whether the hitDice field is set.
+     */
+    @java.lang.Override
+    public boolean hasHitDice() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.HitDice hitDice = 9;</code>
+     * @return The hitDice.
+     */
+    @java.lang.Override
+    public dnd.generated.HitDiceOuterClass.HitDice getHitDice() {
+      return hitDice_ == null ? dnd.generated.HitDiceOuterClass.HitDice.getDefaultInstance() : hitDice_;
+    }
+    /**
+     * <code>.HitDice hitDice = 9;</code>
+     */
+    @java.lang.Override
+    public dnd.generated.HitDiceOuterClass.HitDiceOrBuilder getHitDiceOrBuilder() {
+      return hitDice_ == null ? dnd.generated.HitDiceOuterClass.HitDice.getDefaultInstance() : hitDice_;
+    }
+
+    public static final int ARMORCLASS_FIELD_NUMBER = 10;
+    private int armorClass_ = 0;
+    /**
+     * <code>int32 armorClass = 10;</code>
+     * @return The armorClass.
+     */
+    @java.lang.Override
+    public int getArmorClass() {
+      return armorClass_;
+    }
+
+    public static final int ARMORCLASSDESCRIPTION_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object armorClassDescription_ = "";
+    /**
+     * <code>string armorClassDescription = 11;</code>
+     * @return The armorClassDescription.
+     */
+    @java.lang.Override
+    public java.lang.String getArmorClassDescription() {
+      java.lang.Object ref = armorClassDescription_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        armorClassDescription_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string armorClassDescription = 11;</code>
+     * @return The bytes for armorClassDescription.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getArmorClassDescriptionBytes() {
+      java.lang.Object ref = armorClassDescription_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        armorClassDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -404,9 +467,6 @@ public final class MonsterCreateOuterClass {
       if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         output.writeFloat(2, cr_);
       }
-      for (int i = 0; i < type_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_.getRaw(i));
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, imageUrl_);
       }
@@ -416,8 +476,20 @@ public final class MonsterCreateOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(size_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, size_);
       }
+      if (passivePerception_ != 0) {
+        output.writeInt32(7, passivePerception_);
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(7, getAbilityScore());
+        output.writeMessage(8, getAbilityScore());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(9, getHitDice());
+      }
+      if (armorClass_ != 0) {
+        output.writeInt32(10, armorClass_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(armorClassDescription_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, armorClassDescription_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -435,14 +507,6 @@ public final class MonsterCreateOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, cr_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < type_.size(); i++) {
-          dataSize += computeStringSizeNoTag(type_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getTypeList().size();
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, imageUrl_);
       }
@@ -452,9 +516,24 @@ public final class MonsterCreateOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(size_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, size_);
       }
+      if (passivePerception_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, passivePerception_);
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getAbilityScore());
+          .computeMessageSize(8, getAbilityScore());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getHitDice());
+      }
+      if (armorClass_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, armorClass_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(armorClassDescription_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, armorClassDescription_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -476,19 +555,28 @@ public final class MonsterCreateOuterClass {
       if (java.lang.Float.floatToIntBits(getCr())
           != java.lang.Float.floatToIntBits(
               other.getCr())) return false;
-      if (!getTypeList()
-          .equals(other.getTypeList())) return false;
       if (!getImageUrl()
           .equals(other.getImageUrl())) return false;
       if (!getDescription()
           .equals(other.getDescription())) return false;
       if (!getSize()
           .equals(other.getSize())) return false;
+      if (getPassivePerception()
+          != other.getPassivePerception()) return false;
       if (hasAbilityScore() != other.hasAbilityScore()) return false;
       if (hasAbilityScore()) {
         if (!getAbilityScore()
             .equals(other.getAbilityScore())) return false;
       }
+      if (hasHitDice() != other.hasHitDice()) return false;
+      if (hasHitDice()) {
+        if (!getHitDice()
+            .equals(other.getHitDice())) return false;
+      }
+      if (getArmorClass()
+          != other.getArmorClass()) return false;
+      if (!getArmorClassDescription()
+          .equals(other.getArmorClassDescription())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -505,20 +593,26 @@ public final class MonsterCreateOuterClass {
       hash = (37 * hash) + CR_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getCr());
-      if (getTypeCount() > 0) {
-        hash = (37 * hash) + TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getTypeList().hashCode();
-      }
       hash = (37 * hash) + IMAGEURL_FIELD_NUMBER;
       hash = (53 * hash) + getImageUrl().hashCode();
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getSize().hashCode();
+      hash = (37 * hash) + PASSIVEPERCEPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getPassivePerception();
       if (hasAbilityScore()) {
         hash = (37 * hash) + ABILITYSCORE_FIELD_NUMBER;
         hash = (53 * hash) + getAbilityScore().hashCode();
       }
+      if (hasHitDice()) {
+        hash = (37 * hash) + HITDICE_FIELD_NUMBER;
+        hash = (53 * hash) + getHitDice().hashCode();
+      }
+      hash = (37 * hash) + ARMORCLASS_FIELD_NUMBER;
+      hash = (53 * hash) + getArmorClass();
+      hash = (37 * hash) + ARMORCLASSDESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getArmorClassDescription().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -650,6 +744,7 @@ public final class MonsterCreateOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getAbilityScoreFieldBuilder();
+          getHitDiceFieldBuilder();
         }
       }
       @java.lang.Override
@@ -658,16 +753,22 @@ public final class MonsterCreateOuterClass {
         bitField0_ = 0;
         name_ = "";
         cr_ = 0F;
-        type_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
         imageUrl_ = "";
         description_ = "";
         size_ = "";
+        passivePerception_ = 0;
         abilityScore_ = null;
         if (abilityScoreBuilder_ != null) {
           abilityScoreBuilder_.dispose();
           abilityScoreBuilder_ = null;
         }
+        hitDice_ = null;
+        if (hitDiceBuilder_ != null) {
+          hitDiceBuilder_.dispose();
+          hitDiceBuilder_ = null;
+        }
+        armorClass_ = 0;
+        armorClassDescription_ = "";
         return this;
       }
 
@@ -708,17 +809,16 @@ public final class MonsterCreateOuterClass {
           result.cr_ = cr_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          type_.makeImmutable();
-          result.type_ = type_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.imageUrl_ = imageUrl_;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.description_ = description_;
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.size_ = size_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.passivePerception_ = passivePerception_;
         }
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000040) != 0)) {
@@ -726,6 +826,18 @@ public final class MonsterCreateOuterClass {
               ? abilityScore_
               : abilityScoreBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.hitDice_ = hitDiceBuilder_ == null
+              ? hitDice_
+              : hitDiceBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.armorClass_ = armorClass_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.armorClassDescription_ = armorClassDescription_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -782,33 +894,37 @@ public final class MonsterCreateOuterClass {
         if (other.getCr() != 0F) {
           setCr(other.getCr());
         }
-        if (!other.type_.isEmpty()) {
-          if (type_.isEmpty()) {
-            type_ = other.type_;
-            bitField0_ |= 0x00000004;
-          } else {
-            ensureTypeIsMutable();
-            type_.addAll(other.type_);
-          }
-          onChanged();
-        }
         if (!other.getImageUrl().isEmpty()) {
           imageUrl_ = other.imageUrl_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getSize().isEmpty()) {
           size_ = other.size_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000010;
           onChanged();
+        }
+        if (other.getPassivePerception() != 0) {
+          setPassivePerception(other.getPassivePerception());
         }
         if (other.hasAbilityScore()) {
           mergeAbilityScore(other.getAbilityScore());
+        }
+        if (other.hasHitDice()) {
+          mergeHitDice(other.getHitDice());
+        }
+        if (other.getArmorClass() != 0) {
+          setArmorClass(other.getArmorClass());
+        }
+        if (!other.getArmorClassDescription().isEmpty()) {
+          armorClassDescription_ = other.armorClassDescription_;
+          bitField0_ |= 0x00000200;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -846,34 +962,50 @@ public final class MonsterCreateOuterClass {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 21
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureTypeIsMutable();
-                type_.add(s);
-                break;
-              } // case 26
               case 34: {
                 imageUrl_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
               case 42: {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
               case 50: {
                 size_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
-              case 58: {
+              case 56: {
+                passivePerception_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 66: {
                 input.readMessage(
                     getAbilityScoreFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000040;
                 break;
-              } // case 58
+              } // case 66
+              case 74: {
+                input.readMessage(
+                    getHitDiceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
+              case 80: {
+                armorClass_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
+              case 90: {
+                armorClassDescription_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -995,117 +1127,6 @@ public final class MonsterCreateOuterClass {
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList type_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-      private void ensureTypeIsMutable() {
-        if (!type_.isModifiable()) {
-          type_ = new com.google.protobuf.LazyStringArrayList(type_);
-        }
-        bitField0_ |= 0x00000004;
-      }
-      /**
-       * <code>repeated string type = 3;</code>
-       * @return A list containing the type.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getTypeList() {
-        type_.makeImmutable();
-        return type_;
-      }
-      /**
-       * <code>repeated string type = 3;</code>
-       * @return The count of type.
-       */
-      public int getTypeCount() {
-        return type_.size();
-      }
-      /**
-       * <code>repeated string type = 3;</code>
-       * @param index The index of the element to return.
-       * @return The type at the given index.
-       */
-      public java.lang.String getType(int index) {
-        return type_.get(index);
-      }
-      /**
-       * <code>repeated string type = 3;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the type at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getTypeBytes(int index) {
-        return type_.getByteString(index);
-      }
-      /**
-       * <code>repeated string type = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(
-          int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTypeIsMutable();
-        type_.set(index, value);
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string type = 3;</code>
-       * @param value The type to add.
-       * @return This builder for chaining.
-       */
-      public Builder addType(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTypeIsMutable();
-        type_.add(value);
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string type = 3;</code>
-       * @param values The type to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllType(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTypeIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, type_);
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string type = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        type_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string type = 3;</code>
-       * @param value The bytes of the type to add.
-       * @return This builder for chaining.
-       */
-      public Builder addTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        ensureTypeIsMutable();
-        type_.add(value);
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object imageUrl_ = "";
       /**
        * <code>string imageUrl = 4;</code>
@@ -1149,7 +1170,7 @@ public final class MonsterCreateOuterClass {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         imageUrl_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1159,7 +1180,7 @@ public final class MonsterCreateOuterClass {
        */
       public Builder clearImageUrl() {
         imageUrl_ = getDefaultInstance().getImageUrl();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1173,7 +1194,7 @@ public final class MonsterCreateOuterClass {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         imageUrl_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1221,7 +1242,7 @@ public final class MonsterCreateOuterClass {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         description_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1231,7 +1252,7 @@ public final class MonsterCreateOuterClass {
        */
       public Builder clearDescription() {
         description_ = getDefaultInstance().getDescription();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1245,7 +1266,7 @@ public final class MonsterCreateOuterClass {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         description_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1293,7 +1314,7 @@ public final class MonsterCreateOuterClass {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         size_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1303,7 +1324,7 @@ public final class MonsterCreateOuterClass {
        */
       public Builder clearSize() {
         size_ = getDefaultInstance().getSize();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1317,7 +1338,39 @@ public final class MonsterCreateOuterClass {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         size_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private int passivePerception_ ;
+      /**
+       * <code>int32 passivePerception = 7;</code>
+       * @return The passivePerception.
+       */
+      @java.lang.Override
+      public int getPassivePerception() {
+        return passivePerception_;
+      }
+      /**
+       * <code>int32 passivePerception = 7;</code>
+       * @param value The passivePerception to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassivePerception(int value) {
+
+        passivePerception_ = value;
         bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 passivePerception = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassivePerception() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        passivePerception_ = 0;
         onChanged();
         return this;
       }
@@ -1326,14 +1379,14 @@ public final class MonsterCreateOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           dnd.generated.AbilityScoreOuterClass.AbilityScore, dnd.generated.AbilityScoreOuterClass.AbilityScore.Builder, dnd.generated.AbilityScoreOuterClass.AbilityScoreOrBuilder> abilityScoreBuilder_;
       /**
-       * <code>.AbilityScore abilityScore = 7;</code>
+       * <code>.AbilityScore abilityScore = 8;</code>
        * @return Whether the abilityScore field is set.
        */
       public boolean hasAbilityScore() {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>.AbilityScore abilityScore = 7;</code>
+       * <code>.AbilityScore abilityScore = 8;</code>
        * @return The abilityScore.
        */
       public dnd.generated.AbilityScoreOuterClass.AbilityScore getAbilityScore() {
@@ -1344,7 +1397,7 @@ public final class MonsterCreateOuterClass {
         }
       }
       /**
-       * <code>.AbilityScore abilityScore = 7;</code>
+       * <code>.AbilityScore abilityScore = 8;</code>
        */
       public Builder setAbilityScore(dnd.generated.AbilityScoreOuterClass.AbilityScore value) {
         if (abilityScoreBuilder_ == null) {
@@ -1360,7 +1413,7 @@ public final class MonsterCreateOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityScore abilityScore = 7;</code>
+       * <code>.AbilityScore abilityScore = 8;</code>
        */
       public Builder setAbilityScore(
           dnd.generated.AbilityScoreOuterClass.AbilityScore.Builder builderForValue) {
@@ -1374,7 +1427,7 @@ public final class MonsterCreateOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityScore abilityScore = 7;</code>
+       * <code>.AbilityScore abilityScore = 8;</code>
        */
       public Builder mergeAbilityScore(dnd.generated.AbilityScoreOuterClass.AbilityScore value) {
         if (abilityScoreBuilder_ == null) {
@@ -1395,7 +1448,7 @@ public final class MonsterCreateOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityScore abilityScore = 7;</code>
+       * <code>.AbilityScore abilityScore = 8;</code>
        */
       public Builder clearAbilityScore() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -1408,7 +1461,7 @@ public final class MonsterCreateOuterClass {
         return this;
       }
       /**
-       * <code>.AbilityScore abilityScore = 7;</code>
+       * <code>.AbilityScore abilityScore = 8;</code>
        */
       public dnd.generated.AbilityScoreOuterClass.AbilityScore.Builder getAbilityScoreBuilder() {
         bitField0_ |= 0x00000040;
@@ -1416,7 +1469,7 @@ public final class MonsterCreateOuterClass {
         return getAbilityScoreFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AbilityScore abilityScore = 7;</code>
+       * <code>.AbilityScore abilityScore = 8;</code>
        */
       public dnd.generated.AbilityScoreOuterClass.AbilityScoreOrBuilder getAbilityScoreOrBuilder() {
         if (abilityScoreBuilder_ != null) {
@@ -1427,7 +1480,7 @@ public final class MonsterCreateOuterClass {
         }
       }
       /**
-       * <code>.AbilityScore abilityScore = 7;</code>
+       * <code>.AbilityScore abilityScore = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           dnd.generated.AbilityScoreOuterClass.AbilityScore, dnd.generated.AbilityScoreOuterClass.AbilityScore.Builder, dnd.generated.AbilityScoreOuterClass.AbilityScoreOrBuilder> 
@@ -1441,6 +1494,231 @@ public final class MonsterCreateOuterClass {
           abilityScore_ = null;
         }
         return abilityScoreBuilder_;
+      }
+
+      private dnd.generated.HitDiceOuterClass.HitDice hitDice_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          dnd.generated.HitDiceOuterClass.HitDice, dnd.generated.HitDiceOuterClass.HitDice.Builder, dnd.generated.HitDiceOuterClass.HitDiceOrBuilder> hitDiceBuilder_;
+      /**
+       * <code>.HitDice hitDice = 9;</code>
+       * @return Whether the hitDice field is set.
+       */
+      public boolean hasHitDice() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       * <code>.HitDice hitDice = 9;</code>
+       * @return The hitDice.
+       */
+      public dnd.generated.HitDiceOuterClass.HitDice getHitDice() {
+        if (hitDiceBuilder_ == null) {
+          return hitDice_ == null ? dnd.generated.HitDiceOuterClass.HitDice.getDefaultInstance() : hitDice_;
+        } else {
+          return hitDiceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.HitDice hitDice = 9;</code>
+       */
+      public Builder setHitDice(dnd.generated.HitDiceOuterClass.HitDice value) {
+        if (hitDiceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hitDice_ = value;
+        } else {
+          hitDiceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HitDice hitDice = 9;</code>
+       */
+      public Builder setHitDice(
+          dnd.generated.HitDiceOuterClass.HitDice.Builder builderForValue) {
+        if (hitDiceBuilder_ == null) {
+          hitDice_ = builderForValue.build();
+        } else {
+          hitDiceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HitDice hitDice = 9;</code>
+       */
+      public Builder mergeHitDice(dnd.generated.HitDiceOuterClass.HitDice value) {
+        if (hitDiceBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0) &&
+            hitDice_ != null &&
+            hitDice_ != dnd.generated.HitDiceOuterClass.HitDice.getDefaultInstance()) {
+            getHitDiceBuilder().mergeFrom(value);
+          } else {
+            hitDice_ = value;
+          }
+        } else {
+          hitDiceBuilder_.mergeFrom(value);
+        }
+        if (hitDice_ != null) {
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.HitDice hitDice = 9;</code>
+       */
+      public Builder clearHitDice() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        hitDice_ = null;
+        if (hitDiceBuilder_ != null) {
+          hitDiceBuilder_.dispose();
+          hitDiceBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HitDice hitDice = 9;</code>
+       */
+      public dnd.generated.HitDiceOuterClass.HitDice.Builder getHitDiceBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getHitDiceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.HitDice hitDice = 9;</code>
+       */
+      public dnd.generated.HitDiceOuterClass.HitDiceOrBuilder getHitDiceOrBuilder() {
+        if (hitDiceBuilder_ != null) {
+          return hitDiceBuilder_.getMessageOrBuilder();
+        } else {
+          return hitDice_ == null ?
+              dnd.generated.HitDiceOuterClass.HitDice.getDefaultInstance() : hitDice_;
+        }
+      }
+      /**
+       * <code>.HitDice hitDice = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          dnd.generated.HitDiceOuterClass.HitDice, dnd.generated.HitDiceOuterClass.HitDice.Builder, dnd.generated.HitDiceOuterClass.HitDiceOrBuilder> 
+          getHitDiceFieldBuilder() {
+        if (hitDiceBuilder_ == null) {
+          hitDiceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              dnd.generated.HitDiceOuterClass.HitDice, dnd.generated.HitDiceOuterClass.HitDice.Builder, dnd.generated.HitDiceOuterClass.HitDiceOrBuilder>(
+                  getHitDice(),
+                  getParentForChildren(),
+                  isClean());
+          hitDice_ = null;
+        }
+        return hitDiceBuilder_;
+      }
+
+      private int armorClass_ ;
+      /**
+       * <code>int32 armorClass = 10;</code>
+       * @return The armorClass.
+       */
+      @java.lang.Override
+      public int getArmorClass() {
+        return armorClass_;
+      }
+      /**
+       * <code>int32 armorClass = 10;</code>
+       * @param value The armorClass to set.
+       * @return This builder for chaining.
+       */
+      public Builder setArmorClass(int value) {
+
+        armorClass_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 armorClass = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearArmorClass() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        armorClass_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object armorClassDescription_ = "";
+      /**
+       * <code>string armorClassDescription = 11;</code>
+       * @return The armorClassDescription.
+       */
+      public java.lang.String getArmorClassDescription() {
+        java.lang.Object ref = armorClassDescription_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          armorClassDescription_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string armorClassDescription = 11;</code>
+       * @return The bytes for armorClassDescription.
+       */
+      public com.google.protobuf.ByteString
+          getArmorClassDescriptionBytes() {
+        java.lang.Object ref = armorClassDescription_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          armorClassDescription_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string armorClassDescription = 11;</code>
+       * @param value The armorClassDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setArmorClassDescription(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        armorClassDescription_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string armorClassDescription = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearArmorClassDescription() {
+        armorClassDescription_ = getDefaultInstance().getArmorClassDescription();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string armorClassDescription = 11;</code>
+       * @param value The bytes for armorClassDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setArmorClassDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        armorClassDescription_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1521,24 +1799,29 @@ public final class MonsterCreateOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034monster/monster_create.proto\032\032shared/a" +
-      "bility_score.proto\"\221\001\n\rMonsterCreate\022\014\n\004" +
-      "name\030\001 \001(\t\022\n\n\002cr\030\002 \001(\002\022\014\n\004type\030\003 \003(\t\022\020\n\010" +
-      "imageUrl\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\014\n\004s" +
-      "ize\030\006 \001(\t\022#\n\014abilityScore\030\007 \001(\0132\r.Abilit" +
-      "yScoreB\017\n\rdnd.generatedb\006proto3"
+      "bility_score.proto\032\025shared/hit_dice.prot" +
+      "o\"\354\001\n\rMonsterCreate\022\014\n\004name\030\001 \001(\t\022\n\n\002cr\030" +
+      "\002 \001(\002\022\020\n\010imageUrl\030\004 \001(\t\022\023\n\013description\030\005" +
+      " \001(\t\022\014\n\004size\030\006 \001(\t\022\031\n\021passivePerception\030" +
+      "\007 \001(\005\022#\n\014abilityScore\030\010 \001(\0132\r.AbilitySco" +
+      "re\022\031\n\007hitDice\030\t \001(\0132\010.HitDice\022\022\n\narmorCl" +
+      "ass\030\n \001(\005\022\035\n\025armorClassDescription\030\013 \001(\t" +
+      "B\017\n\rdnd.generatedb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           dnd.generated.AbilityScoreOuterClass.getDescriptor(),
+          dnd.generated.HitDiceOuterClass.getDescriptor(),
         });
     internal_static_MonsterCreate_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_MonsterCreate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MonsterCreate_descriptor,
-        new java.lang.String[] { "Name", "Cr", "Type", "ImageUrl", "Description", "Size", "AbilityScore", });
+        new java.lang.String[] { "Name", "Cr", "ImageUrl", "Description", "Size", "PassivePerception", "AbilityScore", "HitDice", "ArmorClass", "ArmorClassDescription", });
     dnd.generated.AbilityScoreOuterClass.getDescriptor();
+    dnd.generated.HitDiceOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

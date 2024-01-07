@@ -28,5 +28,17 @@ public class MonsterAbilityScore {
 
     private Short value;
 
+    public MonsterAbilityScore() {
+    }
 
+    public MonsterAbilityScore(Ability abilityScore, Short value) {
+        this.abilityScore = abilityScore;
+        this.value = value;
+    }
+
+    public MonsterAbilityScore(Monster monster, Ability abilityScore, Short value) {
+        this.monster = monster;
+        this.abilityScore = abilityScore;
+        this.value = value;
+    }
 }

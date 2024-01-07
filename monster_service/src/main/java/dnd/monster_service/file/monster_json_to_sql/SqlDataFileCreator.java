@@ -88,10 +88,8 @@ public class SqlDataFileCreator {
                 .append(SQLConfig.SCHEMA)
                 .append(".")
                 .append(SQLConfig.MONSTER_TABLE)
-                .append(" (id, hit_dice_id, legendary_action_description, cr, passive_perception," +
+                .append(" (hit_dice_id, legendary_action_description, cr, passive_perception," +
                         "hit_points, size_id, armor_class, armor_class_description, monster_name, image_url) VALUES (")
-                .append(monster.getId())
-                .append(", ")
                 .append(monster.getId())
                 .append(", '")
                 .append(monster.getLegendaryActionsDescription())
@@ -316,9 +314,7 @@ public class SqlDataFileCreator {
                 .append(SQLConfig.SCHEMA)
                 .append(".")
                 .append(SQLConfig.DICE_TABLE)
-                .append(" (id, dice, amount, constant) VALUES (")
-                .append(monster.getId())
-                .append(", ")
+                .append(" (dice, amount, constant) VALUES (")
                 .append(monster.getHitDice().getDice())
                 .append(", ")
                 .append(monster.getHitDice().getAmount())

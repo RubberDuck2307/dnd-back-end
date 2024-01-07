@@ -1,11 +1,11 @@
 package dnd.monster_service.persistance.entity.dice;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class DiceRoll {
     private final static List<Short> availableDice = List.of(D4, D6, D8, D10, D12, D20, D100);
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private short dice;
     private short amount;
