@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+/**
+ * This class is responsible for map between classes used by the service and classes used in the gprc communication.
+ */
 @Component
 public class EncounterGrpcMapper {
 
