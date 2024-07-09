@@ -34,6 +34,7 @@ public class MonsterMapper extends SharedMapper{
                 .Cr(monsterShortRpc.getCr())
                 .id(monsterShortRpc.getId())
                 .name(monsterShortRpc.getName())
+                .imageUrl(monsterShortRpc.getImageUrl())
                 .build();
     }
 
@@ -50,7 +51,6 @@ public class MonsterMapper extends SharedMapper{
                 .setImageUrl(dto.getImageUrl())
                 .setSize(dto.getSize())
                 .setDescription(dto.getDescription())
-                .addAllType(dto.getTypes())
                 .setAbilityScore(buildAbilityScore(dto.getAbilityScore()))
                 .build();
     }

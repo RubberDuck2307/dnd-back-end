@@ -9,6 +9,7 @@ message MonsterShortRpc{
   int64 id = 1;
   string name = 2;
   float cr = 3;
+  string imageUrl = 4;
 }
 
 message MonsterShortListRpc{

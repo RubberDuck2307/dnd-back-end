@@ -20,10 +20,8 @@ public class MonsterServiceAdapter implements MonsterService {
     private final MonsterMapper monsterMapper;
     @Override
     public List<MonsterGetShortDTO> getMonsters(int page, int size, String name, String type, Float cr, Long groupId) {
-
         MonsterServiceOuterClass.MonsterFiltersRpc filtersRpc = monsterMapper
                 .buildMonsterFiltersRpc(name, type, cr, groupId);
-        
        MonsterServiceOuterClass.MonsterShortListRpc rpcList = monsterGrpcClient.getMonsters(page, size, filtersRpc);
         return monsterMapper.buildMonsterGetShortDTOList(rpcList);
     }

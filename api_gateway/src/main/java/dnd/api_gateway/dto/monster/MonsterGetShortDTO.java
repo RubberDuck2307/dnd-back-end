@@ -14,5 +14,6 @@ public class MonsterGetShortDTO {
     private Long id;
     private String name;
     private Float Cr;
+    private  String imageUrl;
 
 }

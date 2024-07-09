@@ -41,6 +41,18 @@ public final class MonsterServiceOuterClass {
      * @return The cr.
      */
     float getCr();
+
+    /**
+     * <code>string imageUrl = 4;</code>
+     * @return The imageUrl.
+     */
+    java.lang.String getImageUrl();
+    /**
+     * <code>string imageUrl = 4;</code>
+     * @return The bytes for imageUrl.
+     */
+    com.google.protobuf.ByteString
+        getImageUrlBytes();
   }
   /**
    * Protobuf type {@code MonsterShortRpc}
@@ -56,6 +68,7 @@ public final class MonsterServiceOuterClass {
     }
     private MonsterShortRpc() {
       name_ = "";
+      imageUrl_ = "";
     }
 
     @java.lang.Override
@@ -139,6 +152,45 @@ public final class MonsterServiceOuterClass {
       return cr_;
     }
 
+    public static final int IMAGEURL_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object imageUrl_ = "";
+    /**
+     * <code>string imageUrl = 4;</code>
+     * @return The imageUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getImageUrl() {
+      java.lang.Object ref = imageUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string imageUrl = 4;</code>
+     * @return The bytes for imageUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getImageUrlBytes() {
+      java.lang.Object ref = imageUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        imageUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -162,6 +214,9 @@ public final class MonsterServiceOuterClass {
       if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         output.writeFloat(3, cr_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUrl_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, imageUrl_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -181,6 +236,9 @@ public final class MonsterServiceOuterClass {
       if (java.lang.Float.floatToRawIntBits(cr_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, cr_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUrl_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, imageUrl_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -204,6 +262,8 @@ public final class MonsterServiceOuterClass {
       if (java.lang.Float.floatToIntBits(getCr())
           != java.lang.Float.floatToIntBits(
               other.getCr())) return false;
+      if (!getImageUrl()
+          .equals(other.getImageUrl())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -223,6 +283,8 @@ public final class MonsterServiceOuterClass {
       hash = (37 * hash) + CR_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getCr());
+      hash = (37 * hash) + IMAGEURL_FIELD_NUMBER;
+      hash = (53 * hash) + getImageUrl().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -357,6 +419,7 @@ public final class MonsterServiceOuterClass {
         id_ = 0L;
         name_ = "";
         cr_ = 0F;
+        imageUrl_ = "";
         return this;
       }
 
@@ -398,6 +461,9 @@ public final class MonsterServiceOuterClass {
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.cr_ = cr_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.imageUrl_ = imageUrl_;
         }
       }
 
@@ -456,6 +522,11 @@ public final class MonsterServiceOuterClass {
         if (other.getCr() != 0F) {
           setCr(other.getCr());
         }
+        if (!other.getImageUrl().isEmpty()) {
+          imageUrl_ = other.imageUrl_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -497,6 +568,11 @@ public final class MonsterServiceOuterClass {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 29
+              case 34: {
+                imageUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -646,6 +722,78 @@ public final class MonsterServiceOuterClass {
       public Builder clearCr() {
         bitField0_ = (bitField0_ & ~0x00000004);
         cr_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object imageUrl_ = "";
+      /**
+       * <code>string imageUrl = 4;</code>
+       * @return The imageUrl.
+       */
+      public java.lang.String getImageUrl() {
+        java.lang.Object ref = imageUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          imageUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string imageUrl = 4;</code>
+       * @return The bytes for imageUrl.
+       */
+      public com.google.protobuf.ByteString
+          getImageUrlBytes() {
+        java.lang.Object ref = imageUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          imageUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string imageUrl = 4;</code>
+       * @param value The imageUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        imageUrl_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string imageUrl = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearImageUrl() {
+        imageUrl_ = getDefaultInstance().getImageUrl();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string imageUrl = 4;</code>
+       * @param value The bytes for imageUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        imageUrl_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3831,22 +3979,22 @@ public final class MonsterServiceOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025monster_service.proto\032\034monster/monster" +
-      "_create.proto\032\022shared/empty.proto\"7\n\017Mon" +
+      "_create.proto\032\022shared/empty.proto\"I\n\017Mon" +
       "sterShortRpc\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\n" +
-      "\n\002cr\030\003 \001(\002\"9\n\023MonsterShortListRpc\022\"\n\010mon" +
-      "sters\030\001 \003(\0132\020.MonsterShortRpc\"5\n\027RandomM" +
-      "onsterRequestRpc\022\n\n\002cr\030\001 \001(\002\022\016\n\006amount\030\002" +
-      " \001(\005\"Z\n\025GetMonstersRequestRpc\022\016\n\006amount\030" +
-      "\001 \001(\005\022\014\n\004page\030\002 \001(\005\022#\n\007filters\030\003 \001(\0132\022.M" +
-      "onsterFiltersRpc\"Z\n\021MonsterFiltersRpc\022\014\n" +
-      "\004name\030\001 \001(\t\022\n\n\002cr\030\002 \001(\002\022\017\n\007groupId\030\003 \001(\003" +
-      "\022\014\n\004type\030\004 \001(\t\022\014\n\004size\030\005 \001(\t2\277\001\n\016Monster" +
-      "Service\022G\n\025getRandomMonstersByCr\022\030.Rando" +
-      "mMonsterRequestRpc\032\024.MonsterShortListRpc" +
-      "\022;\n\013getMonsters\022\026.GetMonstersRequestRpc\032" +
-      "\024.MonsterShortListRpc\022\'\n\rcreateMonster\022\016" +
-      ".MonsterCreate\032\006.EmptyB\017\n\rdnd.generatedb" +
-      "\006proto3"
+      "\n\002cr\030\003 \001(\002\022\020\n\010imageUrl\030\004 \001(\t\"9\n\023MonsterS" +
+      "hortListRpc\022\"\n\010monsters\030\001 \003(\0132\020.MonsterS" +
+      "hortRpc\"5\n\027RandomMonsterRequestRpc\022\n\n\002cr" +
+      "\030\001 \001(\002\022\016\n\006amount\030\002 \001(\005\"Z\n\025GetMonstersReq" +
+      "uestRpc\022\016\n\006amount\030\001 \001(\005\022\014\n\004page\030\002 \001(\005\022#\n" +
+      "\007filters\030\003 \001(\0132\022.MonsterFiltersRpc\"Z\n\021Mo" +
+      "nsterFiltersRpc\022\014\n\004name\030\001 \001(\t\022\n\n\002cr\030\002 \001(" +
+      "\002\022\017\n\007groupId\030\003 \001(\003\022\014\n\004type\030\004 \001(\t\022\014\n\004size" +
+      "\030\005 \001(\t2\277\001\n\016MonsterService\022G\n\025getRandomMo" +
+      "nstersByCr\022\030.RandomMonsterRequestRpc\032\024.M" +
+      "onsterShortListRpc\022;\n\013getMonsters\022\026.GetM" +
+      "onstersRequestRpc\032\024.MonsterShortListRpc\022" +
+      "\'\n\rcreateMonster\022\016.MonsterCreate\032\006.Empty" +
+      "B\017\n\rdnd.generatedb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3859,7 +4007,7 @@ public final class MonsterServiceOuterClass {
     internal_static_MonsterShortRpc_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MonsterShortRpc_descriptor,
-        new java.lang.String[] { "Id", "Name", "Cr", });
+        new java.lang.String[] { "Id", "Name", "Cr", "ImageUrl", });
     internal_static_MonsterShortListRpc_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_MonsterShortListRpc_fieldAccessorTable = new

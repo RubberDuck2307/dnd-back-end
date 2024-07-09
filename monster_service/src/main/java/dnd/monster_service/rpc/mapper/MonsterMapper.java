@@ -36,6 +36,7 @@ public class MonsterMapper {
                 .setId(monster.getId())
                 .setName(monster.getMonsterName())
                 .setCr(monster.getCr())
+                .setImageUrl(monster.getImageUrl())
                 .build();
     }
 
