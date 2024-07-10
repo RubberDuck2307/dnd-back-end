@@ -1,10 +1,9 @@
-package dnd.monster_service.model;
+package dnd.monster_service.service;
 
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
 
 import java.util.List;
-import java.util.Map;
 
 public interface MonsterService {
 
@@ -12,5 +11,5 @@ public interface MonsterService {
     List<Monster> getMonsters(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter);
     Monster addMonster(Monster monster);
     List<Monster> getMonsters(int pageSize, int pageNumber);
-
+    long getAmountOfMonsters();
 }

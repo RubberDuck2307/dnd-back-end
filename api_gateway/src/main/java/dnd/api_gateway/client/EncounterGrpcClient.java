@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
+@Deprecated //TODO remove, just use the adapter class
 public class EncounterGrpcClient {
 
     @GrpcClient("encounter-service")

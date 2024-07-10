@@ -1,15 +1,12 @@
 package dnd.monster_service.rpc.server;
 
-import dnd.generated.EmptyOuterClass;
-import dnd.generated.MonsterCreateOuterClass;
-import dnd.generated.MonsterServiceGrpc;
-import dnd.generated.MonsterServiceOuterClass;
+import dnd.generated.*;
+import dnd.mapper.PrimitivesProtoMapper;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
-import dnd.monster_service.model.MonsterService;
+import dnd.monster_service.service.MonsterService;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
 import dnd.monster_service.rpc.MonsterExceptionHandler;
 import dnd.monster_service.rpc.mapper.MonsterFetchMapper;
-import dnd.monster_service.rpc.mapper.MonsterMapper;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import net.devh.boot.grpc.server.service.GrpcService;
@@ -53,8 +50,22 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
     }
 
     @Override
+    public void countMonsters(Primitives.Empty request, StreamObserver<Primitives.Long> responseObserver) {
+        try {
+            Primitives.Long response = PrimitivesProtoMapper.buildProtoLong(monsterService.getAmountOfMonsters());
+            responseObserver.onNext(response);
+        }
+        catch(Exception e){
+                responseObserver.onError(exceptionHandler.buildException(e));
+                logger.warning(e.getMessage());
+                return;
+            }
+        responseObserver.onCompleted();
+        }
+
+    @Override
     public void createMonster(MonsterCreateOuterClass.MonsterCreate request,
-                              StreamObserver<EmptyOuterClass.Empty> responseObserver) {
+                              StreamObserver<Primitives.Empty> responseObserver) {
         try {
         Monster monster = mapper.parseMonsterCreate(request);
         monsterService.addMonster(monster);

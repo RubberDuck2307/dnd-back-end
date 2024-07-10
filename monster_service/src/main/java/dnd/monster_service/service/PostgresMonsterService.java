@@ -1,9 +1,7 @@
-package dnd.monster_service.model;
+package dnd.monster_service.service;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dnd.monster_service.config.RabbitMqConfig;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterRepository;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
@@ -12,13 +10,11 @@ import dnd.monster_service.rabbitMq.transport_entity.Monster.MonsterMq;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.math3.util.Precision;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -44,6 +40,10 @@ public class PostgresMonsterService implements MonsterService {
         return monsterRepository.getMonstersFiltered(random, amountOfMonsters, monsterSearchFilter);
     }
 
+    @Override
+    public long getAmountOfMonsters() {
+        return monsterRepository.count();
+    }
 
     @Override
     public List<Monster> getMonsters(int pageSize, int pageNumber) {

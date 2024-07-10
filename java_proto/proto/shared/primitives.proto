@@ -2,4 +2,8 @@ syntax = "proto3";
 
 option java_package = "dnd.generated";
 
+message Long{
+  int64 value = 1;
+}
+
 message Empty{}

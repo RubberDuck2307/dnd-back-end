@@ -1,7 +1,7 @@
 package dnd.monster_service;
 
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
-import dnd.monster_service.model.MonsterService;
+import dnd.monster_service.service.MonsterService;
 import dnd.monster_service.persistance.entity.creature.monster.MonsterGroup;
 import dnd.monster_service.persistance.entity.creature.type.MonsterType;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
@@ -9,9 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 

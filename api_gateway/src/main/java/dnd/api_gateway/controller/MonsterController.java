@@ -1,5 +1,6 @@
 package dnd.api_gateway.controller;
 
+import dnd.api_gateway.dto.monster.CountMonstersDTO;
 import dnd.api_gateway.dto.monster.MonsterCreateDTO;
 import dnd.api_gateway.dto.monster.MonsterFullGetDto;
 import dnd.api_gateway.dto.monster.MonsterGetShortDTO;
@@ -14,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/monster")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class MonsterController {
 
     private final MonsterService monsterService;
@@ -32,6 +34,11 @@ public class MonsterController {
     @GetMapping("/{id}")
     public String getMonsterById(@PathVariable String id){
         return "Hello World";
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<CountMonstersDTO> countMonsters(){
+        return ResponseEntity.ok(monsterService.countMonsters());
     }
 
     @PostMapping("/")

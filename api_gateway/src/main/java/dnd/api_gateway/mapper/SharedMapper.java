@@ -3,7 +3,7 @@ package dnd.api_gateway.mapper;
 import dnd.api_gateway.dto.AbilityScoreDto;
 import dnd.generated.AbilityOuterClass;
 import dnd.generated.AbilityScoreOuterClass;
-
+@Deprecated //TODO CHANGE THIS MAPPING
 public class SharedMapper {
 
     public AbilityOuterClass.Ability buildAbility(String name, int score) {
