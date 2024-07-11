@@ -21,13 +21,12 @@ public class MonsterController {
     private final MonsterService monsterService;
 
     @GetMapping("/")
-    @Cacheable("addresses")
     public ResponseEntity<List<MonsterGetShortDTO>> getMonsters
-            (@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int size,
+            (@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int amount,
              @RequestParam(required = false) String name,@RequestParam(required = false) String type,
              @RequestParam(required = false) Float cr, @RequestParam(required = false) Long groupId){
 
-       List<MonsterGetShortDTO> monsters = monsterService.getMonsters(page, size, name, type, cr, groupId);
+       List<MonsterGetShortDTO> monsters = monsterService.getMonsters(page, amount, name, type, cr, groupId);
        return ResponseEntity.ok(monsters);
     }
 

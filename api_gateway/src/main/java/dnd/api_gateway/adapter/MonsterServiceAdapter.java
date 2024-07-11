@@ -24,9 +24,9 @@ public class MonsterServiceAdapter implements MonsterService {
     private MonsterServiceGrpc.MonsterServiceBlockingStub monsterStub;
 
     @Override
-    public List<MonsterGetShortDTO> getMonsters(int page, int size, String name, String type, Float cr, Long groupId) {
+    public List<MonsterGetShortDTO> getMonsters(int page, int amount, String name, String type, Float cr, Long groupId) {
         MonsterServiceOuterClass.GetMonstersRequestRpc requestRpc = monsterProtoMapper.buildGetMonsterRequestRpc(page,
-                size, name, type, cr, groupId);
+                amount, name, type, cr, groupId);
         MonsterServiceOuterClass.MonsterShortListRpc rpcList = monsterStub.getMonsters(requestRpc);
         return monsterDtoMapper.buildMonsterGetShortDTOList(rpcList);
     }

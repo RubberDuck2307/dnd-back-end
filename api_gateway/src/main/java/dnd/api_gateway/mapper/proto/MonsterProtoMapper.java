@@ -18,11 +18,11 @@ public class MonsterProtoMapper {
     }
 
 
-    public MonsterServiceOuterClass.GetMonstersRequestRpc buildGetMonsterRequestRpc(int size, int page, String name,
+    public MonsterServiceOuterClass.GetMonstersRequestRpc buildGetMonsterRequestRpc(int page, int amount, String name,
                                                                                     String type, Float cr, Long groupId){
         MonsterServiceOuterClass.MonsterFiltersRpc filtersRpc = buildMonsterFiltersRpc(name, type, cr, groupId);
         return MonsterServiceOuterClass.GetMonstersRequestRpc.newBuilder()
-                .setAmount(size)
+                .setAmount(amount)
                 .setPage(page)
                 .setFilters(filtersRpc)
                 .build();
