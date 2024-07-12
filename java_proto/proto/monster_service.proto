@@ -39,5 +39,5 @@ message MonsterFiltersRpc{
 service MonsterService{
   rpc getRandomMonstersByCr(RandomMonsterRequestRpc) returns (MonsterShortListRpc);
   rpc getMonsters(GetMonstersRequestRpc) returns (MonsterShortListRpc);
-  rpc countMonsters(Empty) returns (Long);
+  rpc countMonsters(EmptyRpc) returns (LongRpc);;
 }

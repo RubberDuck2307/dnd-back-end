@@ -50,9 +50,9 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
     }
 
     @Override
-    public void countMonsters(Primitives.Empty request, StreamObserver<Primitives.Long> responseObserver) {
+    public void countMonsters(Primitives.EmptyRpc request, StreamObserver<Primitives.LongRpc> responseObserver) {
         try {
-            Primitives.Long response = PrimitivesProtoMapper.buildProtoLong(monsterService.getAmountOfMonsters());
+            Primitives.LongRpc response = PrimitivesProtoMapper.buildProtoLong(monsterService.getAmountOfMonsters());
             responseObserver.onNext(response);
         }
         catch(Exception e){
