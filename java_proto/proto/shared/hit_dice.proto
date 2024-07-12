@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "dnd.generated";
-
-message HitDice{
-  int32 dice = 1;
-  int32 count = 2;
-  int32 constant = 3;
-}

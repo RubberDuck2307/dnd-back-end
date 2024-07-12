@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+option java_package = "dnd.generated";
+
+import "shared/rules.proto";
+
+message MonsterFullRpc{
+  string name = 1;
+  float cr = 2;
+  int32 passivePerception = 3;
+  string imageUrl = 4;
+  string legendaryActionDescription = 5;
+  bool homebrew = 6;
+  string description = 7;
+  DiceRollRpc hitDice = 21;
+  repeated MonsterTypeRpc types = 8;
+  repeated AbilityScoreRpc abilityScores = 9;
+  repeated MonsterSpeedRpc speeds = 10;
+  repeated MonsterSkillRpc skills = 11;
+  repeated MonsterSensesRpc senses = 12;
+  repeated MonsterTraitRpc traits = 13;
+  repeated MonsterActionRPC actions = 14;
+  repeated MonsterReactionRpc reactions = 15;
+  repeated MonsterLegendaryAction legendaryActions = 16;
+  repeated MonsterResistanceAndImmunityRpc resistancesAndImmunities = 17;
+  repeated MonsterConditionImmunityRpc conditionImmunities = 18;
+  repeated MonsterLanguageRpc languages = 19;
+  repeated MonsterVulnerabilitiesRpc vulnerabilities = 20;
+}
+
+message MonsterTypeRpc{
+  int32 id = 1;
+  string typeName = 2;
+}
+
+message MonsterSpeedRpc{
+  string speedName = 1;
+  int32 value = 2;
+}
+
+message MonsterSkillRpc{
+  int32 bonus = 1;
+  string skillName = 2;
+  string skillId = 3;
+}
+
+message MonsterSensesRpc{
+  int32 senseId = 1;
+  int32 range = 2;
+  string senseName = 4;
+}
+
+message MonsterTraitRpc{
+  string traitName = 1;
+  string traitDescription = 2;
+}
+
+message MonsterActionRPC{
+  string actionName = 1;
+  string actionDescription = 2;
+}
+
+message MonsterReactionRpc{
+  string reactionName = 1;
+  string reactionDescription = 2;
+}
+
+message MonsterLegendaryAction{
+  string legendaryActionName = 1;
+  string legendaryActionDescription = 2;
+}
+
+message MonsterResistanceAndImmunityRpc{
+  string damageName = 1;
+  bool isImmunity = 2;
+  string attackException = 3;
+}
+
+message MonsterConditionImmunityRpc{
+  string conditionName = 1;
+  int32 conditionId = 2;
+}
+
+message MonsterVulnerabilitiesRpc{
+  string damageName = 1;
+  string attackType = 2;
+}
+
+message MonsterLanguageRpc{
+  string languageName = 1;
+}
