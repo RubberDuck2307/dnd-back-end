@@ -1,12 +1,9 @@
 package dnd.api_gateway.controller;
 
 import dnd.api_gateway.dto.monster.CountMonstersDTO;
-import dnd.api_gateway.dto.monster.MonsterCreateDTO;
-import dnd.api_gateway.dto.monster.MonsterFullGetDto;
 import dnd.api_gateway.dto.monster.MonsterGetShortDTO;
 import dnd.api_gateway.adapter.MonsterService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,11 +36,5 @@ public class MonsterController {
     public ResponseEntity<CountMonstersDTO> countMonsters(){
         return ResponseEntity.ok(monsterService.countMonsters());
     }
-
-    @PostMapping("/")
-    public ResponseEntity<MonsterFullGetDto> createMonster(@RequestBody MonsterCreateDTO dto){
-      return ResponseEntity.status(201).body(monsterService.createMonster(dto));
-    }
-
 
 }

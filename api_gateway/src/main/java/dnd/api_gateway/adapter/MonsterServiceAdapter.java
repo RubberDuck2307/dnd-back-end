@@ -1,8 +1,6 @@
 package dnd.api_gateway.adapter;
 
 import dnd.api_gateway.dto.monster.CountMonstersDTO;
-import dnd.api_gateway.dto.monster.MonsterCreateDTO;
-import dnd.api_gateway.dto.monster.MonsterFullGetDto;
 import dnd.api_gateway.dto.monster.MonsterGetShortDTO;
 import dnd.api_gateway.mapper.dto.MonsterDtoMapper;
 import dnd.api_gateway.mapper.proto.MonsterProtoMapper;
@@ -35,11 +33,5 @@ public class MonsterServiceAdapter implements MonsterService {
     public CountMonstersDTO countMonsters() {
        long amount =  PrimitivesProtoMapper.parseProtoLong(monsterStub.countMonsters(PrimitivesProtoMapper.buildProtoEmpty()));
         return monsterDtoMapper.buildCountMonstersDTO(amount);
-    }
-
-    @Override
-    public MonsterFullGetDto createMonster(MonsterCreateDTO dto) {
-        monsterStub.createMonster(monsterDtoMapper.buildMonsterCreate(dto));
-        return null;
     }
 }

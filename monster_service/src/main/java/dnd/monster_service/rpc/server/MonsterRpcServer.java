@@ -62,18 +62,4 @@ public class MonsterRpcServer extends MonsterServiceGrpc.MonsterServiceImplBase 
             }
         responseObserver.onCompleted();
         }
-
-    @Override
-    public void createMonster(MonsterCreateOuterClass.MonsterCreate request,
-                              StreamObserver<Primitives.Empty> responseObserver) {
-        try {
-        Monster monster = mapper.parseMonsterCreate(request);
-        monsterService.addMonster(monster);
-        } catch (Exception e) {
-            responseObserver.onError(exceptionHandler.buildException(e));
-            logger.warning(e.getMessage());
-            return;
-        }
-        responseObserver.onCompleted();
-    }
 }

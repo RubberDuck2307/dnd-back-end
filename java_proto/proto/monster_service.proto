@@ -2,7 +2,6 @@ syntax = "proto3";
 
 option java_package = "dnd.generated";
 
-import "monster/monster_create.proto";
 import "shared/primitives.proto";
 
 message MonsterShortRpc{
@@ -41,6 +40,5 @@ service MonsterService{
 
   rpc getRandomMonstersByCr(RandomMonsterRequestRpc) returns (MonsterShortListRpc);
   rpc getMonsters(GetMonstersRequestRpc) returns (MonsterShortListRpc);
-  rpc createMonster(MonsterCreate) returns (Empty);
   rpc countMonsters(Empty) returns (Long);
 }
