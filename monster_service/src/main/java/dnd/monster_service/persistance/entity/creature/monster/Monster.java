@@ -25,7 +25,7 @@ import static dnd.monster_service.config.SQLConfig.SCHEMA;
 @Setter
 @NoArgsConstructor
 
-public class Monster extends Creature {
+public class Monster{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,45 +38,50 @@ public class Monster extends Creature {
     private String legendaryActionDescription;
     private Boolean homebrew;
     private String description;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private CreatureSize size;
+    private Short hitPoints;
+    private Short ArmorClass;
+    private String ArmorClassDescription;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             schema = SCHEMA,
             name = SQLConfig.MONSTER_TYPE_RELATION_TABLE,
             joinColumns = @JoinColumn(name = "monster_id"),
             inverseJoinColumns = @JoinColumn(name = "type_id"))
-    private Set<MonsterType> types ;
+    private Set<MonsterType> types;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MonsterAbilityScore> monsterAbilityScores;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MonsterSavingThrow> savingThrows;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<SpeedsOfMonsters> speeds;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<SkillsOfMonsters> skills;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MonsterSense> senses;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MonsterTrait> traits;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MonsterAction> actions;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MonsterReaction> reactions;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<LegendaryAction> legendaryActions;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MonsterDamage> damageResistancesAndImmunities;
 
-    @OneToMany(mappedBy = "monster", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "monster", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<MonsterVulnerability> damageVulnerabilities;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -88,7 +93,7 @@ public class Monster extends Creature {
     )
     private Set<Language> languages;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             schema = SQLConfig.SCHEMA,
             name = SQLConfig.MONSTER_CONDITION_IMMUNITY_TABLE,
@@ -97,7 +102,7 @@ public class Monster extends Creature {
     )
     private Set<Condition> conditionImmunities;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             schema = SCHEMA,
             name = SQLConfig.MONSTER_GROUP_MONSTER_RELATION_TABLE,
@@ -106,12 +111,12 @@ public class Monster extends Creature {
     )
     private Set<MonsterGroup> monsterGroups;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private DiceRoll hitDice;
 
     public void setHitDice(DiceRoll hitDice) {
         this.hitDice = hitDice;
-        super.setHitPoints((short) hitDice.getAverage());
+        setHitPoints((short) hitDice.getAverage());
     }
 
     public String toString() {
@@ -129,9 +134,6 @@ public class Monster extends Creature {
     }
 
     public void setMonsterAbilityScores(Set<MonsterAbilityScore> abilities) {
-      /*  if (abilities.size() != 6) {
-            throw new IllegalArgumentException("There must be 6 abilities");
-        } */
         for (MonsterAbilityScore ability : abilities) {
             ability.setMonster(this);
         }
