@@ -12,4 +12,5 @@ public interface MonsterService {
     Monster addMonster(Monster monster);
     List<Monster> getMonsters(int pageSize, int pageNumber);
     long getAmountOfMonsters();
+    Monster getMonsterById(long id);
 }

@@ -2,6 +2,7 @@ package dnd.monster_service.service;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dnd.monster_service.http.error.exception.IdNotFoundException;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterRepository;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
@@ -43,6 +44,11 @@ public class PostgresMonsterService implements MonsterService {
     @Override
     public long getAmountOfMonsters() {
         return monsterRepository.count();
+    }
+
+    @Override
+    public Monster getMonsterById(long id) {
+        return monsterRepository.findById(id).orElseThrow(IdNotFoundException::new);
     }
 
     @Override
