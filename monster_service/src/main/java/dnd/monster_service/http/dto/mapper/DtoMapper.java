@@ -13,6 +13,7 @@ import dnd.monster_service.persistance.entity.creature.monster.skills_of_monster
 import dnd.monster_service.persistance.entity.creature.monster.speeds_of_monsters.SpeedsOfMonsters;
 import dnd.monster_service.persistance.entity.creature.type.MonsterType;
 import dnd.monster_service.persistance.entity.dice.DiceRoll;
+import dnd.monster_service.utils.RuleHelper;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -28,6 +29,7 @@ public class DtoMapper {
         builder.monsterName(monster.getMonsterName());
         builder.cr(monster.getCr());
         builder.armorClass(monster.getArmorClass());
+        builder.xp(RuleHelper.mapCrToXp(monster.getCr()));
         builder.armorClassDescription(monster.getArmorClassDescription());
         builder.description(monster.getDescription());
         builder.homebrew(monster.getHomebrew());

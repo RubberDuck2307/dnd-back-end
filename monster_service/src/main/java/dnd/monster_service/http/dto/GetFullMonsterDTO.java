@@ -18,6 +18,7 @@ public class GetFullMonsterDTO {
     private Float cr;
     private String monsterName;
     private Short passivePerception;
+    private int xp;
     private String imageUrl;
     private DiceRollDTO hitDice;
     private Short hitPoints;
