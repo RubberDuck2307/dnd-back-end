@@ -23,6 +23,8 @@ public interface MonsterRepository extends JpaRepository<Monster, Long> {
      * @return List of monsters that match the search filters
      */
     List<Monster> getMonstersFiltered(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter);
+
+    List<Monster> getMonstersFiltered(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter, MonsterSearchSorting sorting);
     @Query("select count(m) from Monster m join m.monsterGroups mg where mg.id = :id")
     int countByMonsterGroupId(long id);
 

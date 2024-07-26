@@ -34,7 +34,13 @@ public class MonsterRepositoryImpl {
      *                           of the filter is null the attribute will be ignored.
      * @return List of monsters that match the search filters
      */
-    public List<Monster> getMonstersFiltered(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter) {
+    public List<Monster> getMonstersFiltered(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter)
+    {
+        return getMonstersFiltered(pageSize, pageNumber, monsterSearchFilter, new MonsterSearchSorting(true,"NAME"));
+    }
+
+    public List<Monster> getMonstersFiltered(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter,
+                                             MonsterSearchSorting sorting) {
         Session session = entityManager.unwrap(Session.class);
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<Monster> criteriaQuery = criteriaBuilder.createQuery(Monster.class);
@@ -63,6 +69,12 @@ public class MonsterRepositoryImpl {
         }
 
         criteriaQuery.where(predicates.toArray(new Predicate[0]));
+
+        if (sorting.isAscending()) {
+            criteriaQuery.orderBy(criteriaBuilder.asc(root.get(sorting.getSortingType().getMatchingField())));
+        } else {
+            criteriaQuery.orderBy(criteriaBuilder.desc(root.get(sorting.getSortingType().getMatchingField())));
+        }
         List<Monster> result = session.createQuery(criteriaQuery).setFirstResult(pageNumber * pageSize)
                 .setMaxResults(pageSize).getResultList();
         session.close();

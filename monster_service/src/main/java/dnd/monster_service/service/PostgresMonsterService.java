@@ -6,6 +6,7 @@ import dnd.monster_service.http.error.exception.IdNotFoundException;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterRepository;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
+import dnd.monster_service.persistance.repository.monster.MonsterSearchSorting;
 import dnd.monster_service.rabbitMq.transport_entity.Monster.MessageMqFactory;
 import dnd.monster_service.rabbitMq.transport_entity.Monster.MonsterMq;
 import lombok.RequiredArgsConstructor;
@@ -61,6 +62,12 @@ public class PostgresMonsterService implements MonsterService {
     @Override
     public List<Monster> getMonsters(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter) {
         return monsterRepository.getMonstersFiltered(pageSize, pageNumber, monsterSearchFilter);
+    }
+
+    @Override
+    public List<Monster> getMonsters(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter,
+                                     MonsterSearchSorting sorting) {
+        return monsterRepository.getMonstersFiltered(pageSize, pageNumber, monsterSearchFilter, sorting);
     }
 
     public Monster addMonster(Monster monster) {
