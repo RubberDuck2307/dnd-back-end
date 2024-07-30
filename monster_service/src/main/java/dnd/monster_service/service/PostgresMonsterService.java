@@ -38,7 +38,7 @@ public class PostgresMonsterService implements MonsterService {
             return new ArrayList<>();
         }
         int random = (int) (Math.random() * (amount - amountOfMonsters));
-        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().cr((float) cr).build();
+        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().minCR((float) cr).maxCR((float) cr).build();
         return monsterRepository.getMonstersFiltered(random, amountOfMonsters, monsterSearchFilter);
     }
 

@@ -38,10 +38,12 @@ public class MonsterController {
     public ResponseEntity<List<MonsterGetShortDTO>> getMonsters
             (@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int amount,
              @RequestParam(required = false) String name, @RequestParam(required = false) String type,
-             @RequestParam(required = false) Float cr, @RequestParam(required = false) Long groupId,
+             @RequestParam(required = false, defaultValue = "0") Float minCr,
+             @RequestParam(required = false, defaultValue = "100") Float maxCr,
+             @RequestParam(required = false) Long groupId,
              @RequestParam(required = false, defaultValue = "true") Boolean ascending,
              @RequestParam(required = false, defaultValue = "name") String order) {
-        MonsterSearchFilter filter = new MonsterSearchFilter(name, type, cr, groupId);
+        MonsterSearchFilter filter = new MonsterSearchFilter(name, type, minCr, maxCr, groupId);
         MonsterSearchSorting sorting = new MonsterSearchSorting(ascending, order.toUpperCase());
         List<MonsterGetShortDTO> monsters = monsterService.getMonsters(amount, page, filter, sorting)
                 .stream()

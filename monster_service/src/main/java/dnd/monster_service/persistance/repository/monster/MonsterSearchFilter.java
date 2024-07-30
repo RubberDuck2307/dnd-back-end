@@ -11,7 +11,8 @@ public class MonsterSearchFilter{
 
     private String name;
     private String type;
-    private Float cr;
+    private Float minCR;
+    private Float maxCR;
     private Long groupId;
 
 }

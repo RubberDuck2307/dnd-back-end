@@ -53,8 +53,12 @@ public class MonsterRepositoryImpl {
                     root.get("monsterName")), "%" + monsterSearchFilter.getName().toLowerCase() + "%"));
         }
 
-        if (monsterSearchFilter.getCr() != null) {
-            predicates.add(criteriaBuilder.equal(root.get("cr"), monsterSearchFilter.getCr()));
+        if (monsterSearchFilter.getMinCR() != null) {
+            predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("cr"), monsterSearchFilter.getMinCR()));
+        }
+
+        if (monsterSearchFilter.getMaxCR() != null) {
+            predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("cr"), monsterSearchFilter.getMaxCR()));
         }
 
         if (monsterSearchFilter.getGroupId() != null) {

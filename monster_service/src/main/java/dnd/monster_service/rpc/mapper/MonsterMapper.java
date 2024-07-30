@@ -28,7 +28,7 @@ public class MonsterMapper {
         String type = filtersRpc.getType().isBlank() ? null : filtersRpc.getType();
         Float cr = filtersRpc.getCr() == 0 ? null : filtersRpc.getCr();
         Long groupId = filtersRpc.getGroupId() == 0 ? null : filtersRpc.getGroupId();
-        return new MonsterSearchFilter(name, type, cr, groupId);
+        return new MonsterSearchFilter(name, type, null, null, groupId);
     }
 
     public MonsterServiceOuterClass.MonsterShortRpc buildMonsterShortRpc(Monster monster){
