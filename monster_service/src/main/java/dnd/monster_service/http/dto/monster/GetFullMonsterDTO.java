@@ -1,4 +1,4 @@
-package dnd.monster_service.http.dto;
+package dnd.monster_service.http.dto.monster;
 
 import dnd.dto.ConditionDTO;
 import dnd.dto.DiceRollDTO;

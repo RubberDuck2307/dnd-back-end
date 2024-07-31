@@ -2,10 +2,9 @@ package dnd.monster_service.http.dto.mapper;
 
 import dnd.dto.ConditionDTO;
 import dnd.dto.DiceRollDTO;
-import dnd.monster_service.http.dto.*;
+import dnd.monster_service.http.dto.monster.*;
 import dnd.monster_service.persistance.entity.creature.Condition;
 import dnd.monster_service.persistance.entity.creature.monster.*;
-import dnd.monster_service.persistance.entity.creature.monster.ability_score.MonsterAbilityScore;
 import dnd.monster_service.persistance.entity.creature.monster.damage.MonsterDamage;
 import dnd.monster_service.persistance.entity.creature.monster.damage.MonsterVulnerability;
 import dnd.monster_service.persistance.entity.creature.monster.sense.MonsterSense;

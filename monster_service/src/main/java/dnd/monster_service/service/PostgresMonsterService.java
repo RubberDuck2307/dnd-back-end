@@ -2,7 +2,9 @@ package dnd.monster_service.service;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dnd.monster_service.http.dto.cr.CrRangeDto;
 import dnd.monster_service.http.error.exception.IdNotFoundException;
+import dnd.monster_service.model.cr.CrRange;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterRepository;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
@@ -16,6 +18,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -24,8 +27,7 @@ public class PostgresMonsterService implements MonsterService {
 
     private final MessageMqFactory messageMqFactory;
     private final MonsterRepository monsterRepository;
-    private final RabbitTemplate rabbitTemplate;
-    private final ObjectMapper objectMapper;
+
 
     @Override
     public List<Monster> getRandomMonstersByCr(double cr, int amountOfMonsters) {
@@ -50,6 +52,12 @@ public class PostgresMonsterService implements MonsterService {
     @Override
     public Monster getMonsterById(long id) {
         return monsterRepository.findById(id).orElseThrow(IdNotFoundException::new);
+    }
+
+    @Override
+    public CrRange getCrRange() {
+       List<Float> result = monsterRepository.getCrRange();
+       return new CrRange(Collections.min(result), Collections.max(result));
     }
 
     @Override

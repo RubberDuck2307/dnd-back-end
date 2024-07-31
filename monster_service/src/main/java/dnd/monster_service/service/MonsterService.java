@@ -1,5 +1,7 @@
 package dnd.monster_service.service;
 
+import dnd.monster_service.http.dto.cr.CrRangeDto;
+import dnd.monster_service.model.cr.CrRange;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchSorting;
@@ -15,6 +17,6 @@ public interface MonsterService {
     List<Monster> getMonsters(int pageSize, int pageNumber);
     long getAmountOfMonsters();
     Monster getMonsterById(long id);
-
+    CrRange getCrRange();
     long getAmountOfMonstersFiltered(MonsterSearchFilter monsterSearchFilter);
 }

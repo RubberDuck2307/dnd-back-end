@@ -1,6 +1,7 @@
 package dnd.monster_service.persistance.repository.monster;
 
 import dnd.monster_service.config.SQLConfig;
+import dnd.monster_service.model.cr.CrRange;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.entity.creature.monster.MonsterGroup;
 import dnd.monster_service.persistance.entity.creature.type.MonsterType;
@@ -107,4 +108,18 @@ public class MonsterRepositoryImpl {
         }
         return predicates;
     }
+
+//    public CrRange getCrRange() {
+//        Session session = entityManager.unwrap(Session.class);
+//        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+//        CriteriaQuery<Float> criteriaQuery = criteriaBuilder.createQuery(Float.class);
+//        Root<Monster> root = criteriaQuery.from(Monster.class);
+//
+//        List<Predicate> predicates = new ArrayList<>();
+//        predicates.add(criteriaBuilder.equal(root.get("cr"), criteriaBuilder.least(root.get("cr").as(Float.class))));
+//        predicates.add(criteriaBuilder.equal(root.get("cr"), criteriaBuilder.greatest(root.get("cr").as(Float.class))));
+//        criteriaQuery.select(root.get("cr")).where(predicates.toArray(new Predicate[0]));
+//        List<Float> result = session.createQuery(criteriaQuery).getResultList();
+//        return  new CrRange(Collections.min(result), Collections.max(result));
+//    }
 }

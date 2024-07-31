@@ -1,9 +1,11 @@
 package dnd.monster_service.http.controller;
 
-import dnd.monster_service.http.dto.CountMonstersDTO;
-import dnd.monster_service.http.dto.GetFullMonsterDTO;
-import dnd.monster_service.http.dto.MonsterGetShortDTO;
+import dnd.monster_service.http.dto.cr.CrRangeDto;
+import dnd.monster_service.http.dto.monster.CountMonstersDTO;
+import dnd.monster_service.http.dto.monster.GetFullMonsterDTO;
+import dnd.monster_service.http.dto.monster.MonsterGetShortDTO;
 import dnd.monster_service.http.dto.mapper.DtoMapper;
+import dnd.monster_service.model.cr.CrRange;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchSorting;
@@ -57,6 +59,13 @@ public class MonsterController {
                 .map(dtoMapper::buildMonsterGetShortDTO)
                 .toList();
         return ResponseEntity.ok(monsters);
+    }
+
+    @GetMapping("cr/range")
+    public ResponseEntity<CrRangeDto> getCrRange(){
+        CrRange range = monsterService.getCrRange();
+        CrRangeDto dto = new CrRangeDto(range.getMinCr(), range.getMaxCr());
+       return ResponseEntity.ok(dto);
     }
 
 }

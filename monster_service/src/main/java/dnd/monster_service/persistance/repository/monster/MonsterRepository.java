@@ -1,5 +1,6 @@
 package dnd.monster_service.persistance.repository.monster;
 
+import dnd.monster_service.model.cr.CrRange;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,6 +30,7 @@ public interface MonsterRepository extends JpaRepository<Monster, Long> {
     int countByMonsterGroupId(long id);
 
     long countMonstersFiltered(MonsterSearchFilter monsterSearchFilter);
-
+    @Query("select distinct m.cr from Monster m where m.cr = (select min (m.cr) from Monster m) or m.cr = (select max(m.cr) from  Monster m )")
+    List<Float> getCrRange();
 
 }

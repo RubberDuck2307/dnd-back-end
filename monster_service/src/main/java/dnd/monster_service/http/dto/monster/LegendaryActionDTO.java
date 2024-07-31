@@ -1,11 +1,12 @@
-package dnd.monster_service.http.dto;
+package dnd.monster_service.http.dto.monster;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class MonsterTraitDTO {
-    private String traitName;
+public class LegendaryActionDTO {
+
+    private String actionName;
     private String description;
 }
