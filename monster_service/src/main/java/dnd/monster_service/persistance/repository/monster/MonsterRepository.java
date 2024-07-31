@@ -30,7 +30,10 @@ public interface MonsterRepository extends JpaRepository<Monster, Long> {
     int countByMonsterGroupId(long id);
 
     long countMonstersFiltered(MonsterSearchFilter monsterSearchFilter);
-    @Query("select distinct m.cr from Monster m where m.cr = (select min (m.cr) from Monster m) or m.cr = (select max(m.cr) from  Monster m )")
-    List<Float> getCrRange();
 
+    @Query("select  min(m.cr) from Monster m")
+    Float getMinCr();
+
+    @Query("select  max(m.cr) from Monster m")
+    Float getMaxCr();
 }

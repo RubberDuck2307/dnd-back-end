@@ -56,8 +56,7 @@ public class PostgresMonsterService implements MonsterService {
 
     @Override
     public CrRange getCrRange() {
-       List<Float> result = monsterRepository.getCrRange();
-       return new CrRange(Collections.min(result), Collections.max(result));
+       return new CrRange(monsterRepository.getMinCr(), monsterRepository.getMaxCr());
     }
 
     @Override
