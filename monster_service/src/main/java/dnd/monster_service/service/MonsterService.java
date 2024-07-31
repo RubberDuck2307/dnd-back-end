@@ -15,4 +15,6 @@ public interface MonsterService {
     List<Monster> getMonsters(int pageSize, int pageNumber);
     long getAmountOfMonsters();
     Monster getMonsterById(long id);
+
+    long getAmountOfMonstersFiltered(MonsterSearchFilter monsterSearchFilter);
 }

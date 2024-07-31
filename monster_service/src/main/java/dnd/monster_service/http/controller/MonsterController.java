@@ -30,16 +30,23 @@ public class MonsterController {
     }
 
     @GetMapping("/count")
-    public ResponseEntity<CountMonstersDTO> countMonsters() {
-        return ResponseEntity.ok(dtoMapper.buildCountMonstersDTO((monsterService.getAmountOfMonsters())));
+    public ResponseEntity<CountMonstersDTO> countMonsters(@RequestParam(required = false) String name,
+                                                          @RequestParam(required = false) String type,
+                                                          @RequestParam(required = false) Float minCr,
+                                                          @RequestParam(required = false) Float maxCr) {
+        long count = monsterService.getAmountOfMonstersFiltered(
+                new MonsterSearchFilter(name, type, minCr, maxCr, null));
+        return ResponseEntity.ok(dtoMapper.buildCountMonstersDTO(count));
     }
 
     @GetMapping("/")
     public ResponseEntity<List<MonsterGetShortDTO>> getMonsters
-            (@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "20") int amount,
-             @RequestParam(required = false) String name, @RequestParam(required = false) String type,
-             @RequestParam(required = false, defaultValue = "0") Float minCr,
-             @RequestParam(required = false, defaultValue = "100") Float maxCr,
+            (@RequestParam(defaultValue = "0") int page,
+             @RequestParam(defaultValue = "20") int amount,
+             @RequestParam(required = false) String name,
+             @RequestParam(required = false) String type,
+             @RequestParam(required = false) Float minCr,
+             @RequestParam(required = false) Float maxCr,
              @RequestParam(required = false) Long groupId,
              @RequestParam(required = false, defaultValue = "true") Boolean ascending,
              @RequestParam(required = false, defaultValue = "name") String order) {

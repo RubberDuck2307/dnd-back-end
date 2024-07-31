@@ -28,5 +28,7 @@ public interface MonsterRepository extends JpaRepository<Monster, Long> {
     @Query("select count(m) from Monster m join m.monsterGroups mg where mg.id = :id")
     int countByMonsterGroupId(long id);
 
+    long countMonstersFiltered(MonsterSearchFilter monsterSearchFilter);
+
 
 }

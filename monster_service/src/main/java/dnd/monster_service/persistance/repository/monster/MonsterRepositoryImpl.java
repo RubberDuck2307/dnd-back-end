@@ -39,6 +39,21 @@ public class MonsterRepositoryImpl {
         return getMonstersFiltered(pageSize, pageNumber, monsterSearchFilter, new MonsterSearchSorting(true,"NAME"));
     }
 
+    public long countMonstersFiltered(MonsterSearchFilter monsterSearchFilter) {
+        Session session = entityManager.unwrap(Session.class);
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<Long> criteriaQuery = criteriaBuilder.createQuery(Long.class);
+        Root<Monster> root = criteriaQuery.from(Monster.class);
+
+        List<Predicate> predicates = buildPredicates(criteriaBuilder, root, monsterSearchFilter);
+
+        criteriaQuery.select(criteriaBuilder.count(root)).where(predicates.toArray(new Predicate[0]));
+        Query<Long> query = session.createQuery(criteriaQuery);
+        long result = query.getSingleResult();
+        session.close();
+        return result;
+    }
+
     public List<Monster> getMonstersFiltered(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter,
                                              MonsterSearchSorting sorting) {
         Session session = entityManager.unwrap(Session.class);
@@ -46,6 +61,25 @@ public class MonsterRepositoryImpl {
         CriteriaQuery<Monster> criteriaQuery = criteriaBuilder.createQuery(Monster.class);
         Root<Monster> root = criteriaQuery.from(Monster.class);
 
+        List<Predicate> predicates = buildPredicates(criteriaBuilder, root, monsterSearchFilter);
+
+        criteriaQuery.select(root).where(predicates.toArray(new Predicate[0]));
+
+        if (sorting.isAscending()) {
+            criteriaQuery.orderBy(criteriaBuilder.asc(root.get(sorting.getSortingType().getMatchingField())));
+        } else {
+            criteriaQuery.orderBy(criteriaBuilder.desc(root.get(sorting.getSortingType().getMatchingField())));
+        }
+        List<Monster> result = session.createQuery(criteriaQuery).setFirstResult(pageNumber * pageSize)
+                .setMaxResults(pageSize).getResultList();
+        session.close();
+        return result;
+    }
+
+
+    private List<Predicate> buildPredicates(CriteriaBuilder criteriaBuilder, Root<Monster> root,
+                                            MonsterSearchFilter monsterSearchFilter)
+    {
         List<Predicate> predicates = new ArrayList<>();
 
         if (monsterSearchFilter.getName() != null && !monsterSearchFilter.getName().isEmpty()) {
@@ -71,18 +105,6 @@ public class MonsterRepositoryImpl {
             predicates.add(criteriaBuilder.like(criteriaBuilder.lower(monsterTypeJoin.get("name"))
                     , "%" + monsterSearchFilter.getType().toLowerCase() + "%"));
         }
-
-        criteriaQuery.where(predicates.toArray(new Predicate[0]));
-
-        if (sorting.isAscending()) {
-            criteriaQuery.orderBy(criteriaBuilder.asc(root.get(sorting.getSortingType().getMatchingField())));
-        } else {
-            criteriaQuery.orderBy(criteriaBuilder.desc(root.get(sorting.getSortingType().getMatchingField())));
-        }
-        List<Monster> result = session.createQuery(criteriaQuery).setFirstResult(pageNumber * pageSize)
-                .setMaxResults(pageSize).getResultList();
-        session.close();
-        return result;
+        return predicates;
     }
-
 }

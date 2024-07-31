@@ -139,6 +139,7 @@ public class DtoMapper {
         builder.name(monster.getMonsterName());
         builder.cr(monster.getCr());
         builder.imageUrl(monster.getImageUrl());
+        builder.types(monster.getTypes().stream().map(this::buildMonsterTypeDTO).collect(Collectors.toList()));
         return builder.build();
     }
 }

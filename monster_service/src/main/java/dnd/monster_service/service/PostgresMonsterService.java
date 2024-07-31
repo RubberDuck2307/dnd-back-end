@@ -53,6 +53,11 @@ public class PostgresMonsterService implements MonsterService {
     }
 
     @Override
+    public long getAmountOfMonstersFiltered(MonsterSearchFilter monsterSearchFilter) {
+        return monsterRepository.countMonstersFiltered(monsterSearchFilter);
+    }
+
+    @Override
     public List<Monster> getMonsters(int pageSize, int pageNumber) {
         pageSize = Math.max(pageSize, 20);
         pageNumber = Math.max(pageNumber, 0);
