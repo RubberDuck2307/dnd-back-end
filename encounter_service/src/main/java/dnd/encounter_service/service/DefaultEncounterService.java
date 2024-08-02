@@ -1,12 +1,12 @@
-package dnd.encounter_service.model.service;
+package dnd.encounter_service.service;
 
 import dnd.encounter_service.logic.encounter_creation.EncounterCreationLogic;
 import dnd.encounter_service.logic.encounter_difficulty.DifficultyService;
 import dnd.encounter_service.model.entity.encounter.Monster;
 import dnd.encounter_service.model.entity.encounter.Encounter;
 import dnd.encounter_service.model.entity.encounter.EncounterFactory;
-import dnd.encounter_service.model.service.interfaces.EncounterService;
-import dnd.encounter_service.model.service.interfaces.MonsterViewService;
+import dnd.encounter_service.service.interfaces.EncounterService;
+import dnd.encounter_service.service.interfaces.MonsterViewService;
 import dnd.encounter_service.utils.ListUtils;
 import dnd.exception.NoSuchEncounterException;
 import lombok.RequiredArgsConstructor;

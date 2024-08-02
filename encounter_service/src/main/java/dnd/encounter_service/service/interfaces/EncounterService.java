@@ -1,4 +1,4 @@
-package dnd.encounter_service.model.service.interfaces;
+package dnd.encounter_service.service.interfaces;
 
 import dnd.encounter_service.model.entity.encounter.Encounter;
 

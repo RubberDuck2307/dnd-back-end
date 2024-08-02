@@ -1,7 +1,7 @@
 package dnd.encounter_service.grpc;
 
 import dnd.encounter_service.model.entity.encounter.Encounter;
-import dnd.encounter_service.model.service.interfaces.EncounterService;
+import dnd.encounter_service.service.interfaces.EncounterService;
 import dnd.exception.GrpcExceptionHandler;
 import dnd.generated.EncounterServiceGrpc;
 import dnd.generated.EncounterServiceOuterClass;

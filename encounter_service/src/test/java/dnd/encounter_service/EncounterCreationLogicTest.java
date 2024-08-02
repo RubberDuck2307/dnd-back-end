@@ -4,7 +4,7 @@ package dnd.encounter_service;
 import dnd.encounter_service.logic.encounter_difficulty.DifficultyService;
 import dnd.encounter_service.model.entity.encounter.Monster;
 import dnd.encounter_service.model.entity.encounter.Encounter;
-import dnd.encounter_service.model.service.interfaces.EncounterService;
+import dnd.encounter_service.service.interfaces.EncounterService;
 import dnd.exception.NoSuchEncounterException;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
