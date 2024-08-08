@@ -137,7 +137,10 @@ public class Monster{
         for (MonsterAbilityScore ability : abilities) {
             ability.setMonster(this);
         }
+    }
 
+    public void addMonsterGroup(MonsterGroup monsterGroup){
+        monsterGroups.add(monsterGroup);
     }
 
 

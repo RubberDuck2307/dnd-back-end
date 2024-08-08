@@ -19,9 +19,8 @@ public class JsonFileReader {
 
     private final ObjectMapper objectMapper;
 
-    @Autowired
     public JsonFileReader(ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
+        this.objectMapper = objectMapper.copy();
     }
 
     public DifficultyService readEncounterDifficultyMap() throws FileNotFoundException, JsonProcessingException {

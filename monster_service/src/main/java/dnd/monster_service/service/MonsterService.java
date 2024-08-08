@@ -7,6 +7,7 @@ import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchSorting;
 
 import java.util.List;
+import java.util.Set;
 
 public interface MonsterService {
 
@@ -17,6 +18,7 @@ public interface MonsterService {
     List<Monster> getMonsters(int pageSize, int pageNumber);
     long getAmountOfMonsters();
     Monster getMonsterById(long id);
+    List<Monster> getMonstersByIds(List<Long> ids);
     CrRange getCrRange();
     long getAmountOfMonstersFiltered(MonsterSearchFilter monsterSearchFilter);
 }

@@ -25,7 +25,8 @@
     "Traits": "<p><em><strong>Amphibious.</strong></em> The aboleth can breathe air and water. </p><p><em><strong>Mucous Cloud.</strong></em> While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater. </p><p><em><strong>Probing Telepathy.</strong></em> If a creature communicates telepathically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The aboleth makes three tentacle attacks. </p><p><em><strong>Tentacle.</strong></em> <em>Melee Weapon Attack:</em> +9 to hit, reach 10 ft., one target. <em>Hit:</em> 12 (2d6 + 5) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed. </p><p><em><strong>Tail.</strong></em> <em>Melee Weapon Attack:</em> +9 to hit, reach 10 ft. one target. <em>Hit:</em> 15 (3d6 + 5) bludgeoning damage. </p><p><em><strong>Enslave (3/Day).</strong></em> The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance. </p><p>Whenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth.</p>",
     "Legendary Actions": "<p>The aboleth can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The aboleth regains spent legendary actions at the start of its turn. </p><p><em><strong>Detect.</strong></em> The aboleth makes a Wisdom (Perception) check. </p><p><em><strong>Tail Swipe.</strong></em> The aboleth makes one tail attack. </p><p><em><strong>Psychic Drain</strong></em> (Costs 2 Actions). One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/11/1000/1000/636238825975375671.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/11/1000/1000/636238825975375671.jpeg",
+    "MonsterGroup": "Underwater"
   },
   {
     "name": "Acolyte",
@@ -51,7 +52,8 @@
     "Challenge": "1/4 (50 XP)",
     "Traits": "<p><em><strong>Spellcasting.</strong></em> The acolyte is a 1st-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). The acolyte has following cleric spells prepared: </p><p>Cantrips (at will): light, sacred flame, thaumaturgy </p><p>1st level (3 slots): bless, cure wounds, sanctuary</p>",
     "Actions": "<p><em><strong>Club.</strong></em> <em>Melee Weapon Attack:</em> +2 to hit, reach 5 ft., one target. <em>Hit:</em> 2 (1d4) bludgeoning damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg",
+    "MonsterGroup": "Temple, Settlement"
   },
   {
     "name": "Adult Black Dragon",
@@ -396,7 +398,8 @@
     "Challenge": "2 (450 XP)",
     "Traits": "<p> <em><strong>Pounce.</strong></em> If the allosaurus moves at least 30 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the allosaurus can make one bite attack against it as a bonus action.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 5 ft., one target. <em>Hit:</em> 15 (2d10 + 4) piercing damage.</p><p><em><strong>Claw. </strong></em><em>Melee Weapon Attack:</em> +6 to hit, reach 5 ft., one target. <em>Hit:</em> 8 (1d8 + 4) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Dinosaur"
   },
   {
     "name": "Ancient Black Dragon",
@@ -844,7 +847,9 @@
     "Challenge": "12 (8,400 XP)",
     "Traits": "<p><em><strong>Magic Resistance.</strong></em> The archmage has advantage on saving throws against spells and other magical effects.</p><p><em><strong>Spellcasting.</strong></em> The archmage is an 18th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 17, +9 to hit with spell attacks). The archmage can cast disguise self and invisibility at will and has the following wizard spells prepared:</p><p>Cantrips (at will): fire bolt, light, mage hand, prestidigitation, shocking grasp</p><p>1st level (4 slots): detect magic, identify, mage armor, magic missile</p><p>2nd level (3 slots): detect thoughts, mirror image, misty step</p><p>3rd level (3 slots): counterspell, fly, lightning bolt</p><p>4th level (3 slots): banishment, fire shield, stoneskin</p><p>5th level (3 slots): cone of cold, scrying, wall of force</p><p>6th level (1 slot): globe of invulnerability</p><p>7th level (1 slot): teleport</p><p>8th level (1 slot): mind blank</p><p>9th level (1 slot): time stop</p><p>*The archmage casts mind blank, stoneskin and mage armor spells on itself before combat.</p>",
     "Actions": "<p><em><strong>Dagger.</strong></em> <em>Melee or <em>Ranged Weapon Attack:</em></em> +6 to hit, reach 5 ft. or range 20/60 ft., one target. <em>Hit:</em> 4 (1d4 + 2) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/167/1000/1000/636252760213195530.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/167/1000/1000/636252760213195530.jpeg",
+    "MonsterGroup": "Settlement"
+
   },
   {
     "name": "Assassin",
@@ -872,7 +877,8 @@
     "Challenge": "8 (3,900 XP)",
     "Traits": "<p><em><strong>Assassinate.</strong></em> During its first turn, the assassin has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the assassin scores against a surprised creature is a critical hit. </p><p><em><strong>Evasion.</strong></em> If the assassin is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, the assassin instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. </p><p><em><strong>Sneak Attack.</strong></em> Once per turn, the assassin deals an extra 14 (4d6) damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an ally of the assassin that isn't incapacitated and the assassin doesn't have disadvantage on the attack roll.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The assassin makes two shortsword attacks. </p><p><em><strong>Shortsword.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 5 ft., one target. <em>Hit:</em> 6 (1d6 + 3) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one. </p><p><em><strong>Light Crossbow.</strong></em> <em>Ranged Weapon Attack:</em> +6 to hit, range 80/320 ft., one target. <em>Hit:</em> 7 (1d8 + 3) piercing damage, and the target must make a DC 15 Constitution saving throw, taking 24 (7d6) poison damage on a failed save, or half as much damage on a successful one.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/910/315/315/636334293020978804.png"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/910/315/315/636334293020978804.png",
+    "MonsterGroup": "Settlement"
   },
   {
     "name": "Awakened Shrub",
@@ -899,7 +905,8 @@
     "Challenge": "0 (10 XP)",
     "Traits": "<p><em><strong>False Appearance.</strong></em> While the shrub remains motionless, it is indistinguishable from a normal shrub.</p>",
     "Actions": "<p><em><strong>Rake.</strong></em> <em>Melee Weapon Attack:</em> +1 to hit, reach 5 ft., one target. <em>Hit:</em> 1 (1d4 − 1) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Awakened Tree",
@@ -926,7 +933,8 @@
     "Challenge": "2 (450 XP)",
     "Traits": "<p><em><strong>False Appearance.</strong></em> While the tree remains motionless, it is indistinguishable from a normal tree.</p>",
     "Actions": "<p><em><strong>Slam.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 10 ft., one target. <em>Hit:</em> 14 (3d6 + 4) bludgeoning damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/659/plant.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Axe Beak",
@@ -1081,7 +1089,8 @@
     "Languages": "Any one language (usually Common)",
     "Challenge": "1/8 (25 XP)",
     "Actions": "<p><em><strong>Scimitar.</strong></em> <em>Melee Weapon Attack:</em> +3 to hit, reach 5 ft., one target. <em>Hit:</em> 4 (1d6 + 1) slashing damage. </p><p><em><strong>Light Crossbow.</strong></em> <em>Ranged Weapon Attack:</em> +3 to hit, range 80 ft./320 ft., one target. <em>Hit:</em> 5 (1d8 + 1) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg",
+    "MonsterGroup": "Grove, Bandit Camp"
   },
   {
     "name": "Bandit Captain",
@@ -1108,7 +1117,8 @@
     "Challenge": "2 (450 XP)",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The captain makes three melee attacks: two with its scimitar and one with its dagger. Or the captain makes two ranged attacks with its daggers. </p><p><em><strong>Scimitar.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 6 (1d6 + 3) slashing damage. </p><p><em><strong>Dagger.</strong></em> <em>Melee or <em>Ranged Weapon Attack:</em></em> +5 to hit, reach 5 ft. or range 20/60 ft., one target. <em>Hit:</em> 5 (1d4 + 3) piercing damage.</p>",
     "Reactions": "<p><em><strong>Parry.</strong></em> The captain adds 2 to its AC against one melee attack that would hit it. To do so, the captain must see the attacker and be wielding a melee weapon.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/181/1000/1000/636252761965117015.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/181/1000/1000/636252761965117015.jpeg",
+    "MonsterGroup": "Grove, Bandit Camp"
   },
   {
     "name": "Banshee",
@@ -1217,7 +1227,8 @@
     "Challenge": "0 (10 XP)",
     "Traits": "<p><em><strong>Echolocation.</strong></em> The bat can't use its blindsight while deafened. </p><p><em><strong>Keen Hearing.</strong></em> The bat has advantage on Wisdom (Perception) checks that rely on hearing.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +0 to hit, reach 5 ft., one creature. <em>Hit:</em> 1 piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/305/1000/1000/636379812593010967.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/18/305/1000/1000/636379812593010967.jpeg",
+    "MonsterGroup": "Cave"
   },
   {
     "name": "Bearded Devil",
@@ -1297,7 +1308,8 @@
     "Challenge": "2 (450 XP)",
     "Traits": "<p><em><strong>Reckless.</strong></em> At the start of its turn, the berserker can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn.</p>",
     "Actions": "<p><em><strong>Greataxe.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 9 (1d12 + 3) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg",
+    "MonsterGroup": "Settlement, Bandit Camp"
   },
   {
     "name": "Black Bear",
@@ -1323,7 +1335,8 @@
     "Challenge": "1/2 (100 XP)",
     "Traits": "<p><em><strong>Keen Smell.</strong></em> The bear has advantage on Wisdom (Perception) checks that rely on smell.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The bear makes two attacks: one with its bite and one with its claws. </p><p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +3 to hit, reach 5 ft., one target. <em>Hit:</em> 5 (1d6 + 2) piercing damage. </p><p><em><strong>Claws.</strong></em> <em>Melee Weapon Attack:</em> +3 to hit, reach 5 ft., one target. <em>Hit:</em> 7 (2d4 + 2) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Black Dragon Wyrmling",
@@ -1483,7 +1496,8 @@
     "Challenge": "1/4 (50 XP)",
     "Traits": "<p><em><strong>Charge.</strong></em> If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 3 (1d6) slashing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone. </p><p><em><strong>Relentless (Recharges after a Short or Long Rest).</strong></em> If the boar takes 7 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.</p>",
     "Actions": "<p><em><strong>Tusk.</strong></em> <em>Melee Weapon Attack:</em> +3 to hit, reach 5 ft., one target. <em>Hit:</em> 4 (1d6 + 1) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Bone Devil",
@@ -1594,7 +1608,8 @@
     "Challenge": "1 (200 XP)",
     "Traits": "<p><em><strong>Keen Smell.</strong></em> The bear has advantage on Wisdom (Perception) checks that rely on smell.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The bear makes two attacks: one with its bite and one with its claws. </p><p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 8 (1d8 + 4) piercing damage. </p><p><em><strong>Claws.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 11 (2d6 + 4) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Bugbear",
@@ -1646,7 +1661,8 @@
     "Challenge": "5 (1,800 XP)",
     "Traits": "<p><em><strong>Standing Leap.</strong></em> The bulette's long jump is up to 30 feet and its high jump is up to 15 feet, with or without a running start.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +7 to hit, reach 5 ft., one target. <em>Hit:</em> 30 (4d12 + 4) piercing damage. </p><p><em><strong>Deadly Leap.</strong></em> If the bulette jumps at least 15 feet as part of its movement, it can then use this action to land on its feet in a space that contains one or more other creatures. Each of those creatures must succeed on a DC 16 Strength or Dexterity saving throw (target's choice) or be knocked prone and take 14 (3d6 + 4) bludgeoning damage plus 14 (3d6 + 4) slashing damage. On a successful save, the creature takes only half the damage, isn't knocked prone, and is pushed 5 feet out of the bulette's space into an unoccupied space of the creature's choice. If no unoccupied space is within range, the creature instead falls prone in the bulette's space.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/223/315/315/636252765369632881.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/223/315/315/636252765369632881.jpeg",
+    "MonsterGroup": "Underdark"
   },
   {
     "name": "Camel",
@@ -1696,7 +1712,8 @@
     "Challenge": "0 (10 XP)",
     "Traits": "<p><em><strong>Keen Smell.</strong></em> The cat has advantage on Wisdom (Perception) checks that rely on smell.</p>",
     "Actions": "<p><em><strong>Claws.</strong></em> <em>Melee Weapon Attack:</em> +0 to hit, reach 5 ft., one target. <em>Hit:</em> 1 slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Settlement"
   },
   {
     "name": "Centaur",
@@ -1933,7 +1950,8 @@
     "Languages": "Any one language (usually Common)",
     "Challenge": "0 (10 XP)",
     "Actions": "<p><em><strong>Club.</strong></em> <em>Melee Weapon Attack:</em> +2 to hit, reach 5 ft., one target. <em>Hit:</em> 2 (1d4) bludgeoning damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg",
+    "MonsterGroup": "Settlement"
   },
   {
     "name": "Constrictor Snake",
@@ -2090,7 +2108,8 @@
     "Challenge": "2 (450 XP)",
     "Traits": "<p><em><strong>Dark Devotion.</strong></em> The fanatic has advantage on saving throws against being charmed or frightened. </p><p><em><strong>Spellcasting.</strong></em> The fanatic is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The fanatic has the following cleric spells prepared: </p><p>Cantrips (at will): light, sacred flame, thaumaturgy </p><p>1st level (4 slots): command, inflict wounds, shield of faith </p><p>2nd level (3 slots): hold person, spiritual weapon</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The fanatic makes two melee attacks. </p><p><em><strong>Dagger.</strong></em> <em>Melee or <em>Ranged Weapon Attack:</em></em> +4 to hit, reach 5 ft. or range 20/60 ft., one creature. <em>Hit:</em> 4 (1d4 + 2) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/259/1000/1000/636252768307230924.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/259/1000/1000/636252768307230924.jpeg",
+    "MonsterGroup": "Cult"
   },
   {
     "name": "Cultist",
@@ -2116,7 +2135,8 @@
     "Challenge": "1/8 (25 XP)",
     "Traits": "<p><em><strong>Dark Devotion.</strong></em> The cultist has advantage on saving throws against being charmed or frightened.</p>",
     "Actions": "<p><em><strong>Scimitar.</strong></em> <em>Melee Weapon Attack:</em> +3 to hit, reach 5 ft., one creature. <em>Hit:</em> 4 (1d6 + 1) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/481/1000/1000/636364323106021375.png"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/14/481/1000/1000/636364323106021375.png",
+    "MonsterGroup": "Cult"
   },
   {
     "name": "Cyclops",
@@ -2141,7 +2161,8 @@
     "Challenge": "6 (2,300 XP)",
     "Traits": "<p><em><strong>Poor Depth Perception.</strong></em> The cyclops has disadvantage on any attack roll against a target more than 30 feet away.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The cyclops makes two greatclub attacks.</p><p><em><strong>Greatclub.</strong></em> <em>Melee Weapon Attack:</em> +9 to hit, reach 10 ft., one target. <em>Hit:</em> 19 (3d8 + 6) bludgeoning damage.</p><p><em><strong>Rock.</strong></em> <em>Ranged Weapon Attack:</em> +9 to hit, range 30/120 ft., one target. <em>Hit:</em> 28 (4d10 + 6) bludgeoning damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/470/1000/1000/636376290137285130.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/470/1000/1000/636376290137285130.jpeg",
+    "MonsterGroup": "Hills"
   },
   {
     "name": "Darkmantle",
@@ -2219,7 +2240,8 @@
     "Challenge": "1/2 (100 XP)",
     "Traits": "<p><em><strong>Stone Camouflage.</strong></em> The gnome has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.</p><p><em><strong>Gnome Cunning.</strong></em> The gnome has advantage on Intelligence, Wisdom, and Charisma saving throws against magic.</p><p><em><strong>Innate Spellcasting.</strong></em> The gnome’s innate spellcasting ability is Intelligence (spell save DC 11). It can innately cast the following spells, requiring no material components:</p><p>At will: nondetection (self only)</p><p>1/day each: blindness/deafness, blur, disguise self</p>",
     "Actions": "<p><em><strong>War Pick.</strong></em> <em>Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage.</p><p><em><strong>Poisoned Dart.</strong></em> <em>Ranged Weapon Attack:</em> +4 to hit, range 30/120 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 12 Constitution saving throw or be poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/112/1000/1000/636323610009818415.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/112/1000/1000/636323610009818415.jpeg",
+    "MonsterGroup": "Underdark"
   },
   {
     "name": "Deer",
@@ -2243,7 +2265,8 @@
     "Languages": "--",
     "Challenge": "0 (10 XP)",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +2 to hit, reach 5 ft., one target. <em>Hit:</em> 2 (1d4) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Deva",
@@ -2298,7 +2321,8 @@
     "Challenge": "1 (200 XP)",
     "Traits": "<p><em><strong>Keen Hearing and Smell.</strong></em> The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.</p><p><em><strong>Pack Tactics.</strong></em> The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 feet of the creature and the ally isn't incapacitated.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/484/315/315/636376300478361995.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/484/315/315/636376300478361995.jpeg",
+    "MonsterGroup": "Grove, Orc camp, Bandit camp"
   },
   {
     "name": "Djinni",
@@ -2352,7 +2376,8 @@
     "Challenge": "3 (700 XP)",
     "Traits": "<p><em><strong>Shapechanger.</strong></em> The doppelganger can use its action to polymorph into a Small or Medium humanoid it has seen, or back into its true form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies. </p><p><em><strong>Ambusher.</strong></em> The doppelganger has advantage on attack rolls against any creature it has surprised. </p><p><em><strong>Surprise Attack.</strong></em> If the doppelganger surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 10 (3d6) damage from the attack.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The doppelganger makes two melee attacks. </p><p><em><strong>Slam.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 5 ft., one target. <em>Hit:</em> 7 (1d6 + 4) bludgeoning damage. </p><p><em><strong>Read Thoughts.</strong></em> The doppelganger magically reads the surface thoughts of one creature within 60 feet of it. The effect can penetrate barriers, but 3 feet of wood or dirt, 2 feet of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the doppelganger can continue reading its thoughts, as long as the doppelganger's concentration isn't broken (as if concentrating on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom (Insight) and Charisma (Deception, Intimidation, and Persuasion) checks against the target.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/289/315/315/636252770983164351.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/289/315/315/636252770983164351.jpeg",
+    "MonsterGroup": "Settlement"
   },
   {
     "name": "Draft Horse",
@@ -2376,7 +2401,8 @@
     "Languages": "--",
     "Challenge": "1/4 (50 XP)",
     "Actions": "<p><em><strong>Hooves.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 5 ft., one target. <em>Hit:</em> 9 (2d4 + 4) bludgeoning damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Settlement"
   },
   {
     "name": "Dragon Turtle",
@@ -2403,7 +2429,8 @@
     "Challenge": "17 (18,000 XP)",
     "Traits": "<p><em><strong>Amphibious.</strong></em> The dragon turtle can breathe air and water.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The dragon turtle makes three attacks: one with its bite and two with its claws. It can make one tail attack in place of its two claw attacks. </p><p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +13 to hit, reach 15 ft., one target. <em>Hit:</em> 26 (3d12 + 7) piercing damage. </p><p><em><strong>Claw.</strong></em> <em>Melee Weapon Attack:</em> +13 to hit, reach 10 ft., one target. <em>Hit:</em> 16 (2d8 + 7) slashing damage. </p><p><em><strong>Tail.</strong></em> <em>Melee Weapon Attack:</em> +13 to hit, reach 15 ft., one target. <em>Hit:</em> 26 (3d12 + 7) bludgeoning damage. If the target is a creature, it must succeed on a DC 20 Strength saving throw or be pushed up to 10 feet away from the dragon turtle and knocked prone. </p><p><em><strong>Steam Breath (Recharge 5–6).</strong></em> The dragon turtle exhales scalding steam in a 60-foot cone. Each creature in that area must make a DC 18 Constitution saving throw, taking 52 (15d6) fire damage on a failed save, or half as much damage on a successful one. Being underwater doesn't grant resistance against this damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/291/1000/1000/636252771128151641.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/291/1000/1000/636252771128151641.jpeg",
+    "MonsterGroup": "Underwater"
   },
   {
     "name": "Dretch",
@@ -2456,7 +2483,8 @@
     "Challenge": "6 (2,300 XP)",
     "Traits": "<p><em><strong>Fey Ancestry.</strong></em> The drider has advantage on saving throws against being charmed, and magic can't put the drider to sleep. </p><p><em><strong>Innate Spellcasting.</strong></em> The drider's innate spellcasting ability is Wisdom (spell save DC 13). The drider can innately cast the following spells, requiring no material components: </p><p>At will: dancing lights </p><p>1/day each: darkness, faerie fire </p><p><em><strong>Spider Climb.</strong></em> The drider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.</p><p><em><strong>Sunlight Sensitivity.</strong></em> While in sunlight, the drider has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight. </p><p><em><strong>Web Walker.</strong></em> The drider ignores movement restrictions caused by webbing.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The drider makes three attacks, either with its longsword or its longbow. It can replace one of those attacks with a bite attack. </p><p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 5 ft., one creature. <em>Hit:</em> 2 (1d4) piercing damage plus 9 (2d8) poison damage. </p><p><em><strong>Longsword.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 5 ft., one target. <em>Hit:</em> 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands. </p><p><em><strong>Longbow.</strong></em> <em>Ranged Weapon Attack:</em> +6 to hit, range 150/600 ft., one target. <em>Hit:</em> 7 (1d8 + 3) piercing damage plus 4 (1d8) poison damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/295/1000/1000/636252771409285458.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/295/1000/1000/636252771409285458.jpeg",
+    "MonsterGroup": "Underdark"
   },
   {
     "name": "Drow",
@@ -2482,7 +2510,8 @@
     "Challenge": "1/4 (50 XP)",
     "Traits": "<p><em><strong>Fey Ancestry.</strong></em> The drow has advantage on saving throws against being charmed, and magic can’t put the drow to sleep.</p><p><em><strong>Innate Spellcasting.</strong></em> The drow’s spellcasting ability is Charisma (spell save DC 11). It can innately cast the following spells, requiring no material components:</p><p>At will: dancing lights</p><p>1/day each: darkness, faerie fire</p><p><em><strong>Sunlight Sensitivity.</strong></em> While in sunlight, the drow has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</p>",
     "Actions": "<p><em><strong>Shortsword.</strong></em> <em>Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one target. <em>Hit:</em> 5 (1d6 + 2) piercing damage.</p><p><em><strong>Hand Crossbow.</strong></em> <em>Ranged Weapon Attack:</em> +4 to hit, range 30/120 ft., one target. Hit: 5 (1d6 + 2) piercing damage, and the target must succeed on a DC 13 Constitution saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or more, the target is also unconscious while poisoned in this way. The target wakes up if it takes damage or if another creature takes an action to shake it awake.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/501/1000/1000/636376310726273495.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/501/1000/1000/636376310726273495.jpeg",
+    "MonsterGroup": "Underdark"
   },
   {
     "name": "Druid",
@@ -2508,7 +2537,8 @@
     "Challenge": "2 (450 XP)",
     "Traits": "<p><em><strong>Spellcasting.</strong></em> The druid is a 4th-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 12, +4 to hit with spell attacks). It has the following druid spells prepared: </p><p>Cantrips (at will): druidcraft, produce flame, shillelagh </p><p>1st level (4 slots): entangle, longstrider, speak with animals, thunderwave </p><p>2nd level (3 slots): animal messenger, barkskin</p>",
     "Actions": "<p><em><strong>Quarterstaff.</strong></em> <em>Melee Weapon Attack:</em> +2 to hit (+4 to hit with shillelagh), reach 5 ft., one target. <em>Hit:</em> 3 (1d6) bludgeoning damage, 4 (1d8) bludgeoning damage if wielded with two hands, or 6 (1d8 + 2) bludgeoning damage with shillelagh.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/299/1000/1000/636252771583275655.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/299/1000/1000/636252771583275655.jpeg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Dryad",
@@ -2534,7 +2564,8 @@
     "Challenge": "1 (200 XP)",
     "Traits": "<p><em><strong>Innate Spellcasting.</strong></em> The dryad's innate spellcasting ability is Charisma (spell save DC 14). The dryad can innately cast the following spells, requiring no material components: </p><p>At will: druidcraft </p><p>3/day each: entangle, goodberry </p><p>1/day each: barkskin, pass without trace, shillelagh </p><p><em><strong>Magic Resistance.</strong></em> The dryad has advantage on saving throws against spells and other magical effects. </p><p><em><strong>Speak with Beasts and Plants.</strong></em> The dryad can communicate with beasts and plants as if they shared a language. </p><p><em><strong>Tree Stride.</strong></em> Once on her turn, the dryad can use 10 feet of her movement to step magically into one living tree within her reach and emerge from a second living tree within 60 feet of the first tree, appearing in an unoccupied space within 5 feet of the second tree. Both trees must be Large or bigger.</p>",
     "Actions": "<p><em><strong>Club.</strong></em> <em>Melee Weapon Attack:</em> +2 to hit (+6 to hit with shillelagh), reach 5 ft., one target. <em>Hit:</em> 2 (1d4) bludgeoning damage, or 8 (1d8 + 4) bludgeoning damage with shillelagh. </p><p><em><strong>Fey Charm.</strong></em> The dryad targets one humanoid or beast that she can see within 30 feet of her. If the target can see the dryad, it must succeed on a DC 14 Wisdom saving throw or be magically charmed. The charmed creature regards the dryad as a trusted friend to be heeded and protected. Although the target isn't under the dryad's control, it takes the dryad's requests or actions in the most favorable way it can.</p><p>Each time the dryad or its allies do anything harmful to the target, it can repeat the saving throw, ending the effect on itself on a success. Otherwise, the effect lasts 24 hours or until the dryad dies, is on a different plane of existence from the target, or ends the effect as a bonus action. If a target's saving throw is successful, the target is immune to the dryad's Fey Charm for the next 24 hours. </p><p>The dryad can have no more than one humanoid and up to three beasts charmed at a time.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/307/1000/1000/636252771953950206.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/307/1000/1000/636252771953950206.jpeg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Duergar",
@@ -2560,7 +2591,8 @@
     "Challenge": "1 (200 XP)",
     "Traits": "<p><em><strong>Duergar Resilience.</strong></em> The duergar has advantage on saving throws against poison, spells, and illusions, as well as to resist being charmed or paralyzed. </p><p><em><strong>Sunlight Sensitivity.</strong></em> While in sunlight, the duergar has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.</p>",
     "Actions": "<p><em><strong>Enlarge (Recharges after a Short or Long Rest).</strong></em> For 1 minute, the duergar magically increases in size, along with anything it is wearing or carrying. While enlarged, the duergar is Large, doubles its damage dice on Strength-based weapon attacks (included in the attacks), and makes Strength checks and Strength saving throws with advantage. If the duergar lacks the room to become Large, it attains the maximum size possible in the space available. </p><p><em><strong>War Pick.</strong></em> <em>Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one target. <em>Hit:</em> 6 (1d8 + 2) piercing damage, or 11 (2d8 + 2) piercing damage while enlarged. </p><p><em><strong>Javelin.</strong></em> <em>Melee or <em>Ranged Weapon Attack:</em></em> +4 to hit, reach 5 ft. or range 30/120 ft., one target. <em>Hit:</em> 5 (1d6 + 2) piercing damage, or 9 (2d6 + 2) piercing damage while enlarged. </p><p><em><strong>Invisibility (Recharges after a Short or Long Rest).</strong></em> The duergar magically turns invisible until it attacks, casts a spell, or uses its Enlarge, or until its concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment the duergar wears or carries is invisible with it.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/309/1000/1000/636252772101183765.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/309/1000/1000/636252772101183765.jpeg",
+    "MonsterGroup": "Underdark"
   },
   {
     "name": "Dust Mephit",
@@ -3230,7 +3262,8 @@
     "Challenge": "1/4 (50 XP)",
     "Traits": "<p><em><strong>Echolocation.</strong></em> The bat can't use its blindsight while deafened.</p><p><em><strong>Keen Hearing.</strong></em> The bat has advantage on Wisdom (Perception) checks that rely on hearing.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one creature. <em>Hit:</em> 5 (1d6 + 2) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Cave"
   },
   {
     "name": "Giant Boar",
@@ -3255,7 +3288,8 @@
     "Challenge": "2 (450 XP)",
     "Traits": "<p><em><strong>Charge.</strong></em> If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone. </p><p><em><strong>Relentless (Recharges after a Short or Long Rest).</strong></em> If the boar takes 10 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.</p>",
     "Actions": "<p><em><strong>Tusk.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 10 (2d6 + 3) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Giant Centipede",
@@ -3382,7 +3416,8 @@
     "Challenge": "1 (200 XP)",
     "Traits": "<p><em><strong>Keen Sight.</strong></em> The eagle has advantage on Wisdom (Perception) checks that rely on sight.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The eagle makes two attacks: one with its beak and one with its talons. </p><p><em><strong>Beak.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 6 (1d6 + 3) piercing damage.</p><p> <em><strong>Talons.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 10 (2d6 + 3) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/894/315/315/636334286969931904.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/894/315/315/636334286969931904.jpeg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Giant Elk",
@@ -3408,7 +3443,8 @@
     "Challenge": "2 (450 XP)",
     "Traits": "<p><em><strong>Charge.</strong></em> If the elk moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.</p>",
     "Actions": "<p><em><strong>Ram.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 10 ft., one target. <em>Hit:</em> 11 (2d6 + 4) bludgeoning damage. </p><p><em><strong>Hooves.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 5 ft., one prone creature. <em>Hit:</em> 22 (4d8 + 4) bludgeoning damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Giant Fire Beetle",
@@ -3459,7 +3495,8 @@
     "Challenge": "1/4 (50 XP)",
     "Traits": "<p><em><strong>Amphibious.</strong></em> The frog can breathe air and water. </p><p><em><strong>Standing Leap.</strong></em> The frog's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +3 to hit, reach 5 ft., one target. <em>Hit:</em> 4 (1d6 + 1) piercing damage, and the target is grappled (escape DC 11). Until this grapple ends, the target is restrained, and the frog can't bite another target. </p><p><em><strong>Swallow.</strong></em> The frog makes one bite attack against a Small or smaller target it is grappling. If the attack hits, the target is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the frog, and it takes 5 (2d4) acid damage at the start of each of the frog's turns. The frog can have only one target swallowed at a time. If the frog dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/521/1000/1000/636376321052503535.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/521/1000/1000/636376321052503535.jpeg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Giant Goat",
@@ -3484,7 +3521,8 @@
     "Challenge": "1/2 (100 XP)",
     "Traits": "<p><em><strong>Charge.</strong></em> If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 5 (2d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone. </p><p><em><strong>Sure-Footed.</strong></em> The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.</p>",
     "Actions": "<p><em><strong>Ram.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 8 (2d4 + 3) bludgeoning damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Giant Hyena",
@@ -3510,7 +3548,8 @@
     "Challenge": "1 (200 XP)",
     "Traits": "<p><em><strong>Rampage.</strong></em> When the hyena reduces a creature to 0 hit points with a melee attack on its turn, the hyena can take a bonus action to move up to half its speed and make a bite attack.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 10 (2d6 + 3) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Gnoll camp"
   },
   {
     "name": "Giant Lizard",
@@ -3560,7 +3599,8 @@
     "Challenge": "1 (200 XP)",
     "Traits": "<p><em><strong>Hold Breath.</strong></em> While out of water, the octopus can hold its breath for 1 hour. </p><p><em><strong>Underwater Camouflage.</strong></em> The octopus has advantage on Dexterity (Stealth) checks made while underwater.</p><p><em><strong>Water Breathing.</strong></em> The octopus can breathe only underwater.</p>",
     "Actions": "<p><em><strong>Tentacles.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 15 ft., one target. <em>Hit:</em> 10 (2d6 + 3) bludgeoning damage. If the target is a creature, it is grappled (escape DC 16). Until this grapple ends, the target is restrained, and the octopus can't use its tentacles on another target. </p><p><em><strong>Ink Cloud (Recharges after a Short or Long Rest).</strong></em> A 20- foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/898/315/315/636334288003435302.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/898/315/315/636334288003435302.jpeg",
+    "MonsterGroup": "Underwater"
   },
   {
     "name": "Giant Owl",
@@ -3586,7 +3626,8 @@
     "Challenge": "1/4 (50 XP)",
     "Traits": "<p><em><strong>Flyby.</strong></em> The owl doesn't provoke opportunity attacks when it flies out of an enemy's reach. </p><p><em><strong>Keen Hearing and Sight.</strong></em> The owl has advantage on Wisdom (Perception) checks that rely on hearing or sight.</p>",
     "Actions": "<p><em><strong>Talons.</strong></em> <em>Melee Weapon Attack:</em> +3 to hit, reach 5 ft., one target. <em>Hit:</em> 8 (2d6 + 1) slashing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/535/1000/1000/636376331788287090.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/535/1000/1000/636376331788287090.jpeg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Giant Poisonous Snake",
@@ -3611,7 +3652,8 @@
     "Languages": "--",
     "Challenge": "1/4 (50 XP)",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +6 to hit, reach 10 ft., one target. <em>Hit:</em> 6 (1d4 + 4) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Grove"
   },
   {
     "name": "Giant Rat",
@@ -3636,7 +3678,8 @@
     "Challenge": "1/8 (25 XP)",
     "Traits": "<p><em><strong>Keen Smell.</strong></em> The rat has advantage on Wisdom (Perception) checks that rely on smell. </p><p><em><strong>Pack Tactics.</strong></em> The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 feet of the creature and the ally isn't incapacitated.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one target. <em>Hit</em>: 4 (1d4 + 2) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/538/1000/1000/636376332197953299.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/16/538/1000/1000/636376332197953299.jpeg",
+    "MonsterGroup": "Cave"
   },
   {
     "name": "Giant Scorpion",
@@ -3660,7 +3703,8 @@
     "Languages": "--",
     "Challenge": "3 (700 XP)",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The scorpion makes three attacks: two with its claws and one with its sting. </p><p><em><strong>Claw.</strong></em> <em>Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one target. <em>Hit:</em> 6 (1d8 + 2) bludgeoning damage, and the target is grappled (escape DC 12). The scorpion has two claws, each of which can grapple only one target. </p><p><em><strong>Sting.</strong></em> <em>Melee Weapon Attack:</em> +4 to hit, reach 5 ft., one creature. <em>Hit:</em> 7 (1d10 + 2) piercing damage, and the target must make a DC 12 Constitution saving throw, taking 22 (4d10) poison damage on a failed save, or half as much damage on a successful one.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Desert"
   },
   {
     "name": "Giant Sea Horse",
@@ -3711,7 +3755,8 @@
     "Challenge": "5 (1,800 XP)",
     "Traits": "<p><em><strong>Blood Frenzy.</strong></em> The shark has advantage on melee attack rolls against any creature that doesn't have all its hit points. </p><p><em><strong>Water Breathing.</strong></em> The shark can breathe only underwater.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +9 to hit, reach 5 ft., one target. <em>Hit:</em> 22 (3d10 + 6) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/648/beast.jpg",
+    "MonsterGroup": "Underwater"
   },
   {
     "name": "Giant Spider",
@@ -3737,7 +3782,8 @@
     "Challenge": "1 (200 XP)",
     "Traits": "<p><em><strong>Spider Climb.</strong></em> The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check. </p><p><em><strong>Web Sense.</strong></em> While in contact with a web, the spider knows the exact location of any other creature in contact with the same web. </p><p><em><strong>Web Walker.</strong></em> The spider ignores movement restrictions caused by webbing.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one creature. <em>Hit:</em> 7 (1d8 + 3) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way. </p><p><em><strong>Web (Recharge 5–6).</strong></em> <em>Ranged Weapon Attack:</em> +5 to hit, range 30/60 ft., one creature. <em>Hit:</em> The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/323/1000/1000/636252775648743317.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/323/1000/1000/636252775648743317.jpeg",
+    "MonsterGroup": "Cave, Underdark"
   },
   {
     "name": "Giant Toad",
@@ -4665,7 +4711,8 @@
     "Challenge": "0 (10 XP)",
     "Traits": "<p><em><strong>Pack Tactics.</strong></em> The hyena has advantage on an attack roll against a creature if at least one of the hyena's allies is within 5 feet of the creature and the ally isn't incapacitated.</p>",
     "Actions": "<p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +2 to hit, reach 5 ft., one target. <em>Hit:</em> 3 (1d6) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/902/1000/1000/636334288674955736.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/9/902/1000/1000/636334288674955736.jpeg",
+    "MonsterGroup": "Gnoll camp"
   },
   {
     "name": "Ice Devil",
@@ -4887,7 +4934,8 @@
     "Traits": "<p><em><strong>Brave.</strong></em> The knight has advantage on saving throws against being frightened.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The knight makes two melee attacks. </p><p><em><strong>Greatsword.</strong></em> <em>Melee Weapon Attack:</em> +5 to hit, reach 5 ft., one target. <em>Hit:</em> 10 (2d6 + 3) slashing damage. </p><p><em><strong>Heavy Crossbow.</strong></em> <em>Ranged Weapon Attack:</em> +2 to hit, range 100/400 ft., one target. <em>Hit:</em> 5 (1d10) piercing damage. </p><p><em><strong>Leadership (Recharges after a Short or Long Rest).</strong></em> For 1 minute, the knight can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the knight. A creature can benefit from only one Leadership die at a time. This effect ends if the knight is incapacitated.</p>",
     "Reactions": "<p><em><strong>Parry.</strong></em> The knight adds 2 to its AC against one melee attack that would hit it. To do so, the knight must see the attacker and be wielding a melee weapon.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg",
+    "MonsterGroup": "Settlement"
   },
   {
     "name": "Kobold",
@@ -4941,7 +4989,8 @@
     "Traits": "<p><em><strong>Amphibious.</strong></em> The kraken can breathe air and water. </p><p><em><strong>Freedom of Movement.</strong></em> The kraken ignores difficult terrain, and magical effects can't reduce its speed or cause it to be restrained. It can spend 5 feet of movement to escape from nonmagical restraints or being grappled. </p><p><em><strong>Siege Monster.</strong></em> The kraken deals double damage to objects and structures.</p>",
     "Actions": "<p><em><strong>Multiattack.</strong></em> The kraken makes three tentacle attacks, each of which it can replace with one use of Fling. </p><p><em><strong>Bite.</strong></em> <em>Melee Weapon Attack:</em> +17 to hit, reach 5 ft., one target. <em>Hit:</em> 23 (3d8 + 10) piercing damage. If the target is a Large or smaller creature grappled by the kraken, that creature is swallowed, and the grapple ends. While swallowed, the creature is blinded and restrained, it has total cover against attacks and other effects outside the kraken, and it takes 42 (12d6) acid damage at the start of each of the kraken's turns.</p><p>If the kraken takes 50 damage or more on a single turn from a creature inside it, the kraken must succeed on a DC 25 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the kraken. If the kraken dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 15 feet of movement, exiting prone. </p><p><em><strong>Tentacle.</strong></em> <em>Melee Weapon Attack:</em> +17 to hit, reach 30 ft., one target. <em>Hit:</em> 20 (3d6 + 10) bludgeoning damage, and the target is grappled (escape DC 18). Until this grapple ends, the target is restrained. The kraken has ten tentacles, each of which can grapple one target. </p><p><em><strong>Fling.</strong></em> One Large or smaller object held or creature grappled by the kraken is thrown up to 60 feet in a random direction and knocked prone. If a thrown target strikes a solid surface, the target takes 3 (1d6) bludgeoning damage for every 10 feet it was thrown. If the target is thrown at another creature, that creature must succeed on a DC 18 Dexterity saving throw or take the same damage and be knocked prone. </p><p><em><strong>Lightning Storm.</strong></em> The kraken magically creates three bolts of lightning, each of which can strike a target the kraken can see within 120 feet of it. A target must make a DC 23 Dexterity saving throw, taking 22 (4d10) lightning damage on a failed save, or half as much damage on a successful one.</p>",
     "Legendary Actions": "<p>The kraken can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. The kraken regains spent legendary actions at the start of its turn. </p><p><em><strong>Tentacle Attack or Fling.</strong></em> The kraken makes one tentacle attack or uses its Fling. </p><p><em><strong>Lightning Storm (Costs 2 Actions).</strong></em> The kraken uses Lightning Storm. </p><p><em><strong>Ink Cloud (Costs 3 Actions).</strong></em> While underwater, the kraken expels an ink cloud in a 60-foot radius. The cloud spreads around corners, and that area is heavily obscured to creatures other than the kraken. Each creature other than the kraken that ends its turn there must succeed on a DC 23 Constitution saving throw, taking 16 (3d10) poison damage on a failed save, or half as much damage on a successful one. A strong current disperses the cloud, which otherwise disappears at the end of the kraken's next turn.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/381/1000/1000/636252780680163799.jpeg"
+    "img_url": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/381/1000/1000/636252780680163799.jpeg",
+    "MonsterGroup": "Underwater"
   },
   {
     "name": "Lamia",
@@ -5129,7 +5178,8 @@
     "Challenge": "6 (2,300 XP)",
     "Traits": "<p><em><strong>Spellcasting.</strong></em> The mage is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 14, +6 to hit with spell attacks). The mage has the following wizard spells prepared: </p><p>Cantrips (at will): fire bolt, light, mage hand, prestidigitation </p><p>1st level (4 slots): detect magic, mage armor, magic missile, shield </p><p>2nd level (3 slots): misty step, suggestion </p><p>3rd level (3 slots): counterspell, fireball, fly </p><p>4th level (3 slots): greater invisibility, ice storm </p><p>5th level (1 slot): cone of cold</p>",
     "Actions": "<p><em><strong>Dagger.</strong></em> <em>Melee or <em>Ranged Weapon Attack:</em></em> +5 to hit, reach 5 ft. or range 20/60 ft., one target. <em>Hit:</em> 4 (1d4 + 2) piercing damage.</p>",
-    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg"
+    "img_url": "https://media-waterdeep.cursecdn.com/attachments/2/656/humanoid.jpg",
+    "MonsterGroup": "Cult, Settlement"
   },
   {
     "name": "Magma Mephit",

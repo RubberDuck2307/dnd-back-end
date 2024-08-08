@@ -1,5 +1,7 @@
 package dnd.encounter_service.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import dnd.encounter_service.logic.encounter_creation.DefaultEncounterCreationLogic;
 import dnd.encounter_service.logic.encounter_creation.EncounterCreationLogic;
 import dnd.encounter_service.logic.encounter_difficulty.DifficultyService;
@@ -14,7 +16,6 @@ public class AppConfig {
                                                                  difficultyService) {
         return new DefaultEncounterCreationLogic(difficultyService);
     }
-
 
 }
 

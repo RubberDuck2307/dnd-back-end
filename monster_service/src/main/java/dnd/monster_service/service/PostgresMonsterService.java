@@ -17,9 +17,8 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -52,6 +51,11 @@ public class PostgresMonsterService implements MonsterService {
     @Override
     public Monster getMonsterById(long id) {
         return monsterRepository.findById(id).orElseThrow(IdNotFoundException::new);
+    }
+
+    @Override
+    public List<Monster> getMonstersByIds(List<Long> ids) {
+        return monsterRepository.findAllById(ids);
     }
 
     @Override
