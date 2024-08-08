@@ -60,14 +60,14 @@
             <systemPath>${pom.basedir}/../java_shared/exception/target/exception-1.0.0.jar</systemPath>
         </dependency>
         <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+        <dependency>
             <groupId>net.devh</groupId>
             <artifactId>grpc-server-spring-boot-starter</artifactId>
             <version>2.15.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-            <version>3.1.5</version>
         </dependency>
 
     </dependencies>
