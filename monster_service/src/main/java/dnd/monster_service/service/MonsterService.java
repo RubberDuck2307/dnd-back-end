@@ -14,7 +14,6 @@ public interface MonsterService {
     List<Monster> getRandomMonstersByCr(double cr, int amountOfMonsters);
     List<Monster> getMonsters(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter);
     List<Monster> getMonsters(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter, MonsterSearchSorting sorting);
-    Monster addMonster(Monster monster);
     List<Monster> getMonsters(int pageSize, int pageNumber);
     long getAmountOfMonsters();
     Monster getMonsterById(long id);

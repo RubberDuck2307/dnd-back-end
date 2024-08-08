@@ -9,11 +9,8 @@ import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterRepository;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchSorting;
-import dnd.monster_service.rabbitMq.transport_entity.Monster.MessageMqFactory;
-import dnd.monster_service.rabbitMq.transport_entity.Monster.MonsterMq;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.math3.util.Precision;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +20,6 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class PostgresMonsterService implements MonsterService {
-
-    private final MessageMqFactory messageMqFactory;
     private final MonsterRepository monsterRepository;
 
 
@@ -84,14 +79,6 @@ public class PostgresMonsterService implements MonsterService {
     public List<Monster> getMonsters(int pageSize, int pageNumber, MonsterSearchFilter monsterSearchFilter,
                                      MonsterSearchSorting sorting) {
         return monsterRepository.getMonstersFiltered(pageSize, pageNumber, monsterSearchFilter, sorting);
-    }
-
-    public Monster addMonster(Monster monster) {
-        monster.setHomebrew(true);
-        monster = monsterRepository.save(monster);
-        MonsterMq monsterMq = messageMqFactory.monsterCreatedMessage(monster.getId(),
-                monster.getMonsterName(), monster.getCr(), true);
-        return monster;
     }
 
 }
