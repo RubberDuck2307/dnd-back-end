@@ -6,7 +6,7 @@ import dnd.encounter_service.model.entity.encounter.Monster;
 import dnd.encounter_service.model.entity.encounter.Encounter;
 import dnd.encounter_service.model.entity.encounter.EncounterFactory;
 import dnd.encounter_service.service.interfaces.EncounterService;
-import dnd.encounter_service.service.interfaces.MonsterViewService;
+import dnd.encounter_service.service.interfaces.MonsterService;
 import dnd.encounter_service.utils.ListUtils;
 import dnd.exception.NoSuchEncounterException;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ import java.util.*;
 public class DefaultEncounterService implements EncounterService {
 
     private final EncounterCreationLogic encounterCreationLogic;
-    private final MonsterViewService monsterViewService;
+    private final MonsterService monsterViewService;
     private final DifficultyService difficultyService;
     private final EncounterFactory encounterFactory;
     @Value("${game.monster.creation.diversity}")

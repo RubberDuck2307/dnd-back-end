@@ -1,6 +1,7 @@
 package dnd.encounter_service.service;
 
 import dnd.encounter_service.model.entity.encounter.Monster;
+import dnd.encounter_service.service.interfaces.MonsterService;
 import dnd.encounter_service.view.monster.MonsterViewRepository;
 import dnd.encounter_service.view.monster.entity.MonsterView;
 import dnd.encounter_service.view.monster.entity.MonsterViewMapper;
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class MonsterViewService implements dnd.encounter_service.service.interfaces.MonsterViewService {
+public class MonsterViewService implements MonsterService {
 
     private final MonsterViewRepository monsterRepository;
     private final MonsterViewMapper monsterViewMapper;
@@ -24,7 +25,7 @@ public class MonsterViewService implements dnd.encounter_service.service.interfa
     @Override
     public List<Float> getCrsByMonsterGroup(long monsterGroupId) {
         List<Float> crs = monsterRepository.getAvailableCrForMonsterGroup(monsterGroupId);
-        if (crs.size() == 0) {
+        if (crs.isEmpty()) {
             throw new IllegalArgumentException("No monsters with the given monster group were found");
         }
         return crs;

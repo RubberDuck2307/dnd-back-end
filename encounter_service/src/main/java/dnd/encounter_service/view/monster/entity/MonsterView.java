@@ -28,6 +28,9 @@ public class MonsterView {
 
     }
 
+    public void addMonsterGroup(MonsterGroupView monsterGroup){
+        monsterGroups.add(monsterGroup);
+    }
     public MonsterView() {
 
     }

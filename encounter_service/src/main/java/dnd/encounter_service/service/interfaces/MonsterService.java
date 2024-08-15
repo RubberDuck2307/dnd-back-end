@@ -5,7 +5,7 @@ import dnd.encounter_service.model.entity.encounter.Monster;
 import java.util.List;
 import java.util.Map;
 
-public interface MonsterViewService {
+public interface MonsterService {
 
     List<Float> getCrsByMonsterGroup(long monsterGroupId);
 
@@ -14,5 +14,4 @@ public interface MonsterViewService {
     Map<Float, List<Monster>> getMonstersByCrAndGroup(Map<Float, Integer> amountOfCrs, long groupId);
 
     Map<Float, List<Monster>> getMonstersByCrAmount(Map<Float, Integer> amountOfCrs);
-
 }

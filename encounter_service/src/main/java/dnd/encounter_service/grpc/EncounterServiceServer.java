@@ -19,6 +19,7 @@ public class EncounterServiceServer extends EncounterServiceGrpc.EncounterServic
     private final EncounterGrpcMapper encounterGrpcMapper;
     private final GrpcExceptionHandler exceptionHandler;
 
+
     @Override
     public void generateEncounters(EncounterServiceOuterClass.GenerateEncounterRequest request,
                                    StreamObserver<EncounterServiceOuterClass.EncounterListRpc> responseObserver) {
