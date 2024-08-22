@@ -4,7 +4,7 @@ import dnd.monster_service.http.dto.cr.CrRangeDto;
 import dnd.monster_service.http.dto.monster.CountMonstersDTO;
 import dnd.monster_service.http.dto.monster.GetFullMonsterDTO;
 import dnd.monster_service.http.dto.monster.MonsterGetShortDTO;
-import dnd.monster_service.http.dto.mapper.DtoMapper;
+import dnd.monster_service.http.dto.mapper.MonsterDtoMapper;
 import dnd.monster_service.model.cr.CrRange;
 import dnd.monster_service.persistance.entity.creature.monster.Monster;
 import dnd.monster_service.persistance.repository.monster.MonsterSearchFilter;
@@ -22,12 +22,12 @@ import java.util.List;
 public class MonsterController {
 
     private final MonsterService monsterService;
-    private final DtoMapper dtoMapper;
+    private final MonsterDtoMapper monsterDtoMapper;
 
     @GetMapping("/{id}")
     public ResponseEntity<GetFullMonsterDTO> getMonsterById(@PathVariable Long id) {
         Monster monster = monsterService.getMonsterById(id);
-        GetFullMonsterDTO monsterDTO = dtoMapper.buildGetFullMonsterDTO(monster);
+        GetFullMonsterDTO monsterDTO = monsterDtoMapper.buildGetFullMonsterDTO(monster);
         return ResponseEntity.ok(monsterDTO);
     }
 
@@ -38,7 +38,7 @@ public class MonsterController {
                                                           @RequestParam(required = false) Float maxCr) {
         long count = monsterService.getAmountOfMonstersFiltered(
                 new MonsterSearchFilter(name, type, minCr, maxCr, null));
-        return ResponseEntity.ok(dtoMapper.buildCountMonstersDTO(count));
+        return ResponseEntity.ok(monsterDtoMapper.buildCountMonstersDTO(count));
     }
 
     @GetMapping("/")
@@ -56,7 +56,7 @@ public class MonsterController {
         MonsterSearchSorting sorting = new MonsterSearchSorting(ascending, order.toUpperCase());
         List<MonsterGetShortDTO> monsters = monsterService.getMonsters(amount, page, filter, sorting)
                 .stream()
-                .map(dtoMapper::buildMonsterGetShortDTO)
+                .map(monsterDtoMapper::buildMonsterGetShortDTO)
                 .toList();
         return ResponseEntity.ok(monsters);
     }

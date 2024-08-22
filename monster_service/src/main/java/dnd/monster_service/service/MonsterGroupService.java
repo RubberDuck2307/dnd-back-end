@@ -39,4 +39,8 @@ public class MonsterGroupService {
        });
        kafkaProducer.sendMonsterGroupEditedMessage(monsterGroup);
     }
+
+    public List<MonsterGroup> getMonsterGroups(){
+       return repository.findAll();
+    }
 }

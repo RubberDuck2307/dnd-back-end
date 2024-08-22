@@ -20,7 +20,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
-public class DtoMapper {
+public class MonsterDtoMapper {
 
     public GetFullMonsterDTO buildGetFullMonsterDTO(Monster monster) {
         GetFullMonsterDTO.GetFullMonsterDTOBuilder builder = GetFullMonsterDTO.builder();
