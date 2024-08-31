@@ -1,8 +1,6 @@
 package dnd.monster_service.http.error;
 
-import dnd.generated.Shared;
 import dnd.monster_service.http.error.exception.IdNotFoundException;
-import io.grpc.StatusRuntimeException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
