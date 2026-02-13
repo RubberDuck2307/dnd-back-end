@@ -23,28 +23,28 @@ public class MonsterRepositoryTest {
 
     @Test
     public void getMonstersFilteredByName() {
-        MonsterSearchFilter monsterSearchFilter = new MonsterSearchFilter("Zombie", null, null, null);
+        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().name("Zombie").build();
         List<Monster> monsters = monsterService.getMonsters(10, 0, monsterSearchFilter);
         monsters.forEach(m -> assertTrue(m.getMonsterName().contains("Zombie")));
 
-        monsterSearchFilter = new MonsterSearchFilter("Dragon", null, null, null);
+        monsterSearchFilter = MonsterSearchFilter.builder().name("Dragon").build();
         monsters = monsterService.getMonsters(10, 0, monsterSearchFilter);
         monsters.forEach(m -> assertTrue(m.getMonsterName().contains("Dragon")));
-        assertTrue(monsters.size() <= 10 && monsters.size() > 0);
+        assertTrue(monsters.size() <= 10 && !monsters.isEmpty());
 
     }
 
     @Test
     public void getMonsterFilteredByCr() {
-        MonsterSearchFilter monsterSearchFilter = new MonsterSearchFilter(null, null, 0.125F, null);
+        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().minCR(0.125F).build();
         List<Monster> monsters = monsterService.getMonsters(10, 0, monsterSearchFilter);
         monsters.forEach(m -> assertEquals(0.125F, m.getCr()));
-        assertTrue(monsters.size() <= 10 && monsters.size() > 0);
+        assertTrue(monsters.size() <= 10 && !monsters.isEmpty());
     }
 
     @Test
     public void getMonsterFilteredByMonsterGroup() {
-        MonsterSearchFilter monsterSearchFilter = new MonsterSearchFilter(null, null, null, 1L);
+        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().groupId(1L).build();
         List<Monster> monsters = monsterService.getMonsters(10, 0, monsterSearchFilter);
         monsters.forEach(m -> isInGroup(1L, m));
         assertTrue(monsters.size() <= 10);
@@ -52,7 +52,7 @@ public class MonsterRepositoryTest {
 
     @Test
     public void getMonsterFilteredByType() {
-        MonsterSearchFilter monsterSearchFilter = new MonsterSearchFilter(null, "undead", null, null);
+        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().type("undead").build();
         List<Monster> monsters = monsterService.getMonsters(10, 0, monsterSearchFilter);
         monsters.forEach(m -> containsType("undead", m));
         assertTrue(monsters.size() <= 10);
@@ -60,22 +60,22 @@ public class MonsterRepositoryTest {
 
     @Test
     public void getMonsterFilteredByTypeNameCr(){
-        MonsterSearchFilter monsterSearchFilter = new MonsterSearchFilter("Zombie", "evil", 0.25F, null);
+        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().name("Zombie").type("evil").minCR(0.25F).build();
         List<Monster> monsters = monsterService.getMonsters(10, 0, monsterSearchFilter);
         monsters.forEach(m -> assertTrue(m.getMonsterName().contains("Zombie")));
         monsters.forEach(m -> assertEquals(0.25F, m.getCr()));
-        assertTrue(monsters.size() <= 10 && monsters.size() > 0);
+        assertTrue(monsters.size() <= 10 && !monsters.isEmpty());
     }
 
     @Test void getMonsterFilteredByNameCaseInsensitivity(){
-        MonsterSearchFilter monsterSearchFilter = new MonsterSearchFilter("zOmBiE", null, null, null);
+        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().name("zOmBiE").build();
         List<Monster> monsters = monsterService.getMonsters(10, 0, monsterSearchFilter);
         monsters.forEach(m -> assertTrue(m.getMonsterName().contains("Zombie")));
-        assertTrue(monsters.size() <= 10 && monsters.size() > 0);
+        assertTrue(monsters.size() <= 10 && !monsters.isEmpty());
     }
 
     @Test void getMonsterFilteredByTypeCaseInsensitivity(){
-        MonsterSearchFilter monsterSearchFilter = new MonsterSearchFilter(null, "EvIl", null, null);
+        MonsterSearchFilter monsterSearchFilter = MonsterSearchFilter.builder().type("EvIl").build();
         List<Monster> monsters = monsterService.getMonsters(10, 0, monsterSearchFilter);
         monsters.forEach(m -> containsType("evil", m));
         assertTrue(monsters.size() <= 10);
