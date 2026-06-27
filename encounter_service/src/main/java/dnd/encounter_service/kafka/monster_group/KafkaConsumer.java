@@ -19,12 +19,12 @@ import static dnd.encounter_service.config.KafkaKeyConfig.UPDATED_MONSTER_GROUP_
 public class KafkaConsumer {
 
 
-    private final ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper = new ObjectMapper().setPropertyNamingStrategy(com.fasterxml.jackson.databind.PropertyNamingStrategies.SNAKE_CASE);
     private final MonsterGroupViewUpdater updater;
     private final Logger logger = Logger.getLogger(KafkaConsumer.class.getName());
 
 
-    @KafkaListener(topics = "${spring.kafka.monstergroup.topic}")
+    @KafkaListener(topics = "${spring.kafka.topic.monstergroup}")
     public void receiveMonsterGroupTopicMessage(@Payload String message, @Header(KafkaHeaders.RECEIVED_KEY) String key) {
         logger.info(String.format("Received key:%s message: %s",key, message));
         switch (key) {

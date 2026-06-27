@@ -20,7 +20,7 @@ public class KafkaConfig {
 
     @Value(value = "${spring.kafka.bootstrap-servers}")
     private String bootstrapAddress;
-    @Value(value = "${spring.kafka.monstergroup.topic}")
+    @Value(value = "${spring.kafka.topic.monster}")
     private String monsterGroupTopic;
 
     @Bean

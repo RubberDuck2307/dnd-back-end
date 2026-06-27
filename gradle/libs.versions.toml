@@ -21,3 +21,4 @@ org-springframework-boot-spring-boot-starter-web = { module = "org.springframewo
 org-springframework-kafka-spring-kafka = { module = "org.springframework.kafka:spring-kafka", version.ref = "org-springframework-kafka-spring-kafka" }
 org-springframework-boot-spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "org-springframework-boot-spring-boot" }
 org-springframework-boot-spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc", version.ref = "org-springframework-boot-spring-boot" }
+org-springdoc-openapi-starter-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version = "3.0.1" }

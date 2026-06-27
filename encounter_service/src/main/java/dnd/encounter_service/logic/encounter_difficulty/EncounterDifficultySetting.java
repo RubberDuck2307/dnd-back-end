@@ -10,7 +10,6 @@ public class EncounterDifficultySetting {
     private  Map<EncounterDifficultyName, Integer> values;
     private  Integer level;
 
-
     public Integer getDifficulty(EncounterDifficultyName difficultyName) {
         return values.get(difficultyName);
     }

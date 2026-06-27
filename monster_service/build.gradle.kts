@@ -18,6 +18,7 @@ dependencies {
 
     runtimeOnly(libs.org.postgresql.postgresql)
 
+    implementation(libs.org.springdoc.openapi.starter.webmvc.ui)
     implementation(libs.org.springframework.boot.spring.boot.starter.data.jpa)
     implementation(libs.org.springframework.boot.spring.boot.starter)
     implementation(libs.org.springframework.kafka.spring.kafka)
@@ -48,6 +49,10 @@ tasks.withType<JavaCompile>() {
 
 tasks.withType<Javadoc>() {
     options.encoding = "UTF-8"
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    options.compilerArgs.add("-parameters")
 }
 
 tasks.test {

@@ -16,10 +16,6 @@ public class FileReaderTest {
 
     @Autowired
     DifficultyService encounterDifficultiesMap;
-    @Autowired
-    JsonFileReader jsonFileReader;
-    @Autowired
-    ObjectMapper objectMapper;
 
     @Test
     public void isEncounterDifficultiesMapCorrectlyLoaded() {

@@ -5,7 +5,6 @@ import lombok.Getter;
 import java.util.ArrayList;
 
 @Getter
-
 public class Encounter {
 
     private ArrayList<Monster> monsters;

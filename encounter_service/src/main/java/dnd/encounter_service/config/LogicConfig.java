@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 @RequiredArgsConstructor
 @Configuration
@@ -16,7 +17,7 @@ public class LogicConfig {
     private final JsonFileReader fileReader;
 
     @Bean
-    public DifficultyService encounterDifficultyMap() throws FileNotFoundException, JsonProcessingException {
+    public DifficultyService encounterDifficultyMap() throws IOException {
         return fileReader.readEncounterDifficultyMap();
     }
 

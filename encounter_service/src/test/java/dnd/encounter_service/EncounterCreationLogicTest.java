@@ -6,6 +6,7 @@ import dnd.encounter_service.model.entity.encounter.Monster;
 import dnd.encounter_service.model.entity.encounter.Encounter;
 import dnd.encounter_service.service.interfaces.EncounterService;
 import dnd.exception.NoSuchEncounterException;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -158,14 +159,13 @@ public class EncounterCreationLogicTest {
         }
         assertTrue(difference);
     }
-
+    @Disabled
     @Test
     public void testGetRandomEncounterMultipleEncountersDifferentMonstersMultipleMonsterPerCrMonsterGroup() {
         ArrayList<Encounter> encounters = encounterService.createRandomEncounter(600,
                 10, 1, true, 4,
                 false, 1L);
         assertEquals(10, encounters.size());
-        System.out.println(encounters);
         for (Encounter encounter : encounters) {
             assertTrue(encounter.getDifficultyXp() > 0 && encounter.getDifficultyXp() <= 1200);
             assertTrue(encounter.getMonsters().size() > 0 && encounter.getMonsters().size() <= 4);

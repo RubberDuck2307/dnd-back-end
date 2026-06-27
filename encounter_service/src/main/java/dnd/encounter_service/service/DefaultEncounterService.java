@@ -23,6 +23,8 @@ public class DefaultEncounterService implements EncounterService {
     private final MonsterService monsterViewService;
     private final DifficultyService difficultyService;
     private final EncounterFactory encounterFactory;
+
+    //Todo make this better
     @Value("${game.monster.creation.diversity}")
     private int variabilityModifier;
 
@@ -214,7 +216,7 @@ public class DefaultEncounterService implements EncounterService {
             for (Float cr : crs) {
                 if (!foundCrs.contains(cr)) {
                     foundCrs.add(cr);
-                    amountOfCrs.put(cr, amountOfCrs.getOrDefault(cr, 0) + 1 * variabilityModifier);
+                    amountOfCrs.put(cr, amountOfCrs.getOrDefault(cr, 0) + variabilityModifier);
                 }
             }
         }

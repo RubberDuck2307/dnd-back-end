@@ -14,7 +14,6 @@ public class EncounterFactory {
     private final EncounterCreationLogic encounterCreationLogic;
 
     public Encounter createEncounter(List<Monster> monsters){
-
         List<Float> crs = new ArrayList<>();
         monsters.forEach(monster -> crs.add(monster.getCr()));
 

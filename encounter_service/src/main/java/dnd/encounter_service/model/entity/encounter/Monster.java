@@ -8,9 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Monster {
-
     private long id;
     private String name;
     private float cr;
-
 }

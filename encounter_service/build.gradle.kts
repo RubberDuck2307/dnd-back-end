@@ -22,8 +22,13 @@ dependencies {
     implementation(libs.com.fasterxml.jackson.datatype.jackson.datatype.jsr310)
     implementation(libs.org.springframework.boot.spring.boot.starter.web)
     implementation(libs.org.springframework.kafka.spring.kafka)
+    implementation(project(":shared"))
+
     runtimeOnly(libs.org.postgresql.postgresql)
+
     testImplementation(libs.org.springframework.boot.spring.boot.starter.test)
+
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 group = "dnd"
@@ -43,4 +48,8 @@ tasks.withType<JavaCompile>() {
 
 tasks.withType<Javadoc>() {
     options.encoding = "UTF-8"
+}
+
+tasks.test {
+    useJUnitPlatform()
 }

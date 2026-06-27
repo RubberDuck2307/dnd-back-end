@@ -13,7 +13,7 @@ public class AppConfig {
         PGSimpleDataSource dataSource = new PGSimpleDataSource();
         dataSource.setServerNames(new String[]{"localhost"});
         dataSource.setUser("postgres");
-        dataSource.setPassword("root");
+        dataSource.setPassword("postgres");
         dataSource.setDatabaseName("postgres");
         return dataSource;
     }

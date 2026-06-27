@@ -3,10 +3,6 @@ package dnd.monster_service.persistance.entity.dice;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Generated;
-import org.hibernate.annotations.GenerationTime;
-import org.hibernate.annotations.GenericGenerator;
-
 import java.util.List;
 
 import static dnd.monster_service.config.SQLConfig.DICE_TABLE;

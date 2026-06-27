@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("monster/group")
+@RequestMapping("group")
 @RequiredArgsConstructor
 public class MonsterGroupController {
     private  final MonsterGroupService service;

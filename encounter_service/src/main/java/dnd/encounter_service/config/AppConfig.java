@@ -16,6 +16,5 @@ public class AppConfig {
                                                                  difficultyService) {
         return new DefaultEncounterCreationLogic(difficultyService);
     }
-
 }
 
