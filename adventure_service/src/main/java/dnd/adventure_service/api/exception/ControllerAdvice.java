@@ -1,0 +1,14 @@
+package dnd.adventure_service.api.exception;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+@org.springframework.web.bind.annotation.ControllerAdvice
+public class ControllerAdvice {
+
+    //TODO make this shared across services
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+}

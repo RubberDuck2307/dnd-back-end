@@ -10,5 +10,6 @@
 rootProject.name = "dnd-back-end"
 include("shared")
 include("monster_service")
+include("adventure_service")
 include("database_manager")
 include("encounter_service")
