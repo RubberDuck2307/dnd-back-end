@@ -1,13 +1,5 @@
-import json
 import re
-from transformers import AutoProcessor, AutoModelForMultimodalLM
-
-model_id = "google/gemma-4-26B-A4B-it"
-local_dir = "/home/user/src_wsl/dnd-back-end/gen_ai_service"
-
-processor = AutoProcessor.from_pretrained(model_id, cache_dir=local_dir)
-model = AutoModelForMultimodalLM.from_pretrained(model_id, cache_dir=local_dir)
-
+from model import model, processor
 
 def create_entity(name: str, type: str, description: str) -> str:
     """Creates a distinct D&D entity/node."""
@@ -22,10 +14,6 @@ def create_relationship(source_entity: str, target_entity: str, relationship_typ
     print(f"       [DB EXECUTE] Created Link -> ({source_entity}) -[{relationship_type}]-> ({target_entity})")
     return f"Successfully linked {source_entity} to {target_entity}"
 
-
-# ==========================================
-# 2. DEFINE THE DUAL-TOOL JSON SCHEMAS
-# ==========================================
 tools = [
     {
         "type": "function",

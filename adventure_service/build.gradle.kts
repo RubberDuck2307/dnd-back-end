@@ -25,7 +25,6 @@ dependencies {
     implementation(libs.org.springframework.boot.spring.boot.starter.jdbc)
     implementation(libs.org.springdoc.openapi.starter.webmvc.ui)
     implementation(libs.org.postgresql.postgresql)
-
     implementation(libs.org.mapstruct.mapstruct)
 
     annotationProcessor(libs.org.mapstruct.mapstruct.processor)

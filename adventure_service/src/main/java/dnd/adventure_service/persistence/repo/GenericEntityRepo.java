@@ -4,8 +4,11 @@ import dnd.adventure_service.persistence.entity.GenericEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Repository
 public interface GenericEntityRepo extends JpaRepository<GenericEntity, UUID> {
+
+    List<GenericEntity> findAllByAdventure_IdAndNameIn(UUID adventureId, List<String> names);
 }
