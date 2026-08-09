@@ -33,4 +33,6 @@ public class AdventureEntity {
     )
     @Builder.Default
     private List<GenericEntity> entities = new ArrayList<>();
+
+    private String imageUrl;
 }

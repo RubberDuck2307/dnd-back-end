@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 @RequiredArgsConstructor
 public class GenericEntityController {
 

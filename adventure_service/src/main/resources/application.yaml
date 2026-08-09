@@ -15,4 +15,4 @@ spring:
     properties:
       hibernate.hibernate.default_schema: adventure_service
 server:
-  port : 8083
+  port : 8085
